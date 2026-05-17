@@ -1,0 +1,35 @@
+# Render.com Blueprint — one-shot config that creates both the FastAPI backend
+# and the Vite static frontend. Sign in at https://render.com, "New Blueprint",
+# point it at this repo, and Render reads this file to provision both services.
+#
+# On the free tier the backend sleeps after 15 min idle and takes ~30s to wake.
+# Upgrade the backend `plan` to "starter" ($7/mo) to keep it always-on.
+services:
+  - type: web
+    name: house-2026-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+
+  - type: web
+    name: house-2026-frontend
+    runtime: static
+    rootDir: frontend
+    plan: free
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    autoDeploy: true
+    routes:
+      # Forward API calls to the backend service. Keeps the frontend's
+      # relative `/api/*` paths working without any code changes.
+      - type: rewrite
+        source: /api/*
+        destination: https://house-2026-backend.onrender.com/api/*
+      # SPA fallback (harmless for hash-routed apps; useful if you switch
+      # to history-mode routing later).
+      - type: rewrite
+        source: /*
+        destination: /index.html

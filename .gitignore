@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+dist/
+.DS_Store
+
+# Build-time artifacts (regenerable; too large for repo)
+backend/data/cache/
+backend/data/block_*.zip
+backend/data/baf_*.csv

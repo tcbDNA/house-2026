@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/types.ts","./src/components/districtdetail.tsx","./src/components/districtmap.tsx","./src/components/districttable.tsx","./src/components/nationalsummary.tsx","./src/components/senatemap.tsx","./src/components/senatesummary.tsx","./src/components/senatetable.tsx","./src/components/sliderpanel.tsx"],"version":"5.9.3"}
