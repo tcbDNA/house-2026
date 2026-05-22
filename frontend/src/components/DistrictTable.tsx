@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { partyColorClass, partyTag, type District } from "../types";
+import { partyColorClass, partyTag, formatProjection, type District } from "../types";
 
 type Props = {
   districts: District[];
@@ -131,7 +131,7 @@ export function DistrictTable({ districts, onPick }: Props) {
                 </td>
                 <td className="px-2 py-1 text-right font-mono">{d.margin_2024?.toFixed(1)}</td>
                 <td className={`px-2 py-1 text-right font-mono ${bucket(d.projection)}`}>
-                  {d.projection > 0 ? "+" : ""}{d.projection.toFixed(1)}
+                  {formatProjection(d.projection)}
                 </td>
                 <td className={`px-2 py-1 text-right font-mono text-xs ${d.demo_shift > 0 ? "text-blue-700" : d.demo_shift < 0 ? "text-red-700" : "text-slate-400"}`}>
                   {d.demo_shift > 0 ? "+" : ""}{d.demo_shift.toFixed(1)}

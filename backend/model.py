@@ -48,22 +48,23 @@ TOSSUP_THRESHOLD = 3.0
 # https://catalist.us/whathappened2024/  (Catalist_What_Happened_2024_Public_National_Crosstabs_2025_05_19.xlsx)
 # margin = 2 * D_two_way_share - 100.  Nonwhite_college / nonwhite_non_college
 # are share-weighted aggregates of Black / Latino / AAPI / Other cells.
-# Catalist 2022 House popular-vote margins. Using the prior-midterm cycle as
-# the "zero point" since 2026 is also a midterm; parking a slider here means
-# "this group voted the same way they did in 2022."
+# Catalist 2024 "What Happened" national-crosstabs D-R margins. Used as the
+# slider zero-point to match the 2024 presidential baseline the rest of the
+# model is built on. Parking sliders here = "group voted same as 2024";
+# moving a slider models that group voting differently than 2024.
 CATALIST_BASELINES = {
-    "white_nh":               -15.76,
-    "black":                   76.22,
-    "hispanic":                21.64,
-    "asian":                   24.80,
-    "white_college":           -2.20,
-    "white_non_college":      -26.50,
-    "nonwhite_college":        43.70,
-    "nonwhite_non_college":    41.78,
-    "under_30":                29.62,
-    "age_30_44":               14.26,
-    "age_45_64":               -9.24,
-    "age_65_plus":            -12.16,
+    "white_nh":               -15.24,   # Harris 42.38% two-way
+    "black":                   70.80,   # 85.40%
+    "hispanic":                 8.46,   # 54.23%
+    "asian":                   21.38,   # 60.69%
+    "white_college":            1.90,   # 50.95%
+    "white_non_college":      -27.28,   # 36.36%
+    "nonwhite_college":        36.82,   # share-weighted B/L/A/O college cells
+    "nonwhite_non_college":    31.85,   # share-weighted B/L/A/O non-college cells
+    "under_30":                10.52,   # 18-29: 55.26%
+    "age_30_44":                4.70,   # 52.35%
+    "age_45_64":               -8.64,   # 45.68%
+    "age_65_plus":             -4.02,   # 47.99%
 }
 EPSILON = 1e-6   # for "is this slider parked at the baseline" checks
 
@@ -127,7 +128,7 @@ def project(
     bundle: DataBundle,
     environment: float = 5.0,
     sliders: dict[str, float] | None = None,
-    trend_discount: float = 1.0,
+    trend_discount: float = 0.5,
 ) -> dict:
     """Run a scenario.
 
@@ -138,7 +139,7 @@ def project(
     sliders : dict[str, float] | None
         Per-group absolute D-R margins. Per-district shifts are computed as
         deltas from CATALIST_BASELINES.
-    trend_discount : float, default 1.0
+    trend_discount : float, default 0.5
         Multiplier applied to ``rel_trend`` before combining into the projection.
         1.0 = full trend persistence (the default; preserves prior behavior).
         0.5 = partial mean-reversion. 0.0 = trends fully ignored.

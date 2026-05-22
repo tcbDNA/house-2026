@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { District, SenateSeat } from "../types";
+import { formatProjection } from "../types";
 
 // Common row shape — District and SenateSeat both expose these fields.
 type BucketRow = { id: string; incumbent: string | null; party: string; projection: number };
@@ -88,7 +89,7 @@ export function BucketTable({ districts, seats, onPick, title = "Competitive sea
                   <button
                     key={d.id}
                     onClick={() => onPick?.(d.id)}
-                    title={`${d.id} · ${d.incumbent ?? ""} · ${d.projection > 0 ? "+" : ""}${d.projection.toFixed(1)}`}
+                    title={`${d.id} · ${d.incumbent ?? ""} · ${formatProjection(d.projection)}`}
                     className={`font-mono text-[11px] px-1.5 py-0.5 rounded hover:opacity-80 ${
                       d.party === "(D)" ? "bg-blue-700 text-white"
                       : d.party === "(R)" ? "bg-red-700 text-white"

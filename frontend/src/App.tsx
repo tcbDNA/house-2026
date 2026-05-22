@@ -4,14 +4,13 @@ import { NationalSummary } from "./components/NationalSummary";
 import { DistrictTable } from "./components/DistrictTable";
 import { BucketTable } from "./components/BucketTable";
 import { Methodology } from "./components/Methodology";
-import { DistrictDetail } from "./components/DistrictDetail";
 import { DistrictMap } from "./components/DistrictMap";
 import { SenateSummaryView } from "./components/SenateSummary";
 import { SenateTable } from "./components/SenateTable";
 import { SenateMap } from "./components/SenateMap";
 import { CountyMap } from "./components/CountyMap";
 import { fetchProjection, fetchSenate } from "./api";
-import { CATALIST_BASELINES, DEFAULT_SLIDERS, SLIDER_DEFS, type District, type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues } from "./types";
+import { CATALIST_BASELINES, DEFAULT_SLIDERS, SLIDER_DEFS, type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues } from "./types";
 
 type Tab = "house" | "senate";
 export type DemoFrame = "race" | "race_edu";
@@ -19,8 +18,8 @@ export type DemoFrame = "race" | "race_edu";
 function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscount: number; frame: DemoFrame } {
   const p = new URLSearchParams(window.location.search);
   const tab: Tab = window.location.hash === "#senate" ? "senate" : "house";
-  // Default D+6.3 = current generic-ballot average per Silver Bulletin polling avg
-  const env = Number(p.get("env") ?? "6.3");
+  // Default D+7.4 = current generic-ballot average per VoteHub polling avg
+  const env = Number(p.get("env") ?? "7.4");
   const out: SliderValues = { ...DEFAULT_SLIDERS };
   for (const s of SLIDER_DEFS) {
     const v = p.get(s.key);
@@ -33,12 +32,12 @@ function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscoun
     if (!Number.isNaN(tv) && tv >= 0 && tv <= 1) trendDiscount = tv;
   }
   const frame: DemoFrame = p.get("frame") === "race_edu" ? "race_edu" : "race";
-  return { tab, env: Number.isNaN(env) ? 6.3 : env, sliders: out, trendDiscount, frame };
+  return { tab, env: Number.isNaN(env) ? 7.4 : env, sliders: out, trendDiscount, frame };
 }
 
 function writeUrl(tab: Tab, env: number, sliders: SliderValues, trendDiscount: number, frame: DemoFrame) {
   const p = new URLSearchParams();
-  if (env !== 6.3) p.set("env", String(env));
+  if (env !== 7.4) p.set("env", String(env));
   for (const s of SLIDER_DEFS) {
     if (sliders[s.key] !== CATALIST_BASELINES[s.key]) {
       p.set(s.key, String(sliders[s.key]));
@@ -61,8 +60,8 @@ export default function App() {
   const [frame, setFrame] = useState<DemoFrame>(initial.frame);
   const [houseResult, setHouseResult] = useState<ProjectResponse | null>(null);
   const [senateResult, setSenateResult] = useState<SenateResponse | null>(null);
-  const [picked, setPicked] = useState<District | null>(null);
   const [pickedState, setPickedState] = useState<string | null>(null);
+  const [pickedDistrictCounties, setPickedDistrictCounties] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
@@ -93,7 +92,7 @@ export default function App() {
   }, [tab, environment, sliders, trendDiscount, frame, run]);
 
   const onSlider = (k: SliderKey, v: number) => setSliders((cur) => ({ ...cur, [k]: v }));
-  const onReset = () => { setEnvironment(6.3); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
+  const onReset = () => { setEnvironment(7.4); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
 
   // Switching frames: snap the inactive axis's sliders back to baseline so
   // they contribute zero to demographic_shift. Keeps the model honest about
@@ -128,10 +127,7 @@ export default function App() {
   return (
     <div className="min-h-screen p-3 sm:p-6 max-w-7xl mx-auto">
       <header className="mb-3">
-        <h1 className="text-2xl font-bold">2026 Scenario Tool</h1>
-        <p className="text-sm text-slate-500">
-          Demographic-driven projection model
-        </p>
+        <h1 className="text-2xl font-bold">2026 US Midterm Election Predictions</h1>
       </header>
 
       <div className="flex gap-1 border-b mb-4">
@@ -168,17 +164,17 @@ export default function App() {
                 <DistrictMap
                   districts={houseResult.districts}
                   uniformSwing={houseResult.uniform_swing}
-                  onPick={(id) => setPicked(houseResult.districts.find((d) => d.district === id) ?? null)}
-                  selected={picked?.district ?? null}
+                  onPick={(id) => setPickedDistrictCounties(id)}
+                  selected={pickedDistrictCounties}
                 />
               </div>
               <BucketTable
                 districts={houseResult.districts}
-                onPick={(id) => setPicked(houseResult.districts.find((d) => d.district === id) ?? null)}
+                onPick={(id) => setPickedDistrictCounties(id)}
               />
               <DistrictTable
                 districts={houseResult.districts}
-                onPick={(id) => setPicked(houseResult.districts.find((d) => d.district === id) ?? null)}
+                onPick={(id) => setPickedDistrictCounties(id)}
               />
             </>
           )}
@@ -205,7 +201,16 @@ export default function App() {
         </div>
       </div>
 
-      <DistrictDetail district={picked} onClose={() => setPicked(null)} />
+      {pickedDistrictCounties && (
+        <CountyMap
+          state={pickedDistrictCounties.split("-")[0]}
+          district={pickedDistrictCounties}
+          environment={environment}
+          sliders={sliders}
+          trendDiscount={trendDiscount}
+          onClose={() => setPickedDistrictCounties(null)}
+        />
+      )}
       {pickedState && (() => {
         const seat = senateResult?.seats.find((s) => s.state === pickedState);
         const indWinner = !!seat && seat.projection > 0

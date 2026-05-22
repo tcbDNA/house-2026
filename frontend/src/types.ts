@@ -55,21 +55,24 @@ export const CATALIST_ELECTORATE_SHARES_AGE: Record<
 // Catalist 2024: two-way D 53.53% → margin +7.06.
 export const OTHER_RACE_BASELINE = 7.06;
 
-// Catalist 2022 baselines — the model's "zero point" is now the prior midterm
-// (matching 2026 cycle type). Parking sliders here reproduces 2022.
+// Catalist 2024 "What Happened" published D-R margins — the slider zero-point.
+// Matches the 2024 presidential spine the rest of the model is built on:
+// parking sliders here means "group voted the same as 2024 = zero demographic
+// deviation from the baseline." Moving a slider models that group voting
+// differently than 2024.
 export const CATALIST_BASELINES: SliderValues = {
-  white_nh:               -15.76,
-  black:                   76.22,
-  hispanic:                21.64,
-  asian:                   24.80,
-  white_college:           -2.20,
-  white_non_college:      -26.50,
-  nonwhite_college:        43.70,
-  nonwhite_non_college:    41.78,
-  under_30:                29.62,
-  age_30_44:               14.26,
-  age_45_64:               -9.24,
-  age_65_plus:            -12.16,
+  white_nh:               -15.24,
+  black:                   70.80,
+  hispanic:                 8.46,
+  asian:                   21.38,
+  white_college:            1.90,
+  white_non_college:      -27.28,
+  nonwhite_college:        36.82,
+  nonwhite_non_college:    31.85,
+  under_30:                10.52,
+  age_30_44:                4.70,
+  age_45_64:               -8.64,
+  age_65_plus:             -4.02,
 };
 
 // Per-cycle Catalist D-R margins. Used to populate slider presets so users
@@ -147,6 +150,14 @@ export const DEFAULT_SLIDERS: SliderValues = { ...CATALIST_BASELINES };
 export function formatMargin(v: number): string {
   if (v === 0) return "tie";
   return v > 0 ? `D+${v}` : `R+${-v}`;
+}
+
+// Signed projection like "+1.2" / "-3.4". When the 1-decimal value would round
+// to 0.0, expand to 2 decimals so the sign and direction stay visible.
+export function formatProjection(v: number): string {
+  const digits = Math.abs(v) < 0.05 ? 2 : 1;
+  const sign = v > 0 ? "+" : "";
+  return `${sign}${v.toFixed(digits)}`;
 }
 
 /** Convert a D-R margin into a two-party D% vs R% breakdown (rounded to 0.5).

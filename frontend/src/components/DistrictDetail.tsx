@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import type { District } from "../types";
+import { formatProjection } from "../types";
 import { fetchDistrict } from "../api";
 
-type Props = { district: District | null; onClose: () => void };
+type Props = {
+  district: District | null;
+  onClose: () => void;
+  onViewCounties?: (districtId: string) => void;
+};
 
-export function DistrictDetail({ district, onClose }: Props) {
+export function DistrictDetail({ district, onClose, onViewCounties }: Props) {
   const [detail, setDetail] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
@@ -49,7 +54,17 @@ export function DistrictDetail({ district, onClose }: Props) {
             })()}
             <div className="text-xs text-slate-500 mt-1">Lines: {district.lines}</div>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-700 text-2xl leading-none">×</button>
+          <div className="flex items-center gap-2">
+            {onViewCounties && (
+              <button
+                onClick={() => onViewCounties(district.district)}
+                className="text-xs px-2 py-1 rounded border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 whitespace-nowrap"
+              >
+                View county map
+              </button>
+            )}
+            <button onClick={onClose} className="text-slate-400 hover:text-slate-700 text-2xl leading-none">×</button>
+          </div>
         </div>
 
         <div className="p-4 space-y-4">
@@ -67,7 +82,7 @@ export function DistrictDetail({ district, onClose }: Props) {
               <div>
                 <div className="text-slate-500 text-xs">Projected</div>
                 <div className={`font-mono font-bold ${district.projection > 0 ? "text-blue-700" : "text-red-700"}`}>
-                  {district.projection > 0 ? "+" : ""}{district.projection.toFixed(1)}
+                  {formatProjection(district.projection)}
                 </div>
               </div>
             </div>

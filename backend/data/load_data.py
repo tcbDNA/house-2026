@@ -76,8 +76,16 @@ NAME_ALIASES = {
 # WAR in this candidate's party-perspective (positive = overperform their
 # party's baseline). Set to 0.0 to neutralize.
 WAR_OVERRIDES = {
-    # (district, name) -> war (party-perspective signed value)
+    # (district, name) -> war (party-perspective signed value). Applied to BOTH
+    # incumbents (via apply_recent_war) AND named challengers (via
+    # apply_house_challenger). Each entry must have a documented reason.
     ("AK-AL", "Nick Begich"): 0.0,   # 2024 race vs. Mary Peltola distorts the WAR
+    # Ojeda's only race is 2018 WV-03 — out-of-window under any reasonable
+    # blend (the auto-match already rejects it on state mismatch), single
+    # data point, and the WV-2018 context (coalfield-D pitch, teacher strike,
+    # biographical appeal) doesn't transfer to NC-09 2026. Explicit zero
+    # documents the model's already-implicit conclusion.
+    ("NC-09", "Richard Ojeda"): 0.0,
 }
 
 # Incumbent column overrides for cases v20 missed.
@@ -102,6 +110,28 @@ INCUMBENT_OVERRIDES = {
     # TX-18 has a D primary runoff: Al Green (moved from TX-09 post-redraw)
     # vs Christian Menefee (sitting after Jackson Lee).
     "TX-18": {"incumbent": "(open, D primary: Green vs Menefee)", "party": "(D)"},
+    # === 2026-05-19 primaries ===
+    # KY-04: Massie lost R primary to Trump-endorsed Ed Gallrein. No federal WAR for Gallrein;
+    # is_incumbent=False zeros incumbency_adj.
+    "KY-04": {"incumbent": "Ed Gallrein", "party": "(R)", "is_incumbent": False},
+    # GA-01: open (Carter→Senate). Jim Kingston won R primary; D side in runoff.
+    "GA-01": {"incumbent": "Jim Kingston", "party": "(R)", "is_incumbent": False},
+    # GA-10: open (Collins→Senate). Houston Gaines won R primary.
+    "GA-10": {"incumbent": "Houston Gaines", "party": "(R)", "is_incumbent": False},
+    # GA-11: open (Loudermilk retiring). Both R and D primaries headed to June 16 runoff.
+    "GA-11": {"incumbent": "(open, Loudermilk retiring)", "party": "(R)"},
+    # GA-13: open (David Scott died April 2026). Jasmine Clark won D primary;
+    # Chavez unopposed R. Heavily D seat.
+    "GA-13": {"incumbent": "Jasmine Clark", "party": "(D)", "is_incumbent": False},
+    # GA-14: MTG resigned Jan 2026; Clay Fuller won April 7 special by 12pts.
+    # is_incumbent=False: only ~6 weeks in office, no full structural incumbency advantage.
+    "GA-14": {"incumbent": "Clay Fuller", "party": "(R)", "is_incumbent": False},
+    # PA-03: open (Evans retired). Rabb (D) won contested D primary;
+    # R primary had only a write-in (William Small) — deep blue Philadelphia seat.
+    "PA-03": {"incumbent": "Chris Rabb", "party": "(D)", "is_incumbent": False},
+    # TX-23: open after Gonzales dropped out. Herrera (R) is the nominee;
+    # is_incumbent=False (no federal record).
+    "TX-23": {"incumbent": "Brandon Herrera", "party": "(R)", "is_incumbent": False},
 }
 
 # Known House challengers (primaries finished / well-established candidates).
@@ -136,11 +166,36 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "AR-02": {"name": "Chris Jones", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "AR-03": {"name": "Robb Ryerse", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "AR-04": {"name": "James Russell", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    # === Georgia ===
-    "GA-02": {"name": "Matt Day", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    "GA-04": {"name": "James Duffe", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    "GA-05": {"name": "John Salvesen", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    "GA-14": {"name": "Shawn Harris", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
+    # === Georgia (primaries 2026-05-19) ===
+    "GA-02": {"name": "Matt Day", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "GA-03": {"name": "Maura Keller", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "GA-04": {"name": "Jim Duffie", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "GA-05": {"name": "John Salvesen", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "GA-06": {"name": "Kevin Martin", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "GA-08": {"name": "Kelly Esti", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "GA-09": {"name": "Caitlyn Gegen", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "GA-10": {"name": "Pamela Delancy", "party": "(D)", "war": 0.0, "note": "2026 D nominee (open seat — Collins→Senate)"},
+    "GA-13": {"name": "Jonathan Chavez", "party": "(R)", "war": 0.0, "note": "2026 R nominee (unopposed); open seat after Scott's death"},
+    "GA-14": {"name": "Shawn Harris", "party": "(D)", "war": 0.0, "note": "2026 D nominee; also lost April special to Fuller 44-56"},
+    # === Kentucky (primaries 2026-05-19) ===
+    "KY-04": {"name": "Melissa Strange", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Gallrein in post-Massie open seat)"},
+    # === Pennsylvania (primaries 2026-05-19) ===
+    "PA-01": {"name": "Bob Harvie", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Fitzpatrick); Bucks Co commissioner"},
+    "PA-02": {"name": "Jessica Arriaga", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Boyle)"},
+    "PA-04": {"name": "Aurora Stuski", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Dean)"},
+    "PA-05": {"name": "Nick Manganaro", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Scanlon)"},
+    "PA-06": {"name": "Marty Young", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Houlahan)"},
+    "PA-07": {"name": "Bob Brooks", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Mackenzie); former firefighter / union president"},
+    "PA-08": {"name": "Paige Cognetti", "party": "(D)", "war": 0.0, "note": "2026 D nominee unopposed (challenger to Bresnahan); Scranton mayor"},
+    "PA-09": {"name": "Rachel Wallace", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Meuser)"},
+    "PA-10": {"name": "Janelle Stelson", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Perry); ran 2024 PA-10 — auto-WAR"},
+    "PA-11": {"name": "Nancy Mannion", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Smucker)"},
+    "PA-12": {"name": "James Hayes", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Summer Lee)"},
+    "PA-13": {"name": "Beth Farnham", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Joyce); 2022/2024 candidate"},
+    "PA-14": {"name": "Alan Bradstock", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Reschenthaler)"},
+    "PA-15": {"name": "Ray Bilger", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to GT Thompson)"},
+    "PA-16": {"name": "Justin Wagner", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Mike Kelly)"},
+    "PA-17": {"name": "Tony Guy", "party": "(R)", "war": 0.0, "note": "2026 R nominee (Beaver Co Sheriff; challenger to Deluzio)"},
     # === Illinois ===
     "IL-01": {"name": "Christian Maxwell", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "IL-02": {"name": "Michael Noack", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
@@ -204,7 +259,11 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "OH-14": {"name": "Maria Jukic", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "OH-15": {"name": "Don Leonard", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     # === Oregon ===
+    "OR-01": {"name": "Barbara J. Kahl", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Bonamici)"},
+    "OR-02": {"name": "Chris Beck", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Bentz); former OR state rep"},
     "OR-03": {"name": "Loran Ayles", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
+    "OR-04": {"name": "Monique DeSpain", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Hoyle); also 2024 R nominee — auto-WAR"},
+    "OR-05": {"name": "Patti Adair", "party": "(R)", "war": 0.0, "note": "2026 R nominee (Deschutes Co commissioner; challenger to Bynum)"},
     "OR-06": {"name": "David Russ", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     # === Texas ===
     "TX-02": {"name": "Shaun Finnie", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
@@ -221,6 +280,7 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "TX-20": {"name": "Edgardo Baez", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-21": {"name": "Kristin Hook", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-22": {"name": "Marquette Greene-Scott", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
+    "TX-23": {"name": "Katy Padilla Stout", "party": "(D)", "war": 0.0, "note": "2026 D nominee (>50% in initial primary, no runoff)"},
     "TX-26": {"name": "Steven Shook", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-27": {"name": "Tanya Lloyd", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-28": {"name": "Tano Tijerina", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
@@ -274,21 +334,38 @@ RAW_WAR_CSV = DATA_DIR / "raw_war.csv"
 # Time-weighting for multi-cycle WAR blend. Per the WAR creator's guidance:
 # blend the last three cycles 0.50 / 0.30 / 0.20; zero-fill missing cycles to
 # regress toward the mean (so a 1-cycle candidate is heavily mean-reverted).
+# Recency weights for the WAR blend. Per-record windowing: each candidate's
+# records are sorted by year (most recent first), and the top 3 slot into
+# 0.50 / 0.30 / 0.20 — a record's weight depends on its rank among the
+# candidate's records of its own office, not the calendar year. This keeps
+# recent races from being discarded when the candidate moves between offices.
 WAR_WEIGHTS = (0.50, 0.30, 0.20)
 
-# Skip these cycles entirely when building the WAR history index.
-WAR_DROP_YEARS: set[int] = {2014}
+# Sample-size shrinkage. Candidates with fewer than 3 surviving records have
+# their blended WAR shrunk toward zero by n/(n+k) / (3/(3+k)), normalized so
+# 3-cycle candidates are unaffected.
+WAR_SHRINK_K = 1.0
+
+
+def _shrinkage(n: int) -> float:
+    """Normalized sample-size factor. n=0→0; n=3→1.0; smaller n → smaller factor."""
+    if n <= 0:
+        return 0.0
+    return (n / (n + WAR_SHRINK_K)) / (3 / (3 + WAR_SHRINK_K))
 
 
 def time_weighted_war(records: list[dict]) -> float:
-    """Blend up to 3 most-recent cycle records using WAR_WEIGHTS.
-    `records` must be sorted by year desc. Missing slots = 0 (mean regression).
-    Each record's `war` is in the candidate's own party-perspective."""
+    """Per-record positional blend. `records` is the candidate's House cycle
+    history, sorted year-desc; top 3 slot at 0.50 / 0.30 / 0.20 by recency
+    rank. Sample-size shrinkage applies (3-cycle candidates unaffected;
+    n=1 shrinks to 0.667× of blend; missing slots contribute 0)."""
     s = 0.0
+    n = 0
     for i, w in enumerate(WAR_WEIGHTS):
         if i < len(records):
             s += w * records[i]["war"]
-    return s
+            n += 1
+    return s * _shrinkage(min(n, 3))
 
 
 def load_recent_war() -> tuple[dict, dict]:
@@ -311,8 +388,8 @@ def load_recent_war() -> tuple[dict, dict]:
                 sortable = float(r["Sortable"])
             except (ValueError, KeyError, TypeError):
                 continue
-            if year in WAR_DROP_YEARS:
-                continue
+            # No year-based filter: the term-length calendar window in
+            # time_weighted_war naturally excludes pre-2020 House cycles.
             geo = (r.get("Geography") or "").strip()
             state = geo.split("-")[0] if "-" in geo else geo
             for party_letter, name_field in (("D", "Democrat"), ("R", "Republican")):
@@ -434,6 +511,17 @@ def apply_house_challenger(row: dict, primary: dict, fallback: dict) -> dict:
     party_letter = "R" if party == "(R)" else "D"
 
     name = ch["name"]
+    # Manual override short-circuits all lookup logic (e.g. Ojeda NC-09 → 0).
+    if (district, name) in WAR_OVERRIDES:
+        war_signed = float(WAR_OVERRIDES[(district, name)])
+        challenger_adj = +war_signed if party != "(R)" else -war_signed
+        row["challenger"] = name
+        row["challenger_party"] = party
+        row["challenger_war"] = round(abs(war_signed), 2)
+        row["challenger_war_year"] = None
+        row["challenger_war_source"] = "manual_override"
+        row["challenger_adj"] = round(challenger_adj, 2)
+        return row
     war_year = None
     war_source = None
 

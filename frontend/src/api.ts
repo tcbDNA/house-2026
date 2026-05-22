@@ -74,6 +74,35 @@ export async function fetchCountyGeoJSON(state: string): Promise<any> {
   return res.json();
 }
 
+export type DistrictCountyResponse = {
+  district: string;
+  state: string;
+  district_projection: number;
+  candidate_adj: number;
+  reconcile: number;
+  counties: Array<CountyResponse["counties"][number] & {
+    overlap_fraction: number;
+    fully_contained: boolean;
+  }>;
+};
+
+export async function fetchDistrictCounties(
+  districtId: string,
+  environment: number,
+  sliders: SliderValues,
+  trendDiscount: number,
+  signal?: AbortSignal,
+): Promise<DistrictCountyResponse> {
+  const res = await fetch(`/api/district/${districtId}/counties`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount }),
+    signal,
+  });
+  if (!res.ok) throw new Error(`district county overlay failed: ${res.status}`);
+  return res.json();
+}
+
 export async function fetchSenate(
   environment: number,
   sliders: SliderValues,

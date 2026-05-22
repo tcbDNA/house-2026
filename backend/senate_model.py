@@ -72,11 +72,11 @@ def project(
     bundle: SenateBundle,
     environment: float = 5.0,
     sliders: dict[str, float] | None = None,
-    trend_discount: float = 1.0,
+    trend_discount: float = 0.5,
 ) -> dict:
     """`trend_discount` multiplies ``state_trend`` before adding it in.
-    1.0 = full trend persistence (default), 0.5 = partial mean-reversion,
-    0.0 = trends ignored entirely.
+    0.5 = partial mean-reversion (default, matches district rel_trend),
+    1.0 = full trend persistence, 0.0 = trends ignored entirely.
     """
     sliders = dict(sliders or {})
     for k in ALL_SLIDERS:

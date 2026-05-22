@@ -55,7 +55,10 @@ NAME_TO_USPS = {v: k for k, v in STATE_NAMES.items()}
 # {state: [seat1, seat2]} only for special elections.
 SEATS_2026 = {
     # === Class II (regular term ends Jan 2027) ===
-    "AL": {"incumbent": "(open, Tuberville→gov)", "party": "(R)", "retiring": True, "type": "regular"},
+    "AL": {"incumbent": "(open, Tuberville→gov)", "party": "(R)", "retiring": True, "type": "regular",
+           "primary_unresolved": True,
+           "note": "Open Tuberville seat. Both R and D primaries headed to June 16 runoff "
+                   "(R: Barry Moore advances + TBD; D: Larriett vs Wess)."},
     "AK": {"incumbent": "Dan Sullivan", "party": "(R)", "retiring": False, "type": "regular"},
     "AR": {"incumbent": "Tom Cotton", "party": "(R)", "retiring": False, "type": "regular"},
     "CO": {"incumbent": "John Hickenlooper", "party": "(D)", "retiring": False, "type": "regular"},
@@ -86,10 +89,9 @@ SEATS_2026 = {
     "SC": {"incumbent": "Lindsey Graham", "party": "(R)", "retiring": False, "type": "regular"},
     "SD": {"incumbent": "Mike Rounds", "party": "(R)", "retiring": False, "type": "regular"},
     "TN": {"incumbent": "Bill Hagerty", "party": "(R)", "retiring": False, "type": "regular"},
-    "TX": {"incumbent": "John Cornyn", "party": "(R)", "retiring": False, "type": "regular",
-           "primary_unresolved": True,
-           "note": "Cornyn vs Paxton R primary headed to runoff; nominee uncertain. "
-                   "WAR + incumbency suppressed until runoff resolves."},
+    "TX": {"incumbent": "(open, Cornyn lost primary to Paxton)", "party": "(R)", "retiring": True, "type": "regular",
+           "note": "Trump endorsed Paxton ahead of the runoff; runoff effectively called for Paxton. "
+                   "Cornyn incumbency dropped; Paxton has no House/Senate record so no WAR overlay."},
     "VA": {"incumbent": "Mark Warner", "party": "(D)", "retiring": False, "type": "regular"},
     "WV": {"incumbent": "Shelley Moore Capito", "party": "(R)", "retiring": False, "type": "regular"},
     "WY": {"incumbent": "(open, Lummis retiring)", "party": "(R)", "retiring": True, "type": "regular"},
@@ -165,6 +167,13 @@ CHALLENGERS = {
            "note": "Open Lummis seat. Sitting WY-AL rep; auto-WAR from 2024 House."},
     "SC": {"name": "Annie Andrews", "party": "(D)", "war": 0.0,
            "note": "2026 D Senate nominee (challenger to Graham)."},
+    # === 2026-05-19 primaries ===
+    "KY": {"name": "Charles Booker", "party": "(D)", "war": 0.0,
+           "co_nominee": "Andy Barr", "co_nominee_party": "(R)",
+           "note": "Open McConnell seat. Booker: 2026 D nominee (won primary over McGrath). "
+                   "Barr: 2026 R nominee (Trump-endorsed; sitting KY-06 rep, auto-WAR from House)."},
+    "ID": {"name": "David Roth", "party": "(D)", "war": 0.0,
+           "note": "2026 D nominee (won 63% in D primary); no federal-race record."},
 }
 
 
@@ -242,13 +251,29 @@ def _clean_name(raw: str) -> str:
     return s
 
 
-# Time-weighting for multi-cycle WAR blend; matches load_data.WAR_WEIGHTS.
+# Recency weights for the WAR blend. Per-record windowing groups a candidate's
+# records by office (House / Senate / Governor); within each office, records
+# are sorted year-desc and the top 3 slot at 0.50 / 0.30 / 0.20. The candidate's
+# most recent race of any kind isn't discarded just because the office they're
+# now seeking has a different term length.
 WAR_WEIGHTS = (0.50, 0.30, 0.20)
 
-# Drop all cycles from this set of years from the WAR blend. 2014 races are
-# too old + the partisan environment was idiosyncratic enough that treating
-# them as 20-30% of a current candidate's personal vote signal misleads.
-WAR_DROP_YEARS: set[int] = {2014}
+# Sample-size shrinkage (matches load_data._shrinkage).
+WAR_SHRINK_K = 1.0
+
+# Specific (year, state, name) cycles to exclude from the WAR blend. Use when
+# a particular race was so non-competitive that its WAR is misleading data.
+WAR_CYCLE_EXCLUSIONS: set[tuple[int, str, str]] = {
+    # Collins 2014 vs Shenna Bellows: 68%-31% blowout (R+38) in a non-competitive
+    # race. Including this would inflate her personal-vote signal.
+    (2014, "ME", "Susan Collins"),
+}
+
+
+def _shrinkage(n: int) -> float:
+    if n <= 0:
+        return 0.0
+    return (n / (n + WAR_SHRINK_K)) / (3 / (3 + WAR_SHRINK_K))
 
 
 # Cross-chamber discount applied to non-federal cycles (Governor) when they
@@ -257,19 +282,60 @@ WAR_DROP_YEARS: set[int] = {2014}
 # nationalize.
 GOV_CROSS_CHAMBER_DISCOUNT = 0.5
 
+# Per-candidate exemption from the cross-chamber discount. Candidates listed
+# here get FULL weight (1.0×) on their governor cycles instead of 0.5×.
+# Each entry must be justified in the methodology doc. Empty for now — Cooper
+# was considered but removed for consistency with the Beshear case (off-year
+# governor races handled by the standard 0.5× discount).
+CROSS_CHAMBER_FULL_WEIGHT: set[str] = set()
 
-def _time_weighted_sortable(records: list[dict]) -> float:
-    """Blend up to 3 most-recent cycles using WAR_WEIGHTS on the universal
-    `sortable` column (R-positive). `records` must be year-desc sorted.
-    Missing slots = 0 (mean regression toward the average candidate).
-    Governor cycles are discounted by GOV_CROSS_CHAMBER_DISCOUNT."""
-    s = 0.0
-    for i, w in enumerate(WAR_WEIGHTS):
-        if i < len(records):
-            r = records[i]
-            d = GOV_CROSS_CHAMBER_DISCOUNT if r.get("chamber") == "Governor" else 1.0
-            s += w * r["sortable"] * d
-    return s
+
+def _time_weighted_sortable(records: list[dict], candidate_name: str = "") -> float:
+    """Per-record windowing for the Senate WAR blend.
+
+    Records are grouped by office (Senate / House / Governor). Within each
+    office group, records are sorted year-desc and the top 3 slot at
+    0.50 / 0.30 / 0.20 by recency rank. Records from a different office than
+    the race being projected (i.e. House or Governor when projecting Senate)
+    take a 0.5× cross-chamber discount; CROSS_CHAMBER_FULL_WEIGHT candidates
+    skip the discount on governor cycles. Per-cycle exclusions filter records
+    before slotting. Sample-size shrinkage applies on total surviving records
+    (capped at 3); 3-cycle candidates are unaffected."""
+    full_weight_gov = candidate_name in CROSS_CHAMBER_FULL_WEIGHT
+
+    # Derive a state code from each record's `geo` field (for exclusion lookup).
+    def state_of(rec: dict) -> str:
+        geo_clean = re.sub(r"\s*\(.*?\)\s*$", "", (rec.get("geo") or "")).strip()
+        geo_clean = re.sub(r"\s+(special election|special|spec|s\.?e\.?)$", "",
+                           geo_clean, flags=re.IGNORECASE).strip()
+        if rec.get("chamber") in ("Senate", "Governor"):
+            return NAME_TO_USPS.get(geo_clean, "")
+        # House: "XX-NN"
+        return geo_clean.split("-")[0] if "-" in geo_clean else ""
+
+    # Filter out per-cycle exclusions, then group by chamber.
+    by_chamber: dict[str, list[dict]] = {}
+    for r in records:
+        if (r["year"], state_of(r), candidate_name) in WAR_CYCLE_EXCLUSIONS:
+            continue
+        by_chamber.setdefault(r.get("chamber") or "", []).append(r)
+    for lst in by_chamber.values():
+        lst.sort(key=lambda r: r["year"], reverse=True)
+
+    raw = 0.0
+    n_total = 0
+    for chamber, lst in by_chamber.items():
+        if chamber == "Senate":
+            d = 1.0
+        elif chamber == "Governor":
+            d = 1.0 if full_weight_gov else GOV_CROSS_CHAMBER_DISCOUNT
+        else:  # House (and any other cross-chamber)
+            d = GOV_CROSS_CHAMBER_DISCOUNT
+        for i, w in enumerate(WAR_WEIGHTS):
+            if i < len(lst):
+                raw += w * lst[i]["sortable"] * d
+                n_total += 1
+    return raw * _shrinkage(min(n_total, 3))
 
 
 def load_all_wars():
@@ -287,8 +353,9 @@ def load_all_wars():
                 sortable = float(r["Sortable"])
             except (ValueError, KeyError, TypeError):
                 continue
-            if year in WAR_DROP_YEARS:
-                continue
+            # No year filter at ingest time: the calendar window in
+            # _time_weighted_sortable picks out the cycles it wants. Per-cycle
+            # exclusions (e.g. Collins 2014) are applied at blend time.
             geo = (r.get("Geography") or "").strip()
             geo_clean = re.sub(r"\s*\(.*?\)\s*$", "", geo).strip()
             # Strip trailing "Special" / "Spec" / "Special Election" markers
@@ -366,7 +433,7 @@ def lookup_war_for_candidate(state, name, party_letter, all_wars):
     recs = find_war(state, name, party_letter, all_wars)
     if not recs:
         return 0.0, None
-    sortable_blend = _time_weighted_sortable(recs)
+    sortable_blend = _time_weighted_sortable(recs, candidate_name=name)
     war_signed = -sortable_blend if party_letter == "D" else +sortable_blend
     return war_signed, recs[0]
 
@@ -409,7 +476,7 @@ def main():
                 recs = find_war(state, inc_name, party_letter, wars)
                 if recs:
                     war_year = recs[0]["year"]
-                    sortable_blend = _time_weighted_sortable(recs)
+                    sortable_blend = _time_weighted_sortable(recs, candidate_name=inc_name)
                     war_signed = -sortable_blend if party_letter == "D" else +sortable_blend
                     war_match = "exact"
             # war_adj is D-positive: +war for D, -war for R

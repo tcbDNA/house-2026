@@ -229,13 +229,13 @@ export function SliderPanel({
             Demographic frame
           </h3>
           <span className="text-[10px] text-slate-400">
-            {frame === "race" ? "race axis" : "race × education"} · default: 2022
+            {frame === "race" ? "race axis" : "race × education"} · default: 2024
           </span>
         </div>
         <div className="flex gap-1">
           {([
-            { key: "race",     label: "Race",         hint: "Adjust by racial group (white-NH / Black / Hispanic / Asian). Defaults parked at Catalist 2022 baselines; race×edu cells stay at 2022." },
-            { key: "race_edu", label: "Race × Edu",   hint: "Adjust by race × education cells (white-college / white-non-college / etc.). Defaults parked at Catalist 2022 baselines; race sliders stay at 2022." },
+            { key: "race",     label: "Race",         hint: "Adjust by racial group (white-NH / Black / Hispanic / Asian). Defaults parked at Catalist 2024 baselines; race×edu cells stay at 2024." },
+            { key: "race_edu", label: "Race × Edu",   hint: "Adjust by race × education cells (white-college / white-non-college / etc.). Defaults parked at Catalist 2024 baselines; race sliders stay at 2024." },
           ] as const).map((opt) => {
             const active = frame === opt.key;
             return (
@@ -255,8 +255,9 @@ export function SliderPanel({
           })}
         </div>
         <div className="text-[10px] text-slate-500 mt-1 italic">
-          Sliders default to Catalist 2022 D-R margins (the prior midterm). Move
-          a slider away from default to model the group voting differently than 2022.
+          Sliders default to Catalist 2024 D-R margins (matching the 2024
+          presidential baseline the rest of the model is built on). Move a slider
+          away from default to model the group voting differently than 2024.
           Only one demographic axis active at a time to avoid double-counting.
         </div>
       </div>

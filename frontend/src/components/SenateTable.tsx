@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { partyColorClass, partyTag, type SenateSeat } from "../types";
+import { partyColorClass, partyTag, formatProjection, type SenateSeat } from "../types";
 
 type Props = {
   seats: SenateSeat[];
@@ -161,7 +161,7 @@ export function SenateTable({ seats, notUpD }: Props) {
                     : "—"}
                 </td>
                 <td className={`px-2 py-1 text-right font-mono ${bucket(s)}`}>
-                  {s.projection > 0 ? "+" : ""}{s.projection.toFixed(1)}
+                  {formatProjection(s.projection)}
                 </td>
                 <td className="px-2 py-1 text-xs">
                   {s.flip === "to_D" && <span className="text-blue-700 font-semibold">→ D</span>}
