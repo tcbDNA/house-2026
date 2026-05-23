@@ -18,8 +18,8 @@ export type DemoFrame = "race" | "race_edu";
 function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscount: number; frame: DemoFrame } {
   const p = new URLSearchParams(window.location.search);
   const tab: Tab = window.location.hash === "#senate" ? "senate" : "house";
-  // Default D+7.4 = current generic-ballot average per VoteHub polling avg
-  const env = Number(p.get("env") ?? "7.4");
+  // Default D+7.5 = current generic-ballot average per VoteHub polling avg
+  const env = Number(p.get("env") ?? "7.5");
   const out: SliderValues = { ...DEFAULT_SLIDERS };
   for (const s of SLIDER_DEFS) {
     const v = p.get(s.key);
@@ -32,12 +32,12 @@ function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscoun
     if (!Number.isNaN(tv) && tv >= 0 && tv <= 1) trendDiscount = tv;
   }
   const frame: DemoFrame = p.get("frame") === "race_edu" ? "race_edu" : "race";
-  return { tab, env: Number.isNaN(env) ? 7.4 : env, sliders: out, trendDiscount, frame };
+  return { tab, env: Number.isNaN(env) ? 7.5 : env, sliders: out, trendDiscount, frame };
 }
 
 function writeUrl(tab: Tab, env: number, sliders: SliderValues, trendDiscount: number, frame: DemoFrame) {
   const p = new URLSearchParams();
-  if (env !== 7.4) p.set("env", String(env));
+  if (env !== 7.5) p.set("env", String(env));
   for (const s of SLIDER_DEFS) {
     if (sliders[s.key] !== CATALIST_BASELINES[s.key]) {
       p.set(s.key, String(sliders[s.key]));
@@ -92,7 +92,7 @@ export default function App() {
   }, [tab, environment, sliders, trendDiscount, frame, run]);
 
   const onSlider = (k: SliderKey, v: number) => setSliders((cur) => ({ ...cur, [k]: v }));
-  const onReset = () => { setEnvironment(7.4); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
+  const onReset = () => { setEnvironment(7.5); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
 
   // Switching frames: snap the inactive axis's sliders back to baseline so
   // they contribute zero to demographic_shift. Keeps the model honest about

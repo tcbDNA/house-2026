@@ -43,7 +43,7 @@ class SliderValues(BaseModel):
 
 
 class ProjectRequest(BaseModel):
-    environment: float = Field(7.4, ge=-20, le=20)
+    environment: float = Field(7.5, ge=-20, le=20)
     sliders: SliderValues = SliderValues()
     # Multiplier on rel_trend (House) / state_trend (Senate). 1.0 = full trend
     # persistence, 0.5 = partial mean-reversion (default), 0.0 = ignore trend.
@@ -64,8 +64,8 @@ def baselines():
 
 @app.get("/api/districts")
 def districts_baseline():
-    """Baseline projection at D+7.4, all sliders at 0."""
-    return project(BUNDLE, environment=7.4)
+    """Baseline projection at D+7.5, all sliders at 0."""
+    return project(BUNDLE, environment=7.5)
 
 
 @app.post("/api/project")
@@ -98,7 +98,7 @@ def senate_health():
 
 @app.get("/api/senate/seats")
 def senate_baseline():
-    return senate.project(SENATE_BUNDLE, environment=7.4)
+    return senate.project(SENATE_BUNDLE, environment=7.5)
 
 
 @app.post("/api/senate/project")
