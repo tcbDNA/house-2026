@@ -8,7 +8,7 @@ export function Methodology() {
           pres_margin_2024 + uniform_swing + rel_trend × 0.5 + WAR_blend + incumbency + challenger + demographic_shift
         </code>
         , where <b>pres_margin_2024</b> is the Harris-Trump margin (D-positive) in
-        that district / state. The national environment defaults to <b>D+7.5</b>{" "}
+        that district / state. The national environment defaults to <b>D+7.3</b>{" "}
         (current generic-ballot average per{" "}
         <a className="underline" href="https://votehub.com" target="_blank" rel="noreferrer">VoteHub</a>
         ); change it via the slider. <b>Uniform swing</b> = environment minus the 2024
