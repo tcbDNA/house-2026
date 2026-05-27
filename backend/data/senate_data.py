@@ -90,7 +90,7 @@ SEATS_2026 = {
     "SD": {"incumbent": "Mike Rounds", "party": "(R)", "retiring": False, "type": "regular"},
     "TN": {"incumbent": "Bill Hagerty", "party": "(R)", "retiring": False, "type": "regular"},
     "TX": {"incumbent": "(open, Cornyn lost primary to Paxton)", "party": "(R)", "retiring": True, "type": "regular",
-           "note": "Trump endorsed Paxton ahead of the runoff; runoff effectively called for Paxton. "
+           "note": "Paxton officially defeated Cornyn in the R runoff. "
                    "Cornyn incumbency dropped; Paxton has no House/Senate record so no WAR overlay."},
     "VA": {"incumbent": "Mark Warner", "party": "(D)", "retiring": False, "type": "regular"},
     "WV": {"incumbent": "Shelley Moore Capito", "party": "(R)", "retiring": False, "type": "regular"},
@@ -154,7 +154,10 @@ CHALLENGERS = {
     "SD": {"name": "Julian Beaudion", "party": "(D)", "war": 0.0,
            "note": "2026 D nominee per Wikipedia"},
     "TX": {"name": "James Talarico", "party": "(D)", "war": 0.0,
-           "note": "2026 D nominee per Wikipedia"},
+           "co_nominee": "Ken Paxton", "co_nominee_party": "(R)",
+           "note": "Open R seat (Cornyn lost primary). Talarico: 2026 D nominee. "
+                   "Paxton: 2026 R nominee, defeated Cornyn in runoff; "
+                   "no federal-race record so no WAR overlay."},
     "WV": {"name": "Rachel Fetty Anderson", "party": "(D)", "war": 0.0,
            "note": "2026 D nominee per Wikipedia"},
     "NH": {"name": "Chris Pappas", "party": "(D)", "war": 0.0,
