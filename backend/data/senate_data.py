@@ -270,6 +270,10 @@ WAR_CYCLE_EXCLUSIONS: set[tuple[int, str, str]] = {
     # Collins 2014 vs Shenna Bellows: 68%-31% blowout (R+38) in a non-competitive
     # race. Including this would inflate her personal-vote signal.
     (2014, "ME", "Susan Collins"),
+    # Sullivan 2014 vs Mark Begich: raw_war shows D+18.8 because AK pres lean was
+    # ~R+15 but the Senate race was a 48-46 squeaker. The "personal vote" extracted
+    # here reflects Begich's incumbency, not Sullivan's underperformance.
+    (2014, "AK", "Dan Sullivan"),
 }
 
 
