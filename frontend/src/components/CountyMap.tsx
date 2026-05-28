@@ -417,9 +417,15 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
                 </div>
                 <div className="text-xs mt-1">
                   <span className="text-slate-500">Statewide estimate: </span>
-                  <span className="text-blue-700 font-mono">{summary.d_total.toLocaleString()} D</span>
+                  <span className="text-blue-700 font-mono">
+                    {summary.d_total.toLocaleString()} D
+                    {summary.turnout_total > 0 && ` (${(100 * summary.d_total / summary.turnout_total).toFixed(1)}%)`}
+                  </span>
                   <span className="text-slate-400"> vs </span>
-                  <span className="text-red-700 font-mono">{summary.r_total.toLocaleString()} R</span>
+                  <span className="text-red-700 font-mono">
+                    {summary.r_total.toLocaleString()} R
+                    {summary.turnout_total > 0 && ` (${(100 * summary.r_total / summary.turnout_total).toFixed(1)}%)`}
+                  </span>
                   <span className={`ml-2 font-mono font-semibold ${summary.state_margin > 0 ? "text-blue-700" : summary.state_margin < 0 ? "text-red-700" : "text-slate-700"}`}>
                     ({summary.state_margin > 0 ? "D+" : "R+"}{Math.abs(summary.state_margin).toFixed(1)})
                   </span>

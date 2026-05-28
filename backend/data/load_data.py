@@ -303,8 +303,6 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
               "note": "2024 rematch vs Crane — auto-WAR from 2024 AZ-02"},
     "IA-01": {"name": "Christina Bohannan", "party": "(D)", "war": 0.0,
               "note": "2024 rematch vs Miller-Meeks — auto-WAR from 2024 IA-01"},
-    "FL-13": {"name": "Whitney Fox", "party": "(D)", "war": 0.0,
-              "note": "2024 rematch vs Luna — auto-WAR from 2024 FL-13"},
     "VA-02": {"name": "Elaine Luria", "party": "(D)", "war": 0.0,
               "note": "former VA-02 rep (2019-23), comeback vs Kiggans — auto-WAR from prior runs"},
     "PA-10": {"name": "Janelle Stelson", "party": "(D)", "war": 0.0,
