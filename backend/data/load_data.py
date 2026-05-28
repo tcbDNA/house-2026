@@ -119,6 +119,22 @@ INCUMBENT_OVERRIDES = {
     "TX-35": {"incumbent": "Johnny Garcia", "party": "(D)", "is_incumbent": False},
     # TX-38: open (Hunt→Senate). Bonck won R runoff over deZevallos.
     "TX-38": {"incumbent": "Jon Bonck", "party": "(R)", "is_incumbent": False},
+    # TX-08: open (Luttrell retiring). Steinmann won R primary outright in March.
+    "TX-08": {"incumbent": "Jessica Steinmann", "party": "(R)", "is_incumbent": False},
+    # TX-09: SB4 redrew this from a D coalition district into an R-leaning seat
+    # (Trump won the new lines by ~12pts). Green moved to TX-18. Mealer won R runoff.
+    "TX-09": {"incumbent": "Alex Mealer", "party": "(R)", "is_incumbent": False},
+    # TX-10: open (McCaul retiring). Gober won R primary outright in March.
+    "TX-10": {"incumbent": "Chris Gober", "party": "(R)", "is_incumbent": False},
+    # TX-21: open (Roy→AG). Teixeira (Mark, former MLB) won R primary.
+    "TX-21": {"incumbent": "Mark Teixeira", "party": "(R)", "is_incumbent": False},
+    # TX-22: open (Nehls retiring). Trever Nehls (twin brother) won R primary.
+    "TX-22": {"incumbent": "Trever Nehls", "party": "(R)", "is_incumbent": False},
+    # TX-30: open (Crockett→Senate). Haynes won D primary outright in March.
+    "TX-30": {"incumbent": "Frederick Douglas Haynes III", "party": "(D)", "is_incumbent": False},
+    # TX-32: SB4 redrew this from Johnson's D seat into an R-leaning seat
+    # (Johnson moved to TX-33). Yarbrough is R nominee (Binkley withdrew from runoff).
+    "TX-32": {"incumbent": "Jace Yarbrough", "party": "(R)", "is_incumbent": False},
     # === 2026-05-19 primaries ===
     # KY-04: Massie lost R primary to Trump-endorsed Ed Gallrein. No federal WAR for Gallrein;
     # is_incumbent=False zeros incumbency_adj.
@@ -283,7 +299,6 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "TX-06": {"name": "Danny Minton", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-07": {"name": "Alexander Hale", "party": "(R)", "war": 0.0, "note": "2026 R runoff winner (def. Cohen 64-36); challenger to Fletcher"},
     "TX-08": {"name": "Laura Jones", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    "TX-09": {"name": "Alex Mealer", "party": "(R)", "war": 0.0, "note": "2026 R runoff winner (def. Cain 68-32); R nominee for the post-Green TX-09"},
     "TX-10": {"name": "Caitlin Rourk", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-11": {"name": "Claire Reynolds", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-12": {"name": "Angela Rodriguez Prilliman", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
@@ -292,18 +307,21 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "TX-15": {"name": "Bobby Pulido", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-16": {"name": "Adam Bauman", "party": "(R)", "war": 0.0, "note": "2026 R runoff winner (def. Barraza 69-31); challenger to Escobar"},
     "TX-17": {"name": "Casey Shepard", "party": "(D)", "war": 0.0, "note": "2026 D runoff winner (def. Flores 60-40); challenger to Sessions"},
+    "TX-18": {"name": "Ronald Whitfield", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Menefee)"},
     "TX-19": {"name": "Kyle Rable", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Sell in open Arrington seat)"},
     "TX-20": {"name": "Edgardo Baez", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-21": {"name": "Kristin Hook", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-22": {"name": "Marquette Greene-Scott", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-23": {"name": "Katy Padilla Stout", "party": "(D)", "war": 0.0, "note": "2026 D nominee (>50% in initial primary, no runoff)"},
     "TX-24": {"name": "Kevin Burge", "party": "(D)", "war": 0.0, "note": "2026 D runoff winner (def. Ware 78-22); challenger to Van Duyne"},
+    "TX-25": {"name": "Dione Sims", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Williams)"},
     "TX-26": {"name": "Steven Shook", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-27": {"name": "Tanya Lloyd", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-28": {"name": "Tano Tijerina", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-29": {"name": "Martha Fierro", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-30": {"name": "Everett Jackson", "party": "(R)", "war": 0.0, "note": "2026 R runoff winner (def. Daniels 57-43); challenger to open D seat (Crockett→Senate)"},
     "TX-31": {"name": "Justin Early", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
+    "TX-32": {"name": "Dan Barrios", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Yarbrough in SB4-redrawn R-leaning TX-32)"},
     "TX-33": {"name": "Patrick Gillespie", "party": "(R)", "war": 0.0, "note": "2026 R runoff winner (def. Sims 57-43); challenger to Allred"},
     "TX-34": {"name": "Eric Flores", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "TX-35": {"name": "Carlos De La Cruz", "party": "(R)", "war": 0.0, "note": "2026 R runoff winner (def. Lujan 58-42); challenger to Garcia in open D seat"},
