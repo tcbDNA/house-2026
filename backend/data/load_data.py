@@ -135,6 +135,8 @@ INCUMBENT_OVERRIDES = {
     # TX-32: SB4 redrew this from Johnson's D seat into an R-leaning seat
     # (Johnson moved to TX-33). Yarbrough is R nominee (Binkley withdrew from runoff).
     "TX-32": {"incumbent": "Jace Yarbrough", "party": "(R)", "is_incumbent": False},
+    # FL-24: Frederica Wilson retiring; D nominee not yet selected. Safe D Miami seat.
+    "FL-24": {"incumbent": "(open, Wilson retiring)", "party": "(D)"},
     # === 2026-05-19 primaries ===
     # KY-04: Massie lost R primary to Trump-endorsed Ed Gallrein. No federal WAR for Gallrein;
     # is_incumbent=False zeros incumbency_adj.
