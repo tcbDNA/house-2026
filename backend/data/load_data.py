@@ -137,6 +137,10 @@ INCUMBENT_OVERRIDES = {
     "TX-32": {"incumbent": "Jace Yarbrough", "party": "(R)", "is_incumbent": False},
     # FL-24: Frederica Wilson retiring; D nominee not yet selected. Safe D Miami seat.
     "FL-24": {"incumbent": "(open, Wilson retiring)", "party": "(D)"},
+    # LA-06: post-redraw the seat is R-leaning (R+32 pres). Cleo Fields keeps the
+    # incumbent label as a placeholder but is unlikely to run; is_incumbent=False
+    # zeros the +1.7 D incumbency boost that he won't actually carry into a hostile seat.
+    "LA-06": {"incumbent": "Cleo Fields", "party": "(D)", "is_incumbent": False},
     # === 2026-05-19 primaries ===
     # KY-04: Massie lost R primary to Trump-endorsed Ed Gallrein. No federal WAR for Gallrein;
     # is_incumbent=False zeros incumbency_adj.
