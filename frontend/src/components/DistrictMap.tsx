@@ -211,6 +211,22 @@ export function DistrictMap({ districts, uniformSwing, onPick, selected }: Props
         },
       });
 
+      // State boundaries drawn on top — slightly bolder so they read as
+      // higher-order structure than the district lines.
+      map.addSource("states", {
+        type: "geojson",
+        data: "/states.geojson",
+      });
+      map.addLayer({
+        id: "state-line",
+        type: "line",
+        source: "states",
+        paint: {
+          "line-color": "#1a1a1a",
+          "line-width": 1.1,
+        },
+      });
+
       // hover highlight (single feature filter)
       map.addLayer({
         id: "district-hover",
