@@ -10,3 +10,7 @@ dist/
 backend/data/cache/
 backend/data/block_*.zip
 backend/data/baf_*.csv
+
+# DRA VTD precinct data (downloaded via fetch_dra_github.py)
+# ~250-750MB across 50 states; the slices JSON output (small) IS committed
+backend/data/dra_vtd/
