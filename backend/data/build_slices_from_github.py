@@ -28,6 +28,7 @@ from shapely.strtree import STRtree
 
 DATA_DIR = Path(__file__).resolve().parent
 OUT = DATA_DIR / "district_county_slices.json"
+DISTRICTS_JSON = DATA_DIR / "districts.json"  # for 2020→2024 calibration of fallback states
 DISTRICTS_GJ = DATA_DIR.parent.parent / "frontend" / "public" / "districts.geojson"
 # Look for downloaded VTD data inside the repo (managed by fetch_dra_github.py).
 # Falls back to ~/Downloads/ for backward-compatibility with the earlier
@@ -52,6 +53,24 @@ def load_county_names() -> dict[str, str]:
     return names
 
 COUNTY_NAMES = load_county_names()
+
+
+def load_district_shifts() -> dict[str, float]:
+    """For each district, compute its 2020→2024 margin shift (from districts.json).
+    Used to calibrate slice projections when the precinct CSV only has 2020 PRES."""
+    if not DISTRICTS_JSON.exists():
+        return {}
+    raw = json.loads(DISTRICTS_JSON.read_text())
+    out = {}
+    for d in raw.get("districts", []):
+        did = d.get("district")
+        m24 = d.get("margin_2024")
+        m20 = d.get("margin_2020")
+        if did and m24 is not None and m20 is not None:
+            out[did] = m24 - m20
+    return out
+
+DISTRICT_SHIFTS = load_district_shifts()
 
 
 def build_district_lookup(state_abbr: str):
@@ -215,22 +234,31 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
         county_totals[county_fips]["r"] += r
         county_totals[county_fips]["t"] += t
 
-    # 4. Format output
+    # 4. Format output. For fallback (2020) states, calibrate each slice's
+    # margin to estimated 2024 by adding the district-level 2020→2024 shift.
+    # Slice's relative pattern (which slices are D-leaning vs R-leaning within
+    # the district) is preserved; only the absolute baseline is shifted.
     out: dict[str, list[dict]] = defaultdict(list)
     for (fips, district), v in slice_data.items():
         county_t = county_totals[fips]["t"]
         share = v["t"] / county_t if county_t > 0 else 0.0
-        margin = ((v["d"] - v["r"]) / v["t"] * 100.0) if v["t"] > 0 else 0.0
+        raw_margin = ((v["d"] - v["r"]) / v["t"] * 100.0) if v["t"] > 0 else 0.0
         d_id = f"{sa}-{district}"  # e.g. "GA-03", "AK-AL"
+        if pres_year == "2020":
+            shift = DISTRICT_SHIFTS.get(d_id, 0.0)
+            adjusted_margin = raw_margin + shift
+        else:
+            adjusted_margin = raw_margin
         out[d_id].append({
             "fips": fips,
             "name": COUNTY_NAMES.get(fips, f"FIPS {fips}"),
             "d_2024": v["d"],
             "r_2024": v["r"],
             "total_2024": v["t"],
-            "margin_2024": round(margin, 1),
+            "margin_2024": round(adjusted_margin, 1),
             "share_of_county_2024": round(share, 4),
             "fully_contained": share >= 0.99,
+            "pres_year_source": int(pres_year),  # 2020 (fallback) or 2024
         })
     for d_id in out:
         out[d_id].sort(key=lambda x: -x["share_of_county_2024"])
