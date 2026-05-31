@@ -164,19 +164,16 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
     return expr;
   }
 
-  // In district mode, fade out counties not in the district (so the district
-  // shape is visually obvious) and reduce opacity for partial-overlap counties
-  // proportionally to how little of them sits in the district.
+  // In district mode, hide counties outside the district (so the district
+  // shape stays visually obvious). With Phase 3 precinct-aggregated slice
+  // data, partial counties show their actual in-district margin and don't
+  // need the old opacity-fade hint.
   function buildFillOpacityExpr(): any {
     const d = dataRef.current;
     if (!d || !district) return 0.75;
     const expr: any[] = ["match", ["get", "fips"]];
     for (const c of d.counties as Array<CountyResponse["counties"][number] & Partial<DistrictExtras>>) {
-      // Fully contained → full opacity; partials scale to 0.25..0.6 based on share.
-      const op = c.fully_contained
-        ? 0.78
-        : Math.max(0.28, Math.min(0.65, (c.overlap_fraction ?? 0.5) * 0.7 + 0.18));
-      expr.push(c.fips, op);
+      expr.push(c.fips, 0.78);
     }
     expr.push(0.05);  // out-of-district counties: nearly invisible
     return expr;
