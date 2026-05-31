@@ -181,7 +181,24 @@ export function SliderPanel({
         <div>
           <div className="flex items-baseline justify-between text-xs mb-0.5">
             <span className="text-slate-600">Uniform wave (unattributed)</span>
-            <span className="font-mono">{envSign}+{envMag}</span>
+            <div className="flex items-center gap-1 font-mono">
+              <span className="text-slate-500">{envSign}+</span>
+              <input
+                type="number"
+                step={0.1}
+                min={-20}
+                max={20}
+                value={envMag}
+                onChange={(e) => {
+                  const raw = Number(e.target.value);
+                  if (Number.isNaN(raw)) return;
+                  // Preserve current sign; the magnitude input is unsigned.
+                  const next = environment >= 0 ? Math.abs(raw) : -Math.abs(raw);
+                  onEnvironment(Math.max(-20, Math.min(20, next)));
+                }}
+                className="w-14 text-right border border-slate-300 rounded px-1 py-0.5 font-mono text-xs"
+              />
+            </div>
           </div>
           <input
             type="range"
