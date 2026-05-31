@@ -166,31 +166,39 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
     csv_path = csv_candidates[0]
     gj_path = gj_candidates[0]
 
-    # 1. Pull presidential results per GEOID20. Prefer 2024 if present; fall
-    # back to 2020 for states where DRA hasn't published 2024 PRES yet
-    # (AR, CT, ID, ME, MI, ND, NJ, OK, OR, PA, SD as of this writing).
-    pres_by_geoid: dict[str, tuple[int, int, int]] = {}
-    pres_year = "2024"
+    # 1. Pull presidential results per GEOID20. Prefer 2024 if present and
+    # ALSO pull 2020 (used for per-slice rel_trend if both available).
+    # For fallback states without 2024 PRES, calibrate to 2024 later via the
+    # district-level 2020→2024 shift.
+    pres24_by_geoid: dict[str, tuple[int, int, int]] = {}
+    pres20_by_geoid: dict[str, tuple[int, int, int]] = {}
     with csv_path.open() as f:
         rdr = csv.DictReader(f)
         cols = rdr.fieldnames or []
-        if "E_24_PRES_Total" in cols:
-            d_col, r_col, t_col = "E_24_PRES_Dem", "E_24_PRES_Rep", "E_24_PRES_Total"
-        elif "E_20_PRES_Total" in cols:
-            d_col, r_col, t_col = "E_20_PRES_Dem", "E_20_PRES_Rep", "E_20_PRES_Total"
-            pres_year = "2020"
-        else:
+        has_24 = "E_24_PRES_Total" in cols
+        has_20 = "E_20_PRES_Total" in cols
+        if not has_24 and not has_20:
             print(f"  {sa}: no E_24_PRES_Total nor E_20_PRES_Total columns — skipping")
             return {}
         for row in rdr:
             g = (row.get("GEOID20") or "").strip()
             if not g:
                 continue
-            d = int(row.get(d_col) or 0)
-            r = int(row.get(r_col) or 0)
-            t = int(row.get(t_col) or 0)
-            pres_by_geoid[g] = (d, r, t)
-    print(f"  {sa}: {len(pres_by_geoid)} VTDs with {pres_year} PRES results")
+            if has_24:
+                d24 = int(row.get("E_24_PRES_Dem") or 0)
+                r24 = int(row.get("E_24_PRES_Rep") or 0)
+                t24 = int(row.get("E_24_PRES_Total") or 0)
+                pres24_by_geoid[g] = (d24, r24, t24)
+            if has_20:
+                d20 = int(row.get("E_20_PRES_Dem") or 0)
+                r20 = int(row.get("E_20_PRES_Rep") or 0)
+                t20 = int(row.get("E_20_PRES_Total") or 0)
+                pres20_by_geoid[g] = (d20, r20, t20)
+    pres_year = "2024" if has_24 else "2020"
+    # `primary` is what drives the base slice margin (will be calibrated for
+    # fallback states); `pres24` and `pres20` are the underlying raw data.
+    pres_by_geoid = pres24_by_geoid if has_24 else pres20_by_geoid
+    print(f"  {sa}: {len(pres_by_geoid)} VTDs ({'2024+2020' if has_24 and has_20 else pres_year} PRES results)")
 
     # 2. Pull VTD geometries and assign each to a district via centroid lookup
     lookup = build_district_lookup(sa)
@@ -215,50 +223,67 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
         vtd_to_district[gid] = d
     print(f"  {sa}: assigned {len(vtd_to_district)} VTDs to CDs ({unassigned} unassigned)")
 
-    # 3. Aggregate by (county_fips, district)
+    # 3. Aggregate by (county_fips, district) — tracks both years separately
     slice_data: dict[tuple[str, str], dict[str, int]] = defaultdict(
-        lambda: {"d": 0, "r": 0, "t": 0})
+        lambda: {"d24": 0, "r24": 0, "t24": 0, "d20": 0, "r20": 0, "t20": 0})
     county_totals: dict[str, dict[str, int]] = defaultdict(
-        lambda: {"d": 0, "r": 0, "t": 0})
-    for gid, (d, r, t) in pres_by_geoid.items():
-        if t == 0:
-            continue
+        lambda: {"d24": 0, "r24": 0, "t24": 0, "d20": 0, "r20": 0, "t20": 0})
+    for gid in pres_by_geoid:
         district = vtd_to_district.get(gid)
         if district is None:
             continue
         county_fips = gid[:5]
-        slice_data[(county_fips, district)]["d"] += d
-        slice_data[(county_fips, district)]["r"] += r
-        slice_data[(county_fips, district)]["t"] += t
-        county_totals[county_fips]["d"] += d
-        county_totals[county_fips]["r"] += r
-        county_totals[county_fips]["t"] += t
+        if gid in pres24_by_geoid:
+            d, r, t = pres24_by_geoid[gid]
+            slice_data[(county_fips, district)]["d24"] += d
+            slice_data[(county_fips, district)]["r24"] += r
+            slice_data[(county_fips, district)]["t24"] += t
+            county_totals[county_fips]["d24"] += d
+            county_totals[county_fips]["r24"] += r
+            county_totals[county_fips]["t24"] += t
+        if gid in pres20_by_geoid:
+            d, r, t = pres20_by_geoid[gid]
+            slice_data[(county_fips, district)]["d20"] += d
+            slice_data[(county_fips, district)]["r20"] += r
+            slice_data[(county_fips, district)]["t20"] += t
+            county_totals[county_fips]["d20"] += d
+            county_totals[county_fips]["r20"] += r
+            county_totals[county_fips]["t20"] += t
 
-    # 4. Format output. For fallback (2020) states, calibrate each slice's
+    # 4. Format output. For fallback (2020-only) states, calibrate each slice's
     # margin to estimated 2024 by adding the district-level 2020→2024 shift.
-    # Slice's relative pattern (which slices are D-leaning vs R-leaning within
-    # the district) is preserved; only the absolute baseline is shifted.
     out: dict[str, list[dict]] = defaultdict(list)
     for (fips, district), v in slice_data.items():
-        county_t = county_totals[fips]["t"]
-        share = v["t"] / county_t if county_t > 0 else 0.0
-        raw_margin = ((v["d"] - v["r"]) / v["t"] * 100.0) if v["t"] > 0 else 0.0
-        d_id = f"{sa}-{district}"  # e.g. "GA-03", "AK-AL"
-        if pres_year == "2020":
-            shift = DISTRICT_SHIFTS.get(d_id, 0.0)
-            adjusted_margin = raw_margin + shift
+        # Use whichever year has data as the "primary" turnout / share denominator
+        primary_t = v["t24"] if v["t24"] > 0 else v["t20"]
+        if primary_t == 0:
+            continue
+        county_primary_t = (county_totals[fips]["t24"]
+                            if v["t24"] > 0 else county_totals[fips]["t20"])
+        share = primary_t / county_primary_t if county_primary_t > 0 else 0.0
+        # 2024 margin (raw or calibrated)
+        if v["t24"] > 0:
+            raw_m24 = (v["d24"] - v["r24"]) / v["t24"] * 100.0
+            adjusted_m24 = raw_m24
         else:
-            adjusted_margin = raw_margin
+            # 2020-only data: use 2020 raw + district shift to estimate 2024
+            raw_m20 = (v["d20"] - v["r20"]) / v["t20"] * 100.0
+            d_id_full = f"{sa}-{district}"
+            adjusted_m24 = raw_m20 + DISTRICT_SHIFTS.get(d_id_full, 0.0)
+        # 2020 margin if we have it (always store raw — uncalibrated)
+        m20 = ((v["d20"] - v["r20"]) / v["t20"] * 100.0) if v["t20"] > 0 else None
+        d_id = f"{sa}-{district}"
         out[d_id].append({
             "fips": fips,
             "name": COUNTY_NAMES.get(fips, f"FIPS {fips}"),
-            "d_2024": v["d"],
-            "r_2024": v["r"],
-            "total_2024": v["t"],
-            "margin_2024": round(adjusted_margin, 1),
+            "d_2024": v["d24"] or v["d20"],
+            "r_2024": v["r24"] or v["r20"],
+            "total_2024": primary_t,
+            "margin_2024": round(adjusted_m24, 1),
+            "margin_2020": round(m20, 1) if m20 is not None else None,
             "share_of_county_2024": round(share, 4),
             "fully_contained": share >= 0.99,
-            "pres_year_source": int(pres_year),  # 2020 (fallback) or 2024
+            "pres_year_source": int(pres_year),
         })
     for d_id in out:
         out[d_id].sort(key=lambda x: -x["share_of_county_2024"])

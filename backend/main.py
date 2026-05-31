@@ -256,9 +256,25 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     # turnout-weighted slice projections back up gives ~the district projection.
     enriched: list[dict] = []
     TURNOUT_2026_RATIO = 0.79  # match county_model.py
+
+    # State shift used to compute per-slice rel_trend. The drow has the state
+    # margins available; if not, default to 0.
+    state_m24 = drow.get("state_margin_2024") or 0.0
+    state_m20 = drow.get("state_margin_2020") or 0.0
+    state_shift = state_m24 - state_m20
+
     for s in slices:
         slice_m24 = s["margin_2024"]
-        proj = slice_m24 + uniform_swing + rel_trend_applied + candidate_adj + demo_shift
+        slice_m20 = s.get("margin_2020")
+        # Per-slice rel_trend = slice shift − state shift (D-positive).
+        # Falls back to district-level rel_trend if 2020 data is missing.
+        if slice_m20 is not None:
+            slice_rel_trend = (slice_m24 - slice_m20) - state_shift
+            slice_rel_trend_applied = slice_rel_trend * req.trend_discount
+        else:
+            slice_rel_trend = drow.get("rel_trend") or 0.0
+            slice_rel_trend_applied = rel_trend_applied
+        proj = slice_m24 + uniform_swing + slice_rel_trend_applied + candidate_adj + demo_shift
         # Estimated 2026 vote (slice-scaled)
         est_turnout = int(round(s["total_2024"] * TURNOUT_2026_RATIO))
         # Convert margin to D-share, R-share for vote estimates
@@ -272,9 +288,9 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
             "state": state,
             "name": s["name"],
             "margin_2024": round(slice_m24, 1),
-            "margin_2020": None,  # precinct CSV doesn't carry 2020 yet
-            "rel_trend": drow.get("rel_trend"),
-            "rel_trend_applied": rel_trend_applied,
+            "margin_2020": round(slice_m20, 1) if slice_m20 is not None else None,
+            "rel_trend": round(slice_rel_trend, 2),
+            "rel_trend_applied": round(slice_rel_trend_applied, 2),
             "total_2024": s["total_2024"],
             "estimated_turnout_2026": est_turnout,
             "estimated_d_votes": est_d,
