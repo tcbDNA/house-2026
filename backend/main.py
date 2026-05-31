@@ -125,8 +125,16 @@ def senate_state_detail(state: str):
 
 COUNTY_GEOJSON_DIR = Path(__file__).resolve().parent / "data" / "county_geojson"
 DISTRICT_COUNTIES_PATH = Path(__file__).resolve().parent / "data" / "district_counties.json"
+DISTRICT_COUNTY_SLICES_PATH = Path(__file__).resolve().parent / "data" / "district_county_slices.json"
 import json as _json
 _DISTRICT_COUNTIES = _json.loads(DISTRICT_COUNTIES_PATH.read_text())
+# Phase 3 precinct-aggregated slices (per (district, county) from DRA precinct
+# data). Used in preference to area-overlap for any district whose state has
+# been processed; falls back to area-overlap otherwise.
+_DISTRICT_COUNTY_SLICES = (
+    _json.loads(DISTRICT_COUNTY_SLICES_PATH.read_text())
+    if DISTRICT_COUNTY_SLICES_PATH.exists() else {}
+)
 
 
 @app.get("/api/state/{state}/county_geojson")
@@ -209,21 +217,109 @@ def state_counties(state: str, req: ProjectRequest):
     return result
 
 
+def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[dict]) -> dict:
+    """Phase 3 backend: precinct-aggregated (district, county) slices.
+
+    Each slice already has the actual 2024 D/R vote totals for the in-district
+    portion of the county. The slice's projected 2026 margin is computed as
+    `margin_2024 + uniform_swing + district_rel_trend_applied + candidate_adj`
+    (district-level trend is used since precinct CSVs only carry 2024 results;
+    this matches the model's own district-level math and keeps slices internally
+    consistent with the district projection).
+    """
+    sliders = req.sliders.model_dump()
+    for k in ("hispanic", "black", "asian", "white_nh",
+              "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
+              "under_30", "age_30_44", "age_45_64", "age_65_plus"):
+        sliders[k] = max(-100, min(100, sliders[k]))
+
+    state = did.split("-")[0].upper()
+
+    # Get the district's current scenario projection — used for the candidate
+    # adjustment that gets added uniformly to every slice. (Demo shift and
+    # uniform swing flow in via the per-slice math below.)
+    district_proj = project(BUNDLE, environment=req.environment, sliders=sliders,
+                            trend_discount=req.trend_discount)
+    drow = next((d for d in district_proj["districts"] if d["district"] == did), None)
+    if drow is None:
+        raise HTTPException(status_code=404, detail=f"district {did} not found in projection")
+
+    candidate_adj = ((drow.get("war_adj_discounted") or 0.0)
+                     + (drow.get("incumbency_adj") or 0.0)
+                     + (drow.get("challenger_adj") or 0.0))
+    rel_trend_applied = drow.get("rel_trend_applied") or 0.0
+    uniform_swing = drow.get("uniform_swing") or (req.environment - (-2.6))
+    demo_shift = drow.get("demo_shift") or 0.0
+
+    # Per-slice projection = slice's actual 2024 margin + the same model components
+    # the district itself gets. Each slice is internally consistent: aggregating
+    # turnout-weighted slice projections back up gives ~the district projection.
+    enriched: list[dict] = []
+    TURNOUT_2026_RATIO = 0.79  # match county_model.py
+    for s in slices:
+        slice_m24 = s["margin_2024"]
+        proj = slice_m24 + uniform_swing + rel_trend_applied + candidate_adj + demo_shift
+        # Estimated 2026 vote (slice-scaled)
+        est_turnout = int(round(s["total_2024"] * TURNOUT_2026_RATIO))
+        # Convert margin to D-share, R-share for vote estimates
+        d_share = (100 + proj) / 200.0
+        d_share = max(0.0, min(1.0, d_share))
+        r_share = 1.0 - d_share
+        est_d = int(round(est_turnout * d_share))
+        est_r = int(round(est_turnout * r_share))
+        enriched.append({
+            "fips": s["fips"],
+            "state": state,
+            "name": s["name"],
+            "margin_2024": round(slice_m24, 1),
+            "margin_2020": None,  # precinct CSV doesn't carry 2020 yet
+            "rel_trend": drow.get("rel_trend"),
+            "rel_trend_applied": rel_trend_applied,
+            "total_2024": s["total_2024"],
+            "estimated_turnout_2026": est_turnout,
+            "estimated_d_votes": est_d,
+            "estimated_r_votes": est_r,
+            "projection": round(proj, 2),
+            "demo_shift": demo_shift,
+            "race_shift": drow.get("race_shift") or 0.0,
+            "edu_shift": drow.get("edu_shift") or 0.0,
+            "age_shift": drow.get("age_shift") or 0.0,
+            "is_tossup": abs(proj) < 3.0,
+            # Reuse the Phase 1 names so the existing frontend keeps working
+            "overlap_fraction": s["share_of_county_2024"],
+            "fully_contained": s["fully_contained"],
+        })
+
+    return {
+        "district": did,
+        "state": state,
+        "district_projection": drow["projection"],
+        "candidate_adj": round(candidate_adj, 2),
+        "reconcile": 0.0,  # no reconciliation needed — slices already aggregate honestly
+        "data_source": "precinct_aggregated",
+        "counties": enriched,
+    }
+
+
 @app.post("/api/district/{district_id}/counties")
 def district_counties(district_id: str, req: ProjectRequest):
-    """County-level overlay for a House district. Phase 1 of the
-    district-county feature: returns each county that touches the district,
-    with an `overlap_fraction` (raw area share) and `fully_contained` flag.
-    Counties with overlap < 99% should be displayed as "partial — N% of
-    county area in district" in the UI — the projection is the full county's
-    presidential projection, NOT an allocated district-share.
+    """County-level overlay for a House district.
 
-    Reconciliation: the district's candidate-specific adjustments
-    (WAR + incumbency + challenger) are applied uniformly to every county
-    plus a reconciliation term so the (overlap-area-weighted) county
-    aggregate matches the district projection.
+    Two data backends:
+      - Phase 3 (precinct-aggregated): for any district whose state has been
+        processed via build_district_county_slices.py from DRA precinct CSVs.
+        Each (county, district) slice has actual D/R votes summed from precincts,
+        so no reconciliation shift is needed.
+      - Phase 1 (area-overlap): fallback for all other states. Returns the full
+        county's presidential projection scaled by area-overlap; a reconciliation
+        term ensures the aggregate matches the district projection.
     """
-    overlaps = _DISTRICT_COUNTIES.get(district_id.upper())
+    did = district_id.upper()
+    slices = _DISTRICT_COUNTY_SLICES.get(did)
+    if slices is not None:
+        return _district_counties_from_slices(did, req, slices)
+
+    overlaps = _DISTRICT_COUNTIES.get(did)
     if overlaps is None:
         raise HTTPException(status_code=404, detail=f"no county overlap data for district {district_id}")
 
@@ -302,5 +398,6 @@ def district_counties(district_id: str, req: ProjectRequest):
         "district_projection": drow["projection"],
         "candidate_adj": round(candidate_adj, 2),
         "reconcile": round(reconcile, 2),
+        "data_source": "area_overlap",
         "counties": enriched,
     }
