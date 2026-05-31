@@ -135,6 +135,14 @@ _DISTRICT_COUNTY_SLICES = (
     _json.loads(DISTRICT_COUNTY_SLICES_PATH.read_text())
     if DISTRICT_COUNTY_SLICES_PATH.exists() else {}
 )
+# Per-state pres margins (used to compute per-slice rel_trend in the slice
+# endpoint). Same value for every district in a state, so we just dedupe.
+_STATE_MARGINS: dict[str, tuple[float, float]] = {}
+for _d in _json.loads((Path(__file__).resolve().parent / "data" / "districts.json").read_text())["districts"]:
+    _st = _d.get("state")
+    if _st and _st not in _STATE_MARGINS:
+        _STATE_MARGINS[_st] = (_d.get("state_margin_2024") or 0.0,
+                               _d.get("state_margin_2020") or 0.0)
 
 
 @app.get("/api/state/{state}/county_geojson")
@@ -257,10 +265,8 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     enriched: list[dict] = []
     TURNOUT_2026_RATIO = 0.79  # match county_model.py
 
-    # State shift used to compute per-slice rel_trend. The drow has the state
-    # margins available; if not, default to 0.
-    state_m24 = drow.get("state_margin_2024") or 0.0
-    state_m20 = drow.get("state_margin_2020") or 0.0
+    # State shift used to compute per-slice rel_trend.
+    state_m24, state_m20 = _STATE_MARGINS.get(state, (0.0, 0.0))
     state_shift = state_m24 - state_m20
 
     for s in slices:
