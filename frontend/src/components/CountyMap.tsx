@@ -506,6 +506,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
             detail={districtDetail}
             districtProjection={(data as any)?.district_projection}
             trendDiscount={trendDiscount}
+            voteEstimate={summary ? { d: summary.d_total, r: summary.r_total } : null}
           />
         )}
         </div>
@@ -515,12 +516,13 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
 }
 
 function DistrictDetailPanel({
-  district, detail, districtProjection, trendDiscount,
+  district, detail, districtProjection, trendDiscount, voteEstimate,
 }: {
   district: string;
   detail: Record<string, any> | null;
   districtProjection: number | undefined;
   trendDiscount: number;
+  voteEstimate: { d: number; r: number } | null;
 }) {
   const d = detail ?? {};
   const m24 = d.margin_2024 ?? 0;
@@ -535,6 +537,16 @@ function DistrictDetailPanel({
   const uniformSwing = districtProjection != null
     ? districtProjection - (m24 + relTrendApplied + war + inc + chal + demo)
     : null;
+  // Identify D and R candidate names from incumbent + challenger fields.
+  // Fall back to generic "D" / "R" when not known.
+  const incIsReal = d.incumbent && !d.incumbent.startsWith("(") && !d.incumbent.toLowerCase().startsWith("open");
+  const dName = d.party === "(D)" && incIsReal
+    ? d.incumbent
+    : d.challenger_party === "(D)" ? d.challenger : "D";
+  const rName = d.party === "(R)" && incIsReal
+    ? d.incumbent
+    : d.challenger_party === "(R)" ? d.challenger : "R";
+
   return (
     <div className="w-72 shrink-0 border-l overflow-y-auto bg-slate-50 p-3 space-y-3 text-xs">
       <div>
@@ -554,6 +566,29 @@ function DistrictDetailPanel({
         })()}
         <div className="text-slate-500 mt-1">Lines: {d.lines ?? "—"}</div>
       </div>
+
+      {voteEstimate && (voteEstimate.d + voteEstimate.r) > 0 && (
+        <section>
+          <h3 className="uppercase text-[10px] tracking-wide text-slate-500 font-semibold mb-1">Estimated 2026 vote</h3>
+          {(() => {
+            const total = voteEstimate.d + voteEstimate.r;
+            const dPct = (100 * voteEstimate.d / total).toFixed(1);
+            const rPct = (100 * voteEstimate.r / total).toFixed(1);
+            return (
+              <div className="space-y-0.5">
+                <div className="flex justify-between font-mono">
+                  <span className="text-blue-700">{dName}</span>
+                  <span className="text-blue-700">{voteEstimate.d.toLocaleString()} ({dPct}%)</span>
+                </div>
+                <div className="flex justify-between font-mono">
+                  <span className="text-red-700">{rName}</span>
+                  <span className="text-red-700">{voteEstimate.r.toLocaleString()} ({rPct}%)</span>
+                </div>
+              </div>
+            );
+          })()}
+        </section>
+      )}
 
       <section>
         <h3 className="uppercase text-[10px] tracking-wide text-slate-500 font-semibold mb-1">Projection breakdown</h3>
