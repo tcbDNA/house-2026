@@ -29,6 +29,7 @@ from shapely.strtree import STRtree
 DATA_DIR = Path(__file__).resolve().parent
 OUT = DATA_DIR / "district_county_slices.json"
 DISTRICTS_JSON = DATA_DIR / "districts.json"  # for 2020→2024 calibration of fallback states
+COUNTIES_JSON = DATA_DIR / "counties.json"  # for real county-level m24/m20 (fallback override)
 DISTRICTS_GJ = DATA_DIR.parent.parent / "frontend" / "public" / "districts.geojson"
 # Look for downloaded VTD data inside the repo (managed by fetch_dra_github.py).
 # Falls back to ~/Downloads/ for backward-compatibility with the earlier
@@ -71,6 +72,26 @@ def load_district_shifts() -> dict[str, float]:
     return out
 
 DISTRICT_SHIFTS = load_district_shifts()
+
+
+def load_county_margins() -> dict[str, tuple[float, float]]:
+    """county FIPS → (margin_2024, margin_2020) from counties.json. Used to
+    override fallback-state slices that are wholly contained in one district —
+    we already have the county's real 2024 margin in counties.json, no need
+    to synthesize from 2020 + district shift."""
+    if not COUNTIES_JSON.exists():
+        return {}
+    raw = json.loads(COUNTIES_JSON.read_text())
+    out = {}
+    for c in raw.get("counties", []):
+        fips = c.get("fips")
+        m24 = c.get("margin_2024")
+        m20 = c.get("margin_2020")
+        if fips and m24 is not None and m20 is not None:
+            out[fips] = (m24, m20)
+    return out
+
+COUNTY_MARGINS = load_county_margins()
 
 
 def build_district_lookup(state_abbr: str):
@@ -261,17 +282,28 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
         county_primary_t = (county_totals[fips]["t24"]
                             if v["t24"] > 0 else county_totals[fips]["t20"])
         share = primary_t / county_primary_t if county_primary_t > 0 else 0.0
-        # 2024 margin (raw or calibrated)
+        # 2024 margin (raw, calibrated, or — for fallback wholly-contained slices —
+        # overridden with the real county-level 2024 margin from counties.json).
+        whole_county_fallback = (v["t24"] == 0 and share >= 0.99
+                                 and fips in COUNTY_MARGINS)
         if v["t24"] > 0:
-            raw_m24 = (v["d24"] - v["r24"]) / v["t24"] * 100.0
-            adjusted_m24 = raw_m24
+            adjusted_m24 = (v["d24"] - v["r24"]) / v["t24"] * 100.0
+        elif whole_county_fallback:
+            # Use county-level real 2024 margin — slice IS the whole county
+            adjusted_m24 = COUNTY_MARGINS[fips][0]
         else:
-            # 2020-only data: use 2020 raw + district shift to estimate 2024
+            # 2020-only data + partial county: estimate via district shift
             raw_m20 = (v["d20"] - v["r20"]) / v["t20"] * 100.0
             d_id_full = f"{sa}-{district}"
             adjusted_m24 = raw_m20 + DISTRICT_SHIFTS.get(d_id_full, 0.0)
-        # 2020 margin if we have it (always store raw — uncalibrated)
-        m20 = ((v["d20"] - v["r20"]) / v["t20"] * 100.0) if v["t20"] > 0 else None
+        # 2020 margin — prefer real county-level when slice is whole county,
+        # else use precinct-aggregated 2020 if available.
+        if whole_county_fallback:
+            m20 = COUNTY_MARGINS[fips][1]
+        elif v["t20"] > 0:
+            m20 = (v["d20"] - v["r20"]) / v["t20"] * 100.0
+        else:
+            m20 = None
         d_id = f"{sa}-{district}"
         out[d_id].append({
             "fips": fips,
