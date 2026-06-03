@@ -141,6 +141,17 @@ INCUMBENT_OVERRIDES = {
     # incumbent label as a placeholder but is unlikely to run; is_incumbent=False
     # zeros the +1.7 D incumbency boost that he won't actually carry into a hostile seat.
     "LA-06": {"incumbent": "Cleo Fields", "party": "(D)", "is_incumbent": False},
+    # === 2026-06-02 primaries ===
+    # IA-02: open (Hinson→Senate). Trump-endorsed Mitchell won R primary.
+    "IA-02": {"incumbent": "Joe Mitchell", "party": "(R)", "is_incumbent": False},
+    # IA-04: open (Feenstra→gov). McGowan won R primary.
+    "IA-04": {"incumbent": "Chris McGowan", "party": "(R)", "is_incumbent": False},
+    # MT-01: open (Zinke retiring). Trump-endorsed Flint (veteran/radio host) won R primary.
+    "MT-01": {"incumbent": "Aaron Flint", "party": "(R)", "is_incumbent": False},
+    # NJ-12: open (Watson Coleman retiring). Hamawy won crowded 13-way D primary.
+    "NJ-12": {"incumbent": "Adam Hamawy", "party": "(D)", "is_incumbent": False},
+    # SD-AL: open (Johnson→gov). State AG Jackley won R primary.
+    "SD-AL": {"incumbent": "Marty Jackley", "party": "(R)", "is_incumbent": False},
     # === 2026-05-19 primaries ===
     # KY-04: Massie lost R primary to Trump-endorsed Ed Gallrein. No federal WAR for Gallrein;
     # is_incumbent=False zeros incumbency_adj.
@@ -354,6 +365,25 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
               "note": "2024 rematch vs Perry — auto-WAR from 2024 PA-10"},
     "IA-03": {"name": "Sarah Trone Garriott", "party": "(D)", "war": 0.0,
               "note": "2026 D nominee (IA state senator); no federal WAR record"},
+    # === 2026-06-02 primaries ===
+    "IA-02": {"name": "Lindsay James", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (IA state rep); challenger to Mitchell in open Hinson seat"},
+    "IA-04": {"name": "Dave Dawson", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee; challenger to McGowan in open Feenstra seat (heavily R)"},
+    "MT-01": {"name": "Ryan Busse", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (called by AP June 2; firearms-industry-reform advocate)"},
+    "MT-02": {"name": "Brian Miller", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (Helena attorney); challenger to Downing"},
+    "NJ-02": {"name": "Zack Mullock", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee; challenger to Van Drew"},
+    "NJ-03": {"name": "Michael McGuire", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee (Marine vet, ex-NYPD officer); challenger to Conaway"},
+    "NJ-04": {"name": "Rachel Peace", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee; challenger to Chris Smith"},
+    "NJ-07": {"name": "Rebecca Bennett", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (former Navy helicopter pilot); challenger to Tom Kean Jr"},
+    "NM-02": {"name": "Greg Cunningham", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee (retired police officer); challenger to Vasquez"},
 }
 
 # Generic incumbency advantage in D-R margin points. Split-Ticket's 2020

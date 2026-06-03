@@ -164,8 +164,9 @@ CHALLENGERS = {
            "note": "Open Shaheen seat. Sitting NH-01 rep; auto-WAR from 2024 House."},
     "ME": {"name": "Graham Platner", "party": "(D)", "war": 0.0,
            "note": "2026 presumptive D nominee; no federal-race record."},
-    "IA": {"name": "Ashley Hinson", "party": "(R)", "war": 0.0,
-           "note": "Open Ernst seat. Sitting IA-02 rep; auto-WAR from 2024 House."},
+    "IA": {"name": "Josh Turek", "party": "(D)", "war": 0.0,
+           "co_nominee": "Ashley Hinson", "co_nominee_party": "(R)",
+           "note": "Open Ernst seat. Turek: state rep, 2026 D nominee. Hinson: Trump-endorsed, sitting IA-02 rep — auto-WAR from 2024 House."},
     "WY": {"name": "Harriet Hageman", "party": "(R)", "war": 0.0,
            "note": "Open Lummis seat. Sitting WY-AL rep; auto-WAR from 2024 House."},
     "SC": {"name": "Annie Andrews", "party": "(D)", "war": 0.0,
@@ -177,6 +178,11 @@ CHALLENGERS = {
                    "Barr: 2026 R nominee (Trump-endorsed; sitting KY-06 rep, auto-WAR from House)."},
     "ID": {"name": "David Roth", "party": "(D)", "war": 0.0,
            "note": "2026 D nominee (won 63% in D primary); no federal-race record."},
+    # === 2026-06-02 primaries (June 2 winners) ===
+    "MT": {"name": "(D nominee TBD)", "party": "(D)", "war": 0.0,
+           "co_nominee": "Kurt Alme", "co_nominee_party": "(R)",
+           "note": "Open Daines seat (Daines withdrew at filing deadline, endorsed Alme). "
+                   "Alme: Trump-endorsed former U.S. Attorney, won R primary. D nominee not yet finalized."},
 }
 
 
