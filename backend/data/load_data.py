@@ -107,6 +107,10 @@ INCUMBENT_OVERRIDES = {
     # CA-40 under Prop50 lines merged Calvert (old CA-41) and Kim (old CA-40)
     # into a single R-leaning seat — both sitting reps are in the primary.
     "CA-40": {"incumbent": "(open, R primary: Calvert vs Kim)", "party": "(R)"},
+    # CA-41 under Prop50 was redrawn from Calvert's Riverside seat into a D-leaning
+    # South LA County / N Orange County seat (Downey/Norwalk/Whittier). Linda Sánchez
+    # (formerly CA-38) moved her reelection bid here when Prop50 passed.
+    "CA-41": {"incumbent": "Linda Sánchez", "party": "(D)"},
     # TX-18: Menefee (sitting since 2025 special after Jackson Lee) defeated
     # Al Green (moved from TX-09 post-redraw) in the May 26 runoff.
     "TX-18": {"incumbent": "Christian Menefee", "party": "(D)"},
