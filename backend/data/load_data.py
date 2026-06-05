@@ -111,6 +111,16 @@ INCUMBENT_OVERRIDES = {
     # South LA County / N Orange County seat (Downey/Norwalk/Whittier). Linda Sánchez
     # (formerly CA-38) moved her reelection bid here when Prop50 passed.
     "CA-41": {"incumbent": "Linda Sánchez", "party": "(D)"},
+    # CA-03 under Prop50 was redrawn from Kiley's Trump+3 district to a
+    # Harris-by-double-digits district. Ami Bera (formerly CA-06) moved his
+    # reelection bid here. Won D primary June 2, 2026.
+    "CA-03": {"incumbent": "Ami Bera", "party": "(D)"},
+    # CA-06 under Prop50 is a Sacramento-area Rocklin/Roseville/Citrus Heights
+    # seat that includes Kiley's home. He moved here from old CA-03 AND switched
+    # from R to Independent (NPP) on March 9, 2026 (became the only I in the
+    # House, still caucuses with R Conference). Party=(I) → incumbency_adj=0
+    # since the model only gives the structural ±1.7 to D/R caucus.
+    "CA-06": {"incumbent": "Kevin Kiley", "party": "(I)"},
     # TX-18: Menefee (sitting since 2025 special after Jackson Lee) defeated
     # Al Green (moved from TX-09 post-redraw) in the May 26 runoff.
     "TX-18": {"incumbent": "Christian Menefee", "party": "(D)"},
