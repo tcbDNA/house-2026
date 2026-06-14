@@ -144,6 +144,14 @@ INCUMBENT_OVERRIDES = {
     # CA-48 under Prop50: Issa retired. Jim Desmond (R, sitting San Diego County
     # Supervisor) won R primary; Marni von Wilpert (D) advanced as D challenger.
     "CA-48": {"incumbent": "Jim Desmond", "party": "(R)", "is_incumbent": False},
+    # CA-01: LaMalfa vacated; James Gallagher (R, sitting assemblymember) won
+    # R primary, Mike McGuire (D, state Senate Pro Tem) advanced as D.
+    "CA-01": {"incumbent": "James Gallagher", "party": "(R)", "is_incumbent": False},
+    # CA-26 post-Prop50: Jacqui Irwin (D, sitting CA-26 rep) advanced.
+    "CA-26": {"incumbent": "Jacqui Irwin", "party": "(D)"},
+    # CA-38 post-Prop50: Linda Sánchez moved to CA-41. Hilda Solis (former HHS
+    # Sec / LA County Supervisor) won D primary for the redrawn seat.
+    "CA-38": {"incumbent": "Hilda Solis", "party": "(D)", "is_incumbent": False},
     # === 2026-06-09 primaries ===
     # NV-02: open (Amodei retiring). Flippo (Trump-endorsed) won R primary over
     # establishment pick Settelmeyer (backed by Gov. Lombardo + Amodei).
@@ -455,6 +463,40 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
               "note": "2026 R nominee; challenger to Levin"},
     "CA-50": {"name": "Steve Cohen", "party": "(R)", "war": 0.0,
               "note": "2026 R nominee; challenger to Peters"},
+    # CA remaining (safe seats, completing the slate from June 2 SoS results)
+    "CA-01": {"name": "Mike McGuire", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "CA-03": {"name": "Robb Tucker", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Bera in post-Prop50 D-leaning seat"},
+    "CA-02": {"name": "Robin Littau", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-05": {"name": "Michael Masuda", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "CA-08": {"name": "Rudy Recile", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-09": {"name": "John McBride", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-10": {"name": "Jeff Frese", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-15": {"name": "Charles Hoelter", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-16": {"name": "Peter Sundin Soulé", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-17": {"name": "Ritesh Tandon", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-18": {"name": "Shane Lewis", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-19": {"name": "Peter Coe Verbica", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-20": {"name": "Sandra Van Scotter", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "CA-21": {"name": "Kyle Kirkland", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-23": {"name": "Tessa Lynn Hodge", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "CA-24": {"name": "Bob Smith", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-25": {"name": "Joe Males", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-26": {"name": "Sam Gallucci", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-28": {"name": "April A. Verlato", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-30": {"name": "Scott Alan Meyers", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-31": {"name": "Eric Ching", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-32": {"name": "Larry Thompson", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-33": {"name": "Stephanie M. Vargas", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-35": {"name": "Mike Cargile", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-36": {"name": "Houston Brignano", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-38": {"name": "Pedro Antonio Casas", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-39": {"name": "Steve Manos", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-42": {"name": "Brian Burley", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-43": {"name": "Cristian Morales", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-44": {"name": "Genevieve Angel", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-46": {"name": "David Pan", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-51": {"name": "Ricardo Cabrera", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    "CA-52": {"name": "Jeff Belle", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
 }
 
 # Generic incumbency advantage in D-R margin points. Split-Ticket's 2020
