@@ -121,6 +121,26 @@ INCUMBENT_OVERRIDES = {
     # House, still caucuses with R Conference). Party=(I) → incumbency_adj=0
     # since the model only gives the structural ±1.7 to D/R caucus.
     "CA-06": {"incumbent": "Kevin Kiley", "party": "(I)"},
+    # === CA top-two primary lockouts (general election is intra-party) ===
+    # Projection is forced to ±100 because the party is guaranteed to hold the seat.
+    "CA-04":  {"incumbent": "Mike Thompson",         "party": "(D)",
+               "lockout": "D", "lockout_opponent": "Eric Jones"},
+    "CA-07":  {"incumbent": "Doris Matsui",          "party": "(D)",
+               "lockout": "D", "lockout_opponent": "Mai Vang"},
+    "CA-11":  {"incumbent": "Scott Wiener",          "party": "(D)", "is_incumbent": False,
+               "lockout": "D", "lockout_opponent": "Connie Chan"},
+    "CA-12":  {"incumbent": "Lateefah Simon",        "party": "(D)",
+               "lockout": "D", "lockout_opponent": "Jamie Joyce"},
+    "CA-14":  {"incumbent": "Aisha Wahab",           "party": "(D)", "is_incumbent": False,
+               "lockout": "D", "lockout_opponent": "Melissa Hernandez"},
+    "CA-29":  {"incumbent": "Luz Rivas",             "party": "(D)",
+               "lockout": "D", "lockout_opponent": "Angélica Dueñas"},
+    "CA-34":  {"incumbent": "Jimmy Gomez",           "party": "(D)",
+               "lockout": "D", "lockout_opponent": "Angela Gonzales-Torres"},
+    "CA-37":  {"incumbent": "Sydney Kamlager-Dove",  "party": "(D)",
+               "lockout": "D", "lockout_opponent": "Samantha Mota"},
+    "CA-40":  {"incumbent": "Ken Calvert", "party": "(R)", "is_incumbent": False,
+               "lockout": "R", "lockout_opponent": "Young Kim"},
     # TX-18: Menefee (sitting since 2025 special after Jackson Lee) defeated
     # Al Green (moved from TX-09 post-redraw) in the May 26 runoff.
     "TX-18": {"incumbent": "Christian Menefee", "party": "(D)"},
@@ -732,6 +752,17 @@ def main():
                 row["war_match_type"] = None
                 row["war_year"] = None
             apply_house_challenger(row, primary_war, fallback_war)
+            # Lockout: top-two primary advanced two same-party candidates.
+            # Override the challenger field with the intra-party opponent and
+            # zero out challenger_adj (no cross-party math applies).
+            if override and "lockout" in override:
+                row["lockout"] = override["lockout"]
+                row["challenger"] = override.get("lockout_opponent")
+                row["challenger_party"] = override["party"]
+                row["challenger_adj"] = 0.0
+                row["challenger_war"] = None
+                row["challenger_war_year"] = None
+                row["challenger_war_source"] = None
             districts.append(row)
 
     with OUT_JSON.open("w") as f:

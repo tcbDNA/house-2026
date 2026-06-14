@@ -167,6 +167,16 @@ def project(
     rel_trend_applied = bundle.rel_trend * trend_discount
     projections = bundle.base_margin + rel_trend_applied + uniform_swing + demo_shift
 
+    # Lockout override: in CA top-two primaries, some districts advanced two
+    # same-party candidates to the general — the seat is guaranteed to stay
+    # with that party regardless of environment. Force projection to ±100.
+    for i, row in enumerate(bundle.districts):
+        lockout = row.get("lockout")
+        if lockout == "D":
+            projections[i] = 100.0
+        elif lockout == "R":
+            projections[i] = -100.0
+
     return _summarize(bundle, projections, demo_shift, environment, sliders, weight,
                       race_shift, edu_shift, age_shift, uniform_swing,
                       rel_trend_applied, trend_discount)
