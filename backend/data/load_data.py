@@ -141,6 +141,10 @@ INCUMBENT_OVERRIDES = {
                "lockout": "D", "lockout_opponent": "Samantha Mota"},
     "CA-40":  {"incumbent": "Ken Calvert", "party": "(R)", "is_incumbent": False,
                "lockout": "R", "lockout_opponent": "Young Kim"},
+    # === 2026-06-09 primaries ===
+    # NV-02: open (Amodei retiring). Flippo (Trump-endorsed) won R primary over
+    # establishment pick Settelmeyer (backed by Gov. Lombardo + Amodei).
+    "NV-02": {"incumbent": "David Flippo", "party": "(R)", "is_incumbent": False},
     # TX-18: Menefee (sitting since 2025 special after Jackson Lee) defeated
     # Al Green (moved from TX-09 post-redraw) in the May 26 runoff.
     "TX-18": {"incumbent": "Christian Menefee", "party": "(D)"},
@@ -418,6 +422,10 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
               "note": "2026 D nominee (former Navy helicopter pilot); challenger to Tom Kean Jr"},
     "NM-02": {"name": "Greg Cunningham", "party": "(R)", "war": 0.0,
               "note": "2026 R nominee (retired police officer); challenger to Vasquez"},
+    "NV-02": {"name": "Teresa Benitez-Thompson", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (former Assembly Majority Leader, AG chief of staff); challenger to Flippo"},
+    "NV-04": {"name": "Cody Whipple", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee (rancher); challenger to Horsford"},
 }
 
 # Generic incumbency advantage in D-R margin points. Split-Ticket's 2020
