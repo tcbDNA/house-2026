@@ -123,24 +123,21 @@ INCUMBENT_OVERRIDES = {
     "CA-06": {"incumbent": "Kevin Kiley", "party": "(I)"},
     # === CA top-two primary lockouts (general election is intra-party) ===
     # Projection is forced to ±100 because the party is guaranteed to hold the seat.
-    "CA-04":  {"incumbent": "Mike Thompson",         "party": "(D)",
-               "lockout": "D", "lockout_opponent": "Eric Jones"},
     "CA-07":  {"incumbent": "Doris Matsui",          "party": "(D)",
                "lockout": "D", "lockout_opponent": "Mai Vang"},
     "CA-11":  {"incumbent": "Scott Wiener",          "party": "(D)", "is_incumbent": False,
                "lockout": "D", "lockout_opponent": "Connie Chan"},
     "CA-12":  {"incumbent": "Lateefah Simon",        "party": "(D)",
                "lockout": "D", "lockout_opponent": "Jamie Joyce"},
-    "CA-14":  {"incumbent": "Aisha Wahab",           "party": "(D)", "is_incumbent": False,
-               "lockout": "D", "lockout_opponent": "Melissa Hernandez"},
     "CA-29":  {"incumbent": "Luz Rivas",             "party": "(D)",
                "lockout": "D", "lockout_opponent": "Angélica Dueñas"},
     "CA-34":  {"incumbent": "Jimmy Gomez",           "party": "(D)",
                "lockout": "D", "lockout_opponent": "Angela Gonzales-Torres"},
-    "CA-37":  {"incumbent": "Sydney Kamlager-Dove",  "party": "(D)",
-               "lockout": "D", "lockout_opponent": "Samantha Mota"},
     "CA-40":  {"incumbent": "Ken Calvert", "party": "(R)", "is_incumbent": False,
                "lockout": "R", "lockout_opponent": "Young Kim"},
+    # CA-48 under Prop50: Issa retired. Jim Desmond (R, sitting San Diego County
+    # Supervisor) won R primary; Marni von Wilpert (D) advanced as D challenger.
+    "CA-48": {"incumbent": "Jim Desmond", "party": "(R)", "is_incumbent": False},
     # === 2026-06-09 primaries ===
     # NV-02: open (Amodei retiring). Flippo (Trump-endorsed) won R primary over
     # establishment pick Settelmeyer (backed by Gov. Lombardo + Amodei).
@@ -426,6 +423,38 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
               "note": "2026 D nominee (former Assembly Majority Leader, AG chief of staff); challenger to Flippo"},
     "NV-04": {"name": "Cody Whipple", "party": "(R)", "war": 0.0,
               "note": "2026 R nominee (rancher); challenger to Horsford"},
+    # NV remaining
+    "NV-01": {"name": "Carrie Buck", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee (NV state senator, Trump-endorsed); challenger to Titus"},
+    "NV-03": {"name": "Marty O'Donnell", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee (composer, Trump+Lombardo-endorsed); challenger to Susie Lee"},
+    # CA non-lockout competitive seats (advancing 1 D + 1 R per June 2 SoS results)
+    "CA-04": {"name": "Ray Riehle", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Mike Thompson"},
+    "CA-06": {"name": "Richard Pan", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (former state senator); challenger to Kiley (I) in post-Prop50 Sacramento seat"},
+    "CA-13": {"name": "Kevin Lincoln", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee (former Stockton mayor); challenger to Adam Gray"},
+    "CA-14": {"name": "Wendy Huang", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Wahab"},
+    "CA-22": {"name": "Randy Villegas", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee; challenger to Valadao"},
+    "CA-27": {"name": "Jason Gibbs", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Whitesides"},
+    "CA-37": {"name": "Baltazar Fedalizo", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Kamlager-Dove"},
+    "CA-41": {"name": "Mitch Clemmons", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Sánchez in post-Prop50 LA County seat"},
+    "CA-45": {"name": "Chuong V. Vo", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Tran"},
+    "CA-47": {"name": "Jenny Rae Le Roux", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Min"},
+    "CA-48": {"name": "Marni von Wilpert", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (San Diego city council); challenger to Desmond in open Issa seat"},
+    "CA-49": {"name": "Armen Kurdian", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Levin"},
+    "CA-50": {"name": "Steve Cohen", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee; challenger to Peters"},
 }
 
 # Generic incumbency advantage in D-R margin points. Split-Ticket's 2020
