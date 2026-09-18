@@ -108,6 +108,9 @@ INCUMBENT_OVERRIDES = {
     # Mealer is the R nominee — non-sitting, so is_incumbent=False zeros out the
     # ±1.7 structural incumbency bonus. D nominee (Gutierrez) is in HOUSE_CHALLENGERS.
     "TX-09": {"incumbent": "Alex Mealer", "party": "(R)", "is_incumbent": False},
+    # FL-22: post-FL-redraw open seat, R-leaning. Slot Dandiya (D) into the
+    # incumbent field so both nominees display; Askar (R) is the challenger.
+    "FL-22": {"incumbent": "Pia Dandiya", "party": "(D)", "is_incumbent": False},
     # CA-40 under Prop50 lines merged Calvert (old CA-41) and Kim (old CA-40)
     # into a single R-leaning seat — both sitting reps are in the primary.
     "CA-40": {"incumbent": "(open, R primary: Calvert vs Kim)", "party": "(R)"},
@@ -574,7 +577,8 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "CO-05": {"name": "Jessica Killin", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Crank"},
     "CO-08": {"name": "Manny Rutinel", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Evans — top toss-up"},
     # FL competitive races (map redraw pending review — see NOTE)
-    "FL-14": {"name": "Kathy Castor", "party": "(D)", "war": 0.0, "note": "Castor (D-inc) vs R nominee in new Trump+11 seat post-FL redraw"},
+    "FL-14": {"name": "Mike Beltran", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee (former FL state rep D-70, 2018-24) vs Castor (D-inc) in new Trump+11 seat post-FL redraw"},
     # MI
     "MI-03": {"name": "Terri DeBoer", "party": "(R)", "war": 0.0, "note": "2026 R nominee (former TV meteorologist); challenger to Scholten"},
     "MI-04": {"name": "Sean McCann", "party": "(D)", "war": 0.0, "note": "2026 D nominee (state senator, Whitmer-endorsed); challenger to Huizenga"},
