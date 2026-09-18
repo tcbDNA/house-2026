@@ -163,8 +163,10 @@ CHALLENGERS = {
                    "no federal-race record so no WAR overlay."},
     "WV": {"name": "Rachel Fetty Anderson", "party": "(D)", "war": 0.0,
            "note": "2026 D nominee per Wikipedia"},
-    "NH": {"name": "Chris Pappas", "party": "(D)", "war": 0.0,
-           "note": "Open Shaheen seat. Sitting NH-01 rep; auto-WAR from 2024 House."},
+    "NH": {"name": "John E. Sununu", "party": "(R)", "war": 0.0,
+           "co_nominee": "Chris Pappas", "co_nominee_party": "(D)",
+           "note": "Open Shaheen seat. Sununu: former US Senator (2003-2009), won Sept 8 R primary 68.5% over Scott Brown. "
+                   "Pappas: sitting NH-01 rep, D nominee — auto-WAR from 2024 House."},
     "ME": {"name": "Troy Jackson", "party": "(D)", "war": 0.0,
            "note": "2026 D nominee. Platner won June 9 primary but withdrew July 10 "
                    "after sexual-assault accusations; Jackson (former state Senate president) "
@@ -181,8 +183,10 @@ CHALLENGERS = {
            "co_nominee": "Andy Barr", "co_nominee_party": "(R)",
            "note": "Open McConnell seat. Booker: 2026 D nominee (won primary over McGrath). "
                    "Barr: 2026 R nominee (Trump-endorsed; sitting KY-06 rep, auto-WAR from House)."},
-    "ID": {"name": "David Roth", "party": "(D)", "war": 0.0,
-           "note": "2026 D nominee (won 63% in D primary); no federal-race record."},
+    "ID": {"name": "Todd Achilles", "party": "(I)", "war": 0.0,
+           "note": "2026 I candidate (challenger to Risch). Former D state rep (2024-25); "
+                   "entered as Independent July 2026 after D nominee David Roth dropped out July 28 "
+                   "under pressure from Ada County Dem Central Committee."},
     # === 2026-06-02 primaries (June 2 winners) ===
     "MT": {"name": "Alani Bankhead", "party": "(D)", "war": 0.0,
            "co_nominee": "Kurt Alme", "co_nominee_party": "(R)",
@@ -191,8 +195,10 @@ CHALLENGERS = {
     "MI": {"name": "Abdul El-Sayed", "party": "(D)", "war": 0.0,
            "co_nominee": "Mike Rogers", "co_nominee_party": "(R)",
            "note": "Open Peters seat. El-Sayed: physician/Wayne Co exec, D primary winner over Stevens+McMorrow. Rogers: 2024 R nominee, back for 2026."},
-    "MN": {"name": "Angie Craig", "party": "(D)", "war": 0.0,
-           "note": "Open Smith seat. Craig: sitting MN-02 rep, moved up. R nominee not researched."},
+    "MN": {"name": "Michele Tafoya", "party": "(R)", "war": 0.0,
+           "co_nominee": "Angie Craig", "co_nominee_party": "(D)",
+           "note": "Open Smith seat. Tafoya: former NFL/NBC Sunday Night Football sideline reporter, R nominee. "
+                   "Craig: sitting MN-02 rep, D nominee — auto-WAR from 2024 House."},
     "OK": {"name": "N'Kiyla Jasmine Thomas", "party": "(D)", "war": 0.0,
            "co_nominee": "Kevin Hern", "co_nominee_party": "(R)",
            "note": "Open Mullin (→DHS) seat. Hern: sitting OK-01 rep won R primary 69.8%."},
