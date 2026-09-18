@@ -111,6 +111,9 @@ INCUMBENT_OVERRIDES = {
     # FL-22: post-FL-redraw open seat, R-leaning. Slot Dandiya (D) into the
     # incumbent field so both nominees display; Askar (R) is the challenger.
     "FL-22": {"incumbent": "Pia Dandiya", "party": "(D)", "is_incumbent": False},
+    # KY-06: open R-leaning seat (Barr→Senate). Slot Alvarado (R) into the
+    # incumbent field so both nominees display; Dembo (D) is the challenger.
+    "KY-06": {"incumbent": "Ralph Alvarado", "party": "(R)", "is_incumbent": False},
     # CA-40 under Prop50 lines merged Calvert (old CA-41) and Kim (old CA-40)
     # into a single R-leaning seat — both sitting reps are in the primary.
     "CA-40": {"incumbent": "(open, R primary: Calvert vs Kim)", "party": "(R)"},
@@ -709,13 +712,14 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     # WI
     "WI-04": {"name": "Tim Rogers", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
     "WI-05": {"name": "Andrew Beck", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
-    # MA safe D — mostly token opposition
-    "MA-01": {"name": "R token", "party": "(R)", "war": 0.0, "note": "2026 R token opposition (safe D)"},
+    # MA safe D
+    # MA-01: no R filed — Neal (D) uncontested by major R (Nadia Milleron on ballot as Independent).
     "MA-03": {"name": "Gary Grossi", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
-    # KY (post-May primary — leftover safe seats)
-    "KY-02": {"name": "D token", "party": "(D)", "war": 0.0, "note": "2026 D token (safe R)"},
-    "KY-03": {"name": "R token", "party": "(R)", "war": 0.0, "note": "2026 R token (safe D — Morgan McGarvey seat)"},
-    "KY-06": {"name": "D token", "party": "(D)", "war": 0.0, "note": "2026 D token; challenger to Barr's successor"},
+    # KY (post-May primary — real named nominees per Ballotpedia)
+    "KY-02": {"name": "Megan Wingfield", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Guthrie)"},
+    "KY-03": {"name": "Maria Rodriguez", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to McGarvey)"},
+    "KY-06": {"name": "Zach Dembo", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee. Open seat (Barr→Senate). R nominee: Ralph Alvarado (Trump-endorsed, former KY state senator)."},
     # === Named 2026 cross-party nominees from Ballotpedia (primaries complete) ===
     "AK-AL": {"name": "Eric Hafner", "party": "(D)", "war": 0.0, "note": "2026 D nominee (top-4 primary)"},
     "AL-01": {"name": "Clyde Jones", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
