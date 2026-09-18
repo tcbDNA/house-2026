@@ -271,36 +271,40 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     uniform_swing = drow.get("uniform_swing") or (req.environment - (-2.6))
     demo_shift = drow.get("demo_shift") or 0.0
 
-    # Per-slice projection = slice's actual 2024 margin + the same model components
-    # the district itself gets. Each slice is internally consistent: aggregating
-    # turnout-weighted slice projections back up gives ~the district projection.
-    enriched: list[dict] = []
+    # Per-slice projection first pass. Turnout-weighted aggregate may drift from
+    # the district projection because (a) slice_m24 sums come from precinct data
+    # while district margin_2024 comes from the sensitivity CSV, and (b) per-slice
+    # rel_trend weighted avg ≠ district-level rel_trend. Compute a uniform shift
+    # that reconciles the two so the header aggregate matches the district projection.
     TURNOUT_2026_RATIO = 0.79  # match county_model.py
-
-    # State shift used to compute per-slice rel_trend.
     state_m24, state_m20 = _STATE_MARGINS.get(state, (0.0, 0.0))
     state_shift = state_m24 - state_m20
 
+    first_pass = []
     for s in slices:
         slice_m24 = s["margin_2024"]
         slice_m20 = s.get("margin_2020")
-        # Per-slice rel_trend = slice shift − state shift (D-positive).
-        # Falls back to district-level rel_trend if 2020 data is missing.
         if slice_m20 is not None:
             slice_rel_trend = (slice_m24 - slice_m20) - state_shift
             slice_rel_trend_applied = slice_rel_trend * req.trend_discount
         else:
             slice_rel_trend = drow.get("rel_trend") or 0.0
             slice_rel_trend_applied = rel_trend_applied
-        proj = slice_m24 + uniform_swing + slice_rel_trend_applied + candidate_adj + demo_shift
-        # Estimated 2026 vote (slice-scaled)
+        proj_pre = slice_m24 + uniform_swing + slice_rel_trend_applied + candidate_adj + demo_shift
+        first_pass.append((s, slice_m24, slice_m20, slice_rel_trend, slice_rel_trend_applied, proj_pre))
+
+    # Turnout-weighted aggregate of first-pass projections.
+    tot_w = sum(s["total_2024"] for s, *_ in first_pass) or 1.0
+    weighted_avg = sum(pp * s["total_2024"] for s, *_, pp in first_pass) / tot_w
+    reconcile = drow["projection"] - weighted_avg
+
+    enriched: list[dict] = []
+    for s, slice_m24, slice_m20, slice_rel_trend, slice_rel_trend_applied, proj_pre in first_pass:
+        proj = proj_pre + reconcile
         est_turnout = int(round(s["total_2024"] * TURNOUT_2026_RATIO))
-        # Convert margin to D-share, R-share for vote estimates
-        d_share = (100 + proj) / 200.0
-        d_share = max(0.0, min(1.0, d_share))
-        r_share = 1.0 - d_share
+        d_share = max(0.0, min(1.0, (100 + proj) / 200.0))
         est_d = int(round(est_turnout * d_share))
-        est_r = int(round(est_turnout * r_share))
+        est_r = est_turnout - est_d
         enriched.append({
             "fips": s["fips"],
             "state": state,
@@ -319,7 +323,6 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
             "edu_shift": drow.get("edu_shift") or 0.0,
             "age_shift": drow.get("age_shift") or 0.0,
             "is_tossup": abs(proj) < 3.0,
-            # Reuse the Phase 1 names so the existing frontend keeps working
             "overlap_fraction": s["share_of_county_2024"],
             "fully_contained": s["fully_contained"],
         })
@@ -329,7 +332,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
         "state": state,
         "district_projection": drow["projection"],
         "candidate_adj": round(candidate_adj, 2),
-        "reconcile": 0.0,  # no reconciliation needed — slices already aggregate honestly
+        "reconcile": round(reconcile, 2),
         "data_source": "precinct_aggregated",
         "counties": enriched,
     }
