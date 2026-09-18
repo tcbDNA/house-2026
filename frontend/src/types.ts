@@ -234,6 +234,16 @@ export type District = {
   is_tossup: boolean;
   flip: "to_D" | "to_R" | null;
   demo_source: string;
+  p_d?: number;
+};
+
+export type SeatDistribution = {
+  d_median: number;
+  d_mean: number;
+  d_p10: number;
+  d_p90: number;
+  p_d_majority: number;
+  p_r_majority: number;
 };
 
 export type Summary = {
@@ -247,6 +257,7 @@ export type Summary = {
     d_safe: number; d_likely: number; d_lean: number; d_tossup: number;
     r_tossup: number; r_lean: number; r_likely: number; r_safe: number;
   };
+  seat_distribution?: SeatDistribution;
 };
 
 export type ProjectResponse = {
@@ -293,6 +304,7 @@ export type SenateSeat = {
   age_shift: number;
   is_tossup: boolean;
   flip: "to_D" | "to_R" | null;
+  p_d?: number;
 };
 
 export type SenateSummary = {
@@ -307,6 +319,7 @@ export type SenateSummary = {
   majority: "D" | "R" | "tie" | "none";
   d_pickups: string[];
   r_pickups: string[];
+  seat_distribution?: SeatDistribution;
 };
 
 export type SenateResponse = {

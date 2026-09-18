@@ -1,7 +1,7 @@
 import type { Summary } from "../types";
 
 export function NationalSummary({ summary }: { summary: Summary }) {
-  const { d_seats, r_seats, tossups, d_pickups, r_pickups, majority, buckets } = summary;
+  const { d_seats, r_seats, tossups, d_pickups, r_pickups, majority, buckets, seat_distribution } = summary;
   const total = d_seats + r_seats;
   const dPct = total ? (d_seats / total) * 100 : 50;
 
@@ -71,6 +71,24 @@ export function NationalSummary({ summary }: { summary: Summary }) {
       <div className="text-xs text-slate-500 mt-2 italic">
         {tossups} seat{tossups === 1 ? "" : "s"} within ±3 (tilt)
       </div>
+
+      {seat_distribution && (
+        <div className="mt-3 pt-3 border-t border-slate-200 text-xs">
+          <div className="flex items-baseline justify-between mb-1">
+            <span className="font-semibold text-slate-700">P(D majority)</span>
+            <span className={`font-bold text-lg ${seat_distribution.p_d_majority >= 0.5 ? "text-blue-700" : "text-red-700"}`}>
+              {(seat_distribution.p_d_majority * 100).toFixed(1)}%
+            </span>
+          </div>
+          <div className="text-slate-500">
+            D seats: median <b>{seat_distribution.d_median}</b>{" "}
+            · 80% CI <b>[{seat_distribution.d_p10}, {seat_distribution.d_p90}]</b>
+          </div>
+          <div className="text-[10px] text-slate-400 italic mt-1">
+            Monte Carlo: σ_national=2.5 (correlated), σ_district=4.0 (independent), N=10k
+          </div>
+        </div>
+      )}
 
       {(d_pickups.length > 0 || r_pickups.length > 0) && (
         <div className="mt-3 grid grid-cols-2 gap-3 text-xs">

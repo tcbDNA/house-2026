@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from model import ALL_SLIDERS, CATALIST_BASELINES, district_detail, load_bundle, project
 import senate_model as senate
 import county_model as county
+from probability import add_win_probabilities, add_senate_win_probabilities
 
 app = FastAPI(title="House 2026 Scenario API")
 
@@ -65,7 +66,7 @@ def baselines():
 @app.get("/api/districts")
 def districts_baseline():
     """Baseline projection at D+7.9, all sliders at 0."""
-    return project(BUNDLE, environment=7.9)
+    return add_win_probabilities(project(BUNDLE, environment=7.9))
 
 
 @app.post("/api/project")
@@ -76,8 +77,10 @@ def project_endpoint(req: ProjectRequest):
               "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
               "under_30", "age_30_44", "age_45_64", "age_65_plus"):
         sliders[k] = max(-100, min(100, sliders[k]))
-    return project(BUNDLE, environment=req.environment, sliders=sliders,
-                   trend_discount=req.trend_discount)
+    return add_win_probabilities(
+        project(BUNDLE, environment=req.environment, sliders=sliders,
+                trend_discount=req.trend_discount)
+    )
 
 
 @app.get("/api/district/{district_id}")
@@ -96,9 +99,18 @@ def senate_health():
     return {"status": "ok", "n_seats_up": SENATE_BUNDLE.n}
 
 
+def _wrap_senate(result):
+    s = result.get("summary", {})
+    return add_senate_win_probabilities(
+        result,
+        holdover_d=s.get("not_up_d", 0),
+        holdover_r=s.get("not_up_r", 0),
+    )
+
+
 @app.get("/api/senate/seats")
 def senate_baseline():
-    return senate.project(SENATE_BUNDLE, environment=7.9)
+    return _wrap_senate(senate.project(SENATE_BUNDLE, environment=7.9))
 
 
 @app.post("/api/senate/project")
@@ -108,8 +120,8 @@ def senate_project(req: ProjectRequest):
               "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
               "under_30", "age_30_44", "age_45_64", "age_65_plus"):
         sliders[k] = max(-100, min(100, sliders[k]))
-    return senate.project(SENATE_BUNDLE, environment=req.environment, sliders=sliders,
-                          trend_discount=req.trend_discount)
+    return _wrap_senate(senate.project(SENATE_BUNDLE, environment=req.environment,
+                                       sliders=sliders, trend_discount=req.trend_discount))
 
 
 @app.get("/api/senate/state/{state}")

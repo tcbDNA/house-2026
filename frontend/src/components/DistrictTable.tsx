@@ -6,7 +6,7 @@ type Props = {
   onPick?: (id: string) => void;
 };
 
-type SortKey = "district" | "margin_2024" | "projection" | "demo_shift" | "incumbent";
+type SortKey = "district" | "margin_2024" | "projection" | "demo_shift" | "incumbent" | "p_d";
 
 // Buckets: tossup ≤3 | lean 3-7 | likely 7-13 | safe >13
 function bucket(proj: number): string {
@@ -101,6 +101,7 @@ export function DistrictTable({ districts, onPick }: Props) {
               {header("Incumbent", "incumbent")}
               {header("2024 m", "margin_2024", "R")}
               {header("Proj", "projection", "R")}
+              {header("P(D)", "p_d", "R")}
               {header("Demo Δ", "demo_shift", "R")}
               <th className="px-2 py-1 text-left">Flip</th>
             </tr>
@@ -132,6 +133,9 @@ export function DistrictTable({ districts, onPick }: Props) {
                 <td className="px-2 py-1 text-right font-mono">{d.margin_2024?.toFixed(1)}</td>
                 <td className={`px-2 py-1 text-right font-mono ${bucket(d.projection)}`}>
                   {formatProjection(d.projection)}
+                </td>
+                <td className={`px-2 py-1 text-right font-mono text-xs ${d.p_d != null ? (d.p_d >= 0.5 ? "text-blue-700" : "text-red-700") : "text-slate-400"}`}>
+                  {d.p_d != null ? `${(d.p_d * 100).toFixed(0)}%` : "—"}
                 </td>
                 <td className={`px-2 py-1 text-right font-mono text-xs ${d.demo_shift > 0 ? "text-blue-700" : d.demo_shift < 0 ? "text-red-700" : "text-slate-400"}`}>
                   {d.demo_shift > 0 ? "+" : ""}{d.demo_shift.toFixed(1)}

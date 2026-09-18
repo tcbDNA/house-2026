@@ -2,7 +2,7 @@ import type { SenateSummary } from "../types";
 
 export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
   const { final_d, final_r, d_seats_up, r_seats_up, seats_up, tossups_up,
-    d_pickups, r_pickups, majority, not_up_d, not_up_r } = summary;
+    d_pickups, r_pickups, majority, not_up_d, not_up_r, seat_distribution } = summary;
   const total = final_d + final_r;
   const dPct = total ? (final_d / 100) * 100 : 50;
 
@@ -58,6 +58,21 @@ export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
           <div>
             <div className="font-semibold text-red-700 mb-1">R pickups ({r_pickups.length})</div>
             <div className="font-mono text-[11px] leading-tight">{r_pickups.join(", ") || "—"}</div>
+          </div>
+        </div>
+      )}
+
+      {seat_distribution && (
+        <div className="mt-3 pt-3 border-t border-slate-200 text-xs">
+          <div className="flex items-baseline justify-between mb-1">
+            <span className="font-semibold text-slate-700">P(D majority)</span>
+            <span className={`font-bold text-lg ${seat_distribution.p_d_majority >= 0.5 ? "text-blue-700" : "text-red-700"}`}>
+              {(seat_distribution.p_d_majority * 100).toFixed(1)}%
+            </span>
+          </div>
+          <div className="text-slate-500">
+            D total: median <b>{seat_distribution.d_median}</b>{" "}
+            · 80% CI <b>[{seat_distribution.d_p10}, {seat_distribution.d_p90}]</b>
           </div>
         </div>
       )}
