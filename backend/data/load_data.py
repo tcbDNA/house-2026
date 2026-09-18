@@ -644,7 +644,8 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "FL-06": {"name": "E. Yonce", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "FL-07": {"name": "B. Dalton", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Elijah in open Mills seat)"},
     "FL-12": {"name": "Christopher Irizarry", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
-    "FL-22": {"name": "Pia Dandiya", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Askar R in redrawn seat)"},
+    "FL-22": {"name": "Casey Askar", "party": "(R)", "war": 0.0,
+              "note": "2026 R nominee for redrawn FL-22 (now R-leaning open seat). D nominee: Pia Dandiya."},
     "FL-26": {"name": "Nicole Locklin", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "FL-27": {"name": "Rodriguez", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     # MI additional
