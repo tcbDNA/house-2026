@@ -165,8 +165,10 @@ CHALLENGERS = {
            "note": "2026 D nominee per Wikipedia"},
     "NH": {"name": "Chris Pappas", "party": "(D)", "war": 0.0,
            "note": "Open Shaheen seat. Sitting NH-01 rep; auto-WAR from 2024 House."},
-    "ME": {"name": "Graham Platner", "party": "(D)", "war": 0.0,
-           "note": "2026 presumptive D nominee; no federal-race record."},
+    "ME": {"name": "Troy Jackson", "party": "(D)", "war": 0.0,
+           "note": "2026 D nominee. Platner won June 9 primary but withdrew July 10 "
+                   "after sexual-assault accusations; Jackson (former state Senate president) "
+                   "selected as replacement at July 25 convention. No federal-race record."},
     "IA": {"name": "Josh Turek", "party": "(D)", "war": 0.0,
            "co_nominee": "Ashley Hinson", "co_nominee_party": "(R)",
            "note": "Open Ernst seat. Turek: state rep, 2026 D nominee. Hinson: Trump-endorsed, sitting IA-02 rep — auto-WAR from 2024 House."},
@@ -182,10 +184,9 @@ CHALLENGERS = {
     "ID": {"name": "David Roth", "party": "(D)", "war": 0.0,
            "note": "2026 D nominee (won 63% in D primary); no federal-race record."},
     # === 2026-06-02 primaries (June 2 winners) ===
-    "MT": {"name": "(D nominee TBD)", "party": "(D)", "war": 0.0,
+    "MT": {"name": "Alani Bankhead", "party": "(D)", "war": 0.0,
            "co_nominee": "Kurt Alme", "co_nominee_party": "(R)",
-           "note": "Open Daines seat (Daines withdrew at filing deadline, endorsed Alme). "
-                   "Alme: Trump-endorsed former U.S. Attorney, won R primary. D nominee not yet finalized."},
+           "note": "Open Daines seat. Bankhead: 2026 D nominee. Alme: Trump-endorsed former U.S. Attorney, R nominee."},
     # === Summer/fall 2026 primaries (post-June) ===
     "MI": {"name": "Abdul El-Sayed", "party": "(D)", "war": 0.0,
            "co_nominee": "Mike Rogers", "co_nominee_party": "(R)",
@@ -200,6 +201,32 @@ CHALLENGERS = {
     "FL": {"name": "Angie Nixon", "party": "(D)", "war": 0.0,
            "note": "Open FL Rubio special (Moody R-appointed inc, expiring Jan 2029). "
                    "Nixon: state rep, upset winner over Alex Vindman in D primary."},
+    # === Additional 2026 Senate nominees (post-primary, per Ballotpedia/Wikipedia) ===
+    "AL": {"name": "Everett Wess", "party": "(D)", "war": 0.0,
+           "co_nominee": "Barry Moore", "co_nominee_party": "(R)",
+           "note": "Open Tuberville seat. Both went to June 16 runoffs; Wess won D, Moore won R (auto-WAR from AL-01 House)."},
+    "LA": {"name": "Jamie Davis", "party": "(D)", "war": 0.0,
+           "co_nominee": "Julia Letlow", "co_nominee_party": "(R)",
+           "note": "Open Cassidy seat (Cassidy lost primary). LA jungle primary Nov 3, runoff Dec 12. "
+                   "Letlow: sitting LA-05 rep (auto-WAR from House)."},
+    "DE": {"name": "Michael Katz", "party": "(R)", "war": 0.0,
+           "note": "2026 R nominee (challenger to Coons)."},
+    "GA": {"name": "Mike Collins", "party": "(R)", "war": 0.0,
+           "note": "2026 R nominee (challenger to Ossoff). Sitting GA-10 rep — auto-WAR from House."},
+    "KS": {"name": "Adam Hamilton", "party": "(D)", "war": 0.0,
+           "note": "2026 D nominee (challenger to Marshall)."},
+    "NJ": {"name": "Justin Murphy", "party": "(R)", "war": 0.0,
+           "note": "2026 R nominee (challenger to Booker)."},
+    "NM": {"name": "Larry Marker", "party": "(R)", "war": 0.0,
+           "note": "2026 R nominee (write-in — no R qualified for ballot; effectively uncontested by major R). Challenger to Luján."},
+    "OR": {"name": "David Brock Smith", "party": "(R)", "war": 0.0,
+           "note": "2026 R nominee (challenger to Merkley)."},
+    "RI": {"name": "Raymond McKay", "party": "(R)", "war": 0.0,
+           "note": "2026 R nominee (challenger to Reed)."},
+    "TN": {"name": "Marquita Bradshaw", "party": "(D)", "war": 0.0,
+           "note": "2026 D nominee (challenger to Hagerty)."},
+    "VA": {"name": "Bert Mizusawa", "party": "(R)", "war": 0.0,
+           "note": "2026 R nominee (challenger to Warner)."},
 }
 
 

@@ -802,7 +802,8 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "TN-05": {"name": "Chaz Molder", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "TN-06": {"name": "Mike Croley", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "TN-07": {"name": "Darden Copeland", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
-    "TX-09": {"name": "Alex Mealer", "party": "(R)", "war": 0.0, "note": "2026 R nominee (redistricted open seat; Al Green moved to TX-18)"},
+    # TX-09: redistricted open seat, Mealer is the R nominee (already the "incumbent" field per CSV);
+    # no separate D nominee tracked — leaving challenger empty rather than showing Mealer vs Mealer.
     "VA-01": {"name": "Shannon Taylor", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "VA-03": {"name": "Edwin Rivera", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
     "VA-04": {"name": "Robert Murray", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
