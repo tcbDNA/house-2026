@@ -104,6 +104,10 @@ INCUMBENT_OVERRIDES = {
     # NE-02 open (Bacon retiring); Brinker Harding is the R nominee.
     # No federal WAR; is_incumbent=False keeps incumbency_adj at 0.
     "NE-02": {"incumbent": "Brinker Harding", "party": "(R)", "is_incumbent": False},
+    # TX-09: redistricted open R-leaning seat (Al Green moved to TX-18).
+    # Mealer is the R nominee — non-sitting, so is_incumbent=False zeros out the
+    # ±1.7 structural incumbency bonus. D nominee (Gutierrez) is in HOUSE_CHALLENGERS.
+    "TX-09": {"incumbent": "Alex Mealer", "party": "(R)", "is_incumbent": False},
     # CA-40 under Prop50 lines merged Calvert (old CA-41) and Kim (old CA-40)
     # into a single R-leaning seat — both sitting reps are in the primary.
     "CA-40": {"incumbent": "(open, R primary: Calvert vs Kim)", "party": "(R)"},
@@ -802,8 +806,9 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "TN-05": {"name": "Chaz Molder", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "TN-06": {"name": "Mike Croley", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "TN-07": {"name": "Darden Copeland", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
-    # TX-09: redistricted open seat, Mealer is the R nominee (already the "incumbent" field per CSV);
-    # no separate D nominee tracked — leaving challenger empty rather than showing Mealer vs Mealer.
+    "TX-09": {"name": "Leticia Gutierrez", "party": "(D)", "war": 0.0,
+              "note": "2026 D nominee (won D primary March 3 outright with 53.6% in 6-way field). "
+                      "TX-09 is a redistricted open R-leaning seat; Al Green moved to TX-18."},
     "VA-01": {"name": "Shannon Taylor", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "VA-03": {"name": "Edwin Rivera", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
     "VA-04": {"name": "Robert Murray", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
