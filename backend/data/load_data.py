@@ -755,6 +755,8 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     # LA-02: no R filed — Libertarian only opposition. Uncontested by R.
     "LA-03": {"name": "John Day", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "LA-04": {"name": "Conrad Cable", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "LA-05": {"name": "Patricia \"Pat\" Moore", "party": "(D)", "war": 0.0,
+              "note": "Leading D in LA jungle primary (state rep HD-17). Open seat (Letlow→Senate)."},
     "LA-06": {"name": "Blake Miguez", "party": "(R)", "war": 0.0, "note": "2026 R nominee; Fields withdrew after redraw"},
     # MA-02: uncontested by R.
     "MA-04": {"name": "Tom Stalcup", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
