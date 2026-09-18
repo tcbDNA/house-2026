@@ -156,6 +156,68 @@ INCUMBENT_OVERRIDES = {
     # NV-02: open (Amodei retiring). Flippo (Trump-endorsed) won R primary over
     # establishment pick Settelmeyer (backed by Gov. Lombardo + Amodei).
     "NV-02": {"incumbent": "David Flippo", "party": "(R)", "is_incumbent": False},
+    # === Summer/fall 2026 primaries (post-June) ===
+    # SC-05: Norman ran for Senate (lost), seat is open. Wes Climer (R state sen) unopposed.
+    "SC-05": {"incumbent": "Wes Climer", "party": "(R)", "is_incumbent": False},
+    # CO-01: DeGette LOST D primary (major upset). Melat Kiros (D) is nominee.
+    "CO-01": {"incumbent": "Melat Kiros", "party": "(D)", "is_incumbent": False},
+    # FL-07: Mills LOST R primary amid ethics/DoJ probes. Ryan Elijah (R) is nominee.
+    "FL-07": {"incumbent": "Ryan Elijah", "party": "(R)", "is_incumbent": False},
+    # FL-19: open (Byron Donalds→gov). Strada (R) won primary.
+    "FL-19": {"incumbent": "J. Strada", "party": "(R)", "is_incumbent": False},
+    # FL-20: WS beat Cherfilus-McCormick + Holness + Manley + Luther Campbell in D primary — kept as inc.
+    # FL-24: open (Wilson retiring/displaced by new FL map). Oliver Gilbert III (D) nominee.
+    "FL-24": {"incumbent": "Oliver Gilbert III", "party": "(D)", "is_incumbent": False},
+    # MI-10: open (John James→gov). Bouchard (R, Trump-endorsed, 72%) vs Hines (D).
+    "MI-10": {"incumbent": "Mike Bouchard", "party": "(R)", "is_incumbent": False},
+    # MI-11: open (Haley Stevens→Senate). Jeremy Moss (D state sen) is nominee.
+    "MI-11": {"incumbent": "Jeremy Moss", "party": "(D)", "is_incumbent": False},
+    # MI-13: Thanedar LOST D primary. Donavan McKinney (D state rep) is nominee.
+    "MI-13": {"incumbent": "Donavan McKinney", "party": "(D)", "is_incumbent": False},
+    # NH-01: open (Pappas→Senate). Stefany Shaheen (D, Jeanne Shaheen's granddaughter) is nominee.
+    "NH-01": {"incumbent": "Stefany Shaheen", "party": "(D)", "is_incumbent": False},
+    # NY-07: open (Velázquez retiring). Claire Valdez (D, DSA/Mamdani-backed).
+    "NY-07": {"incumbent": "Claire Valdez", "party": "(D)", "is_incumbent": False},
+    # NY-10: Goldman LOST D primary 62-38. Brad Lander (D, NYC comptroller) is nominee.
+    "NY-10": {"incumbent": "Brad Lander", "party": "(D)", "is_incumbent": False},
+    # NY-12: open (Nadler retiring). Micah Lasher (D state assembly) is nominee.
+    "NY-12": {"incumbent": "Micah Lasher", "party": "(D)", "is_incumbent": False},
+    # NY-13: Espaillat LOST D primary. Darializa Avila Chevalier (D) is nominee.
+    "NY-13": {"incumbent": "Darializa Avila Chevalier", "party": "(D)", "is_incumbent": False},
+    # NY-21: open (Stefanik→gov). Gendebien (D) vs Constantino (R, Trump-endorsed) → R stays R here.
+    "NY-21": {"incumbent": "Anthony Constantino", "party": "(R)", "is_incumbent": False},
+    # WA-04: open (Newhouse retiring). Amanda McKinney (R state sen, 34.9%) won top-two.
+    "WA-04": {"incumbent": "Amanda McKinney", "party": "(R)", "is_incumbent": False},
+    # WI-07: open (Tiffany→gov). Michael Alfonso (R, Duffy's son-in-law, Trump-endorsed).
+    "WI-07": {"incumbent": "Michael Alfonso", "party": "(R)", "is_incumbent": False},
+    # CT-01: Larson LOST D primary (major upset). Luke Bronin (D, ex-Hartford mayor).
+    "CT-01": {"incumbent": "Luke Bronin", "party": "(D)", "is_incumbent": False},
+    # MA-06: open (Moulton→Senate). Dan Koh (D) is nominee.
+    "MA-06": {"incumbent": "Dan Koh", "party": "(D)", "is_incumbent": False},
+    # OK-01: open (Hern→Senate). Mark Tedford (R) is nominee.
+    "OK-01": {"incumbent": "Mark Tedford", "party": "(R)", "is_incumbent": False},
+    # TN-05: Ogles LOST R primary despite Trump endorsement. Charlie Hatcher (R, 53.2%).
+    "TN-05": {"incumbent": "Charlie Hatcher", "party": "(R)", "is_incumbent": False},
+    # TN-06: open (John Rose→gov). Johnny Garrett (R state rep).
+    "TN-06": {"incumbent": "Johnny Garrett", "party": "(R)", "is_incumbent": False},
+    # TN-09: open (Cohen retired after TN redistricting split Memphis). Brent Taylor (R state sen).
+    "TN-09": {"incumbent": "Brent Taylor", "party": "(R)", "is_incumbent": False},
+    # WY-AL: open (Hageman→Senate). Chuck Gray (R Sec of State).
+    "WY-AL": {"incumbent": "Chuck Gray", "party": "(R)", "is_incumbent": False},
+    # MO-06: open (Sam Graves retiring after 13 terms). Chris Stigall (R).
+    "MO-06": {"incumbent": "Chris Stigall", "party": "(R)", "is_incumbent": False},
+    # AZ-05: open (Biggs→gov). Mark Lamb (R, former Pinal Co sheriff).
+    "AZ-05": {"incumbent": "Mark Lamb", "party": "(R)", "is_incumbent": False},
+    # UT-01: court-redraw made this a new D-leaning SLC seat. Ben McAdams (D, former US Rep) won D primary 60%.
+    "UT-01": {"incumbent": "Ben McAdams", "party": "(D)", "is_incumbent": False},
+    # UT-04: open (Burgess Owens retired). Mike Kennedy (R) moved from old UT-03.
+    "UT-04": {"incumbent": "Mike Kennedy", "party": "(R)", "is_incumbent": False},
+    # MN-02: open (Craig→Senate). Matt Little (D) vs Eric Pratt (R).
+    "MN-02": {"incumbent": "Matt Little", "party": "(D)", "is_incumbent": False},
+    # AZ-01: already open (Schweikert→gov). Jay Feely (R, Trump-endorsed) won R primary.
+    "AZ-01": {"incumbent": "Jay Feely", "party": "(R)", "is_incumbent": False},
+    # MD-05: open (Hoyer retiring). Adrian Boafo (D).
+    "MD-05": {"incumbent": "Adrian Boafo", "party": "(D)", "is_incumbent": False},
     # TX-18: Menefee (sitting since 2025 special after Jackson Lee) defeated
     # Al Green (moved from TX-09 post-redraw) in the May 26 runoff.
     "TX-18": {"incumbent": "Christian Menefee", "party": "(D)"},
@@ -497,6 +559,75 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "CA-46": {"name": "David Pan", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
     "CA-51": {"name": "Ricardo Cabrera", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
     "CA-52": {"name": "Jeff Belle", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    # === Summer/fall 2026 primary results ===
+    # AZ
+    "AZ-01": {"name": "Amish Shah", "party": "(D)", "war": 0.0, "note": "2026 D nominee (2024 rematch — auto-WAR)"},
+    "AZ-06": {"name": "JoAnna Mendoza", "party": "(D)", "war": 0.0, "note": "2026 D nominee (Marine vet); challenger to Ciscomani"},
+    "AZ-09": {"name": "Dani Sterbinsky", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Gosar"},
+    # CO
+    "CO-03": {"name": "Dwayne Romero", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Hurd"},
+    "CO-04": {"name": "Eileen Laubacher", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Boebert"},
+    "CO-05": {"name": "Jessica Killin", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Crank"},
+    "CO-08": {"name": "Manny Rutinel", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Evans — top toss-up"},
+    # FL competitive races (map redraw pending review — see NOTE)
+    "FL-14": {"name": "Kathy Castor", "party": "(D)", "war": 0.0, "note": "Castor (D-inc) vs R nominee in new Trump+11 seat post-FL redraw"},
+    # MI
+    "MI-03": {"name": "Terri DeBoer", "party": "(R)", "war": 0.0, "note": "2026 R nominee (former TV meteorologist); challenger to Scholten"},
+    "MI-04": {"name": "Sean McCann", "party": "(D)", "war": 0.0, "note": "2026 D nominee (state senator, Whitmer-endorsed); challenger to Huizenga"},
+    "MI-07": {"name": "Will Lawrence", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Barrett"},
+    "MI-08": {"name": "Tom Smith", "party": "(R)", "war": 0.0, "note": "2026 R nominee (upset Trump-endorsed Amir Hassan); challenger to McDonald Rivet"},
+    "MI-10": {"name": "Christina Hines", "party": "(D)", "war": 0.0, "note": "2026 D nominee (former asst US attorney); challenger to Bouchard in open James seat"},
+    "MI-13": {"name": "TP Nykoriak", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
+    # MN
+    "MN-01": {"name": "Jake Johnson", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Finstad"},
+    "MN-02": {"name": "Eric Pratt", "party": "(R)", "war": 0.0, "note": "2026 R nominee (state senator); challenger to Little in open Craig seat"},
+    "MN-03": {"name": "Tyler Bass", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Morrison"},
+    # MO
+    "MO-02": {"name": "Fred Wellman", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Wagner (2024 lines restored)"},
+    "MO-05": {"name": "Rick Brattin", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Cleaver (seat safe D again after map reverted)"},
+    "MO-06": {"name": "Josh Smead", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Stigall in open Graves seat"},
+    # NH
+    "NH-01": {"name": "Anthony DiLorenzo", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Stefany Shaheen in open Pappas seat"},
+    # NY competitive
+    "NY-17": {"name": "Cait Conley", "party": "(D)", "war": 0.0, "note": "2026 D nominee (Army vet); challenger to Lawler"},
+    "NY-18": {"name": "Sharanjit Thind", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Ryan"},
+    "NY-19": {"name": "Peter Oberacker", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Riley"},
+    "NY-21": {"name": "Blake Gendebien", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Constantino in open Stefanik seat"},
+    "NY-22": {"name": "Kailee Buller", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Mannion"},
+    "NY-24": {"name": "Alissa J. Ellman", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Tenney"},
+    "NY-23": {"name": "Aaron Gies", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Langworthy"},
+    # WA competitive
+    "WA-03": {"name": "John Braun", "party": "(R)", "war": 0.0, "note": "2026 R nominee (state Sen Minority Leader, Trump-backed); challenger to Gluesenkamp Perez"},
+    "WA-04": {"name": "John Duresky", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to McKinney in open Newhouse seat"},
+    "WA-05": {"name": "Carmela Conroy", "party": "(D)", "war": 0.0, "note": "2026 D nominee (2024 rematch); challenger to Baumgartner"},
+    # WI competitive
+    "WI-01": {"name": "Mitchell Berman", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Steil"},
+    "WI-03": {"name": "Rebecca Cooke", "party": "(D)", "war": 0.0, "note": "2026 D nominee (2024 rematch — auto-WAR); challenger to Van Orden"},
+    "WI-07": {"name": "Fred Clark", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Alfonso in open Tiffany seat"},
+    # TN post-redraw
+    "TN-09": {"name": "Justin J. Pearson", "party": "(D)", "war": 0.0, "note": "2026 D nominee ('TN Three' state rep); challenger to Taylor in open Cohen seat"},
+    # SC
+    "SC-05": {"name": "Mallory Dittmer", "party": "(D)", "war": 0.0, "note": "2026 D nominee (55.5% in primary); challenger to Climer in open Norman seat"},
+    # UT
+    "UT-01": {"name": "Riley Owen", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to McAdams in new D-lean SLC seat"},
+    "UT-02": {"name": "Peter Crosby", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Moore"},
+    "UT-03": {"name": "Caroline Gleich", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Maloy"},
+    "UT-04": {"name": "Jonny Larsen", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Kennedy in open Owens seat"},
+    # WY, KS, MS, OK, MA (safe-seat challengers)
+    "WY-AL": {"name": "Lisa F. Kinney", "party": "(D)", "war": 0.0, "note": "2026 D nominee (ex-state Sen minority leader); challenger to Gray in open Hageman seat"},
+    "KS-01": {"name": "Lauren Reinhold", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "KS-02": {"name": "Don Coover", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "KS-03": {"name": "Eric Jenkins", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Davids"},
+    "KS-04": {"name": "Katy Tyndell", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
+    "MA-06": {"name": "Micah Jones", "party": "(R)", "war": 0.0, "note": "2026 R nominee (Army vet); challenger to Koh in open Moulton seat"},
+    "OK-01": {"name": "John Croisant", "party": "(D)", "war": 0.0, "note": "2026 D nominee; challenger to Tedford in open Hern seat"},
+    "OK-05": {"name": "Jena Nelson", "party": "(D)", "war": 0.0, "note": "2026 D nominee (beat Trey Martin); challenger to Bice"},
+    # CT
+    "CT-01": {"name": "Amy Chai", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to Bronin in open Larson seat"},
+    # DE
+    "DE-AL": {"name": "Joseph Arminio", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to McBride"},
+    # MD-06
+    "MD-06": {"name": "Robin Ficker", "party": "(R)", "war": 0.0, "note": "2026 R nominee; challenger to McClain Delaney"},
 }
 
 # Generic incumbency advantage in D-R margin points. Split-Ticket's 2020

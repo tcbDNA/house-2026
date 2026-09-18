@@ -86,7 +86,10 @@ SEATS_2026 = {
            "note": "Mullin resigned to become DHS Director; Gov. Stitt to appoint successor"},
     "OR": {"incumbent": "Jeff Merkley", "party": "(D)", "retiring": False, "type": "regular"},
     "RI": {"incumbent": "Jack Reed", "party": "(D)", "retiring": False, "type": "regular"},
-    "SC": {"incumbent": "Lindsey Graham", "party": "(R)", "retiring": False, "type": "regular"},
+    "SC": {"incumbent": "Darline Graham", "party": "(R)", "retiring": False, "type": "regular",
+           "appointed": True,
+           "note": "Lindsey Graham died July 11, 2026. Gov. McMaster appointed his sister Darline; "
+                   "she won the special R runoff Aug 25 over Rep. Ralph Norman 52.5-47.5."},
     "SD": {"incumbent": "Mike Rounds", "party": "(R)", "retiring": False, "type": "regular"},
     "TN": {"incumbent": "Bill Hagerty", "party": "(R)", "retiring": False, "type": "regular"},
     "TX": {"incumbent": "(open, Cornyn lost primary to Paxton)", "party": "(R)", "retiring": True, "type": "regular",
@@ -183,6 +186,20 @@ CHALLENGERS = {
            "co_nominee": "Kurt Alme", "co_nominee_party": "(R)",
            "note": "Open Daines seat (Daines withdrew at filing deadline, endorsed Alme). "
                    "Alme: Trump-endorsed former U.S. Attorney, won R primary. D nominee not yet finalized."},
+    # === Summer/fall 2026 primaries (post-June) ===
+    "MI": {"name": "Abdul El-Sayed", "party": "(D)", "war": 0.0,
+           "co_nominee": "Mike Rogers", "co_nominee_party": "(R)",
+           "note": "Open Peters seat. El-Sayed: physician/Wayne Co exec, D primary winner over Stevens+McMorrow. Rogers: 2024 R nominee, back for 2026."},
+    "MN": {"name": "Angie Craig", "party": "(D)", "war": 0.0,
+           "note": "Open Smith seat. Craig: sitting MN-02 rep, moved up. R nominee not researched."},
+    "OK": {"name": "N'Kiyla Jasmine Thomas", "party": "(D)", "war": 0.0,
+           "co_nominee": "Kevin Hern", "co_nominee_party": "(R)",
+           "note": "Open Mullin (→DHS) seat. Hern: sitting OK-01 rep won R primary 69.8%."},
+    # SC Senate: challenger already listed above as Annie Andrews (D). Update: Graham died,
+    # sister Darline appointed + won runoff (see states dict). No changes to CHALLENGERS.
+    "FL": {"name": "Angie Nixon", "party": "(D)", "war": 0.0,
+           "note": "Open FL Rubio special (Moody R-appointed inc, expiring Jan 2029). "
+                   "Nixon: state rep, upset winner over Alex Vindman in D primary."},
 }
 
 
