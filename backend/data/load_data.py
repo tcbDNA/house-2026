@@ -114,6 +114,25 @@ INCUMBENT_OVERRIDES = {
     # KY-06: open R-leaning seat (Barr→Senate). Slot Alvarado (R) into the
     # incumbent field so both nominees display; Dembo (D) is the challenger.
     "KY-06": {"incumbent": "Ralph Alvarado", "party": "(R)", "is_incumbent": False},
+    # === Named same-party successors for open seats (so both nominees display) ===
+    # is_incumbent=False on all — none are sitting members. Cross-party challengers
+    # are already in HOUSE_CHALLENGERS.
+    "IL-02": {"incumbent": "Donna Miller", "party": "(D)", "is_incumbent": False},
+    "IL-04": {"incumbent": "Patty Garcia", "party": "(D)", "is_incumbent": False},
+    "IL-07": {"incumbent": "La Shawn Ford", "party": "(D)", "is_incumbent": False},
+    "IL-08": {"incumbent": "Melissa Bean", "party": "(D)", "is_incumbent": False},
+    "IL-09": {"incumbent": "Daniel Biss", "party": "(D)", "is_incumbent": False},
+    "FL-02": {"incumbent": "Austin Rogers", "party": "(R)", "is_incumbent": False},
+    "FL-11": {"incumbent": "Joe Strada", "party": "(R)", "is_incumbent": False},
+    "FL-16": {"incumbent": "Sydney Gruters", "party": "(R)", "is_incumbent": False},
+    "FL-24": {"incumbent": "Oliver Gilbert", "party": "(D)", "is_incumbent": False},
+    "ME-02": {"incumbent": "Matthew Dunlap", "party": "(D)", "is_incumbent": False},
+    "LA-05": {"incumbent": "Michael Echols", "party": "(R)", "is_incumbent": False},
+    "GA-11": {"incumbent": "John Cowan", "party": "(R)", "is_incumbent": False},
+    "AL-01": {"incumbent": "Jerry Carl", "party": "(R)", "is_incumbent": False},
+    "SC-01": {"incumbent": "Jenny Costa Honeycutt", "party": "(R)", "is_incumbent": False},
+    # LA-02: Troy Carter is the sitting D incumbent (not displaced — that note was wrong).
+    "LA-02": {"incumbent": "Troy Carter", "party": "(D)"},
     # CA-40 under Prop50 lines merged Calvert (old CA-41) and Kim (old CA-40)
     # into a single R-leaning seat — both sitting reps are in the primary.
     "CA-40": {"incumbent": "(open, R primary: Calvert vs Kim)", "party": "(R)"},
@@ -256,8 +275,7 @@ INCUMBENT_OVERRIDES = {
     # TX-32: SB4 redrew this from Johnson's D seat into an R-leaning seat
     # (Johnson moved to TX-33). Yarbrough is R nominee (Binkley withdrew from runoff).
     "TX-32": {"incumbent": "Jace Yarbrough", "party": "(R)", "is_incumbent": False},
-    # FL-24: Frederica Wilson retiring; D nominee not yet selected. Safe D Miami seat.
-    "FL-24": {"incumbent": "(open, Wilson retiring)", "party": "(D)"},
+    # FL-24: superseded by later entry with real D nominee (Oliver Gilbert).
     # LA-06: post-redraw the seat is R-leaning (R+32 pres). Cleo Fields keeps the
     # incumbent label as a placeholder but is unlikely to run; is_incumbent=False
     # zeros the +1.7 D incumbency boost that he won't actually carry into a hostile seat.
@@ -281,8 +299,7 @@ INCUMBENT_OVERRIDES = {
     "GA-01": {"incumbent": "Jim Kingston", "party": "(R)", "is_incumbent": False},
     # GA-10: open (Collins→Senate). Houston Gaines won R primary.
     "GA-10": {"incumbent": "Houston Gaines", "party": "(R)", "is_incumbent": False},
-    # GA-11: open (Loudermilk retiring). Both R and D primaries headed to June 16 runoff.
-    "GA-11": {"incumbent": "(open, Loudermilk retiring)", "party": "(R)"},
+    # GA-11: superseded by later entry with real R nominee (John Cowan).
     # GA-13: open (David Scott died April 2026). Jasmine Clark won D primary;
     # Chavez unopposed R. Heavily D seat.
     "GA-13": {"incumbent": "Jasmine Clark", "party": "(D)", "is_incumbent": False},
