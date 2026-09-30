@@ -196,9 +196,10 @@ CHALLENGERS = {
            "co_nominee": "Mike Rogers", "co_nominee_party": "(R)",
            "note": "Open Peters seat. El-Sayed: physician/Wayne Co exec, D primary winner over Stevens+McMorrow. Rogers: 2024 R nominee, back for 2026."},
     "MN": {"name": "Michele Tafoya", "party": "(R)", "war": 0.0,
-           "co_nominee": "Angie Craig", "co_nominee_party": "(D)",
-           "note": "Open Smith seat. Tafoya: former NFL/NBC Sunday Night Football sideline reporter, R nominee. "
-                   "Craig: sitting MN-02 rep, D nominee — auto-WAR from 2024 House."},
+           "co_nominee": "Peggy Flanagan", "co_nominee_party": "(D)",
+           "note": "Open Smith seat. Flanagan (Lt Gov) beat Craig 59% in Aug 11 DFL primary "
+                   "(Craig lost DFL endorsement May 30 amid progressive backlash). "
+                   "Tafoya: former NFL/NBC sideline reporter, won R primary 52.1% over Schwarze and Royce White."},
     "OK": {"name": "N'Kiyla Jasmine Thomas", "party": "(D)", "war": 0.0,
            "co_nominee": "Kevin Hern", "co_nominee_party": "(R)",
            "note": "Open Mullin (→DHS) seat. Hern: sitting OK-01 rep won R primary 69.8%."},
