@@ -154,8 +154,10 @@ CHALLENGERS = {
            "note": "2026 R nominee per Wikipedia"},
     "MS": {"name": "Scott Colom", "party": "(D)", "war": 0.0,
            "note": "2026 D nominee per Wikipedia"},
-    "SD": {"name": "Julian Beaudion", "party": "(D)", "war": 0.0,
-           "note": "2026 D nominee per Wikipedia"},
+    "SD": {"name": "Brian Bengs", "party": "(I)", "war": 0.0,
+           "note": "2026 I nominee (challenger to Rounds). Navy/AF veteran, former Northern State U "
+                   "political science prof, 2022 D Senate nominee. Beaudion won June D primary but "
+                   "withdrew Aug 4 2026 to consolidate opposition behind Bengs; no D on November ballot."},
     "TX": {"name": "James Talarico", "party": "(D)", "war": 0.0,
            "co_nominee": "Ken Paxton", "co_nominee_party": "(R)",
            "note": "Open R seat (Cornyn lost primary). Talarico: 2026 D nominee. "
