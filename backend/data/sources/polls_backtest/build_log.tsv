@@ -1,0 +1,72 @@
+year	state	tag	source	race	polls_listed	polls_in_avg	avg_start	avg_end	dem	rep	ind	spread	status
+2022	al	al_7754	wayback 20221101192852	Alabama Senate - Britt vs. Boyd	0	0							page shows no RCP Average row
+2022	ar	ar_7700	feed	2022 Arkansas Senate - Boozman vs. James	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	az	az_7390	wayback 20221108192332	Arizona Senate - Masters vs. Kelly	28	4	2022-11-01	2022-11-07	48.0	48.3		Masters +0.3	
+2022	ca	ca_7513	wayback 20221109024002	California Senate - Meuser vs. Padilla	0	0							page shows no RCP Average row
+2022	co	co_7773	wayback 20221109023934	Colorado Senate - O'Dea vs. Bennet	10	3	2022-10-26	2022-11-05	50.0	44.3		Bennet +5.7	
+2022	ct	ct_7686	wayback 20221027052247	Connecticut Senate - Levy vs. Blumenthal	7	3	2022-10-10	2022-10-23	52.7	41.7		Blumenthal +11.0	capture predates window
+2022	fl	fl_7382	wayback 20221108232016	Florida Senate - Rubio vs. Demings	20	5	2022-10-17	2022-11-06	43.6	52.4		Rubio +8.8	
+2022	ga	ga_7329	wayback 20221108213622	Georgia Senate - Walker vs. Warnock	48	5	2022-11-02	2022-11-07	47.4	48.8		Walker +1.4	
+2022	ga	ga_7936	wayback 20221103213649	Georgia Senate - Walker vs. Warnock vs. Oliver	14	4	2022-10-15	2022-10-27	45.8	47.3		Walker +1.5	capture predates window; EXCLUDED from CSV: secondary 3-way (Walker/Warnock/Oliver) average; RCP's headline GA average is the 2-way race 7329
+2022	ia	ia_7738	wayback 20221101192215	Iowa Senate - Grassley vs. Franken	0	0							page shows no RCP Average row
+2022	il	il_7772	wayback 20221102150844	Illinois Senate - Salvi vs. Duckworth	0	0							page shows no RCP Average row
+2022	ks	ks_7924	wayback 20221103005411	Kansas Senate - Moran vs. Holland	0	0							page shows no RCP Average row
+2022	la	la_7522	feed	2022 Louisiana Senate - Open Primary	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	mo	mo_7682	wayback 20221107215322	Missouri Senate - Schmitt vs. Busch Valentine	10	4	2022-10-24	2022-11-01	41.3	52.0		Schmitt +10.7	
+2022	nc	nc_7588	wayback 20221108170204	North Carolina Senate - Budd vs. Beasley	23	4	2022-11-01	2022-11-06	44.8	51.0		Budd +6.2	
+2022	nd	nd_7527	wayback 20221103005351	North Dakota Senate - Hoeven vs. Christiansen	0	0							page shows no RCP Average row
+2022	nh	nh_7379	wayback 20221108235226	New Hampshire Senate - Bolduc vs. Hassan	23	6	2022-10-28	2022-11-06	48.7	47.3		Hassan +1.4	
+2022	nv	nv_7392	wayback 20221109023958	Nevada Senate - Laxalt vs. Cortez Masto	29	5	2022-10-24	2022-11-07	45.4	48.8		Laxalt +3.4	
+2022	ny	ny_7771	wayback 20221109075316	New York Senate - Schumer vs. Pinion	10	3	2022-10-26	2022-10-31	54.7	39.3		Schumer +15.4	
+2022	oh	oh_7624	wayback 20221108232340	Ohio Senate - Vance vs. Ryan	19	5	2022-10-30	2022-11-05	43.8	51.8		Vance +8.0	
+2022	ok	ok_7912	feed	2022 Oklahoma Senate - Lankford vs. Horn	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	ok	ok_7911	feed	2022 Oklahoma Senate Special Election - Mullin vs. Horn	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	or	or_7744	wayback 20221027223416	Oregon Senate - Perkins vs. Wyden	0	0							page shows no RCP Average row
+2022	pa	pa_7695	wayback 20221108155619	Pennsylvania Senate - Oz vs. Fetterman	34	5	2022-10-28	2022-11-03	46.8	47.2		Oz +0.4	
+2022	sd	sd_7926	feed	2022 South Dakota Senate - Thune vs. Bengs	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	ut	ut_7735	wayback 20221107185327	Utah Senate - Lee vs. McMullin	0	0							page shows no RCP Average row
+2022	vt	vt_7905	wayback 20221021154013	Vermont Senate - Malloy vs. Welch	0	0							page shows no RCP Average row
+2022	wa	wa_7400	wayback 20221108000928	Washington Senate - Smiley vs. Murray	14	3	2022-10-25	2022-10-31	49.3	46.3		Murray +3.0	
+2022	wi	wi_7758	wayback 20221108192415	Wisconsin Senate - Johnson vs. Barnes	22	5	2022-10-24	2022-11-05	46.6	50.2		Johnson +3.6	
+2022	ky	ky_7521	feed	2022 Kentucky Senate - Paul vs. Booker	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	sc	sc_7530	feed	South Carolina Senate - Scott vs. Matthews	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	md	md_7930	feed	2022 Maryland Senate - Chaffee vs. Van Hollen	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	ak	ak_7915	feed	2022 Alaska Senate - Murkowski vs. Tshibaka vs. Chesbro	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	ak	ak_7916	feed	2022 Alaska Senate - Murkowski vs. Tshibaka vs. Chesbro (2nd Round)	0	0							feed: show_rcp_avg=0 (no average displayed)
+2022	ak	ak_7917	feed	2022 Alaska Senate - Murkowski vs. Tshibaka (Final Round)	0	0							feed: show_rcp_avg=0 (no average displayed)
+2024	az	az_lake-vs-gallego	wayback 20241105203413	2024 Arizona Senate - Lake vs. Gallego	60	8	2024-10-25	2024-11-04	48.6	46.0		Gallego +2.6	
+2024	ca	ca_garvey-vs-schiff	wayback 20241106153545	2024 California Senate - Garvey vs. Schiff	0	0							page sets hideRcpAverageRow=true (no RCP Average displayed)
+2024	ct	ct_murphy-vs-corey	wayback 20241106153551	2024 Connecticut Senate - Corey vs. Murphy	0	0							page shows no RCP Average row
+2024	de	de_blunt-rochester-vs-hansen	wayback 20241106153551	2024 Delaware Senate - Hansen vs. Blunt Rochester	0	0							page shows no RCP Average row
+2024	fl	fl_scott-vs-mucarsel-powell	wayback 20241105232729	2024 Florida Senate - Scott vs. Mucarsel-Powell	14	7	2024-09-29	2024-11-01	44.3	48.9		Scott +4.6	
+2024	hi	hi_hirono-vs-republican	wayback 20241106153552	2024 Hawaii Senate - Hirono vs. Republican	0	0							page shows no RCP Average row
+2024	in	in_banks-vs-mccray	wayback 20241106153553	2024 Indiana Senate - Banks vs. McCray	0	0							page sets hideRcpAverageRow=true (no RCP Average displayed)
+2024	me	me_king-vs-kouzounas-vs-costello-vs-cherry	wayback 20241106153553	2024 Maine Senate - King vs. Kouzounas vs. Costello	0	0							page shows no RCP Average row
+2024	md	md_hogan-vs-alsobrooks	wayback 20241105232730	2024 Maryland Senate - Hogan vs. Alsobrooks	0	0							page sets hideRcpAverageRow=true (no RCP Average displayed)
+2024	ma	ma_deaton-vs-warren	wayback 20241106153555	2024 Massachusetts Senate - Deaton vs. Warren	0	0							page sets hideRcpAverageRow=true (no RCP Average displayed)
+2024	mi	mi_rogers-vs-slotkin	wayback 20241105112834	2024 Michigan Senate - Rogers vs. Slotkin	74	13	2024-10-24	2024-11-04	48.4	46.1		Slotkin +2.3	
+2024	mn	mn_white-vs-klobuchar	wayback 20241106153555	2024 Minnesota Senate - White vs. Klobuchar	10	4	2024-10-16	2024-11-04	52.0	39.0		Klobuchar +13.0	morning-after capture
+2024	ms	ms_wicker-vs-democrat	wayback 20241106153557	2024 Mississippi Senate - Wicker vs. Democrat	0	0							page shows no RCP Average row
+2024	mo	mo_hawley-vs-kunce	wayback 20241105030820	2024 Missouri Senate - Hawley vs. Kunce	0	0							page shows no RCP Average row
+2024	mt	mt_sheehy-vs-tester	wayback 20241105112842	2024 Montana Senate - Sheehy vs. Tester	12	3	2024-10-05	2024-11-04	43.0	50.7		Sheehy +7.7	
+2024	ne	ne_fischer-vs-osborn-senate-1	wayback 20241106153558	2024 Nebraska Senate - Fischer vs. Osborn (I)	0	0							page shows no RCP Average row
+2024	ne	ne-special_ricketts-vs-love	wayback 20241106153608	2024 Nebraska Senate Special Election - Ricketts vs. Love	0	0							page shows no RCP Average row
+2024	nv	nv_brown-vs-rosen	wayback 20241105112858	2024 Nevada Senate - Brown vs. Rosen	44	8	2024-10-24	2024-11-04	48.8	43.9		Rosen +4.9	
+2024	nj	nj_bashaw-vs-kim	wayback 20241106153559	2024 New Jersey Senate - Bashaw vs. Kim	0	0							page shows no RCP Average row
+2024	nm	nm_domenici-vs-heinrich	wayback 20241105232728	2024 New Mexico Senate - Domenici vs. Heinrich	0	0							page sets hideRcpAverageRow=true (no RCP Average displayed)
+2024	ny	ny_sapraicone-vs-gillibrand	wayback 20241106153601	2024 New York Senate - Sapraicone vs. Gillibrand	0	0							page sets hideRcpAverageRow=true (no RCP Average displayed)
+2024	nd	nd_cramer-vs-christiansen	wayback 20241105093428	2024 North Dakota Senate - Cramer vs. Christiansen	0	0							page shows no RCP Average row
+2024	oh	oh_brown-vs-moreno	wayback 20241105112805	2024 Ohio Senate - Brown vs. Moreno	26	4	2024-10-23	2024-11-04	46.3	48.0		Moreno +1.7	
+2024	pa	pa_mccormick-vs-casey	wayback 20241105225040	2024 Pennsylvania Senate - McCormick vs. Casey	94	16	2024-10-21	2024-11-04	48.1	46.3		Casey +1.8	
+2024	ri	ri_whitehouse-vs-morgan	feed	2024 Rhode Island Senate - Morgan vs. Whitehouse	0	0							feed: show_rcp_avg=0 (no average displayed)
+2024	tn	tn_blackburn-vs-johnson	wayback 20241106153603	2024 Tennessee Senate - Blackburn vs. Johnson	0	0							page sets hideRcpAverageRow=true (no RCP Average displayed)
+2024	tx	tx_cruz-vs-allred	wayback 20241105112953	2024 Texas Senate - Cruz vs. Allred	26	5	2024-10-22	2024-11-04	44.8	49.2		Cruz +4.4	
+2024	ut	ut_curtis-vs-gleich	feed	2024 Utah Senate - Curtis vs. Gleich	0	0							feed: show_rcp_avg=0 (no average displayed)
+2024	vt	vt_sanders-vs-malloy-vs-schoville-vs-hill-vs-berry	feed	2024 Vermont Senate - Sanders vs. Malloy vs. Schoville vs. Hill	0	0							feed: show_rcp_avg=0 (no average displayed)
+2024	va	va_cao-vs-kaine	feed (archive 20241101235957 pre-window)	2024 Virginia Senate - Cao vs. Kaine	15	5	2024-10-19	2024-11-04	52.0	41.2		Kaine +10.8	
+2024	wa	wa_garcia-vs-cantwell	wayback 20241106153606	2024 Washington Senate - Garcia vs. Cantwell	0	0							page shows no RCP Average row
+2024	wv	wv_justice-vs-elliott	wayback 20241027044521	2024 West Virginia Senate - Justice vs. Elliott	0	0							page shows no RCP Average row
+2024	wi	wi_hovde-vs-baldwin	wayback 20241105112827	2024 Wisconsin Senate - Hovde vs. Baldwin	64	14	2024-10-16	2024-11-04	48.9	47.1		Baldwin +1.8	
+2024	wy	wy_barrasso-vs-democrat	wayback 20241106153608	2024 Wyoming Senate - Barrasso vs. Democrat	0	0							page shows no RCP Average row
+2022	us	gcb2022_7361	wayback 20221108173748	2022 Generic Congressional Vote	297	17	2022-10-18	2022-11-06	45.5	48.0		Republicans +2.5	
+2024	us	gcb2024	wayback 20241105180934	2024 Generic Congressional Vote	178	11	2024-10-14	2024-11-02	46.7	47.0		Republicans +0.3	

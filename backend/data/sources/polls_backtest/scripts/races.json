@@ -1,0 +1,642 @@
+[
+{
+"year": 2022,
+"state": "al",
+"tag": "al_7754",
+"rid": "7754",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ar",
+"tag": "ar_7700",
+"rid": "7700",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "az",
+"tag": "az_7390",
+"rid": "7390",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ca",
+"tag": "ca_7513",
+"rid": "7513",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "co",
+"tag": "co_7773",
+"rid": "7773",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ct",
+"tag": "ct_7686",
+"rid": "7686",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "fl",
+"tag": "fl_7382",
+"rid": "7382",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ga",
+"tag": "ga_7329",
+"rid": "7329",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ga",
+"tag": "ga_7936",
+"rid": "7936",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv",
+"exclude": "secondary 3-way (Walker/Warnock/Oliver) average; RCP's headline GA average is the 2-way race 7329"
+},
+{
+"year": 2022,
+"state": "ia",
+"tag": "ia_7738",
+"rid": "7738",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "il",
+"tag": "il_7772",
+"rid": "7772",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ks",
+"tag": "ks_7924",
+"rid": "7924",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "la",
+"tag": "la_7522",
+"rid": "7522",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "mo",
+"tag": "mo_7682",
+"rid": "7682",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "nc",
+"tag": "nc_7588",
+"rid": "7588",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "nd",
+"tag": "nd_7527",
+"rid": "7527",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "nh",
+"tag": "nh_7379",
+"rid": "7379",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "nv",
+"tag": "nv_7392",
+"rid": "7392",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ny",
+"tag": "ny_7771",
+"rid": "7771",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "oh",
+"tag": "oh_7624",
+"rid": "7624",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ok",
+"tag": "ok_7912",
+"rid": "7912",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ok",
+"tag": "ok_7911",
+"rid": "7911",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "or",
+"tag": "or_7744",
+"rid": "7744",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "pa",
+"tag": "pa_7695",
+"rid": "7695",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "sd",
+"tag": "sd_7926",
+"rid": "7926",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ut",
+"tag": "ut_7735",
+"rid": "7735",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "vt",
+"tag": "vt_7905",
+"rid": "7905",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "wa",
+"tag": "wa_7400",
+"rid": "7400",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "wi",
+"tag": "wi_7758",
+"rid": "7758",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ky",
+"tag": "ky_7521",
+"rid": "7521",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "sc",
+"tag": "sc_7530",
+"rid": "7530",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "md",
+"tag": "md_7930",
+"rid": "7930",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ak",
+"tag": "ak_7915",
+"rid": "7915",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ak",
+"tag": "ak_7916",
+"rid": "7916",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "ak",
+"tag": "ak_7917",
+"rid": "7917",
+"kind": "22",
+"sub": "rcp_2022_senate",
+"out": "senate_2022_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "az",
+"tag": "az_lake-vs-gallego",
+"rid": "8435",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ca",
+"tag": "ca_garvey-vs-schiff",
+"rid": "8413",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ct",
+"tag": "ct_murphy-vs-corey",
+"rid": "8638",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "de",
+"tag": "de_blunt-rochester-vs-hansen",
+"rid": "8635",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "fl",
+"tag": "fl_scott-vs-mucarsel-powell",
+"rid": "8459",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "hi",
+"tag": "hi_hirono-vs-republican",
+"rid": "8089",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "in",
+"tag": "in_banks-vs-mccray",
+"rid": "8278",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "me",
+"tag": "me_king-vs-kouzounas-vs-costello-vs-cherry",
+"rid": "8568",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "md",
+"tag": "md_hogan-vs-alsobrooks",
+"rid": "8387",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ma",
+"tag": "ma_deaton-vs-warren",
+"rid": "8483",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "mi",
+"tag": "mi_rogers-vs-slotkin",
+"rid": "8219",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "mn",
+"tag": "mn_white-vs-klobuchar",
+"rid": "8499",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ms",
+"tag": "ms_wicker-vs-democrat",
+"rid": "8096",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "mo",
+"tag": "mo_hawley-vs-kunce",
+"rid": "8274",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "mt",
+"tag": "mt_sheehy-vs-tester",
+"rid": "8286",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ne",
+"tag": "ne_fischer-vs-osborn-senate-1",
+"rid": "8590",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ne",
+"tag": "ne-special_ricketts-vs-love",
+"rid": "8464",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "nv",
+"tag": "nv_brown-vs-rosen",
+"rid": "8397",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "nj",
+"tag": "nj_bashaw-vs-kim",
+"rid": "8460",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "nm",
+"tag": "nm_domenici-vs-heinrich",
+"rid": "8466",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ny",
+"tag": "ny_sapraicone-vs-gillibrand",
+"rid": "8555",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "nd",
+"tag": "nd_cramer-vs-christiansen",
+"rid": "8282",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "oh",
+"tag": "oh_brown-vs-moreno",
+"rid": "8214",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "pa",
+"tag": "pa_mccormick-vs-casey",
+"rid": "8166",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ri",
+"tag": "ri_whitehouse-vs-morgan",
+"rid": "8627",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "tn",
+"tag": "tn_blackburn-vs-johnson",
+"rid": "8287",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "tx",
+"tag": "tx_cruz-vs-allred",
+"rid": "8180",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "ut",
+"tag": "ut_curtis-vs-gleich",
+"rid": "8581",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "vt",
+"tag": "vt_sanders-vs-malloy-vs-schoville-vs-hill-vs-berry",
+"rid": "8567",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "va",
+"tag": "va_cao-vs-kaine",
+"rid": "8498",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "wa",
+"tag": "wa_garcia-vs-cantwell",
+"rid": "8339",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "wv",
+"tag": "wv_justice-vs-elliott",
+"rid": "8620",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "wi",
+"tag": "wi_hovde-vs-baldwin",
+"rid": "8412",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "wy",
+"tag": "wy_barrasso-vs-democrat",
+"rid": "8115",
+"kind": "24",
+"sub": "rcp_2024_senate",
+"out": "senate_2024_rcp_final.csv"
+},
+{
+"year": 2022,
+"state": "us",
+"tag": "gcb2022_7361",
+"rid": "7361",
+"kind": "22",
+"sub": "rcp_generic_ballot",
+"out": "generic_ballot_rcp_final.csv"
+},
+{
+"year": 2024,
+"state": "us",
+"tag": "gcb2024",
+"rid": "7969",
+"kind": "24",
+"sub": "rcp_generic_ballot",
+"out": "generic_ballot_rcp_final.csv"
+}
+]

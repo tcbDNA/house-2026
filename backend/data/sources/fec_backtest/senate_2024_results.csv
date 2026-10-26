@@ -1,0 +1,36 @@
+state,special,dem_name,dem_votes,rep_name,rep_votes,ind_name,ind_votes,total_votes,margin_d_minus_r,notes
+AZ,no,Ruben Gallego,1676335,Kari Lake,1595761,,,3348814,2.4060,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+CA,no,Adam B. Schiff,9036252,Steve Garvey,6312594,,,15348846,17.7450,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); top-two general (D vs R); For full term beginning January 3, 2025"
+CA,yes,Adam B. Schiff,8837051,Steve Garvey,6204637,,,15041688,17.5008,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); top-two general (D vs R); same seat, remainder of term to Jan 3 2025; For unexpired term ending January 3, 2025"
+CT,no,Christopher Murphy,1000695,Matthew M. Corey,678256,,,1708259,18.8753,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); Christopher Murphy fusion total 1000695 (Democrat=953646, Working Families=47049)"
+DE,no,Lisa Blunt Rochester,283298,Eric Hansen,197753,,,500606,17.0883,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+FL,no,Debbie Mucarsel-Powell,4603077,Rick Scott,5977706,,,10757428,-12.7784,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+HI,no,Mazie K. Hirono,324194,Bob McDermott,160075,,,501763,32.7085,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); blank/over/under/void ballots (20473) listed by Clerk excluded from total
+IN,no,Valerie McCray,1097061,Jim Banks,1659416,,,2829897,-19.8719,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+MA,no,Elizabeth Warren,2041668,John Deaton,1365440,,,3413329,19.8114,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); blank/over/under/void ballots (99601) listed by Clerk excluded from total
+MD,no,Angela Alsobrooks,1650912,Larry Hogan,1294344,,,3021378,11.8015,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+ME,no,David Allen Costello,88891,Demi Kouzounas,284338,"Angus S. King, Jr.",427331,820782,-23.8123,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); King (I, caucuses with D) won outright in first round; D nominee Costello also on ballot, so margin_d_minus_r (Costello vs Kouzounas) is not the competitive margin; blank/over/under/void ballots (21665) listed by Clerk excluded from total"
+MI,no,Elissa Slotkin,2712686,Mike Rogers,2693680,,,5577187,0.3408,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+MN,no,Amy Klobuchar,1792441,Royce White,1291712,,,3189323,15.7002,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+MO,no,Lucas Kunce,1243728,Josh Hawley,1651907,,,2972559,-13.7316,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+MS,no,Ty Pinkins,451981,Roger F. Wicker,763420,,,1215401,-25.6244,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+MT,no,Jon Tester,276305,Tim Sheehy,319682,,,607262,-7.1430,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+ND,no,Katrina Christiansen,121602,Kevin Cramer,241569,,,364327,-32.9284,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); D nominee ran as Democratic-Nonpartisan League
+NE,no,,,Deb Fischer,499124,Dan Osborn,436493,938336,,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); Ballot: Fischer (R, inc) vs Osborn (independent, ""By Petition""; no D nominee); For full term beginning January 3, 2025; no Democratic nominee on ballot; ind-minus-R margin=-6.6747"
+NE,yes,"Preston Love, Jr.",349902,Pete Ricketts,585103,,,935005,-25.1551,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); special for remainder of Sasse term (Ricketts appointed); For unexpired term ending January 3, 2027"
+NJ,no,Andy Kim,2161491,Curtis Bashaw,1773589,,,4031795,9.6211,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+NM,no,Martin Heinrich,497333,Nella Louise Domenici,405978,,,903311,10.1133,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+NV,no,Jacky Rosen,701105,Sam Brown,677046,,,1464728,1.6426,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); ""None of These Candidates"" (44380) counted in total, as FEC does"
+NY,no,Kirsten E. Gillibrand,4711298,Michael D. Sapraicone,3246114,,,8010317,18.2912,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); Michael D. Sapraicone fusion total 3246114 (Republican=2917044, Conservative=329070); Kirsten E. Gillibrand fusion total 4711298 (Democrat=4318903, Working Families=392395); blank/over/under/void ballots (370109) listed by Clerk excluded from total"
+OH,no,Sherrod Brown,2650949,Bernie Moreno,2857383,,,5704620,-3.6187,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+PA,no,"Robert P. Casey, Jr.",3384180,Dave McCormick,3399295,,,6963137,-0.2171,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+RI,no,Sheldon Whitehouse,294665,Patricia L. Morgan,196039,,,491948,20.0481,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+TN,no,Gloria Johnson,1027461,Marsha Blackburn,1918743,,,3007608,-29.6342,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+TX,no,Colin Z. Allred,5031249,Ted Cruz,5990741,,,11291854,-8.4972,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+UT,no,Caroline Gleich,464515,John R. Curtis,914700,Carlton E. Bowen,83972,1463509,-30.7607,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+VA,no,Tim Kaine,2417115,Hung Cao,2019911,,,4445535,8.9349,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+VT,no,,,Gerald Malloy,116512,Bernard Sanders,229429,363253,,"source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); Sanders (I, caucuses with D) won; no D nominee on ballot; blank/over/under/void ballots (9632) listed by Clerk excluded from total; no Democratic nominee on ballot; ind-minus-R margin=31.0849"
+WA,no,Maria Cantwell,2252577,Raul Garcia,1549187,,,3812391,18.4501,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); top-two general (D vs R)
+WI,no,Tammy Baldwin,1672777,Eric Hovde,1643996,,,3390787,0.8488,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+WV,no,Glenn Elliott,207548,Jim Justice,514079,,,747717,-40.9956,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet)
+WY,no,Scott D. Morrow,63727,John Barrasso,198418,,,264162,-50.9880,source: House Clerk 2024 Statistics (no FEC 2024 Senate compilation yet); blank/over/under/void ballots (6961) listed by Clerk excluded from total

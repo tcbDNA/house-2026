@@ -1,0 +1,37 @@
+state,special,dem_name,dem_votes,rep_name,rep_votes,ind_name,ind_votes,total_votes,margin_d_minus_r,notes
+AK,no,"Chesbro, Patricia R.",27145,"Murkowski, Lisa",113495,,,261705,-32.9952,"Top-4 primary -> RCV general; real contest Murkowski (R, inc) vs Tshibaka (R); Murkowski won in final RCV round; margin_d_minus_r (Chesbro vs Murkowski) not meaningful; ranked-choice general; vote columns = official first-choice summary; RCV rounds (1st/2nd/3rd): Murkowski, Lisa=114118/115759/136330, Tshibaka, Kelly C.=112101/115310/117534, Chesbro, Patricia R.=28233/29134/0, Kelley, Buzz A.=8575/0/0, round totals=263027/260203/253864; multiple same-party candidates; columns hold top D/top R; all-D sum=27145, all-R sum=232532, party-sum margin=-78.4804"
+AL,no,"Boyd, Will",436746,"Britt, Katie",942154,,,1414238,-35.7371,
+AR,no,"James, Natalie",280187,"Boozman, John",592437,,,901306,-34.6442,
+AZ,no,"Kelly, Mark",1322027,"Masters, Blake",1196308,,,2572294,4.8874,
+CA,no,"Padilla, Alex",6621621,"Meuser, Mark P.",4222029,,,10843650,22.1290,top-two general (D vs R); full term
+CA,yes,"Padilla, Alex",6559308,"Meuser, Mark P.",4212450,,,10771758,21.7871,"top-two general (D vs R); same seat, remainder of term to Jan 3 2023; unexpired term (special)"
+CO,no,"Bennet, Michael",1397170,"O'Dea, Joe",1031693,,,2500201,14.6179,
+CT,no,"Blumenthal, Richard",723864,"Levy, Leora R.",535943,,,1259887,14.9157,"Blumenthal, Richard fusion total 723864 (D*=701175, WF=22689)"
+FL,no,"Demings, Val",3201522,"Rubio, Marco",4474847,,,7758014,-16.4130,
+GA,no,"Warnock, Raphael",1946117,"Walker, Herschel Junior",1908442,,,3935924,0.9572,"row = Nov 8 general (no candidate reached 50%); Dec 6 2022 general runoff: Warnock, Raphael=1820633, Walker, Herschel Junior=1721244, total=3541877, runoff margin_d_minus_r=2.8061"
+HI,no,"Schatz, Brian",290894,"McDermott, Bob",106358,,,408517,45.1722,
+IA,no,"Franken, Michael",533330,"Grassley, Chuck",681501,,,1216646,-12.1786,
+ID,no,"Roth, David",169808,"Crapo, Mike",358539,"Cleveland, Scott Oh",49917,590890,-31.9401,
+IL,no,"Duckworth, Tammy",2329136,"Salvi, Kathy",1701055,,,4098896,15.3232,
+IN,no,"McDermott, Thomas M., Jr.",704480,"Young, Todd",1090390,,,1860154,-20.7461,
+KS,no,"Holland, Mark R.",372214,"Moran, Jerry",602976,,,1004956,-22.9624,
+KY,no,"Booker, Charles",564311,"Paul, Rand",913326,,,1477830,-23.6167,
+LA,no,"Chambers, Gary, Jr.",246933,"Kennedy, John",851568,,,1383290,-43.7099,"Louisiana Nov 8 open (all-party) election; Kennedy won >50% so no Dec runoff; multiple same-party candidates; columns hold top D/top R; all-D sum=481065, all-R sum=876843, party-sum margin=-28.6114"
+MD,no,"Van Hollen, Chris",1316897,"Chaffee, Chris",682293,,,2002336,31.6932,
+MO,no,"Valentine, Trudy Busch",872694,"Schmitt, Eric",1146966,,,2069130,-13.2554,
+NC,no,"Beasley, Cheri",1784049,"Budd, Ted",1905786,,,3773924,-3.2257,
+ND,no,"Christiansen, Katrina",59995,"Hoeven, John",135474,"Becker, Rick",44406,240140,-31.4312,D nominee ran as Democratic-NPL (DNL)
+NH,no,"Hassan, Maggie",332490,"Bolduc, Donald C.",275631,,,620975,9.1564,
+NV,no,"Cortez Masto, Catherine",498316,"Laxalt, Adam Paul",490388,,,1020850,0.7766,
+NY,no,"Schumer, Charles E.",3320561,"Pinion, Joe",2501151,,,5852707,14.0005,"Schumer, Charles E. fusion total 3320561 (D=3022822, WF=297739); Pinion, Joe fusion total 2501151 (R=2204499, CRV=296652)"
+OH,no,"Ryan, Tim",1939489,"Vance, JD",2192114,,,4133342,-6.1119,
+OK,no,"Horn, Madison",369370,"Lankford, James",739960,,,1150732,-32.2047,full term
+OK,yes,"Horn, Kendra",405389,"Mullin, Markwayne",710643,,,1150481,-26.5327,special for remainder of Inhofe term; unexpired term (special)
+OR,no,"Wyden, Ron",1076424,"Perkins, Joe Rae",788991,,,1927949,14.9087,
+PA,no,"Fetterman, John K.",2751012,"Oz, Mehmet",2487260,,,5375885,4.9062,
+SC,no,"Matthews, Krystle",627616,"Scott, Tim",1066274,,,1695702,-25.8688,
+SD,no,"Bengs, Brian L.",91007,"Thune, John R.",242316,,,348020,-43.4771,
+UT,no,,,"Lee, Mike",571974,"McMullin, Evan",459958,1076068,,"Ballot: Lee (R) vs McMullin (Unaffiliated, endorsed by UT Democrats; no D nominee); no Democratic nominee on ballot; ind-minus-R margin=-10.4098"
+VT,no,"Welch, Peter",196575,"Malloy, Gerald",80468,,,287100,40.4413,
+WA,no,"Murray, Patty",1741827,"Smiley, Tiffany",1299322,,,3047900,14.5184,top-two general (D vs R)
+WI,no,"Barnes, Mandela",1310467,"Johnson, Ron",1337185,,,2652477,-1.0073,

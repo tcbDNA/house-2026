@@ -1,0 +1,27 @@
+2022 AZ 7390 AVG same | in-avg same
+2022 CO 7773 AVG same | in-avg same
+2022 CT 7686 AVG DIFF wb=10/10 - 10/23 D52.7 R41.7 feed=12/31 - 12/31 {'D': '52.7', 'R': '41.7'} | in-avg DIFF wb-only=[('10/10 - 10/13', '49', '44'), ('10/19 - 10/21', '53', '40'), ('10/19 - 10/23', '56', '41')] feed-only=[]
+2022 FL 7382 AVG same | in-avg same
+2022 GA 7329 AVG same | in-avg same
+2022 MO 7682 AVG same | in-avg same
+2022 NC 7588 AVG same | in-avg same
+2022 NH 7379 AVG same | in-avg same
+2022 NV 7392 AVG same | in-avg same
+2022 NY 7771 AVG same | in-avg same
+2022 OH 7624 AVG same | in-avg same
+2022 PA 7695 AVG same | in-avg same
+2022 WA 7400 AVG same | in-avg same
+2022 WI 7758 AVG same | in-avg same
+2024 AZ 8435 AVG same | in-avg same
+2024 FL 8459 AVG same | in-avg same
+2024 MI 8219 AVG same | in-avg same
+2024 MN 8499 AVG same | in-avg same
+2024 MT 8286 AVG same | in-avg same
+2024 NV 8397 AVG same | in-avg same
+2024 OH 8214 AVG same | in-avg same
+2024 PA 8166 AVG same | in-avg same
+2024 TX 8180 AVG same | in-avg same
+2024 VA 8498 rcp_feed_current_2026-10-26 no feed comparison
+2024 WI 8412 AVG same | in-avg same
+2022 US 7361 AVG same | in-avg DIFF wb-only=[] feed-only=[('4/24 - 4/26', '43', '42')]
+2024 US 7969 AVG same | in-avg same

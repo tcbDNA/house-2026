@@ -1,0 +1,4 @@
+year,scope,dem,rep,other,total,margin_d_minus_r,source,notes
+2022,all (50 states + DC + territories),51628838,54298205,2246001,108173044,-2.4677,"FEC Federal Elections 2022, Table 5 (House by Party), general election columns",printed FEC total; D/R = party-line votes only (fusion lines such as NY WF/CRV counted in Other)
+2022,50 states,51410295,54262607,2230181,107903083,-2.6434,"FEC Federal Elections 2022, Table 5, excluding AS/DC/GU/MP/VI rows",D/R = party-line votes only
+2024,50 states,70571330,74390864,3034348,147996542,-2.5808,"House Clerk Statistics of Nov 5 2024 election, Recapitulation of Votes Cast for U.S. Representatives (p.84 of print)","no FEC 2024 House compilation yet; Clerk printed total 149543421 includes 1546879 blank/over/under/void ballots and Maine CD2 RCV continuing/exhausted-ballot lines, removed here; ME-2 D/R are final-round RCV; D/R = party-line votes only"
