@@ -14,20 +14,30 @@ export function Methodology() {
         undecided rates don't distort it) is averaged across the latest national
         poll from each pollster that publishes a race breakdown (eight polls ending
         Sep 22–Oct 23, 2026: NYT/Siena, CBS/YouGov, Economist/YouGov, Echelon, Fox
-        News, Pew, Cygnal, Emerson; weighted by √n). Each group's shift from its Catalist 2024 margin is
+        News, Pew, Cygnal, Emerson; weighted by √n; ActiVote and Rasmussen are
+        excluded). Asian figures come from three polls (NYT/Siena, Pew, Emerson);
+        Economist/YouGov, Fox News and Pew publish race breakdowns for registered
+        voters only. Each group's shift from its Catalist 2024 margin is
         weighted by its share of the electorate and added to the 2024 result
         (R+1.5): a +9.8-pt shift, of which white voters contribute +6.8. The same
-        polls' toplines average D+9.0. By default the race sliders sit at those
-        poll averages (white R+6.3, Black D+74.6, Hispanic D+29.4, Asian D+41.8), so
-        each district swings by its own mix of groups; the uniform wave (R+1.25)
-        covers the rest of the D+8.3 total. For the House, the <b>uniform swing</b> is
-        calibrated so that, with demographic sliders at default, the
+        polls' toplines average D+9.0.
+      </p>
+      <p className="mb-2">
+        By default the race sliders sit at those poll averages (white R+6.3, Black
+        D+74.6, Hispanic D+29.4, Asian D+41.8), so each district swings by its own
+        mix of groups (+9.6 nationally). The <b>uniform wave</b> (R+1.25) holds the
+        part every district shares: the 2024 starting point (R+1.5) plus ~0.25 for
+        "other" race voters, who have no slider — i.e. essentially no swing beyond
+        what the demographics explain. The panel's <b>Total</b> (wave + sliders) is
+        the national margin, D+8.3. For the House, the <b>uniform swing</b> is
+        calibrated so that, with the demographic sliders at their 2024 values, the
         2024-turnout-weighted average of all 435 district margins equals the
-        environment — i.e. the slider is the national House popular vote. (The
-        Senate swings from the 2024 presidential popular vote, R+1.5.){" "}
+        uniform wave; the sliders then add on top. (The Senate swings from the 2024
+        presidential popular vote, R+1.5, which is already consistent.){" "}
         <b>Trend</b> is each district's / state's 2020→2024 presidential movement
         relative to the nation, applied at 0.5× by default (partial mean-reversion);
-        the trend-persistence control also allows 0× or a partial reversal.
+        the trend-persistence control also allows full (1×), none (0×) or a partial
+        reversal (−0.5×).
       </p>
       <p className="mb-2">
         <b>WAR (Wins Above Replacement)</b> is the candidate-quality adjustment from{" "}
@@ -46,8 +56,10 @@ export function Methodology() {
         different office than the race being projected (e.g. a House record feeding
         a Senate projection, or a gubernatorial record into either) take an
         additional <b>0.5× cross-chamber discount</b>, reflecting that personal
-        vote partially but not fully transfers across office types. Same-race
-        head-to-heads aren't double-counted. Nominees who aren't sitting members
+        vote partially but not fully transfers across office types. Incumbents
+        running on redrawn lines carry 0.5× of their WAR, since it was earned with a
+        different electorate. Same-race head-to-heads aren't double-counted.
+        Nominees who aren't sitting members
         (open seats, or an incumbent lost renomination) get their own federal WAR
         record the same way challengers do, but no incumbency bonus.
         For Senate candidates with a gubernatorial track record (e.g. Roy Cooper NC),
@@ -57,7 +69,8 @@ export function Methodology() {
         discount; the 2018 Bredesen TN-Senate race is the empirical anchor (his
         federal personal vote came in at roughly half his gubernatorial WAR). A
         small number of <b>per-cycle exclusions</b> apply (Collins 2014 vs Bellows
-        was a 68%-31% blowout that would inflate her personal-vote signal); these
+        was a 68%-31% blowout that would inflate her personal-vote signal; Sullivan
+        2014's number reflects Begich's incumbency rather than Sullivan); these
         are listed in code and trigger at blend time.{" "}
         <b>Manual WAR overrides</b> are applied in a small number of cases where the
         blended value would misrepresent expected 2026 performance. Currently:{" "}
@@ -72,7 +85,8 @@ export function Methodology() {
         <b>Generic incumbency</b> is +1.7 D-positive for D incumbents and -1.7 for R
         (per Split-Ticket's 2020 WAR analysis); Senate uses ±3.0. WAR explicitly
         excludes this structural incumbency baseline, so the two terms compose rather
-        than double-count.
+        than double-count. California districts where the top-two primary sent two
+        candidates of the same party to November are locked to that party.
       </p>
       <p className="mb-2">
         <b>District demographics</b> are American Community Survey (ACS) 2023 5-year
@@ -98,7 +112,13 @@ export function Methodology() {
         , with 2022 as the prior-cycle column. Race (or race × education) and age
         are alternative descriptions of the same voters, so when both are moved
         their shifts are averaged rather than stacked, weighted by how far each
-        axis was moved.
+        axis was moved. The <b>race × education</b> frame also starts from poll
+        data: white college graduates at D+16.6 (+14.7 since 2024) and white
+        non-college voters at R+22.4 (+4.9), from NYT/Siena, CBS/YouGov and Pew;
+        the non-white cells (reported by only one poll) get their 2024 margin plus
+        the non-white shift from the race data. Switching frames adjusts the
+        uniform wave so the national total stays the same. Age sliders stay at
+        their 2024 values.
       </p>
       <p className="mb-2">
         <b>Senate</b> projections add a state-level trend (state vs. national
@@ -107,8 +127,10 @@ export function Methodology() {
         their current party. Democrats need 51 seats for control; a 50-50 split is
         Republican control via VP Vance's tiebreak. Independents like Dan Osborn are
         counted with Democrats for majority purposes, though neither independent
-        nominee is committed to caucusing with them. Primary-unresolved seats (e.g.
-        Cornyn TX) suppress incumbent WAR and incumbency until the runoff resolves.
+        nominee is committed to caucusing with them. Appointed senators who haven't
+        yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
+        bonus, and a seat whose primary is still unresolved carries no incumbent
+        WAR or incumbency until it is.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the
@@ -126,7 +148,8 @@ export function Methodology() {
           Dave's Redistricting
         </a>{" "}
         per-borough 2020 numbers (state doesn't publish official borough-level results).
-        Estimated 2026 vote counts assume turnout at 79% of 2024, the midpoint of
+        County (or county-slice) projections are shifted uniformly so they add up
+        exactly to the district or Senate projection. Estimated 2026 vote counts assume turnout at 79% of 2024, the midpoint of
         the last two midterm-to-prior-presidential ratios (2018/2016 ≈ 87%,
         2022/2020 ≈ 71%). These ratios differ substantially; a high-salience 2026
         midterm would fall toward the higher end. This is a tunable parameter and
