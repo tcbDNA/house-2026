@@ -67,6 +67,8 @@ Missing slots count as zero (per the WAR creator's guidance), which regresses th
 
 Records from a different office than the race being projected take an additional **0.5× cross-chamber discount**. For a Senate projection, this means House and Governor records are halved before contributing to the blend. The empirical anchor is the 2018 Bredesen TN-Senate race: his federal personal vote came in at roughly half his gubernatorial WAR.
 
+**Provenance.** `backend/data/raw_war.csv` is Split Ticket's Full WAR Database (House and Senate, 2014–2024), identical row for row to its current version, plus two rows that are not Split Ticket's: Roy Cooper's North Carolina governor races, 2016 (D+3.86) and 2020 (D+5.85). Split Ticket publishes no governor WAR; those values are his margin minus the same-day presidential margin, so they don't remove incumbency (he was the challenger in 2016 and the incumbent in 2020). They're kept as a deliberate choice; through the 0.5× cross-chamber discount they add +2.04 to NC (D+9.7; D+7.6 without them).
+
 There are currently no per-candidate exemptions to this discount.
 
 ### Who gets WAR
@@ -160,4 +162,4 @@ Estimated 2026 vote counts assume turnout at **79% of 2024**, the midpoint of th
 - Bucket thresholds: **Tilt ≤ 3 pts · Lean 3–7 · Likely 7–13 · Safe > 13**.
 - Projections within ±3 pts are tilts, not predictions — model uncertainty is wider than the displayed precision.
 - Demographic crosstabs are sample-based approximations.
-- The trend multiplier (default 0.5) is a judgment call, not fitted. The Nov 2025 NJ / VA governor results are a natural test: regress county-level (2025 margin − 2024 pres margin) on 2020→2024 relative trend; a negative coefficient would favor the Reverse setting.
+- The trend multiplier (default 0.5) is a judgment call, not fitted. The Nov 2025 NJ / VA governor check (county coefficient −0.05, robust SE 0.11, with demographic controls) is limited — governor's races differ from federal ones — and isn't the basis for the default.

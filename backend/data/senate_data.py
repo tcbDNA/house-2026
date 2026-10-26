@@ -121,15 +121,19 @@ SEATS_2026 = {
 
 
 # Known, well-established 2026 Senate challengers. For each, the model
-# auto-looks-up the candidate's most recent House/Senate WAR from raw_war.csv
-# using state as disambiguator. The "war" value below is a manual fallback
-# used only when no raw-data match is found (e.g., Roy Cooper, who ran for
-# Governor but never House/Senate).
+# auto-looks-up the candidate's most recent House/Senate/Governor WAR from
+# raw_war.csv using state as disambiguator. The "war" value below is a manual
+# fallback used only when no raw-data match is found.
+#
+# raw_war.csv is Split Ticket's Full WAR Database except its two Governor rows
+# (Roy Cooper, NC 2016 D+3.86 and 2020 D+5.85): Split Ticket publishes no
+# governor WAR, and those are Cooper's margin minus the same-day presidential
+# margin. Kept by user decision (model-v4 item 5); with the 0.5× cross-chamber
+# discount they add +2.04 to NC.
 CHALLENGERS = {
     # Manual `war` values are no longer permitted. All entries fall back to
-    # auto-match from raw_war.csv (House + Senate records). Candidates without
-    # any federal-race record (e.g. former governors like Cooper / LePage)
-    # contribute 0 from this slot. State-aware disambiguation handles same-name
+    # auto-match from raw_war.csv (House + Senate + Governor records).
+    # Candidates without any record contribute 0 from this slot. State-aware disambiguation handles same-name
     # candidates (e.g. Mike Rogers MI Senate vs AL-03 House).
     #
     # Optional `co_nominee` / `co_nominee_party`: for OPEN seats where both

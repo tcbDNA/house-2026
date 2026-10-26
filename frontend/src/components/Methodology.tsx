@@ -99,7 +99,10 @@ export function Methodology() {
         For Senate candidates with a gubernatorial track record (e.g. Roy Cooper NC),
         we pull their governor races into the same blend at a 0.5× cross-chamber
         discount — statewide personal vote partially but not fully transfers to a
-        federal race. There are currently no per-candidate exemptions to this
+        federal race. Every WAR record is Split Ticket's except Cooper's two governor
+        races (2016, 2020): Split Ticket publishes no governor WAR, so those are his
+        margin minus the same-day presidential margin, kept as a deliberate choice
+        (+2.0 to North Carolina). There are currently no per-candidate exemptions to this
         discount; the 2018 Bredesen TN-Senate race is the empirical anchor (his
         federal personal vote came in at roughly half his gubernatorial WAR). A
         small number of <b>per-cycle exclusions</b> apply (Collins 2014 vs Bellows
