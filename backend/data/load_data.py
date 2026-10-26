@@ -844,7 +844,9 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "WI-08": {"name": "Rick Crosson", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
 }
 
-# Generic incumbency advantage in D-R margin points. Split-Ticket's 2020
+# Generic incumbency advantage in D-R margin points, as baked into
+# districts.json. The model keeps only its sign: the size is the runtime
+# setting config.Settings.house_incumbency (default 3.0). Split-Ticket's 2020
 # WAR analysis pegs this at 1.7 points
 # (https://split-ticket.org/2022/01/12/2020-house-wins-above-replacement-quantifying-the-impacts-of-incumbency-and-spending/).
 # Added to base_margin in the incumbent's direction; open seats get zero.

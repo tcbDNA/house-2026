@@ -14,7 +14,7 @@ because pollster PDFs and news pages get moved or edited.
 
 | File | Status |
 |---|---|
-| `backend/data/raw_war.csv` | Provenance not recorded (arrived in the initial commit). Treated as unverified; audit under model-v4 item 5. |
+| `backend/data/raw_war.csv` | **Verified (model-v4 item 5):** rows 1–2527 are identical, in order, to Split Ticket's Full WAR Database (Datawrapper chart Eq2Z0 version 46, published 2026-05-11; https://split-ticket.org/full-wins-above-replacement-war-database/), with headers renamed (CD→Geography, SORTABLE→Sortable). The last two rows — Governor, North Carolina 2020 (Cooper D+5.85) and 2016 (D+3.86) — are **not** Split Ticket's (it publishes no governor WAR); they are Cooper's raw margin minus the presidential margin, added by hand. Copies in `split_ticket_war/`. |
 | `national_sensitivity_v20.csv` | Provenance not recorded. Checked (model-v4 item 2): 2024 margins match The Downballot's precinct-based compilation in 428 of 435 districts (fixed in `load_data.DOWNBALLOT_FIXES`: MO-01/03/04/06 both years, LA-06/AL-06/TX-37 2024). 2020 and 2024 margins on new lines match DRA precinct sums (median gap ~0.1, max 1.6 level, max 0.29 in trend; `backend/analysis/dra_district_check.csv`). |
 
 ## The Downballot — presidential results by congressional district
@@ -90,3 +90,7 @@ Retrieved 2026-10-26. Item 3 (pollster-matched group shifts).
 ## Pew 2024 validated voters (polls_2024/pew_2024_validated/) — data in `pew_validated_2024.csv`
 
 `pew_validated2024_detailed_tables_1JczVvbr.xlsx` (https://docs.google.com/spreadsheets/d/1JczVvbrlxkLiYYiNPSv0TRlWsbvYEihkZrnH1kQXIH8), report PDF `PP-2025.6.26_validated-voters_report.pdf` and html pages from https://www.pewresearch.org/politics/2025/06/26/voting-patterns-in-the-2024-election/. Retrieved 2026-10-26. Optional 2024 group baseline (`group_baseline = "pew_validated"`).
+
+## Split Ticket WAR (split_ticket_war/) — provenance check for `raw_war.csv`
+
+Retrieved 2026-10-26; full file list with URLs in `split_ticket_war/README.md`. Full WAR Database (House + Senate 2014–2024): https://split-ticket.org/full-wins-above-replacement-war-database/, data https://datawrapper.dwcdn.net/Eq2Z0/46/dataset.csv (`Eq2Z0_war_database_dataset.csv`; all 46 chart versions in `datawrapper_Eq2Z0_versions/`), plus the per-cycle House/Senate pages and sheets for 2016–2024 and the methodology articles (`pages/`). Split Ticket publishes no governor WAR. Its baseline controls for seat partisanship, incumbency, demographics and money (2024 release); incumbency was worth about 3 points in 2024 ("Deconstructing WAR", 2025-08-15).

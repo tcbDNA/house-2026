@@ -116,8 +116,11 @@ export function Methodology() {
         — 2024 race vs. Mary Peltola is a high-WAR outlier that won't repeat in 2026.{" "}
         <i>Cleo Fields (LA-06, D) = 0</i> — a placeholder in the redrawn R+32 seat
         who is unlikely to run; his 2024 WAR was earned on the old D-leaning lines.{" "}
-        <b>Generic incumbency</b> is +1.7 D-positive for D incumbents and -1.7 for R
-        (per Split-Ticket's 2020 WAR analysis); Senate uses ±3.0. WAR explicitly
+        <b>Generic incumbency</b> in the House is a setting, default ±3.0 (D-positive
+        for D incumbents): Split Ticket's most recent estimate, and the 2024 WAR
+        records were measured with it already removed. Their 2020 analysis put it at
+        1.7, kept as a scenario (House median 237 instead of 234 D — most competitive
+        seats are R-held). Senate uses ±3.0. WAR explicitly
         excludes this structural incumbency baseline, so the two terms compose rather
         than double-count. California districts where the top-two primary sent two
         candidates of the same party to November are locked to that party.

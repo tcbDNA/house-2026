@@ -48,6 +48,13 @@ class Settings:
     # whose lines label isn't "2024".
     core_retention_scaling: bool = True
 
+    # Item 5 — House incumbency bonus (D−R margin points) for a sitting D/R
+    # incumbent running again. Default 3.0: Split Ticket's most recent
+    # estimate (2024 write-up), and the 2024 WAR records — half of each
+    # incumbent's WAR weight — were measured with it already removed. 1.7
+    # (Split Ticket's 2020 House WAR analysis) is a scenario.
+    house_incumbency: float = 3.0
+
     # Item 2 — residualized trend (trend.py). Remove from the carried trend
     # the part explained by the active frame's demographic shares (+ age, +
     # intercept) and/or the 2024 battleground-state part; trend_discount then

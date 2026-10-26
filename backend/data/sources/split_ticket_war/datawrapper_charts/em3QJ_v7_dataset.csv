@@ -1,0 +1,395 @@
+,State,Abbreviation,CD,CD_abbrev,FIPS,dem_name,rep_name,incumbency,spending_delta,Prior Presidential,Raw WAR,2016 Presidential,2018 House,WAR
+0,Alabama,AL,AL01,AL-01,101,Robert Kennedy Jr.,Bradley Byrne,1,2.657256288,R +24.6,-2.1,R +30.1,R +26.4,D+2.1
+1,Alabama,AL,AL02,AL-02,102,Tabitha Isner,Martha Roby,1,2.143006322,R +26.7,-7.71,R +32.6,R +23.0,D+7.7
+2,Alabama,AL,AL03,AL-03,103,Mallory Hagan,Mike Rogers,1,1.438518032,R +25.7,-2.92,R +33.8,R +27.5,D+2.9
+3,Alabama,AL,AL04,AL-04,104,Lee Auman,Robert Aderholt,1,2.968631397,R +51.4,-0.46,R +64.4,R +59.7,D+0.5
+4,Alabama,AL,AL05,AL-05,105,Peter Joffrion,Mo Brooks,1,0.03109615452,R +29.4,-7.84,R +34.8,R +22.1,D+7.8
+5,Alabama,AL,AL06,AL-06,106,Danner Kline,Gary Palmer,1,2.023128497,R +50.1,-6.45,R +46.1,R +38.4,D+6.5
+7,Alaska,AK,AKAL,AK-AL,200,Alyse Galvin,Don Young,1,-0.4631148558,R +14.6,-3.75,R +16.8,R +6.6,D+3.8
+8,Arizona,AZ,AZ01,AZ-01,401,Tom O'Halleran,Wendy Rogers,-1,-1.348775844,R +2.5,-4.79,R +1.2,D +7.7,D+4.8
+9,Arizona,AZ,AZ02,AZ-02,402,Ann Kirkpatrick,Lea Marquez Peterson,0,-0.9674391646,R +1.5,-1.19,D +5.2,D +9.5,D+1.2
+10,Arizona,AZ,AZ03,AZ-03,403,Raul Grijalva,Nick Pierson,-1,-2.221524565,D +24.9,4.01,D +31.5,D +27.7,R+4
+11,Arizona,AZ,AZ04,AZ-04,404,David Brill,Paul Gosar,1,0.1437501536,R +36.9,0.62,R +42.2,R +38.2,R+0.6
+12,Arizona,AZ,AZ05,AZ-05,405,Joan Greene,Andy Biggs,1,0.6609820977,R +29.7,-2.23,R +22.4,R +18.8,D+2.2
+13,Arizona,AZ,AZ06,AZ-06,406,Anita Malik,David Schweikert,1,1.731062426,R +21.1,-0.29,R +10.5,R +10.4,D+0.3
+15,Arizona,AZ,AZ08,AZ-08,408,Hiral Tipirneni,Debbie Lesko,1,-0.3495483219,R +25.2,-8.12,R +22.2,R +10.9,D+8.1
+16,Arizona,AZ,AZ09,AZ-09,409,Greg Stanton,Steve Ferrara,0,-0.02667401507,D +4.6,-4.15,D +17.5,D +22.2,D+4.2
+17,Arkansas,AR,AR01,AR-01,501,Chintan Desai,Rick Crawford,1,2.162570663,R +25.4,8.17,R +36.6,R +41.1,R+8.2
+18,Arkansas,AR,AR02,AR-02,502,Clarke Tucker,French Hill,1,0.3694168393,R +12.1,-2.53,R +11.4,R +6.4,D+2.5
+19,Arkansas,AR,AR03,AR-03,503,Josh Mahony,Steve Womack,1,1.83658119,R +34.9,0.63,R +34.0,R +33.0,R+0.6
+20,Arkansas,AR,AR04,AR-04,504,Hayden Shamel,Bruce Westerman,1,2.46408846,R +26.5,4.18,R +34.5,R +36.2,R+4.2
+21,California,CA,CA01,CA-01,601,Audrey Denney,Doug LaMalfa,1,-0.02232750201,R +16.8,-8.02,R +21.3,R +9.8,D+8
+22,California,CA,CA02,CA-02,602,Jared Huffman,Dale Mensing,-1,-2.964649542,D +43.8,0.96,D +49.5,D +54.0,R+1
+23,California,CA,CA03,CA-03,603,John Garamendi,Charlie Schaupp,-1,-2.868821983,D +11.5,1.09,D +13.5,D +16.1,R+1.1
+24,California,CA,CA04,CA-04,604,Jessica Morse,Tom McClintock,1,-1.359506115,R +18.9,-4.39,R +15.8,R +8.3,D+4.4
+27,California,CA,CA07,CA-07,607,Ami Bera,Andrew Grant,-1,-1.514120686,D +4.1,3.99,D +12.2,D +10.1,R+4
+29,California,CA,CA09,CA-09,609,Jerry McNerney,Maria Livengood,-1,-2.788679535,D +18.1,8.49,D +19.7,D +13.0,R+8.5
+30,California,CA,CA10,CA-10,610,Josh Harder,Jeff Denham,1,-0.3468001997,D +3.7,-1.65,D +3.2,D +4.5,D+1.7
+31,California,CA,CA11,CA-11,611,Mark Desaulnier,John Fitzgerald,-1,-2.553163871,D +38.5,4.49,D +51.8,D +48.3,R+4.5
+32,California,CA,CA12,CA-12,612,Nancy Pelosi,Lisa Remmer,-1,-1.245409701,D +74.1,8.23,D +81.7,D +73.6,R+8.2
+34,California,CA,CA14,CA-14,614,Jackie Speier,Cristina Osmena,-1,-3.025721618,D +51.7,3.28,D +61.7,D +58.4,R+3.3
+35,California,CA,CA15,CA-15,615,Eric Swalwell,Rudy Peters,-1,-4.00871257,D +39.1,3.53,D +48.6,D +45.9,R+3.5
+36,California,CA,CA16,CA-16,616,Jim Costa,Elizabeth Heng,-1,-0.8452274305,D +19.6,5.28,D +22.9,D +15.1,R+5.3
+37,California,CA,CA17,CA-17,617,Ro Khanna,Ron Cohen,-1,-4.279032605,D +47.6,4.84,D +56.6,D +50.7,R+4.8
+38,California,CA,CA18,CA-18,618,Anna Eshoo,Christine Russell,-1,-1.91340767,D +40.5,8.46,D +56.8,D +49.0,R+8.5
+39,California,CA,CA19,CA-19,619,Zoe Lofgren,Justin Aguilera,-1,-4.002133975,D +45.8,6.68,D +54.4,D +47.5,R+6.7
+41,California,CA,CA21,CA-21,621,TJ Cox,David Valadao,1,-0.2426814978,D +11.3,8.73,D +16.3,D +0.8,R+8.7
+42,California,CA,CA22,CA-22,622,Andrew Janz,Devin Nunes,1,0.1916425957,R +15.3,-7.05,R +10.0,R +5.4,D+7.1
+43,California,CA,CA23,CA-23,623,Tatiana Matta,Kevin McCarthy,1,5.266793392,R +26.0,-1.85,R +23.4,R +27.4,D+1.9
+44,California,CA,CA24,CA-24,624,Salud Carbajal,Justin Fareed,-1,-0.3851939843,D +11.3,5.17,D +21.7,D +17.1,R+5.2
+45,California,CA,CA25,CA-25,625,Katie Hill,Steve Knight,-1,-0.9618915897,R +1.8,-1.89,D +7.1,D +8.7,D+1.9
+46,California,CA,CA26,CA-26,626,Julia Brownley,Antonio Sabato Jr,-1,-2.067614074,D +10.5,-0.16,D +23.3,D +23.9,D+0.2
+48,California,CA,CA28,CA-28,628,Adam Schiff,Johnny Nalbandian,-1,-4.778768226,D +45.2,1.16,D +52.8,D +56.7,R+1.2
+49,California,CA,CA29,CA-29,629,Tony Cardenas,Benito Bernal,-1,-3.881095216,D +57.9,1.74,D +64.4,D +61.2,R+1.7
+50,California,CA,CA30,CA-30,630,Brad Sherman,Mark Reed,-1,-2.687793051,D +34.1,0.86,D +45.8,D +46.8,R+0.9
+51,California,CA,CA31,CA-31,631,Pete Aguilar,Sean Flynn,-1,-0.9508606778,D +17.0,2.65,D +22.4,D +17.5,R+2.7
+52,California,CA,CA32,CA-32,632,Grace Napolitano,Joshua Scott,-1,-1.722720984,D +33.5,-1.79,D +41.3,D +37.6,D+1.8
+53,California,CA,CA33,CA-33,633,Ted Lieu,Kenneth Wright,-1,-2.02927712,D +24.4,5.05,D +43.8,D +40.1,R+5.1
+55,California,CA,CA35,CA-35,635,Norma Torres,Christian Valiente,-1,-2.789900156,D +37.6,0.21,D +43.1,D +38.8,R+0.2
+56,California,CA,CA36,CA-36,636,Raul Ruiz,Kimberlin Brown Pelzer,-1,-1.456653647,D +3.3,-7.79,D +9.2,D +18.0,D+7.8
+57,California,CA,CA37,CA-37,637,Karen Bass,Ron Bassilian,-1,-3.054723284,D +74.0,0.81,D +79.9,D +78.2,R+0.8
+58,California,CA,CA38,CA-38,638,Linda Sanchez,Ryan Downing,-1,-3.918784066,D +32.6,1.02,D +41.9,D +37.7,R+1
+59,California,CA,CA39,CA-39,639,Gil Cisneros,Young Kim,0,-0.4505397812,R +3.8,1.42,D +9.1,D +3.1,R+1.4
+61,California,CA,CA41,CA-41,641,Mark Takano,Aja Smith,-1,-3.073282803,D +25.8,-1.27,D +29.6,D +30.2,D+1.3
+62,California,CA,CA42,CA-42,642,Julia Peacock,Ken Calvert,1,2.726676151,R +15.4,-3.8,R +12.7,R +13.0,D+3.8
+63,California,CA,CA43,CA-43,643,Maxine Waters,Omar Navarro,-1,0.5465805365,D +59.2,2.1,D +64.9,D +55.3,R+2.1
+65,California,CA,CA45,CA-45,645,Katie Porter,Mimi Walters,1,-0.09576093137,R +12.1,-1.66,D +5.7,D +4.1,D+1.7
+66,California,CA,CA46,CA-46,646,Lou Correa,Russell Lambert,-1,-2.861409537,D +25.8,-2.26,D +40.8,D +38.3,D+2.3
+67,California,CA,CA47,CA-47,647,Alan Lowenthal,John Briscoe,-1,-2.28647485,D +23.1,3.16,D +33.8,D +29.7,R+3.2
+68,California,CA,CA48,CA-48,648,Harley Rouda,Dana Rohrabacher,1,-1.331736787,R +12.0,-6.18,D +1.8,D +7.1,D+6.2
+69,California,CA,CA49,CA-49,649,Mike Levin,Diane Harkey,0,-2.208297467,R +6.6,-3.64,D +8.0,D +12.8,D+3.6
+70,California,CA,CA50,CA-50,650,Ammar Campa-Najjar,Duncan Hunter,1,-1.285942414,R +23.3,-11.95,R +15.9,R +3.4,D+12
+71,California,CA,CA51,CA-51,651,Juan Vargas,Juan Hidalgo,-1,-2.575987867,D +41.2,3.55,D +51.8,D +42.4,R+3.6
+72,California,CA,CA52,CA-52,652,Scott Peters,Omar Qudrat,-1,-2.106676204,D +6.5,-2.66,D +24.0,D +27.7,D+2.7
+73,California,CA,CA53,CA-53,653,Susan Davis,Morgan Murtaugh,-1,-1.538127793,D +25.6,-1.47,D +37.1,D +38.1,D+1.5
+74,Colorado,CO,CO01,CO-01,801,Diana DeGette,Casper Stockham,-1,-3.698204916,D +41.1,5.75,D +49.7,D +52.4,R+5.8
+75,Colorado,CO,CO02,CO-02,802,Joe Neguse,Peter Yu,0,-2.787288617,D +18.9,4.45,D +23.4,D +28.4,R+4.5
+76,Colorado,CO,CO03,CO-03,803,Diane Mitsch Bush,Scott Tipton,1,-0.1747974544,R +6.1,2.77,R +13.0,R +8.4,R+2.8
+77,Colorado,CO,CO04,CO-04,804,Karen McCormick,Ken Buck,1,-0.4127600816,R +19.8,3.57,R +25.2,R +21.2,R+3.6
+78,Colorado,CO,CO05,CO-05,805,Stephany Rose Spaulding,Doug Lamborn,1,0.8664325704,R +21.4,-1.96,R +26.5,R +18.4,D+2
+79,Colorado,CO,CO06,CO-06,806,Jason Crow,Mike Coffman,1,-0.7396535658,D +5.2,3.1,D +9.7,D +11.6,R+3.1
+80,Colorado,CO,CO07,CO-07,807,Ed Perlmutter,Mark Barrington,-1,-3.290209056,D +15.2,-2.38,D +13.2,D +26.1,D+2.4
+81,Connecticut,CT,CT01,CT-01,901,John Larson,Jennifer Nye,-1,-4.147889521,D +28.0,2.85,D +24.1,D +29.2,R+2.9
+82,Connecticut,CT,CT02,CT-02,902,Joe Courtney,Danny Postemski,-1,-3.490041216,D +13.5,-14.12,D +3.1,D +27.4,D+14.1
+83,Connecticut,CT,CT03,CT-03,903,Rosa DeLauro,Angel Cadena,-1,-3.809348585,D +26.6,-3.96,D +16.1,D +29.2,D+4
+84,Connecticut,CT,CT04,CT-04,904,Jim Himes,Harry Arora,-1,-1.133328841,D +11.2,3.08,D +23.9,D +22.4,R+3.1
+85,Connecticut,CT,CT05,CT-05,905,Jahana Hayes,Manny Santos,0,-3.153758043,D +8.3,-0.57,D +4.3,D +11.7,D+0.6
+86,Delaware,DE,DEAL,DE-AL,1000,Lisa Blunt Rochester,Scott Walker,-1,-3.69372,D +18.9,-4.87,D +12.1,D +28.9,D+4.9
+87,Florida,FL,FL01,FL-01,1201,Jennifer Zimmerman,Matt Gaetz,1,2.913555051,R +38.9,-6.97,R +41.1,R +34.1,D+7
+88,Florida,FL,FL02,FL-02,1202,Bob Rackleff,Neal Dunn,1,1.642329936,R +31.0,0.14,R +36.8,R +34.9,R+0.1
+89,Florida,FL,FL03,FL-03,1203,Yvonne Hayes Hinson,Ted Yoho,1,2.341027036,R +14.9,-1.45,R +16.6,R +15.2,D+1.5
+90,Florida,FL,FL04,FL-04,1204,Ges Selmont,John Rutherford,1,1.427879652,R +33.7,4.7,R +29.1,R +33.6,R+4.7
+91,Florida,FL,FL05,FL-05,1205,Al Lawson,Virginia Fuller,-1,-2.288464765,D +28.5,-4.48,D +26.1,D +33.6,D+4.5
+92,Florida,FL,FL06,FL-06,1206,Nancy Soderberg,Michael Waltz,0,-0.2548092198,R +5.7,0.75,R +17.6,R +12.6,R+0.8
+93,Florida,FL,FL07,FL-07,1207,Stephanie Murphy,Mike Miller,-1,-1.792401984,D +0.0,-5.2,D +7.6,D +15.4,D+5.2
+94,Florida,FL,FL08,FL-08,1208,Sanjay Patel,Bill Posey,1,1.441626437,R +14.7,1.85,R +21.5,R +21.0,R+1.9
+95,Florida,FL,FL09,FL-09,1209,Darren Soto,Wayne Liebnitzky,-1,-3.789590493,D +12.3,1.22,D +13.3,D +16.0,R+1.2
+97,Florida,FL,FL11,FL-11,1211,Dana Cottrell,Daniel Webster,1,1.729647168,R +19.6,0.85,R +33.2,R +30.3,R+0.9
+98,Florida,FL,FL12,FL-12,1212,Chris Hunter,Gus Bilirakis,1,1.314582003,R +7.6,3.11,R +19.3,R +18.9,R+3.1
+99,Florida,FL,FL13,FL-13,1213,Charlie Crist,George Buck,-1,-3.542430974,D +10.9,-3.31,D +3.3,D +15.3,D+3.3
+101,Florida,FL,FL15,FL-15,1215,Kristen Carlson,Ross Spano,0,0.2851516782,R +5.7,-1.97,R +10.4,R +6.0,D+2
+102,Florida,FL,FL16,FL-16,1216,David Shapiro,Vern Buchanan,1,0.2749242217,R +8.7,0.48,R +11.1,R +9.1,R+0.5
+103,Florida,FL,FL17,FL-17,1217,Allen Ellison,Greg Steube,0,2.498327086,R +16.5,-0.41,R +28.0,R +24.5,D+0.4
+104,Florida,FL,FL18,FL-18,1218,Lauren Baer,Brian Mast,1,0.404532815,R +3.7,1.69,R +9.4,R +8.6,R+1.7
+105,Florida,FL,FL19,FL-19,1219,David Holden,Francis Rooney,1,1.00911741,R +22.0,3.11,R +22.8,R +24.5,R+3.1
+108,Florida,FL,FL22,FL-22,1222,Ted Deutch,Nicolas Kimaz,-1,-2.159329932,D +13.4,-3.83,D +16.2,D +24.0,D+3.8
+109,Florida,FL,FL23,FL-23,1223,Debbie Wasserman Schultz,Joseph Kaufman,-1,-1.766037384,D +23.5,4.15,D +26.7,D +23.8,R+4.2
+111,Florida,FL,FL25,FL-25,1225,Mary Barzee Flores,Mario Diaz-Balart,1,0.04381608461,R +9.7,11.19,R +1.8,R +20.9,R+11.2
+112,Florida,FL,FL26,FL-26,1226,Debbie Mucarsel-Powell,Carlos Curbelo,1,-0.03497599228,D +11.6,6.49,D +16.8,D +1.7,R+6.5
+113,Florida,FL,FL27,FL-27,1227,Donna Shalala,Maria Elvira Salazar,0,-0.1546930393,D +6.7,5.99,D +20.1,D +6.2,R+6
+114,Georgia,GA,GA01,GA-01,1301,Lisa Ring,Buddy Carter,1,2.110306262,R +13.0,1.51,R +15.9,R +15.5,R+1.5
+115,Georgia,GA,GA02,GA-02,1302,Sanford Bishop,Herman West,-1,-3.489108149,D +17.9,-0.26,D +11.9,D +19.3,D+0.3
+116,Georgia,GA,GA03,GA-03,1303,Chuck Enderlin,Drew Ferguson,1,3.027722472,R +33.3,-0.53,R +32.4,R +31.1,D+0.5
+117,Georgia,GA,GA04,GA-04,1304,Hank Johnson,Joe Profit,-1,-1.73680238,D +48.4,-3.19,D +54.5,D +57.7,D+3.2
+119,Georgia,GA,GA06,GA-06,1306,Lucy McBath,Karen Handel,1,0.01256635128,R +23.7,-3.47,R +1.6,D +1.0,D+3.5
+120,Georgia,GA,GA07,GA-07,1307,Carolyn Bourdeaux,Rob Woodall,1,-1.332592233,R +22.2,-6.6,R +6.6,R +0.1,D+6.6
+122,Georgia,GA,GA09,GA-09,1309,Josh McCall,Doug Collins,1,2.117648964,R +58.4,2.14,R +60.2,R +59.0,R+2.1
+123,Georgia,GA,GA10,GA-10,1310,Tabitha Johnson-Green,Jody Hice,1,2.526911292,R +26.5,0.88,R +26.3,R +25.8,R+0.9
+124,Georgia,GA,GA11,GA-11,1311,Flynn Broady,Barry Loudermilk,1,2.379396474,R +36.0,-2.64,R +26.2,R +23.6,D+2.6
+125,Georgia,GA,GA12,GA-12,1312,Francys Johnson,Rick Allen,1,1.725790694,R +11.9,4.58,R +16.6,R +19.0,R+4.6
+126,Georgia,GA,GA13,GA-13,1313,David Scott,David Callahan,-1,-3.331781638,D +39.5,-4.78,D +45.5,D +52.4,D+4.8
+127,Georgia,GA,GA14,GA-14,1314,Steve Foster,Tom Graves,1,3.315533867,R +48.6,1.39,R +54.5,R +53.0,R+1.4
+128,Hawaii,HI,HI01,HI-01,1501,Ed Case,Campbell Cavasso,0,-1.141547457,D +41.2,-17.01,D +34.8,D +52.0,D+17
+129,Hawaii,HI,HI02,HI-02,1502,Tulsi Gabbard,Brian Evans,-1,-3.932243576,D +45.6,-10.8,D +34.9,D +54.7,D+10.8
+130,Idaho,ID,ID01,ID-01,1601,Cristina McNeil,Russ Fulcher,0,3.684180539,R +33.7,-4.28,R +43.0,R +34.2,D+4.3
+131,Idaho,ID,ID02,ID-02,1602,Aaron Swisher,Mike Simpson,1,2.300660861,R +31.9,-5.44,R +29.3,R +21.3,D+5.4
+132,Illinois,IL,IL01,IL-01,1701,Bobby Rush,Jimmy Tillman,-1,-2.072146971,D +59.2,4.39,D +55.8,D +57.6,R+4.4
+133,Illinois,IL,IL02,IL-02,1702,Robin Kelly,David Merkle,-1,-3.340563693,D +62.7,4.55,D +60.7,D +62.1,R+4.6
+134,Illinois,IL,IL03,IL-03,1703,Dan Lipinski,Arthur Jones,-1,-0.8972198427,D +13.5,-24.31,D +16.1,D +47.6,D+24.3
+135,Illinois,IL,IL04,IL-04,1704,Chuy Garcia,Mark Lorch,0,-3.136170428,D +65.1,1.65,D +72.3,D +73.2,R+1.7
+136,Illinois,IL,IL05,IL-05,1705,Mike Quigley,Tom Hanson,-1,-3.748549252,D +35.0,4.55,D +49.4,D +53.3,R+4.6
+137,Illinois,IL,IL06,IL-06,1706,Sean Casten,Peter Roskam,1,-0.1185077485,R +8.3,4.22,D +7.5,D +7.2,R+4.2
+138,Illinois,IL,IL07,IL-07,1707,Danny Davis,Craig Cameron,-1,-2.707129387,D +76.2,10.34,D +81.0,D +75.2,R+10.3
+139,Illinois,IL,IL08,IL-08,1708,Raja Krishnamoorthi,JD Diganvker,-1,-3.712221455,D +16.8,-0.23,D +23.0,D +31.9,D+0.2
+140,Illinois,IL,IL09,IL-09,1709,Jan Schakowsky,John Elleson,-1,-3.175601209,D +32.2,8.07,D +47.6,D +47.0,R+8.1
+141,Illinois,IL,IL10,IL-10,1710,Brad Schneider,Douglas Bennett,-1,-3.090795905,D +16.6,6.96,D +31.1,D +31.2,R+7
+142,Illinois,IL,IL11,IL-11,1711,Bill Foster,Nick Stella,-1,-2.269903717,D +17.5,4.23,D +24.9,D +27.7,R+4.2
+143,Illinois,IL,IL12,IL-12,1712,Brendan Kelly,Mike Bost,1,0.01478196614,D +1.6,0.99,R +15.5,R +6.4,R+1
+144,Illinois,IL,IL13,IL-13,1713,Betsy Dirksen Londrigan,Rodney Davis,1,-0.615628978,R +0.3,3.75,R +5.9,R +0.8,R+3.8
+145,Illinois,IL,IL14,IL-14,1714,Lauren Underwood,Randy Hultgren,1,-1.482691878,R +10.2,-1.86,R +4.2,D +5.0,D+1.9
+146,Illinois,IL,IL15,IL-15,1715,Kevin Gaither,John Shimkus,1,3.62723987,R +30.4,1.21,R +48.5,R +41.9,R+1.2
+147,Illinois,IL,IL16,IL-16,1716,Sara Dady,Adam Kinzinger,1,2.30783479,R +7.8,7.18,R +18.3,R +18.2,R+7.2
+148,Illinois,IL,IL17,IL-17,1717,Cheri Bustos,Bill Fawell,-1,-4.638250415,D +17.3,-8.48,R +0.7,D +24.2,D+8.5
+149,Illinois,IL,IL18,IL-18,1718,Junius Rodriguez,Darin LaHood,1,2.913829601,R +23.8,11.35,R +29.1,R +34.5,R+11.4
+150,Indiana,IN,IN01,IN-01,1801,Pete Visclosky,Mark Leyva,-1,-3.51746342,D +24.1,-4.31,D +13.2,D +30.2,D+4.3
+151,Indiana,IN,IN02,IN-02,1802,Mel Hall,Jackie Walorski,1,-0.5101699334,R +14.3,-5.07,R +24.3,R +9.7,D+5.1
+152,Indiana,IN,IN03,IN-03,1803,Courtney Tritch,Jim Banks,1,0.3750824891,R +27.3,1.48,R +36.8,R +29.5,R+1.5
+153,Indiana,IN,IN04,IN-04,1804,Tobi Beck,Jim Baird,0,1.225046439,R +24.5,1.28,R +36.1,R +28.1,R+1.3
+154,Indiana,IN,IN05,IN-05,1805,Dee Thornton,Susan Brooks,1,2.856140521,R +17.1,4.49,R +12.5,R +13.5,R+4.5
+155,Indiana,IN,IN06,IN-06,1806,Jeannine Lake,Greg Pence,0,4.283475392,R +23.6,-2.3,R +42.4,R +32.0,D+2.3
+156,Indiana,IN,IN07,IN-07,1807,Andre Carson,Wayne Gunny Harmon,-1,-3.408608266,D +28.1,4.69,D +23.9,D +29.7,R+4.7
+157,Indiana,IN,IN08,IN-08,1808,William Tanoos,Larry Bucshon,1,1.813171377,R +19.2,2.67,R +35.3,R +28.9,R+2.7
+158,Indiana,IN,IN09,IN-09,1809,Liz Watson,Trey Hollingsworth,1,-0.8263110702,R +16.9,-4.64,R +28.2,R +13.0,D+4.6
+159,Iowa,IA,IA01,IA-01,1901,Abby Finkenauer,Rod Blum,1,-0.8928654236,D +13.9,5.99,R +3.7,D +5.2,R+6
+160,Iowa,IA,IA02,IA-02,1902,Dave Loebsack,Christopher Peters,-1,-1.54808832,D +13.3,0.07,R +4.4,D +12.5,R+0.1
+161,Iowa,IA,IA03,IA-03,1903,Cindy Axne,David Young,1,-0.4759017595,D +4.3,6.37,R +3.7,D +2.2,R+6.4
+162,Iowa,IA,IA04,IA-04,1904,J.D. Scholten,Steve King,1,-1.827220253,R +8.2,-9.2,R +29.0,R +3.4,D+9.2
+163,Kansas,KS,KS01,KS-01,2001,Alan LaPolice,Roger Marshall,1,0.7122377093,R +43.5,-0.03,R +48.1,R +36.3,D+0
+164,Kansas,KS,KS02,KS-02,2002,Paul Davis,Steve Watkins,0,-0.1266670104,R +13.5,-4.78,R +19.7,R +0.9,D+4.8
+165,Kansas,KS,KS03,KS-03,2003,Sharice Davids,Kevin Yoder,1,-0.2544517095,R +9.7,0.65,D +1.3,D +9.9,R+0.7
+166,Kansas,KS,KS04,KS-04,2004,James Thompson,Ron Estes,1,0.1531567288,R +26.1,1.32,R +29.2,R +18.7,R+1.3
+167,Kentucky,KY,KY01,KY-01,2101,Paul Walker,James Comer,1,2.276255609,R +34.8,-4.71,R +50.4,R +37.2,D+4.7
+168,Kentucky,KY,KY02,KY-02,2102,Hank Linderman,Brett Guthrie,1,2.793814349,R +28.7,2.05,R +42.0,R +36.5,R+2.1
+169,Kentucky,KY,KY03,KY-03,2103,John Yarmuth,Vickie Glisson,-1,-0.6429352685,D +13.1,-2.16,D +15.8,D +25.9,D+2.2
+170,Kentucky,KY,KY04,KY-04,2104,Seth Hall,Thomas Massie,1,1.824759993,R +29.1,-1.66,R +38.0,R +28.6,D+1.7
+171,Kentucky,KY,KY05,KY-05,2105,Kenneth Stepp,Hal Rogers,1,3.36258894,R +52.7,1,R +64.0,R +57.9,R+1
+172,Kentucky,KY,KY06,KY-06,2106,Amy McGrath,Andy Barr,1,-0.1647332481,R +13.9,-5.09,R +16.3,R +3.3,D+5.1
+173,Louisiana,LA,LA01,LA-01,2201,"Jungle, 3 Democrats",Steve Scalise,1,6.788675082,R +45.0,-1.46,R +44.0,R +45.8,D+1.5
+175,Louisiana,LA,LA03,LA-03,2203,"Jungle, 4 Democrats",Clay Higgins,1,3.278290403,R +34.3,-0.06,R +39.5,R +38.5,D+0.1
+176,Louisiana,LA,LA04,LA-04,2204,Ryan Trundle,Mike Johnson,1,2.999375393,R +19.6,6.87,R +24.7,R +31.3,R+6.9
+177,Louisiana,LA,LA05,LA-05,2205,Jessee Carlton Fleenor,Ralph Abraham,1,3.122207907,R +23.6,8.34,R +30.1,R +37.9,R+8.3
+178,Louisiana,LA,LA06,LA-06,2206,"Jungle, 2 Democrats",Garret Graves,1,4.239253718,R +34.8,5.5,R +35.3,R +41.7,R+5.5
+179,Maine,ME,ME01,ME-01,2301,Chellie Pingree,Mark Holbrook,-1,-2.669634644,D +21.9,1.96,D +15.8,D +28.8,R+2
+180,Maine,ME,ME02,ME-02,2302,Jared Golden,Bruce Poliquin,1,-0.468401127,D +8.8,1.66,R +11.1,D +1.2,R+1.7
+181,Maryland,MD,MD01,MD-01,2401,Jesse Colvin,Andy Harris,1,0.01297135074,R +23.1,-0.72,R +30.0,R +22.3,D+0.7
+182,Maryland,MD,MD02,MD-02,2402,Dutch Ruppersberger,Liz Matory,-1,-2.9590091,D +28.6,-3.11,D +25.5,D +36.5,D+3.1
+183,Maryland,MD,MD03,MD-03,2403,John Sarbanes,Charles Anthony,-1,-2.994605066,D +24.1,-3.12,D +32.1,D +41.9,D+3.1
+184,Maryland,MD,MD04,MD-04,2404,Anthony Brown,George McDermott,-1,-2.58326393,D +57.9,2.23,D +59.3,D +59.4,R+2.2
+185,Maryland,MD,MD05,MD-05,2405,Steny Hoyer,William Devine III,-1,-5.445125455,D +34.2,-2.1,D +33.3,D +44.4,D+2.1
+186,Maryland,MD,MD06,MD-06,2406,David Trone,Amie Hoeber,0,-2.948306846,D +12.7,0.98,D +15.8,D +21.6,R+1
+187,Maryland,MD,MD07,MD-07,2407,Elijah Cummings,Richmond Davis,-1,-3.415065473,D +54.7,5.89,D +57.9,D +56.5,R+5.9
+188,Maryland,MD,MD08,MD-08,2408,Jamie Raskin,John Walsh,-1,-3.250426525,D +26.5,4.18,D +36.0,D +38.6,R+4.2
+190,Massachusetts,MA,MA02,MA-02,2502,Jim McGovern,Tracy Lovvorn,-1,-3.367633869,D +19.9,-6.31,D +20.9,D +34.4,D+6.3
+191,Massachusetts,MA,MA03,MA-03,2503,Lori Trahan,Rick Green,0,-1.341334126,D +15.8,-3.37,D +24.4,D +29.9,D+3.4
+193,Massachusetts,MA,MA05,MA-05,2505,Katherine Clark,John Hugo,-1,-3.652322426,D +32.7,-1.4,D +45.9,D +51.9,D+1.4
+194,Massachusetts,MA,MA06,MA-06,2506,Seth Moulton,Josephine Schneider,-1,-2.942232361,D +11.0,-10.35,D +19.0,D +35.0,D+10.4
+197,Massachusetts,MA,MA09,MA-09,2509,Bill Keating,Peter Tedeschi,-1,0.5837058637,D +12.6,-2.87,D +11.3,D +18.8,D+2.9
+198,Michigan,MI,MI01,MI-01,2601,Matt Morgan,Jack Bergman,1,0.02071291055,R +8.4,0.57,R +22.5,R +12.6,R+0.6
+199,Michigan,MI,MI02,MI-02,2602,Rob Davidson,Bill Huizenga,1,0.7485118425,R +13.0,1.26,R +18.7,R +12.6,R+1.3
+200,Michigan,MI,MI03,MI-03,2603,Cathy Albro,Justin Amash,1,1.775638072,R +7.4,7.39,R +10.0,R +11.5,R+7.4
+201,Michigan,MI,MI04,MI-04,2604,Jerry Hilliard,John Moolenaar,1,3.556018658,R +8.1,6.84,R +26.3,R +25.2,R+6.8
+202,Michigan,MI,MI05,MI-05,2605,Dan Kildee,Travis Wines,-1,-3.516567402,D +22.6,-5.24,D +4.4,D +24.7,D+5.2
+203,Michigan,MI,MI06,MI-06,2606,Matt Longjohn,Fred Upton,1,0.5309911296,R +1.4,3.99,R +8.9,R +4.7,R+4
+204,Michigan,MI,MI07,MI-07,2607,Gretchen Driskell,Tim Walberg,1,-0.3098339599,R +3.1,0.29,R +18.0,R +7.6,R+0.3
+205,Michigan,MI,MI08,MI-08,2608,Elissa Slotkin,Mike Bishop,1,-0.7049407377,R +3.1,-2.41,R +7.1,D +3.9,D+2.4
+206,Michigan,MI,MI09,MI-09,2609,Andy Levin,Candius Stearns,0,-2.759279826,D +15.4,-3.85,D +8.2,D +23.7,D+3.9
+207,Michigan,MI,MI10,MI-10,2610,Kimberly Bizon,Paul Mitchell,1,2.411738942,R +11.7,2.43,R +33.8,R +26.6,R+2.4
+208,Michigan,MI,MI11,MI-11,2611,Haley Stevens,Lena Epstein,0,-1.296031213,R +5.4,-2.79,R +4.6,D +6.9,D+2.8
+209,Michigan,MI,MI12,MI-12,2612,Debbie Dingell,Jeff Jones,-1,-3.458547398,D +33.7,-0.08,D +27.6,D +40.4,D+0.1
+211,Michigan,MI,MI14,MI-14,2614,Brenda Lawrence,Marc Herschfus,-1,-2.773557544,D +62.7,3.38,D +62.5,D +64.7,R+3.4
+212,Minnesota,MN,MN01,MN-01,2701,Dan Feehan,Jim Hagedorn,0,-0.3129057243,D +1.4,-3.94,R +16.2,R +0.5,D+3.9
+213,Minnesota,MN,MN02,MN-02,2702,Angie Craig,Jason Lewis,1,-0.8168542149,D +0.1,1.32,R +1.3,D +5.5,R+1.3
+214,Minnesota,MN,MN03,MN-03,2703,Dean Phillips,Erik Paulsen,1,-0.3106783815,D +0.8,4.1,D +10.2,D +11.4,R+4.1
+215,Minnesota,MN,MN04,MN-04,2704,Betty McCollum,Greg Ryan,-1,-2.981263842,D +27.6,5.13,D +33.6,D +37.9,R+5.1
+216,Minnesota,MN,MN05,MN-05,2705,Ilhan Omar,Jennifer Zielinski,0,-3.039142933,D +50.8,11.28,D +59.9,D +56.5,R+11.3
+217,Minnesota,MN,MN06,MN-06,2706,Ian Todd,Tom Emmer,1,3.643422118,R +15.3,0.97,R +27.9,R +22.4,R+1
+218,Minnesota,MN,MN07,MN-07,2707,Collin Peterson,Dave Hughes,-1,-2.045080005,R +10.0,-21.87,R +33.2,D +4.3,D+21.9
+219,Minnesota,MN,MN08,MN-08,2708,Joe Radinovich,Pete Stauber,0,1.010670463,D +5.6,0.88,R +16.8,R +5.8,R+0.9
+220,Mississippi,MS,MS01,MS-01,2801,Randy Wadkins,Trent Kelly,1,3.46572899,R +25.2,-0.27,R +33.7,R +34.8,D+0.3
+222,Mississippi,MS,MS03,MS-03,2803,Michael Evans,Michael Guest,0,2.95217081,R +21.1,-0.79,R +25.0,R +25.8,D+0.8
+223,Mississippi,MS,MS04,MS-04,2804,Jeramey Anderson,Steven Palazzo,1,1.785833777,R +36.8,-4.38,R +42.2,R +37.9,D+4.4
+224,Missouri,MO,MO01,MO-01,2901,Lacy Clay,Robert Vroman,-1,-3.015989897,D +61.7,1.66,D +60.8,D +65.5,R+1.7
+225,Missouri,MO,MO02,MO-02,2902,Cort VanOstran,Ann Wagner,1,0.8284384308,R +15.9,-2.67,R +10.9,R +4.0,D+2.7
+226,Missouri,MO,MO03,MO-03,2903,Katy Geppert,Blaine Luetkemeyer,1,3.955514588,R +26.4,-2.81,R +41.0,R +32.9,D+2.8
+227,Missouri,MO,MO04,MO-04,2904,Renee Hoagenson,Vicky Hartzler,1,1.378654595,R +25.4,2.01,R +38.1,R +32.9,R+2
+228,Missouri,MO,MO05,MO-05,2905,Emanuel Cleaver,Jacob Turk,-1,-2.820261281,D +19.8,-2.83,D +14.3,D +26.8,D+2.8
+229,Missouri,MO,MO06,MO-06,2906,Henry Martin,Sam Graves,1,3.566651186,R +22.6,5.86,R +33.1,R +34.3,R+5.9
+230,Missouri,MO,MO07,MO-07,2907,Jamie Schoolcraft,Billy Long,1,3.09184152,R +38.1,-5.41,R +48.1,R +37.5,D+5.4
+231,Missouri,MO,MO08,MO-08,2908,Kathy Ellis,Jason Smith,1,2.360205064,R +34.6,0.88,R +56.4,R +49.2,R+0.9
+232,Montana,MT,MTAL,MT-AL,3000,Kathleen Williams,Greg Gianforte,1,1.062159157,R +14.1,-9.55,R +22.3,R +4.8,D+9.6
+233,Nebraska,NE,NE01,NE-01,3101,Jessica McClure,Jeff Fortenberry,1,2.067386103,R +17.0,1.76,R +22.7,R +20.7,R+1.8
+234,Nebraska,NE,NE02,NE-02,3102,Kara Eastman,Don Bacon,1,0.6240736034,R +7.2,2.18,R +2.3,R +2.0,R+2.2
+235,Nebraska,NE,NE03,NE-03,3103,Paul Theobald,Adrian Smith,1,3.200058747,R +43.3,0.12,R +57.9,R +53.4,R+0.1
+236,Nevada,NV,NV01,NV-01,3201,Dina Titus,Joyce Bentley,-1,-3.16713791,D +33.9,-2.45,D +30.8,D +36.4,D+2.5
+237,Nevada,NV,NV02,NV-02,3202,Clint Koble,Mark Amodei,1,2.240366204,R +8.3,4.18,R +13.4,R +16.5,R+4.2
+238,Nevada,NV,NV03,NV-03,3203,Susie Lee,Danny Tarkanian,0,-0.5744999591,D +0.8,-7.78,R +1.1,D +9.6,D+7.8
+239,Nevada,NV,NV04,NV-04,3204,Steven Horsford,Cresent Hardy,0,-1.379402748,D +10.9,-0.02,D +5.2,D +8.6,D+0
+240,New Hampshire,NH,NH01,NH-01,3301,Chris Pappas,Eddie Edwards,0,-1.183754298,D +1.6,0.09,R +1.7,D +8.7,R+0.1
+241,New Hampshire,NH,NH02,NH-02,3302,Annie Kuster,Steve Negron,-1,-2.687301975,D +9.8,2.26,D +2.5,D +13.7,R+2.3
+242,New Jersey,NJ,NJ01,NJ-01,3401,Donald Norcross,Paul Dilks,-1,-3.811767083,D +31.6,6.25,D +25.3,D +31.9,R+6.3
+243,New Jersey,NJ,NJ02,NJ-02,3402,Jeff Van Drew,Seth Grossman,0,-2.336353649,D +8.2,-0.33,R +4.8,D +7.8,D+0.3
+244,New Jersey,NJ,NJ03,NJ-03,3403,Andy Kim,Tom MacArthur,1,-0.4499145895,D +4.6,2.24,R +6.4,D +1.3,R+2.2
+245,New Jersey,NJ,NJ04,NJ-04,3404,Josh Welle,Chris Smith,1,-0.1755573271,R +9.6,5.95,R +15.3,R +12.5,R+6
+246,New Jersey,NJ,NJ05,NJ-05,3405,Josh Gottheimer,John McCann,-1,-1.901551844,R +3.0,-5.22,R +1.1,D +13.9,D+5.2
+247,New Jersey,NJ,NJ06,NJ-06,3406,Frank Pallone,Rich Pezzullo,-1,-3.692517175,D +24.3,0.22,D +16.1,D +27.3,R+0.2
+248,New Jersey,NJ,NJ07,NJ-07,3407,Tom Malinowski,Leonard Lance,1,-0.2746539704,R +6.3,1.87,D +1.1,D +5.1,R+1.9
+249,New Jersey,NJ,NJ08,NJ-08,3408,Albio Sires,John Muniz,-1,-2.730934022,D +58.0,-0.08,D +55.8,D +61.3,D+0.1
+250,New Jersey,NJ,NJ09,NJ-09,3409,Bill Pascrell Jr.,Eric Fisher,-1,-3.906408655,D +37.9,-0.05,D +32.0,D +41.8,D+0.1
+251,New Jersey,NJ,NJ10,NJ-10,3410,Donald Payne Jr.,Agha Khan,-1,-2.741197299,D +76.9,-1.58,D +73.9,D +79.3,D+1.6
+252,New Jersey,NJ,NJ11,NJ-11,3411,Mikie Sherrill,Jay Webber,0,-2.588609028,R +5.9,-6.29,R +0.9,D +14.8,D+6.3
+253,New Jersey,NJ,NJ12,NJ-12,3412,Bonnie Watson Coleman,Daryl Kipnis,-1,-2.910594161,D +34.5,5.87,D +34.3,D +37.4,R+5.9
+254,New Mexico,NM,NM01,NM-01,3501,Deb Haaland,Janice Arnold-Jones,0,-2.641238508,D +16.5,1.78,D +19.0,D +23.9,R+1.8
+255,New Mexico,NM,NM02,NM-02,3502,Xochitl Torres Small,Yvette Herrell,0,-0.6613241834,R +7.0,-7.6,R +11.3,D +1.9,D+7.6
+256,New Mexico,NM,NM03,NM-03,3503,Ben Ray Lujan,Jerald McFall,-1,-4.608937542,D +19.5,-7.13,D +17.1,D +34.0,D+7.1
+257,New York,NY,NY01,NY-01,3601,Perry Gershon,Lee Zeldin,1,-0.1711864483,D +0.5,0.63,R +12.7,R +4.1,R+0.6
+258,New York,NY,NY02,NY-02,3602,Liuba Grechen Shirley,Peter King,1,0.6774224555,D +4.5,4.18,R +9.4,R +6.2,R+4.2
+259,New York,NY,NY03,NY-03,3603,Tom Suozzi,Dan DeBono,-1,-1.517269658,D +2.6,-3.54,D +6.3,D +18.0,D+3.5
+260,New York,NY,NY04,NY-04,3604,Kathleen Rice,Ameer Benno,-1,-4.077190863,D +13.6,-1.95,D +9.9,D +22.7,D+2
+265,New York,NY,NY09,NY-09,3609,Yvette Clarke,Lutchi Gayot,-1,-3.535614214,D +72.1,-2.57,D +70.6,D +79.3,D+2.6
+266,New York,NY,NY10,NY-10,3610,Jerrold Nadler,Naomi Levin,-1,-3.194202525,D +49.3,4.39,D +61.3,D +64.3,R+4.4
+267,New York,NY,NY11,NY-11,3611,Max Rose,Dan Donovan,1,-0.4206256064,D +4.3,-8.34,R +10.1,D +6.5,D+8.3
+268,New York,NY,NY12,NY-12,3612,Carolyn Maloney,Eliot Rabin,-1,-4.23678101,D +56.3,4.8,D +72.1,D +75.4,R+4.8
+269,New York,NY,NY13,NY-13,3613,Adriano Espaillat,Jineea Butler,-1,-2.696649044,D +90.7,0.54,D +88.9,D +89.2,R+0.5
+270,New York,NY,NY14,NY-14,3614,Alexandria Ocasio-Cortez,Anthony Pappas,0,-1.270930924,D +63.0,-9.09,D +59.4,D +70.3,D+9.1
+271,New York,NY,NY15,NY-15,3615,Jose Serrano,Jason Gonzalez,-1,-1.753711494,D +94.0,-12.13,D +90.1,D +92.0,D+12.1
+274,New York,NY,NY18,NY-18,3618,Sean Patrick Maloney,James O'Donnell,-1,-3.610303425,D +4.4,-0.76,R +2.0,D +10.9,D+0.8
+275,New York,NY,NY19,NY-19,3619,Antonio Delgado,John Faso,1,-0.3953081878,D +6.3,-2.35,R +7.2,D +5.3,D+2.4
+276,New York,NY,NY20,NY-20,3620,Paul Tonko,Francis Vitollo,-1,-3.745837523,D +20.8,-5.58,D +14.3,D +33.0,D+5.6
+277,New York,NY,NY21,NY-21,3621,Tedra Cobb,Elise Stefanik,1,0.9934816842,D +6.2,9.73,R +14.8,R +13.9,R+9.7
+278,New York,NY,NY22,NY-22,3622,Anthony Brindisi,Claudia Tenney,1,-0.2823149461,R +0.4,-7.43,R +16.5,D +1.8,D+7.4
+279,New York,NY,NY23,NY-23,3623,Tracy Mitrano,Tom Reed,1,1.063662798,R +1.2,2.1,R +15.7,R +8.5,R+2.1
+280,New York,NY,NY24,NY-24,3624,Dana Balter,John Katko,1,-0.2428525796,D +16.2,18.85,D +3.8,R +5.3,R+18.9
+281,New York,NY,NY25,NY-25,3625,Joe Morelle,Jim Maxwell,1,-0.8106551423,D +19.8,6.8,D +17.3,D +18.0,R+6.8
+282,New York,NY,NY26,NY-26,3626,Brian Higgins,Renee Zeno,-1,-3.326908328,D +30.1,-13.43,D +20.5,D +46.7,D+13.4
+283,New York,NY,NY27,NY-27,3627,Nate McMurray,Chris Collins,1,0.353258232,R +12.6,-15.59,R +25.8,R +0.4,D+15.6
+284,North Carolina,NC,NC01,NC-01,3701,GK Butterfield,Roger Allison,-1,-2.936662127,D +37.2,3.89,D +37.8,D +39.7,R+3.9
+285,North Carolina,NC,NC02,NC-02,3702,Linda Coleman,George Holding,1,0.4563634361,R +13.1,-1.07,R +9.9,R +5.6,D+1.1
+287,North Carolina,NC,NC04,NC-04,3704,David Price,Steve Von Loor,-1,-3.416523611,D +30.7,-2.51,D +41.5,D +50.1,D+2.5
+288,North Carolina,NC,NC05,NC-05,3705,DD Adams,Virginia Foxx,1,2.415245893,R +14.4,-0.72,R +18.1,R +14.1,D+0.7
+289,North Carolina,NC,NC06,NC-06,3706,Ryan Watts,Mark Walker,1,1.124575396,R +12.8,1.64,R +15.1,R +13.0,R+1.6
+290,North Carolina,NC,NC07,NC-07,3707,Kyle Horton,David Rouzer,1,0.6219476995,R +12.8,-0.44,R +18.2,R +13.0,D+0.4
+291,North Carolina,NC,NC08,NC-08,3708,Frank McNeill,Richard Hudson,1,1.546891569,R +10.4,-1.34,R +15.4,R +10.7,D+1.3
+292,North Carolina,NC,NC09,NC-09,3709,Dan McCready,Mark Harris,0,-1.053991975,R +11.7,-6.08,R +11.9,R +0.3,D+6.1
+293,North Carolina,NC,NC10,NC-10,3710,David Brown,Patrick McHenry,1,4.105134445,R +18.3,-3.99,R +25.3,R +18.6,D+4
+294,North Carolina,NC,NC11,NC-11,3711,Phillip Price,Mark Meadows,1,2.167643228,R +20.8,-3.58,R +30.0,R +20.9,D+3.6
+295,North Carolina,NC,NC12,NC-12,3712,Alma Adams,Paul Wright,-1,-2.637434043,D +36.8,-0.03,D +41.3,D +46.1,D+0
+296,North Carolina,NC,NC13,NC-13,3713,Kathy Manning,Ted Budd,1,-0.2296608394,R +6.9,1.52,R +9.7,R +6.2,R+1.5
+297,North Dakota,ND,NDAL,ND-AL,3800,Mac Schneider,Kelly Armstrong,0,0.446188273,R +20.3,-2.57,R +39.7,R +25.7,D+2.6
+298,Ohio,OH,OH01,OH-01,3901,Aftab Pureval,Steve Chabot,1,0.2189265067,R +6.2,2.49,R +6.9,R +4.5,R+2.5
+299,Ohio,OH,OH02,OH-02,3902,Jill Schiller,Brad Wenstrup,1,1.322585759,R +11.2,5.66,R +16.9,R +16.6,R+5.7
+300,Ohio,OH,OH03,OH-03,3903,Joyce Beatty,James Burgess,-1,-3.113447139,D +41.4,1.02,D +40.2,D +47.3,R+1
+301,Ohio,OH,OH04,OH-04,3904,Janet Garrett,Jim Jordan,1,1.238125472,R +14.3,4.36,R +35.4,R +30.5,R+4.4
+302,Ohio,OH,OH05,OH-05,3905,Michael Galbraith,Bob Latta,1,2.559526324,R +10.0,8.34,R +26.6,R +27.8,R+8.3
+303,Ohio,OH,OH06,OH-06,3906,Shawna Roberts,Bill Johnson,1,3.825142096,R +12.8,3.23,R +44.4,R +38.5,R+3.2
+304,Ohio,OH,OH07,OH-07,3907,Ken Harbaugh,Bob Gibbs,1,-0.7493415215,R +9.7,-2.28,R +31.2,R +17.5,D+2.3
+305,Ohio,OH,OH08,OH-08,3908,Vanessa Enoch,Warren Davidson,1,3.491850532,R +25.9,1.93,R +36.1,R +33.2,R+1.9
+306,Ohio,OH,OH09,OH-09,3909,Marcy Kaptur,Steve Kraus,-1,-2.463638786,D +37.3,-0.62,D +23.3,D +35.6,D+0.6
+307,Ohio,OH,OH10,OH-10,3910,Theresa Gasper,Mike Turner,1,0.225262693,R +1.9,12.71,R +7.7,R +14.0,R+12.7
+308,Ohio,OH,OH11,OH-11,3911,Marcia Fudge,Beverly Goldstein,-1,-2.53912011,D +66.7,6.27,D +65.1,D +64.5,R+6.3
+309,Ohio,OH,OH12,OH-12,3912,Danny O'Connor,Troy Balderson,1,-0.01164837901,R +10.7,-1.18,R +11.9,R +4.3,D+1.2
+310,Ohio,OH,OH13,OH-13,3913,Tim Ryan,Chris DePizzo,-1,-3.187165037,D +28.0,-0.59,D +6.8,D +22.0,D+0.6
+311,Ohio,OH,OH14,OH-14,3914,Betsy Rader,David Joyce,1,0.4010494897,R +3.4,6.13,R +12.0,R +10.5,R+6.1
+312,Ohio,OH,OH15,OH-15,3915,Rick Neal,Steve Stivers,1,1.736410699,R +5.7,9.54,R +16.2,R +19.0,R+9.5
+313,Ohio,OH,OH16,OH-16,3916,Susan Moran Palmer,Anthony Gonzalez,0,2.308107452,R +8.3,2.83,R +17.5,R +13.5,R+2.8
+314,Oklahoma,OK,OK01,OK-01,4001,Tim Gilpin,Kevin Hern,1,1.769221356,R +31.6,-5.08,R +30.5,R +18.6,D+5.1
+315,Oklahoma,OK,OK02,OK-02,4002,Jason Nichols,Markwayne Mullin,1,2.982309969,R +35.6,-6.4,R +52.4,R +36.7,D+6.4
+316,Oklahoma,OK,OK03,OK-03,4003,Frankie Robbins,Frank Lucas,1,3.489903603,R +47.8,-0.51,R +55.8,R +47.7,D+0.5
+317,Oklahoma,OK,OK04,OK-04,4004,Mary Brannon,Tom Cole,1,4.270258616,R +34.2,-2.37,R +39.8,R +31.3,D+2.4
+318,Oklahoma,OK,OK05,OK-05,4005,Kendra Horn,Steve Russell,1,-0.6345913743,R +18.4,-7.96,R +14.4,D +1.4,D+8
+319,Oregon,OR,OR01,OR-01,4101,Suzanne Bonamici,John Verbeek,-1,-3.078622047,D +17.8,0.7,D +24.8,D +33.0,R+0.7
+320,Oregon,OR,OR02,OR-02,4102,Jamie McLeod-Skinner,Greg Walden,1,1.798788734,R +16.8,1.64,R +21.6,R +17.7,R+1.6
+321,Oregon,OR,OR03,OR-03,4103,Earl Blumenauer,Tom Harrison,-1,-4.088392137,D +48.9,5.32,D +51.7,D +57.1,R+5.3
+322,Oregon,OR,OR04,OR-04,4104,Peter DeFazio,Art Robinson,-1,-2.461116242,D +6.9,-3.53,D +0.1,D +15.6,D+3.5
+323,Oregon,OR,OR05,OR-05,4105,Kurt Schrader,Mark Callahan,-1,-2.854626136,D +3.5,1.14,D +4.5,D +13.6,R+1.1
+324,Pennsylvania,PA,PA01,PA-01,4201,Scott Wallace,Brian Fitzpatrick,1,-0.1685499158,D +1.6,12.31,D +2.1,R +2.5,R+12.3
+325,Pennsylvania,PA,PA02,PA-02,4202,Brendan Boyle,David Torres,-1,-3.426649592,D +56.0,0.21,D +49.1,D +58.0,R+0.2
+326,Pennsylvania,PA,PA03,PA-03,4203,Dwight Evans,Bryan Leib,-1,-3.469321345,D +84.7,5.79,D +85.7,D +86.8,R+5.8
+327,Pennsylvania,PA,PA04,PA-04,4204,Madeleine Dean,Dan David,0,-1.131448144,D +13.4,0.72,D +20.0,D +27.0,R+0.7
+328,Pennsylvania,PA,PA05,PA-05,4205,Mary Gay Scanlon,Pearl Kim,1,-1.732484437,D +28.0,6.01,D +29.1,D +30.4,R+6
+329,Pennsylvania,PA,PA06,PA-06,4206,Chrissy Houlahan,Greg McCauley,0,-3.559873166,D +3.2,1.71,D +9.7,D +17.8,R+1.7
+330,Pennsylvania,PA,PA07,PA-07,4207,Susan Wild,Marty Nothstein,1,-2.122762453,D +7.1,0.59,D +1.1,D +10.3,R+0.6
+331,Pennsylvania,PA,PA08,PA-08,4208,Matt Cartwright,John Chrin,-1,0.1537648324,D +12.1,-6.12,R +9.9,D +9.3,D+6.1
+332,Pennsylvania,PA,PA09,PA-09,4209,Denny Wolff,Dan Meiser,0,-4.033621047,R +16.3,0.51,R +35.4,R +19.5,R+0.5
+333,Pennsylvania,PA,PA10,PA-10,4210,George Scott,Scott Perry,1,0.02384028034,R +6.7,0.83,R +9.3,R +2.6,R+0.8
+334,Pennsylvania,PA,PA11,PA-11,4211,Jess King,Lloyd Smucker,1,-0.2776745894,R +22.8,-0.25,R +27.1,R +18.0,D+0.3
+335,Pennsylvania,PA,PA12,PA-12,4212,Marc Friedenberg,Tom Marino,1,2.437826374,R +25.1,2.54,R +38.0,R +32.1,R+2.5
+336,Pennsylvania,PA,PA13,PA-13,4213,Brent Ottaway,John Joyce,0,1.747381336,R +35.0,3.56,R +47.3,R +41.0,R+3.6
+337,Pennsylvania,PA,PA14,PA-14,4214,Bibiana Boerio,Guy Reschenthaler,0,0.9562060539,R +17.9,-3.55,R +30.0,R +15.8,D+3.6
+338,Pennsylvania,PA,PA15,PA-15,4215,Susan Boser,Glenn Thompson,1,2.638352352,R +27.4,0.08,R +45.0,R +35.7,R+0.1
+339,Pennsylvania,PA,PA16,PA-16,4216,Ron DiNicola,Mike Kelly,1,0.3239030596,R +4.9,-5.54,R +20.9,R +4.3,D+5.5
+340,Pennsylvania,PA,PA17,PA-17,4217,Conor Lamb,Keith Rothfus,1,0.1825346976,R +4.6,-7.75,R +2.7,D +12.5,D+7.8
+342,Rhode Island,RI,RI01,RI-01,4401,David Cicilline,Patrick Donovan,-1,-4.094778246,D +34.6,5.62,D +26.8,D +33.7,R+5.6
+343,Rhode Island,RI,RI02,RI-02,4402,Jim Langevin,Sal Caiozzo,-1,-3.027757715,D +21.9,-6.27,D +7.5,D +27.3,D+6.3
+344,South Carolina,SC,SC01,SC-01,4501,Joe Cunningham,Katie Arrington,0,-0.5956599305,R +18.4,-10.04,R +14.0,D +1.4,D+10
+345,South Carolina,SC,SC02,SC-02,4502,Sean Carrigan,Joe Wilson,1,2.861934909,R +20.0,-3.35,R +18.7,R +14.0,D+3.4
+346,South Carolina,SC,SC03,SC-03,4503,Mary Geren,Jeff Duncan,1,0.9887274469,R +31.1,3.33,R +39.6,R +37.3,R+3.3
+347,South Carolina,SC,SC04,SC-04,4504,Brandon Brown,William Timmons,0,1.280223578,R +26.4,1.02,R +27.1,R +23.9,R+1
+348,South Carolina,SC,SC05,SC-05,4505,Archie Parnell,Ralph Norman,1,-0.1581353618,R +11.7,2.35,R +19.3,R +15.8,R+2.4
+349,South Carolina,SC,SC06,SC-06,4506,Jim Clyburn,Gerhard Gressmann,-1,-4.368487562,D +43.2,2.29,D +37.6,D +42.6,R+2.3
+350,South Carolina,SC,SC07,SC-07,4507,Robert Williams,Tom Rice,1,3.267673659,R +10.2,2.72,R +19.5,R +19.3,R+2.7
+351,South Dakota,SD,SDAL,SD-AL,4600,Tim Bjorkman,Dusty Johnson,0,0.9535020323,R +18.4,2.92,R +32.0,R +25.2,R+2.9
+352,Tennessee,TN,TN01,TN-01,4701,Marty Olsen,Phil Roe,1,1.444436976,R +47.8,5.26,R +59.1,R +57.1,R+5.3
+353,Tennessee,TN,TN02,TN-02,4702,Renee Hoyos,Tim Burchett,0,1.244158304,R +37.1,1.63,R +37.3,R +33.2,R+1.6
+354,Tennessee,TN,TN03,TN-03,4703,Danielle Mitchell,Chuck Fleischmann,1,0.8465862472,R +28.7,-0.5,R +36.8,R +29.8,D+0.5
+355,Tennessee,TN,TN04,TN-04,4704,Mariah Phillips,Scott Desjarlais,1,-0.8139926463,R +32.7,-3.72,R +42.9,R +30.7,D+3.7
+356,Tennessee,TN,TN05,TN-05,4705,Jim Cooper,Jody Ball,-1,-3.051869737,D +13.6,-8.81,D +19.3,D +35.7,D+8.8
+357,Tennessee,TN,TN06,TN-06,4706,Dawn Barlow,John Rose,0,4.420015417,R +40.2,-3.81,R +50.8,R +42.1,D+3.8
+358,Tennessee,TN,TN07,TN-07,4707,Justin Kanew,Mark Green,0,1.708019525,R +33.3,0.42,R +41.1,R +35.1,R+0.4
+359,Tennessee,TN,TN08,TN-08,4708,Erika Stotts Pearson,David Kustoff,1,4.092046928,R +33.5,3.48,R +36.7,R +38.4,R+3.5
+360,Tennessee,TN,TN09,TN-09,4709,Steve Cohen,Charlotte Bergmann,-1,-2.334368046,D +57.9,0.25,D +59.3,D +61.2,R+0.3
+361,Texas,TX,TX01,TX-01,4801,Shirley McKellar,Louie Gohmert,1,2.531725023,R +44.5,0.6,R +48.1,R +46.6,R+0.6
+362,Texas,TX,TX02,TX-02,4802,Todd Litton,Dan Crenshaw,0,0.5896890681,R +27.7,-3.51,R +9.7,R +7.4,D+3.5
+363,Texas,TX,TX03,TX-03,4803,Lorie Burch,Van Taylor,0,3.158319852,R +30.6,-6.92,R +14.9,R +10.2,D+6.9
+364,Texas,TX,TX04,TX-04,4804,Catherine Krantz,John Ratcliffe,1,2.236141278,R +49.8,1.66,R +55.1,R +53.3,R+1.7
+365,Texas,TX,TX05,TX-05,4805,Dan Wood,Lance Gooden,0,0.7795016698,R +30.4,-1.71,R +29.3,R +24.8,D+1.7
+366,Texas,TX,TX06,TX-06,4806,Jana Lynne Sanchez,Ron Wright,0,0.2425461982,R +17.3,-3,R +12.8,R +7.8,D+3
+367,Texas,TX,TX07,TX-07,4807,Lizzie Fletcher,John Culberson,1,-0.572315911,R +21.6,-6.15,D +1.5,D +5.1,D+6.2
+368,Texas,TX,TX08,TX-08,4808,Steven David,Kevin Brady,1,5.531530849,R +56.0,-3.59,R +50.5,R +49.4,D+3.6
+370,Texas,TX,TX10,TX-10,4810,Mike Siegel,Michael McCaul,1,1.598282942,R +20.7,-6.06,R +9.5,R +4.4,D+6.1
+371,Texas,TX,TX11,TX-11,4811,Jennie Lou Leeder,Mike Conaway,1,3.797334677,R +60.3,1.58,R +60.6,R +62.6,R+1.6
+372,Texas,TX,TX12,TX-12,4812,Vanessa Adia,Kay Granger,1,2.88648086,R +35.6,-0.4,R +31.6,R +30.9,D+0.4
+373,Texas,TX,TX13,TX-13,4813,Greg Sagan,Mac Thornberry,1,3.373105896,R +62.5,1.73,R +65.1,R +65.6,R+1.7
+374,Texas,TX,TX14,TX-14,4814,Adrienne Bell,Randy Weber,1,1.369856358,R +20.0,1.02,R +20.5,R +20.2,R+1
+375,Texas,TX,TX15,TX-15,4815,Vicente Gonzalez,Tim Westley,-1,-2.223275918,D +16.1,-4.96,D +17.3,D +21.3,D+5
+376,Texas,TX,TX16,TX-16,4816,Veronica Escobar,Rick Seeberger,0,-3.431402593,D +30.1,-4.68,D +42.8,D +43.4,D+4.7
+377,Texas,TX,TX17,TX-17,4817,Rick Kennedy,Bill Flores,1,2.928603183,R +23.1,-3.45,R +18.4,R +15.8,D+3.5
+378,Texas,TX,TX18,TX-18,4818,Sheila Jackson Lee,Ava Pate,-1,-2.969454614,D +53.9,1.41,D +58.5,D +56.7,R+1.4
+379,Texas,TX,TX19,TX-19,4819,Miguel Levario,Jodey Arrington,1,2.545452977,R +49.3,0.15,R +51.0,R +50.5,R+0.2
+381,Texas,TX,TX21,TX-21,4821,Joseph Kopser,Chip Roy,0,-0.06961669473,R +22.4,-5.69,R +10.5,R +2.7,D+5.7
+382,Texas,TX,TX22,TX-22,4822,Sri Preston Kulkarni,Pete Olson,1,0.3255200741,R +25.7,-6.02,R +8.2,R +5.0,D+6
+383,Texas,TX,TX23,TX-23,4823,Gina Ortiz Jones,Will Hurd,1,-0.5043704215,R +2.6,1.42,D +3.5,R +0.5,R+1.4
+384,Texas,TX,TX24,TX-24,4824,Jan McDowell,Kenny Marchant,1,2.61854596,R +22.8,-7,R +6.5,R +3.1,D+7
+385,Texas,TX,TX25,TX-25,4825,Julie Oliver,Roger Williams,1,1.187813339,R +22.6,-4.98,R +15.6,R +8.9,D+5
+386,Texas,TX,TX26,TX-26,4826,Linsey Fagamn,Michael Burgess,1,4.185948908,R +37.5,-9.17,R +27.8,R +20.7,D+9.2
+387,Texas,TX,TX27,TX-27,4827,Eric Holguin,Michael Cloud,1,2.15714772,R +22.6,-0.55,R +24.4,R +24.5,D+0.6
+389,Texas,TX,TX29,TX-29,4829,Sylvia Garcia,Phillip Aronoff,0,-2.645376257,D +33.3,-10.74,D +47.4,D +51.7,D+10.7
+391,Texas,TX,TX31,TX-31,4831,MJ Hegar,John Carter,1,-1.350294017,R +21.8,-7.74,R +13.5,R +3.0,D+7.7
+392,Texas,TX,TX32,TX-32,4832,Colin Allred,Pete Sessions,1,-0.3347843277,R +15.7,-5.22,D +2.0,D +6.6,D+5.2
+393,Texas,TX,TX33,TX-33,4833,Marc Veasey,Willie Billups,-1,-3.43274846,D +45.3,-5.61,D +50.9,D +55.3,D+5.6
+394,Texas,TX,TX34,TX-34,4834,Filemon Vela,Rey Gonzalez,-1,-2.029848439,D +22.7,0.92,D +22.2,D +20.0,R+0.9
+395,Texas,TX,TX35,TX-35,4835,Lloyd Doggett,David Smalling,-1,-2.06651174,D +29.1,-10,D +35.5,D +46.5,D+10
+396,Texas,TX,TX36,TX-36,4836,Dayna Steele,Brian Babin,1,0.139441346,R +48.0,0.48,R +48.1,R +45.1,R+0.5
+397,Utah,UT,UT01,UT-01,4901,Lee Castillo,Rob Bishop,1,3.17639631,R +58.3,-0.47,R +37.9,R +42.4,D+0.5
+398,Utah,UT,UT02,UT-02,4902,Shireen Ghorbani,Chris Stewart,1,0.9123436349,R +39.9,-3.38,R +17.9,R +18.1,D+3.4
+399,Utah,UT,UT03,UT-03,4903,James Singer,John Curtis,1,1.953975884,R +60.1,3.57,R +33.9,R +42.4,R+3.6
+400,Utah,UT,UT04,UT-04,4904,Ben McAdams,Mia Love,1,0.8458180726,R +38.0,-14.57,R +9.4,D +0.3,D+14.6
+401,Vermont,VT,VTAL,VT-AL,5000,Peter Welch,Anya Tynio,-1,-2.780263189,D +36.5,-1.93,D +30.3,D +45.5,D+1.9
+402,Virginia,VA,VA01,VA-01,5101,Vangie Williams,Rob Wittman,1,2.341924505,R +12.1,1.76,R +13.1,R +10.5,R+1.8
+403,Virginia,VA,VA02,VA-02,5102,Elaine Luria,Scott Taylor,1,-0.2651051879,R +2.3,0.74,R +3.6,D +2.2,R+0.7
+405,Virginia,VA,VA04,VA-04,5104,Donald McEachin,Ryan McAdams,-1,-1.610660757,D +22.1,2.99,D +22.5,D +27.1,R+3
+406,Virginia,VA,VA05,VA-05,5105,Leslie Cockburn,Denver Riggleman,0,-0.1692109046,R +6.7,3.68,R +11.6,R +6.5,R+3.7
+407,Virginia,VA,VA06,VA-06,5106,Jennifer Lewis,Ben Cline,0,1.000830043,R +19.6,1.78,R +26.2,R +19.5,R+1.8
+408,Virginia,VA,VA07,VA-07,5107,Abigail Spanberger,Dave Brat,1,-0.4654765345,R +10.6,-2.76,R +6.9,D +2.0,D+2.8
+409,Virginia,VA,VA08,VA-08,5108,Don Beyer,Thomas Oh,-1,-3.524745161,D +37.2,9.47,D +55.7,D +52.5,R+9.5
+410,Virginia,VA,VA09,VA-09,5109,Anthony Flaccavento,Morgan Griffith,1,0.2095464741,R +28.8,-2.09,R +43.2,R +30.4,D+2.1
+411,Virginia,VA,VA10,VA-10,5110,Jennifer Wexton,Barbara Comstock,1,0.009226116436,R +1.1,1.74,D +10.6,D +12.4,R+1.7
+412,Virginia,VA,VA11,VA-11,5111,Gerry Connolly,Jeff Dove,-1,-1.288616343,D +26.5,0.68,D +41.7,D +45.1,R+0.7
+413,Washington,WA,WA01,WA-01,5301,Suzan DelBene,Jeffrey Beeler,-1,-3.799821322,D +11.1,7.94,D +17.7,D +18.5,R+7.9
+415,Washington,WA,WA03,WA-03,5303,Carolyn Long,Jaime Herrera Beutler,1,-0.4380889962,R +1.7,4.5,R +8.0,R +5.3,R+4.5
+416,Washington,WA,WA04,WA-04,5304,Christine Brown,Dan Newhouse,1,0.9557980722,R +22.3,4.17,R +24.5,R +25.6,R+4.2
+417,Washington,WA,WA05,WA-05,5305,Lisa Brown,Cathy McMorris Rodgers,1,-0.04995386932,R +10.1,1.76,R +14.3,R +9.5,R+1.8
+418,Washington,WA,WA06,WA-06,5306,Derek Kilmer,Douglas Dightman,-1,-3.359593537,D +15.3,-3.85,D +13.5,D +27.8,D+3.9
+419,Washington,WA,WA07,WA-07,5307,Pramila Jayapal,Craig Keller,-1,-3.943883401,D +62.8,14.79,D +74.1,D +67.1,R+14.8
+420,Washington,WA,WA08,WA-08,5308,Kim Schrier,Dino Rossi,0,-1.158874643,D +1.6,4.72,D +3.2,D +4.8,R+4.7
+422,Washington,WA,WA10,WA-10,5310,Denny Heck,Joseph Brumbles,-1,-3.634081566,D +15.6,-0.44,D +12.5,D +23.1,D+0.4
+423,West Virginia,WV,WV01,WV-01,5401,Kendra Fershee,David McKinley,1,2.351249208,R +27.3,1.29,R +44.1,R +29.2,R+1.3
+424,West Virginia,WV,WV02,WV-02,5402,Talley Sergent,Alex Mooney,1,0.747893672,R +22.4,-9.52,R +38.2,R +11.3,D+9.5
+425,West Virginia,WV,WV03,WV-03,5403,Richard Ojeda,Carol Miller,1,-0.6147899326,R +32.9,-19.27,R +51.4,R +12.7,D+19.3
+426,Wisconsin,WI,WI01,WI-01,5501,Randy Bryce,Bryan Steil,0,-0.7814426776,R +4.2,10.02,R +10.9,R +12.7,R+10
+428,Wisconsin,WI,WI03,WI-03,5503,Ron Kind,Steve Toft,-1,-2.530680895,D +11.2,-11.01,R +4.8,D +19.3,D+11
+429,Wisconsin,WI,WI04,WI-04,5504,Gwen Moore,Tim Rogers,-1,-3.540403026,D +52.0,5.48,D +54.5,D +55.5,R+5.5
+430,Wisconsin,WI,WI05,WI-05,5505,Tom Palzewicz,Jim Sensenbrenner,1,0.5880338114,R +23.8,7.45,R +21.2,R +24.0,R+7.5
+431,Wisconsin,WI,WI06,WI-06,5506,Dan Kohl,Glenn Grothman,1,-0.9198718725,R +7.4,1.96,R +17.9,R +11.0,R+2
+432,Wisconsin,WI,WI07,WI-07,5507,Margaret Engbretson,Sean Duffy,1,4.859609823,R +3.1,5.37,R +21.5,R +21.9,R+5.4
+433,Wisconsin,WI,WI08,WI-08,5508,Beau Liegeois,Mike Gallagher,1,2.322712519,R +3.7,15.32,R +18.6,R +27.4,R+15.3
+434,Wyoming,WY,WYAL,WY-AL,5600,Greg Hunter,Liz Cheney,1,1.849618366,R +42.4,-6.24,R +51.4,R +36.2,D+6.2

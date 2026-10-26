@@ -1,0 +1,36 @@
+,State,Democrat,Republican,incumbency,2016_partisanship,2020_partisanship,senate_margin,estimated_target,Raw WAR,2020 Presidential,2020 Senate,WAR
+0,Montana,Steve Bullock,Steve Daines,1,22.2,16.7,10,20.66,-10.66,R +16.7,R +10.0,D +10.7
+1,Oregon,Jeff Merkley,Jo Rae Perkins,-1,-12.3,-16.6,-18.2952183,-17.9852183,-0.31,D +16.6,D +18.3,D +0.3
+2,Idaho,Paulette Jordan,Jim Risch,1,36.6,31.8,30.68893528,35.74893528,-5.06,R +31.8,R +30.7,D +5.1
+3,Arizona,Mark Kelly,Martha McSally,0,3.8,-0.3,-2.4,2.16,-4.56,D +0.3,D +2.4,D +4.6
+4,Maine,Sara Gideon,Susan Collins,1,-3.2,-9.3,8.59,-3.91,12.5,D +9.3,R +8.6,R +12.5
+5,North Carolina,Cal Cunningham,Thom Tillis,1,3.7,1.4,1.882845188,5.082845188,-3.2,R +1.4,R +1.9,D +3.2
+6,Colorado,John Hickenlooper,Cory Gardner,1,-5.4,-13.9,-9.518935517,-8.748935517,-0.77,D +13.9,D +9.5,D +0.8
+7,New Mexico,Ben Ray Lujan,Mark Ronchetti,0,-9.4,-11,-6.269270298,-8.939270298,2.67,D +11.0,D +6.3,R +2.7
+8,Alabama,Doug Jones,Tommy Tuberville,-1,28.6,25.8,20.44088176,25.44088176,-5,R +25.8,R +20.4,D +5
+9,Michigan,Gary Peters,John James,-1,0.3,-2.8,-1.732925586,-2.762925586,1.03,D +2.8,D +1.7,R +1
+10,Louisiana,Various Democrats,Bill Cassidy,1,20.3,18.9,26.83937824,23.20937824,3.63,R +18.9,R +26.8,R +3.6
+11,Wyoming,Merav Ben-David,Cynthia Lummis,0,51.4,45,46.23871615,48.61871615,-2.38,R +45.0,R +46.2,D +2.4
+12,Minnesota,Tina Smith,Jason Lewis,-1,-1.6,-7.3,-5.639913232,-7.059913232,1.42,D +7.3,D +5.6,R +1.4
+13,Illinois,Dick Durbin,Mark Curran,-1,-17.9,-17.3,-17.0575693,-19.5275693,2.47,D +17.3,D +17.1,R +2.5
+14,West Virginia,Paula Jean Swearengin,Shelley Moore Capito,1,44.4,39.6,44.50154162,43.55154162,0.95,R +39.6,R +44.5,R +1
+15,Texas,MJ Hegar,John Cornyn,1,9.4,5.7,9.856262834,10.51626283,-0.66,R +5.7,R +9.9,D +0.7
+16,Mississippi,Mike Espy,Cindy Hyde-Smith,1,18.3,16.8,10.18329939,19.69329939,-9.51,R +16.8,R +10.2,D +9.5
+17,Kansas,Barbara Bollier,Roger Marshall,0,22.3,15,12,17.87,-5.87,R +15.0,R +12.0,D +5.9
+18,South Carolina,Jamie Harrison,Lindsey Graham,1,14.9,11.9,10.34482759,15.62482759,-5.28,R +11.9,R +10.3,D +5.3
+19,New Jersey,Cory Booker,Rik Mehta,-1,-14.6,-16.1,-16.61569827,-17.49569827,0.88,D +16.1,D +16.6,R +0.9
+20,Delaware,Chris Coons,Lauren Witzke,-1,-12,-19.3,-22.09660843,-19.13660843,-2.96,D +19.3,D +22.1,D +3
+21,Iowa,Teresa Greenfield,Joni Ernst,1,10.2,8.4,6.804123711,11.12412371,-4.32,R +8.4,R +6.8,D +4.3
+22,Arkansas,Ricky Dale Harrington (L),Tom Cotton,1,28.5,28.4,33,33.16,-0.16,R +28.4,R +33.0,D +0.2
+23,Nebraska,Various Democrats,Ben Sasse,1,27.1,19.6,34.26124197,25.84124197,8.42,R +19.6,R +34.3,R +8.4
+24,Georgia Special,Raphael Warnock,Kelly Loeffler,0,5.4,-0.2,-2,3.05,-5.05,D +0.2,D +2.0,D +5.1
+25,Georgia,Jon Ossoff,David Perdue,1,5.4,-0.2,-1.2,4.86,-6.06,D +0.2,D +1.2,D +6.1
+26,South Dakota,Dan Ahlers,Mike Rounds,1,32,26.9,31.4,32.03,-0.63,R +26.9,R +31.4,D +0.6
+27,Alaska,Al Gross,Dan Sullivan,1,16.7,10.5,13.34525187,14.79525187,-1.45,R +10.5,R +13.3,D +1.5
+28,Virginia,Mark Warner,Daniel Gade,-1,-5.6,-10.3,-12.11211211,-9.982112112,-2.13,D +10.3,D +12.1,D +2.1
+29,Tennessee,Marquita Bradshaw,Bill Hagerty,0,27.3,23.7,27.72073922,26.59073922,1.13,R +23.7,R +27.7,R +1.1
+30,Kentucky,Amy McGrath,Mitch McConnell,1,31.3,26.4,20.41666667,30.05666667,-9.64,R +26.4,R +20.4,D +9.6
+31,Oklahoma,Abby Broyles,Jim Inhofe,1,38.6,33.9,31.45245559,38.49245559,-7.04,R +33.9,R +31.5,D +7
+32,New Hampshire,Jeanne Shaheen,Corky Messner,-1,-0.4,-7.5,-15.98360656,-7.323606557,-8.66,D +7.5,D +16.0,D +8.7
+33,Rhode Island,Jack Reed,Allen Waters,-1,-16.6,-21.2,-33.13313313,-22.28313313,-10.85,D +21.2,D +33.1,D +10.9
+34,Massachusetts,Ed Markey,Kevin O'Connor,-1,-29.3,-34.2,-33.33333333,-35.28333333,1.95,D +34.2,D +33.3,R +2

@@ -1,0 +1,35 @@
+,cd,state,dem_name,rep_name,pres_24,result_24,WAR,pres_display,result_display,display_margin
+0,Arizona,Arizona,Ruben Gallego,Kari Lake,5.59,-2.47,-7.15,R+5.6,D+2.5,D+7.2
+1,California,California,Adam Schiff,Steve Garvey,-20.8,-17.74,4.09,D+20.8,D+17.7,R+4.1
+2,Connecticut,Connecticut,Chris Murphy,Matthew Corey,-14.66,-19.21,0.05,D+14.7,D+19.2,R+0.1
+3,Delaware,Delaware,Lisa Blunt Rochester,Eric Hansen,-14.96,-17.87,-1.43,D+15,D+17.9,D+1.4
+4,Florida,Florida,Debbie Mucarsel-Powell,Rick Scott,13.22,12.99,-1.59,R+13.2,R+13,D+1.6
+5,Hawaii,Hawaii,Mazie Hirono,Bob McDermott,-23.56,-33.89,-7.43,D+23.6,D+33.9,D+7.4
+6,Indiana,Indiana,Valerie McCray,Jim Banks,19.01,20.4,0.68,R+19,R+20.4,R+0.7
+7,Maine,Maine,Angus King,Demitroula Kouzounas,-7.07,-25.78,-15.5,D+7.1,D+25.8,D+15.5
+8,Maryland,Maryland,Angela Alsobrooks,Larry Hogan,-29.51,-12.11,17.25,D+29.5,D+12.1,R+17.3
+9,Massachusetts,Massachusetts,Elizabeth Warren,John Deaton,-25.92,-19.85,10.79,D+25.9,D+19.9,R+10.8
+10,Michigan,Michigan,Elissa Slotkin,Mike Rogers,1.44,-0.35,-1.33,R+1.4,D+0.4,D+1.3
+11,Minnesota,Minnesota,Amy Klobuchar,Royce White,-4.34,-16.24,-8.47,D+4.3,D+16.2,D+8.5
+12,Mississippi,Mississippi,Ty Pickens,Roger Wicker,23.19,25.62,0.64,R+23.2,R+25.6,R+0.6
+13,Missouri,Missouri,Lucas Kunce,Josh Hawley,18.67,14.1,-7.5,R+18.7,R+14.1,D+7.5
+14,Montana,Montana,Jon Tester,Tim Sheehy,20.58,7.28,-10.07,R+20.6,R+7.3,D+10.1
+15,3,Nebraska,Dan Osborn,Deb Fischer,20.84,6.69,-17.69,R+20.8,R+6.7,D+17.7
+16,4,Nebraska Special,Preston Love Jr.,Pete Ricketts,20.84,25.16,2.82,R+20.8,R+25.2,R+2.8
+17,Nevada,Nevada,Jacky Rosen,Sam Brown,3.07,-1.75,-0.97,R+3.1,D+1.8,D+1
+18,New Jersey,New Jersey,Andy Kim,Curtis Bashaw,-6.03,-9.86,-1.99,D+6,D+9.9,D+2
+19,New Mexico,New Mexico,Martin Heinrich,Nella Domenici,-6,-10.12,-0.7,D+6,D+10.1,D+0.7
+20,New York,New York,Kirsten Gillibrand,Mike Sapraicone,-11.8,-18.41,-0.45,D+11.8,D+18.4,D+0.5
+21,North Dakota,North Dakota,Katrina Christiansen,Kevin Cramer,37.39,33.03,-7.48,R+37.4,R+33,D+7.5
+22,Ohio,Ohio,Sherrod Brown,Bernie Moreno,11.31,3.75,-4.59,R+11.3,R+3.8,D+4.6
+23,Pennsylvania,Pennsylvania,Bob Casey,Dave McCormick,1.73,0.23,1.01,R+1.7,R+0.2,R+1
+24,Rhode Island,Rhode Island,Sheldon Whitehouse,Patricia Morgan,-13.84,-20.1,-1.14,D+13.8,D+20.1,D+1.1
+25,Tennessee,Tennessee,Gloria Johnson,Marsha Blackburn,30.12,30.26,-1.36,R+30.1,R+30.3,D+1.4
+26,Texas,Texas,Colin Allred,Ted Cruz,13.89,8.71,-6.61,R+13.9,R+8.7,D+6.6
+27,Utah,Utah,Caroline Gleich,John Curtis,22.21,32.64,8.44,R+22.2,R+32.6,R+8.4
+28,Vermont,Vermont,Bernie Sanders,Gerald Malloy,-32.77,-32.65,3.92,D+32.8,D+32.7,R+3.9
+29,Virginia,Virginia,Tim Kaine,Hung Cao,-5.89,-8.95,-0.37,D+5.9,D+9,D+0.4
+30,Washington,Washington,Maria Cantwell,Raul Garcia,-18.93,-18.5,2.78,D+18.9,D+18.5,R+2.8
+31,West Virginia,West Virginia,Glenn Elliott,Jim Justice,42.69,42.47,2.24,R+42.7,R+42.5,R+2.2
+32,Wisconsin,Wisconsin,Tammy Baldwin,Eric Hovde,0.87,-0.87,0.45,R+0.9,D+0.9,R+0.5
+33,Wyoming,Wyoming,Scott Morrow,John Barrasso,46.96,51.39,6.41,R+47,R+51.4,R+6.4

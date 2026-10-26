@@ -98,7 +98,7 @@ Same-race head-to-heads (e.g. Bohannan vs Miller-Meeks 2022 and 2024) are droppe
 
 ## Incumbency
 
-Generic incumbency is **+1.7** D-positive for D incumbents and **−1.7** for R (per Split-Ticket's 2020 WAR analysis); Senate uses **±3.0**. WAR explicitly excludes this structural incumbency baseline, so the two terms compose rather than double-count.
+House generic incumbency is a setting (`house_incumbency`), default **±3.0** (D-positive for D incumbents): Split Ticket's most recent estimate (incumbency worth about 3 points in 2024, "Deconstructing WAR"), and the 2024 WAR records — half of each incumbent's WAR weight — were measured with it already removed. Split Ticket's 2020 House analysis put it at **1.7**, kept as a scenario: at 1.7 the House median is 237 D instead of 234 (P(D majority) 0.962 vs 0.951; PA-08 and WI-01 go D, FL-25 R), because 61 of the 94 seats within 10 points are R-held. Senate uses **±3.0**. WAR explicitly excludes this structural incumbency baseline, so the two terms compose rather than double-count.
 
 Suppressed for: open seats, named-but-not-sitting nominees (TX-02 Toth), primary-unresolved seats, and appointed senators who haven't won an election yet.
 
