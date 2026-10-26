@@ -1,0 +1,46 @@
+settings: white share 0.7400; 2024 baseline catalist; subgroup-n weights; pollster-matched shifts on
+8 polls: CBS/YouGov (2026-10-23, LV, n=1749), Economist/YouGov (2026-10-20, RV, n=1496), NYT/Siena (2026-10-19, LV, n=3494), Echelon Insights (2026-10-19, LV, n=1010), Fox News (2026-10-12, RV, n=1202), Pew Research Center (2026-10-04, RV, n=3917), Cygnal (2026-10-02, LV, n=1500), Emerson College (2026-09-22, LV, n=1000)
+subgroup n estimated as total n × electorate share (not published): Pew Research Center: asian, black, hispanic, white_college, white_nh, white_non_college; Fox News: black, hispanic, white_nh; Cygnal: black, hispanic, white_nh
+
+Current method (S): 2026 poll average − 2024 baseline
+group      polls  share  avg margin    2024   shift
+white_nh       8  0.740       R+6.3  R+15.2   +8.91
+black          8  0.103      D+75.3  D+70.8   +4.48
+hispanic       8  0.086      D+29.6   D+8.5  +21.18
+asian          3  0.039      D+42.9  D+21.4  +21.53
+other          0  0.032           -   D+7.1  +10.04 (imputed: average shift)
+S = share-weighted shift since 2024: +10.04
+
+Pollster-matched pattern: r = (2026 group − 2024 group) − (2026 topline − 2024 topline),
+averaged with √n_eff weights, n_eff = 1/(1/n_2026 + 1/n_2024); shift = S + (r_avg − c)
+group              old shift new shift   r_avg pooled n_eff  pollsters (r, n_eff)
+white_nh               +8.91     +8.66   -1.88         4783  NYT/Siena -3.6 (938), CBS/YouGov +0.9 (683), Echelon Insights -1.4 (426), Economist/YouGov -2.2 (509), Pew Research Center -3.0 (1469), Fox News -6.0 (427), Emerson College +3.9 (331)  [no 2024 pair: Cygnal]
+black                  +4.48     +9.98   -0.56          768  NYT/Siena -3.0 (179), CBS/YouGov -11.8 (109), Echelon Insights -7.3 (62), Economist/YouGov +3.1 (90), Pew Research Center +3.0 (204), Fox News +23.3 (59), Emerson College -8.7 (64)  [no 2024 pair: Cygnal]
+hispanic              +21.18    +16.70   +6.15          700  NYT/Siena +10.1 (178), CBS/YouGov -11.7 (100), Echelon Insights +10.7 (58), Economist/YouGov -4.3 (76), Pew Research Center +9.7 (171), Fox News +21.8 (50), Emerson College +9.2 (67)  [no 2024 pair: Cygnal]
+asian                 +21.53    +21.53   +5.24          100  Pew Research Center +11.8 (78), Emerson College -7.0 (23)  [kept current method]  [no 2024 pair: NYT/Siena]
+white_college         +14.75     +8.29   -3.10         1397  NYT/Siena -7.2 (458), CBS/YouGov +4.1 (291), Pew Research Center -4.5 (648)
+white_non_college      +4.54     +8.96   -2.43         1686  NYT/Siena -3.3 (473), CBS/YouGov +0.9 (392), Pew Research Center -4.1 (821)
+other                 +10.04    +10.04       -            -  (keeps S)
+c (race frame) = -0.50; c (race × edu, white cells) = -1.35
+race × edu non-white cells (current rule: 2024 + non-white race groups' average shift): nonwhite_college +13.95, nonwhite_non_college +13.95
+
+Generic ballot = 2024 result R+1.5 + shift: D+8.5  (unrounded +8.54)
+  equal-weight-per-pollster version:   D+8.3
+  same polls' topline average (two-way): D+9.0
+
+Default scenario (served by /api/defaults):
+  uniform wave -1.18 (2024 -1.5 + other +0.32); race sliders carry +9.72; total D+8.5 (+8.54)
+  race sliders: {'white_nh': -6.58, 'black': 80.78, 'hispanic': 25.16, 'asian': 42.91}
+  race x edu sliders: {'white_college': 10.19, 'white_non_college': -18.32, 'nonwhite_college': 50.77, 'nonwhite_non_college': 45.8}
+=== Pew validated baseline ===
+Current method (S): 2026 poll average − 2024 baseline
+group      polls  share  avg margin    2024   shift
+white_nh       8  0.740       R+6.3  R+12.2   +5.91
+black          8  0.103      D+75.3  D+69.4   +5.89
+hispanic       8  0.086      D+29.6   D+3.0  +26.61
+asian          3  0.039      D+42.9  D+17.5  +25.38
+other          0  0.032           -   D+7.1   +8.54 (imputed: average shift)
+S = share-weighted shift since 2024: +8.54
+Generic ballot = 2024 result R+1.5 + shift: D+7.0  (unrounded +7.04)
+=== Pew validated baseline, matched shifts off ===
+Generic ballot = 2024 result R+1.5 + shift: D+7.0  (unrounded +7.04)

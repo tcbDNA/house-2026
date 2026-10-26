@@ -5,31 +5,46 @@ export function Methodology() {
       <p className="mb-2">
         Each district / state projection is{" "}
         <code className="px-1 bg-slate-100 rounded">
-          pres_margin_2024 + uniform_swing + trend × 0.5 + WAR_blend + incumbency + challenger + demographic_shift
+          pres_margin_2024 + uniform_swing + trend_weight × residual_trend + WAR_blend + incumbency + challenger + demographic_shift
         </code>
         , where <b>pres_margin_2024</b> is the Harris-Trump margin (D-positive) in
-        that district / state. The national environment defaults to <b>D+8.3</b>,
-        built from poll <b>race crosstabs</b> rather than toplines: each group's
-        generic-ballot margin (White, Black, Hispanic, Asian; two-way, so differing
-        undecided rates don't distort it) is averaged across the latest national
-        poll from each pollster that publishes a race breakdown (eight polls ending
-        Sep 22–Oct 23, 2026: NYT/Siena, CBS/YouGov, Economist/YouGov, Echelon, Fox
-        News, Pew, Cygnal, Emerson; weighted by √n; ActiVote and Rasmussen are
-        excluded). Asian figures come from three polls (NYT/Siena, Pew, Emerson);
-        Economist/YouGov, Fox News and Pew publish race breakdowns for registered
-        voters only. Each group's shift from its Catalist 2024 margin is
-        weighted by its share of the electorate and added to the 2024 result
-        (R+1.5): a +9.8-pt shift, of which white voters contribute +6.8. The same
-        polls' toplines average D+9.0.
+        that district / state. The national environment defaults to <b>D+8.5</b>,
+        built from poll <b>race crosstabs</b> rather than toplines. <b>National
+        level:</b> each group's generic-ballot margin (White, Black, Hispanic,
+        Asian; two-way, so differing undecided rates don't distort it) is averaged
+        across the latest national poll from each pollster that publishes a race
+        breakdown (eight polls ending Sep 22–Oct 23, 2026: NYT/Siena, CBS/YouGov,
+        Economist/YouGov, Echelon, Fox News, Pew, Cygnal, Emerson; ActiVote and
+        Rasmussen are excluded), weighted by √(subgroup sample size) — where a poll
+        publishes only percentages (Pew, Fox, Cygnal), total n × the group's
+        electorate share. Each group's shift from its Catalist 2024 margin,
+        weighted by its share of the electorate, sums to a +10.0-pt shift from the
+        2024 result (R+1.5). Measured from Pew's 2024 validated-voter margins
+        instead, the shift is +8.5 (D+7.0) — an option in the settings. The same
+        polls' toplines average D+9.0.{" "}
+        <b>Pattern across groups:</b> each pollster's 2026 crosstab is compared
+        with its own final 2024 pre-election poll, net of the change in its
+        topline, which cancels persistent crosstab bias and keeps 2024's polling
+        miss out of the level: r = (2026 group − 2024 group) − (2026 topline −
+        2024 topline), averaged across pollsters with √n_eff weights (n_eff = 1 /
+        (1/n₂₀₂₆ + 1/n₂₀₂₄)). Seven pollsters have a matched 2024 poll (Cygnal's
+        2024 race results were published only as an image). Each group's shift is
+        the national shift plus its r minus the share-weighted mean r, so the
+        national level is unchanged: white +8.7, Black +10.0, Hispanic +16.7;
+        Asian keeps its poll-average shift (+21.5; NYT/Siena's 2024 poll had no
+        Asian column), and "other" takes the national shift. In the race ×
+        education frame the white college (+8.3) and non-college (+9.0) cells are
+        matched the same way (NYT/Siena, CBS/YouGov, Pew) and the non-white cells
+        take the non-white groups' average shift.
       </p>
       <p className="mb-2">
-        By default the race sliders sit at those poll averages (white R+6.3, Black
-        D+74.6, Hispanic D+29.4, Asian D+41.8), so each district swings by its own
-        mix of groups (+9.6 nationally). The <b>uniform wave</b> (R+1.25) holds the
-        part every district shares: the 2024 starting point (R+1.5) plus ~0.25 for
-        "other" race voters, who have no slider — i.e. essentially no swing beyond
-        what the demographics explain. The panel's <b>Total</b> (wave + sliders) is
-        the national margin, D+8.3. For the House, the <b>uniform swing</b> is
+        By default each race slider sits at its group's Catalist 2024 margin plus
+        that shift (white R+6.6, Black D+80.8, Hispanic D+25.2, Asian D+42.9), so
+        each district swings by its own mix of groups (+9.7 nationally). The
+        <b>uniform wave</b> (R+1.2) holds the part every district shares: the 2024
+        starting point (R+1.5) plus ~0.3 for "other" race voters, who have no
+        slider — i.e. essentially no swing beyond what the demographics explain.
+        The panel's <b>Total</b> (wave + sliders) is the national margin, D+8.5. For the House, the <b>uniform swing</b> is
         calibrated so that, with the demographic sliders at their 2024 values, the
         2024-turnout-weighted average of all 435 district margins equals the
         uniform wave; the sliders then add on top. (The Senate swings from the 2024

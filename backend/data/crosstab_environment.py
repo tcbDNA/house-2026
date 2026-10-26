@@ -31,10 +31,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import settings_from  # noqa: E402
 from environment import (  # noqa: E402
-    CSV_PATH, EDU_GROUPS, GROUPS, OTHER_BASELINE, PRES_2024_POPVOTE, default_scenario, estimate,
-    load_polls,
+    CSV_PATH, EDU_GROUPS, GROUPS, PRES_2024_POPVOTE, WHITE_EDU, default_scenario, estimate, load_polls,
 )
-from model import CATALIST_BASELINES  # noqa: E402
 
 
 def fmt(m: float) -> str:
@@ -49,7 +47,10 @@ def parse_args(argv: list[str]):
             csv_path = Path(next(it))
         else:
             k, v = a.split("=", 1)
-            overrides[k] = ast.literal_eval(v)
+            try:
+                overrides[k] = ast.literal_eval(v)
+            except (ValueError, SyntaxError):
+                overrides[k] = v
     return csv_path, settings_from(overrides)
 
 
@@ -58,36 +59,58 @@ def main():
     polls = load_polls(csv_path)
     est = estimate(polls, settings)
     eq = estimate(polls, settings, equal_weights=True)
+    base = est["baselines"]
 
     print(f"settings: white share {settings.effective_white_share:.4f}"
-          f"{'' if settings.white_share_enabled else ' (target off: Catalist 2022 fit)'}")
+          f"{'' if settings.white_share_enabled else ' (target off: Catalist 2022 fit)'}; "
+          f"2024 baseline {settings.group_baseline}; "
+          f"{'subgroup' if settings.subgroup_n_weights else 'total'}-n weights; "
+          f"pollster-matched shifts {'on' if settings.pollster_matched_shifts else 'off'}")
     print(f"{len(polls)} polls: " + ", ".join(
         f"{k} ({v['end']}, {v['population'].upper()}, n={v['n']})"
         for k, v in sorted(polls.items(), key=lambda kv: kv[1]['end'], reverse=True)))
+    est_n = {k: sorted(v["group_n_estimated"]) for k, v in polls.items() if v["group_n_estimated"]}
+    if est_n:
+        print("subgroup n estimated as total n × electorate share (not published): "
+              + "; ".join(f"{k}: {', '.join(g)}" for k, g in est_n.items()))
     print()
-    print(f"{'group':10} {'polls':>5} {'share':>6} {'avg margin':>11} {'2024':>7} {'shift':>7} {'contrib':>8}")
+    print("Current method (S): 2026 poll average − 2024 baseline")
+    print(f"{'group':10} {'polls':>5} {'share':>6} {'avg margin':>11} {'2024':>7} {'shift':>7}")
     for g in GROUPS + ("other",):
-        m = est["margins"][g]
-        base = CATALIST_BASELINES.get(g, OTHER_BASELINE)
-        tag = " (imputed)" if est["imputed"].get(g) else ""
-        print(f"{g:10} {est['n_polls'].get(g, 0):>5} {est['shares'][g]:>6.3f} {fmt(m):>11} "
-              f"{fmt(base):>7} {m - base:>+7.1f} {est['contributions'][g]:>+8.2f}{tag}")
+        tag = " (imputed: average shift)" if est["imputed"].get(g) else ""
+        avg = fmt(est["margins"][g]) if g in est["margins"] else "-"
+        print(f"{g:10} {est['n_polls'].get(g, 0):>5} {est['shares'][g]:>6.3f} {avg:>11} "
+              f"{fmt(base[g]):>7} {est['current_shifts'][g]:>+7.2f}{tag}")
+    print(f"S = share-weighted shift since 2024: {est['S']:+.2f}")
+
+    if est["matched"]:
+        print()
+        print("Pollster-matched pattern: r = (2026 group − 2024 group) − (2026 topline − 2024 topline),")
+        print("averaged with √n_eff weights, n_eff = 1/(1/n_2026 + 1/n_2024); shift = S + (r_avg − c)")
+        print(f"{'group':18} {'old shift':>9} {'new shift':>9} {'r_avg':>7} {'pooled n_eff':>12}  pollsters (r, n_eff)")
+        rows = [(g, est["current_shifts"][g], est["shifts"][g]) for g in GROUPS] + \
+               [(g, est["edu_current_shifts"][g], est["edu_shifts"][g]) for g in WHITE_EDU]
+        for g, old, new in rows:
+            m = est["matched"][g]
+            used = ", ".join(f"{name} {r:+.1f} ({n:.0f}{'' if p26 == p24 else f' {p26.upper()}/{p24.upper()}'})"
+                             for name, r, n, p26, p24 in m["pollsters"])
+            ravg = f"{m['r_avg']:+7.2f}" if m["r_avg"] is not None else "      -"
+            note = "" if abs(new - old) > 1e-9 or not m["pollsters"] else "  [kept current method]"
+            if m["missing"]:
+                note += f"  [no 2024 pair: {', '.join(m['missing'])}]"
+            print(f"{g:18} {old:>+9.2f} {new:>+9.2f} {ravg} {m['pooled_n']:>12.0f}  {used}{note}")
+        print(f"{'other':18} {est['current_shifts']['other']:>+9.2f} {est['shifts']['other']:>+9.2f}"
+              f"       -            -  (keeps S)")
+        print(f"c (race frame) = {est['c']:+.2f}" + (f"; c (race × edu, white cells) = {est['c_edu']:+.2f}"
+                                                   if est["c_edu"] is not None else ""))
+        print("race × edu non-white cells (current rule: 2024 + non-white race groups' average shift): "
+              + ", ".join(f"{g} {est['edu_shifts'][g]:+.2f}" for g in EDU_GROUPS if g not in WHITE_EDU))
+
     print()
-    print(f"Share-weighted shift since 2024:                     {est['shift']:+.2f}")
-    print(f"Generic ballot = 2024 result {fmt(PRES_2024_POPVOTE)} + shift:          {fmt(est['environment'])}"
+    print(f"Generic ballot = 2024 result {fmt(PRES_2024_POPVOTE)} + shift: {fmt(est['environment'])}"
           f"  (unrounded {est['environment']:+.2f})")
-    print(f"  equal-weight-per-pollster version:                 {fmt(eq['environment'])}")
-    print(f"Same polls' topline average (two-way):               {fmt(est['topline'])}")
-    print(f"Alt: margins applied to these electorate shares:     {fmt(est['environment_on_composition'])}"
-          f"  (2024 margins on them: {fmt(est['baseline_on_composition'])})")
-
-    print()
-    print(f"{'race x edu':22} {'polls':>5} {'avg margin':>11} {'2024':>7} {'shift':>7}")
-    for g in EDU_GROUPS:
-        m, base = est["edu_margins"][g], CATALIST_BASELINES[g]
-        tag = " (imputed: 2024 + non-white shift)" if est["edu_imputed"].get(g) else ""
-        print(f"{g:22} {est['n_polls'][g]:>5} {fmt(m):>11} {fmt(base):>7} {m - base:>+7.1f}{tag}")
-
+    print(f"  equal-weight-per-pollster version:   {fmt(eq['environment'])}")
+    print(f"  same polls' topline average (two-way): {fmt(est['topline'])}")
     if csv_path == CSV_PATH:
         d = default_scenario(settings)
         print()

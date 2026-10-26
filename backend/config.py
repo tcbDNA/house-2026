@@ -20,6 +20,8 @@ CATALIST_2022_WHITE_SHARE = 0.7581
 # remain scenario options. A scenario parameter, not a Settings flag.
 DEFAULT_TREND_WEIGHT = 0.0
 
+GROUP_BASELINES = ("catalist", "pew_validated")
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -57,6 +59,28 @@ class Settings:
     # race ~0.3 pts R. The House needs no centering: its calibration absorbs
     # any constant.
     trend_center_states: bool = True
+
+    # Item 3 — group shifts (environment.py). Weight each pollster's group
+    # margin by the square root of that group's sample size (published
+    # subgroup n, or total n × the group's published share where only
+    # percentages are given) instead of the poll's total n.
+    subgroup_n_weights: bool = True
+    # Take the pattern across groups from pollster-matched comparisons: for
+    # each pollster, r = (2026 group margin − 2024 group margin) − (2026
+    # topline − 2024 topline), averaged across pollsters; group shift =
+    # S + (r_avg − c), with S the current method's national shift and c the
+    # share-weighted mean of r_avg, so the national level is unchanged.
+    # Off: each group's shift is its 2026 poll average minus its 2024 margin.
+    pollster_matched_shifts: bool = True
+    # Source of the 2024 group margins the current method measures from:
+    # "catalist" (Catalist, What Happened 2024) or "pew_validated" (Pew's
+    # 2024 validated-voter study). With matched shifts on, it moves only the
+    # national level S.
+    group_baseline: str = "catalist"
+
+    def __post_init__(self):
+        if self.group_baseline not in GROUP_BASELINES:
+            raise ValueError(f"group_baseline must be one of {GROUP_BASELINES}")
 
     @property
     def effective_white_share(self) -> float:

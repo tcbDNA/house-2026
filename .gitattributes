@@ -1,0 +1,6 @@
+backend/data/sources/polls_2024/**/*.html filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/polls_2024/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/polls_2026/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/polls_2026/**/*.html filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/polls_2026/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/polls_2024/**/*.pdf filter=lfs diff=lfs merge=lfs -text

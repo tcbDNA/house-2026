@@ -56,3 +56,37 @@ v20's 2024 state margins differed from official by up to 4.2 pts (TN R+25.5 vs R
 |---|---|---|---|
 | `gov_2025/nj_2025-official-general-results-governor.pdf` (+ `.txt` text extract via pdfplumber) | https://nj.gov/state/elections/assets/pdf/election-results/2025/2025-official-general-results-governor.pdf | 2026-10-26 | NJ official list (12/03/2025), tally by county for every candidate |
 | `gov_2025/va_2025_governor_elstats_search.csv` (+ `.url` with the exact query) | https://va2.elstats.civera.com/api/download_search.csv (Virginia Dept. of Elections historical database, office = Governor, 2025) | 2026-10-26 | VA official results by locality (133) and precinct |
+
+## 2026 generic-ballot crosstabs (polls_2026/) — data in `generic_ballot_crosstabs.csv`
+
+Binary files here and in polls_2024/ are stored with Git LFS (`.gitattributes`). Retrieved 2026-10-26 (copies of the files the 2026 crosstab rows were read from).
+
+| Pollster | Saved file(s) | URL |
+|---|---|---|
+| NYT/Siena (Oct 12–19, LV) | `nyt_siena/nyt_times-siena-poll-crosstabs_2026-10-21_archive.ph.html` | https://www.nytimes.com/interactive/2026/10/21/polls/times-siena-poll-crosstabs.html (archive.ph copy) |
+| CBS/YouGov (Oct 21–23, LV) | `cbs_yougov/cbsnews_20261025_sun.pdf` | https://assets1.cbsnewsstatic.com/hub/cms/prod_cms_alt/file/2026/10/25/8ad451c3-2d1f-4f7f-a3c8-97f923271e92/cbsnews_20261025_sun.pdf |
+| Economist/YouGov (Oct 19–20, RV) | `economist_yougov/econTabReport_AjDiUmp.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_AjDiUmp.pdf |
+| Echelon (Oct 15–19, LV) | `echelon/echelon_october_2026_omnibus_crosstabs.xlsx`, `echelon/october_2026_voter_omnibus_topline.pdf` | https://echeloninsights.com/insights/october-2026-verified-voter-omnibus |
+| Pew (Sep 28–Oct 4, RV) | `pew/pew_oct2026_detailed_tables_1Xm-bp_u.xlsx`, `pew/pew_detailed_tables_2026-10.csv`, `pew/PP_2026.10.8_midterms_report.pdf` (methodology p.30: no subgroup n published), `pew/PP_2026.10.8_midterms-economy_topline.pdf`, `pew/midterm-vote-preferences-by-race.html` | https://www.pewresearch.org/politics/2026/10/08/midterm-vote-preferences-by-race-and-ethnicity-age-and-other-demographics/ ; tables https://docs.google.com/spreadsheets/d/1Xm-bp_uZKnHqbFwyRAhisydugmJ2Q8tECL3GA1t2WrM |
+| Fox News (Oct 9–12, RV) | `fox/fox_october-9-12-2026_complete_national_cross-tabs_october-14-release.pdf` (+ topline) | https://static.foxnews.com/foxnews.com/content/uploads/2026/10/fox_october-9-12-2026_complete_national_cross-tabs_october-14-release.pdf |
+| Emerson (Sep 21–22, LV) | `emerson/emerson_september_2026_national_full_results.xlsx`, `emerson/september-2026-national-poll-democrats.html` | https://docs.google.com/spreadsheets/d/1fPJgYdp3a18AbCbArB1FRC6EcsQ8AqjS (export ?format=xlsx) |
+| Cygnal (Oct 1–2, LV) | `cygnal/24822-Cygnal-National-Early-Oct26-NVT-Deck-Midterm-Political.pdf` | https://www.cygn.al/wp-content/uploads/2026/10/24822-Cygnal-National-Early-Oct26-NVT-Deck-Midterm-Political.pdf (race results p.28 are an image; the 2026 values were read from the user's screenshot) |
+
+## Final 2024 pre-election polls, same pollsters (polls_2024/) — data in `pollster_2024_crosstabs.csv`
+
+Retrieved 2026-10-26. Item 3 (pollster-matched group shifts).
+
+| Pollster | Poll | Saved file(s) | URL |
+|---|---|---|---|
+| NYT/Siena | Oct 20–23, 2024, LV n=2,516; head-to-head with leaners | `nyt_siena/times-siena-poll-crosstabs_wayback_20241025170406.html` | https://www.nytimes.com/interactive/2024/10/25/us/elections/times-siena-poll-crosstabs.html (Wayback 20241025170406). No Asian column. |
+| CBS/YouGov | Oct 23–25, 2024, LV n=2,154; Q5 with leaners, doc p.5 | `cbs_yougov/scribd_784786236_cbsnews-20241027-1-SUN_wayback_20241027223053.html`, `cbs_yougov/cbsnews_trump-harris-poll-gender-gap_20241028.html` | https://www.scribd.com/document/784786236/cbsnews-20241027-1-SUN (CBS News's own upload, embedded in https://www.cbsnews.com/news/trump-harris-poll-gender-gap/; Wayback 20241027223053). Weighted N only. |
+| Economist/YouGov | Oct 26–29, 2024, RV n=1,444; p.10 table 6 | `economist_yougov/econTabReport_NgtZTja.pdf`, `economist_yougov/econtoplines_xAm5lvg.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_NgtZTja.pdf |
+| Echelon | Oct 28–31, 2024, LV n=1,328; full ballot p.115, unweighted bases p.101 | `echelon/October-Omnibus-Crosstabs-Puck.pdf`, `echelon/October-2024-Voter-Omnibus-Topline-PUCK.pdf`, `echelon/echelon_oct-2024-verified-voter-omnibus.html` | https://echeloninsights.com/hubfs/blog-migration/October-Omnibus-Crosstabs-Puck.pdf |
+| Pew | Sep 30–Oct 6, 2024 (ATP W156, final pre-election wave), RV n=4,025 | `pew_2024_final/pew_oct2024_detailed_tables_1draephQ.xlsx`, report/topline PDFs, html | https://docs.google.com/spreadsheets/d/1draephQOkZKQuafGRLJhACoX96s5qw4hiEkb4cpNRM0 (from https://www.pewresearch.org/politics/2024/10/10/the-harris-trump-matchup/). No subgroup n (MOE only). |
+| Fox News | Oct 11–14, 2024, RV n=1,110; p.4 Q4 | `fox_2024_final/fox_october-11-14-2024_complete_national_cross-tabs_october-21-release.pdf` (+ topline, Oct 17 release) | https://static.foxnews.com/foxnews.com/content/uploads/2024/10/fox_october-11-14-2024_complete_national_cross-tabs_october-21-release.pdf. Latest Fox national poll found before Nov 5 (later releases were state polls). No subgroup n (MOE only). |
+| Emerson | Oct 30–Nov 2, 2024, LV n=1,000; Combined Presidential Vote (with leaners) | `emerson/emerson_national_nov2024_1zSMg6ly1Mnj1m9QKd7tmckRkEEPSCjb8.xlsx`, `emerson/november-2024-national-poll-trump-and-harris-remain-locked-in-tight-race.html` | https://docs.google.com/spreadsheets/d/1zSMg6ly1Mnj1m9QKd7tmckRkEEPSCjb8 (export ?format=xlsx) |
+| Cygnal | Oct 24–26, 2024, LV n=1,507 — **not used** | `cygnal/22669-Cygnal-National-NVT-Oct24-2-Deck-Public.pdf`, two html pages | https://www.cygn.al/wp-content/uploads/2024/10/22669-Cygnal-National-NVT-Oct24-2-Deck-Public.pdf. Race results exist only as a raster heatmap (p.44); not entered. |
+
+## Pew 2024 validated voters (polls_2024/pew_2024_validated/) — data in `pew_validated_2024.csv`
+
+`pew_validated2024_detailed_tables_1JczVvbr.xlsx` (https://docs.google.com/spreadsheets/d/1JczVvbrlxkLiYYiNPSv0TRlWsbvYEihkZrnH1kQXIH8), report PDF `PP-2025.6.26_validated-voters_report.pdf` and html pages from https://www.pewresearch.org/politics/2025/06/26/voting-patterns-in-the-2024-election/. Retrieved 2026-10-26. Optional 2024 group baseline (`group_baseline = "pew_validated"`).

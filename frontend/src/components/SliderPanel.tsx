@@ -251,8 +251,8 @@ export function SliderPanel({
         </div>
         <div className="flex gap-1">
           {([
-            { key: "race",     label: "Race",         hint: "Adjust by racial group (white-NH / Black / Hispanic / Asian). Starts at recent polls' race crosstabs; race×edu cells stay at 2024." },
-            { key: "race_edu", label: "Race × Edu",   hint: "Adjust by race × education cells (white-college / white-non-college / etc.). Starts at recent polls' race × education crosstabs; race sliders stay at 2024. The uniform wave adjusts so the total doesn't change when you switch." },
+            { key: "race",     label: "Race",         hint: "Adjust by racial group (white-NH / Black / Hispanic / Asian). Starts at each group's 2024 margin plus its shift since 2024 from recent polls' crosstabs (pollster-matched); race×edu cells stay at 2024." },
+            { key: "race_edu", label: "Race × Edu",   hint: "Adjust by race × education cells (white-college / white-non-college / etc.). Starts at each cell's 2024 margin plus its shift from recent polls' crosstabs (white cells pollster-matched); race sliders stay at 2024. The uniform wave adjusts so the total doesn't change when you switch." },
           ] as const).map((opt) => {
             const active = frame === opt.key;
             return (
@@ -272,8 +272,8 @@ export function SliderPanel({
           })}
         </div>
         <div className="text-[10px] text-slate-500 mt-1 italic">
-          Sliders start at each group's average margin in recent polls' crosstabs
-          (its 2024 margin is shown alongside); each district swings by its own mix
+          Sliders start at each group's 2024 margin (shown alongside) plus its
+          shift since 2024 from recent polls' crosstabs; each district swings by its own mix
           of these groups, and the uniform wave covers the rest of the national
           total. Only one demographic axis active at a time to avoid
           double-counting.

@@ -11,8 +11,8 @@ controlling for the same electorate shares as the district trend regression
 (race frame: Black, Hispanic, Asian, other vs. white; age: under 30, 30–44,
 65+ vs. 45–64), with a state fixed effect, weighted by 2025 votes. Neither
 state was a 2024 battleground, so this speaks to the demographic and
-residual parts of the trend only. The trend coefficient is reported, not
-applied — the trend weight default stays 0.5.
+residual parts of the trend only. This result set the default residual-trend
+weight to 0 (config.DEFAULT_TREND_WEIGHT); 0.5 and the others stay scenarios.
 
 Sources (data/sources/gov_2025/, see SOURCES.md):
   nj_2025-official-general-results-governor.pdf (+ .txt extract)
@@ -131,7 +131,7 @@ def main():
     print("\nMain-model coefficients: " + "  ".join(f"{n}={b:+.2f}" for n, b in zip(full_names, beta)))
     print("\nReading: a positive trend coefficient means places that moved toward Trump in 2020→2024\n"
           "moved further that way in 2025 (trend persists); negative means they moved back.\n"
-          "The model's default carries 0.5 × the residual trend.")
+          "Model default: 0 × the residual trend (config.DEFAULT_TREND_WEIGHT; 0.5 etc. are scenarios).")
 
 
 if __name__ == "__main__":

@@ -76,7 +76,10 @@ def main_cli():
     overrides = {}
     for kv in args.set:
         k, v = kv.split("=", 1)
-        overrides[k] = ast.literal_eval(v)
+        try:
+            overrides[k] = ast.literal_eval(v)
+        except (ValueError, SyntaxError):
+            overrides[k] = v   # bare string, e.g. group_baseline=pew_validated
     r = run(settings_from(overrides), trend_discount=args.trend)
     row = {"label": args.label, **metrics(r), "diagnostics": args.note}
     if args.dry_run:
