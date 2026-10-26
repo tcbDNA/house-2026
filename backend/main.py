@@ -18,6 +18,8 @@ from model import (
 )
 import senate_model as senate
 import county_model as county
+import overlay
+from model import electorate_shares, demographic_shift, population_shares
 from probability import add_senate_win_probabilities, add_win_probabilities, error_terms
 
 app = FastAPI(title="House 2026 Scenario API")
@@ -225,6 +227,66 @@ def state_county_geojson(state: str):
                         headers={"Cache-Control": "public, max-age=86400"})
 
 
+def _vote_estimates(total_24: float, proj: float) -> tuple[int, int, int]:
+    """Estimated 2026 turnout and two-way D/R votes from a projected margin
+    (clamped so extreme scenarios can't give negative counts)."""
+    est = int(round(total_24 * county.TURNOUT_2026_RATIO))
+    d = int(round(est * max(0.0, min(1.0, (100 + proj) / 200.0))))
+    return est, d, est - d
+
+
+def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, settings: Settings) -> dict:
+    """Item 7: each county projected from its own margin, demographic shift
+    and shrunk residual trend, plus the Senate swing and candidate effects and
+    one reconciling shift to the seat (or, with no race, the state) projection."""
+    st = state.upper()
+    sb = SENATE_BUNDLE
+    resid, center = senate.all_state_residuals(sb, settings, req.frame)
+    counties = [c for c in COUNTY_BUNDLE.counties if c["state"] == st]
+    senate_result = senate.project(sb, environment=req.environment, sliders=sliders,
+                                   trend_discount=req.trend_discount, settings=settings, frame=req.frame)
+    seat = next((s for s in senate_result["seats"] if s["state"] == st), None)
+    result = {"environment": req.environment, "sliders": sliders, "trend_discount": req.trend_discount,
+              "turnout_ratio_2026": county.TURNOUT_2026_RATIO, "senate_seat": seat, "counties": [],
+              "overlay": "slice_projections"}
+    if not counties:
+        result["unavailable_reason"] = f"No county-level 2024 presidential data available for {st}."
+        return result
+    swing = req.environment - senate.PRES_2024_POPVOTE
+    if seat is not None:
+        candidate_adj = ((seat.get("war_adj_discounted") or 0.0) + (seat.get("incumbency_adj") or 0.0)
+                         + (seat.get("challenger_adj") or 0.0))
+        target = seat["projection"]
+    else:
+        j = next(i for i, s in enumerate(sb.states) if s["state"] == st)
+        pop_j = {g: v[j:j + 1] for g, v in sb.all_pop.items()}
+        demo_state = sum(demographic_shift(electorate_shares(pop_j, settings), sliders, settings)[0].values())[0]
+        candidate_adj = 0.0
+        target = ((sb.states[j].get("presidential_margin_2024") or 0.0) + req.trend_discount * resid[st]
+                  + swing + float(demo_state))
+    terms = overlay.CountyTerms(counties, population_shares(counties), sliders, settings, req.frame, center)
+    r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
+                               req.trend_discount, settings)
+    for c, i, w, res, demo, proj in r["rows"]:
+        est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj)
+        result["counties"].append({
+            "fips": c["fips"], "state": st, "name": c["name"],
+            "margin_2024": c.get("margin_2024"), "margin_2020": c.get("margin_2020"),
+            "rel_trend": round(res, 2), "rel_trend_applied": round(req.trend_discount * res, 2),
+            "residual_weight": round(w, 3), "total_2024": c.get("total_2024") or 0,
+            "estimated_turnout_2026": est, "estimated_d_votes": d, "estimated_r_votes": rv,
+            "projection": round(proj, 2), "demo_shift": round(demo, 2),
+            "race_shift": round(float(terms.shifts["race"][i]), 2),
+            "edu_shift": round(float(terms.shifts["edu"][i]), 2),
+            "age_shift": round(float(terms.shifts["age"][i]), 2),
+            "is_tossup": abs(proj) <= 3.0,
+        })
+    result.update({"uniform_swing": swing, "candidate_adj": round(candidate_adj, 2),
+                   "reconcile": r["reconcile"], "state_residual": round(resid[st], 2),
+                   "target_projection": round(target, 2)})
+    return result
+
+
 @app.post("/api/state/{state}/counties")
 def state_counties(state: str, req: ProjectRequest):
     sliders = req.sliders.model_dump()
@@ -232,6 +294,9 @@ def state_counties(state: str, req: ProjectRequest):
               "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
               "under_30", "age_30_44", "age_45_64", "age_65_plus"):
         sliders[k] = max(-100, min(100, sliders[k]))
+    settings = _settings(req.settings)
+    if settings.overlay_slice_projections:
+        return _state_counties_overlay(state, req, sliders, settings)
 
     # If this state has a Senate race in the model, compute the candidate-specific
     # adjustment (challenger WAR + incumbency + co-nominee + incumbent WAR) and
@@ -324,6 +389,28 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     drow = next((d for d in district_proj["districts"] if d["district"] == did), None)
     if drow is None:
         raise HTTPException(status_code=404, detail=f"district {did} not found in projection")
+
+    settings = _settings(req.settings)
+    if settings.overlay_slice_projections:
+        counties = [c for c in COUNTY_BUNDLE.counties if c["state"] == state]
+        terms = overlay.CountyTerms(counties, population_shares(counties), sliders, settings, req.frame)
+        r = overlay.district_slices(did, drow, slices, district_proj["uniform_swing"], terms,
+                                    req.trend_discount, settings, req.frame)
+        for s in r["counties"]:
+            s["state"] = state
+            s["estimated_turnout_2026"], s["estimated_d_votes"], s["estimated_r_votes"] = \
+                _vote_estimates(s["total_2024"], s["projection"])
+            s["is_tossup"] = abs(s["projection"]) < 3.0
+        return {"district": did, "state": state, "district_projection": drow["projection"],
+                "candidate_adj": r["candidate_adj"], "reconcile": r["reconcile"],
+                "district_residual": r["district_residual"], "target_projection": r["target"],
+                "lockout": drow.get("lockout"),
+                "data_source": "precinct_aggregated", "overlay": "slice_projections",
+                # The district's own terms in this scenario (for the side panel).
+                "district_row": {k: drow.get(k) for k in ("margin_2024", "rel_trend_applied", "war_adj_discounted",
+                                                          "incumbency_adj", "challenger_adj", "demo_shift")}
+                                | {"uniform_swing": district_proj["uniform_swing"]},
+                "counties": r["counties"]}
 
     candidate_adj = ((drow.get("war_adj_discounted") or 0.0)
                      + (drow.get("incumbency_adj") or 0.0)

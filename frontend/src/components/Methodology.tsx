@@ -69,7 +69,7 @@ export function Methodology() {
         the movement persists); the trend-persistence control offers none (0×),
         full (1×) and a partial reversal (−0.5×). A limited check: in the 2025 New
         Jersey and Virginia governor's races, counties' 2020→2024 trend predicted
-        no further movement once demographics were controlled (coefficient −0.05,
+        no further movement once demographics were controlled (coefficient +0.02,
         robust SE 0.11) — but governor's races differ from federal ones, and the
         test covers two states, an off-year election and county-level data.
       </p>
@@ -225,8 +225,17 @@ export function Methodology() {
           Dave's Redistricting
         </a>{" "}
         per-borough 2020 numbers (state doesn't publish official borough-level results).
-        County (or county-slice) projections are shifted uniformly so they add up
-        exactly to the district or Senate projection. Estimated 2026 vote counts assume turnout at 79% of 2024, the midpoint of
+        Each county slice of a district (and each county of a Senate state) is
+        projected from its own pieces: its 2024 margin, the demographic shift and
+        residual trend of its county (item-2 coefficients with the intercept, the
+        county's shares and battleground status), the residual shrunk toward the
+        district's or state's with weight votes / (votes + 25,000) since small
+        counties' shifts are noisy, plus the district's (or Senate's) uniform swing
+        and candidate effects. One reconciling shift per district or state then
+        makes the slices add up exactly to its projection. Where the 2024 slice
+        results are estimated (AK, AR, CT, ID, ME, MI, ND, NJ, OK, OR, PA, SD),
+        slices take the district's residual instead, and Alaska's boroughs the
+        state's. This changes only the map shading, never a projection. Estimated 2026 vote counts assume turnout at 79% of 2024, the midpoint of
         the last two midterm-to-prior-presidential ratios (2018/2016 ≈ 87%,
         2022/2020 ≈ 71%). These ratios differ substantially; a high-salience 2026
         midterm would fall toward the higher end. This is a tunable parameter and

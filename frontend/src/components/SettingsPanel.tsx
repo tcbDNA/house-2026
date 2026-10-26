@@ -56,6 +56,13 @@ const GROUPS: { title: string; toggles: Toggle[] }[] = [
         hint: "Two national terms, σ 1.0 each: who turns out, and crosstab measurement / 2024 baseline." },
     ],
   },
+  {
+    title: "County overlay (item 7)",
+    toggles: [
+      { key: "overlay_slice_projections", label: "Slice-level projections",
+        hint: "Project each county slice from its own margin, demographic shift and shrunk residual trend, then one reconciling shift. Off: every slice shifted by the same amount. Map shading only — no projection changes." },
+    ],
+  },
 ];
 
 export function SettingsPanel({ settings, onSettings }: Props) {
@@ -128,6 +135,17 @@ export function SettingsPanel({ settings, onSettings }: Props) {
             <option value="catalist">Catalist (default)</option>
             <option value="pew_validated">Pew validated voters</option>
           </select>
+        </div>
+      </div>
+
+      <div>
+        <div className="flex items-baseline justify-between">
+          <span className="text-slate-600" title="County residual trends are shrunk toward the district's / state's with weight votes / (votes + k), 2024 votes.">
+            Overlay trend shrinkage k (votes)
+          </span>
+          <input type="number" min={0} step={5000} value={Number(value("overlay_shrink_k") ?? 25000)}
+                 onChange={(e) => { const v = Number(e.target.value); if (!Number.isNaN(v) && v >= 0) set("overlay_shrink_k", v); }}
+                 className="w-20 text-right border border-slate-300 rounded px-1 py-0.5 font-mono text-xs" />
         </div>
       </div>
 

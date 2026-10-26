@@ -479,6 +479,7 @@ def _summarize(
             "war_adj_discounted": round(float(war[i]), 3),
             "new_lines_weight": round(float(new_lines_weight[i]), 4),
             "incumbency_adj": round(float(incumbency[i]), 3),
+            "lockout": row.get("lockout"),
             "war_year": row.get("war_year"),
             "war_match_type": row.get("war_match_type"),
             "challenger": row.get("challenger"),

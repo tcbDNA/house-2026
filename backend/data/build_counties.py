@@ -30,6 +30,13 @@ def to_num(s):
     except: return None
 
 
+def _total_vote_margin(dem, rep, total, fallback):
+    d, r, tot = to_num(dem), to_num(rep), to_num(total)
+    if d is None or r is None or not tot:
+        return to_num(fallback)
+    return round(100.0 * (d - r) / tot, 2)
+
+
 def main():
     pres = {r["fips"]: r for r in csv.DictReader((DATA / "county_pres.csv").open())}
     demos = {r["fips"]: r for r in csv.DictReader((DATA / "demographics_acs_counties.csv").open())}
@@ -41,8 +48,12 @@ def main():
         if p is None:
             missing_pres += 1
             continue
-        margin_2024 = to_num(p["margin_2024"])
-        margin_2020 = to_num(p["margin_2020"])
+        # Total-vote margins, 100 × (D − R) / total, like every other margin in
+        # the model. county_pres.csv's own margin columns are two-party (D − R
+        # over D + R), which put county aggregates ~0.4 pts (up to 1.3) off the
+        # official statewide margins (model-v4 item 7 overlay check).
+        margin_2024 = _total_vote_margin(p["harris_2024"], p["trump_2024"], p["total_2024"], p["margin_2024"])
+        margin_2020 = _total_vote_margin(p["biden_2020"], p["trump_2020"], p["total_2020"], p["margin_2020"])
         county_trend = round((margin_2024 - margin_2020) - NATIONAL_PRES_SHIFT, 2)
         row = {
             "fips": fips,

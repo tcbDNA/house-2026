@@ -229,6 +229,18 @@ def _projections(bundle: SenateBundle, environment: float, sliders: dict, trend_
     return projections, shifts, weights, demo_shift, state_trend_applied, uniform_swing
 
 
+def all_state_residuals(bundle: SenateBundle, settings: Settings, frame: str) -> tuple[dict[str, float], float]:
+    """(state -> carried residual trend, centering constant) for every state,
+    on the same footing as the seats' state_trend_applied / trend_discount."""
+    carried = carried_trend(bundle.all_trend, electorate_shares(bundle.all_pop, settings),
+                            bundle.all_battleground, settings, frame)
+    center = 0.0
+    if settings.trend_center_states and (settings.trend_remove_demographic
+                                         or settings.trend_remove_battleground):
+        center = float(carried @ bundle.all_votes_w)
+    return {s["state"]: float(c) - center for s, c in zip(bundle.states, carried)}, center
+
+
 def _default_projections(bundle: SenateBundle, settings: Settings, frame: str) -> np.ndarray:
     """Model projections in the default scenario for `settings` and `frame`
     (the frame's default sliders; the wave that gives the same national total)."""

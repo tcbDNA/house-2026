@@ -1,0 +1,93 @@
+settings: shrink k = 25,000 votes; trend weight 0.5; frame race
+
+== House districts (435): reconciling shift = margin + demographic + trend parts
+  district  shift  margin   demo  trend  notes
+  CA-32     -5.19   -0.43  -2.75  -2.01  FLAG
+  CA-45     +5.08   -0.08  +2.50  +2.66  FLAG
+  FL-26     +4.79   +0.06  +2.57  +2.17  FLAG
+  AZ-03     +4.36   +0.40  +3.47  +0.49  FLAG
+  CA-30     -4.18   +0.00  -3.16  -1.02  FLAG
+  LA-06     +4.04   +1.83  +0.69  +1.52  FLAG
+  CA-38     +3.95   -0.08  +3.29  +0.73  FLAG
+  CA-36     -3.74   +0.00  -3.21  -0.53  FLAG
+  FL-25     -3.66   +0.01  -1.81  -1.85  FLAG
+  CA-34     +3.58   -0.20  +2.80  +0.98  FLAG · locked D (reconciled to pre-lock projection)
+  CA-20     -3.15   -0.65  -2.55  +0.06  FLAG
+  LA-02     -3.13   +0.06  -0.87  -2.33  FLAG
+  CA-28     +3.08   +0.07  +0.70  +2.29  FLAG
+  CA-42     -3.05   +0.12  -2.00  -1.16  FLAG
+  CA-23     -2.86   -0.98  -2.20  +0.32  FLAG
+  GA-07     +2.58   -0.06  +1.73  +0.91  FLAG
+  FL-27     +2.50   -0.20  +0.35  +2.35  FLAG
+  IL-04     +2.37   +0.14  +3.42  -1.17  FLAG
+  FL-24     -2.34   +0.39  -1.13  -1.61  FLAG
+  TX-08     -2.31   +0.03  +0.03  -2.37  FLAG
+  CA-47     -2.29   +0.00  -1.06  -1.23  FLAG
+  CA-31     +2.27   +0.03  +1.40  +0.84  FLAG
+  CA-44     +2.22   +0.00  +2.48  -0.27  FLAG
+  MA-07     +2.14   +1.13  +0.62  +0.38  FLAG
+  CA-52     +2.09   -0.20  +3.43  -1.15  FLAG
+  |shift| median 0.36, 90th pct 1.60; 177 of 435 above 0.5
+  mean |part|: margin 0.20, demographic 0.37, trend 0.36
+  Upstream data mismatch (slices' 2024 margins vs the district's, |margin part| > 0.5): 51 districts, 22 of them in the estimated-slice states:
+    AK-AL, AL-04, AR-03, AZ-08, AZ-05, CA-04, CA-13, CA-20, CA-23, ID-01, IL-16, IL-02, IL-01, IL-03, IL-07, LA-06, MA-08, MA-02, MA-05, MA-07, MD-05, MD-08, MD-07, ME-02, MI-02, MI-09, MI-06, ND-AL, NJ-02, NJ-06, NY-13, OK-02, OK-03, OK-04, OK-05, OR-04, PA-13, PA-17, PA-06, PA-05, PA-10, PA-14, SC-06, SD-AL, TN-05, TN-06, TX-10, TX-17, TX-37, TX-38, VA-08
+  The demographic and trend parts come from slices taking their parent county's shares and
+  residual (option (a)): in counties split among several districts every slice gets the county
+  average. Of the 58 districts inside a single county, 37 have shifts above 0.5 for that reason alone.
+
+== States (49): reconciled to the Senate seat, or the state's fundamentals with no race
+  state  shift  margin   demo  trend override  notes
+  NE     +6.05   +0.00  +0.02  +0.22    +5.82  polling override (expected)
+  UT     -1.18   -0.35  -0.07  -0.76    +0.00  FLAG · no 2026 race
+  TX     -1.09   -0.02  -0.30  -0.78    +0.00  FLAG
+  FL     -0.98   -0.05  -0.22  -0.71    +0.00  FLAG
+  TN     -0.83   +0.00  -0.07  -0.77    +0.00  FLAG
+  CA     -0.78   +0.01  -0.25  -0.54    +0.00  FLAG · no 2026 race
+  GA     -0.78   -0.01  -0.02  -0.75    +0.00  FLAG
+  AL     -0.71   +0.00  -0.09  -0.61    +0.00  FLAG
+  MO     -0.66   -0.05  -0.00  -0.60    +0.00  FLAG · no 2026 race
+  DE     -0.60   -0.00  +0.01  -0.61    +0.00  FLAG
+  MD     -0.60   +0.00  -0.04  -0.56    +0.00  FLAG · no 2026 race
+  MS     -0.52   -0.02  -0.00  -0.50    +0.00  FLAG
+  LA     -0.51   +0.00  -0.03  -0.48    +0.00  FLAG
+  ME     +0.47   +0.49  -0.00  -0.02    +0.00  
+  NC     -0.47   +0.00  -0.12  -0.35    +0.00  
+  OH     -0.45   -0.06  -0.04  -0.35    +0.00  
+  MN     -0.43   -0.00  -0.01  -0.43    +0.00  
+  ND     +0.38   +0.04  +0.01  +0.33    +0.00  no 2026 race
+  SC     -0.37   -0.00  -0.00  -0.37    +0.00  
+  IL     -0.36   +0.02  -0.03  -0.36    +0.00  
+  KY     -0.36   -0.04  -0.01  -0.31    +0.00  
+  RI     +0.34   +0.21  +0.04  +0.08    +0.00  
+  CO     -0.30   -0.00  +0.02  -0.30    +0.00  
+  AR     -0.29   -0.00  +0.00  -0.29    +0.00  
+  IN     -0.29   -0.05  -0.00  -0.23    +0.00  no 2026 race
+  MT     +0.28   -0.04  -0.01  -0.01    +0.34  polling override (expected)
+  OR     -0.27   +0.00  +0.01  -0.29    +0.00  
+  VA     -0.26   -0.01  -0.04  -0.22    +0.00  
+  OK     -0.25   +0.00  +0.03  -0.28    +0.00  
+  ID     +0.24   +0.00  +0.02  +0.21    +0.00  
+  PA     -0.23   +0.00  -0.02  -0.21    +0.00  no 2026 race
+  AZ     -0.22   -0.02  +0.02  -0.21    +0.00  no 2026 race
+  NM     -0.17   -0.00  -0.02  -0.14    +0.00  
+  MA     -0.14   +0.01  +0.02  -0.16    +0.00  
+  IA     +0.13   -0.00  +0.00  +0.14    +0.00  
+  KS     -0.13   -0.10  +0.03  -0.06    +0.00  
+  VT     -0.13   +0.00  -0.00  -0.13    +0.00  no 2026 race
+  MI     -0.11   +0.00  -0.00  -0.11    +0.00  
+  NJ     -0.11   +0.02  +0.03  -0.16    +0.00  
+  WI     -0.10   -0.00  -0.01  -0.10    +0.00  no 2026 race
+  NY     -0.09   +0.06  +0.05  -0.20    +0.00  no 2026 race
+  WA     -0.09   +0.00  +0.01  -0.10    +0.00  no 2026 race
+  NV     +0.07   -0.00  +0.01  +0.07    +0.00  no 2026 race
+  HI     -0.06   +0.01  +0.04  -0.11    +0.00  no 2026 race
+  SD     -0.05   -0.01  -0.01  -0.03    +0.00  
+  WV     +0.03   -0.06  -0.00  +0.09    +0.00  
+  WY     -0.03   -0.00  +0.01  -0.03    +0.00  
+  AK     +0.02   +0.09  -0.07  +0.00    +0.00  
+  NH     +0.02   -0.00  +0.00  +0.02    +0.00  
+  states flagged (|shift excluding override| > 0.5): AL, CA, DE, FL, GA, LA, MD, MO, MS, TN, TX, UT
+  The state shifts are mostly the trend part: counties' 2020→2024 shifts, averaged with 2024
+  turnout weights, don't add up to the state's own shift (the turnout-composition offset also
+  seen in the item 8 cross-level check). The margin part is ~0 now that county margins are
+  total-vote margins.

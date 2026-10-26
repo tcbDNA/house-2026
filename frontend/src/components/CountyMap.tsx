@@ -89,6 +89,7 @@ function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtra
     ${row("2024 margin", c.margin_2024)}
     ${row("+ rel. trend", c.rel_trend_applied)}
     ${row("+ demographic Δ", c.demo_shift)}
+    ${row("+ swing, candidates, reconcile", c.projection - c.margin_2024 - (c.rel_trend_applied ?? 0) - (c.demo_shift ?? 0))}
     ${row("= projection", c.projection, true)}
     <div style="margin-top:4px;padding-top:3px;border-top:1px solid #ccc;font-size:10px">
       <div style="color:#555;margin-bottom:1px">Estimated 2026 vote</div>
@@ -505,6 +506,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
             district={district}
             detail={districtDetail}
             districtProjection={(data as any)?.district_projection}
+            scenarioRow={(data as any)?.district_row}
             trendDiscount={trendDiscount}
             voteEstimate={summary ? { d: summary.d_total, r: summary.r_total } : null}
           />
@@ -516,22 +518,25 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
 }
 
 function DistrictDetailPanel({
-  district, detail, districtProjection, trendDiscount, voteEstimate,
+  district, detail, districtProjection, trendDiscount, voteEstimate, scenarioRow,
 }: {
   district: string;
   detail: Record<string, any> | null;
   districtProjection: number | undefined;
   trendDiscount: number;
   voteEstimate: { d: number; r: number } | null;
+  scenarioRow?: Record<string, number> | null;
 }) {
   const d = detail ?? {};
-  const m24 = d.margin_2024 ?? 0;
-  const relTrendRaw = d.rel_trend ?? 0;
-  const relTrendApplied = relTrendRaw * trendDiscount;
-  const war = d.war_adj_discounted ?? 0;
-  const inc = d.incumbency_adj ?? 0;
-  const chal = d.challenger_adj ?? 0;
-  const demo = d.demo_shift ?? 0;
+  // Prefer the district's terms in the current scenario (residualized trend,
+  // incumbency setting) from the overlay response; fall back to the record.
+  const s = scenarioRow ?? {};
+  const m24 = s.margin_2024 ?? d.margin_2024 ?? 0;
+  const relTrendApplied = s.rel_trend_applied ?? (d.rel_trend ?? 0) * trendDiscount;
+  const war = s.war_adj_discounted ?? d.war_adj_discounted ?? 0;
+  const inc = s.incumbency_adj ?? d.incumbency_adj ?? 0;
+  const chal = s.challenger_adj ?? d.challenger_adj ?? 0;
+  const demo = s.demo_shift ?? d.demo_shift ?? 0;
   // Uniform swing is whatever's left after the additive components — derived
   // from the projection so we don't have to know the model's popvote constant.
   const uniformSwing = districtProjection != null
@@ -595,9 +600,9 @@ function DistrictDetailPanel({
         <div className="space-y-0.5 font-mono">
           <SignedRow label="2024 margin" value={m24} leading />
           <SignedRow
-            label={`Rel. trend × ${trendDiscount.toFixed(1)}`}
+            label={`Residual trend × ${trendDiscount.toFixed(1)}`}
             value={relTrendApplied}
-            note={Math.abs(trendDiscount - 1) > 1e-6 ? `raw ${relTrendRaw.toFixed(2)}` : undefined}
+            note={d.rel_trend != null ? `raw trend ${Number(d.rel_trend).toFixed(2)}` : undefined}
           />
           <SignedRow label="WAR" value={war} />
           <SignedRow label="Incumbency" value={inc} />

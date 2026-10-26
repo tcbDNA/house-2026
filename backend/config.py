@@ -15,7 +15,7 @@ CATALIST_2022_WHITE_SHARE = 0.7581
 
 # Default trend weight (multiplier on the carried 2020→2024 trend, after the
 # demographic part is removed). 0.5 is a judgment call: half the residual
-# trend persists. The 2025 NJ/VA governor check (county coefficient −0.05,
+# trend persists. The 2025 NJ/VA governor check (county coefficient +0.02,
 # robust SE 0.11; analysis/trend_weight_nj_va_2025.txt) is a limited test —
 # governor's races differ from federal ones — not the basis for the
 # default. 0, 1 and −0.5 remain scenario options. A scenario parameter, not
@@ -54,6 +54,14 @@ class Settings:
     # incumbent's WAR weight — were measured with it already removed. 1.7
     # (Split Ticket's 2020 House WAR analysis) is a scenario.
     house_incumbency: float = 3.0
+
+    # Item 7 — county overlay (overlay.py). Project each county slice from its
+    # own 2024 margin, demographic shift and residual trend (shrunk toward its
+    # district's / state's with weight votes / (votes + k), 2024 votes), plus
+    # the district's / state's swing and candidate effects and one reconciling
+    # shift. Off: every slice shifted by the same amount. Overlay only.
+    overlay_slice_projections: bool = True
+    overlay_shrink_k: float = 25000.0
 
     # Item 2 — residualized trend (trend.py). Remove from the carried trend
     # the part explained by the active frame's demographic shares (+ age, +
