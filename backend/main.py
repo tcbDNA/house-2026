@@ -227,10 +227,11 @@ def state_county_geojson(state: str):
                         headers={"Cache-Control": "public, max-age=86400"})
 
 
-def _vote_estimates(total_24: float, proj: float) -> tuple[int, int, int]:
-    """Estimated 2026 turnout and two-way D/R votes from a projected margin
-    (clamped so extreme scenarios can't give negative counts)."""
-    est = int(round(total_24 * county.TURNOUT_2026_RATIO))
+def _vote_estimates(total_24: float, proj: float, ratio: float) -> tuple[int, int, int]:
+    """Estimated 2026 turnout (ratio × 2024 votes, from that race's Kalshi
+    turnout market) and two-way D/R votes from a projected margin (clamped so
+    extreme scenarios can't give negative counts)."""
+    est = int(round(total_24 * ratio))
     d = int(round(est * max(0.0, min(1.0, (100 + proj) / 200.0))))
     return est, d, est - d
 
@@ -246,9 +247,10 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     senate_result = senate.project(sb, environment=req.environment, sliders=sliders,
                                    trend_discount=req.trend_discount, settings=settings, frame=req.frame)
     seat = next((s for s in senate_result["seats"] if s["state"] == st), None)
+    turnout, turnout_source = county.turnout_ratio(state=st)
     result = {"environment": req.environment, "sliders": sliders, "trend_discount": req.trend_discount,
-              "turnout_ratio_2026": county.TURNOUT_2026_RATIO, "senate_seat": seat, "counties": [],
-              "overlay": "slice_projections"}
+              "turnout_ratio_2026": turnout, "turnout_source": turnout_source,
+              "senate_seat": seat, "counties": [], "overlay": "slice_projections"}
     if not counties:
         result["unavailable_reason"] = f"No county-level 2024 presidential data available for {st}."
         return result
@@ -268,7 +270,7 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
                                req.trend_discount, settings)
     for c, i, w, res, demo, proj in r["rows"]:
-        est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj)
+        est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj, turnout)
         result["counties"].append({
             "fips": c["fips"], "state": st, "name": c["name"],
             "margin_2024": c.get("margin_2024"), "margin_2020": c.get("margin_2020"),
@@ -396,16 +398,18 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
         terms = overlay.CountyTerms(counties, population_shares(counties), sliders, settings, req.frame)
         r = overlay.district_slices(did, drow, slices, district_proj["uniform_swing"], terms,
                                     req.trend_discount, settings, req.frame)
+        turnout, turnout_source = county.turnout_ratio(district=did)
         for s in r["counties"]:
             s["state"] = state
             s["estimated_turnout_2026"], s["estimated_d_votes"], s["estimated_r_votes"] = \
-                _vote_estimates(s["total_2024"], s["projection"])
+                _vote_estimates(s["total_2024"], s["projection"], turnout)
             s["is_tossup"] = abs(s["projection"]) < 3.0
         return {"district": did, "state": state, "district_projection": drow["projection"],
                 "candidate_adj": r["candidate_adj"], "reconcile": r["reconcile"],
                 "district_residual": r["district_residual"], "target_projection": r["target"],
                 "slice_margin_gap": r["slice_margin_gap"],
                 "lockout": drow.get("lockout"),
+                "turnout_ratio_2026": turnout, "turnout_source": turnout_source,
                 "data_source": "precinct_aggregated", "overlay": "slice_projections",
                 # The district's own terms in this scenario (for the side panel).
                 "district_row": {k: drow.get(k) for k in ("margin_2024", "rel_trend_applied", "war_adj_discounted",
@@ -425,7 +429,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     # while district margin_2024 comes from the sensitivity CSV, and (b) per-slice
     # rel_trend weighted avg ≠ district-level rel_trend. Compute a uniform shift
     # that reconciles the two so the header aggregate matches the district projection.
-    TURNOUT_2026_RATIO = county.TURNOUT_2026_RATIO
+    TURNOUT_2026_RATIO = county.turnout_ratio(district=did)[0]
 
     first_pass = []
     for s in slices:

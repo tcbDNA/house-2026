@@ -9,6 +9,7 @@ a scenario-aware 2024-presidential-margin projection per county.
 from __future__ import annotations
 import json
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
@@ -22,27 +23,55 @@ from model import (
 DATA_PATH = Path(__file__).resolve().parent / "data" / "counties.json"
 PRES_2024_POPVOTE = -1.5   # Catalist 2024 R-1.5
 
-# 2026 turnout as a share of 2024 presidential votes: the average of Kalshi's
-# market-implied turnout across the 70 statewide Senate and governor races,
-# weighted by 2024 votes (data/turnout_2026.csv, built by
-# data/build_turnout_2026.py from the saved KXMIDTERMVOTETURN markets).
-# Applied uniformly to each county's 2024 total to estimate 2026 total votes;
-# D/R vote estimates then derive from the county's projected margin. Display
-# only — no projection, margin or probability uses it. Falls back to 0.79 (the
-# midpoint of the 2018/2016 and 2022/2020 midterm-to-presidential ratios).
+# 2026 turnout as a share of 2024 presidential votes, per race, from Kalshi's
+# turnout markets (data/turnout_2026.csv, built by data/build_turnout_2026.py
+# from the saved KXMIDTERMVOTETURN markets: each race's market-implied median
+# total vote ÷ its 2024 presidential vote). Used only to estimate the county
+# overlay's 2026 vote counts — no projection, margin or probability uses it.
+#   state view:    the state's Senate market, else its governor market, else
+#                  its House markets combined
+#   district view: the district's House market, else the state's ratio
+# TURNOUT_2026_RATIO (the 2024-vote-weighted average over the 70 Senate and
+# governor markets) is the last-resort fallback; 0.79 if the file is missing.
 TURNOUT_PATH = Path(__file__).resolve().parent / "data" / "turnout_2026.csv"
 
 
-def _turnout_ratio() -> float:
+@lru_cache(maxsize=1)
+def _turnout_rows() -> tuple[dict, ...]:
     import csv
     if not TURNOUT_PATH.exists():
-        return 0.79
+        return ()
     with TURNOUT_PATH.open() as f:
-        rows = [r for r in csv.DictReader(f) if r["kind"] in ("senate", "governor") and r["ratio_to_2024"]]
+        return tuple(r for r in csv.DictReader(f) if r["ratio_to_2024"])
+
+
+def _weighted(rows) -> float | None:
+    rows = list(rows)
+    if not rows:
+        return None
     return sum(float(r["implied_total_votes"]) for r in rows) / sum(float(r["total_2024"]) for r in rows)
 
 
-TURNOUT_2026_RATIO = round(_turnout_ratio(), 3)
+TURNOUT_2026_RATIO = round(_weighted(r for r in _turnout_rows() if r["kind"] in ("senate", "governor")) or 0.79, 3)
+
+
+def turnout_ratio(state: str | None = None, district: str | None = None) -> tuple[float, str]:
+    """(2026 turnout as a share of 2024, which Kalshi market it comes from)."""
+    rows = _turnout_rows()
+    if district:
+        r = next((r for r in rows if r["kind"] == "house" and r["district"] == district), None)
+        if r:
+            return float(r["ratio_to_2024"]), f"Kalshi {district} House turnout market"
+        state = state or district[:2]
+    if state:
+        for kind in ("senate", "governor"):
+            r = next((r for r in rows if r["kind"] == kind and r["state"] == state), None)
+            if r:
+                return float(r["ratio_to_2024"]), f"Kalshi {state} {kind.capitalize()} turnout market"
+        h = _weighted(r for r in rows if r["kind"] == "house" and r["state"] == state)
+        if h:
+            return h, f"Kalshi {state} House turnout markets combined"
+    return TURNOUT_2026_RATIO, "average of Kalshi's 70 Senate and governor turnout markets"
 
 
 @dataclass
@@ -87,6 +116,7 @@ def project(
         sliders.setdefault(k, CATALIST_BASELINES[k])
 
     uniform_swing = environment - PRES_2024_POPVOTE
+    turnout, turnout_source = turnout_ratio(state=state_filter)
     shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
     demo_shift = sum(shifts.values())
 
@@ -101,7 +131,7 @@ def project(
         total_24 = c.get("total_2024") or 0
         # Estimated 2026 turnout (midpoint of 2022 and 2024 levels) and D/R
         # vote counts derived from the projected margin. Two-way split.
-        est_turnout = round(total_24 * TURNOUT_2026_RATIO)
+        est_turnout = round(total_24 * turnout)
         # margin = D% - R%, two-way; clamp so extreme scenarios can't push
         # projected margins past ±100 into negative vote counts.
         d_share = max(0.0, min(1.0, (100 + proj) / 200.0))
@@ -133,7 +163,8 @@ def project(
         "axis_weights": weights,
         "uniform_swing": uniform_swing,
         "trend_discount": trend_discount,
-        "turnout_ratio_2026": TURNOUT_2026_RATIO,
+        "turnout_ratio_2026": turnout,
+        "turnout_source": turnout_source,
         "senate_adjustment": senate_adjustment,
         "state": state_filter,
         "counties": out_counties,

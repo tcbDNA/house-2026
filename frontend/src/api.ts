@@ -52,6 +52,7 @@ export type CountyResponse = {
   trend_discount: number;
   axis_weights: AxisWeights;
   turnout_ratio_2026: number;
+  turnout_source?: string;
   unavailable_reason?: string;
   counties: Array<{
     fips: string;

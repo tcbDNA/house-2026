@@ -507,6 +507,9 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
             detail={districtDetail}
             districtProjection={(data as any)?.district_projection}
             scenarioRow={(data as any)?.district_row}
+            sliceMarginGap={(data as any)?.slice_margin_gap}
+            turnout={(data as any)?.turnout_ratio_2026
+              ? { ratio: (data as any).turnout_ratio_2026, source: (data as any).turnout_source ?? "" } : null}
             trendDiscount={trendDiscount}
             voteEstimate={summary ? { d: summary.d_total, r: summary.r_total } : null}
           />
@@ -518,7 +521,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
 }
 
 function DistrictDetailPanel({
-  district, detail, districtProjection, trendDiscount, voteEstimate, scenarioRow,
+  district, detail, districtProjection, trendDiscount, voteEstimate, scenarioRow, sliceMarginGap, turnout,
 }: {
   district: string;
   detail: Record<string, any> | null;
@@ -526,6 +529,8 @@ function DistrictDetailPanel({
   trendDiscount: number;
   voteEstimate: { d: number; r: number } | null;
   scenarioRow?: Record<string, number> | null;
+  sliceMarginGap?: number | null;
+  turnout?: { ratio: number; source: string } | null;
 }) {
   const d = detail ?? {};
   // Prefer the district's terms in the current scenario (residualized trend,
@@ -556,6 +561,13 @@ function DistrictDetailPanel({
     <div className="w-72 shrink-0 border-l overflow-y-auto bg-slate-50 p-3 space-y-3 text-xs">
       <div>
         <div className="font-mono font-bold text-base">{district}</div>
+        {sliceMarginGap != null && Math.abs(sliceMarginGap) > 0.5 && (
+          <div className="mt-1 text-[10px] text-amber-800 bg-amber-50 border border-amber-200 rounded px-1.5 py-1">
+            The county slices' 2024 results differ from the district's by{" "}
+            {Math.abs(sliceMarginGap).toFixed(1)} pts (source data); the reconciling shift absorbs it, so
+            the county shading is approximate here.
+          </div>
+        )}
         {d.challenger && (() => {
           const isOpen = (d.incumbent ?? "").startsWith("(open");
           return (
@@ -589,6 +601,11 @@ function DistrictDetailPanel({
                   <span className="text-red-700">{rName}</span>
                   <span className="text-red-700">{voteEstimate.r.toLocaleString()} ({rPct}%)</span>
                 </div>
+                {turnout && (
+                  <div className="text-[10px] text-slate-500 italic pt-0.5">
+                    Turnout {Math.round(turnout.ratio * 100)}% of 2024 ({turnout.source})
+                  </div>
+                )}
               </div>
             );
           })()}
