@@ -154,9 +154,16 @@ export function SenateTable({ seats, notUpD }: Props) {
                       <span className={partyColorClass(s.co_nominee_party)}>{s.co_nominee}</span>
                     </div>
                   )}
-                  {s.poll_override && (
+                  {s.poll_average?.race_note && (
                     <div className="text-[10px] mt-0.5 text-amber-700 italic">
-                      {s.poll_override.race_note}
+                      {s.poll_average.race_note}
+                    </div>
+                  )}
+                  {s.poll_average && (s.poll_weight ?? 0) > 0 && (
+                    <div className="text-[10px] mt-0.5 text-slate-500">
+                      polls {formatProjection(s.poll_average.margin)} ({s.poll_average.n_polls}) ×{" "}
+                      {(s.poll_weight ?? 0).toFixed(2)} + model {formatProjection(s.model_projection ?? 0)} ×{" "}
+                      {(1 - (s.poll_weight ?? 0)).toFixed(2)}
                     </div>
                   )}
                   {s.exclusion_alternative && s.projection_alt !== undefined && (

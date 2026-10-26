@@ -64,6 +64,8 @@ national 2016→2020 presidential shift +2.36; trend weight 0.5; Senate incumben
 
 == Both years (25 races): model RMSE 5.50, MAE 4.26; two-party polls RMSE 4.77, MAE 3.86
    best fixed blend across both years: 0.62 × polls (RMSE 4.09); 50/50 RMSE 4.15
+   with a separate intercept per year: best blend 0.71 × polls pooled (RMSE 3.42; model alone 5.03, polls alone 3.75); by year 2022 0.74, 2024 0.32
+   -> w = 0.7 (pooled, year effects removed, rounded to 0.1)
 
 Races without a polling average where an independent was the anti-R candidate (model only):
   UT 2022 McMullin and NE 2024 Osborn - see the tables: the partisan baseline misses both by 17+ points.

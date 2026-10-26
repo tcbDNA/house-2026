@@ -18,7 +18,7 @@ export function ErrorModelFooter({ model }: { model?: ErrorModel }) {
   terms.push(`race ${model.race}`);
   terms.push(`+${model.open_seat_extra} open seat`);
   if (model.new_lines_extra) terms.push(`+${model.new_lines_extra} × share new on new lines`);
-  if (model.poll_override_extra) terms.push(`+${model.poll_override_extra} poll-based races (MT, NE)`);
+  if (model.poll_override_extra) terms.push(`+${model.poll_override_extra} poll-based independent races`);
   const groups = Object.entries(model.groups).filter(([, g]) => g.sigma > 0);
   return (
     <div className="text-[10px] text-slate-400 italic mt-1">

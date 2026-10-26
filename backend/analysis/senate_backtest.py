@@ -278,7 +278,7 @@ def backtest(year: int, m16, m20, nat20, resid) -> list[dict]:
         actual = 100 * (dv - rv) / tv
         actual2 = 100 * (dv - rv) / (dv + rv)
         p = polls.get(pkey) if pkey else None
-        rows.append({"state": st + (" (special)" if special else ""), "proj": proj, "actual": actual,
+        rows.append({"year": year, "state": st + (" (special)" if special else ""), "proj": proj, "actual": actual,
                      "actual2": actual2, "inc": inc, "war": war,
                      "poll": (p["d"] - p["r"]) if p else None,
                      "poll2": 100 * (p["d"] - p["r"]) / (p["d"] + p["r"]) if p else None,
@@ -339,6 +339,22 @@ def main_cli():
     rmse = [np.sqrt((((1 - l) * proj + l * poll - act) ** 2).mean()) for l in lam]
     print(f"   best fixed blend across both years: {lam[int(np.argmin(rmse))]:.2f} × polls (RMSE {min(rmse):.2f}); "
           f"50/50 RMSE {rmse[50]:.2f}")
+    # Same blend with a separate intercept per year: each year's overall
+    # polling/model level miss went opposite ways (2022 too R, 2024 polls too
+    # D), and that level is what the national error term covers in 2026.
+    yrs = np.array([r["year"] for r in allrows])
+    def demeaned_rmse(l, mask=None):
+        mask = np.ones(len(act), bool) if mask is None else mask
+        res = act[mask] - ((1 - l) * proj[mask] + l * poll[mask])
+        for y in np.unique(yrs[mask]):
+            res[yrs[mask] == y] -= res[yrs[mask] == y].mean()
+        return float(np.sqrt((res ** 2).mean()))
+    best_pooled = lam[int(np.argmin([demeaned_rmse(l) for l in lam]))]
+    by_year = {y: lam[int(np.argmin([demeaned_rmse(l, yrs == y) for l in lam]))] for y in (2022, 2024)}
+    print(f"   with a separate intercept per year: best blend {best_pooled:.2f} × polls pooled "
+          f"(RMSE {demeaned_rmse(best_pooled):.2f}; model alone {demeaned_rmse(0.0):.2f}, polls alone "
+          f"{demeaned_rmse(1.0):.2f}); by year " + ", ".join(f"{y} {w:.2f}" for y, w in by_year.items()))
+    print(f"   -> w = {round(best_pooled, 1):.1f} (pooled, year effects removed, rounded to 0.1)")
     print("\nRaces without a polling average where an independent was the anti-R candidate (model only):\n"
           "  UT 2022 McMullin and NE 2024 Osborn - see the tables: the partisan baseline misses both by 17+ points.")
 

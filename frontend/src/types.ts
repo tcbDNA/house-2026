@@ -440,13 +440,14 @@ export type SenateSeat = {
   is_tossup: boolean;
   flip: "to_D" | "to_R" | null;
   p_d?: number;
-  // Races modeled from a documented polling average (e.g. MT's three-way
-  // race) instead of the model baseline; model_projection is what the
-  // baseline would have said.
-  poll_override?: {
-    margin: number; as_of: string; method: string; n_polls: number;
-    source_url: string; local_file: string; race_note: string;
+  // Polling average blended into the projection: projection = poll_weight ×
+  // (poll average + scenario change) + (1 − poll_weight) × model_projection.
+  poll_average?: {
+    margin: number; raw_margin: number; n_polls: number; independent: boolean; three_way: boolean;
+    source: string; as_of: string; sponsors: string; url: string; local_file: string; race_note: string;
   } | null;
+  poll_weight?: number;
+  independent_candidate?: boolean;
   model_projection?: number;
   // Same race with an excluded WAR cycle included (Alaska: Sullivan 2014).
   exclusion_alternative?: { label: string; margin_delta: number } | null;

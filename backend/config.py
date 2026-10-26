@@ -55,6 +55,18 @@ class Settings:
     # (Split Ticket's 2020 House WAR analysis) is a scenario.
     house_incumbency: float = 3.0
 
+    # Senate poll blend (senate_model). Every Senate race with a polling
+    # average (data/senate_poll_averages.csv: RCP-style, Rasmussen removed,
+    # two-party) is projected as w × (polling average + scenario change) +
+    # (1 − w) × the model's projection. w = senate_poll_weight with at least
+    # senate_poll_full_n recent polls, scaled down linearly below that, 0 with
+    # none. Independent races (NE, MT, ID, SD) use polls only (w = 1, same
+    # scaling). 0.7 is the 2022/2024 backtest's best weight with a separate
+    # intercept per year (analysis/senate_backtest.txt).
+    senate_poll_blend: bool = True
+    senate_poll_weight: float = 0.7
+    senate_poll_full_n: float = 3.0
+
     # Item 7 — county overlay (overlay.py). Project each county slice from its
     # own 2024 margin, demographic shift and residual trend (shrunk toward its
     # district's / state's with weight votes / (votes + k), 2024 votes), plus

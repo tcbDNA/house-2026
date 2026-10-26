@@ -52,9 +52,12 @@ class SenateBundle:
     all_battleground: np.ndarray
     all_pop: dict[str, np.ndarray]
     all_votes_w: np.ndarray       # official 2024 votes, normalized to sum to 1
-    # Polling-average margin (anti-R candidate − R) where the race uses a
-    # documented polling override; NaN elsewhere.
+    # Polling average (anti-R candidate − R; two-party, raw for three-way
+    # races), its number of recent polls, and whether the anti-R candidate is
+    # an independent. NaN / 0 where a race has no polling average.
     poll_margin: np.ndarray = field(default_factory=lambda: np.zeros(0))
+    poll_n: np.ndarray = field(default_factory=lambda: np.zeros(0))
+    independent: np.ndarray = field(default_factory=lambda: np.zeros(0, dtype=bool))
 
     @property
     def n(self) -> int:
@@ -83,8 +86,10 @@ def load_bundle(path: Path = DATA_PATH) -> SenateBundle:
                         all_trend=np.array([s.get("state_trend") or 0.0 for s in all_states], dtype=float),
                         all_battleground=trend_mod.battleground([s["state"] for s in all_states]),
                         all_pop=population_shares(all_states), all_votes_w=votes / votes.sum(),
-                        poll_margin=np.array([(s.get("poll_override") or {}).get("margin", np.nan)
-                                              for s in seats], dtype=float))
+                        poll_margin=np.array([(s.get("poll_average") or {}).get("margin", np.nan)
+                                              for s in seats], dtype=float),
+                        poll_n=np.array([(s.get("poll_average") or {}).get("n_polls", 0) for s in seats], dtype=float),
+                        independent=np.array([s.get("challenger_party") == "(I)" for s in seats]))
 
 
 def project(
@@ -100,10 +105,10 @@ def project(
     1.0 = full trend persistence, 0.0 = trends ignored entirely, negative =
     the 2020→2024 shift partially reverses.
 
-    Races with a documented polling override (senate_poll_overrides.csv)
-    start from the polling average instead of the model baseline: their
-    projection is the poll margin plus how far the scenario has moved the
-    model's projection from the default scenario for these settings.
+    Races with a polling average are blended (settings.senate_poll_blend):
+    w × (polling average + scenario change) + (1 − w) × model, where the
+    scenario change is how far the scenario has moved the model's projection
+    from the default scenario for these settings (see poll_weights).
     """
     sliders = dict(sliders or {})
     for k in ALL_SLIDERS:
@@ -111,11 +116,11 @@ def project(
     projections, shifts, weights, demo_shift, state_trend_applied, uniform_swing = _projections(
         bundle, environment, sliders, trend_discount, settings, frame)
     model_projections = projections.copy()
-    if np.isfinite(bundle.poll_margin).any():
-        projections = np.where(np.isfinite(bundle.poll_margin),
-                               bundle.poll_margin + projections
-                               - _default_projections(bundle, settings, frame),
-                               projections)
+    weights_poll = poll_weights(bundle, settings)
+    if weights_poll.any():
+        poll_delta = np.where(weights_poll > 0,
+                              bundle.poll_margin - _default_projections(bundle, settings, frame), 0.0)
+        projections = projections + weights_poll * poll_delta
 
     # Senate seat totals require the un-contested 65 seats not up in 2026.
     # Compute D pickups / R pickups based on partisan flip of seats up.
@@ -172,10 +177,18 @@ def project(
             "age_shift": round(float(shifts["age"][i]), 2),
             "is_tossup": abs(proj) <= TOSSUP_THRESHOLD,
             "flip": "to_D" if flipped_to_d else ("to_R" if flipped_to_r else None),
-            "poll_override": s.get("poll_override"),
+            "poll_average": s.get("poll_average"),
+            "poll_weight": round(float(weights_poll[i]), 3),
+            "independent_candidate": bool(bundle.independent[i]),
             "model_projection": round(float(model_projections[i]), 2),
-            # Same race with an excluded WAR cycle included (Alaska: Sullivan 2014).
-            "exclusion_alternative": s.get("exclusion_alternative"),
+            # Same race with an excluded WAR cycle included (Alaska: Sullivan
+            # 2014). The WAR difference moves the model part only, so under
+            # the blend it counts at (1 − poll weight).
+            "exclusion_alternative": (
+                {**s["exclusion_alternative"],
+                 "margin_delta_model": s["exclusion_alternative"]["margin_delta"],
+                 "margin_delta": round(s["exclusion_alternative"]["margin_delta"] * (1 - float(weights_poll[i])), 2)}
+                if s.get("exclusion_alternative") else None),
         })
 
     # Pre-2026 Senate composition: 53R / 47D (post-2024-election, pre-2026).
@@ -239,6 +252,17 @@ def all_state_residuals(bundle: SenateBundle, settings: Settings, frame: str) ->
                                          or settings.trend_remove_battleground):
         center = float(carried @ bundle.all_votes_w)
     return {s["state"]: float(c) - center for s, c in zip(bundle.states, carried)}, center
+
+
+def poll_weights(bundle: SenateBundle, settings: Settings) -> np.ndarray:
+    """Per-seat weight on the polling average: senate_poll_weight (1.0 for
+    independent races) × min(1, recent polls / senate_poll_full_n); 0 with
+    no polls or with the blend off."""
+    if not settings.senate_poll_blend or bundle.poll_n.size == 0:
+        return np.zeros(len(bundle.seats))
+    base = np.where(bundle.independent, 1.0, settings.senate_poll_weight)
+    scale = np.minimum(1.0, bundle.poll_n / settings.senate_poll_full_n)
+    return np.where(np.isfinite(bundle.poll_margin), base * scale, 0.0)
 
 
 def _default_projections(bundle: SenateBundle, settings: Settings, frame: str) -> np.ndarray:

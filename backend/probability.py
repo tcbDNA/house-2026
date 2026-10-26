@@ -64,8 +64,9 @@ SIGMA_STATE    = 1.8   # within-state candidate quality / news / weather
 SIGMA_DISTRICT = 3.2   # idiosyncratic per-district error
 SIGMA_OPEN_SEAT_EXTRA = 2.5   # added in quadrature when there's no sitting incumbent
 SIGMA_NEW_LINES_EXTRA = 2.0   # added in quadrature for House districts not on 2024 lines
-# Senate races modeled from a polling override (MT, NE): the polls carry extra
-# uncertainty the baseline doesn't (three-way race; few, often partisan polls).
+# Independent Senate races projected from polls (NE, MT): the polls carry
+# extra uncertainty the baseline doesn't (three-way race; few, often partisan
+# polls).
 SIGMA_POLL_OVERRIDE_EXTRA = 3.0   # added in quadrature (user decision)
 N_SIMS = 10000
 SEED = 20260918
@@ -264,7 +265,8 @@ def senate_sims(rows: list[dict], terms: ErrorTerms | None = None) -> np.ndarray
     # Senate: no state-level shock separate from the seat itself (one seat/state
     # among the up-races), so fold state variance into the idiosyncratic term.
     sigma_seat = float(np.sqrt(SIGMA_STATE ** 2 + SIGMA_DISTRICT ** 2))
-    poll_override = np.array([r.get("poll_override") is not None for r in rows], dtype=float)
+    poll_override = np.array([bool(r.get("independent_candidate")) and (r.get("poll_weight") or 0) > 0
+                              for r in rows], dtype=float)
     sigma_race = np.sqrt(_race_sigma(sigma_seat, open_seat, np.zeros(len(rows))) ** 2
                          + poll_override * SIGMA_POLL_OVERRIDE_EXTRA ** 2)
     corr = _draw_correlated_shocks(rng, rows, sigma_state=0.0,

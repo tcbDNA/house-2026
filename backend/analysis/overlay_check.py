@@ -89,7 +89,7 @@ def states():
             cand = ((seat.get("war_adj_discounted") or 0.0) + (seat.get("incumbency_adj") or 0.0)
                     + (seat.get("challenger_adj") or 0.0))
             target = seat["projection"]
-            override = target - (seat["model_projection"]) if seat.get("poll_override") else 0.0
+            override = target - seat["model_projection"] if seat.get("poll_weight") else 0.0
         terms = overlay.CountyTerms(counties, population_shares(counties), d["sliders"], S, FRAME, center)
         r = overlay.state_counties(st, counties, terms, resid[st], swing, cand, target, TD, S)
         w = [c.get("total_2024") or 0.0 for c in counties]
@@ -100,7 +100,7 @@ def states():
             "trend": TD * (resid[st] - wavg(res, w)),
             "override": override,
         }
-        out.append((st, r["reconcile"], parts, seat is not None, bool(seat and seat.get("poll_override"))))
+        out.append((st, r["reconcile"], parts, seat is not None, bool(seat and seat.get("poll_weight"))))
     return out
 
 
@@ -143,7 +143,7 @@ def main_cli():
         if abs(rec - p["override"]) > FLAG:
             notes.append("FLAG")
         if ov:
-            notes.append("polling override (expected)")
+            notes.append("poll blend (expected)")
         if not has_seat:
             notes.append("no 2026 race")
         print(f"  {st:5} {rec:+6.2f} {p['margin']:+7.2f} {p['demo']:+6.2f} {p['trend']:+6.2f} {p['override']:+8.2f}  "

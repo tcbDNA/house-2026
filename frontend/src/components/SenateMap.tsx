@@ -101,12 +101,13 @@ function buildPopupHtml(s: SenateSeat, uniformSwing: number): string {
     <div style="margin-bottom:3px"><span style="color:${incColor}">${s.incumbent ?? ""}</span> <span style="color:#888">${partyTag(s.party, !!s.incumbency_adj || !!s.primary_unresolved)}</span>${s.appointed ? " · <i style='color:#666'>appointed</i>" : ""}${s.primary_unresolved ? " · <i style='color:#666'>primary unresolved</i>" : ""}</div>
     ${challengerLine}
     ${coNominee}
-    ${s.poll_override ? `
-    <div style="margin-bottom:3px;color:#b45309;font-style:italic">${s.poll_override.race_note}</div>
-    ${row("Polling avg", s.poll_override.margin)}
-    ${row("+ scenario Δ", s.projection - s.poll_override.margin)}
+    ${s.poll_average && (s.poll_weight ?? 0) > 0 ? `
+    ${s.poll_average.race_note ? `<div style="margin-bottom:3px;color:#b45309;font-style:italic">${s.poll_average.race_note}</div>` : ""}
+    ${row("Model projection", s.model_projection ?? null)}
+    ${row(`Polling avg (${s.poll_average.n_polls} polls)`, s.poll_average.margin)}
+    <div style="color:#666">weight on polls ${(s.poll_weight ?? 0).toFixed(2)} (+ scenario change)</div>
     ${row("= projection", s.projection, true)}
-    <div style="color:#888">model baseline would be ${(s.model_projection ?? 0) > 0 ? "+" : ""}${(s.model_projection ?? 0).toFixed(1)} · polls as of ${s.poll_override.as_of}</div>` : `
+    <div style="color:#888">polls as of ${s.poll_average.as_of}</div>` : `
     ${row("Pres 2024", s.presidential_margin_2024)}
     ${row("+ state trend", s.state_trend_applied ?? s.state_trend)}
     ${row("+ WAR adj", s.war_adj_discounted)}

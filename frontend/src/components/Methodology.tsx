@@ -110,9 +110,9 @@ export function Methodology() {
         small number of <b>per-cycle exclusions</b> apply (Collins 2014 vs Bellows
         was a 68%-31% blowout that would inflate her personal-vote signal; Sullivan
         2014 vs Begich, D+18.8, is excluded as a judgment call — an outlier against
-        his 2020 record, from twelve years ago — and Alaska is shown both ways: R+3.0
-        without it, D+2.7 with it); these are listed in code and trigger at blend
-        time.{" "}
+        his 2020 record, from twelve years ago — and Alaska is shown both ways: in
+        the model R+3.0 without it, D+2.7 with it; after the poll blend R+0.0 and
+        D+1.7); these are listed in code and trigger at blend time.{" "}
         <b>Manual WAR overrides</b> are applied in a small number of cases where the
         blended value would misrepresent expected 2026 performance. Currently:{" "}
         <i>Richard Ojeda (NC-09, D) = 0</i> — his only prior race is 2018 WV-03,
@@ -179,22 +179,56 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (59.5% vs 48.2% by default; Osborn's tied race is nearly all of
-        the difference). Appointed senators who haven't
+        them does (66.2% vs 59.3% by default; Osborn's race is nearly all of the
+        difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
-        WAR or incumbency until it is. <b>Montana</b> is a three-way race (Daines
-        withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with Alani Bankhead
-        (D) polling a distant third, plus a Libertarian. The model's D-vs-R
-        baseline can't represent it, so this race uses the polling average instead
-        (RealClearPolling, Alme +12.0 as of Oct 18) plus however far the scenario
-        moves the model from its default, with the usual simulation errors.
-        <b>Nebraska</b> (Osborn vs Ricketts, no Democratic nominee) is handled the
-        same way: the partisan baseline (Ricketts +5.8) can't describe an
-        independent with cross-party appeal, and the polling averages have the race
-        tied (Poliwave 46.7–46.7 across eight polls; RealClearPolling publishes no
-        average). Both poll-based races get 3 extra points of race-level error (in
-        quadrature).
+        WAR or incumbency until it is.
+      </p>
+      <p className="mb-2">
+        <b>Poll blend.</b> Every Senate race with a polling average is projected as
+        w × (polling average + scenario change) + (1 − w) × model, where the
+        scenario change is how far the current sliders and settings move the model
+        from its default, so the sliders still move every race. w = 0.7 with at
+        least three polls in the average, scaled down linearly below that (0.47
+        with two, 0.23 with one) and 0 with none. Races with an independent
+        nominee (NE, MT, ID, SD) take w = 1 with the same scaling, because the
+        partisan baseline can't describe an independent with cross-party appeal,
+        and get 3 extra points of race-level error (in quadrature). The averages
+        start from RealClearPolling's with any Rasmussen poll removed (ActiVote is
+        never used); where a newer poll came out after RCP last updated the
+        average, or RCP publishes none, the average is recomputed from the most
+        recent poll by each pollster in the last three weeks (as of Oct 26: Ohio,
+        Florida, Kansas, North Carolina, South Carolina and Alabama, plus
+        Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
+        Louisiana and 11 safe races have no recent poll and use the model alone.
+        The blend takes Texas to Talarico (D+0.5) and Nebraska to Osborn (+0.8),
+        and Alaska from R+3.0 to R+0.0; P(D control) is 66.2% (59.5% before the
+        blend; 66.0% / 66.3% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
+        Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
+        margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
+        polls, so 2/3 polls and 1/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
+        Democratic nominee) has four recent polls, Osborn +0.8, against the model's
+        Ricketts +5.8. As a cross-check, Economist/YouGov had Fischer +7 over
+        Osborn in late October 2024 and Fischer won by 6.7; YouGov's 2026 poll has
+        Osborn +1, an 8-point move — about the size of the national swing since
+        2024.
+      </p>
+      <p className="mb-2">
+        <b>Where w = 0.7 comes from.</b> A backtest reruns the model's structure
+        for the 2022 and 2024 Senate races (each year's generic-ballot environment,
+        WAR only from records available before that election) and compares it and
+        RealClearPolling's final average with the results. With a separate
+        intercept per year — each year's polling miss is mostly shared across
+        races, which the simulation's national error covers — the best pooled
+        weight on polls is 0.71 (error 3.42 points, vs 3.75 for polls alone and
+        5.03 for the model alone). Year by year it is unstable (0.74 in 2022, 0.32
+        in 2024), so it is pooled and rounded. The sample is only the competitive
+        two-party races RCP averaged (14 in 2022, 11 in 2024): no race with an
+        independent nominee had an RCP average, so none is in the estimate, and
+        the independents' w = 1 is a judgment — the model missed McMullin (2022)
+        and Osborn (2024) by 17+ points.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

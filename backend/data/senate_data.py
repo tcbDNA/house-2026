@@ -29,9 +29,9 @@ V20 = DATA_DIR.parent.parent / "national_sensitivity_v20.csv"
 DEMOS = DATA_DIR / "demographics.csv"
 RAW_WAR = DATA_DIR / "raw_war.csv"
 OUT = DATA_DIR / "senate_states.json"
-# Races modeled from a documented polling average instead of the model
-# baseline (e.g. three-way races the D-vs-R baseline can't represent).
-POLL_OVERRIDES = DATA_DIR / "senate_poll_overrides.csv"
+# Polling average for each Senate race that has one (RCP-style, Rasmussen
+# removed), blended with the model's projection in senate_model.
+POLL_AVERAGES = DATA_DIR / "senate_poll_averages.csv"
 
 # Presidential national popular vote margins (D-R).
 # 2020 = Biden D+4.5, 2024 = Trump R+1.5.
@@ -206,7 +206,7 @@ CHALLENGERS = {
            "note": "Open seat (Daines withdrew in March). Three-way race: Alme (R; Trump-endorsed former "
                    "U.S. Attorney), Bodnar (I; former University of Montana president) and Bankhead (D, "
                    "polling a distant third), plus a Libertarian. Modeled as Alme vs Bodnar from the "
-                   "polling average (senate_poll_overrides.csv), not the model baseline."},
+                   "polling average (senate_poll_averages.csv), not the model baseline."},
     # === Summer/fall 2026 primaries (post-June) ===
     "MI": {"name": "Abdul El-Sayed", "party": "(D)", "war": 0.0,
            "co_nominee": "Mike Rogers", "co_nominee_party": "(R)",
@@ -515,21 +515,24 @@ def lookup_war_for_candidate(state, name, party_letter, all_wars):
     return war_signed, recs[0]
 
 
-def load_poll_overrides() -> dict[str, dict]:
-    """state -> {margin (challenger − opponent, the anti-R side positive), as_of,
-    method, n_polls, source_url, local_file, race_note}."""
-    if not POLL_OVERRIDES.exists():
+def load_poll_averages() -> dict[str, dict]:
+    """state -> {margin (blend margin: two-party, or raw for a three-way
+    race; anti-R side positive), raw_margin, n_polls, independent, three_way,
+    source, as_of, sponsors, url, local_file, race_note}."""
+    if not POLL_AVERAGES.exists():
         return {}
-    with POLL_OVERRIDES.open() as f:
-        return {r["state"]: {"margin": float(r["margin"]), "as_of": r["as_of"], "method": r["method"],
-                             "n_polls": int(r["n_polls"]), "source_url": r["source_url"],
-                             "local_file": r["local_file"], "race_note": r["race_note"]}
-                for r in csv.DictReader(f)}
+    with POLL_AVERAGES.open() as f:
+        return {r["state"]: {"margin": float(r["blend_margin"]), "raw_margin": float(r["margin"]),
+                             "n_polls": int(r["n_polls"]), "independent": r["independent"] == "yes",
+                             "three_way": r["three_way"] == "yes", "source": r["source"], "as_of": r["as_of"],
+                             "sponsors": r["sponsors"], "url": r["url"], "local_file": r["local_file"],
+                             "race_note": r["race_note"]}
+                for r in csv.DictReader(f) if r["blend_margin"] != ""}
 
 
 def main():
     assert_no_duplicate_keys(Path(__file__))
-    poll_overrides = load_poll_overrides()
+    poll_averages = load_poll_averages()
     margins = load_state_presidential_margins()
     demos = aggregate_state_demographics()
     all_wars = load_all_wars()
@@ -681,7 +684,7 @@ def main():
             "co_nominee_war_year": co_nominee_war_year,
             "co_nominee_war_source": co_nominee_war_source,
             "co_nominee_adj": round(co_nominee_adj, 2),
-            "poll_override": poll_overrides.get(state),
+            "poll_average": poll_averages.get(state),
             "exclusion_alternative": exclusion_alternative,
         }
 

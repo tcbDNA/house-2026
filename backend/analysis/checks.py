@@ -52,7 +52,8 @@ def senate_all_states_bundle() -> senate_model.SenateBundle:
         states=b.states, seats=b.states, base_margin=pres, state_trend=b.all_trend,
         battleground=b.all_battleground, pop=b.all_pop, all_trend=b.all_trend,
         all_battleground=b.all_battleground, all_pop=b.all_pop, all_votes_w=b.all_votes_w,
-        poll_margin=np.full(len(b.states), np.nan))
+        poll_margin=np.full(len(b.states), np.nan), poll_n=np.zeros(len(b.states)),
+        independent=np.zeros(len(b.states), dtype=bool))
 
 
 def cross_level(settings=DEFAULT_SETTINGS, frame: str = "race") -> None:
