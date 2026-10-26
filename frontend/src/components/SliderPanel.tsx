@@ -300,7 +300,7 @@ export function SliderPanel({
                   <div className="flex justify-between items-baseline text-xs mb-0.5">
                     <span>{s.label}</span>
                     <span className={`font-mono ${colorClass} ${moved ? "font-bold" : "opacity-70"}`}>
-                      {formatMargin(v)}
+                      {formatMargin(Math.round(v * 10) / 10)}
                       <span className="ml-1 text-[10px] text-slate-400 font-normal">
                         ({formatPartySplit(v)})
                       </span>

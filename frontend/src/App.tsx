@@ -11,19 +11,19 @@ import { SenateMap } from "./components/SenateMap";
 import { CountyMap } from "./components/CountyMap";
 import { fetchProjection, fetchSenate } from "./api";
 import {
-  AXIS_KEYS, CATALIST_BASELINES, DEFAULT_SLIDERS, EDU_FRAME_DEFAULTS, SLIDER_DEFS, compositionalShift,
+  AXIS_KEYS, CATALIST_BASELINES, DEFAULT_SLIDERS, EDU_FRAME_DEFAULTS, MODEL_DEFAULTS, SLIDER_DEFS,
+  compositionalShift,
   type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues,
 } from "./types";
 
 type Tab = "house" | "senate";
 export type DemoFrame = "race" | "race_edu";
 
-// Default uniform wave (D-R). With the race sliders at their poll-average
-// defaults (+9.57 nationally), the total is D+8.3: the 2024 result plus the
-// share-weighted shift in each racial group's margin across recent polls'
-// crosstabs (backend/data/crosstab_environment.py). Keep in sync with
-// DEFAULT_ENVIRONMENT in backend/main.py.
-const DEFAULT_ENV = -1.25;
+// Defaults (uniform wave, slider positions, national shares) come from the
+// backend's /api/defaults (environment.default_scenario), installed in
+// main.tsx before the first render: the wave is the 2024 level plus the
+// "other" race group's shift, and the race sliders carry each group's shift
+// since 2024 at its poll-average margin.
 
 // Slider defaults per frame. The inactive demographic axis sits at its 2024
 // baseline so the two frames never double-count.
@@ -36,8 +36,9 @@ function frameDefaults(frame: DemoFrame): SliderValues {
 
 // Uniform wave that gives the same national total in either frame.
 function frameDefaultEnv(frame: DemoFrame): number {
-  const total = DEFAULT_ENV + compositionalShift(DEFAULT_SLIDERS);
-  return Math.round((total - compositionalShift(frameDefaults(frame))) * 100) / 100;
+  if (frame === "race") return MODEL_DEFAULTS.wave;
+  const total = MODEL_DEFAULTS.wave + compositionalShift(DEFAULT_SLIDERS);
+  return total - compositionalShift(frameDefaults(frame));
 }
 
 function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscount: number; frame: DemoFrame } {
@@ -117,7 +118,7 @@ export default function App() {
   }, [tab, environment, sliders, trendDiscount, frame, run]);
 
   const onSlider = (k: SliderKey, v: number) => setSliders((cur) => ({ ...cur, [k]: v }));
-  const onReset = () => { setEnvironment(DEFAULT_ENV); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
+  const onReset = () => { setEnvironment(MODEL_DEFAULTS.wave); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
 
   // Switching frames: the axis being left snaps back to its 2024 baseline (so
   // it contributes zero to demographic_shift) and the axis being entered
@@ -132,7 +133,7 @@ export default function App() {
     for (const k of leaving) out[k] = CATALIST_BASELINES[k];
     for (const k of entering) out[k] = defaults[k];
     const total = environment + compositionalShift(sliders);
-    setEnvironment(Math.round((total - compositionalShift(out)) * 100) / 100);
+    setEnvironment(total - compositionalShift(out));
     setSliders(out);
     setFrame(next);
   };

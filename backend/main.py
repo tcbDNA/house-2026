@@ -9,6 +9,8 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
+from config import DEFAULT_SETTINGS, Settings, settings_dict, settings_from
+from environment import default_scenario
 from model import (
     ALL_SLIDERS, CATALIST_BASELINES, NATIONAL_PRES_SHIFT, district_detail, load_bundle, project,
 )
@@ -29,21 +31,15 @@ BUNDLE = load_bundle()
 SENATE_BUNDLE = senate.load_bundle()
 COUNTY_BUNDLE = county.load_bundle()
 
-# Default scenario, from recent polls' race crosstabs
-# (`python3 data/crosstab_environment.py`, data in
+# Default scenario for the default settings, computed from recent polls' race
+# crosstabs (environment.default_scenario; data in
 # data/generic_ballot_crosstabs.csv). The race sliders start at each group's
-# poll-average margin so districts swing with their own demographics (+9.57
-# nationally); the uniform wave covers the rest so the national total is the
-# 2024 result plus the share-weighted group shifts, D+8.3. Keep in sync with
-# DEFAULT_ENV / DEFAULT_SLIDERS in the frontend (App.tsx, types.ts).
-DEFAULT_ENVIRONMENT = -1.25
-DEFAULT_SLIDERS = {
-    **CATALIST_BASELINES,
-    "white_nh": -6.3,
-    "black": 74.6,
-    "hispanic": 29.4,
-    "asian": 41.8,
-}
+# poll-average margin so districts swing with their own demographics; the
+# uniform wave holds the 2024 level plus the "other" race group's shift. The
+# frontend fetches the same numbers from /api/defaults.
+DEFAULT_SCENARIO = default_scenario(DEFAULT_SETTINGS)
+DEFAULT_ENVIRONMENT = DEFAULT_SCENARIO["wave"]
+DEFAULT_SLIDERS = DEFAULT_SCENARIO["sliders"]
 
 
 class SliderValues(BaseModel):
@@ -68,6 +64,37 @@ class ProjectRequest(BaseModel):
     # persistence, 0.5 = partial mean-reversion (default), 0.0 = ignore trend,
     # negative = the 2020→2024 shift partially reverses.
     trend_discount: float = Field(0.5, ge=-1.0, le=1.0)
+    # Overrides for config.Settings fields (model-v4 flags and parameters).
+    settings: dict = Field(default_factory=dict)
+
+
+class DefaultsRequest(BaseModel):
+    settings: dict = Field(default_factory=dict)
+
+
+def _settings(overrides: dict) -> Settings:
+    try:
+        return settings_from(overrides)
+    except (ValueError, TypeError) as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+def _defaults_payload(s: Settings) -> dict:
+    d = default_scenario(s)
+    return {**d, "settings": settings_dict(s)}
+
+
+@app.get("/api/defaults")
+def defaults_get():
+    """Default scenario (uniform wave, slider positions, national electorate
+    shares) for the default settings."""
+    return _defaults_payload(DEFAULT_SETTINGS)
+
+
+@app.post("/api/defaults")
+def defaults_post(req: DefaultsRequest):
+    """Default scenario for the given settings overrides."""
+    return _defaults_payload(_settings(req.settings))
 
 
 @app.get("/api/health")
@@ -100,7 +127,7 @@ def project_endpoint(req: ProjectRequest):
         sliders[k] = max(-100, min(100, sliders[k]))
     return add_win_probabilities(
         project(BUNDLE, environment=req.environment, sliders=sliders,
-                trend_discount=req.trend_discount)
+                trend_discount=req.trend_discount, settings=_settings(req.settings))
     )
 
 
@@ -143,7 +170,8 @@ def senate_project(req: ProjectRequest):
               "under_30", "age_30_44", "age_45_64", "age_65_plus"):
         sliders[k] = max(-100, min(100, sliders[k]))
     return _wrap_senate(senate.project(SENATE_BUNDLE, environment=req.environment,
-                                       sliders=sliders, trend_discount=req.trend_discount))
+                                       sliders=sliders, trend_discount=req.trend_discount,
+                                       settings=_settings(req.settings)))
 
 
 @app.get("/api/senate/state/{state}")
@@ -201,6 +229,7 @@ def state_counties(state: str, req: ProjectRequest):
         environment=req.environment,
         sliders=sliders,
         trend_discount=req.trend_discount,
+        settings=_settings(req.settings),
     )
     seat = next((s for s in senate_result["seats"] if s["state"] == state.upper()), None)
     if seat is not None:
@@ -235,6 +264,7 @@ def state_counties(state: str, req: ProjectRequest):
         trend_discount=req.trend_discount,
         state_filter=state.upper(),
         senate_adjustment=senate_adjustment,
+        settings=_settings(req.settings),
     )
     if not result["counties"]:
         # Some states aren't covered by the underlying county pres dataset
@@ -273,7 +303,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     # adjustment that gets added uniformly to every slice. (Demo shift and
     # uniform swing flow in via the per-slice math below.)
     district_proj = project(BUNDLE, environment=req.environment, sliders=sliders,
-                            trend_discount=req.trend_discount)
+                            trend_discount=req.trend_discount, settings=_settings(req.settings))
     drow = next((d for d in district_proj["districts"] if d["district"] == did), None)
     if drow is None:
         raise HTTPException(status_code=404, detail=f"district {did} not found in projection")
@@ -383,7 +413,7 @@ def district_counties(district_id: str, req: ProjectRequest):
 
     # Get the district's current scenario projection so we can reconcile.
     district_proj = project(BUNDLE, environment=req.environment, sliders=sliders,
-                            trend_discount=req.trend_discount)
+                            trend_discount=req.trend_discount, settings=_settings(req.settings))
     drow = next((d for d in district_proj["districts"] if d["district"] == district_id.upper()), None)
     if drow is None:
         raise HTTPException(status_code=404, detail=f"district {district_id} not found in projection")
@@ -400,6 +430,7 @@ def district_counties(district_id: str, req: ProjectRequest):
         trend_discount=req.trend_discount,
         state_filter=state,
         senate_adjustment=0.0,
+        settings=_settings(req.settings),
     )
     by_fips = {c["fips"]: c for c in county_proj["counties"]}
 

@@ -2,15 +2,18 @@
 
 Usage (from backend/):
   python3 analysis/compare.py --label baseline [--note "diagnostics text"]
+      [--set key=value ...]   # config.Settings overrides
+      [--dry-run]             # print only; don't append to the table
 
 Appends one row to analysis/comparison.csv and writes the full House/Senate
-output to analysis/runs/<label>.json. Every run uses the model's default
-scenario (DEFAULT_ENVIRONMENT, DEFAULT_SLIDERS, trend 0.5) and the fixed
-Monte Carlo seed, so rows are directly comparable.
+output to analysis/runs/<label>.json. Every run uses the default scenario for
+its settings (environment.default_scenario: wave + poll-average sliders,
+trend 0.5) and the fixed Monte Carlo seed, so rows are directly comparable.
 """
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
 import json
 import sys
@@ -21,8 +24,10 @@ import numpy as np
 BACKEND = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BACKEND))
 
-import main  # noqa: E402  (loads bundles + defaults exactly as the API does)
+import main  # noqa: E402  (loads bundles exactly as the API does)
 import model  # noqa: E402
+from config import DEFAULT_SETTINGS, Settings, settings_from  # noqa: E402
+from environment import default_scenario  # noqa: E402
 import senate_model  # noqa: E402
 from probability import add_senate_win_probabilities, add_win_probabilities  # noqa: E402
 
@@ -32,12 +37,14 @@ FIELDS = ["label", "national_margin", "house_d_seats", "house_median", "house_p1
           "house_p_d_majority", "senate_d_seats", "senate_median", "senate_p_d_control", "diagnostics"]
 
 
-def run(env: float | None = None, sliders: dict | None = None, trend_discount: float = 0.5) -> dict:
-    env = main.DEFAULT_ENVIRONMENT if env is None else env
-    sliders = main.DEFAULT_SLIDERS if sliders is None else sliders
+def run(settings: Settings = DEFAULT_SETTINGS, env: float | None = None,
+        sliders: dict | None = None, trend_discount: float = 0.5) -> dict:
+    defaults = default_scenario(settings)
+    env = defaults["wave"] if env is None else env
+    sliders = defaults["sliders"] if sliders is None else sliders
     B = main.BUNDLE
-    house = add_win_probabilities(model.project(B, env, sliders, trend_discount))
-    s = senate_model.project(main.SENATE_BUNDLE, env, sliders, trend_discount)
+    house = add_win_probabilities(model.project(B, env, sliders, trend_discount, settings))
+    s = senate_model.project(main.SENATE_BUNDLE, env, sliders, trend_discount, settings)
     senate = add_senate_win_probabilities(s, s["summary"]["not_up_d"], s["summary"]["not_up_r"])
     # National margin: 2024-turnout-weighted mean of every district's projection
     # before the CA lockout override.
@@ -63,10 +70,19 @@ def main_cli():
     ap = argparse.ArgumentParser()
     ap.add_argument("--label", required=True)
     ap.add_argument("--note", default="")
+    ap.add_argument("--set", action="append", default=[], metavar="KEY=VALUE")
+    ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    r = run()
+    overrides = {}
+    for kv in args.set:
+        k, v = kv.split("=", 1)
+        overrides[k] = ast.literal_eval(v)
+    r = run(settings_from(overrides))
     row = {"label": args.label, **metrics(r), "diagnostics": args.note}
+    if args.dry_run:
+        print(json.dumps(row, indent=1))
+        return
     (OUT_DIR / "runs").mkdir(exist_ok=True)
     (OUT_DIR / "runs" / f"{args.label}.json").write_text(json.dumps(
         {"metrics": row, "house": r["house"], "senate": r["senate"]}))

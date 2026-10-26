@@ -14,11 +14,11 @@ export type SliderKey =
 
 export type SliderValues = Record<SliderKey, number>;
 
-// Electorate composition uses Catalist 2022 shares (midterm-electorate proxy
-// for 2026); group margins below use Catalist 2024 values (the most recent
-// signal on how each group is voting). This mix matches the user's modeling
-// choice: who shows up in a midterm comes from 2022, how they vote comes from
-// 2024.
+// National electorate shares. The values below are Catalist's 2022 shares
+// (the fallback if the backend can't be reached); at startup
+// applyModelDefaults() replaces them with the model's national shares for the
+// active settings (config.white_share target), so the panel's totals match
+// the backend exactly. Group margins below use Catalist 2024 values.
 // Source: Catalist "What Happened 2024" national crosstabs Excel
 // (https://catalist.us/whathappened2024/).
 export const CATALIST_ELECTORATE_SHARES_RACE: Record<
@@ -146,9 +146,9 @@ export const SLIDER_DEFS: { key: SliderKey; label: string; min: number; max: num
 ];
 
 // Default slider positions: the race groups start at the average of recent
-// polls' crosstabs (backend/data/crosstab_environment.py), so districts swing
-// with their own demographics; everything else starts at its Catalist 2024
-// baseline. Keep in sync with DEFAULT_SLIDERS in backend/main.py.
+// polls' crosstabs, so districts swing with their own demographics;
+// everything else starts at its Catalist 2024 baseline. Fallback values only —
+// applyModelDefaults() overwrites them with /api/defaults at startup.
 export const DEFAULT_SLIDERS: SliderValues = {
   ...CATALIST_BASELINES,
   white_nh: -6.3,
@@ -160,12 +160,28 @@ export const DEFAULT_SLIDERS: SliderValues = {
 // Starting positions for the race × education cells when that frame is
 // selected: white cells are poll averages (NYT/Siena, CBS/YouGov, Pew);
 // non-white cells (one poll) are 2024 + the non-white shift from the race data.
+// Fallback values; overwritten by applyModelDefaults().
 export const EDU_FRAME_DEFAULTS: Pick<SliderValues,
   "white_college" | "white_non_college" | "nonwhite_college" | "nonwhite_non_college"> = {
   white_college:         16.6,
   white_non_college:    -22.4,
   nonwhite_college:      49.5,
   nonwhite_non_college:  44.6,
+};
+
+// Default uniform wave: the 2024 level plus the "other" race group's shift.
+// Fallback value; overwritten by applyModelDefaults().
+export const MODEL_DEFAULTS = { wave: -1.25 };
+
+// Response of /api/defaults (backend environment.default_scenario).
+export type ModelDefaults = {
+  wave: number;
+  sliders: SliderValues;
+  edu_frame_sliders: typeof EDU_FRAME_DEFAULTS;
+  national_shares: Record<string, number>;
+  environment: number;
+  total: number;
+  settings: Record<string, unknown>;
 };
 
 export type Axis = "race" | "edu" | "age";
@@ -179,6 +195,19 @@ const ELECTORATE_SHARE: Record<SliderKey, number> = {
   ...CATALIST_ELECTORATE_SHARES_EDU,
   ...CATALIST_ELECTORATE_SHARES_AGE,
 };
+
+// Install the backend's defaults (call before the first render).
+export function applyModelDefaults(d: ModelDefaults): void {
+  MODEL_DEFAULTS.wave = d.wave;
+  Object.assign(DEFAULT_SLIDERS, d.sliders);
+  Object.assign(EDU_FRAME_DEFAULTS, d.edu_frame_sliders);
+  for (const shares of [CATALIST_ELECTORATE_SHARES_RACE, CATALIST_ELECTORATE_SHARES_EDU,
+                        CATALIST_ELECTORATE_SHARES_AGE] as Record<string, number>[]) {
+    for (const k of Object.keys(shares)) shares[k] = d.national_shares[k];
+  }
+  Object.assign(ELECTORATE_SHARE, CATALIST_ELECTORATE_SHARES_RACE,
+                CATALIST_ELECTORATE_SHARES_EDU, CATALIST_ELECTORATE_SHARES_AGE);
+}
 
 // National shift implied by one axis's sliders: Σ electorate share × Δ from 2024.
 export function axisShift(s: SliderValues, axis: Axis): number {

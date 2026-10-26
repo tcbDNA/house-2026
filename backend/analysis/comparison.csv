@@ -1,3 +1,4 @@
 label,national_margin,house_d_seats,house_median,house_p10,house_p90,house_p_d_majority,senate_d_seats,senate_median,senate_p_d_control,diagnostics
 baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default scenario
 0-reconcile,8.32,235,236,223,253,0.97,51,51,0.634,"AL/LA unresolved flags cleared; Moore/Letlow House WAR already in Senate blend via co-nominee path (AL +0.34 D, LA -2.77); no numeric change. Graham: no WAR records, no fallback matches. Error structure already region/state/race + open/new-lines extras (footer fix in item 9)."
+1-white-share-0.74,8.39,235,237,223,254,0.972,51,51,0.639,"white share 0.74 (flag on): wave R+1.19 (2024 -1.50 + other +0.31), race sliders +9.58, total D+8.39; race x edu frame wave R+1.72. Variants: 0.76 -> D+8.32 (House med 236, P 0.969); 0.72 -> D+8.47 (med 237, P 0.975, Senate P 0.643); flag off -> exact baseline. Non-white turnout scalar: one per axis (race, race x edu); age factors unchanged."

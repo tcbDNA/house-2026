@@ -27,6 +27,8 @@ from pathlib import Path
 
 import numpy as np
 
+from config import DEFAULT_SETTINGS, Settings
+
 DATA_DIR = Path(__file__).resolve().parent / "data"
 DATA_PATH = DATA_DIR / "districts.json"
 SLICES_PATH = DATA_DIR / "district_county_slices.json"
@@ -143,16 +145,21 @@ def _rescale(pop: dict[str, np.ndarray], factors: dict[str, float]) -> dict[str,
 
 
 @lru_cache(maxsize=1)
-def electorate_factors() -> dict[str, float]:
+def _district_pop_and_weights() -> tuple[dict[str, np.ndarray], np.ndarray]:
+    rows = json.loads(DATA_PATH.read_text())["districts"]
+    w = district_turnout(rows)
+    return _population_shares(rows), w / w.sum()
+
+
+@lru_cache(maxsize=1)
+def _catalist_factors() -> dict[str, float]:
     """Per-group turnout factors (iterative proportional fitting over House
     districts) such that the 2024-turnout-weighted national average of each
-    rescaled share equals Catalist's electorate share. ACS shares are of total
-    population (race, incl. children / non-citizens) or adults (age, edu), so
-    without this e.g. Hispanic voters would be weighted at ~18% instead of ~8%."""
-    rows = json.loads(DATA_PATH.read_text())["districts"]
-    pop = _population_shares(rows)
-    w = district_turnout(rows)
-    w = w / w.sum()
+    rescaled share equals Catalist's 2022 electorate share. ACS shares are of
+    total population (race, incl. children / non-citizens) or adults (age,
+    edu), so without this e.g. Hispanic voters would be weighted at ~18%
+    instead of ~8%."""
+    pop, w = _district_pop_and_weights()
     target = {}
     for groups in AXIS_GROUPS.values():
         axis_total = sum(CATALIST_ELECTORATE_SHARES[g] for g in groups)
@@ -165,21 +172,90 @@ def electorate_factors() -> dict[str, float]:
     return factors
 
 
-def electorate_shares(rows: list[dict]) -> dict[str, np.ndarray]:
-    """Slider key -> per-row share of the electorate (0..1). Works for any
-    geography (districts, states, counties) carrying the ACS pct_* fields."""
-    shares = _rescale(_population_shares(rows), electorate_factors())
-    return {k: shares[k] for k in ALL_SLIDERS}
+WHITE_GROUPS = {"race": ("white_nh",), "edu": ("white_college", "white_non_college")}
 
 
-def axis_weights(deltas: dict[str, float]) -> dict[str, float]:
+def _solve_nonwhite_scalar(pop, w, factors, axis: str, white_share: float) -> float:
+    """Common multiplier λ on every non-white factor of `axis` such that the
+    turnout-weighted national white share equals `white_share`. Within a
+    district the non-white groups keep their ratios to each other; the white
+    share falls monotonically as λ rises, so bisect on log λ."""
+    white = WHITE_GROUPS[axis]
+    groups = AXIS_GROUPS[axis]
+
+    def national_white(lam: float) -> float:
+        f = {g: factors[g] * (1.0 if g in white else lam) for g in groups}
+        scaled = {g: pop[g] * f[g] for g in groups}
+        total = sum(scaled.values())
+        total = np.where(total > 0, total, 1.0)
+        return float(sum(scaled[g] for g in white) / total @ w)
+
+    lo, hi = -7.0, 7.0   # log λ
+    for _ in range(100):
+        mid = (lo + hi) / 2
+        if national_white(np.exp(mid)) > white_share:
+            lo = mid
+        else:
+            hi = mid
+    return float(np.exp((lo + hi) / 2))
+
+
+@lru_cache(maxsize=16)
+def electorate_factors(white_share: float | None = None) -> dict[str, float]:
+    """Turnout factors per group. `white_share=None` gives the Catalist-2022
+    fit; otherwise every non-white factor in the race and race×education axes
+    is multiplied by a common scalar (one per axis) so the national white
+    share hits `white_share`. Age factors are never changed."""
+    factors = dict(_catalist_factors())
+    if white_share is None:
+        return factors
+    pop, w = _district_pop_and_weights()
+    for axis in ("race", "edu"):
+        lam = _solve_nonwhite_scalar(pop, w, factors, axis, white_share)
+        for g in AXIS_GROUPS[axis]:
+            if g not in WHITE_GROUPS[axis]:
+                factors[g] *= lam
+    return factors
+
+
+def white_target(settings: Settings) -> float | None:
+    return settings.white_share if settings.white_share_enabled else None
+
+
+def electorate_shares(pop: dict[str, np.ndarray], settings: Settings = DEFAULT_SETTINGS,
+                      ) -> dict[str, np.ndarray]:
+    """Group -> per-row share of the electorate (0..1), including "other".
+    `pop` comes from population_shares() for any geography (districts,
+    states, counties) carrying the ACS pct_* fields."""
+    return _rescale(pop, electorate_factors(white_target(settings)))
+
+
+def population_shares(rows: list[dict]) -> dict[str, np.ndarray]:
+    return _population_shares(rows)
+
+
+@lru_cache(maxsize=16)
+def _national_shares(white_share: float | None) -> tuple[tuple[str, float], ...]:
+    pop, w = _district_pop_and_weights()
+    shares = _rescale(pop, electorate_factors(white_share))
+    return tuple((g, float(shares[g] @ w)) for g in GROUP_TO_PCT)
+
+
+def national_shares(settings: Settings = DEFAULT_SETTINGS) -> dict[str, float]:
+    """2024-turnout-weighted national electorate share of every group. The
+    model's national demographic shift is exactly Σ_g share_g × Δ_g with
+    these, so the slider panel and the crosstab estimate use them too."""
+    return dict(_national_shares(white_target(settings)))
+
+
+def axis_weights(deltas: dict[str, float], shares: dict[str, float]) -> dict[str, float]:
     """Weight on each demographic axis. Race, race×education and age are
     alternative descriptions of the same voters, so when more than one is
     moved their shifts are averaged rather than stacked — weighted by how far
     each axis was moved (electorate-share-weighted |Δ|). A lone moved axis
     gets full weight, two equally-moved axes get 0.5 each, and nudging a
     second axis slightly only takes a sliver of weight (no step change)."""
-    mag = {axis: sum(CATALIST_ELECTORATE_SHARES[k] * abs(deltas[k]) for k in keys)
+    mag = {axis: sum(shares[k] * abs(deltas[k]) for k in keys)
            for axis, keys in AXIS_SLIDERS.items()}
     total = sum(mag.values())
     if total <= EPSILON:
@@ -187,10 +263,11 @@ def axis_weights(deltas: dict[str, float]) -> dict[str, float]:
     return {axis: m / total for axis, m in mag.items()}
 
 
-def demographic_shift(pct: dict[str, np.ndarray], sliders: dict[str, float]):
+def demographic_shift(pct: dict[str, np.ndarray], sliders: dict[str, float],
+                      settings: Settings = DEFAULT_SETTINGS):
     """Returns ({axis: weighted per-row shift}, {axis: weight})."""
     deltas = {k: sliders[k] - CATALIST_BASELINES[k] for k in ALL_SLIDERS}
-    weights = axis_weights(deltas)
+    weights = axis_weights(deltas, national_shares(settings))
     shifts = {axis: weights[axis] * sum(pct[k] * deltas[k] for k in keys)
               for axis, keys in AXIS_SLIDERS.items()}
     return shifts, weights
@@ -203,7 +280,7 @@ class DataBundle:
     # `base_margin` excludes trend so it can be discounted at project time.
     base_margin: np.ndarray         # margin_2024 + war_adj_discounted + incumbency_adj + challenger_adj
     rel_trend: np.ndarray           # district trend vs. the nation; full-weight at trend_discount=1.0
-    pct: dict[str, np.ndarray]      # slider key -> per-district electorate share (0..1)
+    pop: dict[str, np.ndarray]      # group -> per-district ACS population share (0..1)
     turnout_w: np.ndarray           # 2024 votes, normalized to sum to 1
 
     @property
@@ -229,7 +306,7 @@ def load_bundle(path: Path = DATA_PATH) -> DataBundle:
 
     turnout = district_turnout(rows)
     return DataBundle(districts=rows, base_margin=base_margin, rel_trend=rel_trend,
-                      pct=electorate_shares(rows), turnout_w=turnout / turnout.sum())
+                      pop=population_shares(rows), turnout_w=turnout / turnout.sum())
 
 
 def project(
@@ -237,6 +314,7 @@ def project(
     environment: float = 5.0,
     sliders: dict[str, float] | None = None,
     trend_discount: float = 0.5,
+    settings: Settings = DEFAULT_SETTINGS,
 ) -> dict:
     """Run a scenario.
 
@@ -256,7 +334,7 @@ def project(
     for k in ALL_SLIDERS:
         sliders.setdefault(k, CATALIST_BASELINES[k])
 
-    shifts, weights = demographic_shift(bundle.pct, sliders)
+    shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
     demo_shift = sum(shifts.values())
     rel_trend_applied = bundle.rel_trend * trend_discount
     structural = bundle.base_margin + rel_trend_applied

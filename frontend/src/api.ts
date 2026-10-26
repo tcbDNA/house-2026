@@ -1,4 +1,16 @@
-import type { AxisWeights, ProjectResponse, SenateResponse, SliderValues } from "./types";
+import type { AxisWeights, ModelDefaults, ProjectResponse, SenateResponse, SliderValues } from "./types";
+
+// Default scenario (uniform wave, slider positions, national electorate
+// shares) for the given settings overrides.
+export async function fetchDefaults(settings: Record<string, unknown> = {}): Promise<ModelDefaults> {
+  const res = await fetch("/api/defaults", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ settings }),
+  });
+  if (!res.ok) throw new Error(`defaults failed: ${res.status}`);
+  return res.json();
+}
 
 export async function fetchProjection(
   environment: number,

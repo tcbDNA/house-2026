@@ -13,8 +13,10 @@ from pathlib import Path
 
 import numpy as np
 
+from config import DEFAULT_SETTINGS, Settings
 from model import (
     ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demographic_shift, electorate_shares,
+    population_shares,
 )
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "counties.json"
@@ -32,7 +34,7 @@ class CountyBundle:
     counties: list[dict]
     base_margin: np.ndarray
     rel_trend: np.ndarray
-    pct: dict[str, np.ndarray]
+    pop: dict[str, np.ndarray]
 
     @property
     def n(self) -> int:
@@ -47,7 +49,7 @@ def load_bundle(path: Path = DATA_PATH) -> CountyBundle:
     # No WAR / incumbency / challenger at county level.
     base_margin = margin_2024
     return CountyBundle(counties=rows, base_margin=base_margin, rel_trend=rel_trend,
-                        pct=electorate_shares(rows))
+                        pop=population_shares(rows))
 
 
 def project(
@@ -57,6 +59,7 @@ def project(
     trend_discount: float = 1.0,
     state_filter: str | None = None,
     senate_adjustment: float = 0.0,
+    settings: Settings = DEFAULT_SETTINGS,
 ) -> dict:
     """`senate_adjustment` is a uniform D-R shift applied to every county in
     the state, capturing the Senate-race-specific terms (challenger WAR,
@@ -68,7 +71,7 @@ def project(
         sliders.setdefault(k, CATALIST_BASELINES[k])
 
     uniform_swing = environment - PRES_2024_POPVOTE
-    shifts, weights = demographic_shift(bundle.pct, sliders)
+    shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
     demo_shift = sum(shifts.values())
 
     rel_trend_applied = bundle.rel_trend * trend_discount

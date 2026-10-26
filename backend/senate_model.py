@@ -24,8 +24,10 @@ from pathlib import Path
 
 import numpy as np
 
+from config import DEFAULT_SETTINGS, Settings
 from model import (
     ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demographic_shift, electorate_shares,
+    population_shares,
 )
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "senate_states.json"
@@ -40,7 +42,7 @@ class SenateBundle:
     # base_margin excludes state_trend so it can be discounted at project time.
     base_margin: np.ndarray       # pres_2024 + war + inc + challenger
     state_trend: np.ndarray       # state-vs-national trend; full-weight at trend_discount=1.0
-    pct: dict[str, np.ndarray]    # slider key -> per-seat demographic share
+    pop: dict[str, np.ndarray]    # group -> per-seat ACS population share
 
     @property
     def n(self) -> int:
@@ -61,7 +63,7 @@ def load_bundle(path: Path = DATA_PATH) -> SenateBundle:
     base_margin = pres_2024 + war + inc + challenger
 
     return SenateBundle(states=all_states, seats=seats, base_margin=base_margin,
-                        state_trend=trend, pct=electorate_shares(seats))
+                        state_trend=trend, pop=population_shares(seats))
 
 
 def project(
@@ -69,6 +71,7 @@ def project(
     environment: float = 5.0,
     sliders: dict[str, float] | None = None,
     trend_discount: float = 0.5,
+    settings: Settings = DEFAULT_SETTINGS,
 ) -> dict:
     """`trend_discount` multiplies ``state_trend`` before adding it in.
     0.5 = partial mean-reversion (default, matches district rel_trend),
@@ -81,7 +84,7 @@ def project(
 
     uniform_swing = environment - PRES_2024_POPVOTE
 
-    shifts, weights = demographic_shift(bundle.pct, sliders)
+    shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
     demo_shift = sum(shifts.values())
     state_trend_applied = bundle.state_trend * trend_discount
     projections = bundle.base_margin + state_trend_applied + uniform_swing + demo_shift
