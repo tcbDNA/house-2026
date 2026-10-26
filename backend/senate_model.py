@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import csv
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
@@ -28,7 +28,7 @@ import numpy as np
 from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
 import trend as trend_mod
 from model import (
-    ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, carried_trend, demographic_shift,
+    ALL_SLIDERS, AXIS_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, carried_trend, demographic_shift,
     electorate_shares, population_shares,
 )
 
@@ -52,6 +52,9 @@ class SenateBundle:
     all_battleground: np.ndarray
     all_pop: dict[str, np.ndarray]
     all_votes_w: np.ndarray       # official 2024 votes, normalized to sum to 1
+    # Polling-average margin (anti-R candidate − R) where the race uses a
+    # documented polling override; NaN elsewhere.
+    poll_margin: np.ndarray = field(default_factory=lambda: np.zeros(0))
 
     @property
     def n(self) -> int:
@@ -79,7 +82,9 @@ def load_bundle(path: Path = DATA_PATH) -> SenateBundle:
                         pop=population_shares(seats),
                         all_trend=np.array([s.get("state_trend") or 0.0 for s in all_states], dtype=float),
                         all_battleground=trend_mod.battleground([s["state"] for s in all_states]),
-                        all_pop=population_shares(all_states), all_votes_w=votes / votes.sum())
+                        all_pop=population_shares(all_states), all_votes_w=votes / votes.sum(),
+                        poll_margin=np.array([(s.get("poll_override") or {}).get("margin", np.nan)
+                                              for s in seats], dtype=float))
 
 
 def project(
@@ -94,26 +99,23 @@ def project(
     0.5 = partial mean-reversion (default, matches district rel_trend),
     1.0 = full trend persistence, 0.0 = trends ignored entirely, negative =
     the 2020→2024 shift partially reverses.
+
+    Races with a documented polling override (senate_poll_overrides.csv)
+    start from the polling average instead of the model baseline: their
+    projection is the poll margin plus how far the scenario has moved the
+    model's projection from the default scenario for these settings.
     """
     sliders = dict(sliders or {})
     for k in ALL_SLIDERS:
         sliders.setdefault(k, CATALIST_BASELINES[k])
-
-    uniform_swing = environment - PRES_2024_POPVOTE
-
-    shares = electorate_shares(bundle.pop, settings)
-    shifts, weights = demographic_shift(shares, sliders, settings)
-    demo_shift = sum(shifts.values())
-    # Residualized like the House trend: same district-fitted coefficients,
-    # applied to the state's own shares and battleground status (trend.py).
-    state_trend_carried = carried_trend(bundle.state_trend, shares, bundle.battleground, settings, frame)
-    if settings.trend_center_states and (settings.trend_remove_demographic
-                                         or settings.trend_remove_battleground):
-        national = carried_trend(bundle.all_trend, electorate_shares(bundle.all_pop, settings),
-                                 bundle.all_battleground, settings, frame) @ bundle.all_votes_w
-        state_trend_carried = state_trend_carried - national
-    state_trend_applied = state_trend_carried * trend_discount
-    projections = bundle.base_margin + state_trend_applied + uniform_swing + demo_shift
+    projections, shifts, weights, demo_shift, state_trend_applied, uniform_swing = _projections(
+        bundle, environment, sliders, trend_discount, settings, frame)
+    model_projections = projections.copy()
+    if np.isfinite(bundle.poll_margin).any():
+        projections = np.where(np.isfinite(bundle.poll_margin),
+                               bundle.poll_margin + projections
+                               - _default_projections(bundle, settings, frame),
+                               projections)
 
     # Senate seat totals require the un-contested 65 seats not up in 2026.
     # Compute D pickups / R pickups based on partisan flip of seats up.
@@ -170,6 +172,8 @@ def project(
             "age_shift": round(float(shifts["age"][i]), 2),
             "is_tossup": abs(proj) <= TOSSUP_THRESHOLD,
             "flip": "to_D" if flipped_to_d else ("to_R" if flipped_to_r else None),
+            "poll_override": s.get("poll_override"),
+            "model_projection": round(float(model_projections[i]), 2),
         })
 
     # Pre-2026 Senate composition: 53R / 47D (post-2024-election, pre-2026).
@@ -202,6 +206,40 @@ def project(
         },
         "seats": out_seats,
     }
+
+
+def _projections(bundle: SenateBundle, environment: float, sliders: dict, trend_discount: float,
+                 settings: Settings, frame: str):
+    uniform_swing = environment - PRES_2024_POPVOTE
+    shares = electorate_shares(bundle.pop, settings)
+    shifts, weights = demographic_shift(shares, sliders, settings)
+    demo_shift = sum(shifts.values())
+    # Residualized like the House trend: same district-fitted coefficients,
+    # applied to the state's own shares and battleground status (trend.py).
+    state_trend_carried = carried_trend(bundle.state_trend, shares, bundle.battleground, settings, frame)
+    if settings.trend_center_states and (settings.trend_remove_demographic
+                                         or settings.trend_remove_battleground):
+        national = carried_trend(bundle.all_trend, electorate_shares(bundle.all_pop, settings),
+                                 bundle.all_battleground, settings, frame) @ bundle.all_votes_w
+        state_trend_carried = state_trend_carried - national
+    state_trend_applied = state_trend_carried * trend_discount
+    projections = bundle.base_margin + state_trend_applied + uniform_swing + demo_shift
+    return projections, shifts, weights, demo_shift, state_trend_applied, uniform_swing
+
+
+def _default_projections(bundle: SenateBundle, settings: Settings, frame: str) -> np.ndarray:
+    """Model projections in the default scenario for `settings` and `frame`
+    (the frame's default sliders; the wave that gives the same national total)."""
+    from environment import default_scenario
+    d = default_scenario(settings)
+    sliders = dict(CATALIST_BASELINES)
+    if frame == "race_edu":
+        sliders.update(d["edu_frame_sliders"])
+    else:
+        sliders.update({k: d["sliders"][k] for k in AXIS_SLIDERS["race"]})
+    ns = d["national_shares"]
+    env = d["total"] - sum(ns[k] * (sliders[k] - CATALIST_BASELINES[k]) for k in ALL_SLIDERS)
+    return _projections(bundle, env, sliders, DEFAULT_TREND_WEIGHT, settings, frame)[0]
 
 
 def state_detail(bundle: SenateBundle, state: str) -> dict | None:

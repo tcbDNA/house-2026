@@ -7,3 +7,6 @@ backend/data/sources/polls_2024/**/*.pdf filter=lfs diff=lfs merge=lfs -text
 backend/data/sources/split_ticket_war/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
 backend/data/sources/split_ticket_war/**/*.png filter=lfs diff=lfs merge=lfs -text
 backend/data/sources/split_ticket_war/**/*.html filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/mt_senate_2026/**/*.html filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/mt_senate_2026/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/mt_senate_2026/**/*.jpg filter=lfs diff=lfs merge=lfs -text

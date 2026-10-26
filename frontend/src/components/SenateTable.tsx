@@ -154,6 +154,11 @@ export function SenateTable({ seats, notUpD }: Props) {
                       <span className={partyColorClass(s.co_nominee_party)}>{s.co_nominee}</span>
                     </div>
                   )}
+                  {s.poll_override && (
+                    <div className="text-[10px] mt-0.5 text-amber-700 italic">
+                      {s.poll_override.race_note}
+                    </div>
+                  )}
                 </td>
                 <td className="px-2 py-1 text-right font-mono">
                   {s.presidential_margin_2024 !== null

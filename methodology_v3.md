@@ -121,6 +121,7 @@ Senate projections treat the state-level trend (state vs. national 2020→2024 s
 - 65 not-up seats are assumed to hold their current party.
 - Control: D needs **51**; a 50-50 split is **R control** via VP Vance's tiebreak (`p_r_control` counts it; `p_r_majority` is an outright 51+).
 - Independents (Osborn NE, Bengs SD) are counted with Democrats for majority purposes; neither is committed to caucusing with them.
+- **Montana** is a three-way race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with Alani Bankhead (D) polling a distant third, plus a Libertarian. The D-vs-R baseline can't represent it, so the race uses a documented polling override (`backend/data/senate_poll_overrides.csv`): the RealClearPolling average, Bodnar − Alme = −12.0 as of Oct 18 (Quantus Oct 15–18, Rutgers-Eagleton Aug 27–Sep 7), plus the change in the model's projection between the current scenario and the default one, so sliders and settings still move it. It gets the usual simulation errors. The model's own baseline would be R+12.3.
 - Primary-unresolved seats suppress incumbent WAR and incumbency until the runoff resolves.
 
 ## Win probabilities

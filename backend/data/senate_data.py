@@ -29,6 +29,9 @@ V20 = DATA_DIR.parent.parent / "national_sensitivity_v20.csv"
 DEMOS = DATA_DIR / "demographics.csv"
 RAW_WAR = DATA_DIR / "raw_war.csv"
 OUT = DATA_DIR / "senate_states.json"
+# Races modeled from a documented polling average instead of the model
+# baseline (e.g. three-way races the D-vs-R baseline can't represent).
+POLL_OVERRIDES = DATA_DIR / "senate_poll_overrides.csv"
 
 # Presidential national popular vote margins (D-R).
 # 2020 = Biden D+4.5, 2024 = Trump R+1.5.
@@ -82,7 +85,7 @@ SEATS_2026 = {
     "MI": {"incumbent": "(open, Peters retiring)", "party": "(D)", "retiring": True, "type": "regular"},
     "MN": {"incumbent": "(open, Smith retiring)", "party": "(D)", "retiring": True, "type": "regular"},
     "MS": {"incumbent": "Cindy Hyde-Smith", "party": "(R)", "retiring": False, "type": "regular"},
-    "MT": {"incumbent": "(open, Daines retiring)", "party": "(R)", "retiring": True, "type": "regular"},
+    "MT": {"incumbent": "(open, Daines withdrew in March)", "party": "(R)", "retiring": True, "type": "regular"},
     "NE": {"incumbent": "Pete Ricketts", "party": "(R)", "retiring": False, "type": "regular"},
     "NH": {"incumbent": "(open, Shaheen retiring)", "party": "(D)", "retiring": True, "type": "regular"},
     "NJ": {"incumbent": "Cory Booker", "party": "(D)", "retiring": False, "type": "regular"},
@@ -194,9 +197,12 @@ CHALLENGERS = {
                    "entered as Independent July 2026 after D nominee David Roth dropped out July 28 "
                    "under pressure from Ada County Dem Central Committee."},
     # === 2026-06-02 primaries (June 2 winners) ===
-    "MT": {"name": "Alani Bankhead", "party": "(D)", "war": 0.0,
+    "MT": {"name": "Seth Bodnar", "party": "(I)", "war": 0.0,
            "co_nominee": "Kurt Alme", "co_nominee_party": "(R)",
-           "note": "Open Daines seat. Bankhead: 2026 D nominee. Alme: Trump-endorsed former U.S. Attorney, R nominee."},
+           "note": "Open seat (Daines withdrew in March). Three-way race: Alme (R; Trump-endorsed former "
+                   "U.S. Attorney), Bodnar (I; former University of Montana president) and Bankhead (D, "
+                   "polling a distant third), plus a Libertarian. Modeled as Alme vs Bodnar from the "
+                   "polling average (senate_poll_overrides.csv), not the model baseline."},
     # === Summer/fall 2026 primaries (post-June) ===
     "MI": {"name": "Abdul El-Sayed", "party": "(D)", "war": 0.0,
            "co_nominee": "Mike Rogers", "co_nominee_party": "(R)",
@@ -499,8 +505,21 @@ def lookup_war_for_candidate(state, name, party_letter, all_wars):
     return war_signed, recs[0]
 
 
+def load_poll_overrides() -> dict[str, dict]:
+    """state -> {margin (challenger − opponent, the anti-R side positive), as_of,
+    method, n_polls, source_url, local_file, race_note}."""
+    if not POLL_OVERRIDES.exists():
+        return {}
+    with POLL_OVERRIDES.open() as f:
+        return {r["state"]: {"margin": float(r["margin"]), "as_of": r["as_of"], "method": r["method"],
+                             "n_polls": int(r["n_polls"]), "source_url": r["source_url"],
+                             "local_file": r["local_file"], "race_note": r["race_note"]}
+                for r in csv.DictReader(f)}
+
+
 def main():
     assert_no_duplicate_keys(Path(__file__))
+    poll_overrides = load_poll_overrides()
     margins = load_state_presidential_margins()
     demos = aggregate_state_demographics()
     all_wars = load_all_wars()
@@ -646,6 +665,7 @@ def main():
             "co_nominee_war_year": co_nominee_war_year,
             "co_nominee_war_source": co_nominee_war_source,
             "co_nominee_adj": round(co_nominee_adj, 2),
+            "poll_override": poll_overrides.get(state),
         }
 
     OUT.write_text(json.dumps({"states": states, "national": {

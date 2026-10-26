@@ -169,7 +169,12 @@ export function Methodology() {
         nominee is committed to caucusing with them. Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
-        WAR or incumbency until it is.
+        WAR or incumbency until it is. <b>Montana</b> is a three-way race (Daines
+        withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with Alani Bankhead
+        (D) polling a distant third, plus a Libertarian. The model's D-vs-R
+        baseline can't represent it, so this race uses the polling average instead
+        (RealClearPolling, Alme +12.0 as of Oct 18) plus however far the scenario
+        moves the model from its default, with the usual simulation errors.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

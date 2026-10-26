@@ -399,6 +399,14 @@ export type SenateSeat = {
   is_tossup: boolean;
   flip: "to_D" | "to_R" | null;
   p_d?: number;
+  // Races modeled from a documented polling average (e.g. MT's three-way
+  // race) instead of the model baseline; model_projection is what the
+  // baseline would have said.
+  poll_override?: {
+    margin: number; as_of: string; method: string; n_polls: number;
+    source_url: string; local_file: string; race_note: string;
+  } | null;
+  model_projection?: number;
 };
 
 export type SenateSummary = {
