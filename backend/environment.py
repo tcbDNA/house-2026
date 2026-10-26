@@ -262,6 +262,28 @@ def estimate(polls: dict[str, dict], settings: Settings = DEFAULT_SETTINGS,
             edu_shifts = {g: (edu_current[g] if g in WHITE_EDU and g not in edu_imputed else nw)
                           for g in EDU_GROUPS}
 
+    # Sampling error of each slider group's shift: the pooled matched SE where
+    # the group is matched, else the SE of its 2026 poll average (same
+    # weights as the average); non-white × education cells combine the
+    # non-white race groups' SEs by share.
+    def avg_se(g: str) -> float:
+        pts = [(_weight(p, g, settings, equal_weights), margin_se(p["margins"][g], p["group_n"][g]))
+               for p in polls.values() if g in p["margins"]]
+        return math.sqrt(sum((w * s) ** 2 for w, s in pts)) / sum(w for w, _ in pts) if pts else 0.0
+
+    race_r = {g for g in GROUPS if matched and _matchable(g, matched[g])}
+    edu_r = {g for g in WHITE_EDU if matched and _matchable(g, matched[g])}
+    group_se = {g: (matched[g]["se"] if g in race_r else avg_se(g)) for g in GROUPS}
+    nw_share = sum(shares[g] for g in NONWHITE)
+    nw_se = math.sqrt(sum((shares[g] / nw_share * group_se[g]) ** 2 for g in GROUPS if g in NONWHITE))
+    for g in EDU_GROUPS:
+        if g in edu_r:
+            group_se[g] = matched[g]["se"]
+        elif g in WHITE_EDU and g not in edu_imputed:
+            group_se[g] = avg_se(g)
+        else:
+            group_se[g] = nw_se
+
     contributions = {g: shares[g] * shifts[g] for g in GROUPS + ("other",)}
     shift = sum(contributions.values())
     baseline_composition = sum(shares[g] * base[g] for g in GROUPS + ("other",))
@@ -277,6 +299,7 @@ def estimate(polls: dict[str, dict], settings: Settings = DEFAULT_SETTINGS,
         "edu_sliders": {g: CATALIST_BASELINES[g] + edu_shifts[g] for g in EDU_GROUPS},
         "edu_imputed": edu_imputed,
         "matched": matched,
+        "group_se": group_se,
         "c": c,
         "c_edu": c_edu,
         "S": S,
@@ -308,4 +331,5 @@ def default_scenario(settings: Settings = DEFAULT_SETTINGS) -> dict:
         "slider_shift": slider_shift,
         "total": wave + slider_shift,
         "trend_discount": DEFAULT_TREND_WEIGHT,
+        "group_se": dict(est["group_se"]),
     }

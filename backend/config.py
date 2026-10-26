@@ -90,9 +90,32 @@ class Settings:
     # national level S.
     group_baseline: str = "catalist"
 
+    # Item 4 — error model (probability.py). Group errors: each simulation
+    # draws a deviation per slider group in the active frame, demeaned with
+    # national shares (so the national total is unchanged), and loads it on
+    # every district and state by its electorate share — heavily Hispanic
+    # seats miss together across states. σ_g = sqrt(SE_g² + τ_g²): SE_g is
+    # the sampling error of the group's shift (environment.estimate); τ_g is
+    # non-sampling error. The τ values are JUDGMENT CALLS, not estimates.
+    group_errors: bool = True
+    group_tau_white_nh: float = 1.0
+    group_tau_black: float = 3.0
+    group_tau_hispanic: float = 4.0
+    group_tau_asian: float = 5.0
+    group_tau_other: float = 3.0      # any other slider group (the race × education cells)
+    # Two national terms applied uniformly to every race, on top of the 2.5
+    # national polling error: composition (who turns out) and level
+    # measurement (crosstab sampling and the choice of 2024 baseline source).
+    national_extra_errors: bool = True
+    sigma_composition: float = 1.0
+    sigma_level: float = 1.0
+
     def __post_init__(self):
         if self.group_baseline not in GROUP_BASELINES:
             raise ValueError(f"group_baseline must be one of {GROUP_BASELINES}")
+
+    def group_tau(self, group: str) -> float:
+        return getattr(self, f"group_tau_{group}", self.group_tau_other)
 
     @property
     def effective_white_share(self) -> float:

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from functools import lru_cache
+
 from typing import Optional
 
 from pathlib import Path
@@ -16,7 +18,7 @@ from model import (
 )
 import senate_model as senate
 import county_model as county
-from probability import add_win_probabilities, add_senate_win_probabilities
+from probability import add_senate_win_probabilities, add_win_probabilities, error_terms
 
 app = FastAPI(title="House 2026 Scenario API")
 
@@ -74,6 +76,12 @@ class DefaultsRequest(BaseModel):
     settings: dict = Field(default_factory=dict)
 
 
+@lru_cache(maxsize=64)
+def _terms(kind: str, settings: Settings = DEFAULT_SETTINGS, frame: str = "race"):
+    """Item 4 error terms (group loadings and σs) for the House or Senate rows."""
+    return error_terms((BUNDLE if kind == "house" else SENATE_BUNDLE).pop, settings, frame)
+
+
 def _settings(overrides: dict) -> Settings:
     try:
         return settings_from(overrides)
@@ -116,7 +124,8 @@ def baselines():
 def districts_baseline():
     """Projection for the default scenario."""
     return add_win_probabilities(project(BUNDLE, environment=DEFAULT_ENVIRONMENT,
-                                         sliders=DEFAULT_SLIDERS, trend_discount=DEFAULT_TREND_WEIGHT))
+                                         sliders=DEFAULT_SLIDERS, trend_discount=DEFAULT_TREND_WEIGHT),
+                                 terms=_terms("house"))
 
 
 @app.post("/api/project")
@@ -127,10 +136,11 @@ def project_endpoint(req: ProjectRequest):
               "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
               "under_30", "age_30_44", "age_45_64", "age_65_plus"):
         sliders[k] = max(-100, min(100, sliders[k]))
+    settings = _settings(req.settings)
     return add_win_probabilities(
         project(BUNDLE, environment=req.environment, sliders=sliders,
-                trend_discount=req.trend_discount, settings=_settings(req.settings),
-                frame=req.frame)
+                trend_discount=req.trend_discount, settings=settings, frame=req.frame),
+        terms=_terms("house", settings, req.frame),
     )
 
 
@@ -150,12 +160,13 @@ def senate_health():
     return {"status": "ok", "n_seats_up": SENATE_BUNDLE.n}
 
 
-def _wrap_senate(result):
+def _wrap_senate(result, settings: Settings = DEFAULT_SETTINGS, frame: str = "race"):
     s = result.get("summary", {})
     return add_senate_win_probabilities(
         result,
         holdover_d=s.get("not_up_d", 0),
         holdover_r=s.get("not_up_r", 0),
+        terms=_terms("senate", settings, frame),
     )
 
 
@@ -172,9 +183,10 @@ def senate_project(req: ProjectRequest):
               "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
               "under_30", "age_30_44", "age_45_64", "age_65_plus"):
         sliders[k] = max(-100, min(100, sliders[k]))
+    settings = _settings(req.settings)
     return _wrap_senate(senate.project(SENATE_BUNDLE, environment=req.environment,
                                        sliders=sliders, trend_discount=req.trend_discount,
-                                       settings=_settings(req.settings), frame=req.frame))
+                                       settings=settings, frame=req.frame), settings, req.frame)
 
 
 @app.get("/api/senate/state/{state}")

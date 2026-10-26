@@ -43,9 +43,11 @@ def run(settings: Settings = DEFAULT_SETTINGS, env: float | None = None,
     env = defaults["wave"] if env is None else env
     sliders = defaults["sliders"] if sliders is None else sliders
     B = main.BUNDLE
-    house = add_win_probabilities(model.project(B, env, sliders, trend_discount, settings, frame))
+    house = add_win_probabilities(model.project(B, env, sliders, trend_discount, settings, frame),
+                                  terms=main._terms("house", settings, frame))
     s = senate_model.project(main.SENATE_BUNDLE, env, sliders, trend_discount, settings, frame)
-    senate = add_senate_win_probabilities(s, s["summary"]["not_up_d"], s["summary"]["not_up_r"])
+    senate = add_senate_win_probabilities(s, s["summary"]["not_up_d"], s["summary"]["not_up_r"],
+                                          terms=main._terms("senate", settings, frame))
     # National margin: 2024-turnout-weighted mean of every district's projection
     # before the CA lockout override (computed by the model).
     return {"house": house, "senate": senate, "national_margin": house["national_margin"]}

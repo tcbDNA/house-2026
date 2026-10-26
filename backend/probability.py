@@ -33,11 +33,30 @@ Each call uses a freshly seeded generator, so the same scenario always
 returns the same probabilities, and nearby scenarios share random draws
 (common random numbers) — moving a slider doesn't add Monte Carlo jitter.
 
+Item 4 adds, when the settings turn them on (ErrorTerms):
+
+  + Σ_g share_{g,i} × (dev_g − Σ_h w_h dev_h)   group errors, dev_g ~ N(0, σ_g²)
+  + composition_shock + level_shock             national, uniform to every race
+
+Group errors: one deviation per slider group in the active frame, demeaned
+with the groups' national shares w (renormalized), so heavily Hispanic
+seats miss together across states while the national total is unchanged;
+σ_g = sqrt(SE_g² + τ_g²) (sampling error of the group's shift + a judgment-
+call non-sampling term). Composition (who turns out) and level measurement
+(crosstab sampling, choice of 2024 baseline) are polling error around the
+scenario, on top of the 2.5 national term. The new draws come after the
+existing ones and are always made (scaled by 0 when off), so turning a term
+on or off leaves every other draw unchanged.
+
 Lockouts (|projection|=100) bypass all shocks — they're deterministic.
 """
 from __future__ import annotations
 
+from dataclasses import dataclass, field
+
 import numpy as np
+
+from config import DEFAULT_SETTINGS, Settings
 
 SIGMA_NATIONAL = 2.5   # shared across every race (polling / late-swing)
 SIGMA_REGION   = 1.2   # census region (Northeast / Midwest / South / West)
@@ -64,6 +83,82 @@ STATE_TO_REGION = {
     "AK": "W", "AZ": "W", "CA": "W", "CO": "W", "HI": "W", "ID": "W",
     "MT": "W", "NV": "W", "NM": "W", "OR": "W", "UT": "W", "WA": "W", "WY": "W",
 }
+
+
+FRAME_AXIS = {"race": "race", "race_edu": "edu"}
+
+
+@dataclass
+class ErrorTerms:
+    """Item 4 error terms for one geography (rows in bundle order)."""
+    groups: tuple[str, ...] = ()
+    sigma: np.ndarray = field(default_factory=lambda: np.zeros(0))       # (G,) σ_g (0 when off)
+    se: np.ndarray = field(default_factory=lambda: np.zeros(0))          # (G,) sampling part
+    tau: np.ndarray = field(default_factory=lambda: np.zeros(0))         # (G,) non-sampling part
+    nat_share: np.ndarray = field(default_factory=lambda: np.zeros(0))   # (G,) demeaning weights
+    loadings: np.ndarray | None = None                                   # (n_rows, G) electorate shares
+    sigma_composition: float = 0.0
+    sigma_level: float = 0.0
+
+    def describe(self) -> dict:
+        return {
+            "groups": {g: {"sigma": round(float(s), 2), "se": round(float(e), 2), "tau": round(float(t), 2)}
+                       for g, s, e, t in zip(self.groups, self.sigma, self.se, self.tau)},
+            "composition": self.sigma_composition,
+            "level": self.sigma_level,
+        }
+
+
+def error_terms(pop: dict[str, np.ndarray], settings: Settings = DEFAULT_SETTINGS,
+                frame: str = "race") -> ErrorTerms:
+    """Group-error loadings and σs for a geography with ACS population
+    shares `pop` (bundle.pop), plus the two national terms."""
+    from environment import default_scenario
+    from model import AXIS_SLIDERS, electorate_shares, national_shares
+
+    groups = AXIS_SLIDERS[FRAME_AXIS[frame]]
+    se = np.array([default_scenario(settings)["group_se"][g] for g in groups])
+    tau = np.array([settings.group_tau(g) for g in groups])
+    on = 1.0 if settings.group_errors else 0.0
+    shares = electorate_shares(pop, settings)
+    ns = national_shares(settings)
+    nat = np.array([ns[g] for g in groups])
+    extra = 1.0 if settings.national_extra_errors else 0.0
+    return ErrorTerms(groups=tuple(groups), sigma=on * np.sqrt(se ** 2 + tau ** 2), se=se, tau=tau,
+                      nat_share=nat / nat.sum(),
+                      loadings=np.column_stack([shares[g] for g in groups]),
+                      sigma_composition=extra * settings.sigma_composition,
+                      sigma_level=extra * settings.sigma_level)
+
+
+def _extra_shocks(rng, n_rows: int, terms: ErrorTerms | None) -> np.ndarray:
+    """(N_SIMS, n_rows) group + composition + level shocks. Draws are made
+    even when a σ is 0, so toggling a term keeps common random numbers."""
+    terms = terms or ErrorTerms()
+    G = len(terms.groups)
+    dev = rng.standard_normal((N_SIMS, G)) * terms.sigma[None, :]
+    comp = rng.standard_normal((N_SIMS, 1)) * terms.sigma_composition
+    level = rng.standard_normal((N_SIMS, 1)) * terms.sigma_level
+    out = np.broadcast_to(comp + level, (N_SIMS, n_rows)).copy()
+    if G:
+        if terms.loadings is None or terms.loadings.shape[0] != n_rows:
+            raise ValueError("group-error loadings don't match the result rows")
+        dev = dev - (dev @ terms.nat_share)[:, None]
+        out += dev @ terms.loadings.T
+    return out
+
+
+def error_model_summary(terms: ErrorTerms | None, senate: bool = False) -> dict:
+    """Every error term in the simulation, for display."""
+    t = (terms or ErrorTerms()).describe()
+    race = (f"{np.sqrt(SIGMA_STATE ** 2 + SIGMA_DISTRICT ** 2):.1f} (state {SIGMA_STATE} + race "
+            f"{SIGMA_DISTRICT} combined)") if senate else SIGMA_DISTRICT
+    out = {"national": SIGMA_NATIONAL, "composition": t["composition"], "level": t["level"],
+           "region": SIGMA_REGION, "state": 0.0 if senate else SIGMA_STATE, "race": race,
+           "open_seat_extra": SIGMA_OPEN_SEAT_EXTRA, "groups": t["groups"], "n_sims": N_SIMS}
+    if not senate:
+        out["new_lines_extra"] = SIGMA_NEW_LINES_EXTRA
+    return out
 
 
 def _race_sigma(base: float, open_seat: np.ndarray, new_lines: np.ndarray) -> np.ndarray:
@@ -99,13 +194,8 @@ def _draw_correlated_shocks(rng, rows, sigma_state, sigma_region, sigma_race):
     return state_draws[:, state_ix] + region_draws[:, region_ix] + dist_draws
 
 
-def add_win_probabilities(result: dict, majority_threshold: int = 218) -> dict:
-    """Mutate `result` in place, adding `p_d` to each district row and
-    `seat_distribution` to `result['summary']`. Returns the same dict."""
-    rows = result.get("districts") or result.get("seats") or []
-    if not rows:
-        return result
-
+def house_sims(rows: list[dict], terms: ErrorTerms | None = None) -> np.ndarray:
+    """(N_SIMS, n_rows) simulated House margins."""
     rng = np.random.default_rng(SEED)
     proj = np.array([r["projection"] for r in rows], dtype=float)
     lockout = np.abs(proj) >= 99.5
@@ -116,11 +206,24 @@ def add_win_probabilities(result: dict, majority_threshold: int = 218) -> dict:
     nat = rng.normal(0.0, SIGMA_NATIONAL, size=(N_SIMS, 1))
     corr = _draw_correlated_shocks(rng, rows, SIGMA_STATE, SIGMA_REGION,
                                    _race_sigma(SIGMA_DISTRICT, open_seat, new_lines))
+    corr += _extra_shocks(rng, len(rows), terms)
     corr[:, lockout] = 0.0
 
     sims = proj[None, :] + nat + corr
     sims[:, lockout] = proj[lockout]
+    return sims
 
+
+def add_win_probabilities(result: dict, majority_threshold: int = 218,
+                          terms: ErrorTerms | None = None) -> dict:
+    """Mutate `result` in place, adding `p_d` to each district row and
+    `seat_distribution` and `error_model` to `result['summary']`. Returns
+    the same dict."""
+    rows = result.get("districts") or result.get("seats") or []
+    if not rows:
+        return result
+
+    sims = house_sims(rows, terms)
     d_wins = sims > 0
     p_d = d_wins.mean(axis=0)
 
@@ -139,19 +242,12 @@ def add_win_probabilities(result: dict, majority_threshold: int = 218) -> dict:
             "p_d_majority": round(float((seats_d >= majority_threshold).mean()), 3),
             "p_r_majority": round(float((seats_d <= (435 - majority_threshold)).mean()), 3),
         }
+        summary["error_model"] = error_model_summary(terms)
     return result
 
 
-def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
-                                 holdover_i_caucus_d: int = 0) -> dict:
-    """Senate version. `result['seats']` contains 33 Class-II + 2 specials.
-    Holdovers (not-up seats) are added deterministically to each simulated
-    seat count. Independents caucusing with D count toward D majority.
-    """
-    rows = result.get("seats") or []
-    if not rows:
-        return result
-
+def senate_sims(rows: list[dict], terms: ErrorTerms | None = None) -> np.ndarray:
+    """(N_SIMS, n_rows) simulated Senate margins."""
     rng = np.random.default_rng(SEED)
     proj = np.array([r["projection"] for r in rows], dtype=float)
     lockout = np.abs(proj) >= 99.5
@@ -166,11 +262,26 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
     corr = _draw_correlated_shocks(rng, rows, sigma_state=0.0,
                                    sigma_region=SIGMA_REGION,
                                    sigma_race=_race_sigma(sigma_seat, open_seat, np.zeros(len(rows))))
+    corr += _extra_shocks(rng, len(rows), terms)
     corr[:, lockout] = 0.0
 
     sims = proj[None, :] + nat + corr
     sims[:, lockout] = proj[lockout]
+    return sims
 
+
+def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
+                                 holdover_i_caucus_d: int = 0,
+                                 terms: ErrorTerms | None = None) -> dict:
+    """Senate version. `result['seats']` contains 33 Class-II + 2 specials.
+    Holdovers (not-up seats) are added deterministically to each simulated
+    seat count. Independents caucusing with D count toward D majority.
+    """
+    rows = result.get("seats") or []
+    if not rows:
+        return result
+
+    sims = senate_sims(rows, terms)
     d_wins = sims > 0
     p_d = d_wins.mean(axis=0)
     for r, p in zip(rows, p_d):
@@ -191,4 +302,5 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
         "p_d_control": round(float((total_d >= 51).mean()), 3),
         "p_r_control": round(float((total_r >= 50).mean()), 3),
     }
+    summary["error_model"] = error_model_summary(terms, senate=True)
     return result

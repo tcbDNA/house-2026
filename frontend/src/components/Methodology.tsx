@@ -170,8 +170,21 @@ export function Methodology() {
         census-region error (σ 1.2), a state error (σ 1.8) and a race-specific error
         (σ 3.2), so races in the same state and region miss together. The
         race-specific error is wider where we know less: open seats (+2.5 in
-        quadrature) and House districts on new lines (+2.0). These σ values are
-        modeling judgments, not fitted.
+        quadrature) and House districts on new lines (+2.0, scaled by the share of
+        the district that is new). Two more national terms apply uniformly to
+        every race: <b>composition</b> (σ 1.0, who turns out) and <b>level
+        measurement</b> (σ 1.0, crosstab sampling and the choice of 2024 baseline,
+        which alone moves the level 1.5 pts). <b>Group errors</b> let places with
+        similar electorates miss together across states: each simulation draws a
+        deviation for every slider group in the active frame (white σ 2.0, Black
+        4.1, Hispanic 5.8, Asian 8.1 — the group's sampling error combined with a
+        non-sampling allowance of 1 / 3 / 4 / 5 pts), demeans the draws with
+        national shares so the national total is unchanged, and adds each
+        district's and state's share-weighted sum. Together they raise the
+        standard deviation of the simulated national margin from 2.6 to 2.9 pts
+        and the average correlation among the five most Hispanic competitive
+        districts from 0.36 to 0.56. These are all polling error around the
+        scenario; the σ values and allowances are modeling judgments, not fitted.
       </p>
       <p className="mb-2">
         <b>County-level overlays</b> use 2020 + 2024 presidential results aggregated to

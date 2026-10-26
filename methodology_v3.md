@@ -127,18 +127,26 @@ Senate projections treat the state-level trend (state vs. national 2020→2024 s
 
 10,000 Monte Carlo simulations around the projection:
 
-    simulated_margin = projection + national + region[census region] + state + race-specific
+    simulated_margin = projection + national + composition + level + region[census region] + state
+                     + race-specific + Σ_g share_g × (dev_g − Σ_h w_h dev_h)
 
 | Component | σ (pts) |
 |---|---|
-| National | 2.5 |
+| National polling error | 2.5 |
+| Composition (who turns out; national, uniform) | 1.0 |
+| Level measurement (crosstab sampling, choice of 2024 baseline; national, uniform) | 1.0 |
 | Census region | 1.2 |
 | State (House only; folded into race-specific for Senate) | 1.8 |
 | Race-specific | 3.2 |
 | + open seat (no sitting incumbent), in quadrature | 2.5 |
-| + House district on new lines, in quadrature | 2.0 |
+| + House district on new lines, in quadrature (× share of the district that is new) | 2.0 |
+| Group errors (race frame): white / Black / Hispanic / Asian | 1.96 / 4.10 / 5.75 / 8.07 |
 
-Per-race σ is ≈ 4.6 for an incumbent on unchanged lines and ≈ 5.6 for an open seat on new lines. Lockouts are deterministic. Each call uses a fixed seed, so a given scenario always returns the same probabilities and slider moves don't add simulation jitter. The σ values are modeling judgments, not fitted. Probabilities are conditional on the scenario inputs.
+**Group errors.** Each simulation draws dev_g ~ N(0, σ_g²) for every slider group in the active frame, subtracts the national-share-weighted mean of the draws (shares renormalized over the slider groups, so the national total is unchanged), and adds Σ_g (electorate share of g) × demeaned dev_g to every district and state — heavily Hispanic seats miss together across states. σ_g = sqrt(SE_g² + τ_g²): SE_g is the sampling error of the group's shift (the inverse-variance pooled SE of the pollster-matched r, both years at design effect 1.5; for Asian, which keeps its poll average, the SE of that average): white 1.69, Black 2.79, Hispanic 4.13, Asian 6.34. τ_g is non-sampling error — **judgment calls**, configurable: white 1, Black 3, Hispanic 4, Asian 5, any other group 3 (the race × education cells, giving σ 4.5 / 4.2 for white college / non-college and 3.6 for the non-white cells). Hispanic's SE is the pooled mean's, though its shift uses the weighted median.
+
+The composition and level terms raise the standard deviation of the simulated national margin (2024-turnout-weighted mean of district margins) from 2.58 to 2.94; the group errors leave it unchanged (2.58 alone) but raise the average pairwise correlation among the five most Hispanic competitive districts (TX-15, FL-26, FL-27, TX-34, CA-22) from 0.36 to 0.56 (`backend/analysis/error_diagnostics.txt`).
+
+Per-race σ (excluding group terms) is ≈ 4.8 for an incumbent on unchanged lines and ≈ 5.8 for an open seat on new lines. Lockouts are deterministic. Each call uses a fixed seed, so a given scenario always returns the same probabilities and slider moves don't add simulation jitter. The σ values are modeling judgments, not fitted. Probabilities are conditional on the scenario inputs.
 
 ## County overlay
 
