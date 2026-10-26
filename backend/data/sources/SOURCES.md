@@ -8,6 +8,8 @@ because pollster PDFs and news pages get moved or edited.
 |---|---|---|---|
 | `2026_nominees/wwno_2026-06-27_letlow_davis.html` | https://www.wwno.org/politics/2026-06-27/letlow-davis-advance-in-louisianas-u-s-senate-race | 2026-10-26 | LA Senate: Letlow (R) and Davis (D) won June 27 runoffs |
 | `2026_nominees/newsnation_2026-06-16_al_senate_runoffs.html` | https://www.newsnationnow.com/us-news/southeast/alabama-senate-runoff-results-2026/amp/ | 2026-10-26 | AL Senate: Moore (R) and Wess (D) won June 16 runoffs (DDHQ projections) |
+| `2026_nominees/wfae_balkcom_replaces_edwards_nc11_2026-08-10.html` | https://www.wfae.org/2026-08-10/state-rep-jennifer-balkcom-to-replace-rep-chuck-edwards-on-nc-11-ballot | 2026-10-26 | NC-11: Edwards (R) withdrew; district GOP committee chose state Rep. Jennifer Balkcom (Aug 10) |
+| `2026_nominees/notus_balkcom_replaces_edwards_nc11.html` | https://www.notus.org/2026-election/north-carolina-chuck-edwards-replace-ballot-jennifer-balkcom | 2026-10-26 | NC-11: same (second source) |
 | `2026_nominees/cbs42_2026-06-16_moore_runoff.html` | https://www.cbs42.com/news/trump-backed-us-rep-barry-moore-wins-gop-primary-runoff-for-the-us-senate-in-alabama/amp/ | 2026-10-26 | AL Senate: Moore R runoff win; Wess vs Larriett D runoff |
 
 ## Unverified inputs

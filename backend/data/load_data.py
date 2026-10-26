@@ -107,6 +107,11 @@ INCUMBENT_OVERRIDES = {
     # NE-02 open (Bacon retiring); Brinker Harding is the R nominee.
     # No federal WAR; is_incumbent=False keeps incumbency_adj at 0.
     "NE-02": {"incumbent": "Brinker Harding", "party": "(R)", "is_incumbent": False},
+    # NC-11: Rep. Chuck Edwards withdrew in August 2026 after a House Ethics
+    # Committee report; the district Republican committee chose state Rep.
+    # Jennifer Balkcom (Aug 10). Open seat: no incumbency bonus; WAR from her
+    # own federal record (none). Sources: sources/2026_nominees/wfae_* and notus_*.
+    "NC-11": {"incumbent": "Jennifer Balkcom", "party": "(R)", "is_incumbent": False},
     # FL-22: post-FL-redraw open seat, R-leaning. Slot Dandiya (D) into the
     # incumbent field so both nominees display; Askar (R) is the challenger.
     "FL-22": {"incumbent": "Pia Dandiya", "party": "(D)", "is_incumbent": False},
