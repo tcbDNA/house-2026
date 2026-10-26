@@ -133,7 +133,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
             ...d,
             // Reshape so the rest of the map machinery (which expects CountyResponse)
             // works unchanged.
-            uniform_swing: 0, axis_weight: 0, turnout_ratio_2026: 0,
+            uniform_swing: 0, axis_weight: 0, turnout_ratio_2026: d.turnout_ratio_2026 ?? 0,
           }) as unknown as CountyResponse)
       : fetchCounties(state, environment, sliders, trendDiscount, ac.signal);
     fetcher

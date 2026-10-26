@@ -104,6 +104,8 @@ export type DistrictCountyResponse = {
   district_projection: number;
   candidate_adj: number;
   reconcile: number;
+  turnout_ratio_2026?: number;
+  turnout_source?: string;
   counties: Array<CountyResponse["counties"][number] & {
     overlap_fraction: number;
     fully_contained: boolean;
