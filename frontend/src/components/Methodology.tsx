@@ -177,8 +177,8 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (49.7% vs 48.2% by default; only Osborn wins often enough to
-        matter). Appointed senators who haven't
+        them does (59.1% vs 48.2% by default; Osborn's tied race is nearly all of
+        the difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
         WAR or incumbency until it is. <b>Montana</b> is a three-way race (Daines
@@ -187,6 +187,11 @@ export function Methodology() {
         baseline can't represent it, so this race uses the polling average instead
         (RealClearPolling, Alme +12.0 as of Oct 18) plus however far the scenario
         moves the model from its default, with the usual simulation errors.
+        <b>Nebraska</b> (Osborn vs Ricketts, no Democratic nominee) is handled the
+        same way: the partisan baseline (Ricketts +5.8) can't describe an
+        independent with cross-party appeal, and the polling averages have the race
+        tied (Poliwave 46.7–46.7 across eight polls; RealClearPolling publishes no
+        average).
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

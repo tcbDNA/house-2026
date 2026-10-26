@@ -165,7 +165,7 @@ def project(
             "co_nominee_war_year": s.get("co_nominee_war_year"),
             "co_nominee_war_source": s.get("co_nominee_war_source"),
             "co_nominee_adj": s.get("co_nominee_adj"),
-            "projection": round(proj, 2),
+            "projection": round(proj, 2) + 0.0,   # + 0.0 turns -0.0 into 0.0
             "demo_shift": round(float(demo_shift[i]), 2),
             "race_shift": round(float(shifts["race"][i]), 2),
             "edu_shift": round(float(shifts["edu"][i]), 2),
