@@ -26,7 +26,7 @@ sys.path.insert(0, str(BACKEND))
 import main  # noqa: E402  (loads bundles exactly as the API does)
 import model  # noqa: E402
 from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings, settings_from  # noqa: E402
-from environment import default_scenario  # noqa: E402
+from environment import comparison_lines, default_scenario  # noqa: E402
 import senate_model  # noqa: E402
 from probability import add_senate_win_probabilities, add_win_probabilities  # noqa: E402
 
@@ -82,7 +82,11 @@ def main_cli():
             overrides[k] = ast.literal_eval(v)
         except (ValueError, SyntaxError):
             overrides[k] = v   # bare string, e.g. group_baseline=pew_validated
-    r = run(settings_from(overrides), trend_discount=args.trend)
+    settings = settings_from(overrides)
+    r = run(settings, trend_discount=args.trend)
+    d = default_scenario(settings)
+    for line in comparison_lines(r["national_margin"], d["poll_topline_average"], d["public_averages"]):
+        print(line, file=sys.stderr)
     row = {"label": args.label, **metrics(r), "diagnostics": args.note}
     if args.dry_run:
         print(json.dumps(row, indent=1))

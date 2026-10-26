@@ -1,0 +1,4 @@
+source,margin,as_of,url,local_file
+RealClearPolling,8.3,2026-10-26,https://www.realclearpolling.com/polls/state-of-the-union/generic-congressional-vote,sources/public_averages_2026/rcp_generic_ballot_wayback_20261026153807.html
+Silver Bulletin,8.97,2026-10-26,https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls,sources/public_averages_2026/silver_bulletin_datawrapper_rfiFi_v4688_dataset_2026-10-26.csv
+VoteHub,8.4,2026-10-26,https://polling.votehub.com/site/averages/generic_ballot_2026/values,sources/public_averages_2026/votehub_generic_ballot_2026_values_2026-10-26.json

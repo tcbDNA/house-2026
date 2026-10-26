@@ -1284,6 +1284,17 @@ def load_state_results() -> dict[str, tuple[float, float]]:
                 for r in csv.DictReader(f)}
 
 
+def apply_at_large_official(row: dict, state_results: dict):
+    """At-large districts are their state: use the certified statewide
+    results (FEC) for both years, and the trend from that same pair. v20 /
+    The Downballot's precinct-based figures miss them by 0.3–0.4 pts in WY,
+    ND and VT (model-v4 item 8 cross-level check)."""
+    m20, m24 = state_results[row["state"]]
+    row["margin_2020"], row["margin_2024"] = round(m20, 2), round(m24, 2)
+    row["pres_shift"] = round(m24 - m20, 2)
+    row["result_source"] = "official state results (FEC; at-large): 2024 + 2020"
+
+
 def apply_state_results(row: dict, state_results: dict):
     """Official state margins. The district's own 2020→2024 shift
     (pres_shift) is fixed first — from v20's own pair (rel_trend +
@@ -1343,6 +1354,8 @@ def main():
             row["pres_shift"] = round(row["rel_trend"] + row["state_shift"], 2)
             if d_id in DOWNBALLOT_FIXES:
                 apply_downballot_fix(row, DOWNBALLOT_FIXES[d_id], db_current, db_2024_lines)
+            if d_id.endswith("-AL"):
+                apply_at_large_official(row, state_results)
             apply_state_results(row, state_results)
             row["abs_shift"] = row["pres_shift"]
             st = d_id.split("-")[0]

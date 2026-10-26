@@ -54,6 +54,9 @@ DATA = Path(__file__).resolve().parent / "data"
 CSV_PATH = DATA / "generic_ballot_crosstabs.csv"
 CSV_2024_PATH = DATA / "pollster_2024_crosstabs.csv"
 PEW_VALIDATED_PATH = DATA / "pew_validated_2024.csv"
+# Configurable list of public generic-ballot averages to compare the
+# national margin against (source, margin D − R, as-of date, URL, saved copy).
+PUBLIC_AVERAGES_PATH = DATA / "public_averages.csv"
 GROUPS = ("white_nh", "black", "hispanic", "asian")
 EDU_GROUPS = ("white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college")
 WHITE_EDU = ("white_college", "white_non_college")
@@ -124,6 +127,25 @@ def load_baselines(source: str) -> dict[str, float]:
             base.update({r["group"]: two_way(float(r["harris"]), float(r["trump"]))
                          for r in csv.DictReader(f)})
     return base
+
+
+def load_public_averages(path: Path = PUBLIC_AVERAGES_PATH) -> list[dict]:
+    if not path.exists():
+        return []
+    with path.open() as f:
+        return [{"source": r["source"], "margin": float(r["margin"]), "as_of": r["as_of"],
+                 "url": r["url"], "local_file": r["local_file"]} for r in csv.DictReader(f)]
+
+
+def comparison_lines(national_margin: float, poll_topline: float, averages: list[dict]) -> list[str]:
+    """National margin next to the included polls' topline average and each
+    public average, with the gaps (printed on every comparison run)."""
+    def fmt(m: float) -> str:
+        return f"{'D' if m >= 0 else 'R'}+{abs(m):.1f}"
+    rows = [("topline average of the included polls", poll_topline, "")] + \
+           [(a["source"], a["margin"], f" (as of {a['as_of']})") for a in averages]
+    return [f"national margin {fmt(national_margin)} vs {name} {fmt(m)}{when}: gap {national_margin - m:+.1f}"
+            for name, m, when in rows]
 
 
 def weighted_mean(pairs: list[tuple[float, float]]) -> float:
@@ -332,4 +354,6 @@ def default_scenario(settings: Settings = DEFAULT_SETTINGS) -> dict:
         "total": wave + slider_shift,
         "trend_discount": DEFAULT_TREND_WEIGHT,
         "group_se": dict(est["group_se"]),
+        "poll_topline_average": est["topline"],
+        "public_averages": load_public_averages(),
     }
