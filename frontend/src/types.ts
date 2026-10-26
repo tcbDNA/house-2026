@@ -171,7 +171,7 @@ export const EDU_FRAME_DEFAULTS: Pick<SliderValues,
 
 // Default uniform wave: the 2024 level plus the "other" race group's shift.
 // Fallback value; overwritten by applyModelDefaults().
-export const MODEL_DEFAULTS = { wave: -1.25, trend: 0 };
+export const MODEL_DEFAULTS = { wave: -1.25, trend: 0.5 };
 
 // Response of /api/defaults (backend environment.default_scenario).
 export type ModelDefaults = {

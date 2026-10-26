@@ -13,12 +13,14 @@ from dataclasses import asdict, dataclass, fields, replace
 # the white-share target is switched off.
 CATALIST_2022_WHITE_SHARE = 0.7581
 
-# Default trend weight (multiplier on the carried, residualized 2020→2024
-# trend). 0: the 2025 NJ/VA governor backtest found no carryover of the
-# residual trend once demographics are controlled (county coefficient −0.05,
-# robust SE 0.11; analysis/trend_weight_nj_va_2025.txt). 0.5, 1 and −0.5
-# remain scenario options. A scenario parameter, not a Settings flag.
-DEFAULT_TREND_WEIGHT = 0.0
+# Default trend weight (multiplier on the carried 2020→2024 trend, after the
+# demographic part is removed). 0.5 is a judgment call: half the residual
+# trend persists. The 2025 NJ/VA governor check (county coefficient −0.05,
+# robust SE 0.11; analysis/trend_weight_nj_va_2025.txt) is a limited test —
+# governor's races differ from federal ones — not the basis for the
+# default. 0, 1 and −0.5 remain scenario options. A scenario parameter, not
+# a Settings flag.
+DEFAULT_TREND_WEIGHT = 0.5
 
 GROUP_BASELINES = ("catalist", "pew_validated")
 
@@ -50,8 +52,12 @@ class Settings:
     # the part explained by the active frame's demographic shares (+ age, +
     # intercept) and/or the 2024 battleground-state part; trend_discount then
     # applies to what's left. Both off = the raw 2020→2024 trend, as before.
+    # Demographic part removed by default, so the trend doesn't double count
+    # group movement the sliders already model. Battleground part kept by
+    # default: all seven 2024 battlegrounds (AZ GA MI NV NC PA WI) have a
+    # Senate or governor's race in 2026, so the campaign effect may repeat.
     trend_remove_demographic: bool = True
-    trend_remove_battleground: bool = True
+    trend_remove_battleground: bool = False
     # The regression basis always includes the age shares (fixed per frame);
     # this switch exists only to measure what including age does.
     trend_include_age: bool = True

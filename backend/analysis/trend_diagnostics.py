@@ -19,6 +19,9 @@ from config import DEFAULT_SETTINGS  # noqa: E402
 
 S = DEFAULT_SETTINGS
 OFF = replace(S, trend_remove_demographic=False, trend_remove_battleground=False)
+# Item 2's report compares the raw trend with both parts removed; the
+# current default removes only the demographic part (listed separately).
+FULL = replace(S, trend_remove_demographic=True, trend_remove_battleground=True)
 # Residualizing only matters when some trend is carried: compare at weight 0.5.
 TW = 0.5
 
@@ -41,12 +44,12 @@ def main_cli():
         print(f"  without age shares: R² {no_age.r2:.3f}; battleground {no_age.coef('battleground'):+.3f}")
 
     base = run(OFF, trend_discount=TW)
-    full = run(S, trend_discount=TW)
+    full = run(FULL, trend_discount=TW)
     print(f"\n== Headline metrics (trend weight {TW})")
-    for label, s in [("raw trend (both parts kept)", OFF), ("residualized (default)", S),
-                     ("remove demographic part only", replace(S, trend_remove_battleground=False)),
-                     ("remove battleground part only", replace(S, trend_remove_demographic=False)),
-                     ("residualized, basis without age", replace(S, trend_include_age=False))]:
+    for label, s in [("raw trend (both parts kept)", OFF), ("both parts removed", FULL),
+                     ("remove demographic part only (default)", replace(FULL, trend_remove_battleground=False)),
+                     ("remove battleground part only", replace(FULL, trend_remove_demographic=False)),
+                     ("both removed, basis without age", replace(FULL, trend_include_age=False))]:
         print(f"  {label:34} {metrics(run(s, trend_discount=TW))}")
 
     rows = main.BUNDLE.districts
@@ -56,7 +59,7 @@ def main_cli():
     b = {d["district"]: d for d in base["house"]["districts"]}
     ch = sorted(((d["projection"] - b[d["district"]]["projection"], d) for d in full["house"]["districts"]
                  if abs(d["projection"]) < 99.5), key=lambda x: -abs(x[0]))
-    print("\n== 15 districts whose projections change most (residualized − raw trend)")
+    print("\n== 15 districts whose projections change most (both parts removed − raw trend)")
     print(f"  {'district':8} {'change':>7} {'raw':>7} {'resid':>7} {'Hisp % pop':>10} {'Hisp % electorate':>17} {'BG':>3}")
     for delta, d in ch[:15]:
         print(f"  {d['district']:8} {delta:+7.2f} {b[d['district']]['projection']:+7.1f} {d['projection']:+7.1f} "
@@ -77,7 +80,7 @@ def main_cli():
               f"{sh[s['state']].get('pct_hispanic') or 0:10.1f} "
               f"{'Y' if s['state'] in trend.BATTLEGROUND_STATES else '':>3}")
 
-    na = run(replace(S, trend_include_age=False), trend_discount=TW)
+    na = run(replace(FULL, trend_include_age=False), trend_discount=TW)
     nb = {d["district"]: d["projection"] for d in na["house"]["districts"]}
     diffs = np.array([d["projection"] - nb[d["district"]] for d in full["house"]["districts"]
                       if abs(d["projection"]) < 99.5])

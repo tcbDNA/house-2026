@@ -84,8 +84,8 @@ function _activePreset_unused(sliders: SliderValues, frame: DemoFrame): "2020" |
 
 const TREND_PRESETS: { value: number; label: string; hint: string }[] = [
   { value: 1.0,  label: "Full",    hint: "the residual 2020→2024 trend continues at full strength" },
-  { value: 0.5,  label: "Partial", hint: "the residual trend continues at half strength" },
-  { value: 0.0,  label: "None",    hint: "no trend carried forward (default: the 2025 NJ/VA backtest found no carryover)" },
+  { value: 0.5,  label: "Partial", hint: "the residual trend continues at half strength (default; a judgment call)" },
+  { value: 0.0,  label: "None",    hint: "no trend carried forward" },
   { value: -0.5, label: "Reverse", hint: "half of the residual 2020→2024 shift snaps back" },
 ];
 
@@ -357,11 +357,10 @@ export function SliderPanel({
           })}
         </div>
         <div className="text-[10px] text-slate-500 mt-1 italic">
-          Multiplies the part of each district's / state's 2020→2024 shift
-          (vs. the nation) that demographics and the 2024 battleground campaigns
-          don't explain. Default 0: the 2025 NJ/VA governor results showed no
-          carryover once demographics are controlled. Partial / Full / Reverse
-          are scenarios.
+          Multiplies each district's / state's 2020→2024 shift (vs. the nation)
+          net of the part demographics explain (the sliders model that); the 2024
+          battleground part is kept. Default 0.5 (Partial) is a judgment call;
+          None / Full / Reverse are scenarios.
         </div>
       </div>
     </div>

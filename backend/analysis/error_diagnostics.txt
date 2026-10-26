@@ -7,18 +7,18 @@
   national: polling 2.5, composition 1.0, level 1.0
 
 Five competitive districts (|projection| < 10) with the highest Hispanic electorate share:
-  TX-15  projection   -1.4  Hispanic  59.2%
-  FL-26  projection   -7.4  Hispanic  57.1%
-  FL-27  projection   -3.8  Hispanic  55.4%
-  TX-34  projection   +7.1  Hispanic  53.2%
-  CA-22  projection   +7.4  Hispanic  51.2%
+  TX-15  projection   -0.5  Hispanic  59.2%
+  FL-26  projection   -6.3  Hispanic  57.1%
+  FL-27  projection   -2.0  Hispanic  55.4%
+  TX-34  projection   +8.7  Hispanic  53.2%
+  CA-22  projection   +5.5  Hispanic  51.2%
 
 == Before / after
   before (no group or extra national terms)  national SD 2.58   avg pairwise corr (5 Hispanic seats) 0.361
-                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 236, 'house_p10': 224, 'house_p90': 253, 'house_p_d_majority': 0.981, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.533}
+                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 224, 'house_p90': 254, 'house_p_d_majority': 0.976, 'senate_d_seats': 50, 'senate_median': 50, 'senate_p_d_control': 0.493}
   group errors only                          national SD 2.58   avg pairwise corr (5 Hispanic seats) 0.532
-                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 224, 'house_p90': 253, 'house_p_d_majority': 0.981, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.535}
+                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 224, 'house_p90': 254, 'house_p_d_majority': 0.977, 'senate_d_seats': 50, 'senate_median': 50, 'senate_p_d_control': 0.496}
   composition + level only                   national SD 2.94   avg pairwise corr (5 Hispanic seats) 0.417
-                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 236, 'house_p10': 223, 'house_p90': 256, 'house_p_d_majority': 0.967, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.533}
+                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 222, 'house_p90': 257, 'house_p_d_majority': 0.962, 'senate_d_seats': 50, 'senate_median': 50, 'senate_p_d_control': 0.495}
   item 4 default (both)                      national SD 2.94   avg pairwise corr (5 Hispanic seats) 0.563
-                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 236, 'house_p10': 223, 'house_p90': 256, 'house_p_d_majority': 0.968, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.531}
+                                             {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 222, 'house_p90': 257, 'house_p_d_majority': 0.962, 'senate_d_seats': 50, 'senate_median': 50, 'senate_p_d_control': 0.497}

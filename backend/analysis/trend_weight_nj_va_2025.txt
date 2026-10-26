@@ -10,4 +10,4 @@ Main-model coefficients: const=+1.00  trend=-0.04  VA=+3.62  black=-1.44  hispan
 
 Reading: a positive trend coefficient means places that moved toward Trump in 2020→2024
 moved further that way in 2025 (trend persists); negative means they moved back.
-Model default: 0 × the residual trend (config.DEFAULT_TREND_WEIGHT; 0.5 etc. are scenarios).
+Model default: 0.5 × the trend net of its demographic part (a judgment call; config.DEFAULT_TREND_WEIGHT).
