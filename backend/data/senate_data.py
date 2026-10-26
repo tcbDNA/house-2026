@@ -337,11 +337,15 @@ WAR_CYCLE_EXCLUSIONS: set[tuple[int, str, str]] = {
     # Collins 2014 vs Shenna Bellows: 68%-31% blowout (R+38) in a non-competitive
     # race. Including this would inflate her personal-vote signal.
     (2014, "ME", "Susan Collins"),
-    # Sullivan 2014 vs Mark Begich: raw_war shows D+18.8 because AK pres lean was
-    # ~R+15 but the Senate race was a 48-46 squeaker. The "personal vote" extracted
-    # here reflects Begich's incumbency, not Sullivan's underperformance.
+    # Sullivan 2014 vs Mark Begich: Split Ticket WAR D+18.8. Excluded as a
+    # judgment call: an outlier against his 2020 record (D+1.5), from a race
+    # twelve years old. (The earlier rationale — that it reflects Begich's
+    # incumbency — doesn't hold: Split Ticket's baseline controls for
+    # incumbency.) Alaska is shown both ways (SHOW_EXCLUSION_BOTH_WAYS).
     (2014, "AK", "Dan Sullivan"),
 }
+# States whose projection is also reported with the excluded cycle included.
+SHOW_EXCLUSION_BOTH_WAYS = {"AK": "with Sullivan's 2014 WAR record (D+18.8) included"}
 
 
 # Cross-chamber discount applied to non-federal cycles (Governor) when they
@@ -358,7 +362,8 @@ GOV_CROSS_CHAMBER_DISCOUNT = 0.5
 CROSS_CHAMBER_FULL_WEIGHT: set[str] = set()
 
 
-def _time_weighted_sortable(records: list[dict], candidate_name: str = "") -> float:
+def _time_weighted_sortable(records: list[dict], candidate_name: str = "",
+                            exclusions: set[tuple[int, str, str]] | None = None) -> float:
     """Per-record windowing for the Senate WAR blend.
 
     Records are grouped by office (Senate / House / Governor). Within each
@@ -385,8 +390,9 @@ def _time_weighted_sortable(records: list[dict], candidate_name: str = "") -> fl
 
     # Filter out per-cycle exclusions, then group by chamber.
     by_chamber: dict[str, list[dict]] = {}
+    exclusions = WAR_CYCLE_EXCLUSIONS if exclusions is None else exclusions
     for r in records:
-        if (r["year"], state_of(r), candidate_name) in WAR_CYCLE_EXCLUSIONS:
+        if (r["year"], state_of(r), candidate_name) in exclusions:
             continue
         by_chamber.setdefault(r.get("chamber") or "", []).append(r)
     for lst in by_chamber.values():
@@ -548,6 +554,7 @@ def main():
         war_signed = 0.0
         war_year = None
         war_match = None
+        exclusion_alternative = None
         if seat:
             inc_name = parse_incumbent(seat["incumbent"])
             party = seat["party"]
@@ -564,6 +571,11 @@ def main():
                     sortable_blend = _time_weighted_sortable(recs, candidate_name=inc_name)
                     war_signed = -sortable_blend if party_letter == "D" else +sortable_blend
                     war_match = "exact"
+                    if state in SHOW_EXCLUSION_BOTH_WAYS:
+                        # D-positive margin effect of including the excluded cycle(s).
+                        alt = _time_weighted_sortable(recs, candidate_name=inc_name, exclusions=set())
+                        exclusion_alternative = {"label": SHOW_EXCLUSION_BOTH_WAYS[state],
+                                                 "margin_delta": round(sortable_blend - alt, 2)}
             # war_adj is D-positive: +war for D, -war for R
             war_adj = war_signed if party_letter == "D" else -war_signed if party_letter == "R" else 0.0
             # No 'redrawn' concept at state level — no half-discount
@@ -670,6 +682,7 @@ def main():
             "co_nominee_war_source": co_nominee_war_source,
             "co_nominee_adj": round(co_nominee_adj, 2),
             "poll_override": poll_overrides.get(state),
+            "exclusion_alternative": exclusion_alternative,
         }
 
     OUT.write_text(json.dumps({"states": states, "national": {

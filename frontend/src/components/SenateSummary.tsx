@@ -83,6 +83,12 @@ export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
               </span>
             </div>
           )}
+          {seat_distribution.exclusion_alternatives?.map((a) => (
+            <div key={a.state} className="flex items-baseline justify-between mt-1 text-slate-500">
+              <span>{a.state} {a.label}</span>
+              <span className="font-semibold">{(a.p_d_control_alt * 100).toFixed(1)}%</span>
+            </div>
+          ))}
           <ErrorModelFooter model={summary.error_model} />
           <div className="text-[10px] text-slate-400 mt-1">
             D needs 51; a 50-50 split is R control (VP tiebreak). The independent

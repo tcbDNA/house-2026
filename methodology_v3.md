@@ -84,7 +84,7 @@ Name matching is accent-insensitive. When an exact name match fails, a last-name
 A small number of specific races are excluded at blend time:
 
 - **Collins 2014 vs Bellows** — 68%-31% blowout that would inflate her personal-vote signal.
-- **Sullivan 2014 vs Begich** — excluded on the grounds that the number reflects Begich's incumbency. That rationale doesn't hold for Split Ticket's WAR, whose baseline already controls for incumbency; the exclusion is unchanged pending review.
+- **Sullivan 2014 vs Begich** (Split Ticket WAR D+18.8) — excluded as a judgment call: an outlier against his 2020 record (D+1.5), from a race twelve years old. (An earlier rationale, that it reflects Begich's incumbency, doesn't hold: Split Ticket's baseline controls for incumbency.) Because it matters, Alaska is shown both ways: excluded, Sullivan's WAR adds R+0.75 and Alaska is R+3.0 (P(Peltola) 0.27); included, it adds R+6.4 less — Alaska D+2.7 (P 0.71), and Senate P(D control) 0.70 instead of 0.60.
 
 ### Manual WAR overrides
 
@@ -122,7 +122,7 @@ Senate projections treat the state-level trend (state vs. national 2020→2024 s
 
 - 65 not-up seats are assumed to hold their current party.
 - Control: D needs **51**; a 50-50 split is **R control** via VP Vance's tiebreak (`p_r_control` counts it; `p_r_majority` is an outright 51+).
-- The four independent nominees — Osborn (NE), Bengs (SD), Achilles (ID) and Bodnar (MT) — are assumed to caucus with Democrats if they win, so the headline P(D control) counts them with Democrats. The Senate summary also reports P(D control) counting their wins for neither party, from the same simulations: 0.591 vs 0.482 by default. P(win): Osborn 0.498, Bodnar 0.015, Achilles and Bengs < 0.001.
+- The four independent nominees — Osborn (NE), Bengs (SD), Achilles (ID) and Bodnar (MT) — are assumed to caucus with Democrats if they win, so the headline P(D control) counts them with Democrats. The Senate summary also reports P(D control) counting their wins for neither party, from the same simulations: 0.595 vs 0.482 by default. P(win): Osborn 0.495, Bodnar 0.028, Achilles and Bengs < 0.001.
 - **Montana** is a three-way race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with Alani Bankhead (D) polling a distant third, plus a Libertarian. The D-vs-R baseline can't represent it, so the race uses a documented polling override (`backend/data/senate_poll_overrides.csv`): the RealClearPolling average, Bodnar − Alme = −12.0 as of Oct 18 (Quantus Oct 15–18, Rutgers-Eagleton Aug 27–Sep 7), plus the change in the model's projection between the current scenario and the default one, so sliders and settings still move it. It gets the usual simulation errors. The model's own baseline would be R+12.3.
 - **Nebraska** (Osborn (I) vs Ricketts (R), no Democratic nominee) uses the same kind of override: the partisan baseline (Ricketts +5.8, with Osborn's one prior race at half strength) can't describe an independent with cross-party appeal. RealClearPolling publishes no average for this race, so the override is Poliwave's, 46.7–46.7 across eight polls (FiftyPlusOne even; VoteHub Osborn +0.1; Pollsmax and 270toWin Ricketts +2.2 / +2.3). P(Osborn) 0.498.
 - Primary-unresolved seats suppress incumbent WAR and incumbency until the runoff resolves.
@@ -144,6 +144,7 @@ Senate projections treat the state-level trend (state vs. national 2020→2024 s
 | Race-specific | 3.2 |
 | + open seat (no sitting incumbent), in quadrature | 2.5 |
 | + House district on new lines, in quadrature (× share of the district that is new) | 2.0 |
+| + Senate race modeled from a polling override (MT, NE), in quadrature | 3.0 |
 | Group errors (race frame): white / Black / Hispanic / Asian | 1.96 / 4.10 / 5.75 / 8.07 |
 
 **Group errors.** Each simulation draws dev_g ~ N(0, σ_g²) for every slider group in the active frame, subtracts the national-share-weighted mean of the draws (shares renormalized over the slider groups, so the national total is unchanged), and adds Σ_g (electorate share of g) × demeaned dev_g to every district and state — heavily Hispanic seats miss together across states. σ_g = sqrt(SE_g² + τ_g²): SE_g is the sampling error of the group's shift (the inverse-variance pooled SE of the pollster-matched r, both years at design effect 1.5; for Asian, which keeps its poll average, the SE of that average): white 1.69, Black 2.79, Hispanic 4.13, Asian 6.34. τ_g is non-sampling error — **judgment calls**, configurable: white 1, Black 3, Hispanic 4, Asian 5, any other group 3 (the race × education cells, giving σ 4.5 / 4.2 for white college / non-college and 3.6 for the non-white cells). Hispanic's SE is the pooled mean's, though its shift uses the weighted median.

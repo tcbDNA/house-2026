@@ -64,6 +64,9 @@ SIGMA_STATE    = 1.8   # within-state candidate quality / news / weather
 SIGMA_DISTRICT = 3.2   # idiosyncratic per-district error
 SIGMA_OPEN_SEAT_EXTRA = 2.5   # added in quadrature when there's no sitting incumbent
 SIGMA_NEW_LINES_EXTRA = 2.0   # added in quadrature for House districts not on 2024 lines
+# Senate races modeled from a polling override (MT, NE): the polls carry extra
+# uncertainty the baseline doesn't (three-way race; few, often partisan polls).
+SIGMA_POLL_OVERRIDE_EXTRA = 3.0   # added in quadrature (user decision)
 N_SIMS = 10000
 SEED = 20260918
 
@@ -158,6 +161,8 @@ def error_model_summary(terms: ErrorTerms | None, senate: bool = False) -> dict:
            "open_seat_extra": SIGMA_OPEN_SEAT_EXTRA, "groups": t["groups"], "n_sims": N_SIMS}
     if not senate:
         out["new_lines_extra"] = SIGMA_NEW_LINES_EXTRA
+    else:
+        out["poll_override_extra"] = SIGMA_POLL_OVERRIDE_EXTRA
     return out
 
 
@@ -259,9 +264,11 @@ def senate_sims(rows: list[dict], terms: ErrorTerms | None = None) -> np.ndarray
     # Senate: no state-level shock separate from the seat itself (one seat/state
     # among the up-races), so fold state variance into the idiosyncratic term.
     sigma_seat = float(np.sqrt(SIGMA_STATE ** 2 + SIGMA_DISTRICT ** 2))
+    poll_override = np.array([r.get("poll_override") is not None for r in rows], dtype=float)
+    sigma_race = np.sqrt(_race_sigma(sigma_seat, open_seat, np.zeros(len(rows))) ** 2
+                         + poll_override * SIGMA_POLL_OVERRIDE_EXTRA ** 2)
     corr = _draw_correlated_shocks(rng, rows, sigma_state=0.0,
-                                   sigma_region=SIGMA_REGION,
-                                   sigma_race=_race_sigma(sigma_seat, open_seat, np.zeros(len(rows))))
+                                   sigma_region=SIGMA_REGION, sigma_race=sigma_race)
     corr += _extra_shocks(rng, len(rows), terms)
     corr[:, lockout] = 0.0
 
@@ -319,5 +326,24 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
             for r, p, i in zip(rows, p_d, indep) if i
         ],
     }
+    # Races also shown with an excluded WAR cycle included (Alaska): shift
+    # that race's simulated margins by the WAR difference, same draws.
+    alternatives = []
+    for i, r in enumerate(rows):
+        alt = r.get("exclusion_alternative")
+        if not alt:
+            continue
+        alt_wins = d_wins.copy()
+        alt_wins[:, i] = sims[:, i] + alt["margin_delta"] > 0
+        alt_total = alt_wins.sum(axis=1) + holdover_d + holdover_i_caucus_d
+        alternatives.append({
+            "state": r["state"], "label": alt["label"],
+            "projection": r["projection"], "projection_alt": round(r["projection"] + alt["margin_delta"], 2),
+            "p_d": r["p_d"], "p_d_alt": round(float(alt_wins[:, i].mean()), 3),
+            "p_d_control_alt": round(float((alt_total >= 51).mean()), 3),
+        })
+        r["projection_alt"] = round(r["projection"] + alt["margin_delta"], 2)
+        r["p_d_alt"] = round(float(alt_wins[:, i].mean()), 3)
+    summary["seat_distribution"]["exclusion_alternatives"] = alternatives
     summary["error_model"] = error_model_summary(terms, senate=True)
     return result

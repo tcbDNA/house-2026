@@ -174,6 +174,8 @@ def project(
             "flip": "to_D" if flipped_to_d else ("to_R" if flipped_to_r else None),
             "poll_override": s.get("poll_override"),
             "model_projection": round(float(model_projections[i]), 2),
+            # Same race with an excluded WAR cycle included (Alaska: Sullivan 2014).
+            "exclusion_alternative": s.get("exclusion_alternative"),
         })
 
     # Pre-2026 Senate composition: 53R / 47D (post-2024-election, pre-2026).

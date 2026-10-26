@@ -355,6 +355,10 @@ export type SeatDistribution = {
   p_d_control_without_independents?: number;
   d_median_without_independents?: number;
   independent_races?: { state: string; candidate: string; opponent: string; p_win: number }[];
+  exclusion_alternatives?: {
+    state: string; label: string; projection: number; projection_alt: number;
+    p_d: number; p_d_alt: number; p_d_control_alt: number;
+  }[];
 };
 
 // Weight on each demographic axis (see backend model.axis_weights).
@@ -385,6 +389,7 @@ export type ErrorModel = {
   race: number | string;
   open_seat_extra: number;
   new_lines_extra?: number;
+  poll_override_extra?: number;
   groups: Record<string, { sigma: number; se: number; tau: number }>;
   n_sims: number;
 };
@@ -443,6 +448,10 @@ export type SenateSeat = {
     source_url: string; local_file: string; race_note: string;
   } | null;
   model_projection?: number;
+  // Same race with an excluded WAR cycle included (Alaska: Sullivan 2014).
+  exclusion_alternative?: { label: string; margin_delta: number } | null;
+  projection_alt?: number;
+  p_d_alt?: number;
 };
 
 export type SenateSummary = {

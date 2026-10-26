@@ -159,6 +159,12 @@ export function SenateTable({ seats, notUpD }: Props) {
                       {s.poll_override.race_note}
                     </div>
                   )}
+                  {s.exclusion_alternative && s.projection_alt !== undefined && (
+                    <div className="text-[10px] mt-0.5 text-amber-700 italic">
+                      {s.exclusion_alternative.label}: {formatProjection(s.projection_alt)}
+                      {s.p_d_alt !== undefined && ` (P(D) ${(s.p_d_alt * 100).toFixed(0)}%)`}
+                    </div>
+                  )}
                 </td>
                 <td className="px-2 py-1 text-right font-mono">
                   {s.presidential_margin_2024 !== null
