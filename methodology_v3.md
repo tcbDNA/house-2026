@@ -84,7 +84,7 @@ Name matching is accent-insensitive. When an exact name match fails, a last-name
 A small number of specific races are excluded at blend time:
 
 - **Collins 2014 vs Bellows** — 68%-31% blowout that would inflate her personal-vote signal.
-- **Sullivan 2014 vs Begich** (Split Ticket WAR D+18.8) — excluded as a judgment call: an outlier against his 2020 record (D+1.5), from a race twelve years old. (An earlier rationale, that it reflects Begich's incumbency, doesn't hold: Split Ticket's baseline controls for incumbency.) Because it matters, Alaska is shown both ways: excluded, Sullivan's WAR adds R+0.75 and Alaska is R+3.0 (P(Peltola) 0.27); included, it adds R+6.4 less — Alaska D+2.7 (P 0.71), and Senate P(D control) 0.70 instead of 0.60.
+- **Sullivan 2014 vs Begich** (Split Ticket WAR D+18.8) — excluded as a judgment call: an outlier against his 2020 record (D+1.5), from a race twelve years old. (An earlier rationale, that it reflects Begich's incumbency, doesn't hold: Split Ticket's baseline controls for incumbency.) Because it matters, Alaska is shown both ways: excluded, Sullivan's WAR moves Alaska 0.75 toward Peltola (R+3.0, P(Peltola) 0.27); included, 6.4 toward her (D+2.7, P 0.71), and Senate P(D control) would be 0.70 instead of 0.60.
 
 ### Manual WAR overrides
 
