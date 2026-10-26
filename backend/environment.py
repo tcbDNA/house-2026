@@ -47,7 +47,7 @@ from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
 
-from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
+from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, DESIGN_EFFECT, Settings
 from model import CATALIST_BASELINES, national_shares
 
 DATA = Path(__file__).resolve().parent / "data"
@@ -64,6 +64,7 @@ OTHER_BASELINE = 7.06   # Catalist 2024 "other" race margin (frontend OTHER_RACE
 PRES_2024_POPVOTE = -1.5   # Trump R+1.5 (matches senate_model / county_model)
 N_CAP = 2000
 MIN_POLLS = 2
+LOO_THRESHOLD = 1.5   # pts; leave-one-out move that triggers the weighted median
 
 
 def two_way(dem: float, rep: float) -> float:
@@ -76,22 +77,40 @@ def _estimated_group_n(n: int, group: str) -> float:
     return n * national_shares(DEFAULT_SETTINGS)[group]
 
 
+def margin_se(margin: float, n: float) -> float:
+    """Sampling error of a two-way margin (pts): 200 × sqrt(p(1 − p) × deff / n)."""
+    p = min(max((1.0 + margin / 100.0) / 2.0, 0.01), 0.99)
+    return 200.0 * math.sqrt(p * (1.0 - p) * DESIGN_EFFECT / n)
+
+
 def load_polls(path: Path = CSV_PATH) -> dict[str, dict]:
     """pollster -> {"n", "end", "population", "margins": {group: two-way margin},
-    "group_n": {group: subgroup n}, "group_n_estimated": {group, ...}}"""
-    polls: dict[str, dict] = {}
+    "group_n": {group: subgroup n}, "group_n_source": {group: source}}.
+
+    Subgroup n, in order of preference: as published ("published"); from the
+    published margins of error, n × (MOE_total / MOE_group)², which carries
+    any oversampling and weighting the pollster's MOEs reflect ("moe"); else
+    total n × the group's electorate share ("share")."""
+    rows: dict[str, list[dict]] = defaultdict(list)
     with path.open() as f:
         for r in csv.DictReader(f):
-            p = polls.setdefault(r["pollster"], {"n": int(r["n"]), "end": r["end"],
-                                                 "population": r["population"], "margins": {},
-                                                 "group_n": {}, "group_n_estimated": set()})
+            rows[r["pollster"]].append(r)
+    polls: dict[str, dict] = {}
+    for name, rs in rows.items():
+        n = int(rs[0]["n"])
+        top_moe = next((float(r["moe"]) for r in rs if r["group"] == "topline" and r.get("moe")), None)
+        p = polls[name] = {"n": n, "end": rs[0]["end"], "population": rs[0]["population"],
+                           "margins": {}, "group_n": {}, "group_n_source": {}}
+        for r in rs:
             g = r["group"]
             p["margins"][g] = two_way(float(r["dem"]), float(r["rep"]))
             if r.get("group_n") or g == "topline":
-                p["group_n"][g] = float(r["group_n"] or p["n"])
+                p["group_n"][g], src = float(r["group_n"] or n), "published"
+            elif r.get("moe") and top_moe:
+                p["group_n"][g], src = n * (top_moe / float(r["moe"])) ** 2, "moe"
             else:
-                p["group_n"][g] = _estimated_group_n(p["n"], g)
-                p["group_n_estimated"].add(g)
+                p["group_n"][g], src = _estimated_group_n(n, g), "share"
+            p["group_n_source"][g] = src
     return polls
 
 
@@ -118,10 +137,27 @@ def _weight(p: dict, g: str, settings: Settings, equal_weights: bool) -> float:
     return math.sqrt(min(n, N_CAP))
 
 
+def weighted_median(pairs: list[tuple[float, float]]) -> float:
+    """Median of x under weights w (pairs of (w, x)); averages the two middle
+    values when the cumulative weight lands exactly on half."""
+    pairs = sorted(pairs, key=lambda wx: wx[1])
+    half, cum = sum(w for w, _ in pairs) / 2.0, 0.0
+    for i, (w, x) in enumerate(pairs):
+        cum += w
+        if abs(cum - half) < 1e-9 * half and i + 1 < len(pairs):
+            return (x + pairs[i + 1][1]) / 2.0
+        if cum > half:
+            return x
+    return pairs[-1][1]
+
+
 def matched_changes(polls: dict[str, dict], polls_2024: dict[str, dict], groups: tuple[str, ...],
-                    equal_weights: bool = False) -> dict[str, dict]:
-    """group -> {"r_avg", "pollsters": [(name, r, n_eff, pop26, pop24)], "pooled_n", "missing"}.
-    "missing" lists pollsters with a 2026 crosstab for the group but no 2024 pair."""
+                    settings: Settings = DEFAULT_SETTINGS, equal_weights: bool = False) -> dict[str, dict]:
+    """group -> {"r_avg", "se", "pollsters": [(name, r, n_eff, se_r, pop26, pop24)],
+    "pooled_n", "missing", "r_mean", "r_median", "loo": {name: r_avg without it},
+    "max_loo", "method"}. "missing" lists pollsters with a 2026 crosstab for the
+    group but no 2024 pair. se_r combines both years' sampling error of the
+    group margin; se is the inverse-variance SE of the combined r."""
     out = {}
     for g in groups:
         rows, missing = [], []
@@ -134,12 +170,28 @@ def matched_changes(polls: dict[str, dict], polls_2024: dict[str, dict], groups:
                 continue
             r = ((p["margins"][g] - q["margins"][g])
                  - (p["margins"]["topline"] - q["margins"]["topline"]))
-            n_eff = 1.0 / (1.0 / p["group_n"][g] + 1.0 / q["group_n"][g])
-            rows.append((name, r, n_eff, p["population"], q["population"]))
-        r_avg = (weighted_mean([(1.0 if equal_weights else math.sqrt(n), r) for _, r, n, _, _ in rows])
-                 if rows else None)
-        out[g] = {"r_avg": r_avg, "pollsters": rows, "pooled_n": sum(n for _, _, n, _, _ in rows),
-                  "missing": missing}
+            n26, n24 = p["group_n"][g], q["group_n"][g]
+            se_r = math.hypot(margin_se(p["margins"][g], n26), margin_se(q["margins"][g], n24))
+            rows.append((name, r, 1.0 / (1.0 / n26 + 1.0 / n24), se_r, p["population"], q["population"]))
+        m = {"pollsters": rows, "missing": missing, "pooled_n": sum(row[2] for row in rows),
+             "r_avg": None, "se": None, "r_mean": None, "r_median": None, "loo": {}, "max_loo": 0.0,
+             "method": None}
+        if rows:
+            def w(row):
+                if equal_weights:
+                    return 1.0
+                return 1.0 / row[3] ** 2 if settings.matched_inverse_variance else math.sqrt(row[2])
+            pairs = [(w(row), row[1]) for row in rows]
+            m["r_mean"] = weighted_mean(pairs)
+            m["r_median"] = weighted_median(pairs)
+            m["se"] = 1.0 / math.sqrt(sum(1.0 / row[3] ** 2 for row in rows))
+            if len(rows) > 1:
+                m["loo"] = {row[0]: weighted_mean(pairs[:i] + pairs[i + 1:]) for i, row in enumerate(rows)}
+                m["max_loo"] = max(abs(v - m["r_mean"]) for v in m["loo"].values())
+            robust = settings.matched_median_fallback and m["max_loo"] > LOO_THRESHOLD
+            m["method"] = "weighted median" if robust else "weighted mean"
+            m["r_avg"] = m["r_median"] if robust else m["r_mean"]
+        out[g] = m
     return out
 
 
@@ -197,7 +249,7 @@ def estimate(polls: dict[str, dict], settings: Settings = DEFAULT_SETTINGS,
     shifts, edu_shifts = dict(current), dict(edu_current)
     if settings.pollster_matched_shifts:
         polls_2024 = load_polls(CSV_2024_PATH) if polls_2024 is None else polls_2024
-        matched = matched_changes(polls, polls_2024, GROUPS + WHITE_EDU, equal_weights)
+        matched = matched_changes(polls, polls_2024, GROUPS + WHITE_EDU, settings, equal_weights)
         r = {g: matched[g]["r_avg"] for g in GROUPS if _matchable(g, matched[g])}
         race, c = _centered(S, r, {g: current[g] for g in GROUPS if g not in r}, shares)
         shifts = {**race, "other": S}

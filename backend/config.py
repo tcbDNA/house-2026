@@ -22,6 +22,11 @@ DEFAULT_TREND_WEIGHT = 0.0
 
 GROUP_BASELINES = ("catalist", "pew_validated")
 
+# Design effect for poll sampling errors: SE of a two-way margin ≈
+# 200 × sqrt(p(1 − p) × DESIGN_EFFECT / n). Used for the inverse-variance
+# weights on pollster-matched changes and for the group-error sigmas.
+DESIGN_EFFECT = 1.5
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -72,6 +77,13 @@ class Settings:
     # share-weighted mean of r_avg, so the national level is unchanged.
     # Off: each group's shift is its 2026 poll average minus its 2024 margin.
     pollster_matched_shifts: bool = True
+    # Combine each group's pollster-level r with inverse-variance weights
+    # (1/SE_r², SE_r from both years' sampling error at DESIGN_EFFECT) rather
+    # than √n_eff, so a noisy subgroup counts for less.
+    matched_inverse_variance: bool = True
+    # If leaving out any one pollster moves a group's r_avg by more than
+    # 1.5 pts, use the weighted median for that group (flagged).
+    matched_median_fallback: bool = True
     # Source of the 2024 group margins the current method measures from:
     # "catalist" (Catalist, What Happened 2024) or "pew_validated" (Pew's
     # 2024 validated-voter study). With matched shifts on, it moves only the

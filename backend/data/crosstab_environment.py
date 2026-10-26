@@ -31,7 +31,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import settings_from  # noqa: E402
 from environment import (  # noqa: E402
-    CSV_PATH, EDU_GROUPS, GROUPS, PRES_2024_POPVOTE, WHITE_EDU, default_scenario, estimate, load_polls,
+    CSV_2024_PATH, CSV_PATH, EDU_GROUPS, GROUPS, LOO_THRESHOLD, PRES_2024_POPVOTE, WHITE_EDU,
+    default_scenario, estimate, load_polls,
 )
 
 
@@ -69,10 +70,15 @@ def main():
     print(f"{len(polls)} polls: " + ", ".join(
         f"{k} ({v['end']}, {v['population'].upper()}, n={v['n']})"
         for k, v in sorted(polls.items(), key=lambda kv: kv[1]['end'], reverse=True)))
-    est_n = {k: sorted(v["group_n_estimated"]) for k, v in polls.items() if v["group_n_estimated"]}
-    if est_n:
-        print("subgroup n estimated as total n × electorate share (not published): "
-              + "; ".join(f"{k}: {', '.join(g)}" for k, g in est_n.items()))
+    polls_2024 = load_polls(CSV_2024_PATH)
+    for label, ps in (("2026", polls), ("2024", polls_2024)):
+        for src, how in (("moe", "derived from published MOEs, n × (MOE_total/MOE_group)²"),
+                         ("share", "estimated as total n × electorate share")):
+            got = {k: sorted(g for g, s in v["group_n_source"].items() if s == src) for k, v in ps.items()}
+            got = {k: g for k, g in got.items() if g}
+            if got:
+                print(f"{label} subgroup n {how}: " + "; ".join(
+                    f"{k} " + ", ".join(f"{g} {ps[k]['group_n'][g]:.0f}" for g in gs) for k, gs in got.items()))
     print()
     print("Current method (S): 2026 poll average − 2024 baseline")
     print(f"{'group':10} {'polls':>5} {'share':>6} {'avg margin':>11} {'2024':>7} {'shift':>7}")
@@ -85,20 +91,39 @@ def main():
 
     if est["matched"]:
         print()
+        wts = ("inverse-variance weights (1/SE_r², SE_r from both years at deff 1.5)"
+               if settings.matched_inverse_variance else "√n_eff weights")
         print("Pollster-matched pattern: r = (2026 group − 2024 group) − (2026 topline − 2024 topline),")
-        print("averaged with √n_eff weights, n_eff = 1/(1/n_2026 + 1/n_2024); shift = S + (r_avg − c)")
-        print(f"{'group':18} {'old shift':>9} {'new shift':>9} {'r_avg':>7} {'pooled n_eff':>12}  pollsters (r, n_eff)")
+        print(f"combined with {wts}; shift = S + (r_avg − c).")
+        print(f"If leaving out one pollster moves r_avg by more than {LOO_THRESHOLD} pts, the weighted median is used"
+              f"{'' if settings.matched_median_fallback else ' (fallback OFF)'}.")
+        print(f"{'group':18} {'old shift':>9} {'new shift':>9} {'r_avg':>7} {'SE':>5} {'mean':>7} {'median':>7} "
+              f"{'max LOO':>7} {'pooled n_eff':>12}  method")
         rows = [(g, est["current_shifts"][g], est["shifts"][g]) for g in GROUPS] + \
                [(g, est["edu_current_shifts"][g], est["edu_shifts"][g]) for g in WHITE_EDU]
         for g, old, new in rows:
             m = est["matched"][g]
-            used = ", ".join(f"{name} {r:+.1f} ({n:.0f}{'' if p26 == p24 else f' {p26.upper()}/{p24.upper()}'})"
-                             for name, r, n, p26, p24 in m["pollsters"])
-            ravg = f"{m['r_avg']:+7.2f}" if m["r_avg"] is not None else "      -"
-            note = "" if abs(new - old) > 1e-9 or not m["pollsters"] else "  [kept current method]"
+            if m["r_avg"] is None:
+                print(f"{g:18} {old:>+9.2f} {new:>+9.2f}  (no matched pollsters)")
+                continue
+            note = m["method"] + (" [FLAGGED]" if m["method"] == "weighted median" else "")
+            if abs(new - old) < 1e-9:
+                note += "  [kept current method]"
             if m["missing"]:
                 note += f"  [no 2024 pair: {', '.join(m['missing'])}]"
-            print(f"{g:18} {old:>+9.2f} {new:>+9.2f} {ravg} {m['pooled_n']:>12.0f}  {used}{note}")
+            print(f"{g:18} {old:>+9.2f} {new:>+9.2f} {m['r_avg']:>+7.2f} {m['se']:>5.2f} {m['r_mean']:>+7.2f} "
+                  f"{m['r_median']:>+7.2f} {m['max_loo']:>7.2f} {m['pooled_n']:>12.0f}  {note}")
+        print()
+        print("Per pollster: r (SE_r, n_eff) | r_avg with that pollster left out")
+        for g, _, _ in rows:
+            m = est["matched"][g]
+            if not m["pollsters"]:
+                continue
+            print(f"  {g}:")
+            for name, r, n, se, p26, p24 in m["pollsters"]:
+                pop = "" if p26 == p24 else f" {p26.upper()}/{p24.upper()}"
+                loo = f"{m['loo'][name]:+.2f} ({m['loo'][name] - m['r_mean']:+.2f})" if name in m["loo"] else "-"
+                print(f"    {name:20} {r:+6.1f} ({se:4.1f}, {n:5.0f}){pop}  | {loo}")
         print(f"{'other':18} {est['current_shifts']['other']:>+9.2f} {est['shifts']['other']:>+9.2f}"
               f"       -            -  (keeps S)")
         print(f"c (race frame) = {est['c']:+.2f}" + (f"; c (race × edu, white cells) = {est['c_edu']:+.2f}"
