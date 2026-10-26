@@ -13,3 +13,4 @@ backend/data/sources/mt_senate_2026/**/*.jpg filter=lfs diff=lfs merge=lfs -text
 backend/data/sources/public_averages_2026/**/*.html filter=lfs diff=lfs merge=lfs -text
 backend/data/sources/ne_senate_2026/**/*.html filter=lfs diff=lfs merge=lfs -text
 backend/data/sources/ne_senate_2026/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+backend/data/sources/senate_polls_2026/**/*.html filter=lfs diff=lfs merge=lfs -text
