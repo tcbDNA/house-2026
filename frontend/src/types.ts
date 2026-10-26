@@ -335,6 +335,11 @@ export type SeatDistribution = {
   // Senate only: control accounts for the VP tiebreak (R controls at 50).
   p_d_control?: number;
   p_r_control?: number;
+  // Senate only: independents (assumed to caucus with D in the headline)
+  // counted for neither party, and the races involved.
+  p_d_control_without_independents?: number;
+  d_median_without_independents?: number;
+  independent_races?: { state: string; candidate: string; opponent: string; p_win: number }[];
 };
 
 // Weight on each demographic axis (see backend model.axis_weights).

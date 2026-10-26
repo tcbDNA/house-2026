@@ -167,9 +167,12 @@ export function Methodology() {
         centered on its national mean (weighted by 2024 votes across all 50
         states), default weight 0.5×. 65 not-up seats are assumed to hold
         their current party. Democrats need 51 seats for control; a 50-50 split is
-        Republican control via VP Vance's tiebreak. Independents like Dan Osborn are
-        counted with Democrats for majority purposes, though neither independent
-        nominee is committed to caucusing with them. Appointed senators who haven't
+        Republican control via VP Vance's tiebreak. The four independent nominees —
+        Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
+        are assumed to caucus with Democrats if they win, so they count toward
+        Democratic control; the Senate summary also shows P(D control) if none of
+        them does (49.7% vs 48.2% by default; only Osborn wins often enough to
+        matter). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
         WAR or incumbency until it is. <b>Montana</b> is a three-way race (Daines

@@ -74,10 +74,22 @@ export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
             D total: median <b>{seat_distribution.d_median}</b>{" "}
             · 80% CI <b>[{seat_distribution.d_p10}, {seat_distribution.d_p90}]</b>
           </div>
+          {seat_distribution.p_d_control_without_independents !== undefined && (
+            <div className="flex items-baseline justify-between mt-1 text-slate-500">
+              <span>if no independent caucuses with D</span>
+              <span className="font-semibold">
+                {(seat_distribution.p_d_control_without_independents * 100).toFixed(1)}%
+              </span>
+            </div>
+          )}
           <div className="text-[10px] text-slate-400 mt-1">
-            D needs 51; a 50-50 split is R control (VP tiebreak). Independent
-            nominees (Osborn NE, Bengs SD) are counted with D — neither is
-            committed to caucusing with Democrats.
+            D needs 51; a 50-50 split is R control (VP tiebreak). The independent
+            nominees are assumed to caucus with Democrats if they win
+            {seat_distribution.independent_races && seat_distribution.independent_races.length > 0 && (
+              <> ({seat_distribution.independent_races
+                .map((r) => `${r.candidate?.split(" ").slice(-1)[0]} ${r.state} ${(r.p_win * 100).toFixed(0)}%`)
+                .join(", ")} chance of winning)</>
+            )}.
           </div>
         </div>
       )}

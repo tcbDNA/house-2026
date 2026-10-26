@@ -275,7 +275,13 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
                                  terms: ErrorTerms | None = None) -> dict:
     """Senate version. `result['seats']` contains 33 Class-II + 2 specials.
     Holdovers (not-up seats) are added deterministically to each simulated
-    seat count. Independents caucusing with D count toward D majority.
+    seat count.
+
+    Independent nominees running as the anti-Republican candidate (Osborn NE,
+    Bengs SD, Achilles ID, Bodnar MT — challenger_party "(I)") are assumed to
+    caucus with Democrats if they win: the headline P(D control) counts them
+    with Democrats. `p_d_control_without_independents` counts their wins for
+    neither party (no caucus), and `independent_races` lists the races.
     """
     rows = result.get("seats") or []
     if not rows:
@@ -286,10 +292,12 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
     p_d = d_wins.mean(axis=0)
     for r, p in zip(rows, p_d):
         r["p_d"] = round(float(p), 3)
+    indep = np.array([r.get("challenger_party") == "(I)" for r in rows])
 
     # 100-seat chamber. D control needs 51; R controls at 50 because VP Vance
     # breaks ties. p_*_majority are outright 51+ majorities.
     total_d = d_wins.sum(axis=1) + holdover_d + holdover_i_caucus_d
+    total_d_no_ind = d_wins[:, ~indep].sum(axis=1) + holdover_d + holdover_i_caucus_d
     total_r = (~d_wins).sum(axis=1) + holdover_r
     summary = result.setdefault("summary", {})
     summary["seat_distribution"] = {
@@ -301,6 +309,15 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
         "p_r_majority": round(float((total_r >= 51).mean()), 3),
         "p_d_control": round(float((total_d >= 51).mean()), 3),
         "p_r_control": round(float((total_r >= 50).mean()), 3),
+        # Same simulations, independents' wins caucusing with neither party.
+        "d_median_without_independents": int(np.median(total_d_no_ind)),
+        "p_d_control_without_independents": round(float((total_d_no_ind >= 51).mean()), 3),
+        "independents_assumed": "caucus with Democrats",
+        "independent_races": [
+            {"state": r["state"], "candidate": r.get("challenger"), "opponent": r.get("co_nominee") or r.get("incumbent"),
+             "p_win": round(float(p), 3)}
+            for r, p, i in zip(rows, p_d, indep) if i
+        ],
     }
     summary["error_model"] = error_model_summary(terms, senate=True)
     return result
