@@ -39,13 +39,13 @@ S = **+10.0** → R+1.5 + 10.0 = **D+8.5** (equal weight per pollster: D+8.3; to
 
 **How it enters the model.** Each race slider defaults to its Catalist 2024 margin plus the shift used (white R+7.1, Black D+81.4, Hispanic D+28.9, Asian D+42.9), so each group's shift lands on the districts and states where that group lives. Those sliders carry +9.7 nationally; the uniform wave defaults to **R+1.2** (2024 + the "other" group's share of S), so the turnout-weighted national total is D+8.5. In the race × education frame the white college and non-college cells are matched the same way (NYT/Siena, CBS/YouGov, Pew: college r −4.5 by weighted median, flagged — leaving out CBS/YouGov moves the mean 2.1; non-college −2.7; shifts +7.2 and +8.9, averaging to the white race shift) and the non-white cells take 2024 + the non-white race groups' average shift (+15.4). The four cells cover every voter, so in that frame the wave is exactly the 2024 level (R+1.5) and the national total is the same D+8.5 (checked against the model output).
 
-**Why not reweight the margins to the 2022 midterm electorate?** Applying the group margins directly to Catalist's 2022 composition gives D+6.7, because 2024's margins on that whiter electorate are R+3.1 rather than R+1.5 — a 1.6-pt R composition shift the polls themselves don't show (their likely-voter samples are ~70–73% white, not ~76%). Each point of assumed white share moves that variant ~0.53 pts. The shift formulation uses the crosstabs for what they measure — how each group has moved — without layering on a turnout assumption.
+**Composition.** The shifts are weighted by the model's 2026 electorate shares (white 74% by default; 72–76% in the settings, D+8.6 to D+8.5), and uncertainty about who turns out enters the simulation as the composition error term (σ 1.0). The shift formulation uses the crosstabs for what they measure — how each group has moved — rather than applying 2026 group margins to an assumed electorate.
 
 Polls checked without a usable public race breakdown of the ballot: Harvard CAPS/Harris, Morning Consult (blocked), CNN/SSRS (blocked), NBC/SurveyMonkey (blocked), ABC/WaPo/Ipsos, Reuters/Ipsos, Quinnipiac, AP-NORC, Strength In Numbers/Verasight, RMG/Napolitan, TIPP, Noble Predictive. No national poll in the window: Marquette, Marist, Suffolk, AtlasIntel, WSJ, Yahoo/YouGov, The Argument, Quantus, Data for Progress, Navigator.
 
 ## WAR (Wins Above Replacement)
 
-WAR is the candidate-quality adjustment from [Split-Ticket](https://split-ticket.org), measuring how much a candidate over/underperforms the presidential baseline in their seat.
+WAR is the candidate-quality adjustment from [Split-Ticket](https://split-ticket.org). Split Ticket measures each candidate's result against a **fundamentals baseline** — seat partisanship (through the same-year presidential margin), incumbency, demographics and money — not just the presidential result, so its WAR is net of incumbency (worth about 3 points in 2024).
 
 ### Eligibility window
 
@@ -84,7 +84,7 @@ Name matching is accent-insensitive. When an exact name match fails, a last-name
 A small number of specific races are excluded at blend time:
 
 - **Collins 2014 vs Bellows** — 68%-31% blowout that would inflate her personal-vote signal.
-- **Sullivan 2014 vs Begich** — the extracted "personal vote" reflects Begich's incumbency, not Sullivan's underperformance.
+- **Sullivan 2014 vs Begich** — excluded on the grounds that the number reflects Begich's incumbency. That rationale doesn't hold for Split Ticket's WAR, whose baseline already controls for incumbency; the exclusion is unchanged pending review.
 
 ### Manual WAR overrides
 
@@ -108,9 +108,9 @@ Suppressed for: open seats, named-but-not-sitting nominees (TX-02 Toth), primary
 
 **District demographics** are American Community Survey (ACS) 2023 5-year estimates from the U.S. Census Bureau, computed on current district boundaries (post-redistricting where applicable).
 
-**Group voting baselines** (slider zero-points) use **Catalist 2024 D-R margins** per group, matching the 2024 presidential baseline the rest of the model is built on. Parking sliders at default means each group votes as it did in 2024 — zero demographic deviation from the baseline. Moving a slider models that group voting differently than it did in 2024, as a deliberate counterfactual. The resulting shift adds on top of the national environment.
+**Group voting baselines** (slider zero-points) use **Catalist 2024 D-R margins** per group, matching the 2024 presidential baseline the rest of the model is built on: a slider at its 2024 value adds no demographic shift. The defaults are 2024 plus each group's shift since 2024 (Generic ballot from crosstabs, above), so each group's movement lands on the districts and states where it lives; moving a slider further models a different swing, on top of the uniform wave.
 
-**Electorate composition shares** use **Catalist 2022** (prior-midterm) values, since midterm turnout shape is the better analog for the 2026 voter pool than presidential-year turnout. ACS race shares are of total population (including children and non-citizens) and age / education shares are of adults, so each group's ACS share is multiplied by a national turnout factor and renormalized within each district / state / county. The factors are fit by iterative proportional fitting over the 435 districts so that each group's 2024-turnout-weighted national average equals its Catalist 2022 share (e.g. Hispanic ≈ 0.42×, under-30 ≈ 0.49×, 65+ ≈ 1.53×). Without this, a Hispanic or youth slider moved the national margin about twice as much as the slider panel reported.
+**Electorate composition.** ACS race shares are of total population (including children and non-citizens) and age / education shares are of adults, so each group's ACS share is multiplied by a national turnout factor and renormalized within each district / state / county. The factors are fit by iterative proportional fitting over the 435 districts so that each group's 2024-turnout-weighted national average matches **Catalist 2022** (the prior midterm: white 75.8%), and then every non-white factor is scaled by one common factor so the **2026 white share is 74%** (setting `white_share`; age factors untouched). 74% keeps the midterm logic — midterm electorates are whiter than presidential ones (Catalist: 76% in 2022, 72% in 2024) — while allowing for demographic drift since 2022 and a more diverse early vote. The scenario range is **72–76%** (Model settings); across it the national margin moves only from D+8.6 to D+8.5, because the group shifts are close to one another. Uncertainty about who turns out is also in the simulation as the **composition** error term (σ 1.0, national). Without the turnout factors, a Hispanic or youth slider moved the national margin about twice as much as the slider panel reported.
 
 Both the 2024 group margins and the 2022 composition shares come from the same source — [Catalist's "What Happened 2024" national crosstabs](https://catalist.us/whathappened2024/), with 2022 as the prior-cycle column.
 
@@ -149,7 +149,7 @@ Senate projections treat the state-level trend (state vs. national 2020→2024 s
 
 The composition and level terms raise the standard deviation of the simulated national margin (2024-turnout-weighted mean of district margins) from 2.58 to 2.94; the group errors leave it unchanged (2.58 alone) but raise the average pairwise correlation among the five most Hispanic competitive districts (TX-15, FL-26, FL-27, TX-34, CA-22) from 0.36 to 0.56 (`backend/analysis/error_diagnostics.txt`).
 
-Per-race σ (excluding group terms) is ≈ 4.8 for an incumbent on unchanged lines and ≈ 5.8 for an open seat on new lines. Lockouts are deterministic. Each call uses a fixed seed, so a given scenario always returns the same probabilities and slider moves don't add simulation jitter. The σ values are modeling judgments, not fitted. Probabilities are conditional on the scenario inputs.
+Per-race σ (excluding group terms) is ≈ 4.8 for an incumbent on unchanged lines and ≈ 5.8 for an open seat on new lines. Lockouts are deterministic. Each call uses a fixed seed, so a given scenario always returns the same probabilities and slider moves don't add simulation jitter. The σ values are modeling judgments, not fitted. Probabilities are conditional on the scenario inputs: they cover polling error around the scenario — now including composition (who turns out), level measurement and group-level crosstab error — and race-level error, not uncertainty in the scenario inputs themselves.
 
 ## County overlay
 

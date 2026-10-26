@@ -76,8 +76,10 @@ export function Methodology() {
       <p className="mb-2">
         <b>WAR (Wins Above Replacement)</b> is the candidate-quality adjustment from{" "}
         <a className="underline" href="https://split-ticket.org" target="_blank" rel="noreferrer">Split-Ticket</a>
-        , measuring how much a candidate over/underperforms the presidential baseline
-        in their seat. Only each office's last three cycles before 2026 are eligible
+        . Split Ticket measures each candidate's result against a fundamentals
+        baseline — seat partisanship (through the same-year presidential margin),
+        incumbency, demographics and money — not just the presidential result, so
+        WAR is net of incumbency. Only each office's last three cycles before 2026 are eligible
         (House 2020–2024, Governor 2014+, Senate 2008+). We use <b>per-record
         windowing</b>: a candidate's eligible records are grouped by office (House /
         Senate / Governor); within each office group, records are sorted year-desc
@@ -107,8 +109,8 @@ export function Methodology() {
         federal personal vote came in at roughly half his gubernatorial WAR). A
         small number of <b>per-cycle exclusions</b> apply (Collins 2014 vs Bellows
         was a 68%-31% blowout that would inflate her personal-vote signal; Sullivan
-        2014's number reflects Begich's incumbency rather than Sullivan); these
-        are listed in code and trigger at blend time.{" "}
+        2014 vs Begich is also excluded); these are listed in code and trigger at
+        blend time.{" "}
         <b>Manual WAR overrides</b> are applied in a small number of cases where the
         blended value would misrepresent expected 2026 performance. Currently:{" "}
         <i>Richard Ojeda (NC-09, D) = 0</i> — his only prior race is 2018 WV-03,
@@ -134,17 +136,20 @@ export function Methodology() {
         (post-redistricting where applicable). <b>Group voting baselines</b> (slider
         zero-points) use Catalist 2024 D-R margins per group, matching the 2024
         presidential baseline the rest of the model is built on: a slider at its
-        2024 value adds no demographic shift. The defaults are the poll averages
-        above, so each group's movement since 2024 lands on the districts where
+        2024 value adds no demographic shift. The defaults are 2024 plus the
+        shifts above, so each group's movement since 2024 lands on the districts where
         that group lives; moving a slider further models a different swing, and the
         shift adds on top of the uniform wave.{" "}
-        <b>Electorate composition shares</b> use Catalist 2022 (prior-midterm) values,
-        since midterm turnout shape is the better analog for the 2026 voter pool than
-        presidential-year turnout. ACS shares describe the whole population
+        <b>Electorate composition:</b> ACS shares describe the whole population
         (including children and non-citizens), so each group's ACS share is rescaled
-        by a national turnout factor — fit so that the turnout-weighted national
-        average matches Catalist's 2022 share — and renormalized within each
-        district / state / county. Both the 2024 group margins and the 2022
+        by a national turnout factor — fit to Catalist's 2022 midterm electorate,
+        then with every non-white factor scaled together so the <b>2026 white share
+        is 74%</b> — and renormalized within each district / state / county. 74%
+        keeps the midterm logic (Catalist: 76% white in 2022, 72% in 2024) while
+        allowing for demographic drift since 2022 and a more diverse early vote; the
+        settings range is 72–76%, across which the national margin moves only from
+        D+8.6 to D+8.5. Turnout uncertainty also enters the simulation as the
+        composition error term. Both the 2024 group margins and the 2022
         composition shares come from the same source —{" "}
         <a className="underline" href="https://catalist.us/whathappened2024/" target="_blank" rel="noreferrer">
           Catalist's "What Happened 2024" national crosstabs
@@ -152,13 +157,14 @@ export function Methodology() {
         , with 2022 as the prior-cycle column. Race (or race × education) and age
         are alternative descriptions of the same voters, so when both are moved
         their shifts are averaged rather than stacked, weighted by how far each
-        axis was moved. The <b>race × education</b> frame also starts from poll
-        data: white college graduates at D+16.6 (+14.7 since 2024) and white
-        non-college voters at R+22.4 (+4.9), from NYT/Siena, CBS/YouGov and Pew;
-        the non-white cells (reported by only one poll) get their 2024 margin plus
-        the non-white shift from the race data. Switching frames adjusts the
-        uniform wave so the national total stays the same. Age sliders stay at
-        their 2024 values.
+        axis was moved. The <b>race × education</b> frame starts from the matched
+        shifts too: white college graduates at D+9.1 (+7.2 since 2024) and white
+        non-college voters at R+18.3 (+8.9), from NYT/Siena, CBS/YouGov and Pew,
+        averaging to the white race shift; the non-white cells get their 2024
+        margin plus the non-white groups' average shift (+15.4). The four cells
+        cover every voter, so in that frame the uniform wave is the 2024 level
+        (R+1.5) and the national total stays the same. Age sliders stay at their
+        2024 values.
       </p>
       <p className="mb-2">
         <b>Senate</b> projections treat the state-level trend (state vs. national
@@ -224,8 +230,9 @@ export function Methodology() {
         Projections within ±3 pts are tilts, not predictions — model uncertainty is
         wider than the displayed precision. Demographic crosstabs are sample-based
         approximations. Win probabilities are conditional on the scenario you set:
-        they capture polling and race-level error around it, not uncertainty in
-        the inputs themselves.
+        they capture polling error around it — including composition (who turns
+        out), level measurement and group-level crosstab error — and race-level
+        error, not uncertainty in the scenario inputs themselves.
       </p>
     </div>
   );
