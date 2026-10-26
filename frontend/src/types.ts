@@ -145,7 +145,64 @@ export const SLIDER_DEFS: { key: SliderKey; label: string; min: number; max: num
   { key: "age_65_plus",           label: "65+",                   min: -100, max: 100, axis: "age"  },
 ];
 
-export const DEFAULT_SLIDERS: SliderValues = { ...CATALIST_BASELINES };
+// Default slider positions: the race groups start at the average of recent
+// polls' crosstabs (backend/data/crosstab_environment.py), so districts swing
+// with their own demographics; everything else starts at its Catalist 2024
+// baseline. Keep in sync with DEFAULT_SLIDERS in backend/main.py.
+export const DEFAULT_SLIDERS: SliderValues = {
+  ...CATALIST_BASELINES,
+  white_nh: -6.7,
+  black:    75.6,
+  hispanic: 28.3,
+  asian:    46.7,
+};
+
+// Starting positions for the race × education cells when that frame is
+// selected: white cells are poll averages (NYT/Siena, CBS/YouGov, Pew);
+// non-white cells (one poll) are 2024 + the non-white shift from the race data.
+export const EDU_FRAME_DEFAULTS: Pick<SliderValues,
+  "white_college" | "white_non_college" | "nonwhite_college" | "nonwhite_non_college"> = {
+  white_college:         16.6,
+  white_non_college:    -22.4,
+  nonwhite_college:      50.3,
+  nonwhite_non_college:  45.3,
+};
+
+export type Axis = "race" | "edu" | "age";
+export const AXIS_KEYS: Record<Axis, SliderKey[]> = {
+  race: ["white_nh", "black", "hispanic", "asian"],
+  edu:  ["white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college"],
+  age:  ["under_30", "age_30_44", "age_45_64", "age_65_plus"],
+};
+const ELECTORATE_SHARE: Record<SliderKey, number> = {
+  ...CATALIST_ELECTORATE_SHARES_RACE,
+  ...CATALIST_ELECTORATE_SHARES_EDU,
+  ...CATALIST_ELECTORATE_SHARES_AGE,
+};
+
+// National shift implied by one axis's sliders: Σ electorate share × Δ from 2024.
+export function axisShift(s: SliderValues, axis: Axis): number {
+  return AXIS_KEYS[axis].reduce(
+    (acc, k) => acc + ELECTORATE_SHARE[k] * (s[k] - CATALIST_BASELINES[k]), 0);
+}
+
+// Mirrors backend model.axis_weights: the axes describe the same voters, so
+// when more than one is moved they're averaged, weighted by how far each was
+// moved (electorate-share-weighted |Δ|). A lone moved axis gets full weight.
+export function axisWeights(s: SliderValues): Record<Axis, number> {
+  const mag = (axis: Axis) => AXIS_KEYS[axis].reduce(
+    (acc, k) => acc + ELECTORATE_SHARE[k] * Math.abs(s[k] - CATALIST_BASELINES[k]), 0);
+  const m = { race: mag("race"), edu: mag("edu"), age: mag("age") };
+  const total = m.race + m.edu + m.age;
+  if (total <= 1e-6) return { race: 1, edu: 1, age: 1 };
+  return { race: m.race / total, edu: m.edu / total, age: m.age / total };
+}
+
+// Total national shift the sliders add on top of the uniform wave.
+export function compositionalShift(s: SliderValues): number {
+  const w = axisWeights(s);
+  return w.race * axisShift(s, "race") + w.edu * axisShift(s, "edu") + w.age * axisShift(s, "age");
+}
 
 export function formatMargin(v: number): string {
   if (v === 0) return "tie";

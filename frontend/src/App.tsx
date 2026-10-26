@@ -10,22 +10,42 @@ import { SenateTable } from "./components/SenateTable";
 import { SenateMap } from "./components/SenateMap";
 import { CountyMap } from "./components/CountyMap";
 import { fetchProjection, fetchSenate } from "./api";
-import { CATALIST_BASELINES, DEFAULT_SLIDERS, SLIDER_DEFS, type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues } from "./types";
+import {
+  AXIS_KEYS, CATALIST_BASELINES, DEFAULT_SLIDERS, EDU_FRAME_DEFAULTS, SLIDER_DEFS, compositionalShift,
+  type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues,
+} from "./types";
 
 type Tab = "house" | "senate";
 export type DemoFrame = "race" | "race_edu";
 
-// Default D+8.2 = 2024 result plus the share-weighted shift in each racial
-// group's margin across recent polls' crosstabs
-// (backend/data/crosstab_environment.py). Keep in sync with
+// Default uniform wave (D-R). With the race sliders at their poll-average
+// defaults (+9.45 nationally), the total is D+8.2: the 2024 result plus the
+// share-weighted shift in each racial group's margin across recent polls'
+// crosstabs (backend/data/crosstab_environment.py). Keep in sync with
 // DEFAULT_ENVIRONMENT in backend/main.py.
-const DEFAULT_ENV = 8.2;
+const DEFAULT_ENV = -1.25;
+
+// Slider defaults per frame. The inactive demographic axis sits at its 2024
+// baseline so the two frames never double-count.
+function frameDefaults(frame: DemoFrame): SliderValues {
+  if (frame === "race") return DEFAULT_SLIDERS;
+  const out: SliderValues = { ...DEFAULT_SLIDERS, ...EDU_FRAME_DEFAULTS };
+  for (const k of AXIS_KEYS.race) out[k] = CATALIST_BASELINES[k];
+  return out;
+}
+
+// Uniform wave that gives the same national total in either frame.
+function frameDefaultEnv(frame: DemoFrame): number {
+  const total = DEFAULT_ENV + compositionalShift(DEFAULT_SLIDERS);
+  return Math.round((total - compositionalShift(frameDefaults(frame))) * 100) / 100;
+}
 
 function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscount: number; frame: DemoFrame } {
   const p = new URLSearchParams(window.location.search);
   const tab: Tab = window.location.hash === "#senate" ? "senate" : "house";
-  const env = Number(p.get("env") ?? DEFAULT_ENV);
-  const out: SliderValues = { ...DEFAULT_SLIDERS };
+  const frame: DemoFrame = p.get("frame") === "race_edu" ? "race_edu" : "race";
+  const env = Number(p.get("env") ?? frameDefaultEnv(frame));
+  const out: SliderValues = { ...frameDefaults(frame) };
   for (const s of SLIDER_DEFS) {
     const v = p.get(s.key);
     if (v != null && !Number.isNaN(Number(v))) out[s.key] = Number(v);
@@ -36,15 +56,15 @@ function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscoun
     const tv = Number(tdRaw);
     if (!Number.isNaN(tv) && tv >= -1 && tv <= 1) trendDiscount = tv;
   }
-  const frame: DemoFrame = p.get("frame") === "race_edu" ? "race_edu" : "race";
-  return { tab, env: Number.isNaN(env) ? DEFAULT_ENV : env, sliders: out, trendDiscount, frame };
+  return { tab, env: Number.isNaN(env) ? frameDefaultEnv(frame) : env, sliders: out, trendDiscount, frame };
 }
 
 function writeUrl(tab: Tab, env: number, sliders: SliderValues, trendDiscount: number, frame: DemoFrame) {
   const p = new URLSearchParams();
-  if (env !== DEFAULT_ENV) p.set("env", String(env));
+  if (env !== frameDefaultEnv(frame)) p.set("env", String(env));
+  const defaults = frameDefaults(frame);
   for (const s of SLIDER_DEFS) {
-    if (sliders[s.key] !== CATALIST_BASELINES[s.key]) {
+    if (sliders[s.key] !== defaults[s.key]) {
       p.set(s.key, String(sliders[s.key]));
     }
   }
@@ -99,20 +119,21 @@ export default function App() {
   const onSlider = (k: SliderKey, v: number) => setSliders((cur) => ({ ...cur, [k]: v }));
   const onReset = () => { setEnvironment(DEFAULT_ENV); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
 
-  // Switching frames: snap the inactive axis's sliders back to baseline so
-  // they contribute zero to demographic_shift. Keeps the model honest about
-  // which axis is currently "telling the story."
+  // Switching frames: the axis being left snaps back to its 2024 baseline (so
+  // it contributes zero to demographic_shift) and the axis being entered
+  // starts at its poll-average defaults. The uniform wave absorbs the
+  // difference so the national total doesn't change.
   const onFrameChange = (next: DemoFrame) => {
-    const RACE_KEYS: SliderKey[] = ["white_nh", "black", "hispanic", "asian"];
-    const EDU_KEYS: SliderKey[] = [
-      "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
-    ];
-    setSliders((cur) => {
-      const reset = next === "race" ? EDU_KEYS : RACE_KEYS;
-      const out = { ...cur };
-      for (const k of reset) out[k] = CATALIST_BASELINES[k];
-      return out;
-    });
+    if (next === frame) return;
+    const entering = next === "race" ? AXIS_KEYS.race : AXIS_KEYS.edu;
+    const leaving = next === "race" ? AXIS_KEYS.edu : AXIS_KEYS.race;
+    const defaults = frameDefaults(next);
+    const out = { ...sliders };
+    for (const k of leaving) out[k] = CATALIST_BASELINES[k];
+    for (const k of entering) out[k] = defaults[k];
+    const total = environment + compositionalShift(sliders);
+    setEnvironment(Math.round((total - compositionalShift(out)) * 100) / 100);
+    setSliders(out);
     setFrame(next);
   };
 

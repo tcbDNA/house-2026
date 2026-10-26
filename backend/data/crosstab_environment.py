@@ -43,6 +43,8 @@ from model import CATALIST_BASELINES, CATALIST_ELECTORATE_SHARES  # noqa: E402
 
 CSV_PATH = DATA_DIR / "generic_ballot_crosstabs.csv"
 GROUPS = ("white_nh", "black", "hispanic", "asian")
+EDU_GROUPS = ("white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college")
+NONWHITE = ("black", "hispanic", "asian", "other")
 OTHER_BASELINE = 7.06   # Catalist 2024 "other" race margin (frontend OTHER_RACE_BASELINE)
 PRES_2024_POPVOTE = -1.5   # Trump R+1.5 (matches senate_model / county_model)
 N_CAP = 2000
@@ -92,13 +94,28 @@ def estimate(polls: dict[str, dict], equal_weights: bool = False) -> dict:
     imputed["other"] = True
 
     baselines = {**CATALIST_BASELINES, "other": OTHER_BASELINE}
-    contributions = {g: shares[g] * (margins[g] - baselines[g]) for g in margins}
+    contributions = {g: shares[g] * (margins[g] - baselines[g]) for g in GROUPS + ("other",)}
     shift = sum(contributions.values())
     baseline_2022_comp = sum(shares[g] * baselines[g] for g in margins)
+    # Race × education cells, for the alternative slider frame. Cells with
+    # fewer than MIN_POLLS polls take their 2024 margin plus the non-white
+    # shift from the race groups above (white cells are well covered).
+    nonwhite_shift = (sum(contributions[g] for g in NONWHITE)
+                      / sum(shares[g] for g in NONWHITE))
+    edu_margins, edu_imputed = {}, {}
+    for g in EDU_GROUPS:
+        if len(by_group[g]) >= MIN_POLLS:
+            edu_margins[g] = weighted_mean(by_group[g])
+        else:
+            edu_margins[g] = CATALIST_BASELINES[g] + nonwhite_shift
+            edu_imputed[g] = True
+
     return {
         "margins": margins,
         "imputed": imputed,
-        "n_polls": {g: len(by_group[g]) for g in GROUPS + ("topline",)},
+        "edu_margins": edu_margins,
+        "edu_imputed": edu_imputed,
+        "n_polls": {g: len(by_group[g]) for g in GROUPS + EDU_GROUPS + ("topline",)},
         "contributions": contributions,
         "shift": shift,
         "environment": PRES_2024_POPVOTE + shift,
@@ -137,6 +154,32 @@ def main():
     print(f"Same polls' topline average (two-way):               {fmt(est['topline'])}")
     print(f"Alt: margins on the 2022 midterm electorate:         {fmt(est['environment_2022_composition'])}"
           f"  (2024 margins on that electorate: {fmt(est['baseline_2022_composition'])})")
+
+    print()
+    print(f"{'race x edu':22} {'polls':>5} {'avg margin':>11} {'2024':>7} {'shift':>7}")
+    for g in EDU_GROUPS:
+        m, base = est["edu_margins"][g], CATALIST_BASELINES[g]
+        tag = " (imputed: 2024 + non-white shift)" if est["edu_imputed"].get(g) else ""
+        print(f"{g:22} {est['n_polls'][g]:>5} {fmt(m):>11} {fmt(base):>7} {m - base:>+7.1f}{tag}")
+
+    # Slider defaults. The sliders carry each group's shift into the districts
+    # (shift × that group's electorate share there); the uniform wave covers
+    # the rest so the national total equals the estimate. Computed the way the
+    # slider panel computes its total (unnormalized Catalist shares, rounded
+    # slider values).
+    race = {g: round(est["margins"][g], 1) for g in GROUPS}
+    edu = {g: round(est["edu_margins"][g], 1) for g in EDU_GROUPS}
+    implied = lambda d: sum(CATALIST_ELECTORATE_SHARES[g] * (v - CATALIST_BASELINES[g])  # noqa: E731
+                            for g, v in d.items())
+    wave_race = round(est["environment"] - implied(race), 2)
+    wave_edu = round(est["environment"] - implied(edu), 2)
+    print()
+    print("Slider defaults (race frame):", race)
+    print("Slider defaults (race x edu frame):", edu)
+    print(f"Uniform wave: race frame {wave_race:+.2f} (sliders carry {implied(race):+.2f}); "
+          f"race x edu frame {wave_edu:+.2f} (sliders carry {implied(edu):+.2f})")
+    print(f"-> backend/main.py DEFAULT_ENVIRONMENT = {wave_race}, DEFAULT_SLIDERS race keys as above;")
+    print(f"   frontend App.tsx DEFAULT_ENV = {wave_race}; types.ts DEFAULT_SLIDERS / EDU_FRAME_DEFAULTS as above.")
 
 
 if __name__ == "__main__":

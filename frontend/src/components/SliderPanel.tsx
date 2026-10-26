@@ -1,8 +1,8 @@
 import {
   CATALIST_BASELINES, CATALIST_ELECTORATE_SHARES_AGE,
   CATALIST_ELECTORATE_SHARES_EDU, CATALIST_ELECTORATE_SHARES_RACE,
-  CATALIST_PRESETS, OTHER_RACE_BASELINE, formatMargin, formatPartySplit,
-  SLIDER_DEFS, type SliderKey, type SliderValues,
+  CATALIST_PRESETS, OTHER_RACE_BASELINE, axisWeights, formatMargin, formatPartySplit,
+  SLIDER_DEFS, type Axis, type SliderKey, type SliderValues,
 } from "../types";
 
 type DemoFrame = "race" | "race_edu";
@@ -63,29 +63,6 @@ function impliedEnvAge(s: SliderValues): number {
   );
 }
 
-type Axis = "race" | "edu" | "age";
-const AXIS_KEYS: Record<Axis, SliderKey[]> = {
-  race: ["white_nh", "black", "hispanic", "asian"],
-  edu:  ["white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college"],
-  age:  ["under_30", "age_30_44", "age_45_64", "age_65_plus"],
-};
-const ELECTORATE_SHARE: Record<SliderKey, number> = {
-  ...CATALIST_ELECTORATE_SHARES_RACE,
-  ...CATALIST_ELECTORATE_SHARES_EDU,
-  ...CATALIST_ELECTORATE_SHARES_AGE,
-};
-
-// Mirrors backend model.axis_weights: the axes describe the same voters, so
-// when more than one is moved they're averaged, weighted by how far each was
-// moved (electorate-share-weighted |Δ|). A lone moved axis gets full weight.
-function axisWeights(s: SliderValues): Record<Axis, number> {
-  const mag = (axis: Axis) => AXIS_KEYS[axis].reduce(
-    (acc, k) => acc + ELECTORATE_SHARE[k] * Math.abs(s[k] - CATALIST_BASELINES[k]), 0);
-  const m = { race: mag("race"), edu: mag("edu"), age: mag("age") };
-  const total = m.race + m.edu + m.age;
-  if (total <= 1e-6) return { race: 1, edu: 1, age: 1 };
-  return { race: m.race / total, edu: m.edu / total, age: m.age / total };
-}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function _activePreset_unused(sliders: SliderValues, frame: DemoFrame): "2020" | "2022" | "2024" | null {
@@ -269,13 +246,13 @@ export function SliderPanel({
             Demographic frame
           </h3>
           <span className="text-[10px] text-slate-400">
-            {frame === "race" ? "race axis" : "race × education"} · default: 2024
+            {frame === "race" ? "race axis" : "race × education"} · default: polls
           </span>
         </div>
         <div className="flex gap-1">
           {([
-            { key: "race",     label: "Race",         hint: "Adjust by racial group (white-NH / Black / Hispanic / Asian). Defaults parked at Catalist 2024 baselines; race×edu cells stay at 2024." },
-            { key: "race_edu", label: "Race × Edu",   hint: "Adjust by race × education cells (white-college / white-non-college / etc.). Defaults parked at Catalist 2024 baselines; race sliders stay at 2024." },
+            { key: "race",     label: "Race",         hint: "Adjust by racial group (white-NH / Black / Hispanic / Asian). Starts at recent polls' race crosstabs; race×edu cells stay at 2024." },
+            { key: "race_edu", label: "Race × Edu",   hint: "Adjust by race × education cells (white-college / white-non-college / etc.). Starts at recent polls' race × education crosstabs; race sliders stay at 2024. The uniform wave adjusts so the total doesn't change when you switch." },
           ] as const).map((opt) => {
             const active = frame === opt.key;
             return (
@@ -295,10 +272,11 @@ export function SliderPanel({
           })}
         </div>
         <div className="text-[10px] text-slate-500 mt-1 italic">
-          Sliders default to Catalist 2024 D-R margins (matching the 2024
-          presidential baseline the rest of the model is built on). Move a slider
-          away from default to model the group voting differently than 2024.
-          Only one demographic axis active at a time to avoid double-counting.
+          Sliders start at each group's average margin in recent polls' crosstabs
+          (its 2024 margin is shown alongside); each district swings by its own mix
+          of these groups, and the uniform wave covers the rest of the national
+          total. Only one demographic axis active at a time to avoid
+          double-counting.
         </div>
       </div>
 

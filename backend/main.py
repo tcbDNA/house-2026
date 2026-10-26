@@ -29,19 +29,28 @@ BUNDLE = load_bundle()
 SENATE_BUNDLE = senate.load_bundle()
 COUNTY_BUNDLE = county.load_bundle()
 
-# Default national environment (D+N): the 2024 result plus the share-weighted
-# shift in each racial group's margin across recent polls' crosstabs. Recompute with
-# `python3 data/crosstab_environment.py` after updating
-# data/generic_ballot_crosstabs.csv. Keep in sync with DEFAULT_ENV in
-# frontend/src/App.tsx.
-DEFAULT_ENVIRONMENT = 8.2
+# Default scenario, from recent polls' race crosstabs
+# (`python3 data/crosstab_environment.py`, data in
+# data/generic_ballot_crosstabs.csv). The race sliders start at each group's
+# poll-average margin so districts swing with their own demographics (+9.45
+# nationally); the uniform wave covers the rest so the national total is the
+# 2024 result plus the share-weighted group shifts, D+8.2. Keep in sync with
+# DEFAULT_ENV / DEFAULT_SLIDERS in the frontend (App.tsx, types.ts).
+DEFAULT_ENVIRONMENT = -1.25
+DEFAULT_SLIDERS = {
+    **CATALIST_BASELINES,
+    "white_nh": -6.7,
+    "black": 75.6,
+    "hispanic": 28.3,
+    "asian": 46.7,
+}
 
 
 class SliderValues(BaseModel):
-    white_nh: float = CATALIST_BASELINES["white_nh"]
-    black: float = CATALIST_BASELINES["black"]
-    hispanic: float = CATALIST_BASELINES["hispanic"]
-    asian: float = CATALIST_BASELINES["asian"]
+    white_nh: float = DEFAULT_SLIDERS["white_nh"]
+    black: float = DEFAULT_SLIDERS["black"]
+    hispanic: float = DEFAULT_SLIDERS["hispanic"]
+    asian: float = DEFAULT_SLIDERS["asian"]
     white_college: float = CATALIST_BASELINES["white_college"]
     white_non_college: float = CATALIST_BASELINES["white_non_college"]
     nonwhite_college: float = CATALIST_BASELINES["nonwhite_college"]
@@ -68,16 +77,17 @@ def health():
 
 @app.get("/api/baselines")
 def baselines():
-    """Catalist 2024 baselines per slider (the default 'all groups match 2024'
-    positions)."""
+    """Catalist 2024 baselines per slider (zero demographic shift), plus the
+    default scenario (poll-average race sliders + uniform wave)."""
     return {"baselines": CATALIST_BASELINES, "house_2024_popvote": -2.6,
-            "default_environment": DEFAULT_ENVIRONMENT}
+            "default_environment": DEFAULT_ENVIRONMENT, "default_sliders": DEFAULT_SLIDERS}
 
 
 @app.get("/api/districts")
 def districts_baseline():
-    """Baseline projection at the default environment, sliders at their Catalist 2024 baselines."""
-    return add_win_probabilities(project(BUNDLE, environment=DEFAULT_ENVIRONMENT))
+    """Projection for the default scenario."""
+    return add_win_probabilities(project(BUNDLE, environment=DEFAULT_ENVIRONMENT,
+                                         sliders=DEFAULT_SLIDERS))
 
 
 @app.post("/api/project")
@@ -121,7 +131,8 @@ def _wrap_senate(result):
 
 @app.get("/api/senate/seats")
 def senate_baseline():
-    return _wrap_senate(senate.project(SENATE_BUNDLE, environment=DEFAULT_ENVIRONMENT))
+    return _wrap_senate(senate.project(SENATE_BUNDLE, environment=DEFAULT_ENVIRONMENT,
+                                       sliders=DEFAULT_SLIDERS))
 
 
 @app.post("/api/senate/project")

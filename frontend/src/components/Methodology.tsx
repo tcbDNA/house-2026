@@ -17,7 +17,10 @@ export function Methodology() {
         Pew; weighted by √n). Each group's shift from its Catalist 2024 margin is
         weighted by its share of the electorate and added to the 2024 result
         (R+1.5): a +9.7-pt shift, of which white voters contribute +6.4. The same
-        polls' toplines average D+8.6. Change it via the slider. For the House, the <b>uniform swing</b> is
+        polls' toplines average D+8.6. By default the race sliders sit at those
+        poll averages (white R+6.7, Black D+75.6, Hispanic D+28.3, Asian D+46.7), so
+        each district swings by its own mix of groups; the uniform wave (R+1.25)
+        covers the rest of the D+8.2 total. For the House, the <b>uniform swing</b> is
         calibrated so that, with demographic sliders at default, the
         2024-turnout-weighted average of all 435 district margins equals the
         environment — i.e. the slider is the national House popular vote. (The
@@ -76,11 +79,11 @@ export function Methodology() {
         estimates from the U.S. Census Bureau, computed on current district boundaries
         (post-redistricting where applicable). <b>Group voting baselines</b> (slider
         zero-points) use Catalist 2024 D-R margins per group, matching the 2024
-        presidential baseline the rest of the model is built on. Parking the sliders
-        at default means each group votes as it did in 2024 — zero demographic
-        deviation from the baseline. Moving a slider models that group voting
-        differently than it did in 2024, as a deliberate counterfactual; the shift
-        adds on top of the national environment.{" "}
+        presidential baseline the rest of the model is built on: a slider at its
+        2024 value adds no demographic shift. The defaults are the poll averages
+        above, so each group's movement since 2024 lands on the districts where
+        that group lives; moving a slider further models a different swing, and the
+        shift adds on top of the uniform wave.{" "}
         <b>Electorate composition shares</b> use Catalist 2022 (prior-midterm) values,
         since midterm turnout shape is the better analog for the 2026 voter pool than
         presidential-year turnout. ACS shares describe the whole population
