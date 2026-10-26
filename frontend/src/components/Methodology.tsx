@@ -27,19 +27,20 @@ export function Methodology() {
         topline, which cancels persistent crosstab bias and keeps 2024's polling
         miss out of the level: r = (2026 group − 2024 group) − (2026 topline −
         2024 topline), averaged across pollsters with √n_eff weights (n_eff = 1 /
-        (1/n₂₀₂₆ + 1/n₂₀₂₄)). Seven pollsters have a matched 2024 poll (Cygnal's
-        2024 race results were published only as an image). Each group's shift is
+        (1/n₂₀₂₆ + 1/n₂₀₂₄)). All eight pollsters have a matched 2024 poll
+        (Cygnal's is its 2024 generic congressional ballot, the same question as
+        its 2026 poll; the others are presidential vote). Each group's shift is
         the national shift plus its r minus the share-weighted mean r, so the
-        national level is unchanged: white +8.7, Black +10.0, Hispanic +16.7;
+        national level is unchanged: white +8.5, Black +11.5, Hispanic +16.4;
         Asian keeps its poll-average shift (+21.5; NYT/Siena's 2024 poll had no
         Asian column), and "other" takes the national shift. In the race ×
-        education frame the white college (+8.3) and non-college (+9.0) cells are
+        education frame the white college (+8.1) and non-college (+8.8) cells are
         matched the same way (NYT/Siena, CBS/YouGov, Pew) and the non-white cells
         take the non-white groups' average shift.
       </p>
       <p className="mb-2">
         By default each race slider sits at its group's Catalist 2024 margin plus
-        that shift (white R+6.6, Black D+80.8, Hispanic D+25.2, Asian D+42.9), so
+        that shift (white R+6.8, Black D+82.3, Hispanic D+24.8, Asian D+42.9), so
         each district swings by its own mix of groups (+9.7 nationally). The
         <b>uniform wave</b> (R+1.2) holds the part every district shares: the 2024
         starting point (R+1.5) plus ~0.3 for "other" race voters, who have no
