@@ -1,0 +1,7 @@
+# Git LFS: don't download the archived source documents on clone/checkout.
+# Nothing at build or run time reads them (model-v4 audit), and every
+# download counts against the LFS bandwidth allowance (Render clones with
+# LFS on every build). To fetch them locally:
+#   git lfs pull --include="backend/data/sources/**" --exclude=""
+[lfs]
+	fetchexclude = backend/data/sources/**
