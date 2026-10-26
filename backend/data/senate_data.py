@@ -60,9 +60,10 @@ NAME_TO_USPS = {v: k for k, v in STATE_NAMES.items()}
 SEATS_2026 = {
     # === Class II (regular term ends Jan 2027) ===
     "AL": {"incumbent": "(open, Tuberville→gov)", "party": "(R)", "retiring": True, "type": "regular",
-           "primary_unresolved": True,
-           "note": "Open Tuberville seat. Both R and D primaries headed to June 16 runoff "
-                   "(R: Barry Moore advances + TBD; D: Larriett vs Wess)."},
+           "note": "Open Tuberville seat. June 16 runoffs: Barry Moore (R) beat Jared Hudson; "
+                   "Everett Wess (D) beat Dakarai Larriett. "
+                   "Sources: data/sources/2026_nominees/newsnation_2026-06-16_al_senate_runoffs.html, "
+                   "cbs42_2026-06-16_moore_runoff.html."},
     "AK": {"incumbent": "Dan Sullivan", "party": "(R)", "retiring": False, "type": "regular"},
     "AR": {"incumbent": "Tom Cotton", "party": "(R)", "retiring": False, "type": "regular"},
     "CO": {"incumbent": "John Hickenlooper", "party": "(D)", "retiring": False, "type": "regular"},
@@ -74,7 +75,8 @@ SEATS_2026 = {
     "KS": {"incumbent": "Roger Marshall", "party": "(R)", "retiring": False, "type": "regular"},
     "KY": {"incumbent": "(open, McConnell retiring)", "party": "(R)", "retiring": True, "type": "regular"},
     "LA": {"incumbent": "(open, Cassidy lost primary)", "party": "(R)", "retiring": True, "type": "regular",
-           "primary_unresolved": True},  # Cassidy lost; both R and D primaries head to runoff
+           "note": "Cassidy lost the May R primary. June 27 runoffs: Julia Letlow (R) and Jamie Davis (D). "
+                   "Source: data/sources/2026_nominees/wwno_2026-06-27_letlow_davis.html."},
     "ME": {"incumbent": "Susan Collins", "party": "(R)", "retiring": False, "type": "regular"},
     "MA": {"incumbent": "Ed Markey", "party": "(D)", "retiring": False, "type": "regular"},
     "MI": {"incumbent": "(open, Peters retiring)", "party": "(D)", "retiring": True, "type": "regular"},
@@ -215,11 +217,13 @@ CHALLENGERS = {
     # === Additional 2026 Senate nominees (post-primary, per Ballotpedia/Wikipedia) ===
     "AL": {"name": "Everett Wess", "party": "(D)", "war": 0.0,
            "co_nominee": "Barry Moore", "co_nominee_party": "(R)",
-           "note": "Open Tuberville seat. Both went to June 16 runoffs; Wess won D, Moore won R (auto-WAR from AL-01 House)."},
+           "note": "Open Tuberville seat. Both went to June 16 runoffs; Wess won D, Moore won R. "
+                   "Moore: sitting AL-01 rep — House WAR feeds the blend at the 0.5x cross-office discount."},
     "LA": {"name": "Jamie Davis", "party": "(D)", "war": 0.0,
            "co_nominee": "Julia Letlow", "co_nominee_party": "(R)",
-           "note": "Open Cassidy seat (Cassidy lost primary). LA jungle primary Nov 3, runoff Dec 12. "
-                   "Letlow: sitting LA-05 rep (auto-WAR from House)."},
+           "note": "Open Cassidy seat (Cassidy lost the May R primary). Closed party primaries; "
+                   "Letlow and Davis won the June 27 runoffs. Letlow: sitting LA-05 rep — House WAR "
+                   "feeds the blend at the 0.5x cross-office discount."},
     "DE": {"name": "Michael Katz", "party": "(R)", "war": 0.0,
            "note": "2026 R nominee (challenger to Coons)."},
     "GA": {"name": "Mike Collins", "party": "(R)", "war": 0.0,
@@ -471,6 +475,8 @@ def find_war(state, name, party_letter, all_wars):
     for (s, n, p), v in all_wars.items():
         if s == state and p == party_letter:
             if _strip_suffix(n).split()[-1].lower() == last and _first_names_compatible(n, name):
+                # Logged so a wrong inheritance (e.g. a relative's record) is visible on every build.
+                print(f"  fallback WAR match: {name} ({state}, {party_letter}) -> {n}", file=sys.stderr)
                 return v
     return None
 
