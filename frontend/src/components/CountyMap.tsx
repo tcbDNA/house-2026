@@ -275,7 +275,10 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
           source: "counties",
           layout: {
             "text-field": buildLabelExpr(),
-            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            // Must be a font stack the basemap's glyph server hosts (CARTO
+            // Positron's own bold stack): an unknown font 404s and MapLibre then
+            // drops the whole source's tiles, taking the county fills with it.
+            "text-font": ["Montserrat SemiBold", "Open Sans Bold", "Noto Sans Regular", "Noto Sans CJK JP Regular"],
             "text-size": ["interpolate", ["linear"], ["zoom"], 4, 9, 6, 11, 8, 13, 10, 15],
             "text-allow-overlap": false,
             "text-ignore-placement": false,
