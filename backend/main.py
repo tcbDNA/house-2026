@@ -404,6 +404,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
         return {"district": did, "state": state, "district_projection": drow["projection"],
                 "candidate_adj": r["candidate_adj"], "reconcile": r["reconcile"],
                 "district_residual": r["district_residual"], "target_projection": r["target"],
+                "slice_margin_gap": r["slice_margin_gap"],
                 "lockout": drow.get("lockout"),
                 "data_source": "precinct_aggregated", "overlay": "slice_projections",
                 # The district's own terms in this scenario (for the side panel).
@@ -424,7 +425,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     # while district margin_2024 comes from the sensitivity CSV, and (b) per-slice
     # rel_trend weighted avg ≠ district-level rel_trend. Compute a uniform shift
     # that reconciles the two so the header aggregate matches the district projection.
-    TURNOUT_2026_RATIO = 0.79  # match county_model.py
+    TURNOUT_2026_RATIO = county.TURNOUT_2026_RATIO
 
     first_pass = []
     for s in slices:

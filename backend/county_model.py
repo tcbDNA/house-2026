@@ -22,11 +22,27 @@ from model import (
 DATA_PATH = Path(__file__).resolve().parent / "data" / "counties.json"
 PRES_2024_POPVOTE = -1.5   # Catalist 2024 R-1.5
 
-# 2026 turnout assumption: midpoint between 2022 midterm (~69% of 2024 pres
-# turnout, the typical midterm-to-presidential ratio) and 2024 itself. Applied
-# uniformly to each county's 2024 total to estimate 2026 total votes; D/R
-# vote estimates then derive from the county's projected margin.
-TURNOUT_2026_RATIO = 0.79    # avg of 2018/2016 (0.87) and 2022/2020 (0.71) midterm:pres ratios
+# 2026 turnout as a share of 2024 presidential votes: the average of Kalshi's
+# market-implied turnout across the 70 statewide Senate and governor races,
+# weighted by 2024 votes (data/turnout_2026.csv, built by
+# data/build_turnout_2026.py from the saved KXMIDTERMVOTETURN markets).
+# Applied uniformly to each county's 2024 total to estimate 2026 total votes;
+# D/R vote estimates then derive from the county's projected margin. Display
+# only — no projection, margin or probability uses it. Falls back to 0.79 (the
+# midpoint of the 2018/2016 and 2022/2020 midterm-to-presidential ratios).
+TURNOUT_PATH = Path(__file__).resolve().parent / "data" / "turnout_2026.csv"
+
+
+def _turnout_ratio() -> float:
+    import csv
+    if not TURNOUT_PATH.exists():
+        return 0.79
+    with TURNOUT_PATH.open() as f:
+        rows = [r for r in csv.DictReader(f) if r["kind"] in ("senate", "governor") and r["ratio_to_2024"]]
+    return sum(float(r["implied_total_votes"]) for r in rows) / sum(float(r["total_2024"]) for r in rows)
+
+
+TURNOUT_2026_RATIO = round(_turnout_ratio(), 3)
 
 
 @dataclass

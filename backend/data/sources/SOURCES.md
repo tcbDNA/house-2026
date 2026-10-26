@@ -118,3 +118,7 @@ Final pre-election RealClearPolitics Senate and generic-ballot averages, with ea
 ## Backtest: official results (fec_backtest/)
 
 Retrieved 2026-10-26; every file with its URL in `fec_backtest/README.md`. FEC *Federal Elections 2016* (presidential results by state → 2016→2020 state trends), *2018* (Senate winners → 2024 incumbents) and *2022* (Senate results, with the FEC incumbent flag). The FEC has not published 2024 Senate results, so 2024 uses the House Clerk's *Statistics of the Presidential and Congressional Election of November 5, 2024* (official compilation of certified state results; its 2024 presidential figures match the FEC's in 48 of 51 states). Tidy CSVs: `pres_2016_by_state.csv`, `senate_2022_results.csv`, `senate_2024_results.csv`, `house_national_popular_vote.csv`. Used by `backend/analysis/senate_backtest.py`.
+
+## 2026 turnout: Kalshi markets (turnout_2026/) — data in `turnout_2026.csv`
+
+Retrieved 2026-10-26 from Kalshi's public API (markets last updated 2026-10-26T15:17Z); files and URLs in `turnout_2026/README.md`. "Midterm Voter Turnout" (series KXMIDTERMVOTETURN): for each 2026 Senate, governor and House race, contracts on whether the total vote count will be above X. `build_turnout_2026.py` derives each race's market-implied median total and its ratio to the 2024 presidential vote; the county overlay's estimated 2026 vote counts use the 2024-vote-weighted average over the 70 Senate and governor races (79.3% of 2024). Display only.

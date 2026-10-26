@@ -235,12 +235,12 @@ export function Methodology() {
         makes the slices add up exactly to its projection. Where the 2024 slice
         results are estimated (AK, AR, CT, ID, ME, MI, ND, NJ, OK, OR, PA, SD),
         slices take the district's residual instead, and Alaska's boroughs the
-        state's. This changes only the map shading, never a projection. Estimated 2026 vote counts assume turnout at 79% of 2024, the midpoint of
-        the last two midterm-to-prior-presidential ratios (2018/2016 ≈ 87%,
-        2022/2020 ≈ 71%). These ratios differ substantially; a high-salience 2026
-        midterm would fall toward the higher end. This is a tunable parameter and
-        affects only the county-overlay vote-count display — not any projection,
-        margin, or seat call.
+        state's. This changes only the map shading, never a projection. Estimated 2026 vote counts assume turnout at 79.3% of 2024: the average of
+        Kalshi's market-implied turnout across the 70 Senate and governor races,
+        weighted by 2024 votes (from 66% in Mississippi to 94% in Texas; the 13
+        competitive Senate races average 84%). For reference, 2018/2016 was ≈ 87%
+        and 2022/2020 ≈ 71%. It affects only the county-overlay vote-count
+        display — not any projection, margin, or seat call.
       </p>
       <p className="text-[10px] text-slate-500 italic border-t pt-2 mt-2">
         Bucket thresholds: Tilt ≤3 pts · Lean 3-7 · Likely 7-13 · Safe &gt;13.
