@@ -36,7 +36,7 @@ import csv
 import html
 import json
 import re
-from datetime import date, datetime, timedelta
+from datetime import date
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
@@ -44,8 +44,12 @@ DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "senate_polls_2026"
 OUT = DATA / "senate_poll_averages.csv"
 
+# RETRIEVED: date the poll sources were last refreshed (the as-of date of
+# recomputed averages). WINDOW_START is fixed at three weeks before the first
+# build (Oct 26): user decision, keep the polls already in the averages and add
+# new ones as they come out rather than rolling the window forward.
 RETRIEVED = date(2026, 10, 26)
-WINDOW_START = RETRIEVED - timedelta(days=21)
+WINDOW_START = date(2026, 10, 5)
 EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood")
 # Polls that can't be traced to any release (no source recorded anywhere).
 UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
