@@ -29,6 +29,13 @@ BUNDLE = load_bundle()
 SENATE_BUNDLE = senate.load_bundle()
 COUNTY_BUNDLE = county.load_bundle()
 
+# Default national environment (D+N): the 2024 result plus the share-weighted
+# shift in each racial group's margin across recent polls' crosstabs. Recompute with
+# `python3 data/crosstab_environment.py` after updating
+# data/generic_ballot_crosstabs.csv. Keep in sync with DEFAULT_ENV in
+# frontend/src/App.tsx.
+DEFAULT_ENVIRONMENT = 8.2
+
 
 class SliderValues(BaseModel):
     white_nh: float = CATALIST_BASELINES["white_nh"]
@@ -46,7 +53,7 @@ class SliderValues(BaseModel):
 
 
 class ProjectRequest(BaseModel):
-    environment: float = Field(8.9, ge=-20, le=20)
+    environment: float = Field(DEFAULT_ENVIRONMENT, ge=-20, le=20)
     sliders: SliderValues = SliderValues()
     # Multiplier on rel_trend (House) / state_trend (Senate). 1.0 = full trend
     # persistence, 0.5 = partial mean-reversion (default), 0.0 = ignore trend,
@@ -63,13 +70,14 @@ def health():
 def baselines():
     """Catalist 2024 baselines per slider (the default 'all groups match 2024'
     positions)."""
-    return {"baselines": CATALIST_BASELINES, "house_2024_popvote": -2.6}
+    return {"baselines": CATALIST_BASELINES, "house_2024_popvote": -2.6,
+            "default_environment": DEFAULT_ENVIRONMENT}
 
 
 @app.get("/api/districts")
 def districts_baseline():
-    """Baseline projection at D+8.9, sliders at their Catalist 2024 baselines."""
-    return add_win_probabilities(project(BUNDLE, environment=8.9))
+    """Baseline projection at the default environment, sliders at their Catalist 2024 baselines."""
+    return add_win_probabilities(project(BUNDLE, environment=DEFAULT_ENVIRONMENT))
 
 
 @app.post("/api/project")
@@ -113,7 +121,7 @@ def _wrap_senate(result):
 
 @app.get("/api/senate/seats")
 def senate_baseline():
-    return _wrap_senate(senate.project(SENATE_BUNDLE, environment=8.9))
+    return _wrap_senate(senate.project(SENATE_BUNDLE, environment=DEFAULT_ENVIRONMENT))
 
 
 @app.post("/api/senate/project")

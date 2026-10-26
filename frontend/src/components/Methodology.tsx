@@ -8,10 +8,16 @@ export function Methodology() {
           pres_margin_2024 + uniform_swing + trend × 0.5 + WAR_blend + incumbency + challenger + demographic_shift
         </code>
         , where <b>pres_margin_2024</b> is the Harris-Trump margin (D-positive) in
-        that district / state. The national environment defaults to <b>D+8.9</b>{" "}
-        (current generic-ballot average per{" "}
-        <a className="underline" href="https://votehub.com" target="_blank" rel="noreferrer">VoteHub</a>
-        ); change it via the slider. For the House, the <b>uniform swing</b> is
+        that district / state. The national environment defaults to <b>D+8.2</b>,
+        built from poll <b>race crosstabs</b> rather than toplines: each group's
+        generic-ballot margin (White, Black, Hispanic, Asian; two-way, so differing
+        undecided rates don't distort it) is averaged across the latest national
+        poll from each pollster that publishes a race breakdown (six polls ending
+        Oct 4–23, 2026: NYT/Siena, CBS/YouGov, Economist/YouGov, Echelon, Fox News,
+        Pew; weighted by √n). Each group's shift from its Catalist 2024 margin is
+        weighted by its share of the electorate and added to the 2024 result
+        (R+1.5): a +9.7-pt shift, of which white voters contribute +6.4. The same
+        polls' toplines average D+8.6. Change it via the slider. For the House, the <b>uniform swing</b> is
         calibrated so that, with demographic sliders at default, the
         2024-turnout-weighted average of all 435 district margins equals the
         environment — i.e. the slider is the national House popular vote. (The
