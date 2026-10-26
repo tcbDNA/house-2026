@@ -104,6 +104,11 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
         proj = s["margin_2024"] + demo + trend_discount * resid + uniform_swing + candidate_adj
         first.append((s, i, w, resid, demo, proj, estimated))
     rec = _reconcile([f[5] for f in first], [f[0]["total_2024"] for f in first], target)
+    # District 2024 margin minus the slices' vote-weighted 2024 margin: an
+    # upstream mismatch between the slice results and the district's.
+    w = np.array([f[0]["total_2024"] for f in first], dtype=float)
+    margin_gap = (drow["margin_2024"] - float(np.array([f[0]["margin_2024"] for f in first]) @ w / w.sum())
+                  if w.sum() > 0 else 0.0)
     out = []
     for s, i, w, resid, demo, proj, estimated in first:
         out.append({
@@ -120,7 +125,8 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
             "overlap_fraction": s["share_of_county_2024"], "fully_contained": s["fully_contained"],
         })
     return {"counties": out, "reconcile": round(rec, 2), "candidate_adj": round(candidate_adj, 2),
-            "district_residual": round(district_resid, 2), "target": round(target, 2)}
+            "district_residual": round(district_resid, 2), "target": round(target, 2),
+            "slice_margin_gap": round(margin_gap, 2)}
 
 
 def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_resid: float,
