@@ -13,7 +13,7 @@ from pathlib import Path
 
 import numpy as np
 
-from config import DEFAULT_SETTINGS, Settings
+from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
 from model import (
     ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demographic_shift, electorate_shares,
     population_shares,
@@ -56,7 +56,7 @@ def project(
     bundle: CountyBundle,
     environment: float = 5.0,
     sliders: dict[str, float] | None = None,
-    trend_discount: float = 1.0,
+    trend_discount: float = DEFAULT_TREND_WEIGHT,
     state_filter: str | None = None,
     senate_adjustment: float = 0.0,
     settings: Settings = DEFAULT_SETTINGS,

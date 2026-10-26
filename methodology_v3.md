@@ -12,7 +12,8 @@ where `pres_margin_2024` is the Harris–Trump margin (D-positive) in that distr
 - **Uniform swing (House)** is calibrated at projection time: it's whatever constant makes the 2024-turnout-weighted average of all 435 district margins (before demographic sliders) equal the environment (the uniform wave). With the demographic sliders at their 2024 values the wave *is* the national House popular vote; with the default poll-average sliders, the national margin is the panel's **Total** (wave R+1.25 + sliders +9.6 = D+8.3). Turnout weights are 2024 presidential votes per district, summed from the precinct-aggregated district × county slices.
   - Why not "environment − 2024 House vote (R+2.6)": the district baseline is the presidential map, which averages R+1.45, not R+2.6. Swinging the presidential map from the House result silently added ~1.1 pts of D lean (plus ~0.25 from the trend term) — D+8.9 actually ran as D+10.3.
 - **Uniform swing (Senate)** = environment − 2024 presidential popular vote (R+1.5). Presidential baseline and presidential reference, so no calibration step is needed.
-- **Trend** is each district's / state's 2020→2024 presidential movement **relative to the nation** (2020 D+4.5 → 2024 R+1.5, a 6.0-pt national shift), applied at **0.5×** by default (partial mean-reversion). House and Senate use the same national reference. The trend multiplier ranges from −1 to 1; negative values model the 2020→2024 shift partially reversing.
+- **Trend** starts from each district's / state's 2020→2024 presidential movement **relative to the nation** (2020 D+4.5 → 2024 R+1.5, a 6.0-pt national shift). Only the **residual** is eligible to carry forward: a 2024-vote-weighted regression of district trend on the active frame's electorate shares (always plus age shares) and a 2024 battleground-state indicator (AZ, GA, MI, NV, NC, PA, WI) removes the demographic part (with the intercept) and the battleground part (`trend.py`; separate settings). States use the same coefficients on their own shares and battleground status, centered on the national mean (weighted by official 2024 votes across all 50 states). Fits: race frame R² 0.63 (0.59 without the battleground term), battleground coefficient +2.1 (SE 0.3); race × education R² 0.57, +2.4.
+- **Residual trend weight defaults to 0.** The 2025 New Jersey and Virginia governor's races found no carryover once demographics are controlled: regressing each county's 2025 governor margin minus its 2024 presidential margin on its 2020→2024 trend, with the same race and age shares and a state fixed effect, weighted by 2025 votes, gives −0.05 (robust SE 0.11, n = 154); without the demographic controls the coefficient is −0.83, i.e. the demographic part reversed (`analysis/trend_weight_nj_va_2025.txt`). Limits: two states, neither a 2024 battleground, an off-year election, and county-level data. 0.5 (partial), 1 (full) and −0.5 (reversal) remain scenario options.
 
 ## Generic ballot from crosstabs
 
@@ -114,7 +115,7 @@ Both the 2024 group margins and the 2022 composition shares come from the same s
 
 ## Senate-specific
 
-Senate projections add a state-level trend (state vs. national 2020→2024 shift), applied at **0.5×** — the same discount and national reference as the House trend.
+Senate projections treat the state-level trend (state vs. national 2020→2024 shift) like the House trend: residualized with the district coefficients, centered nationally, default weight 0.
 
 - 65 not-up seats are assumed to hold their current party.
 - Control: D needs **51**; a 50-50 split is **R control** via VP Vance's tiebreak (`p_r_control` counts it; `p_r_majority` is an outright 51+).

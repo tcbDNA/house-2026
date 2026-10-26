@@ -13,6 +13,13 @@ from dataclasses import asdict, dataclass, fields, replace
 # the white-share target is switched off.
 CATALIST_2022_WHITE_SHARE = 0.7581
 
+# Default trend weight (multiplier on the carried, residualized 2020→2024
+# trend). 0: the 2025 NJ/VA governor backtest found no carryover of the
+# residual trend once demographics are controlled (county coefficient −0.05,
+# robust SE 0.11; analysis/trend_weight_nj_va_2025.txt). 0.5, 1 and −0.5
+# remain scenario options. A scenario parameter, not a Settings flag.
+DEFAULT_TREND_WEIGHT = 0.0
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -41,8 +48,9 @@ class Settings:
     # The regression basis always includes the age shares (fixed per frame);
     # this switch exists only to measure what including age does.
     trend_include_age: bool = True
-    # Center the states' carried trend on its national (2024-vote-weighted,
-    # all states + DC) mean when residualizing. The district regression's
+    # Center the states' carried trend on its national mean (weighted by
+    # official 2024 votes across all 50 states, so it doesn't depend on which
+    # seats are up) when residualizing. The district regression's
     # intercept absorbs a turnout-composition offset (+0.99: districts weight
     # 2020 margins by 2024 votes) that state-level trends don't share (+0.43),
     # so uncentered state residuals average -0.6 and would tilt every Senate

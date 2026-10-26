@@ -10,7 +10,7 @@
   const=-7.48(4.62)  white_college=-3.72(2.14)  nonwhite_college=-10.63(2.89)  nonwhite_non_college=-26.34(2.53)  under_30=+12.22(11.79)  age_30_44=+50.70(11.61)  age_65_plus=+8.87(7.26)  battleground=+2.41(0.34)
   without age shares: R² 0.516; battleground +2.226
 
-== Headline metrics
+== Headline metrics (trend weight 0.5)
   raw trend (both parts kept)        {'national_margin': 8.39, 'house_d_seats': 235, 'house_median': 237, 'house_p10': 224, 'house_p90': 254, 'house_p_d_majority': 0.978, 'senate_d_seats': 51, 'senate_median': 51, 'senate_p_d_control': 0.621}
   residualized (default)             {'national_margin': 8.39, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 224, 'house_p90': 253, 'house_p_d_majority': 0.978, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.518}
   remove demographic part only       {'national_margin': 8.39, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 224, 'house_p90': 254, 'house_p_d_majority': 0.98, 'senate_d_seats': 50, 'senate_median': 50, 'senate_p_d_control': 0.5}

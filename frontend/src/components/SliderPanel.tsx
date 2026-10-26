@@ -83,10 +83,10 @@ function _activePreset_unused(sliders: SliderValues, frame: DemoFrame): "2020" |
 }
 
 const TREND_PRESETS: { value: number; label: string; hint: string }[] = [
-  { value: 1.0,  label: "Full",    hint: "2020→2024 trends continue at full strength" },
-  { value: 0.5,  label: "Partial", hint: "trends continue at half strength (default)" },
-  { value: 0.0,  label: "None",    hint: "pure structural baseline — no trend term" },
-  { value: -0.5, label: "Reverse", hint: "half of the 2020→2024 shift snaps back" },
+  { value: 1.0,  label: "Full",    hint: "the residual 2020→2024 trend continues at full strength" },
+  { value: 0.5,  label: "Partial", hint: "the residual trend continues at half strength" },
+  { value: 0.0,  label: "None",    hint: "no trend carried forward (default: the 2025 NJ/VA backtest found no carryover)" },
+  { value: -0.5, label: "Reverse", hint: "half of the residual 2020→2024 shift snaps back" },
 ];
 
 const axisLabel: Record<"race" | "edu" | "age", string> = {
@@ -357,9 +357,11 @@ export function SliderPanel({
           })}
         </div>
         <div className="text-[10px] text-slate-500 mt-1 italic">
-          Multiplies each district's / state's 2020→2024 shift relative to the
-          nation. Default 0.5 assumes half of that trend continues into 2026;
-          Reverse assumes half of it snaps back.
+          Multiplies the part of each district's / state's 2020→2024 shift
+          (vs. the nation) that demographics and the 2024 battleground campaigns
+          don't explain. Default 0: the 2025 NJ/VA governor results showed no
+          carryover once demographics are controlled. Partial / Full / Reverse
+          are scenarios.
         </div>
       </div>
     </div>

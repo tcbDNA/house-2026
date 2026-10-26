@@ -28,7 +28,7 @@ from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
 
-from config import DEFAULT_SETTINGS, Settings
+from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
 from model import CATALIST_BASELINES, national_shares
 
 CSV_PATH = Path(__file__).resolve().parent / "data" / "generic_ballot_crosstabs.csv"
@@ -131,4 +131,5 @@ def default_scenario(settings: Settings = DEFAULT_SETTINGS) -> dict:
         "environment": est["environment"],
         "slider_shift": slider_shift,
         "total": wave + slider_shift,
+        "trend_discount": DEFAULT_TREND_WEIGHT,
     }

@@ -52,7 +52,7 @@ function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscoun
     if (v != null && !Number.isNaN(Number(v))) out[s.key] = Number(v);
   }
   const tdRaw = p.get("trend");
-  let trendDiscount = 0.5;
+  let trendDiscount = MODEL_DEFAULTS.trend;
   if (tdRaw != null) {
     const tv = Number(tdRaw);
     if (!Number.isNaN(tv) && tv >= -1 && tv <= 1) trendDiscount = tv;
@@ -69,7 +69,7 @@ function writeUrl(tab: Tab, env: number, sliders: SliderValues, trendDiscount: n
       p.set(s.key, String(sliders[s.key]));
     }
   }
-  if (trendDiscount !== 0.5) p.set("trend", String(trendDiscount));
+  if (trendDiscount !== MODEL_DEFAULTS.trend) p.set("trend", String(trendDiscount));
   if (frame !== "race") p.set("frame", frame);
   const qs = p.toString();
   const hash = tab === "senate" ? "#senate" : "";
@@ -119,7 +119,7 @@ export default function App() {
   }, [tab, environment, sliders, trendDiscount, frame, run]);
 
   const onSlider = (k: SliderKey, v: number) => setSliders((cur) => ({ ...cur, [k]: v }));
-  const onReset = () => { setEnvironment(MODEL_DEFAULTS.wave); setSliders(DEFAULT_SLIDERS); setTrendDiscount(0.5); setFrame("race"); };
+  const onReset = () => { setEnvironment(MODEL_DEFAULTS.wave); setSliders(DEFAULT_SLIDERS); setTrendDiscount(MODEL_DEFAULTS.trend); setFrame("race"); };
 
   // Switching frames: the axis being left snaps back to its 2024 baseline (so
   // it contributes zero to demographic_shift) and the axis being entered

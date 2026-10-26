@@ -34,10 +34,20 @@ export function Methodology() {
         2024-turnout-weighted average of all 435 district margins equals the
         uniform wave; the sliders then add on top. (The Senate swings from the 2024
         presidential popular vote, R+1.5, which is already consistent.){" "}
-        <b>Trend</b> is each district's / state's 2020→2024 presidential movement
-        relative to the nation, applied at 0.5× by default (partial mean-reversion);
-        the trend-persistence control also allows full (1×), none (0×) or a partial
-        reversal (−0.5×).
+        <b>Trend</b> starts from each district's / state's 2020→2024 presidential
+        movement relative to the nation. Only the part that demographics and
+        campaign intensity don't explain is eligible to carry forward: a
+        2024-vote-weighted regression of district trend on the active frame's
+        electorate shares (plus age) and an indicator for the seven 2024
+        battleground states (where Trump gained less than nationally — campaign
+        effort a midterm doesn't repeat) removes both parts; states use the same
+        coefficients, centered nationally. The <b>residual trend defaults to
+        0×</b>: in the 2025 New Jersey and Virginia governor's races, counties'
+        2020→2024 trend predicted no further movement once demographics were
+        controlled (coefficient −0.05, robust SE 0.11). That test has limits —
+        two states, an off-year election, county-level data — so the
+        trend-persistence control keeps partial (0.5×), full (1×) and reversal
+        (−0.5×) as scenarios.
       </p>
       <p className="mb-2">
         <b>WAR (Wins Above Replacement)</b> is the candidate-quality adjustment from{" "}
@@ -121,9 +131,10 @@ export function Methodology() {
         their 2024 values.
       </p>
       <p className="mb-2">
-        <b>Senate</b> projections add a state-level trend (state vs. national
-        2020→2024 shift), applied at 0.5× — the same discount and the same
-        national reference as the House trend. 65 not-up seats are assumed to hold
+        <b>Senate</b> projections treat the state-level trend (state vs. national
+        2020→2024 shift) the same way as the House trend: residualized with the
+        district coefficients, centered on its national mean (weighted by 2024
+        votes across all 50 states), default weight 0×. 65 not-up seats are assumed to hold
         their current party. Democrats need 51 seats for control; a 50-50 split is
         Republican control via VP Vance's tiebreak. Independents like Dan Osborn are
         counted with Democrats for majority purposes, though neither independent

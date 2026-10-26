@@ -25,7 +25,7 @@ from pathlib import Path
 
 import numpy as np
 
-from config import DEFAULT_SETTINGS, Settings
+from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
 import trend as trend_mod
 from model import (
     ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, carried_trend, demographic_shift,
@@ -86,7 +86,7 @@ def project(
     bundle: SenateBundle,
     environment: float = 5.0,
     sliders: dict[str, float] | None = None,
-    trend_discount: float = 0.5,
+    trend_discount: float = DEFAULT_TREND_WEIGHT,
     settings: Settings = DEFAULT_SETTINGS,
     frame: str = "race",
 ) -> dict:

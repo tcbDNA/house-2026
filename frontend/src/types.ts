@@ -171,7 +171,7 @@ export const EDU_FRAME_DEFAULTS: Pick<SliderValues,
 
 // Default uniform wave: the 2024 level plus the "other" race group's shift.
 // Fallback value; overwritten by applyModelDefaults().
-export const MODEL_DEFAULTS = { wave: -1.25 };
+export const MODEL_DEFAULTS = { wave: -1.25, trend: 0 };
 
 // Response of /api/defaults (backend environment.default_scenario).
 export type ModelDefaults = {
@@ -181,6 +181,7 @@ export type ModelDefaults = {
   national_shares: Record<string, number>;
   environment: number;
   total: number;
+  trend_discount: number;
   settings: Record<string, unknown>;
 };
 
@@ -199,6 +200,7 @@ const ELECTORATE_SHARE: Record<SliderKey, number> = {
 // Install the backend's defaults (call before the first render).
 export function applyModelDefaults(d: ModelDefaults): void {
   MODEL_DEFAULTS.wave = d.wave;
+  MODEL_DEFAULTS.trend = d.trend_discount;
   Object.assign(DEFAULT_SLIDERS, d.sliders);
   Object.assign(EDU_FRAME_DEFAULTS, d.edu_frame_sliders);
   for (const shares of [CATALIST_ELECTORATE_SHARES_RACE, CATALIST_ELECTORATE_SHARES_EDU,

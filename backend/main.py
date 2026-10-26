@@ -9,7 +9,7 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from config import DEFAULT_SETTINGS, Settings, settings_dict, settings_from
+from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings, settings_dict, settings_from
 from environment import default_scenario
 from model import (
     ALL_SLIDERS, CATALIST_BASELINES, NATIONAL_PRES_SHIFT, district_detail, load_bundle, project,
@@ -63,7 +63,7 @@ class ProjectRequest(BaseModel):
     # Multiplier on rel_trend (House) / state_trend (Senate). 1.0 = full trend
     # persistence, 0.5 = partial mean-reversion (default), 0.0 = ignore trend,
     # negative = the 2020→2024 shift partially reverses.
-    trend_discount: float = Field(0.5, ge=-1.0, le=1.0)
+    trend_discount: float = Field(DEFAULT_TREND_WEIGHT, ge=-1.0, le=1.0)
     # Overrides for config.Settings fields (model-v4 flags and parameters).
     settings: dict = Field(default_factory=dict)
     # Active demographic slider frame; picks the trend regression's basis.
@@ -116,7 +116,7 @@ def baselines():
 def districts_baseline():
     """Projection for the default scenario."""
     return add_win_probabilities(project(BUNDLE, environment=DEFAULT_ENVIRONMENT,
-                                         sliders=DEFAULT_SLIDERS))
+                                         sliders=DEFAULT_SLIDERS, trend_discount=DEFAULT_TREND_WEIGHT))
 
 
 @app.post("/api/project")
@@ -162,7 +162,7 @@ def _wrap_senate(result):
 @app.get("/api/senate/seats")
 def senate_baseline():
     return _wrap_senate(senate.project(SENATE_BUNDLE, environment=DEFAULT_ENVIRONMENT,
-                                       sliders=DEFAULT_SLIDERS))
+                                       sliders=DEFAULT_SLIDERS, trend_discount=DEFAULT_TREND_WEIGHT))
 
 
 @app.post("/api/senate/project")

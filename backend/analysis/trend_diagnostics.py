@@ -19,6 +19,8 @@ from config import DEFAULT_SETTINGS  # noqa: E402
 
 S = DEFAULT_SETTINGS
 OFF = replace(S, trend_remove_demographic=False, trend_remove_battleground=False)
+# Residualizing only matters when some trend is carried: compare at weight 0.5.
+TW = 0.5
 
 
 def fmt_fit(f: trend.TrendFit) -> str:
@@ -38,14 +40,14 @@ def main_cli():
         no_age = model.trend_fit(frame, wt, False, True)
         print(f"  without age shares: R² {no_age.r2:.3f}; battleground {no_age.coef('battleground'):+.3f}")
 
-    base = run(OFF)
-    full = run(S)
-    print("\n== Headline metrics")
+    base = run(OFF, trend_discount=TW)
+    full = run(S, trend_discount=TW)
+    print(f"\n== Headline metrics (trend weight {TW})")
     for label, s in [("raw trend (both parts kept)", OFF), ("residualized (default)", S),
                      ("remove demographic part only", replace(S, trend_remove_battleground=False)),
                      ("remove battleground part only", replace(S, trend_remove_demographic=False)),
                      ("residualized, basis without age", replace(S, trend_include_age=False))]:
-        print(f"  {label:34} {metrics(run(s))}")
+        print(f"  {label:34} {metrics(run(s, trend_discount=TW))}")
 
     rows = main.BUNDLE.districts
     hisp_pop = {r["district"]: r.get("pct_hispanic") or 0.0 for r in rows}
@@ -75,7 +77,7 @@ def main_cli():
               f"{sh[s['state']].get('pct_hispanic') or 0:10.1f} "
               f"{'Y' if s['state'] in trend.BATTLEGROUND_STATES else '':>3}")
 
-    na = run(replace(S, trend_include_age=False))
+    na = run(replace(S, trend_include_age=False), trend_discount=TW)
     nb = {d["district"]: d["projection"] for d in na["house"]["districts"]}
     diffs = np.array([d["projection"] - nb[d["district"]] for d in full["house"]["districts"]
                       if abs(d["projection"]) < 99.5])

@@ -28,7 +28,7 @@ from pathlib import Path
 import numpy as np
 
 import trend
-from config import DEFAULT_SETTINGS, Settings
+from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 DATA_PATH = DATA_DIR / "districts.json"
@@ -370,7 +370,7 @@ def project(
     bundle: DataBundle,
     environment: float = 5.0,
     sliders: dict[str, float] | None = None,
-    trend_discount: float = 0.5,
+    trend_discount: float = DEFAULT_TREND_WEIGHT,
     settings: Settings = DEFAULT_SETTINGS,
     frame: str = "race",
 ) -> dict:
@@ -383,7 +383,7 @@ def project(
     sliders : dict[str, float] | None
         Per-group absolute D-R margins. Per-district shifts are computed as
         deltas from CATALIST_BASELINES and add on top of the environment.
-    trend_discount : float, default 0.5
+    trend_discount : float, default config.DEFAULT_TREND_WEIGHT (0)
         Multiplier applied to the trend term. 1.0 = full trend persistence,
         0.5 = partial mean-reversion, 0.0 = trends ignored, negative = the
         2020→2024 shift partially reverses. Applied to the carried
