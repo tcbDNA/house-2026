@@ -262,16 +262,16 @@ def parse_incumbent(field):
 
 
 def load_state_presidential_margins():
-    """Pick one row per state from v20 (state_margin fields are identical across districts)."""
+    """Official FEC state margins (state_pres_results.csv, built by
+    build_state_results.py) — v20's 2024 state margins were off by up to
+    4.2 pts (TN, AR, MD)."""
     out = {}
-    with V20.open() as f:
+    with (DATA_DIR / "state_pres_results.csv").open() as f:
         for r in csv.DictReader(f):
-            state = r["state"]
-            if state not in out:
-                out[state] = {
-                    "state_margin_2024": _fnum(r["state_margin_2024"]),
-                    "state_margin_2020": _fnum(r["state_margin_2020"]),
-                }
+            out[r["state"]] = {
+                "state_margin_2024": round(float(r["margin_2024"]), 2),
+                "state_margin_2020": round(float(r["margin_2020"]), 2),
+            }
     return out
 
 

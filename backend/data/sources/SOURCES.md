@@ -39,3 +39,20 @@ Comparison against national_sensitivity_v20.csv: `backend/analysis/v20_vs_downba
 | File | URL | Retrieved | Used for |
 |---|---|---|---|
 | `census_cd119/cb_2024_us_cd119_5m.zip` | https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_cd119_5m.zip | 2025-05 (cached) | 2024-lines shapes: Missouri districts restored after its 2025 map was overturned (`data/restore_census_lines.py MO`); old-district side of `data/core_retention.csv` |
+
+## FEC official presidential results by state
+
+| File | URL | Retrieved | Used for |
+|---|---|---|---|
+| `fec_pres/2024presgeresults.xlsx` | https://www.fec.gov/documents/5645/2024presgeresults.xlsx | 2026-10-26 | Official 2024 state results → `data/state_pres_results.csv` (build_state_results.py) |
+| `fec_pres/federalelections2020.xlsx` | https://www.fec.gov/resources/cms-content/documents/federalelections2020.xlsx | 2026-10-26 | Federal Elections 2020, Table 2 → 2020 state results |
+| `fec_pres/fec_elections.html` | https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/ | 2026-10-26 | Index page linking the 2024 file |
+
+v20's 2024 state margins differed from official by up to 4.2 pts (TN R+25.5 vs R+29.72; AR 1.6; MD 1.5); 2020 matched within 0.05. National from these files: 2024 R+1.47, 2020 D+4.46.
+
+## 2025 governor results (NJ, VA) — trend-weight backtest
+
+| File | URL | Retrieved | Used for |
+|---|---|---|---|
+| `gov_2025/nj_2025-official-general-results-governor.pdf` (+ `.txt` text extract via pdfplumber) | https://nj.gov/state/elections/assets/pdf/election-results/2025/2025-official-general-results-governor.pdf | 2026-10-26 | NJ official list (12/03/2025), tally by county for every candidate |
+| `gov_2025/va_2025_governor_elstats_search.csv` (+ `.url` with the exact query) | https://va2.elstats.civera.com/api/download_search.csv (Virginia Dept. of Elections historical database, office = Governor, 2025) | 2026-10-26 | VA official results by locality (133) and precinct |

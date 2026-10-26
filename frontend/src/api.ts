@@ -1,5 +1,16 @@
 import type { AxisWeights, ModelDefaults, ProjectResponse, SenateResponse, SliderValues } from "./types";
 
+// Scenario-wide fields every projection request carries: the active slider
+// frame (it picks the trend regression's demographic basis) and settings
+// overrides. App keeps them current via setRequestContext().
+const requestContext: { frame: string; settings: Record<string, unknown> } = {
+  frame: "race",
+  settings: {},
+};
+export function setRequestContext(ctx: Partial<typeof requestContext>): void {
+  Object.assign(requestContext, ctx);
+}
+
 // Default scenario (uniform wave, slider positions, national electorate
 // shares) for the given settings overrides.
 export async function fetchDefaults(settings: Record<string, unknown> = {}): Promise<ModelDefaults> {
@@ -21,7 +32,7 @@ export async function fetchProjection(
   const res = await fetch("/api/project", {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount }),
+    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount, ...requestContext }),
     signal,
   });
   if (!res.ok) throw new Error(`projection failed: ${res.status}`);
@@ -73,7 +84,7 @@ export async function fetchCounties(
   const res = await fetch(`/api/state/${state}/counties`, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount }),
+    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount, ...requestContext }),
     signal,
   });
   if (!res.ok) throw new Error(`county projection failed: ${res.status}`);
@@ -108,7 +119,7 @@ export async function fetchDistrictCounties(
   const res = await fetch(`/api/district/${districtId}/counties`, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount }),
+    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount, ...requestContext }),
     signal,
   });
   if (!res.ok) throw new Error(`district county overlay failed: ${res.status}`);
@@ -124,7 +135,7 @@ export async function fetchSenate(
   const res = await fetch("/api/senate/project", {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount }),
+    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount, ...requestContext }),
     signal,
   });
   if (!res.ok) throw new Error(`senate projection failed: ${res.status}`);

@@ -9,7 +9,7 @@ import { SenateSummaryView } from "./components/SenateSummary";
 import { SenateTable } from "./components/SenateTable";
 import { SenateMap } from "./components/SenateMap";
 import { CountyMap } from "./components/CountyMap";
-import { fetchProjection, fetchSenate } from "./api";
+import { fetchProjection, fetchSenate, setRequestContext } from "./api";
 import {
   AXIS_KEYS, CATALIST_BASELINES, DEFAULT_SLIDERS, EDU_FRAME_DEFAULTS, MODEL_DEFAULTS, SLIDER_DEFS,
   compositionalShift,
@@ -110,6 +110,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    setRequestContext({ frame });
     const t = window.setTimeout(() => {
       run(tab, environment, sliders, trendDiscount);
       writeUrl(tab, environment, sliders, trendDiscount, frame);

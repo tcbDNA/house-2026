@@ -27,6 +27,7 @@ from pathlib import Path
 
 import numpy as np
 
+import trend
 from config import DEFAULT_SETTINGS, Settings
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
@@ -145,10 +146,44 @@ def _rescale(pop: dict[str, np.ndarray], factors: dict[str, float]) -> dict[str,
 
 
 @lru_cache(maxsize=1)
+def _district_rows() -> tuple[dict, ...]:
+    return tuple(json.loads(DATA_PATH.read_text())["districts"])
+
+
+@lru_cache(maxsize=1)
 def _district_pop_and_weights() -> tuple[dict[str, np.ndarray], np.ndarray]:
-    rows = json.loads(DATA_PATH.read_text())["districts"]
+    rows = list(_district_rows())
     w = district_turnout(rows)
     return _population_shares(rows), w / w.sum()
+
+
+def trend_vs_nation(rows) -> np.ndarray:
+    """District's own 2020→2024 presidential shift (pres_shift, from a single
+    source — see load_data.py) relative to the nation, comparable to the
+    Senate model's state_trend."""
+    return np.array([(r.get("pres_shift") or 0.0) - NATIONAL_PRES_SHIFT for r in rows], dtype=float)
+
+
+@lru_cache(maxsize=32)
+def trend_fit(frame: str, white_share: float | None, include_age: bool = True,
+              include_bg: bool = True) -> trend.TrendFit:
+    """Vote-weighted regression of district trend on the frame's electorate
+    shares (+ age) and the battleground indicator (trend.py)."""
+    rows = list(_district_rows())
+    pop, w = _district_pop_and_weights()
+    shares = _rescale(pop, electorate_factors(white_share))
+    bg = trend.battleground([r.get("state") or r["district"][:2] for r in rows])
+    return trend.fit_trend(trend_vs_nation(rows), shares, w, bg, frame, include_age, include_bg)
+
+
+def carried_trend(y: np.ndarray, shares: dict[str, np.ndarray], bg: np.ndarray,
+                  settings: Settings, frame: str) -> np.ndarray:
+    """Trend that trend_discount multiplies, for districts, states or counties."""
+    if not (settings.trend_remove_demographic or settings.trend_remove_battleground):
+        return y
+    fit = trend_fit(frame, white_target(settings), settings.trend_include_age)
+    return trend.carried_trend(y, fit, shares, bg, settings.trend_remove_demographic,
+                               settings.trend_remove_battleground)
 
 
 @lru_cache(maxsize=1)
@@ -284,6 +319,7 @@ class DataBundle:
     new_lines_binary: np.ndarray    # 1 if the district's lines label isn't "2024", else 0
     new_share: np.ndarray           # share of the district new vs. its largest 2024 predecessor
     rel_trend: np.ndarray           # district trend vs. the nation; full-weight at trend_discount=1.0
+    battleground: np.ndarray        # 1 if in a 2024 presidential battleground state
     pop: dict[str, np.ndarray]      # group -> per-district ACS population share (0..1)
     turnout_w: np.ndarray           # 2024 votes, normalized to sum to 1
 
@@ -308,12 +344,7 @@ def load_bundle(path: Path = DATA_PATH) -> DataBundle:
     rows = raw["districts"]
 
     margin_2024 = np.array([r.get("margin_2024") or 0.0 for r in rows], dtype=float)
-    # `rel_trend` in the source data is relative to the district's state;
-    # adding the state's own shift vs. the nation makes it comparable to the
-    # Senate model's state_trend (state vs. nation).
-    rel_trend = np.array([(r.get("rel_trend") or 0.0)
-                          + (r.get("state_shift") or 0.0) - NATIONAL_PRES_SHIFT
-                          for r in rows], dtype=float)
+    rel_trend = trend_vs_nation(rows)
     war_binary = np.array([r.get("war_adj_discounted") or 0.0 for r in rows], dtype=float)
     # Sitting incumbents carry a core-retention-scaled factor; everyone else
     # (nominees, open seats) has no new-lines discount either way.
@@ -330,8 +361,9 @@ def load_bundle(path: Path = DATA_PATH) -> DataBundle:
     return DataBundle(districts=rows, base_no_war=margin_2024 + incumbency_adj + challenger_adj,
                       war_binary=war_binary, war_scaled=war_scaled,
                       new_lines_binary=new_lines_binary, new_share=new_share,
-                      rel_trend=rel_trend, pop=population_shares(rows),
-                      turnout_w=turnout / turnout.sum())
+                      rel_trend=rel_trend,
+                      battleground=trend.battleground([r.get("state") or r["district"][:2] for r in rows]),
+                      pop=population_shares(rows), turnout_w=turnout / turnout.sum())
 
 
 def project(
@@ -340,6 +372,7 @@ def project(
     sliders: dict[str, float] | None = None,
     trend_discount: float = 0.5,
     settings: Settings = DEFAULT_SETTINGS,
+    frame: str = "race",
 ) -> dict:
     """Run a scenario.
 
@@ -353,15 +386,20 @@ def project(
     trend_discount : float, default 0.5
         Multiplier applied to the trend term. 1.0 = full trend persistence,
         0.5 = partial mean-reversion, 0.0 = trends ignored, negative = the
-        2020→2024 shift partially reverses.
+        2020→2024 shift partially reverses. Applied to the carried
+        (residualized) trend — see trend.py.
+    frame : "race" | "race_edu"
+        Active slider frame; picks the trend regression's demographic basis.
     """
     sliders = dict(sliders or {})
     for k in ALL_SLIDERS:
         sliders.setdefault(k, CATALIST_BASELINES[k])
 
-    shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
+    shares = electorate_shares(bundle.pop, settings)
+    shifts, weights = demographic_shift(shares, sliders, settings)
     demo_shift = sum(shifts.values())
-    rel_trend_applied = bundle.rel_trend * trend_discount
+    rel_trend_carried = carried_trend(bundle.rel_trend, shares, bundle.battleground, settings, frame)
+    rel_trend_applied = rel_trend_carried * trend_discount
     war = bundle.war(settings)
     structural = bundle.base_no_war + war + rel_trend_applied
     # Calibrate so the turnout-weighted national margin equals the environment.
@@ -382,14 +420,14 @@ def project(
 
     result = _summarize(bundle, projections, demo_shift, environment, sliders, weights,
                         shifts, uniform_swing, rel_trend_applied, trend_discount,
-                        war, bundle.new_lines_weight(settings))
+                        war, bundle.new_lines_weight(settings), frame)
     result["national_margin"] = round(national_margin, 3)
     return result
 
 
 def _summarize(
     bundle, projections, demo_shift, environment, sliders, weights,
-    shifts, uniform_swing, rel_trend_applied, trend_discount, war, new_lines_weight,
+    shifts, uniform_swing, rel_trend_applied, trend_discount, war, new_lines_weight, frame,
 ) -> dict:
     d_seats = int(np.sum(projections > 0))
     r_seats = int(np.sum(projections < 0))
@@ -456,6 +494,7 @@ def _summarize(
         "axis_weights": weights,
         "uniform_swing": round(uniform_swing, 2),
         "trend_discount": trend_discount,
+        "frame": frame,
         "summary": {
             "d_seats": d_seats,
             "r_seats": r_seats,

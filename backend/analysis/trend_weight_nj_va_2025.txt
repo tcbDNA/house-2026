@@ -1,0 +1,13 @@
+NJ + VA 2025 governor: weighted mean of (2025 gov − 2024 pres) = +8.57 pts (NJ +8.52, VA +8.61)
+
+Regression of (2025 governor margin − 2024 presidential margin) on county 2020→2024 trend:
+  main: + race/age shares + state FE (weights = 2025 votes) trend coef -0.045  SE 0.082 (HC1 0.111)  R² 0.770  n=154
+  no demographic controls, state FE                    trend coef -0.833  SE 0.068 (HC1 0.146)  R² 0.500  n=154
+  NJ only, + controls                                  trend coef -0.155  SE 0.302 (HC1 0.315)  R² 0.894  n=21
+  VA only, + controls                                  trend coef +0.091  SE 0.066 (HC1 0.086)  R² 0.744  n=133
+
+Main-model coefficients: const=+1.00  trend=-0.04  VA=+3.62  black=-1.44  hispanic=+53.36  asian=+23.68  other=-40.08  under_30=+19.62  age_30_44=+9.48  age_65_plus=-6.36
+
+Reading: a positive trend coefficient means places that moved toward Trump in 2020→2024
+moved further that way in 2025 (trend persists); negative means they moved back.
+The model's default carries 0.5 × the residual trend.

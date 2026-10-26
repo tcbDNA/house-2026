@@ -18,6 +18,7 @@ no calibration step is needed: the presidential baseline + swing from the
 
 from __future__ import annotations
 
+import csv
 import json
 from dataclasses import dataclass
 from pathlib import Path
@@ -25,12 +26,14 @@ from pathlib import Path
 import numpy as np
 
 from config import DEFAULT_SETTINGS, Settings
+import trend as trend_mod
 from model import (
-    ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demographic_shift, electorate_shares,
-    population_shares,
+    ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, carried_trend, demographic_shift,
+    electorate_shares, population_shares,
 )
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "senate_states.json"
+STATE_RESULTS_PATH = Path(__file__).resolve().parent / "data" / "state_pres_results.csv"
 
 PRES_2024_POPVOTE = -1.5   # presidential R+1.5 in 2024
 
@@ -42,7 +45,13 @@ class SenateBundle:
     # base_margin excludes state_trend so it can be discounted at project time.
     base_margin: np.ndarray       # pres_2024 + war + inc + challenger
     state_trend: np.ndarray       # state-vs-national trend; full-weight at trend_discount=1.0
+    battleground: np.ndarray      # 1 if a 2024 presidential battleground state
     pop: dict[str, np.ndarray]    # group -> per-seat ACS population share
+    # Every state + DC, for centering the carried trend nationally.
+    all_trend: np.ndarray
+    all_battleground: np.ndarray
+    all_pop: dict[str, np.ndarray]
+    all_votes_w: np.ndarray       # official 2024 votes, normalized to sum to 1
 
     @property
     def n(self) -> int:
@@ -61,9 +70,16 @@ def load_bundle(path: Path = DATA_PATH) -> SenateBundle:
     inc = np.array([s.get("incumbency_adj") or 0.0 for s in seats], dtype=float)
     challenger = np.array([s.get("challenger_adj") or 0.0 for s in seats], dtype=float)
     base_margin = pres_2024 + war + inc + challenger
+    with STATE_RESULTS_PATH.open() as f:
+        totals = {r["state"]: float(r["total_2024"]) for r in csv.DictReader(f)}
+    votes = np.array([totals[s["state"]] for s in all_states], dtype=float)
 
     return SenateBundle(states=all_states, seats=seats, base_margin=base_margin,
-                        state_trend=trend, pop=population_shares(seats))
+                        state_trend=trend, battleground=trend_mod.battleground([s["state"] for s in seats]),
+                        pop=population_shares(seats),
+                        all_trend=np.array([s.get("state_trend") or 0.0 for s in all_states], dtype=float),
+                        all_battleground=trend_mod.battleground([s["state"] for s in all_states]),
+                        all_pop=population_shares(all_states), all_votes_w=votes / votes.sum())
 
 
 def project(
@@ -72,6 +88,7 @@ def project(
     sliders: dict[str, float] | None = None,
     trend_discount: float = 0.5,
     settings: Settings = DEFAULT_SETTINGS,
+    frame: str = "race",
 ) -> dict:
     """`trend_discount` multiplies ``state_trend`` before adding it in.
     0.5 = partial mean-reversion (default, matches district rel_trend),
@@ -84,9 +101,18 @@ def project(
 
     uniform_swing = environment - PRES_2024_POPVOTE
 
-    shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
+    shares = electorate_shares(bundle.pop, settings)
+    shifts, weights = demographic_shift(shares, sliders, settings)
     demo_shift = sum(shifts.values())
-    state_trend_applied = bundle.state_trend * trend_discount
+    # Residualized like the House trend: same district-fitted coefficients,
+    # applied to the state's own shares and battleground status (trend.py).
+    state_trend_carried = carried_trend(bundle.state_trend, shares, bundle.battleground, settings, frame)
+    if settings.trend_center_states and (settings.trend_remove_demographic
+                                         or settings.trend_remove_battleground):
+        national = carried_trend(bundle.all_trend, electorate_shares(bundle.all_pop, settings),
+                                 bundle.all_battleground, settings, frame) @ bundle.all_votes_w
+        state_trend_carried = state_trend_carried - national
+    state_trend_applied = state_trend_carried * trend_discount
     projections = bundle.base_margin + state_trend_applied + uniform_swing + demo_shift
 
     # Senate seat totals require the un-contested 65 seats not up in 2026.

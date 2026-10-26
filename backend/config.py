@@ -32,6 +32,24 @@ class Settings:
     # whose lines label isn't "2024".
     core_retention_scaling: bool = True
 
+    # Item 2 — residualized trend (trend.py). Remove from the carried trend
+    # the part explained by the active frame's demographic shares (+ age, +
+    # intercept) and/or the 2024 battleground-state part; trend_discount then
+    # applies to what's left. Both off = the raw 2020→2024 trend, as before.
+    trend_remove_demographic: bool = True
+    trend_remove_battleground: bool = True
+    # The regression basis always includes the age shares (fixed per frame);
+    # this switch exists only to measure what including age does.
+    trend_include_age: bool = True
+    # Center the states' carried trend on its national (2024-vote-weighted,
+    # all states + DC) mean when residualizing. The district regression's
+    # intercept absorbs a turnout-composition offset (+0.99: districts weight
+    # 2020 margins by 2024 votes) that state-level trends don't share (+0.43),
+    # so uncentered state residuals average -0.6 and would tilt every Senate
+    # race ~0.3 pts R. The House needs no centering: its calibration absorbs
+    # any constant.
+    trend_center_states: bool = True
+
     @property
     def effective_white_share(self) -> float:
         return self.white_share if self.white_share_enabled else CATALIST_2022_WHITE_SHARE

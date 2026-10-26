@@ -66,6 +66,8 @@ class ProjectRequest(BaseModel):
     trend_discount: float = Field(0.5, ge=-1.0, le=1.0)
     # Overrides for config.Settings fields (model-v4 flags and parameters).
     settings: dict = Field(default_factory=dict)
+    # Active demographic slider frame; picks the trend regression's basis.
+    frame: str = Field("race", pattern="^(race|race_edu)$")
 
 
 class DefaultsRequest(BaseModel):
@@ -127,7 +129,8 @@ def project_endpoint(req: ProjectRequest):
         sliders[k] = max(-100, min(100, sliders[k]))
     return add_win_probabilities(
         project(BUNDLE, environment=req.environment, sliders=sliders,
-                trend_discount=req.trend_discount, settings=_settings(req.settings))
+                trend_discount=req.trend_discount, settings=_settings(req.settings),
+                frame=req.frame)
     )
 
 
@@ -171,7 +174,7 @@ def senate_project(req: ProjectRequest):
         sliders[k] = max(-100, min(100, sliders[k]))
     return _wrap_senate(senate.project(SENATE_BUNDLE, environment=req.environment,
                                        sliders=sliders, trend_discount=req.trend_discount,
-                                       settings=_settings(req.settings)))
+                                       settings=_settings(req.settings), frame=req.frame))
 
 
 @app.get("/api/senate/state/{state}")
@@ -230,6 +233,7 @@ def state_counties(state: str, req: ProjectRequest):
         sliders=sliders,
         trend_discount=req.trend_discount,
         settings=_settings(req.settings),
+        frame=req.frame,
     )
     seat = next((s for s in senate_result["seats"] if s["state"] == state.upper()), None)
     if seat is not None:
@@ -251,8 +255,8 @@ def state_counties(state: str, req: ProjectRequest):
             wtd_county_pres = sum((c.get("margin_2024") or 0) * (c.get("total_2024") or 0) for c in state_counties) / total_24
             wtd_county_trend = sum((c.get("rel_trend") or 0) * (c.get("total_2024") or 0) for c in state_counties) / total_24
             state_pres = seat.get("presidential_margin_2024") or 0
-            state_trend = seat.get("state_trend") or 0
-            state_trend_applied = state_trend * req.trend_discount
+            # The Senate projection's own (residualized, discounted) trend term.
+            state_trend_applied = seat.get("state_trend_applied") or 0
             wtd_county_trend_applied = wtd_county_trend * req.trend_discount
             reconcile = (state_pres - wtd_county_pres) + (state_trend_applied - wtd_county_trend_applied)
             senate_adjustment += reconcile
@@ -303,7 +307,8 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     # adjustment that gets added uniformly to every slice. (Demo shift and
     # uniform swing flow in via the per-slice math below.)
     district_proj = project(BUNDLE, environment=req.environment, sliders=sliders,
-                            trend_discount=req.trend_discount, settings=_settings(req.settings))
+                            trend_discount=req.trend_discount, settings=_settings(req.settings),
+                            frame=req.frame)
     drow = next((d for d in district_proj["districts"] if d["district"] == did), None)
     if drow is None:
         raise HTTPException(status_code=404, detail=f"district {did} not found in projection")
@@ -413,7 +418,8 @@ def district_counties(district_id: str, req: ProjectRequest):
 
     # Get the district's current scenario projection so we can reconcile.
     district_proj = project(BUNDLE, environment=req.environment, sliders=sliders,
-                            trend_discount=req.trend_discount, settings=_settings(req.settings))
+                            trend_discount=req.trend_discount, settings=_settings(req.settings),
+                            frame=req.frame)
     drow = next((d for d in district_proj["districts"] if d["district"] == district_id.upper()), None)
     if drow is None:
         raise HTTPException(status_code=404, detail=f"district {district_id} not found in projection")

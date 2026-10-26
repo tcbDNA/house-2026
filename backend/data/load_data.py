@@ -1217,6 +1217,9 @@ def assert_no_duplicate_keys(path: Path):
 
 DOWNBALLOT_DIR = DATA_DIR / "sources" / "downballot_2024_pres_by_cd"
 CORE_RETENTION_CSV = DATA_DIR / "core_retention.csv"
+# Official FEC state results (build_state_results.py); v20's 2024 state
+# margins were off by up to 4.2 pts (TN, AR, MD).
+STATE_RESULTS_CSV = DATA_DIR / "state_pres_results.csv"
 
 # District presidential results replaced with The Downballot's precinct-based
 # figures where national_sensitivity_v20.csv is wrong or off by more than a
@@ -1266,12 +1269,31 @@ def apply_downballot_fix(row: dict, mode: str, current: dict, lines_2024: dict):
     if mode == "both":
         for k in ("biden_2020", "trump_2020", "margin_2020"):
             row[k] = round(src[k], 2)
-        row["rel_2020"] = round(row["margin_2020"] - row["state_margin_2020"], 2)
-        row["abs_shift"] = round(row["margin_2024"] - row["margin_2020"], 2)
-        row["rel_trend"] = round(row["abs_shift"] - row["state_shift"], 2)
+        row["pres_shift"] = round(src["margin_2024"] - src["margin_2020"], 2)
         row["result_source"] = "downballot (2024 lines): 2024 + 2020"
     else:
         row["result_source"] = "downballot: 2024; v20: 2020 and trend"
+
+
+def load_state_results() -> dict[str, tuple[float, float]]:
+    """state -> (official margin_2020, margin_2024)."""
+    with STATE_RESULTS_CSV.open() as f:
+        return {r["state"]: (float(r["margin_2020"]), float(r["margin_2024"]))
+                for r in csv.DictReader(f)}
+
+
+def apply_state_results(row: dict, state_results: dict):
+    """Official state margins. The district's own 2020→2024 shift
+    (pres_shift) is fixed first — from v20's own pair (rel_trend +
+    state_shift; v20's abs_shift is a stale placeholder in TX/AL), or the
+    replacement pair for districts fixed in both years — so swapping state
+    margins never moves a district's trend relative to the nation."""
+    m20, m24 = state_results[row["state"]]
+    row["state_margin_2020"], row["state_margin_2024"] = round(m20, 2), round(m24, 2)
+    row["state_shift"] = round(m24 - m20, 2)
+    row["rel_trend"] = round(row["pres_shift"] - row["state_shift"], 2)
+    row["rel_2020"] = round(row["margin_2020"] - m20, 2)
+    row["rel_2024"] = round(row["margin_2024"] - m24, 2)
 
 
 def load_core_retention() -> dict[str, dict[str, float]]:
@@ -1303,6 +1325,7 @@ def main():
 
     db_current, db_2024_lines = load_downballot()
     retention = load_core_retention()
+    state_results = load_state_results()
 
     districts = []
     with V18_CSV.open() as f:
@@ -1314,8 +1337,12 @@ def main():
                     continue
                 row[k] = to_num(v) if k in NUMERIC_V18 else v
             row["result_source"] = "v20 (matches downballot 2024)"
+            # District's own 2020→2024 presidential shift (v20 pair).
+            row["pres_shift"] = round(row["rel_trend"] + row["state_shift"], 2)
             if d_id in DOWNBALLOT_FIXES:
                 apply_downballot_fix(row, DOWNBALLOT_FIXES[d_id], db_current, db_2024_lines)
+            apply_state_results(row, state_results)
+            row["abs_shift"] = row["pres_shift"]
             st = d_id.split("-")[0]
             if (row["lines"] == "2024" and st in NEW_MAP_LABEL
                     and abs(db_current[d_id]["margin_2024"] - db_2024_lines[d_id]["margin_2024"]) > 0.05):
