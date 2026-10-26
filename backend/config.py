@@ -24,6 +24,14 @@ class Settings:
     white_share_enabled: bool = True
     white_share: float = 0.74
 
+    # Item 2 data fixes — scale the new-lines rules by core retention instead
+    # of all-or-nothing: incumbent WAR × (1 − 0.5 × share of the district the
+    # incumbent didn't represent on the 2024 lines), and the simulation's
+    # new-lines error × (share of the district new vs. its largest 2024
+    # predecessor). Off: WAR × 0.5 and the full extra error on any district
+    # whose lines label isn't "2024".
+    core_retention_scaling: bool = True
+
     @property
     def effective_white_share(self) -> float:
         return self.white_share if self.white_share_enabled else CATALIST_2022_WHITE_SHARE

@@ -68,10 +68,12 @@ STATE_TO_REGION = {
 
 def _race_sigma(base: float, open_seat: np.ndarray, new_lines: np.ndarray) -> np.ndarray:
     """Per-race idiosyncratic σ: `base`, widened in quadrature for open seats
-    and redrawn districts."""
+    and redrawn districts. `new_lines` is a 0..1 weight on the new-lines
+    term (the share of the district that is new when core-retention scaling
+    is on; 0/1 otherwise)."""
     var = (base ** 2
            + open_seat * SIGMA_OPEN_SEAT_EXTRA ** 2
-           + new_lines * SIGMA_NEW_LINES_EXTRA ** 2)
+           + (new_lines * SIGMA_NEW_LINES_EXTRA) ** 2)
     return np.sqrt(var)
 
 
@@ -108,7 +110,8 @@ def add_win_probabilities(result: dict, majority_threshold: int = 218) -> dict:
     proj = np.array([r["projection"] for r in rows], dtype=float)
     lockout = np.abs(proj) >= 99.5
     open_seat = np.array([bool(r.get("open_seat")) for r in rows], dtype=float)
-    new_lines = np.array([(r.get("lines") or "2024") != "2024" for r in rows], dtype=float)
+    new_lines = np.array([r.get("new_lines_weight", (r.get("lines") or "2024") != "2024")
+                          for r in rows], dtype=float)
 
     nat = rng.normal(0.0, SIGMA_NATIONAL, size=(N_SIMS, 1))
     corr = _draw_correlated_shocks(rng, rows, SIGMA_STATE, SIGMA_REGION,

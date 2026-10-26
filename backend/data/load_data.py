@@ -1043,6 +1043,8 @@ def apply_recent_war(row: dict, primary: dict, fallback: dict) -> dict:
             matched = True
 
     war_adj = new_war if is_d else -new_war if is_r else 0.0
+    # All-or-nothing new-lines rule; main() adds the core-retention-scaled
+    # factor (war_lines_factor_scaled) alongside it.
     discount = 0.5 if (row.get("lines") and row["lines"] != "2024") else 1.0
     war_adj_discounted = round(war_adj * discount, 3)
 
@@ -1050,9 +1052,16 @@ def apply_recent_war(row: dict, primary: dict, fallback: dict) -> dict:
     row["war_n"] = 1 if matched else 0
     row["war_adj"] = round(war_adj, 3)
     row["war_adj_discounted"] = war_adj_discounted
+    row["war_lines_factor_binary"] = discount
     row["war_year"] = new_year
     row["war_matched"] = matched
     row["war_match_type"] = match_type
+    # District the incumbent represented on the 2024 lines: their 2024 House
+    # race if the WAR records have one (catches members who changed district
+    # numbers, e.g. Bera CA-06 -> CA-03), else the same district.
+    recent = recs[0] if matched and match_type != "manual_override" and recs else None
+    row["incumbent_prev_district"] = (recent["geography"] if recent and recent["year"] == 2024
+                                      else row.get("district"))
 
     # Generic incumbency advantage: +2 D-favorable if D incumbent,
     # -2 if R, 0 for open seats.
@@ -1206,6 +1215,74 @@ def assert_no_duplicate_keys(path: Path):
                     seen.add(k.value)
 
 
+DOWNBALLOT_DIR = DATA_DIR / "sources" / "downballot_2024_pres_by_cd"
+CORE_RETENTION_CSV = DATA_DIR / "core_retention.csv"
+
+# District presidential results replaced with The Downballot's precinct-based
+# figures where national_sensitivity_v20.csv is wrong or off by more than a
+# few tenths (see analysis/v20_vs_downballot.csv and analysis/dra_district_check.csv).
+#   "both": 2024 and 2020 replaced; trend recomputed from the replaced pair.
+#   "2024": 2024 replaced; the trend stays v20's own 2020→2024 difference, so
+#           the difference between sources never enters the trend.
+DOWNBALLOT_FIXES = {
+    # Missouri's 2025 map was overturned; v20 kept the overturned map's numbers
+    # for these districts (The Downballot's 2024-lines sheet, both years).
+    "MO-01": "both", "MO-03": "both", "MO-04": "both", "MO-06": "both",
+    # New-lines districts where v20's 2024 differs by 0.4–1.7 pts. The
+    # Downballot publishes no 2020 figure on these lines.
+    "LA-06": "2024", "AL-06": "2024", "TX-37": "2024",
+}
+
+# Label for each state's 2026 map, for districts whose boundaries changed but
+# that v20 labels "2024" (found by comparing The Downballot's 2024-lines and
+# 2026-lines sheets: the 2024 result moved, so the district did).
+NEW_MAP_LABEL = {"FL": "HB1D", "NC": "NC-249", "OH": "OH-RC", "TN": "TN-2nd-Ex"}
+
+
+def load_downballot() -> tuple[dict, dict]:
+    """(current-lines, 2024-lines) -> {district: {harris_2024, trump_2024,
+    margin_2024, biden_2020, trump_2020, margin_2020}} (2020 None where not
+    published)."""
+    from xlsx_table import read_sheet
+
+    def parse(path: Path) -> dict:
+        out = {}
+        for r in read_sheet(path, "Percentages"):
+            if len(r) > 6 and "-" in r[0] and r[0][:2].isalpha():
+                v = [float(x) if x not in ("", None) else None for x in (r[3:9] + [""] * 6)[:6]]
+                out[r[0]] = dict(zip(("harris_2024", "trump_2024", "margin_2024",
+                                      "biden_2020", "trump_2020", "margin_2020"), v))
+        return out
+    return (parse(DOWNBALLOT_DIR / "downballot_presbycd_current_lines.xlsx"),
+            parse(DOWNBALLOT_DIR / "downballot_presbycd_2024_lines.xlsx"))
+
+
+def apply_downballot_fix(row: dict, mode: str, current: dict, lines_2024: dict):
+    d = row["district"]
+    src = lines_2024[d] if mode == "both" else current[d]
+    for k in ("harris_2024", "trump_2024", "margin_2024"):
+        row[k] = round(src[k], 2)
+    row["rel_2024"] = round(row["margin_2024"] - row["state_margin_2024"], 2)
+    if mode == "both":
+        for k in ("biden_2020", "trump_2020", "margin_2020"):
+            row[k] = round(src[k], 2)
+        row["rel_2020"] = round(row["margin_2020"] - row["state_margin_2020"], 2)
+        row["abs_shift"] = round(row["margin_2024"] - row["margin_2020"], 2)
+        row["rel_trend"] = round(row["abs_shift"] - row["state_shift"], 2)
+        row["result_source"] = "downballot (2024 lines): 2024 + 2020"
+    else:
+        row["result_source"] = "downballot: 2024; v20: 2020 and trend"
+
+
+def load_core_retention() -> dict[str, dict[str, float]]:
+    """district -> {2024-lines district: share of current population}."""
+    out: dict[str, dict[str, float]] = {}
+    with CORE_RETENTION_CSV.open() as f:
+        for r in csv.DictReader(f):
+            out.setdefault(r["district"], {})[r["old_district"]] = float(r["share"])
+    return out
+
+
 def main():
     assert_no_duplicate_keys(Path(__file__))
     if not DEMOS_CSV.exists():
@@ -1224,6 +1301,9 @@ def main():
                     out[k] = to_num(v)
             demos[r["district"]] = out
 
+    db_current, db_2024_lines = load_downballot()
+    retention = load_core_retention()
+
     districts = []
     with V18_CSV.open() as f:
         for r in csv.DictReader(f):
@@ -1233,6 +1313,18 @@ def main():
                 if k == "district":
                     continue
                 row[k] = to_num(v) if k in NUMERIC_V18 else v
+            row["result_source"] = "v20 (matches downballot 2024)"
+            if d_id in DOWNBALLOT_FIXES:
+                apply_downballot_fix(row, DOWNBALLOT_FIXES[d_id], db_current, db_2024_lines)
+            st = d_id.split("-")[0]
+            if (row["lines"] == "2024" and st in NEW_MAP_LABEL
+                    and abs(db_current[d_id]["margin_2024"] - db_2024_lines[d_id]["margin_2024"]) > 0.05):
+                row["lines"] = NEW_MAP_LABEL[st]
+                row["lines_relabeled"] = True
+            # Share of the district that is new vs. its largest 2024-lines
+            # predecessor (0 where the state's lines are unchanged).
+            shares = retention.get(d_id)
+            row["new_share"] = round(1 - max(shares.values()), 4) if shares else 0.0
             demo = demos.get(d_id)
             if demo:
                 for k in NUMERIC_DEMOS:
@@ -1258,6 +1350,12 @@ def main():
             )
             if row["incumbent_is_sitting"]:
                 apply_recent_war(row, primary_war, fallback_war)
+                # Scaled new-lines rule: WAR × (1 − 0.5 × share of the district
+                # the incumbent didn't represent on the 2024 lines).
+                prev = row["incumbent_prev_district"]
+                inc_new = (1 - shares.get(prev, 0.0)) if shares else 0.0
+                row["incumbent_new_share"] = round(inc_new, 4)
+                row["war_lines_factor_scaled"] = round(1 - 0.5 * inc_new, 4)
             else:
                 apply_nominee_war(row, primary_war, fallback_war)
             apply_house_challenger(row, primary_war, fallback_war)

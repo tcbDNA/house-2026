@@ -37,7 +37,8 @@ DATA_DIR = Path(__file__).resolve().parent
 CACHE = DATA_DIR / "cache"
 OUT = DATA_DIR / "demographics_acs_new_lines.csv"
 
-REDRAWN_STATES = ["CA", "TX", "OH", "NC", "TN", "MO", "UT", "FL", "LA", "AL"]
+# MO dropped: its 2025 map was overturned (2024 lines back in force).
+REDRAWN_STATES = ["CA", "TX", "OH", "NC", "TN", "UT", "FL", "LA", "AL"]
 
 STATE_USPS_TO_FIPS = {
     "CA": "06", "TX": "48", "OH": "39", "NC": "37",

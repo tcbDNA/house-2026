@@ -1,0 +1,3234 @@
+﻿Calculating Statewide Election Results by Congressional and Legislative District: Statement of Methodology
+
+
+The Downballot
+
+
+(First published March 2021; last updated April 2025)
+
+
+Starting in 2008, The Downballot[1] has calculated the results of every U.S. presidential election for each of the nation's 435 congressional districts. We have since expanded this effort to include data from additional statewide elections, such as for Senate or governor, and to cover state legislative districts as well.
+
+
+This ongoing project presents a number of choices and difficulties. To further our commitment to total transparency, this statement of methodology describes our complete approach to calculating statewide election results by congressional and legislative district on a state-by-state basis. Anyone wishing to should be able to use this document to fully replicate our work.
+
+
+Calculations for the 2024 election are available here. Calculations for elections from 2012 to 2020 are available here. Calculations for the 2008 election are available here.
+
+
+1. Definitions
+
+
+In this section, we define a number of terms that we use regularly in describing our procedures for calculating statewide election results by congressional and/or legislative district.
+
+
+County: A geographic subdivision of a state that typically possesses a level of governmental authority, including the power to conduct elections. In almost every state, statewide elections are administered by county-level authorities or their equivalents.[2] Election results below the statewide level are also most commonly reported at the county level.
+
+
+We consider the following subdivisions to be "county equivalents":
+* boroughs and census areas in Alaska
+* parishes in Louisiana
+* Baltimore City in Maryland
+* St. Louis City in Missouri
+* Carson City in Nevada
+* the 38 independent cities in Virginia
+* the election authority in Chicago, Illinois, which is distinct from the election authority in the rest of Cook County[3]
+* the election authority in Detroit, Michigan, which is distinct from the election authority in the rest of Wayne County
+* the election authority in Kansas City, Missouri, which is distinct from the election authority in the rest of Jackson County
+
+
+In addition, in Connecticut, Massachusetts, Maine, New Hampshire, Rhode Island, and Vermont, elections are administered at the city and town level instead of at the county level.
+
+
+This document therefore uses the term "county" to refer to counties; county equivalents; and cities and towns in the six New England states mentioned above, unless otherwise specified.
+
+
+District: A congressional or state legislative district.
+
+
+Unsplit County: A county that is located entirely in one district.
+
+
+Split County: A county that is divided between two or more districts.
+
+
+Precinct: The smallest geographic unit used to administer elections and, generally, to report election results. Almost all states use precincts and report election results at this level.[4]
+
+
+Different jurisdictions use different names for this concept. For example, precincts are referred to as "election districts" in New York; "divisions" in certain parts of Pennsylvania; and "wards" in Wisconsin. We use the term "precinct" for all such units.
+
+
+Because of their granular nature, precinct results allow us to determine how different parts of the same county voted. For instance, Arizona's 5th, 6th, 7th, 8th, and 9th Congressional Districts are located entirely in Maricopa County, which voted for Joe Biden over Donald Trump by a 50-48 margin in 2020. If we were to assign the entire county's votes proportionally, that would incorrectly make it appear that Biden narrowly won each of these five districts. However, by using precinct-level results, we can determine that these districts in fact voted very differently from one another.[5]
+
+
+As a consequence, we require precinct-level election results from any split counties in order to calculate its results by district. For unsplit counties, we need only county-level election results.
+
+
+Split Precinct: A precinct that is divided between two or more districts. "Sub-precincts" refer to each sub-part of a split precinct. We explain further in our "Split precincts" section below.
+
+
+Unassigned Votes: Votes that are reported without regard to geography below the county level.
+
+
+While many election authorities assign all votes to a precinct, others report many votes (often but not exclusively absentee or mail votes) in one bloc without regard to geography.
+
+
+We refer to election precincts that encompass a defined geographic area as "standard precincts," while we refer to the votes that are not assigned to a standard precinct as "unassigned votes." Unless otherwise qualified, the term "precinct" refers to standard precincts. We explain further in our "Unassigned votes" section below.
+
+
+Limited Ballots: Ballots that include only certain races and do not contain a full slate of contests. For example, ballots cast under the auspices of the Uniformed and Overseas Citizens Absentee Voting Act ("UOCAVA") are often limited to federal races only. Votes cast via limited ballots often result in unassigned votes.
+
+
+Total Ballots Cast: The total number of votes cast in a given precinct, county, or district. These consist of the number of votes counted for each candidate listed on the ballot; all write-in votes tabulated by election authorities; undervotes (i.e., when a voter declines to cast a vote in a particular race or races on the ballot); and overvotes (i.e., when a voter attempts to select more candidates than are permitted, resulting in no votes being tallied in any such situations).
+
+
+2. Data
+
+
+1. Data sources
+
+
+State-level election authorities in all states (with the exception of Alaska)[6] publish county-level results for every county within the state.
+
+
+Precinct-level results are handled differently depending on the state. Some state-level election authorities provide precinct-level results for the entire state soon after Election Day. Other states do not release this data until well after Election Day. Still others never provide this data.
+
+
+If precinct-level data is not available from state-level election authorities when we calculate the results by district, we seek this data from county-level election authorities. Much of this information is posted on county election authority websites, but sometimes, we need to contact counties for results. We explain more about this process here.
+
+
+We also rely on OpenElections, a project managed by journalist Derek Willis that gathers precinct-level election results and transforms them into a consistent, machine-readable format.
+
+
+We provide the source for all election results we use to calculate district-level results in the section "State-by-state Sources, Procedures, and Notes" below.
+
+
+2. Official vs. unofficial results
+
+
+States and counties are not required to certify their final election results for days or weeks after Election Day. Once results are certified, we refer to them as "official results." Until that process is complete, any results are unofficial, meaning that the totals are not final and more votes may be tabulated. These unofficial results can also contain errors that may be corrected during the certification process.
+
+
+Because official results will often differ—sometimes materially so—from unofficial results, we only use official results for our calculations. Sometimes, election authorities will misleadingly label results as "unofficial" even though they are official; we use these if we have confirmed with the relevant authorities that these results are in fact the official totals.
+
+
+Note that even official results can sometimes change after certification. When we become aware of such changes, we update our calculations accordingly and publicize any such updates.
+
+
+3. Differing vote tallies between state and county authorities
+
+
+In states where results are not centralized, the county election authorities' vote tallies will sometimes differ from the countywide totals provided by the state even though both results are listed as official.
+
+
+We rely on the county's totals over the state's unless we have good reason to believe that the county's totals are wrong. In the past, these reasons have included situations where the county's totals have an unreasonably large or small number of votes, or tabulation errors we have discovered by looking at the county's precinct data.
+
+
+4. Write-in votes
+
+
+Many election authorities within the same state treat write-in votes differently. For instance, some counties will include them in their official precinct-level results, while others will treat write-in votes as unofficial and leave them out. 
+
+
+To deal with these votes consistently, we do not include write-ins except in rare elections where such votes make up a material fraction of the total vote.
+
+
+3. How we calculate statewide election results by district
+
+
+We begin by assigning all votes from unsplit counties to their appropriate district.
+
+
+We then determine which precincts in each split county belong in which district and assign those votes accordingly. We discuss this process below in the section "Assignment of precincts to districts in split counties."
+
+
+We then use a variety of methods to allocate unassigned votes and votes in split precincts. We discuss this process below in the sections "Unassigned votes" and "Split precincts." We specify which methods we use for each of these tasks on a state-by-state basis in the section "State-by-state Sources, Procedures, and Notes" below.
+
+
+In a few cases, local election authorities will provide the results of statewide elections broken down by district, which we will use when necessary. In 2020, for instance, to calculate presidential results by congressional district, we used such information from certain counties in California, Kentucky, Maine, and Missouri; certain municipalities in New Jersey; and the city of Chicago.
+
+
+Note: In rare cases, the necessary data to perform the calculations described above is not available, making it impossible to calculate statewide election results by district.
+
+
+States that release results by district
+
+
+The vast majority of state election authorities do not calculate and release the results of statewide elections by district, which is why we launched this project in 2008. A handful, however, do. We will rely on such data if it includes the number of votes each candidate received in every county or split county that makes up each district. If not, our strong preference is to calculate the results ourselves using the methods described in this document.
+
+
+For instance, the California Secretary of State's office publishes a Supplement to the Statement of Vote each election that provides district-level results for statewide races with our preferred level of detail at the county level, such as this example from 2016. The Texas Legislative Council, by contrast, provides district-level results for statewide races, such as this example from 2018, but does not provide county-level breakdowns.
+
+
+In 2020, Nebraska was the only state whose calculations of the presidential election results by congressional district we used.
+
+
+4. Assignment of precincts to districts in split counties
+We most commonly determine which precincts in split counties are located in which districts by examining the results from district-level elections that take place concurrently with the statewide election we are analyzing.
+
+
+For instance, if a county is split between two congressional districts, presidential results will typically be reported at the precinct level without any indication of which congressional district each precinct is located in. However, results for the U.S. House elections in that county will of necessity indicate which congressional district each precinct is located in. We use this information to assign precincts accordingly.
+
+
+This information is not always available. In certain election years, no congressional districts are on the ballot at the same time as certain statewide races. For instance, Virginia holds gubernatorial elections in odd-numbered years following each presidential election.
+
+
+In other elections, no or only some state legislative districts in a given chamber are on the ballot at the same time as certain statewide races. For example, elections for the Kansas Senate only take place in presidential years, not in midterms. In other states, such as California and Texas, only half of all state Senate districts are on the ballot in midterm years, while the remainder are on the ballot in presidential cycles.
+
+
+Additionally, some states, such as Florida and Louisiana, do not list races on the general election ballot if only one candidate is officially competing.[7] If a county has just one race that was not on the ballot, we can use the precinct results from the others to assign the precincts to all districts. If, however, a county has two or more district races that were not on the ballot, we can use precinct results from past years only if we have verified that precinct boundaries have not changed in the interim.
+
+
+However, election authorities often change precinct boundaries between elections. They may even be redrawn between the primary and general elections in the same year. Such changes may not be obvious without information from local election authorities or precinct maps. For instance, even if a county has the same number of precincts in 2020 as it did in 2018, Precinct 1 may not feature the same geographic boundaries as it did two years earlier.
+
+
+Changes like these mean that we cannot reuse our assignment of precincts to districts from past years unless we can confirm that a given county's precinct boundaries have not changed during the timeframe in question. If any changes have been made to precinct boundaries, it is necessary to assign precincts to districts anew.
+
+
+If we cannot verify that precinct boundaries have not changed, we contact election authorities for a list of 2020 precincts assigned by district. In rare cases where this information cannot be obtained, we must find a 2020 precinct map and visually match precincts to a district. In exceedingly rare cases, such information is not available, making it impossible to calculate district-level results for statewide races.
+
+
+5. Unassigned votes
+
+
+Unassigned votes are usually (though not always) votes that were cast before Election Day, such as by absentee or mail ballot, or through early voting. Other examples include provisional votes and situations where a county's official precinct-level results do not add up to that county's total number of votes for a candidate.
+
+
+Such unassigned votes must be assigned to a district. We describe three different methods for allocating such votes below:
+
+
+* The Assigned Votes method
+* The Total Ballot method
+* The Sub-County method
+
+
+1. Assigned Votes ("AV") Method[8]
+
+
+The Assigned Votes method uses the proportion of assigned votes (determined by allocating unsplit counties and standard precincts between districts) for a given set of districts to allocate the unassigned vote in a given county.
+
+
+Below is an example using Beaufort County, South Carolina, which is split between SC-01 and SC-06.
+
+
+District 
+	Biden Votes
+	Trump Votes
+	Other Votes
+	Total Votes
+	Biden %
+in District
+	Trump %
+in District
+	Other %
+in District
+	SC-01 assigned votes
+	39,760
+	50,878
+	1,140
+	91,778
+	92.10%
+[=39,760/
+(39,760+3,410)]
+	96.23%
+[=50,878/
+(50,878+1,993)]
+	94.53%
+[=1,140/
+(1,140+66)]
+	SC-06 assigned votes
+	3,410
+	1,993
+
+
+	66
+	5,469
+	7.90%
+[=3,410/
+(39,760+3,410)]
+	3.77%
+[=1,993/
+(50,878+1,993)]
+	5.47%
+[=66/
+(1,140+66)]
+	Total assigned votes
+	43,170
+	5,2871
+	1,206
+	97,247
+	-
+	-
+	-
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Unassigned votes
+	249
+	323
+	16
+	588
+	-
+	-
+	-
+	
+
+Next, we use the percentages highlighted above to assign the unassigned votes to a district. For instance, because we know that 92.1% of all 43,170 assigned Biden votes in Beaufort County were cast in SC-01, we allocate 92.1% of the 249 unassigned Biden votes to SC-01.
+
+
+District
+	Unassigned Biden Votes
+	Unassigned Trump Votes
+	Unassigned Other Votes
+	Unassigned Total Votes
+	SC-01
+	229
+[=.9210*249]
+	311
+[=.9623*323]
+	15
+[=.9453*16]
+	555
+[=229+311+15]
+	SC-06
+	20
+[=.0790*249]
+	12
+[=.0377*323]
+	1
+[=.0547*16]
+	33
+[=20+12+1]
+	
+
+Lastly, we add these unassigned votes (now distributed between districts), which are shown in bold above, to the assigned votes in the first table to yield final district-level totals for Beaufort County.[9]
+
+
+District 
+	Biden Votes
+	Trump Votes
+	Other Votes
+	Total Votes
+	SC-01
+	39,990 
+	51,189
+	1,155
+	92,334
+	SC-06
+	3,429
+	        2,005
+	67
+	5,501
+	
+
+Some states do not assign certain overseas votes to any county. We assign these votes to a county using the AV method.[10] Such votes may then be iteratively assigned to districts as needed, again using the AV method.
+
+
+2. Total Ballot ("TB") Method[11]
+
+
+The coronavirus pandemic led to a major expansion in the number of votes cast before Election Day in 2020, and in many states, that meant a much larger than usual proportion were not assigned to a standard precinct than ever before. We therefore devised the Total Ballot method to allocate unassigned votes to a district. The TB method can be understood as a variant or refinement of the AV method. While we consider both methods to be accurate, the TB method is more so.
+
+
+We are only able to use the TB method rather than the AV method if we know how many total votes (including write-ins, overvotes, and undervotes) were cast in each precinct or district. This includes votes cast by all methods, including in-person early votes, absentee or mail votes, and in-person Election Day votes. Election authorities do not, however, always provide the total vote.
+
+
+We start by assuming that how a candidate's supporters choose to cast their ballots is similar no matter where they live. For example, if 30% of Biden voters choose to vote absentee in District A, we assume somewhere around 30% of Biden voters will also choose to vote absentee in District B. (We've validated this assumption by testing it in other states that make more detailed vote tabulations available.) If this is true, then the distribution of votes for a candidate between districts will also be about the same for Election Day votes and absentee votes.
+
+
+An example is below from Jefferson County, Alabama, which is split between AL-06 and AL-07. This first step is essentially the same as in the AV method described above.
+
+
+District 
+	Biden votes
+	Trump votes
+	Other votes
+	Total Votes
+	Biden %
+in District
+	Trump %
+in District
+	Other %
+in District
+	AL-06 assigned votes
+	57,267
+	110,636
+	2,362
+	170,265
+	40.68%
+[=57,267/
+140,778]
+	85.22%
+[=110,636/
+129,819]
+	71.09%
+[=2,362/
+3,322]
+	AL-07 assigned votes
+	83,511
+	19,183
+
+
+	960
+	103,654
+	59.32%
+[=83,511/
+140,778]
+	14.78%
+[=19,183/
+129,819]
+	28.91%
+[=960/
+3,322]
+	Total assigned votes
+	140,778
+	129,819
+	3,322
+	273,919
+	-
+	-
+	-
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Unassigned
+votes
+	40,910
+	9,024
+	256
+	50,190
+	-
+	-
+	-
+	
+
+This assumption is then used to calculate an initial estimate of votes for each candidate in each district in a county.
+
+
+District
+	Unassigned Biden Votes
+	Unassigned Trump Votes
+	Unassigned Other Votes
+	Total Votes
+	AL-06
+	16,642
+[=.4068*40,910]
+	7,691
+[=.8522*9,024]
+	182
+[=.7109*256]
+	24,514
+[=16,642+7,691+182]
+	AL-07
+	24,268
+[=.5932*40,910]
+	1,333
+[=.1478*9,024]
+	74
+[=.2891*256]
+	25,676
+[=24,268+1,333+74]
+	
+
+We know, however, how many total unassigned ballots were cast in each district because Jefferson County provides this information. (It does not, however, tell us how many votes were cast for each presidential candidate in each district, which is why we must use the TB method to resolve this issue.) We then use these figures as highlighted above to determine what we call the "Known Total/Calc Total." This tells us how far off the initial estimate is from known numbers.
+
+
+District
+	Actual
+Unassigned Ballots
+	Estimated Unassigned Ballots
+	Known Total/
+Calc Total
+	AL-06
+	25,941
+	24,514
+	105.82%
+[=25,941/24,514]
+	AL-07
+	24,355
+	25,676
+	94.86%
+[=24,355/25,676]
+	
+
+We then use the highlighted ratio calculated above to adjust our initial estimates so the totals in each congressional district match known values. A new ratio for Known Total/Calc Total for each candidate is calculated.
+
+
+District
+	Unassigned Biden Votes
+	Unassigned Trump Votes
+	Unassigned Other Votes
+	Total
+Votes
+	AL-06
+	17,610
+[=1.0582*16,642]
+	8,138
+[=1.0582*7,691]
+	193
+[=1.0582*182]
+	25,941
+[=17,610+8,138+193]
+	AL-07
+	23,020
+[=.9486*24,268]
+	1,265
+[=.9486*1,333]
+	70
+[=.9486*74]
+	24,355
+[=23,020+1,265+70]
+	Calc Total
+	40,630
+[=17,610+23,020]
+	9,403
+[=8,138+1,265]
+	263
+[=193+70]
+	50,296
+[=25,941+24,355]
+	Known Total/
+Calc Total
+	1.0069
+[=40,910/40,630]
+	0.9597
+[=9,024/9,403]
+	0.9979
+[=256/263]
+	0.9742
+[=50,190/50,296]
+	
+
+We then adjust the number of votes once more using the Known Total/Calc Total for each candidate calculated in the last step, as highlighted above, so that the number of unassigned votes for each candidate in the whole county matches the official results for the county. The total vote in each district will now be slightly off from known quantities (typically by much less than 1%), but far closer than in the initial estimate.
+
+
+District
+	Unassigned Biden Votes
+	Unassigned Trump Votes
+	Unassigned Other Votes
+	Total Votes
+	AL-06
+	17,732
+[=1.0069*17,610]
+	7810
+[=0.9597*8,138]
+	188
+[=0.9742*193]
+	25,729
+[=17,732+7,810+188]
+	AL-07
+	23,178
+[=1.0069*23,020]
+	1,214
+[=0.9597*1,265]
+	68
+[=0.9742*70]
+	24,461
+[=23,178+1,214+68]
+	
+
+Lastly, we add these unassigned votes (now distributed between districts), which are shown in bold above, to the assigned votes in the first table to yield final district-level totals for Jefferson County.[12]
+
+
+District 
+	Biden Votes
+	Trump Votes
+	Other Votes
+	Total Votes
+	AL-06
+	74,998
+[=57,267+17,732]
+	118,447
+[=110,636+7,810]
+	2,549
+[=2,362+188]
+	195,994
+[=74,998+118,447+2,549]
+	AL-07
+	106,690
+[=83,511+23,178]
+	20,396
+[=19,183+1,214]
+	1,029
+[=960+68]
+	128,115
+[=106,690+20,396+1,029]
+	
+
+3. Sub-County ("SC") Method[13]
+
+
+The Sub-County method is another variant of the AV method that, like the TB method, offers greater precision but requires the availability of particular data. Sometimes, an election authority will assign some votes to a congressional district or municipality within a county, but not to precincts. We refer to these as "sub-county" votes, and they are required to make use of the SC method.
+
+
+For instance, Virginia specifies which congressional district any early votes or provisional votes were cast in, but it does not reveal which precinct or legislative district these votes were cast in. Almost all in-person votes cast on Election Day are, however, assigned to precincts.
+
+
+To allocate these sub-county votes, we take into account what proportion of each congressional district overlaps with the legislative district in question using the precinct vote. To do this, we assign each precinct to both a legislative district and a congressional district.
+
+
+An example is below from Bedford County, Virginia, which is split between two congressional districts (VA-05 and VA-06) and two state Senate districts (SD-19 and SD-23). The table below lists the assigned precinct vote for each district and each overlapping portion between districts (note that VA-06 and SD-19 do not overlap).
+
+
+District
+	Clinton Precinct Vote
+	Trump Precinct Vote
+	Other Precinct Vote
+	VA-05
+	4,770
+	15,504
+	825
+	VA-06
+	3,784
+	12,836
+	870
+	SD-19
+	585
+	1,941
+	93
+	SD-23
+	7,969
+	26,399
+	1,602
+	
+
+	
+
+	
+
+	
+
+	VA-05 portion within SD-19
+	585
+	1,941
+	93
+	VA-05 portion within SD-23
+	4,185
+	13,563
+	732
+	VA-06 portion within SD-19
+	0
+	0
+	0
+	VA-06 portion within SD-23
+	3,784
+	12,836
+	870
+	
+
+Next, we determine what percentage of each candidate’s precinct vote in each congressional district is in a given state Senate district.
+
+
+District
+	Clinton Precinct Vote
+	Trump Precinct Vote
+	Other Precinct Vote
+	VA-05 portion within SD-19
+	12.27%
+[=585/4,770]
+	12.52%
+[=1,941/15,504]
+	11.33%
+[=93/825]
+	VA-05 portion within SD-23
+	87.73%
+[=4,185/4,770]
+	87.48%
+[=13,563/15,504]
+	88.67%
+[=732/825]
+	
+
+	
+
+	
+
+	
+
+	VA-06 portion within SD-19
+	0%
+[=0/3,784]
+	0%
+[=0/12,836]
+	0%
+[=0/870]
+	VA-06 portion within SD-23
+	100%
+[=3,784/3,784]
+	100%
+[=12,836/12,836]
+	100%
+[=870/870]
+	
+
+We then allocate the votes that have been assigned to a congressional district but not a state Senate district or precinct (i.e., the sub-county votes) based on the overlap between each congressional and Senate district, using the bolded figures above.
+
+
+District
+	Clinton Sub-County Votes
+	Trump Sub-County Votes
+	Other Sub-County Votes
+	Total Sub-County Votes
+	VA-05
+	654
+	1,255
+	73
+	1,982
+	VA-06
+	560
+	1,064
+	109
+	1,733
+	
+
+	
+
+	
+
+	
+
+	
+
+	VA-05 votes to SD-19
+	80
+[=.1227*654]
+	157
+[=.1252*1,255]
+	8
+[=.1133*109]
+	245
+[=80+157+8]
+	VA-05 votes to SD-23
+	574
+[=.8773*654]
+	1,098
+[=.8748*1,255]
+	65
+[=.8867*109]
+	1,737
+[=574+1,098+65]
+	VA-06 votes to SD-19
+	0
+[=0*560]
+	0
+[=0*1,064]
+	0
+[=109*0]
+	0
+[=0+0+0]
+	VA-06 votes to SD-23
+	560
+[=1*560]
+	1,064
+[=1*1,064]
+	109
+[=109*1]
+	1,733
+[=560+1,064+109]
+	
+
+Lastly, we add these sub-county votes (now distributed between legislative districts), which are shown in bold above, to the assigned precinct votes in the first table to yield final legislative district-level totals for Bedford County.[14]
+
+
+District
+	Clinton Vote
+	Trump Vote
+	Other Vote
+	Total Vote
+	SD-19
+	665
+[=585+80+0]
+	2,098
+[=1,941+157+0]
+	102
+[=93+8+0]
+	2,865
+[=665+2,098+102]
+	SD-23
+	9,103
+[=7,969+574+560]
+	28,561
+[=26,399+1,098+1,064]
+	1,775
+[=1,602+65+109]
+	39,439
+[=9,103+28,561+1,775]
+	
+
+6. Split precincts
+
+
+Many states split precincts between two or more districts. In such instances, for races that take place at the district level, election officials will report the results broken down by each precinct sub-part (or "sub-precinct"). However, they typically do not report the results of statewide elections by sub-precinct.
+
+
+An example follows. Below are the results of the 2016 Ohio state House races that took place in Cuyahoga County's precinct 0106 CLEVELAND-01-B (found here), with the precinct in question highlighted. This precinct was split between State House District 9 ("HD-09") and State House District 12 ("HD-12"). Clicking each image below links to a larger version.
+
+
+HD-09:
+
+
+  
+
+
+
+HD-12:
+
+
+  
+
+
+
+Below are the 2016 presidential results for the same precinct (0106 CLEVELAND-01-B):
+
+
+  
+
+
+
+Only a single set of presidential results is reported for precinct 0106 CLEVELAND-01-B. To know how HD-09 and HD-12 each voted on the presidential level, we must therefore allocate the presidential results from this precinct to its two sub-precincts, one in each House district.
+
+
+Ideally, we would allocate the votes for each split precinct based on how many votes were cast in each sub-precinct in each legislative race. For instance, if a hypothetical Precinct A were split between two legislative districts, and 100 votes were cast for the legislative race in Sub-precinct 1 while 50 votes were cast for the legislative race in Sub-precinct 2, we would assign two-thirds of the presidential vote to Sub-precinct 1 and one-third to Sub-precinct 2.
+
+
+However, because legislative or congressional races are often uncontested or minimally contested, we often see different rates of undervoting (i.e., voters skipping a race) in each sub-precinct when a precinct is split across two or more districts. In the pair of Ohio state House elections shown above, the race for HD-09 was contested between a Democratic candidate and a Republican candidate, while the race for HD-12 was not (only a Democratic candidate appeared on the ballot). 
+
+
+The summary information provided by Cuyahoga County at the top of each excerpt above shows the number of undervotes. The number of undervotes in HD-12 was 18,385 but just 6,774 in HD-09. (These figures are calculated by subtracting from the total vote in each district the number of voters who voted in at least one race on the ballot but skipped the race in question.) The rate of undervoting was therefore 31.89% in HD-12 but just 10.63% in HD-09.
+
+
+Specifically, 69 votes were cast in precinct 0106 CLEVELAND-01-B for the HD-09 race, while 330 were cast in the same precinct for the HD-12 race, for a total of 399 votes across both state House races. Therefore, we know that 17.29% (of the total of 399) votes were cast in HD-09 and 82.81% in HD-12.
+
+
+However, because of the higher undervote in HD-12, we anticipate that we should allocate more than 82.81% of the presidential vote in precinct 0106 CLEVELAND-01-B to the sub-precinct in HD-12 (and conversely, less to the sub-precinct in HD-09). To determine how much more (or less) of the vote to allocate, we have developed four different methods:
+
+
+* The Votes Cast method
+* The Undervote Factor method
+* The Registered Voters method
+* The Census Population method
+
+
+Each of these methods is described in detail below. While we consider all four methods accurate, we list them above in order of our preference, ranging from most to least accurate. When calculating statewide results by district, we use the most accurate method possible based on the data available, which may result in using a combination of methods for a given state.
+
+
+Note that, because of changes in precinct maps, population totals, and turnout, we cannot use election results information from past elections to assign split precincts for any subsequent elections.
+
+
+Note: Due to voting patterns within a precinct (particularly as a result of racial polarization and residential segregation patterns), estimates for split precincts using any of the above methods will have unknowable error bars.
+
+
+1. Votes Cast ("VC") Method
+
+
+The Votes Cast method is our first choice because we believe that it most accurately reflects actual voter behavior. This method relies on the total number of ballots that were cast in each portion of each sub-precinct. Note that this information is not provided by all counties, in which case the VC method cannot be used.
+
+
+In the example shown above of Cuyahoga County's precinct 0106 CLEVELAND-01-B, a total of 69 votes were cast for the Democratic and Republican candidates in the 2016 race for HD-09. However, an additional 23 ballots were cast by voters registered in this sub-precinct who undervoted in this race (for instance, they may have voted in the presidential race but not the state House race). In the HD-12 portion of this precinct, a total of 330 votes were cast for the one candidate on the ballot (a Democrat), with 117 undervotes.
+
+
+Two other types of votes can also affect the total vote: overvotes (where a voter impermissibly attempts to cast votes for more candidates than permitted) and write-ins. In the present example, there were no overvotes or write-ins in either state House race in precinct 0106 CLEVELAND-01-B. (While undervotes are common, overvotes and write-ins are uncommon in congressional and legislative races.)
+
+
+Note: Figures describing the total vote are often identified by different names depending on jurisdiction. One common term is "cards counted." The composition of the total vote may also vary and may not include overvotes and/or write-ins.
+
+
+To resolve the split in precinct 0106 CLEVELAND-01-B, we add the total votes for legislature in each sub-precinct to the undervotes, overvotes, and write-ins. We then use those totals to calculate how much of each precinct is in each state House district, as shown below.
+
+
+Precinct
+	House District
+	Legislative Vote
+	Undervote
+	Overvote
+	Write-ins
+	Total
+Vote
+	% of precinct
+in HD
+	0106 CLEVELAND-01-B
+	HD-09
+	69
+	23
+	0
+	0
+	92
+	17.07%
+[=92/539]
+	0106 CLEVELAND-01-B
+	HD-12
+	330
+	117
+	0
+	0
+	447
+	82.93%
+[=447/539]
+	Total
+	
+
+	360
+	140
+	0
+	0
+	539
+	
+
+	
+
+The highlighted figures in the final column differ from each sub-precinct's share of state House votes in the anticipated way due to the proportionally higher undervote in HD-12. As noted above, 17.29% of state House votes across the two districts were cast in HD-09 and 82.81% were cast in HD-12. As shown in the final column in the table above, the total vote was slightly lower in HD-09 (17.07%) and slightly higher in HD-12 (82.93%).[15]
+
+
+Across all of 0106 CLEVELAND-01-B, we know that Hillary Clinton received 521 votes and Donald Trump received 6 votes. We assign presidential votes to each sub-precinct proportionally based on the percentage of each precinct we know to be in each state House district (as shown in the final column in the table above).
+
+
+Precinct
+	House
+District
+	Total
+Vote
+	Estimated Clinton Vote
+	Estimated Trump Vote
+	Estimated Total Vote
+	0106 CLEVELAND-01-B
+	HD-09
+	92
+	89
+[=.1707*521]
+	1
+[=.1707*6]
+	91
+[=.1707*531]
+	0106 CLEVELAND-01-B
+	HD-12
+	447
+	432
+[=.8293*521]
+	5
+[=.8293*6]
+	440
+[=.8293*531] 
+	
+
+As shown in the highlighted figures above, we can therefore estimate that Clinton won the HD-09 portion of 0106 CLEVELAND-01-B 89 votes to 1 vote, and that she won the HD-12 portion of the same precinct 432 votes to 5 votes.
+
+
+2. Undervote Factor ("UF") Method
+
+
+Many counties do not provide total vote figures that would allow us to use the VC method. If possible, we then turn to this method, which requires us to calculate what we call the Undervote Factor, or UF.
+
+
+To calculate the UF, we compare the total number of votes cast in a congressional or legislative contest in a given county in every precinct that isn't split with the total number of votes cast in those same precincts for the statewide race we are analyzing. We then divide the former by the latter. This gives us the UF, expressed in percentage terms.
+
+
+Note: We use all valid votes for all candidates plus write-ins, though we do not include write-ins in our final calculations for reasons discussed in our "Write-in votes" section above.
+
+
+To illustrate by way of example, we offer hypothetical results from a county that is home to two state House districts, HD-01 and HD-02. These two districts share a certain number of split precincts and also are made up of a certain number of unsplit precincts. These results are shown in the table below.
+
+
+Total vote in unsplit precincts only
+	HD-01
+	HD-02
+	State House
+	28,000
+	40,000
+	President
+	40,000
+	50,000
+	
+
+	
+
+	
+
+	Undervote Factor
+	70%
+	80%
+	
+
+In this case, 28,000 votes were cast for the state House in the county's portion of HD-01 in the unsplit precincts. Those same unsplit precincts cast 40,000 votes for president. Hence, dividing the first row by the second row, our UF for HD-01 is 70.00%, as shown in the final row. Likewise, 40,000 votes were cast for state House in the county's portion of HD-02, while 50,000 were cast for president, so our UF in this district is 80.00%.
+
+
+We then use the UF to establish what proportion of a split precinct ("Precinct A") should be allocated to HD-01 and what proportion should be allocated to HD-02. To do this, we adjust how many votes were cast for the state House in each portion of the split precinct.
+
+
+In our example, 45 votes were cast for state House in the HD-01 portion of Precinct A and 37 were cast for state House in the HD-02 portion of Precinct A. We use the UF to come up with what we call the "Undervote-Adjusted Hypothetical Presidential Vote Total," or UAHPVT.
+
+
+Precinct
+	House District
+	Actual State House Vote
+	Undervote-Adjusted Hypothetical Presidential Vote Total
+	Precinct A
+	HD-01
+	45
+	64
+[=45/.7]
+	Precinct A
+	HD-02
+	37
+	46
+[=37/.8]
+	
+
+In this case, we divide the 45 votes cast for state House in HD-01 by the UF for HD-01 (70%) to get 64 (when rounded to the nearest whole number) for the UAHPVT. We also divide the 37 votes cast for state House in HD-02 by the UF for HD-02 (80%) to get 46 for the UAHPVT.
+
+
+The UAHPVT reflects what we would have expected the presidential vote total to be in each sub-precinct if undervoting behavior were the same throughout each state House district. These figures are, however, purely hypothetical, as the name states, so we cannot use them directly.
+
+
+However, we can use them to determine the proportion of actual presidential votes that should be assigned to each sub-precinct. We do this by summing the hypothetical totals for all sub-precincts and dividing each sub-precinct's hypothetical vote by this total. We can then apply this Hypothetical Presidential Vote Share for each sub-precinct to the actual presidential vote for the precinct as a whole.
+
+
+In our example, the 2016 presidential vote across all of Precinct A went as shown below.
+
+
+Precinct
+	Clinton
+	Trump
+	Other
+	Total
+	Precinct A
+	88
+	66
+	6
+	160
+	
+
+In this case, there are more presidential votes in this precinct than our UAHPVT estimated. Note that the "Total" figure in the final column includes third-party candidates but not write-ins. Even though we used write-ins above to help us calculate the UF, we do not use them here. 
+
+
+After applying the Hypothetical Presidential Vote Share to the above, the estimated vote is shown below.
+
+
+Precinct
+	House
+Dist.
+	UAHPVT
+	Hypothetical Presidential Vote Share
+	EstimatedClinton Vote
+	Estimated Trump Vote
+	Est. Other Vote
+	Estimated Total Vote
+	Precinct A
+	HD-01
+	64
+	58.18% [=64/110]
+	51 [=.5818*88]
+	38 [=.5818*66]
+	3
+[=.5818*6]
+	93 [=.5818*160]
+	Precinct A
+	HD-02
+	46
+	41.82% [=46/110]
+	37 [=.4182*88]
+	28 [=.4182*66]
+	3
+[=.4182*6]
+	67 [=.4182*160] 
+	Total
+	
+
+	110
+	
+
+	88
+	66
+	6
+	160
+	
+
+As shown in the highlighted figures above, we can therefore estimate that Clinton won the HD-01 portion of Precinct A 51 votes to 38 votes for Trump, and that she won the HD-02 portion of the same precinct 37 votes to 28 votes for Trump.
+
+
+In rare cases, every precinct in a given district in a given county is split. In such cases, we use the UF for every unsplit county in the district. If there are no unsplit counties in the district, we use the undervote factor from the county that makes up the largest number of votes in the district.
+
+
+3. Registered Voters ("RV") Method
+
+
+Both the VC and UF methods rely on congressional or legislative races taking place simultaneously with statewide races in order to allocate the vote in split precincts. In certain elections, however, no congressional districts are on the ballot at the same time as certain statewide races.[16] In other elections, none or only some state legislative districts in a given chamber are on the ballot at the same time as certain statewide races.[17]
+
+
+In such situations, we turn to the Registered Voters ("RV") method, which splits precincts based on how many voters are registered to vote in each sub-precinct. This method, which we’ve employed most often in Florida and Virginia, relies on the voter registration numbers produced closest to Election Day; some counties produce this data for the end of the month, while some produce it for the start of the new month. This method includes voters who are listed as active and have voted in recent elections and those listed as inactive who have not voted recently but remain eligible to vote for the time being.
+
+
+By way of example, in Albemarle County, VA's precinct 101 - WOODBROOK as of Nov. 1, 2016, a total of 1,814 voters were registered to vote in the portion located in the 17th Senate District ("SD-17"), while another 1,264 were registered in the portion located in the 25th Senate District ("SD-25"). To resolve the split in this precinct, we use the number of registered voters in each sub-precinct to calculate how much of each precinct is in each state Senate district, as shown below.
+
+
+Precinct
+	Senate District
+	Active Voters
+	Inactive Voters
+	Total
+Registered Voters
+	% of Precinct
+in Senate District
+	101 - WOODBROOK
+	SD-17
+	1,642
+	172
+	1,814
+	58.93% [=1,814/3,078]
+	101 - WOODBROOK
+	SD-25
+	1,180
+	84
+	1,264
+	41.07% [=1,264/3,078]
+	Total
+	
+
+	2,822
+	256
+	3,078
+	
+
+	
+
+Across all of 101 - WOODBROOK, we know that Clinton received 1,192 votes and Trump received 680 votes. As with the VC method, we assign presidential votes to each sub-precinct proportionally based on the percentage of each precinct we know to be registered in each state Senate district (as shown in the final column in the table above).
+
+
+Precinct
+	Senate
+District
+	Total
+Registered Voters
+	Estimated Clinton Vote
+	Estimated Trump Vote
+	Estimated Total Vote
+	101 - WOODBROOK
+	SD-17
+	1,814
+	702
+[=.5893*1,192]
+	401
+[=.5893*680] 
+	1173 [=.5893*1991]
+	101 - WOODBROOK
+	SD-25
+	1,264
+	490
+[=.4107*1,192]
+	279
+[=.4107*680]
+	818
+[=.4107*1991]
+	
+
+As shown in the highlighted figures above, we can therefore estimate that Clinton won the SD-17 portion of 101 - WOODBROOK with 702 votes to 401 votes, and that she won the SD-25 portion of the same precinct 490 votes to 279 votes.
+
+
+4. Census Population ("CP") Method
+
+
+In certain circumstances, when a new map has yet to be used, precincts are split in new ways for which election officials have yet to produce registered voter data for sub-precincts. In such cases, we resort to the Census Population method, which involves determining how many people live in each sub-precinct.
+
+
+To do this, we match population data from the Census Bureau's decennial census to census block GIS shapefiles. We also match the census block shapefiles to precinct shapefiles.
+
+
+The census population data comes from the Public Law (P.L.) 94-171 redistricting summary files, which are available at the census block level for entire states on the Census Bureau website. Options available include obtaining block-level population data for the total population or the voting age (18+) population ("VAP"). Prior to 2022, we used the total population. Starting in 2022, we have used the VAP because it more closely reflects the eligible voter population.
+
+
+Census block shapefiles can be found via the Census Bureau's TIGER/line data sets grouped by state. Matching the two data sets requires aligning the block FIPS[18] code (also known as a Geographic Identifier, or GEOID), which is a unique 15-digit identifier. Using GIS software or spreadsheets, we join the block population to the block shapefile and create a new vector by using the GEOID as the join and target field. We then save the output as a new census block shapefile layer.
+
+
+We then match the census block shapefiles to a precinct shapefile obtained from state or local election officials. We do this with a tool known as a spatial join, which matches two different shapefiles that have the same coordinate reference system by finding where and to what degree they overlap. This spatial join creates a new census block shapefile that adds a new data column containing the precinct that corresponds to each block. Alternatively, we use statewide files compiled by the Voting and Election Science Team (VEST), which has also joined precinct information to each census block. 
+
+
+Note that precinct shapefile layers are rarely a perfect geometric match with census block shapefiles, since precinct layers are often simplified to reduce file size or created from sources that turned raster layers (flat images such as PDF files) into vector layers (coordinate-based geometry). Due to such mismatches, shapefile polygons that represent individual precincts may improperly align with a census block polygon or may align with the wrong block polygon. This method also presents problems when precincts are drawn in a way that splits census blocks, even if the two shapefile sources are a perfect geometric match. Additionally, census shapefiles may use different county lines than the precinct shapefiles, resulting in portions of precincts assigned to the wrong county. 
+
+
+To error-check the spatially joined census block shapefile, we look for blocks that are mislabeled due to county boundary line changes or misalignment, and we visually compare it with the precinct shapefile using GIS software. When precincts split census blocks, we use aerial satellite imagery to visually examine whether there appear to be more residential buildings and residents in a block that corresponds to one precinct or another and assign the block to whichever precinct has the majority or plurality of the block. 
+
+
+Starting in 2022, we have a new source of error to deal with: census differential privacy policy. To protect the privacy of individuals living in census blocks, the census essentially publishes incorrect data at the block level. This results in official census numbers showing sometimes a dozen people living in elementary schools, strip malls, Burger Kings, and in the middle of freeway interchanges. While people can and do live in places like these, they do not do so at anywhere near the frequency encountered in the census data. When encountering a precinct portion with a very small population (fewer than 20), we typically check Google streetview and/or satellite maps for any signs of habitation, and often, finding nothing, zero out the population as a result.
+
+
+Once we have the number of residents by sub-precinct, we use the data to assign presidential votes. By way of example, in Chesterfield, Virginia's precinct 209 - SALEM CHURCH, a total of 4,864 people resided in the portion located in the version of House District 62 ("HD-62") that was used in the 2019 elections at the time of the 2010 U.S. Census, while another 1,124 resided in the portion located in the 2019 version of House District 66 ("HD-66").
+
+
+To resolve the split in this precinct, we use the number of residents in each sub-precinct to calculate how much of each precinct is in each state House district, as shown below.
+
+
+Precinct
+	State House District
+	2010 Census Residents
+	% of Precinct
+in House District
+	209 - SALEM CHURCH
+	HD-62
+	4,864
+	81.23%
+[=4,864/5,988]
+	209 - SALEM CHURCH
+	HD-66
+	1,124
+	18.77%
+[=1,124/5,988]
+	Total
+	
+
+	5,988
+	
+
+	
+
+Across all of 209 - SALEM CHURCH, we know that Clinton received 1,139 votes and Trump received 1,388 votes. As with the VC and RV methods, we assign presidential votes to each sub-precinct proportionally based on the percentage of each precinct we know to reside in each state House district (as shown in the final column in the table above).
+
+
+Precinct
+	State House
+District
+	2010 Census Residents
+	Estimated Clinton Vote
+	Estimated Trump Vote
+	Estimated Total Vote
+	209 - SALEM CHURCH
+	HD-62
+	4,864
+	925 
+[=.8123*1,139]
+	1,127
+[=.8123*1,388]
+	2,171
+[=.8123*2,673]
+	209 - SALEM CHURCH
+	HD-66
+	1,124
+	214
+[=.1877*1,139]
+	261
+[=.1877*1,388]
+	502
+[=.1877*2,673]
+	
+
+As shown in the highlighted figures above, we can therefore estimate that Trump won the HD-62 portion of 209 - SALEM CHURCH 1,127 votes to 925 votes, and that he won the HD-66 portion of the same precinct 261 votes to 214 votes.
+
+
+7. Privacy precincts
+
+
+In some counties, vote totals for individual candidates are not revealed in precincts with a small number of voters overall or a small number of votes cast by a particular voting method in order to protect these voters' privacy; we refer to these locations as "privacy precincts."[19]
+
+
+However, the relevant election authorities always publish the number of total ballots cast countywide, including the number of ballots in each privacy precinct. As with standard precincts, it is also possible to determine which district each privacy precinct is part of.
+
+
+To determine how many votes were cast in privacy precincts, therefore, we subtract all other known votes from the countywide vote totals. Below is an example from Clark County, Nevada, which reports votes in standard precincts, as well as a small number of unassigned votes.
+
+
+Clark County
+	Biden Vote
+	Trump Vote
+	Other Vote
+	Total Vote
+	Countywide
+	521,852
+	430,930
+	19,728
+	972,510
+	
+
+	
+
+	
+
+	
+
+	
+
+	Standard Precinct Votes
+	521,742
+	430,784
+	19,722
+	972,248
+	Other Unassigned Votes
+	35
+	25
+	0
+	60
+	
+
+	
+
+	
+
+	
+
+	
+
+	Privacy Precinct Votes
+	75
+[=521,852-
+521,742-35]
+	121
+[=430,930-
+430,784-25]
+	6
+[=19,728-
+19,722-0]
+	202
+[=972,510-
+972,248-60]
+	
+
+We then determine the proportion of privacy precinct votes cast in each congressional district compared to the county as a whole and use that to estimate the proportion of privacy votes cast for each candidate, using the highlighted figures above. This approach in essence follows the VC method used for split precincts described above.
+
+
+House
+District
+	Privacy Precinct Ballots Cast
+	Share of Total Privacy Precinct Votes
+	Estimated Biden Vote
+	Estimated Trump Vote
+	Estimated Total Vote
+	NV-01
+	11
+	5.45%
+[=11/202]
+	4
+[=0.0545*75]
+	7
+[=.0545*121]
+	11
+[=.0545*202]
+	NV-03
+	54
+	26.73
+[=54/202]
+	20
+[=0.2673*75]
+	32
+[=0.2673*121]
+	54
+[=0.2673*202]
+	NV-04
+	137
+	67.82%
+[=137/202]
+	51
+[=0.6782*75]
+	82
+[=0.6782*121]
+	137
+[=0.6782*202]
+	
+
+Lastly, we add these estimated privacy precinct votes (now distributed between districts), which are shown in bold above, to the already-allocated standard precinct votes and unassigned votes to yield final district-level totals for Clark County.
+
+
+________________
+
+
+
+
+State-by-state Sources, Procedures, and Notes
+
+
+Note: The year listed before "districts" indicates the year of the first election in which the given districts were first used.
+
+
+Alabama
+
+
+2024 Election
+
+
+2024 districts - Congressional
+* Data source(s): Alabama Secretary of State
+* Split precincts: VC method
+* Unassigned votes: TB method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2024 districts - Congressional
+* Data source(s): Alabama Secretary of State
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2022 districts - Congressional
+* Data source(s): Alabama Secretary of State
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Alabama Secretary of State
+* Split precincts: VC method
+* Unassigned votes: TB method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Alabama Secretary of State
+* Split precincts: RV method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+Alaska
+
+
+2024 Election
+
+
+2020 and 2022 districts - Congressional
+* Data source(s): Alaska Division of Elections
+* Alaska possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 and 2022 districts - Congressional
+* Data source(s): Alaska Division of Elections
+* Alaska possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Alaska Division of Elections
+* Split precincts: None
+* Unassigned Votes: AV method 
+* Calculated by: Jeff Singer
+
+
+Arizona
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Arizona Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Arizona Secretary of State, county-level results
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Arizona Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Arizona Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+Arkansas
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Arkansas Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Arkansas Secretary of State
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Arkansas Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Arkansas Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+California
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): California Secretary of State, county-level results. All counties divided by the congressional map released presidential results broken down by congressional district, which we used.
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): California Secretary of State, county-level results. 
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Other: Privacy precincts in Contra Costa, El Dorado, Monterey, Riverside, San Bernardino, and Ventura counties
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): California Secretary of State, county-level results. Several counties released presidential results broken down by congressional district. We used such data from Fresno, Kern, Lake, Los Angeles, Orange, Riverside, Sacramento, San Bernardino, San Francisco, San Joaquin, San Mateo, Santa Clara, Santa Cruz, Solano, Tulare, Ventura, and Yolo counties.
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Other: Privacy precincts in Contra Costa County
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): California Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Colorado
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Colorado Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Colorado Secretary of State, county-level results
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Colorado Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Colorado Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+Connecticut
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Connecticut Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Connecticut Secretary of State
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Connecticut Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Connecticut Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Delaware
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Delaware Department of Elections
+* Delaware possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 and 2022 districts - Congressional
+* Data source(s): Delaware Department of Elections
+* Delaware possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Delaware Department of Elections
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+Florida
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Florida Department of State 
+* Split precincts: VC method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Florida Department of State 
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Florida Department of State 
+* Split precincts: VC method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Florida Department of State, county by county (voter registration by split precinct) 
+* Split precincts: VC method: Alachua, Bay, Collier, Escambia, Hillsborough, Lake, Lee (House), Manatee, Martin, Okaloosa, Orange, Pinellas, Santa Rosa, Seminole, St. Johns, Voluisia. RV method: Duval (Senate). Both VC and RV methods: Broward, Duval (House), Lee (Senate).
+* Unassigned votes: SC method (Miami-Dade), AV method (rest of the state)
+* Other: In Florida, only half of the Senate was up in 2020; additionally, no Senate or House races were on the ballot in any races where there would be just one general election candidate. In any split precincts where just one race wasn’t on the ballot, we were able to use the VC method. For instance, the total number of ballots cast in Duval County’s precinct 403 was 4,433. A total of 2,516 ballots were cast in the SD-13 portion of this precinct. Using this information, we know the remaining 1,917 ballots were in SD-12, which was not up in 2020. In any split precincts where we did not have enough information to use the VC method, the RV method was used instead.
+* Calculated by: Jeff Singer
+
+
+Georgia
+
+
+2024 Election
+
+
+2024 districts - Congressional
+* Data source(s): Georgia Secretary of State
+* Split precincts: VC method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2024 districts - Congressional
+* Data source(s): Georgia Secretary of State (post-recount results)
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2022 districts - Congressional
+* Data source(s): Georgia Secretary of State (post-recount results)
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Georgia Secretary of State (post-recount results)
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Georgia Secretary of State (post-recount results)
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+Hawaii
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Hawaii Office of Elections
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Hawaii Office of Elections
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Hawaii Office of Elections
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Hawaii Office of Elections
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Idaho
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Idaho Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Idaho Secretary of State
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Idaho Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Idaho Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Illinois
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Illinois State Board of Elections, county-level results. The city of Chicago released presidential results broken down by congressional district, which we used.
+* VC method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Illinois State Board of Elections, county-level results.
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Illinois State Board of Elections, county-level results. The city of Chicago released presidential results broken down by congressional district, which we used.
+* Split precincts: UF method (DeKalb and Stark counties), VC method (all other counties)
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Congressional
+* Data source(s): Illinois State Board of Elections, county-level results. The city of Chicago released presidential results broken down by congressional district, which we used.
+* Split precincts: UF method (DeKalb, Effingham, LaSalle, Lawrence, Ogle, St. Claire-East St. Louis portion, Will, Woodford), VC method (all other counties)
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+
+
+Indiana
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Indiana Elections Division, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Indiana Elections Division, county-level results
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Indiana Elections Division, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Indiana Elections Division, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+Iowa
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Iowa Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Iowa Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Iowa Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Iowa Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+Kansas
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Kansas Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Kansas Secretary of State
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Kansas Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Kansas Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Kentucky
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Kentucky Secretary of State, county-level results.
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Kentucky Secretary of State, county-level results. Bath, Carter, Logan, and Nelson counties did not publish precinct-level election results in 2020, requiring us to treat them each as one large precinct.
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Kentucky Secretary of State, county-level results. Several counties released presidential results broken down by congressional district. We used such data from Boyd, Harrison, Jessamine, Spencer, and Washington counties.
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Kentucky Secretary of State, county-level results, voter turnout by precinct.
+* Split precincts: VC Method
+* Unassigned votes: N/A
+* Notes: With the exception of Jefferson County, the state used county-level vote centers rather than traditional precincts in every county. Election officials have explained to us that these vote centers don’t correspond with any sub-county geography, and that precinct-level election results do not exist. The state did send us a document that identifies how many voters cast ballots in each precinct, as well as a document listing which precincts are in which legislative district. With this information, we were able to assign each split county’s votes based on the total number of ballots cast using the VC method. We were able to mitigate this issue somewhat in Boyd and Jessamine counties because we have the presidential votes broken down by congressional district for both of them. Jessamine County’s portion of the 6th Congressional District is entirely located in HD-39, so we were able to assign the entire 6th District vote there. The precinct turnout document also tells us that in the county’s part of 2nd Congressional District, just 277 votes were cast in HD-39 while the remaining 7,568 votes were cast by voters in HD-55, so we were able to assign those votes proportionally as well; we used the same procedure in Boyd County.
+* Calculated by: Jeff Singer
+
+
+Louisiana
+
+
+2024 Election
+
+
+2024 districts - Congressional
+* Data source(s): Louisiana Secretary of State, early vote by precinct 
+* Split precincts: UF method
+* Unassigned votes: TB method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2024 districts - Congressional
+* Data source(s): Louisiana Secretary of State 
+* Split precincts: CP method
+* Unassigned votes: TB method
+* Calculated by: Stephen Wolf
+
+
+2022 districts - Congressional
+* Data source(s): Louisiana Secretary of State 
+* Split precincts: CP method
+* Unassigned votes: TB method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Louisiana Secretary of State 
+* Split precincts: N/A
+* Unassigned votes: TB method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Louisiana
+* Data source(s): Louisiana Secretary of State, early vote by precinct 
+* Split precincts: VC Method
+* Unassigned votes: TB method
+* Notes: Only special legislative elections were held in 2020. For VC method, used state’s data of how many early votes were cast in each split precinct.
+* Calculated by: Jeff Singer
+
+
+Maine
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Maine Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Maine Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Congressional
+* Data source(s): Maine Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Maine Secretary of State, municipality-level results 
+* Split precincts: Sub-county method, VC Method 
+* Unassigned votes: TB method
+* Other: Many divided cities and towns in Maine do not report results by precincts, so we have to treat them as each as one split precinct. The state only assigns oversees ballots to congressional districts rather than counties or municipalities, we treated them as unassigned votes to assign each portion to a county and, when needed, a municipality. The state sometimes combines the presidential results for multiple small communities into a single reporting entity; for example, there's a "Milford/Greenfield Twp" precinct, which is made up of two separate jurisdictions, Milford and Greenfield. When the communities are not located in the same district, we treated these results like split precincts.
+* Calculated by: Jeff Singer
+
+
+Maryland
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Maryland Board of Elections
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Maryland Board of Elections
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Maryland Board of Elections
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Maryland Board of Elections
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+Massachusetts
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Massachusetts Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Massachusetts Secretary of State
+* Split precincts: CP Method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Congressional
+* Data source(s): Massachusetts Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Massachusetts Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+Michigan
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Michigan Secretary of State, county-level results
+* Split precincts: UF method (Genesse and Oakland counties), VC method (all other counties)
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Michigan Secretary of State, county-level results
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Michigan Secretary of State, county-level results
+* Split precincts: UF method (Washtenaw County), VC method (all other counties)
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Michigan Secretary of State, county-level results
+* Split precincts: UF method (Cheboygan and Washtenaw counties), VC method (all other counties)
+* Unassigned votes: AV method
+* Other: Michigan election authorities have explained to us that, after results are initially certified, adjustments are made to account for any errors, such as results that were initially mistranscribed. These changes, which are known as “statistical adjustments,” can result in a candidate gaining or losing votes in a given county. The state provides a figure for statistical adjustments to each candidate’s total for an entire county but not for individual precincts. We use the AV method to allocate these statistical adjustments.
+* Calculated by: Jeff Singer
+
+
+Minnesota
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Minnesota Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Minnesota Secretary of State
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Minnesota Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Surce(s): Minnesota Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+Mississippi
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Mississippi Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Mississippi Secretary of State
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Mississippi Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Mississippi Secretary of State
+* Split precincts: RV method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+Missouri
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Missouri Secretary of State, county-level results. Several counties released presidential results broken down by congressional district. We used such data from Jackson, Jefferson, St. Charles, and Webster counties. We then used the AV method to assign a very small number of votes that these counties left unassigned.
+* Split precincts: UF method (Boone and Camden counties), VC Method (Clay and Warren counties) 
+* Unassigned votes: TB method (Warren county), AV method (Boone, Camden, and St. Louis counties) 
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Missouri Secretary of State, county-level results. Several counties released presidential results broken down by 2020 congressional district. We used such data from Jackson, Jefferson, St. Charles, and St. Louis counties to assign absentee votes to precincts using the AV method within the parts of each county contained within a given 2020 district.
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Missouri Secretary of State, county-level results. Several counties released presidential results broken down by congressional district. We used such data from Clay, Jefferson, and St. Charles counties. We then used the AV method to assign a very small number of votes that these counties left unassigned.
+* Split precincts: UF method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+Montana
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Montana Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Montana Secretary of State
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Montana Secretary of State
+* Montana possessed a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2022 districts - Legislative
+* Data source(s): Montana Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+Nebraska
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Nebraska Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Nebraska Secretary of State
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Nebraska Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Nebraska Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+Nevada
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Nevada Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Other: Privacy precincts in Clark County
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Nevada Secretary of State, county-level results
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Other: Privacy precincts in Clark County
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Nevada Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Other: Privacy precincts in Clark County
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Nevada Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Other: Privacy precincts in Clark County. Privacy precincts in Lyon and Washoe counties but, because of lack of sufficient data, AV method used to assign these votes.
+* Calculated by: Jeff Singer
+ 
+New Hampshire
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): New Hampshire Department of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): New Hampshire Department of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): New Hampshire Department of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): New Hampshire Department of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+New Jersey
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): New Jersey Department of State, county-level results.
+* Split precincts: VC method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): New Jersey Department of State, county-level results. Several counties released presidential results broken down by 2020 congressional district for split municipalities within those counties. We used such data from Essex, Hudson, Middlesex, and Monmouth counties. Additional counties released countywide absentee 2020 presidential results broken down by 2020 congressional district. We used such data from Monmouth, Morris, and Sussex counties to assign absentee votes to municipalities using the AV method within the parts of each county contained within a given 2020 district.
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): New Jersey Department of State, county-level results. Several counties released presidential results broken down by congressional district for split municipalities within those counties. We used such data from Bergen, Essex, Gloucester, Hudson, Middlesex, Monmouth, Ocean, and Union counties. 
+* Split precincts: VC method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): New Jersey Department of State, county-level results.
+* Spit precincts: RV method
+* Unassigned votes: AV method
+* Other: New Jersey did not use election precincts for the 2020 general election. Essex County provided the presidential results by congressional district for each Newark ward, while Hudson County provided this information for each Jersey City freeholder district. To learn what proportion of each legislative district is in each CD’s ward/freeholder portion, we obtained the number of registered voters by precinct and used the RV method. 
+* Calculated by: Jeff Singer
+
+
+New Mexico
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): New Mexico Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): New Mexico Secretary of State
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): New Mexico Secretary of State
+* Split precincts: UF method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): New Mexico Secretary of State
+* Split precincts: UF method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+New Mexico law forbids a candidate's vote totals from being displayed in any precinct where that candidate wins fewer than five votes. In traditional privacy precincts in other states, no vote totals are displayed for any candidates; in New Mexico, vote totals may be displayed for some candidates but not others. These votes were assigned to a district using the AV method.
+
+
+New York
+
+
+2024 Election
+
+
+2024 districts - Congressional
+* Data source(s): County-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Notes: Because New York was the only state where no third-party or independent presidential candidates were on the ballot, write-in votes were unusually high. Therefore, while we usually do not include write-ins, we did so for New York, incorporating write-in, blank, and "scattered" votes in the "Total" column. These figures were obtained from the counties, with one exception. For Herkimer County, we used tallies of write-in and blank numbers from the state and tallies of scattered votes from the county.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2024 districts - Congressional
+* Data source(s): County-level results
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Notes: In New York, the county-level results posted by the state Board of Elections often rely on out-of-date numbers provided by the counties. In all cases, we have used the results posted by the county's elections board. We have put together a chart of the differences between the county and state tallies in the 2020 presidential race.
+* Calculated by: Stephen Wolf
+
+
+2022 districts - Congressional
+* Data source(s): County-level results
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Notes: In New York, the county-level results posted by the state Board of Elections often rely on out-of-date numbers provided by the counties. In all cases, we have used the results posted by the county's elections board. We have put together a chart of the differences between the county and state tallies in the 2020 presidential race.
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): County-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Notes: In New York, the county-level results posted by the state Board of Elections often rely on out-of-date numbers provided by the counties. In all cases, we have used the results posted by the county's elections board. We have put together a chart of the differences between the county and state tallies in the 2020 presidential race.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+
+
+* Data source(s): County-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Notes: In New York, the county-level results posted by the state Board of Elections often rely on out-of-date numbers provided by the counties. In all cases, we have used the results posted by the county's elections board. We have put together a chart of the differences between the county and state tallies in the 2020 presidential race.
+* Calculated by: Daniel Donner
+
+
+North Carolina
+
+
+2024 Election
+
+
+2024 districts - Congressional
+* Data source(s): North Carolina State Board of Elections (county and precinct)
+* Split precincts: VC method
+* Unassigned votes: N/A
+* Other: The precinct-level data provided by the North Carolina Board of Elections includes a small number of votes added algorithmically as "noise" to protect voter privacy in small precincts. We've used this data solely for counties that are split between congressional districts; for unsplit counties, we've used certified county-level results. As a result, our statewide totals reflect 243 more votes than the state's certified totals.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2024 districts - Congressional
+* Data source(s): North Carolina State Board of Elections (county and precinct)
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Other: The precinct-level data provided by the North Carolina Board of Elections includes a small number of votes added algorithmically as "noise" to protect voter privacy in small precincts. We've used this data solely for counties that are split between congressional districts; for unsplit counties, we've used certified county-level results. As a result, our statewide totals reflect 647 more votes than the state's certified totals.
+* Calculated by: Stephen Wolf
+
+
+2022 districts - Congressional
+* Data source(s): North Carolina State Board of Elections (county and precinct)
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Other: The precinct-level data provided by the North Carolina Board of Elections includes a small number of votes added algorithmically as "noise" to protect voter privacy in small precincts. We've used this data solely for counties that are split between congressional districts; for unsplit counties, we've used certified county-level results. As a result, our statewide totals reflect 429 more votes than the state's certified totals.
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): North Carolina State Board of Elections (county and precinct)
+* Split precincts: VC method
+* Unassigned votes: N/A
+* Other: The precinct-level data provided by the North Carolina Board of Elections includes a small number of votes added algorithmically as "noise" to protect voter privacy in small precincts. We've used this data solely for counties that are split between congressional districts; for unsplit counties, we've used certified county-level results. As a result, our statewide totals reflect 514 more votes than the state's certified totals.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): North Carolina State Board of Elections (county and precinct)
+* Split precincts: VC method
+* Unassigned votes: AV method
+* Other: The precinct-level data provided by the North Carolina Board of Elections includes a small number of votes added algorithmically as "noise" to protect voter privacy in small precincts. We've used this data solely for counties that are split between congressional districts; for unsplit counties, we've used certified county-level results. As a result, our statewide totals reflect 514 more votes than the state's certified totals.
+* Calculated by: Jeff Singer
+
+
+North Dakota
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): North Dakota Secretary of State
+* North Dakota possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 and 2022 districts - Congressional
+* Data source(s): North Dakota Secretary of State
+* North Dakota possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2022 districts - Legislative
+* Data source(s): North Dakota Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Ohio
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Ohio Secretary of State. Portage and Stark counties released presidential results broken down by congressional district, which we used
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Ohio Secretary of State
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Ohio Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Ohio Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+Oklahoma
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Oklahoma State Election Board, early votes per precinct in Oklahoma County
+* Split precincts: N/A
+* Unassigned votes: TB method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 districts - Congressional
+* Data source(s): Oklahoma State Election Board
+* Split precincts: CP method
+* Unassigned votes: TB method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Oklahoma State Election Board
+* Split precincts: N/A
+* Unassigned votes: TB method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Oklahoma State Election Board
+* Split precincts: N/A
+* Unassigned votes: TB method
+* Calculated by: Daniel Donner
+
+
+Oregon
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Oregon Secretary of State, county-level results
+* Split precincts: VC method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Oregon Secretary of State, county-level results
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Oregon Secretary of State, county-level results
+* Split precincts: VC method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Oregon Secretary of State, county-level results
+* Split precincts: VC method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Pennsylvania
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Pennsylvania Secretary of State, County-level results
+* Split precincts: VC method (Indiana and Venango counties), UF method (all other counties)
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): County-level results
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Notes: In Pennsylvania, the county-level results posted by the Department of State often rely on out-of-date numbers provided by the counties. In all cases, we have used the results posted by the county's elections board. We have put together a chart of the differences between the county and state tallies in the 2020 presidential race.
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): County-level results
+* Split precincts: VC method (Butler and Northumberland counties), UF method (all other counties)
+* Unassigned votes: N/A
+* Notes: In Pennsylvania, the county-level results posted by the Department of State often rely on out-of-date numbers provided by the counties. In all cases, we have used the results posted by the county's elections board. We have put together a chart of the differences between the county and state tallies in the 2020 presidential race.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): State-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Notes: In Pennsylvania, the county-level results posted by the Department of State often rely on out-of-date numbers provided by the counties. We’ve used the Department of State’s numbers, which assign all precincts and sub-precincts to a legislative district. However, we have also put together a chart of the differences between the county and state tallies in the 2020 presidential race.
+* Calculated by: Jeff Singer
+
+
+
+
+Rhode Island
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Rhode Island Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Rhode Island Secretary of State. The secretary of state released 2020 presidential absentee results broken down by 2020 congressional district for split municipalities. We used such data for the city of Providence using the AV method within the parts of the city contained within each 2020 district.
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wof
+
+
+2020 districts - Congressional
+* Data source(s): Rhode Island Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Rhode Island Secretary of State
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+South Carolina
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): South Carolina Election Commission
+* Split precincts: UF method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): South Carolina Election Commission
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): South Carolina Election Commission
+* Split precincts: UF method
+* Unassigned votes: AV method
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): South Carolina Election Commission
+* Split precincts: UF method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+South Dakota
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): South Dakota Secretary of State
+* South Dakota possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 and 2022 districts - Congressional
+* Data source(s): South Dakota Secretary of State
+* South Dakota possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): South Dakota Secretary of State
+* Split precincts: UF method
+* Unassigned votes: AV method
+* Calculated by: Daniel Donner
+
+
+Tennessee
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Tennessee Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Tennessee Secretary of State
+* Split precincts: CP method
+* Unassigned votes: AV method
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Tennessee Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Tennessee Secretary of State
+* Split precincts: UF method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Texas
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Texas Secretary of State, county-level results, Texas Legislative Council (Bexar and Collin counties)
+* Split precincts: VC Method
+* Unassigned votes: AV method, SC method
+* Notes: Hays County has eight "limited ballot precincts," one for each of the seven adjacent counties and an eighth for the rest of Texas. Election officials in the past have informed us that these precincts are used for voters who have recently moved from a different county in Texas with an overlapping congressional race. These precincts were treated like split precincts using the UF method for the ones that included votes in multiple districts.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Texas Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Notes: Hays County has six "limited ballot precincts," one for each of the five adjacent counties and a sixth for the rest of Texas. Election officials have informed us that these precincts are used for voters who have recently moved from a different county in Texas with an overlapping congressional race. These precincts were treated like split precincts using the UF method.
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Texas Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: AV method
+* Notes: Hays County has six "limited ballot precincts," one for each of the five adjacent counties and a sixth for the rest of Texas. Election officials have informed us that these precincts are used for voters who have recently moved from a different county in Texas with an overlapping congressional race. These precincts were treated like split precincts using the UF method for the three that included votes in multiple congressional districts (Comal, Travis, and "Other," i.e., the statewide precinct).
+* Calculated by: Jeff Singer
+
+
+2020 districts - Congressional
+* Data source(s): Texas Secretary of State, county-level results
+* Split precincts: VC Method
+* Unassigned votes: AV method, SC method
+* Notes: Hays County has six "limited ballot precincts," one for each of the five adjacent counties and a sixth for the rest of Texas. Election officials have informed us that these precincts are used for voters who have recently moved from a different county in Texas with an overlapping congressional race. These precincts were treated like split precincts using the UF method for the ones that included votes in multiple districts.
+* Calculated by: Jeff Singer
+
+
+Utah
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Utah Lieutenant Governor, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Other: Privacy precincts in Salt Lake, Summit, and Utah counties
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Utah Lieutenant Governor, county-level results
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Utah Lieutenant Governor, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Utah Lieutenant Governor, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Vermont
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Vermont Secretary of State
+* Vemont possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 and 2022 districts - Congressional
+* Data source(s): Vermont Secretary of State
+* Vemont possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Vermont Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+Virginia
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Virginia State Department of Elections
+* Split precincts: VC Method
+* Unassigned votes: AV Method
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Virginia State Department of Elections
+* Split precincts: CP method
+* Unassigned votes: SC method
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Virginia State Department of Elections
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Virginia State Department of Elections, voter registration by precinct, early ballots by precinct
+* Split precincts: RV method
+* Unassigned votes: TB method
+* Calculated by: Jeff Singer (HD), Daniel Donner (SD)
+
+
+Washington
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Washington Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 districts - Congressional
+* Data source(s): Washington Secretary of State, county-level results
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+2020 districts - Congressional
+* Data source(s): Washington Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Washington Secretary of State, county-level results
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+West Virginia
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): West Virginia Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): West Virginia Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): West Virginia Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): West Virginia Secretary of State
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+Wisconsin
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Wisconsin Elections Commission
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2022 districts - Congressional
+* Data source(s): Wisconsin Elections Commission (post-recount numbers)
+* Split precincts: CP method
+* Unassigned votes: N/A
+* Calculated by: Stephen Wolf
+
+
+2020 districts - Congressional
+* Data source(s): Wisconsin Elections Commission (post-recount numbers)
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Wisconsin Elections Commission (post-recount numbers)
+* Split precincts: N/A
+* Unassigned votes: N/A
+* Calculated by: Jeff Singer
+
+
+Wyoming
+
+
+2024 Election
+
+
+2022 districts - Congressional
+* Data source(s): Wyoming Secretary of State
+* Wyoming possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 Election
+
+
+2020 and 2022 districts - Congressional
+* Data source(s): Wyoming Secretary of State
+* Wyoming possesses a single, at-large congressional district. Therefore, its results are identical to the statewide results.
+* Calculated by: Jeff Singer
+
+
+2020 districts - Legislative
+* Data source(s): Wyoming Secretary of State
+* Split precincts: VC method
+* Unassigned votes: N/A
+* Calculated by: Daniel Donner
+
+
+
+
+________________
+[1] Known as the Swing State Project from Oct. 2003 to Feb. 2011, and as Daily Kos Elections from Feb. 2011 to Aug. 2024.
+[2] The exceptions are Alaska and Delaware, where statewide elections are run by the state.
+[3] Several other cities in Illinois also conduct elections separately from their surrounding counties: Bloomington (McLean County); Danville (Vermillion County); East St. Louis (St. Claire County); Galesburg (Knox County); and Rockford (Winnebago County). We consolidate the city results under their respective counties in each of these cases. We leave Chicago separate from the rest of Cook County due to its size.
+[4] Exceptions are some counties in Kentucky, which in 2020 used "vote centers" instead of precincts; New Jersey, which used precincts in 2020 but did not report results at that level; and Maine, where some cities and towns use precincts, though most typically do not report results at that level.
+[5] These five districts ranged from 57-41 for Trump (AZ-08) to 74-25 for Biden (AZ-07).
+[6] Alaska publishes results by state House district.
+[7] In Florida, a race will still be listed if at least one person has officially registered as a write-in candidate, while Louisiana does not give voters a write-in option. 
+[8] For legacy reasons, votes assigned via the AV method are coded as "EV" in our spreadsheets, which originally stood for "early votes." However, the AV method is applicable to all unassigned votes, not just early votes.
+[9] Figures shown below may differ from calculations above due to rounding.
+[10] In 2020, this was most notable in Maine and Rhode Island.
+[11] For legacy reasons, votes assigned via the Total Ballot method are coded as "UV" in our spreadsheets, which originally stood for "unassigned votes." However, unassigned votes can be allocated via a variety of methods, not just the TB method.
+[12] Figures shown below may differ from calculations above due to rounding.
+[13] For legacy reasons, votes assigned via the Sub-County method are coded as "SPEV" in our spreadsheets, which originally stood for "split precinct–early vote." The name derived from the method being something of a hybrid of our methods for addressing split precincts and what we now call our Assigned Votes method for allocating unassigned votes (and which was formerly called the Early Votes method).
+[14] Figures shown below may differ from calculations above due to rounding.
+[15] The small nature of the difference in this example may reflect the fact that HD-09, while contested between the two parties, was an uncompetitive race: Democratic state Rep. Janine Boyd won re-election by an 84-16 margin over Republican Joe Miller.
+[16] Virginia, for instance, conducts gubernatorial elections in odd-numbered years.
+[17] Many legislative chambers, for instance, hold "staggered" elections, where only some districts are up in a given year.
+[18] "FIPS" stands for Federal Information Processing Standards.
+[19] We are aware of four states that use privacy precincts: California, Nevada, New Mexico, and Washington.

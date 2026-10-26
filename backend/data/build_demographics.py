@@ -74,6 +74,11 @@ def compute_state_avgs(rows: list[dict]) -> dict[str, dict]:
     return avgs
 
 
+# States whose mid-decade map was overturned, so the 2024 lines (and the
+# Census ACS figures for them) are back in force. Missouri's 2025 map.
+REVERTED_TO_2024_LINES = {"MO"}
+
+
 def main():
     acs = [normalize_row(r, "ACS_2023_5yr") for r in load_csv(DATA_DIR / "demographics_acs.csv")]
 
@@ -95,8 +100,14 @@ def main():
     state_avgs = compute_state_avgs(acs) if acs else {}
 
     by_district: dict[str, dict] = {}
-    for r in acs + dra_rows:  # DRA wins (later overwrites)
+    for r in acs:
         by_district[r["district"]] = r
+    for r in dra_rows:  # DRA wins for redrawn districts...
+        if r["district"][:2] in REVERTED_TO_2024_LINES:
+            continue  # ...except where the new map was overturned: keep ACS on the 2024 lines
+        by_district[r["district"]] = r
+    for d in [d for d in new_lines_acs if d[:2] in REVERTED_TO_2024_LINES]:
+        del new_lines_acs[d]
 
     missing = []
     fallback = []

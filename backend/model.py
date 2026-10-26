@@ -276,12 +276,27 @@ def demographic_shift(pct: dict[str, np.ndarray], sliders: dict[str, float],
 @dataclass
 class DataBundle:
     districts: list[dict]
-    # Arrays indexed parallel to `districts`:
-    # `base_margin` excludes trend so it can be discounted at project time.
-    base_margin: np.ndarray         # margin_2024 + war_adj_discounted + incumbency_adj + challenger_adj
+    # Arrays indexed parallel to `districts`. Trend and WAR are kept apart so
+    # the settings can choose how they enter at project time.
+    base_no_war: np.ndarray         # margin_2024 + incumbency_adj + challenger_adj
+    war_binary: np.ndarray          # incumbent WAR, ×0.5 on any district not on 2024 lines
+    war_scaled: np.ndarray          # incumbent WAR × (1 − 0.5 × share new to the incumbent)
+    new_lines_binary: np.ndarray    # 1 if the district's lines label isn't "2024", else 0
+    new_share: np.ndarray           # share of the district new vs. its largest 2024 predecessor
     rel_trend: np.ndarray           # district trend vs. the nation; full-weight at trend_discount=1.0
     pop: dict[str, np.ndarray]      # group -> per-district ACS population share (0..1)
     turnout_w: np.ndarray           # 2024 votes, normalized to sum to 1
+
+    def war(self, settings: Settings) -> np.ndarray:
+        return self.war_scaled if settings.core_retention_scaling else self.war_binary
+
+    def new_lines_weight(self, settings: Settings) -> np.ndarray:
+        """0..1 weight on the simulation's new-lines error."""
+        return self.new_share if settings.core_retention_scaling else self.new_lines_binary
+
+    def base_margin(self, settings: Settings = DEFAULT_SETTINGS) -> np.ndarray:
+        """margin_2024 + WAR + incumbency + challenger (no trend, no swing)."""
+        return self.base_no_war + self.war(settings)
 
     @property
     def n(self) -> int:
@@ -299,14 +314,24 @@ def load_bundle(path: Path = DATA_PATH) -> DataBundle:
     rel_trend = np.array([(r.get("rel_trend") or 0.0)
                           + (r.get("state_shift") or 0.0) - NATIONAL_PRES_SHIFT
                           for r in rows], dtype=float)
-    war_adj = np.array([r.get("war_adj_discounted") or 0.0 for r in rows], dtype=float)
+    war_binary = np.array([r.get("war_adj_discounted") or 0.0 for r in rows], dtype=float)
+    # Sitting incumbents carry a core-retention-scaled factor; everyone else
+    # (nominees, open seats) has no new-lines discount either way.
+    war_scaled = np.array([(r.get("war_adj") or 0.0) * r["war_lines_factor_scaled"]
+                           if r.get("war_lines_factor_scaled") is not None
+                           else (r.get("war_adj_discounted") or 0.0) for r in rows], dtype=float)
     incumbency_adj = np.array([r.get("incumbency_adj") or 0.0 for r in rows], dtype=float)
     challenger_adj = np.array([r.get("challenger_adj") or 0.0 for r in rows], dtype=float)
-    base_margin = margin_2024 + war_adj + incumbency_adj + challenger_adj
+    new_lines_binary = np.array([1.0 if (r.get("lines") or "2024") != "2024" else 0.0
+                                 for r in rows], dtype=float)
+    new_share = np.array([r.get("new_share") or 0.0 for r in rows], dtype=float)
 
     turnout = district_turnout(rows)
-    return DataBundle(districts=rows, base_margin=base_margin, rel_trend=rel_trend,
-                      pop=population_shares(rows), turnout_w=turnout / turnout.sum())
+    return DataBundle(districts=rows, base_no_war=margin_2024 + incumbency_adj + challenger_adj,
+                      war_binary=war_binary, war_scaled=war_scaled,
+                      new_lines_binary=new_lines_binary, new_share=new_share,
+                      rel_trend=rel_trend, pop=population_shares(rows),
+                      turnout_w=turnout / turnout.sum())
 
 
 def project(
@@ -337,11 +362,13 @@ def project(
     shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
     demo_shift = sum(shifts.values())
     rel_trend_applied = bundle.rel_trend * trend_discount
-    structural = bundle.base_margin + rel_trend_applied
+    war = bundle.war(settings)
+    structural = bundle.base_no_war + war + rel_trend_applied
     # Calibrate so the turnout-weighted national margin equals the environment.
     # (Lockouts are included at their pre-override margin.)
     uniform_swing = environment - float(structural @ bundle.turnout_w)
     projections = structural + uniform_swing + demo_shift
+    national_margin = float(projections @ bundle.turnout_w)
 
     # Lockout override: in CA top-two primaries, some districts advanced two
     # same-party candidates to the general — the seat is guaranteed to stay
@@ -353,13 +380,16 @@ def project(
         elif lockout == "R":
             projections[i] = -100.0
 
-    return _summarize(bundle, projections, demo_shift, environment, sliders, weights,
-                      shifts, uniform_swing, rel_trend_applied, trend_discount)
+    result = _summarize(bundle, projections, demo_shift, environment, sliders, weights,
+                        shifts, uniform_swing, rel_trend_applied, trend_discount,
+                        war, bundle.new_lines_weight(settings))
+    result["national_margin"] = round(national_margin, 3)
+    return result
 
 
 def _summarize(
     bundle, projections, demo_shift, environment, sliders, weights,
-    shifts, uniform_swing, rel_trend_applied, trend_discount,
+    shifts, uniform_swing, rel_trend_applied, trend_discount, war, new_lines_weight,
 ) -> dict:
     d_seats = int(np.sum(projections > 0))
     r_seats = int(np.sum(projections < 0))
@@ -399,7 +429,8 @@ def _summarize(
             "margin_2024": row.get("margin_2024"),
             "rel_trend": round(float(bundle.rel_trend[i]), 2),
             "rel_trend_applied": round(float(rel_trend_applied[i]), 2),
-            "war_adj_discounted": row.get("war_adj_discounted"),
+            "war_adj_discounted": round(float(war[i]), 3),
+            "new_lines_weight": round(float(new_lines_weight[i]), 4),
             "incumbency_adj": row.get("incumbency_adj"),
             "war_year": row.get("war_year"),
             "war_match_type": row.get("war_match_type"),
@@ -445,6 +476,6 @@ def district_detail(bundle: DataBundle, district_id: str) -> dict | None:
                 **row,
                 "rel_trend": round(float(bundle.rel_trend[i]), 2),
                 # base_margin here = full pre-environment baseline at trend_discount=1.0
-                "base_margin": round(float(bundle.base_margin[i] + bundle.rel_trend[i]), 2),
+                "base_margin": round(float(bundle.base_margin()[i] + bundle.rel_trend[i]), 2),
             }
     return None

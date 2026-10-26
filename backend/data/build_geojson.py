@@ -60,7 +60,9 @@ def cd_label(state_fips: str, cd_code: str) -> str | None:
         return None
 
 
-def main():
+def census_features() -> list[dict]:
+    """Every 119th-Congress (2024-lines) district from the Census file, as
+    simplified GeoJSON features labeled like "MO-05"."""
     zip_path = CACHE / "cb_2024_us_cd119_5m.zip"
     if not zip_path.exists():
         print(f"downloading {CENSUS_URL}", file=sys.stderr)
@@ -100,7 +102,11 @@ def main():
                 "properties": {"district": label, "state": label.split("-")[0]},
                 "geometry": geo,
             })
+    return features
 
+
+def main():
+    features = census_features()
     OUT.parent.mkdir(parents=True, exist_ok=True)
     fc = {"type": "FeatureCollection", "features": features}
     OUT.write_text(json.dumps(fc, separators=(",", ":")))

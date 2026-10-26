@@ -15,7 +15,8 @@ from pathlib import Path
 DATA_DIR = Path(__file__).resolve().parent
 GEOJSON_PATH = DATA_DIR.parent.parent / "frontend" / "public" / "districts.geojson"
 
-REDRAWN_STATES = ["CA", "TX", "OH", "NC", "TN", "MO", "UT", "FL", "LA", "AL"]
+# MO dropped: its 2025 map was overturned (2024 lines back in force).
+REDRAWN_STATES = ["CA", "TX", "OH", "NC", "TN", "UT", "FL", "LA", "AL"]
 AT_LARGE = {"AK", "DE", "ND", "SD", "VT", "WY"}
 
 COORD_PRECISION = 5

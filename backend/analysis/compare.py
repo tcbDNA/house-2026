@@ -19,8 +19,6 @@ import json
 import sys
 from pathlib import Path
 
-import numpy as np
-
 BACKEND = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BACKEND))
 
@@ -47,10 +45,8 @@ def run(settings: Settings = DEFAULT_SETTINGS, env: float | None = None,
     s = senate_model.project(main.SENATE_BUNDLE, env, sliders, trend_discount, settings)
     senate = add_senate_win_probabilities(s, s["summary"]["not_up_d"], s["summary"]["not_up_r"])
     # National margin: 2024-turnout-weighted mean of every district's projection
-    # before the CA lockout override.
-    pre_lockout = (B.base_margin + B.rel_trend * trend_discount + house["uniform_swing"]
-                   + np.array([d["demo_shift"] for d in house["districts"]]))
-    return {"house": house, "senate": senate, "national_margin": float(pre_lockout @ B.turnout_w)}
+    # before the CA lockout override (computed by the model).
+    return {"house": house, "senate": senate, "national_margin": house["national_margin"]}
 
 
 def metrics(r: dict) -> dict:
