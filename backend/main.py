@@ -32,17 +32,17 @@ COUNTY_BUNDLE = county.load_bundle()
 # Default scenario, from recent polls' race crosstabs
 # (`python3 data/crosstab_environment.py`, data in
 # data/generic_ballot_crosstabs.csv). The race sliders start at each group's
-# poll-average margin so districts swing with their own demographics (+9.45
+# poll-average margin so districts swing with their own demographics (+9.57
 # nationally); the uniform wave covers the rest so the national total is the
-# 2024 result plus the share-weighted group shifts, D+8.2. Keep in sync with
+# 2024 result plus the share-weighted group shifts, D+8.3. Keep in sync with
 # DEFAULT_ENV / DEFAULT_SLIDERS in the frontend (App.tsx, types.ts).
 DEFAULT_ENVIRONMENT = -1.25
 DEFAULT_SLIDERS = {
     **CATALIST_BASELINES,
-    "white_nh": -6.7,
-    "black": 75.6,
-    "hispanic": 28.3,
-    "asian": 46.7,
+    "white_nh": -6.3,
+    "black": 74.6,
+    "hispanic": 29.4,
+    "asian": 41.8,
 }
 
 

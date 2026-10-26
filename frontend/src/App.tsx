@@ -19,7 +19,7 @@ type Tab = "house" | "senate";
 export type DemoFrame = "race" | "race_edu";
 
 // Default uniform wave (D-R). With the race sliders at their poll-average
-// defaults (+9.45 nationally), the total is D+8.2: the 2024 result plus the
+// defaults (+9.57 nationally), the total is D+8.3: the 2024 result plus the
 // share-weighted shift in each racial group's margin across recent polls'
 // crosstabs (backend/data/crosstab_environment.py). Keep in sync with
 // DEFAULT_ENVIRONMENT in backend/main.py.

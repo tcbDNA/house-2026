@@ -151,10 +151,10 @@ export const SLIDER_DEFS: { key: SliderKey; label: string; min: number; max: num
 // baseline. Keep in sync with DEFAULT_SLIDERS in backend/main.py.
 export const DEFAULT_SLIDERS: SliderValues = {
   ...CATALIST_BASELINES,
-  white_nh: -6.7,
-  black:    75.6,
-  hispanic: 28.3,
-  asian:    46.7,
+  white_nh: -6.3,
+  black:    74.6,
+  hispanic: 29.4,
+  asian:    41.8,
 };
 
 // Starting positions for the race × education cells when that frame is
@@ -164,8 +164,8 @@ export const EDU_FRAME_DEFAULTS: Pick<SliderValues,
   "white_college" | "white_non_college" | "nonwhite_college" | "nonwhite_non_college"> = {
   white_college:         16.6,
   white_non_college:    -22.4,
-  nonwhite_college:      50.3,
-  nonwhite_non_college:  45.3,
+  nonwhite_college:      49.5,
+  nonwhite_non_college:  44.6,
 };
 
 export type Axis = "race" | "edu" | "age";

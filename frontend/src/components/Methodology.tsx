@@ -8,19 +8,19 @@ export function Methodology() {
           pres_margin_2024 + uniform_swing + trend × 0.5 + WAR_blend + incumbency + challenger + demographic_shift
         </code>
         , where <b>pres_margin_2024</b> is the Harris-Trump margin (D-positive) in
-        that district / state. The national environment defaults to <b>D+8.2</b>,
+        that district / state. The national environment defaults to <b>D+8.3</b>,
         built from poll <b>race crosstabs</b> rather than toplines: each group's
         generic-ballot margin (White, Black, Hispanic, Asian; two-way, so differing
         undecided rates don't distort it) is averaged across the latest national
-        poll from each pollster that publishes a race breakdown (six polls ending
-        Oct 4–23, 2026: NYT/Siena, CBS/YouGov, Economist/YouGov, Echelon, Fox News,
-        Pew; weighted by √n). Each group's shift from its Catalist 2024 margin is
+        poll from each pollster that publishes a race breakdown (eight polls ending
+        Sep 22–Oct 23, 2026: NYT/Siena, CBS/YouGov, Economist/YouGov, Echelon, Fox
+        News, Pew, Cygnal, Emerson; weighted by √n). Each group's shift from its Catalist 2024 margin is
         weighted by its share of the electorate and added to the 2024 result
-        (R+1.5): a +9.7-pt shift, of which white voters contribute +6.4. The same
-        polls' toplines average D+8.6. By default the race sliders sit at those
-        poll averages (white R+6.7, Black D+75.6, Hispanic D+28.3, Asian D+46.7), so
+        (R+1.5): a +9.8-pt shift, of which white voters contribute +6.8. The same
+        polls' toplines average D+9.0. By default the race sliders sit at those
+        poll averages (white R+6.3, Black D+74.6, Hispanic D+29.4, Asian D+41.8), so
         each district swings by its own mix of groups; the uniform wave (R+1.25)
-        covers the rest of the D+8.2 total. For the House, the <b>uniform swing</b> is
+        covers the rest of the D+8.3 total. For the House, the <b>uniform swing</b> is
         calibrated so that, with demographic sliders at default, the
         2024-turnout-weighted average of all 435 district margins equals the
         environment — i.e. the slider is the national House popular vote. (The
