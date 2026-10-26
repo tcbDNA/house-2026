@@ -29,7 +29,7 @@ function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscoun
   let trendDiscount = 0.5;
   if (tdRaw != null) {
     const tv = Number(tdRaw);
-    if (!Number.isNaN(tv) && tv >= 0 && tv <= 1) trendDiscount = tv;
+    if (!Number.isNaN(tv) && tv >= -1 && tv <= 1) trendDiscount = tv;
   }
   const frame: DemoFrame = p.get("frame") === "race_edu" ? "race_edu" : "race";
   return { tab, env: Number.isNaN(env) ? 8.9 : env, sliders: out, trendDiscount, frame };
@@ -146,7 +146,6 @@ export default function App() {
             sliders={sliders}
             trendDiscount={trendDiscount}
             frame={frame}
-            axisWeight={(tab === "house" ? houseResult : senateResult)?.axis_weight ?? 1}
             onEnvironment={setEnvironment}
             onSlider={onSlider}
             onSliders={setSliders}

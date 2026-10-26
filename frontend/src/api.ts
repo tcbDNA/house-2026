@@ -1,4 +1,4 @@
-import type { ProjectResponse, SenateResponse, SliderValues } from "./types";
+import type { AxisWeights, ProjectResponse, SenateResponse, SliderValues } from "./types";
 
 export async function fetchProjection(
   environment: number,
@@ -27,7 +27,7 @@ export type CountyResponse = {
   state: string;
   uniform_swing: number;
   trend_discount: number;
-  axis_weight: number;
+  axis_weights: AxisWeights;
   turnout_ratio_2026: number;
   unavailable_reason?: string;
   counties: Array<{

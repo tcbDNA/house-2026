@@ -5,10 +5,15 @@ Formula per state:
        + war_adj_discounted + incumbency_adj + demographic_shift
 
   uniform_swing = environment - PRES_2024_POPVOTE   (-1.5)
-  demographic_shift = sum_g (pct_g / 100) × (slider_g - baseline_g)
+  demographic_shift = Σ_axis w_axis × Σ_g electorate_share_g × (slider_g - baseline_g)
 
 Same slider semantics as the House model: each slider is the group's absolute
-D-R margin, baseline is Catalist 2024 values. Multi-axis half-weighting applies.
+D-R margin, baseline is Catalist 2024 values, shares are rescaled to the
+electorate, and multiple moved axes are averaged (model.axis_weights).
+
+state_trend is already relative to the nation, so (unlike the House model)
+no calibration step is needed: the presidential baseline + swing from the
+2024 presidential popular vote is internally consistent.
 """
 
 from __future__ import annotations
@@ -20,8 +25,7 @@ from pathlib import Path
 import numpy as np
 
 from model import (
-    AGE_SLIDERS, ALL_SLIDERS, CATALIST_BASELINES, EDU_SLIDERS, EPSILON, RACE_SLIDERS,
-    SLIDER_TO_PCT, TOSSUP_THRESHOLD,
+    ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demographic_shift, electorate_shares,
 )
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "senate_states.json"
@@ -56,16 +60,8 @@ def load_bundle(path: Path = DATA_PATH) -> SenateBundle:
     challenger = np.array([s.get("challenger_adj") or 0.0 for s in seats], dtype=float)
     base_margin = pres_2024 + war + inc + challenger
 
-    pct = {}
-    for slider, field in SLIDER_TO_PCT.items():
-        if slider == "non_college":
-            college = np.array([(s.get("pct_college") or 0.0) for s in seats], dtype=float)
-            pct[slider] = (100.0 - college) / 100.0
-        else:
-            pct[slider] = np.array(
-                [(s.get(field) or 0.0) for s in seats], dtype=float) / 100.0
     return SenateBundle(states=all_states, seats=seats, base_margin=base_margin,
-                        state_trend=trend, pct=pct)
+                        state_trend=trend, pct=electorate_shares(seats))
 
 
 def project(
@@ -76,7 +72,8 @@ def project(
 ) -> dict:
     """`trend_discount` multiplies ``state_trend`` before adding it in.
     0.5 = partial mean-reversion (default, matches district rel_trend),
-    1.0 = full trend persistence, 0.0 = trends ignored entirely.
+    1.0 = full trend persistence, 0.0 = trends ignored entirely, negative =
+    the 2020→2024 shift partially reverses.
     """
     sliders = dict(sliders or {})
     for k in ALL_SLIDERS:
@@ -84,17 +81,8 @@ def project(
 
     uniform_swing = environment - PRES_2024_POPVOTE
 
-    deltas = {k: sliders[k] - CATALIST_BASELINES[k] for k in ALL_SLIDERS}
-
-    race_shift = sum(bundle.pct[k] * deltas[k] for k in RACE_SLIDERS)
-    edu_shift = sum(bundle.pct[k] * deltas[k] for k in EDU_SLIDERS)
-    age_shift = sum(bundle.pct[k] * deltas[k] for k in AGE_SLIDERS)
-
-    active_axes = sum(1 for keys in (RACE_SLIDERS, EDU_SLIDERS, AGE_SLIDERS)
-                       if any(abs(deltas[k]) > EPSILON for k in keys))
-    weight = 0.5 if active_axes >= 2 else 1.0
-
-    demo_shift = weight * (race_shift + edu_shift + age_shift)
+    shifts, weights = demographic_shift(bundle.pct, sliders)
+    demo_shift = sum(shifts.values())
     state_trend_applied = bundle.state_trend * trend_discount
     projections = bundle.base_margin + state_trend_applied + uniform_swing + demo_shift
 
@@ -148,9 +136,9 @@ def project(
             "co_nominee_adj": s.get("co_nominee_adj"),
             "projection": round(proj, 2),
             "demo_shift": round(float(demo_shift[i]), 2),
-            "race_shift": round(float(race_shift[i] * weight), 2),
-            "edu_shift": round(float(edu_shift[i] * weight), 2),
-            "age_shift": round(float(age_shift[i] * weight), 2),
+            "race_shift": round(float(shifts["race"][i]), 2),
+            "edu_shift": round(float(shifts["edu"][i]), 2),
+            "age_shift": round(float(shifts["age"][i]), 2),
             "is_tossup": abs(proj) <= TOSSUP_THRESHOLD,
             "flip": "to_D" if flipped_to_d else ("to_R" if flipped_to_r else None),
         })
@@ -166,7 +154,7 @@ def project(
     return {
         "environment": environment,
         "sliders": sliders,
-        "axis_weight": weight,
+        "axis_weights": weights,
         "uniform_swing": uniform_swing,
         "trend_discount": trend_discount,
         "summary": {

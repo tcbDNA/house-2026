@@ -11,11 +11,11 @@ export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
     : majority === "R"
     ? "Republican majority"
     : majority === "tie"
-    ? "50-50 tie (VP breaks)"
+    ? "50-50 tie (VP Vance → R control)"
     : "No majority";
   const majorityColor =
     majority === "D" ? "text-blue-700" :
-    majority === "R" ? "text-red-700" :
+    majority === "R" || majority === "tie" ? "text-red-700" :
     "text-slate-600";
 
   return (
@@ -65,7 +65,7 @@ export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
       {seat_distribution && (
         <div className="mt-3 pt-3 border-t border-slate-200 text-xs">
           <div className="flex items-baseline justify-between mb-1">
-            <span className="font-semibold text-slate-700">P(D majority)</span>
+            <span className="font-semibold text-slate-700">P(D control)</span>
             <span className={`font-bold text-lg ${seat_distribution.p_d_majority >= 0.5 ? "text-blue-700" : "text-red-700"}`}>
               {(seat_distribution.p_d_majority * 100).toFixed(1)}%
             </span>
@@ -73,6 +73,11 @@ export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
           <div className="text-slate-500">
             D total: median <b>{seat_distribution.d_median}</b>{" "}
             · 80% CI <b>[{seat_distribution.d_p10}, {seat_distribution.d_p90}]</b>
+          </div>
+          <div className="text-[10px] text-slate-400 mt-1">
+            D needs 51; a 50-50 split is R control (VP tiebreak). Independent
+            nominees (Osborn NE, Bengs SD) are counted with D — neither is
+            committed to caucusing with Democrats.
           </div>
         </div>
       )}

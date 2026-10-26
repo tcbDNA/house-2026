@@ -14,8 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from model import (
-    AGE_SLIDERS, ALL_SLIDERS, CATALIST_BASELINES, EDU_SLIDERS, EPSILON,
-    RACE_SLIDERS, SLIDER_TO_PCT, TOSSUP_THRESHOLD,
+    ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demographic_shift, electorate_shares,
 )
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "counties.json"
@@ -47,11 +46,8 @@ def load_bundle(path: Path = DATA_PATH) -> CountyBundle:
     rel_trend   = np.array([r.get("rel_trend") or 0.0 for r in rows], dtype=float)
     # No WAR / incumbency / challenger at county level.
     base_margin = margin_2024
-    pct = {
-        slider: np.array([(r.get(field) or 0.0) for r in rows], dtype=float) / 100.0
-        for slider, field in SLIDER_TO_PCT.items()
-    }
-    return CountyBundle(counties=rows, base_margin=base_margin, rel_trend=rel_trend, pct=pct)
+    return CountyBundle(counties=rows, base_margin=base_margin, rel_trend=rel_trend,
+                        pct=electorate_shares(rows))
 
 
 def project(
@@ -72,15 +68,8 @@ def project(
         sliders.setdefault(k, CATALIST_BASELINES[k])
 
     uniform_swing = environment - PRES_2024_POPVOTE
-    deltas = {k: sliders[k] - CATALIST_BASELINES[k] for k in ALL_SLIDERS}
-
-    race_shift = sum(bundle.pct[k] * deltas[k] for k in RACE_SLIDERS)
-    edu_shift  = sum(bundle.pct[k] * deltas[k] for k in EDU_SLIDERS)
-    age_shift  = sum(bundle.pct[k] * deltas[k] for k in AGE_SLIDERS)
-    active_axes = sum(1 for ks in (RACE_SLIDERS, EDU_SLIDERS, AGE_SLIDERS)
-                      if any(abs(deltas[k]) > EPSILON for k in ks))
-    weight = 0.5 if active_axes >= 2 else 1.0
-    demo_shift = weight * (race_shift + edu_shift + age_shift)
+    shifts, weights = demographic_shift(bundle.pct, sliders)
+    demo_shift = sum(shifts.values())
 
     rel_trend_applied = bundle.rel_trend * trend_discount
     projections = bundle.base_margin + rel_trend_applied + uniform_swing + demo_shift + senate_adjustment
@@ -94,7 +83,9 @@ def project(
         # Estimated 2026 turnout (midpoint of 2022 and 2024 levels) and D/R
         # vote counts derived from the projected margin. Two-way split.
         est_turnout = round(total_24 * TURNOUT_2026_RATIO)
-        d_share = (100 + proj) / 200.0   # margin = D% - R%, two-way
+        # margin = D% - R%, two-way; clamp so extreme scenarios can't push
+        # projected margins past ±100 into negative vote counts.
+        d_share = max(0.0, min(1.0, (100 + proj) / 200.0))
         est_d_votes = round(est_turnout * d_share)
         est_r_votes = est_turnout - est_d_votes
         out_counties.append({
@@ -111,16 +102,16 @@ def project(
             "estimated_r_votes": est_r_votes,
             "projection": round(proj, 2),
             "demo_shift": round(float(demo_shift[i]), 2),
-            "race_shift": round(float(race_shift[i] * weight), 2),
-            "edu_shift":  round(float(edu_shift[i] * weight), 2),
-            "age_shift":  round(float(age_shift[i] * weight), 2),
+            "race_shift": round(float(shifts["race"][i]), 2),
+            "edu_shift":  round(float(shifts["edu"][i]), 2),
+            "age_shift":  round(float(shifts["age"][i]), 2),
             "is_tossup": abs(proj) <= TOSSUP_THRESHOLD,
         })
 
     return {
         "environment": environment,
         "sliders": sliders,
-        "axis_weight": weight,
+        "axis_weights": weights,
         "uniform_swing": uniform_swing,
         "trend_discount": trend_discount,
         "turnout_ratio_2026": TURNOUT_2026_RATIO,

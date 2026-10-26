@@ -20,6 +20,10 @@ import sys
 from pathlib import Path
 from collections import defaultdict
 
+from load_data import (
+    _first_names_compatible, _strip_accents, _strip_suffix, assert_no_duplicate_keys,
+)
+
 DATA_DIR = Path(__file__).resolve().parent
 V20 = DATA_DIR.parent.parent / "national_sensitivity_v20.csv"
 DEMOS = DATA_DIR / "demographics.csv"
@@ -136,10 +140,8 @@ CHALLENGERS = {
            "note": "auto-WAR from 2024 Senate NE"},
     "OH": {"name": "Sherrod Brown", "party": "(D)", "war": 0.0,
            "note": "auto-WAR from 2024 Senate OH"},
-    "MI": {"name": "Mike Rogers", "party": "(R)", "war": 0.0,
-           "note": "auto-WAR from 2024 Senate MI (state-disambiguated from AL-03 House Mike Rogers)"},
-    "OK": {"name": "Kevin Hern", "party": "(R)", "war": 0.0,
-           "note": "auto-WAR from 2024 House OK-01"},
+    # MI (El-Sayed vs Rogers) and OK (Thomas vs Hern) are listed further down
+    # with both nominees.
     # === From Wikipedia sweep (post-primary nominees, May 2026) ===
     # Whatley (R) is the same-party nominee for NC (R seat, Tillis retiring);
     # not tracked separately since data model is single-challenger-per-seat.
@@ -239,16 +241,6 @@ CHALLENGERS = {
 }
 
 
-def _strip_accents(s: str) -> str:
-    """Fold accented characters to ASCII so 'Luján' matches 'Lujan' in raw_war."""
-    import unicodedata
-    return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
-
-
-def _strip_suffix(s: str) -> str:
-    return re.sub(r"\b(jr|sr|ii|iii|iv)\.?\b", "", s, flags=re.IGNORECASE).strip()
-
-
 def _fnum(s):
     if s is None or s == "":
         return 0.0
@@ -317,11 +309,13 @@ def _clean_name(raw: str) -> str:
 # records by office (House / Senate / Governor); within each office, records
 # are sorted year-desc and the top 3 slot at 0.50 / 0.30 / 0.20. The candidate's
 # most recent race of any kind isn't discarded just because the office they're
-# now seeking has a different term length.
+# now seeking has a different term length. Missing slots contribute 0
+# (zero-fill), which is the only thin-record regression.
 WAR_WEIGHTS = (0.50, 0.30, 0.20)
 
-# Sample-size shrinkage (matches load_data._shrinkage).
-WAR_SHRINK_K = 1.0
+# Eligibility window per office: the last three cycles of that office before
+# 2026 (House 2-yr terms -> 2020+, Governor 4-yr -> 2014+, Senate 6-yr -> 2008+).
+WAR_FIRST_YEAR = {"House": 2020, "Governor": 2014, "Senate": 2008}
 
 # Specific (year, state, name) cycles to exclude from the WAR blend. Use when
 # a particular race was so non-competitive that its WAR is misleading data.
@@ -334,12 +328,6 @@ WAR_CYCLE_EXCLUSIONS: set[tuple[int, str, str]] = {
     # here reflects Begich's incumbency, not Sullivan's underperformance.
     (2014, "AK", "Dan Sullivan"),
 }
-
-
-def _shrinkage(n: int) -> float:
-    if n <= 0:
-        return 0.0
-    return (n / (n + WAR_SHRINK_K)) / (3 / (3 + WAR_SHRINK_K))
 
 
 # Cross-chamber discount applied to non-federal cycles (Governor) when they
@@ -365,8 +353,10 @@ def _time_weighted_sortable(records: list[dict], candidate_name: str = "") -> fl
     the race being projected (i.e. House or Governor when projecting Senate)
     take a 0.5× cross-chamber discount; CROSS_CHAMBER_FULL_WEIGHT candidates
     skip the discount on governor cycles. Per-cycle exclusions filter records
-    before slotting. Sample-size shrinkage applies on total surviving records
-    (capped at 3); 3-cycle candidates are unaffected."""
+    before slotting. Because each office slots its own 0.50 / 0.30 / 0.20,
+    the recency weights across offices can sum past 1.0 (e.g. 2 Senate + 3
+    House records = 1.8); when they do, they're rescaled to sum to 1.0 so a
+    candidate's blend stays a weighted average of their races."""
     full_weight_gov = candidate_name in CROSS_CHAMBER_FULL_WEIGHT
 
     # Derive a state code from each record's `geo` field (for exclusion lookup).
@@ -388,8 +378,7 @@ def _time_weighted_sortable(records: list[dict], candidate_name: str = "") -> fl
     for lst in by_chamber.values():
         lst.sort(key=lambda r: r["year"], reverse=True)
 
-    raw = 0.0
-    n_total = 0
+    slotted = []  # (recency weight, cross-chamber discount, sortable)
     for chamber, lst in by_chamber.items():
         if chamber == "Senate":
             d = 1.0
@@ -397,11 +386,10 @@ def _time_weighted_sortable(records: list[dict], candidate_name: str = "") -> fl
             d = 1.0 if full_weight_gov else GOV_CROSS_CHAMBER_DISCOUNT
         else:  # House (and any other cross-chamber)
             d = GOV_CROSS_CHAMBER_DISCOUNT
-        for i, w in enumerate(WAR_WEIGHTS):
-            if i < len(lst):
-                raw += w * lst[i]["sortable"] * d
-                n_total += 1
-    return raw * _shrinkage(min(n_total, 3))
+        for w, rec in zip(WAR_WEIGHTS, lst):
+            slotted.append((w, d, rec["sortable"]))
+    scale = 1.0 / max(1.0, sum(w for w, _, _ in slotted))
+    return sum(w * scale * d * s for w, d, s in slotted)
 
 
 def load_all_wars():
@@ -419,9 +407,10 @@ def load_all_wars():
                 sortable = float(r["Sortable"])
             except (ValueError, KeyError, TypeError):
                 continue
-            # No year filter at ingest time: the calendar window in
-            # _time_weighted_sortable picks out the cycles it wants. Per-cycle
-            # exclusions (e.g. Collins 2014) are applied at blend time.
+            # Per-office eligibility window. Per-cycle exclusions (e.g.
+            # Collins 2014) are applied at blend time.
+            if year < WAR_FIRST_YEAR[chamber]:
+                continue
             geo = (r.get("Geography") or "").strip()
             geo_clean = re.sub(r"\s*\(.*?\)\s*$", "", geo).strip()
             # Strip trailing "Special" / "Spec" / "Special Election" markers
@@ -475,14 +464,14 @@ def find_war(state, name, party_letter, all_wars):
     recs = all_wars.get((state, name, party_letter))
     if recs:
         return recs
-    # Fallback: same last-name and party in the same state (handles middle-init / suffix variation)
+    # Fallback: same last-name and party in the same state, with a compatible
+    # first name (handles middle-initial / suffix / nickname variation without
+    # matching same-surname relatives).
     last = _strip_suffix(name).split()[-1].lower() if name else ""
-    first_initial = (_strip_suffix(name).split() or [""])[0][:1].lower()
     for (s, n, p), v in all_wars.items():
         if s == state and p == party_letter:
-            if _strip_suffix(n).split()[-1].lower() == last:
-                if (_strip_suffix(n).split() or [""])[0][:1].lower() == first_initial:
-                    return v
+            if _strip_suffix(n).split()[-1].lower() == last and _first_names_compatible(n, name):
+                return v
     return None
 
 
@@ -505,6 +494,7 @@ def lookup_war_for_candidate(state, name, party_letter, all_wars):
 
 
 def main():
+    assert_no_duplicate_keys(Path(__file__))
     margins = load_state_presidential_margins()
     demos = aggregate_state_demographics()
     all_wars = load_all_wars()

@@ -20,9 +20,18 @@ districts more likely. Idiosyncratic shock is per-race unique error.
 
 The variance decomposition
   σ_total² = σ_nat² + σ_region² + σ_state² + σ_district²
-gives a per-race σ ≈ √(2.5² + 1.2² + 1.8² + 3.2²) ≈ 4.7 points.
+gives a per-race σ ≈ √(2.5² + 1.2² + 1.8² + 3.2²) ≈ 4.6 points for an
+incumbent running on unchanged lines. Races we know less about get a wider
+idiosyncratic term (added in quadrature): open seats (no sitting incumbent —
+no personal-vote track record) and House districts on new lines (WAR and
+trend were measured on a different electorate). An open seat on new lines
+comes to σ ≈ 5.6.
 The correlation structure widens the seat-count CI vs. treating races
 as independent (which underestimates aggregate uncertainty).
+
+Each call uses a freshly seeded generator, so the same scenario always
+returns the same probabilities, and nearby scenarios share random draws
+(common random numbers) — moving a slider doesn't add Monte Carlo jitter.
 
 Lockouts (|projection|=100) bypass all shocks — they're deterministic.
 """
@@ -34,8 +43,10 @@ SIGMA_NATIONAL = 2.5   # shared across every race (polling / late-swing)
 SIGMA_REGION   = 1.2   # census region (Northeast / Midwest / South / West)
 SIGMA_STATE    = 1.8   # within-state candidate quality / news / weather
 SIGMA_DISTRICT = 3.2   # idiosyncratic per-district error
+SIGMA_OPEN_SEAT_EXTRA = 2.5   # added in quadrature when there's no sitting incumbent
+SIGMA_NEW_LINES_EXTRA = 2.0   # added in quadrature for House districts not on 2024 lines
 N_SIMS = 10000
-_RNG = np.random.default_rng(20260918)
+SEED = 20260918
 
 # Census regions (used for regional correlation).
 STATE_TO_REGION = {
@@ -55,9 +66,19 @@ STATE_TO_REGION = {
 }
 
 
-def _draw_correlated_shocks(rows, sigma_state, sigma_region, sigma_district):
+def _race_sigma(base: float, open_seat: np.ndarray, new_lines: np.ndarray) -> np.ndarray:
+    """Per-race idiosyncratic σ: `base`, widened in quadrature for open seats
+    and redrawn districts."""
+    var = (base ** 2
+           + open_seat * SIGMA_OPEN_SEAT_EXTRA ** 2
+           + new_lines * SIGMA_NEW_LINES_EXTRA ** 2)
+    return np.sqrt(var)
+
+
+def _draw_correlated_shocks(rng, rows, sigma_state, sigma_region, sigma_race):
     """Return (N_SIMS, n_rows) array of correlated per-race shocks —
-    the sum of state + region + idiosyncratic components."""
+    the sum of state + region + idiosyncratic components. `sigma_race` is a
+    per-row array of idiosyncratic σ."""
     n = len(rows)
     states = [r.get("state") or r.get("district", r.get("state", ""))[:2] for r in rows]
     regions = [STATE_TO_REGION.get(s, "OTHER") for s in states]
@@ -70,9 +91,9 @@ def _draw_correlated_shocks(rows, sigma_state, sigma_region, sigma_district):
     state_ix = np.array([us_idx[s] for s in states])
     region_ix = np.array([ur_idx[r] for r in regions])
 
-    state_draws = _RNG.normal(0.0, sigma_state, size=(N_SIMS, len(us_list)))
-    region_draws = _RNG.normal(0.0, sigma_region, size=(N_SIMS, len(ur_list)))
-    dist_draws = _RNG.normal(0.0, sigma_district, size=(N_SIMS, n))
+    state_draws = rng.normal(0.0, sigma_state, size=(N_SIMS, len(us_list)))
+    region_draws = rng.normal(0.0, sigma_region, size=(N_SIMS, len(ur_list)))
+    dist_draws = rng.standard_normal(size=(N_SIMS, n)) * sigma_race[None, :]
     return state_draws[:, state_ix] + region_draws[:, region_ix] + dist_draws
 
 
@@ -83,11 +104,15 @@ def add_win_probabilities(result: dict, majority_threshold: int = 218) -> dict:
     if not rows:
         return result
 
+    rng = np.random.default_rng(SEED)
     proj = np.array([r["projection"] for r in rows], dtype=float)
     lockout = np.abs(proj) >= 99.5
+    open_seat = np.array([bool(r.get("open_seat")) for r in rows], dtype=float)
+    new_lines = np.array([(r.get("lines") or "2024") != "2024" for r in rows], dtype=float)
 
-    nat = _RNG.normal(0.0, SIGMA_NATIONAL, size=(N_SIMS, 1))
-    corr = _draw_correlated_shocks(rows, SIGMA_STATE, SIGMA_REGION, SIGMA_DISTRICT)
+    nat = rng.normal(0.0, SIGMA_NATIONAL, size=(N_SIMS, 1))
+    corr = _draw_correlated_shocks(rng, rows, SIGMA_STATE, SIGMA_REGION,
+                                   _race_sigma(SIGMA_DISTRICT, open_seat, new_lines))
     corr[:, lockout] = 0.0
 
     sims = proj[None, :] + nat + corr
@@ -124,16 +149,20 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
     if not rows:
         return result
 
+    rng = np.random.default_rng(SEED)
     proj = np.array([r["projection"] for r in rows], dtype=float)
     lockout = np.abs(proj) >= 99.5
+    # No sitting incumbent who has won the seat: open, appointed, or the
+    # incumbent's renomination is unresolved (all carry incumbency_adj = 0).
+    open_seat = np.array([not r.get("incumbency_adj") for r in rows], dtype=float)
 
-    nat = _RNG.normal(0.0, SIGMA_NATIONAL, size=(N_SIMS, 1))
+    nat = rng.normal(0.0, SIGMA_NATIONAL, size=(N_SIMS, 1))
     # Senate: no state-level shock separate from the seat itself (one seat/state
     # among the up-races), so fold state variance into the idiosyncratic term.
     sigma_seat = float(np.sqrt(SIGMA_STATE ** 2 + SIGMA_DISTRICT ** 2))
-    corr = _draw_correlated_shocks(rows, sigma_state=0.0,
+    corr = _draw_correlated_shocks(rng, rows, sigma_state=0.0,
                                    sigma_region=SIGMA_REGION,
-                                   sigma_district=sigma_seat)
+                                   sigma_race=_race_sigma(sigma_seat, open_seat, np.zeros(len(rows))))
     corr[:, lockout] = 0.0
 
     sims = proj[None, :] + nat + corr
@@ -144,7 +173,8 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
     for r, p in zip(rows, p_d):
         r["p_d"] = round(float(p), 3)
 
-    # 100-seat control: D + holdovers ≥ 51 (or 50 with a D VP tiebreak)
+    # 100-seat chamber. D control needs 51; R controls at 50 because VP Vance
+    # breaks ties. p_*_majority are outright 51+ majorities.
     total_d = d_wins.sum(axis=1) + holdover_d + holdover_i_caucus_d
     total_r = (~d_wins).sum(axis=1) + holdover_r
     summary = result.setdefault("summary", {})
@@ -155,5 +185,7 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
         "d_p90": int(np.quantile(total_d, 0.90)),
         "p_d_majority": round(float((total_d >= 51).mean()), 3),
         "p_r_majority": round(float((total_r >= 51).mean()), 3),
+        "p_d_control": round(float((total_d >= 51).mean()), 3),
+        "p_r_control": round(float((total_r >= 50).mean()), 3),
     }
     return result

@@ -9,7 +9,9 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from model import ALL_SLIDERS, CATALIST_BASELINES, district_detail, load_bundle, project
+from model import (
+    ALL_SLIDERS, CATALIST_BASELINES, NATIONAL_PRES_SHIFT, district_detail, load_bundle, project,
+)
 import senate_model as senate
 import county_model as county
 from probability import add_win_probabilities, add_senate_win_probabilities
@@ -47,8 +49,9 @@ class ProjectRequest(BaseModel):
     environment: float = Field(8.9, ge=-20, le=20)
     sliders: SliderValues = SliderValues()
     # Multiplier on rel_trend (House) / state_trend (Senate). 1.0 = full trend
-    # persistence, 0.5 = partial mean-reversion (default), 0.0 = ignore trend.
-    trend_discount: float = Field(0.5, ge=0.0, le=1.0)
+    # persistence, 0.5 = partial mean-reversion (default), 0.0 = ignore trend,
+    # negative = the 2020→2024 shift partially reverses.
+    trend_discount: float = Field(0.5, ge=-1.0, le=1.0)
 
 
 @app.get("/api/health")
@@ -65,7 +68,7 @@ def baselines():
 
 @app.get("/api/districts")
 def districts_baseline():
-    """Baseline projection at D+8.9, all sliders at 0."""
+    """Baseline projection at D+8.9, sliders at their Catalist 2024 baselines."""
     return add_win_probabilities(project(BUNDLE, environment=8.9))
 
 
@@ -147,14 +150,6 @@ _DISTRICT_COUNTY_SLICES = (
     _json.loads(DISTRICT_COUNTY_SLICES_PATH.read_text())
     if DISTRICT_COUNTY_SLICES_PATH.exists() else {}
 )
-# Per-state pres margins (used to compute per-slice rel_trend in the slice
-# endpoint). Same value for every district in a state, so we just dedupe.
-_STATE_MARGINS: dict[str, tuple[float, float]] = {}
-for _d in _json.loads((Path(__file__).resolve().parent / "data" / "districts.json").read_text())["districts"]:
-    _st = _d.get("state")
-    if _st and _st not in _STATE_MARGINS:
-        _STATE_MARGINS[_st] = (_d.get("state_margin_2024") or 0.0,
-                               _d.get("state_margin_2020") or 0.0)
 
 
 @app.get("/api/state/{state}/county_geojson")
@@ -268,7 +263,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
                      + (drow.get("incumbency_adj") or 0.0)
                      + (drow.get("challenger_adj") or 0.0))
     rel_trend_applied = drow.get("rel_trend_applied") or 0.0
-    uniform_swing = drow.get("uniform_swing") or (req.environment - (-2.6))
+    uniform_swing = district_proj["uniform_swing"]
     demo_shift = drow.get("demo_shift") or 0.0
 
     # Per-slice projection first pass. Turnout-weighted aggregate may drift from
@@ -277,15 +272,14 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     # rel_trend weighted avg ≠ district-level rel_trend. Compute a uniform shift
     # that reconciles the two so the header aggregate matches the district projection.
     TURNOUT_2026_RATIO = 0.79  # match county_model.py
-    state_m24, state_m20 = _STATE_MARGINS.get(state, (0.0, 0.0))
-    state_shift = state_m24 - state_m20
 
     first_pass = []
     for s in slices:
         slice_m24 = s["margin_2024"]
         slice_m20 = s.get("margin_2020")
         if slice_m20 is not None:
-            slice_rel_trend = (slice_m24 - slice_m20) - state_shift
+            # Trend vs. the nation, matching the district-level rel_trend.
+            slice_rel_trend = (slice_m24 - slice_m20) - NATIONAL_PRES_SHIFT
             slice_rel_trend_applied = slice_rel_trend * req.trend_discount
         else:
             slice_rel_trend = drow.get("rel_trend") or 0.0

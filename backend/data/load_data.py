@@ -1,10 +1,12 @@
 """Merge v18 sensitivity + demographics.csv into a single districts.json
 keyed by district ID. Run after fetch_acs.py and build_demographics.py."""
 
+import ast
 import csv
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent
@@ -86,28 +88,25 @@ WAR_OVERRIDES = {
     # biographical appeal) doesn't transfer to NC-09 2026. Explicit zero
     # documents the model's already-implicit conclusion.
     ("NC-09", "Richard Ojeda"): 0.0,
+    # Fields is a placeholder in the incumbent slot (unlikely to run in the
+    # redrawn R+32 seat); his 2024 WAR was earned on the old D-leaning LA-06
+    # and shouldn't ride along with the placeholder.
+    ("LA-06", "Cleo Fields"): 0.0,
 }
 
 # Incumbent column overrides for cases v20 missed.
 # Keyed by district -> {"incumbent": str, "party": "(D)" | "(R)"} (party optional).
 INCUMBENT_OVERRIDES = {
     # UT-court redraw: Moore moved from old UT-01 to new UT-02 (same geography).
-    # New UT-01 is the post-court SLC-leaning seat with no R incumbent.
-    "UT-01": {"incumbent": "(open, post-court redraw)"},
+    # New UT-01 (post-court SLC-leaning seat) is further down with its nominee.
     "UT-02": {"incumbent": "Blake Moore", "party": "(R)"},
     # Crenshaw lost 2026 R primary; Steve Toth is the R nominee.
-    # is_incumbent=False suppresses incumbency_adj and WAR (Toth isn't sitting).
+    # is_incumbent=False suppresses incumbency_adj (Toth isn't sitting); WAR
+    # comes from his own federal record, if any.
     "TX-02": {"incumbent": "Steve Toth", "party": "(R)", "is_incumbent": False},
-    # Cohen announced retirement after the TN-2nd-Extraordinary redraw cracked
-    # Memphis; the new TN-09 is R-leaning and Cohen is not running.
-    "TN-09": {"incumbent": "(open, Cohen retiring)"},
     # NE-02 open (Bacon retiring); Brinker Harding is the R nominee.
     # No federal WAR; is_incumbent=False keeps incumbency_adj at 0.
     "NE-02": {"incumbent": "Brinker Harding", "party": "(R)", "is_incumbent": False},
-    # TX-09: redistricted open R-leaning seat (Al Green moved to TX-18).
-    # Mealer is the R nominee — non-sitting, so is_incumbent=False zeros out the
-    # ±1.7 structural incumbency bonus. D nominee (Gutierrez) is in HOUSE_CHALLENGERS.
-    "TX-09": {"incumbent": "Alex Mealer", "party": "(R)", "is_incumbent": False},
     # FL-22: post-FL-redraw open seat, R-leaning. Slot Dandiya (D) into the
     # incumbent field so both nominees display; Askar (R) is the challenger.
     "FL-22": {"incumbent": "Pia Dandiya", "party": "(D)", "is_incumbent": False},
@@ -125,7 +124,6 @@ INCUMBENT_OVERRIDES = {
     "FL-02": {"incumbent": "Austin Rogers", "party": "(R)", "is_incumbent": False},
     "FL-11": {"incumbent": "Joe Strada", "party": "(R)", "is_incumbent": False},
     "FL-16": {"incumbent": "Sydney Gruters", "party": "(R)", "is_incumbent": False},
-    "FL-24": {"incumbent": "Oliver Gilbert", "party": "(D)", "is_incumbent": False},
     "ME-02": {"incumbent": "Matthew Dunlap", "party": "(D)", "is_incumbent": False},
     "LA-05": {"incumbent": "Michael Echols", "party": "(R)", "is_incumbent": False},
     "GA-11": {"incumbent": "John Cowan", "party": "(R)", "is_incumbent": False},
@@ -133,9 +131,6 @@ INCUMBENT_OVERRIDES = {
     "SC-01": {"incumbent": "Jenny Costa Honeycutt", "party": "(R)", "is_incumbent": False},
     # LA-02: Troy Carter is the sitting D incumbent (not displaced — that note was wrong).
     "LA-02": {"incumbent": "Troy Carter", "party": "(D)"},
-    # CA-40 under Prop50 lines merged Calvert (old CA-41) and Kim (old CA-40)
-    # into a single R-leaning seat — both sitting reps are in the primary.
-    "CA-40": {"incumbent": "(open, R primary: Calvert vs Kim)", "party": "(R)"},
     # CA-41 under Prop50 was redrawn from Calvert's Riverside seat into a D-leaning
     # South LA County / N Orange County seat (Downey/Norwalk/Whittier). Linda Sánchez
     # (formerly CA-38) moved her reelection bid here when Prop50 passed.
@@ -239,8 +234,10 @@ INCUMBENT_OVERRIDES = {
     "AZ-05": {"incumbent": "Mark Lamb", "party": "(R)", "is_incumbent": False},
     # UT-01: court-redraw made this a new D-leaning SLC seat. Ben McAdams (D, former US Rep) won D primary 60%.
     "UT-01": {"incumbent": "Ben McAdams", "party": "(D)", "is_incumbent": False},
-    # UT-04: open (Burgess Owens retired). Mike Kennedy (R) moved from old UT-03.
-    "UT-04": {"incumbent": "Mike Kennedy", "party": "(R)", "is_incumbent": False},
+    # UT-04: Burgess Owens retired. Mike Kennedy (R) is a sitting member who moved
+    # here from old UT-03 — treated like other district-switching incumbents
+    # (Bera CA-03, Sánchez CA-41): incumbency bonus + WAR at the new-lines 0.5×.
+    "UT-04": {"incumbent": "Mike Kennedy", "party": "(R)"},
     # MN-02: open (Craig→Senate). Matt Little (D) vs Eric Pratt (R).
     "MN-02": {"incumbent": "Matt Little", "party": "(D)", "is_incumbent": False},
     # AZ-01: already open (Schweikert→gov). Jay Feely (R, Trump-endorsed) won R primary.
@@ -275,7 +272,6 @@ INCUMBENT_OVERRIDES = {
     # TX-32: SB4 redrew this from Johnson's D seat into an R-leaning seat
     # (Johnson moved to TX-33). Yarbrough is R nominee (Binkley withdrew from runoff).
     "TX-32": {"incumbent": "Jace Yarbrough", "party": "(R)", "is_incumbent": False},
-    # FL-24: superseded by later entry with real D nominee (Oliver Gilbert).
     # LA-06: post-redraw the seat is R-leaning (R+32 pres). Cleo Fields keeps the
     # incumbent label as a placeholder but is unlikely to run; is_incumbent=False
     # zeros the +1.7 D incumbency boost that he won't actually carry into a hostile seat.
@@ -299,7 +295,6 @@ INCUMBENT_OVERRIDES = {
     "GA-01": {"incumbent": "Jim Kingston", "party": "(R)", "is_incumbent": False},
     # GA-10: open (Collins→Senate). Houston Gaines won R primary.
     "GA-10": {"incumbent": "Houston Gaines", "party": "(R)", "is_incumbent": False},
-    # GA-11: superseded by later entry with real R nominee (John Cowan).
     # GA-13: open (David Scott died April 2026). Jasmine Clark won D primary;
     # Chavez unopposed R. Heavily D seat.
     "GA-13": {"incumbent": "Jasmine Clark", "party": "(D)", "is_incumbent": False},
@@ -368,7 +363,7 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "PA-07": {"name": "Bob Brooks", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Mackenzie); former firefighter / union president"},
     "PA-08": {"name": "Paige Cognetti", "party": "(D)", "war": 0.0, "note": "2026 D nominee unopposed (challenger to Bresnahan); Scranton mayor"},
     "PA-09": {"name": "Rachel Wallace", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Meuser)"},
-    "PA-10": {"name": "Janelle Stelson", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Perry); ran 2024 PA-10 — auto-WAR"},
+    # PA-10 (Stelson, 2024 rematch vs Perry) is listed with the rematches below.
     "PA-11": {"name": "Nancy Mannion", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Smucker)"},
     "PA-12": {"name": "James Hayes", "party": "(R)", "war": 0.0, "note": "2026 R nominee (challenger to Summer Lee)"},
     "PA-13": {"name": "Beth Farnham", "party": "(D)", "war": 0.0, "note": "2026 D nominee (challenger to Joyce); 2022/2024 candidate"},
@@ -410,10 +405,7 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     # === Maryland ===
     "MD-04": {"name": "George McDermott", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     "MD-07": {"name": "Scott Collier", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    # === Mississippi ===
-    "MS-01": {"name": "Cliff Johnson", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    "MS-02": {"name": "Ron Eller", "party": "(R)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
-    "MS-03": {"name": "Michael Chiaradio", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
+    # === Mississippi === (MS-01..03 are listed further down)
     "MS-04": {"name": "Jeffrey Hulum III", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
     # === Nebraska ===
     "NE-01": {"name": "Chris Backemeyer", "party": "(D)", "war": 0.0, "note": "2026 nominee per Wikipedia"},
@@ -490,9 +482,8 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "ME-02": {"name": "Paul LePage", "party": "(R)", "war": 0.0,
               "note": "former Maine governor; no federal-race WAR available"},
     # 2024 rematches the user is near-certain about (primary results pending) —
-    # all five have prior House WAR records that will auto-match.
-    "WI-03": {"name": "Rebecca Cooke", "party": "(D)", "war": 0.0,
-              "note": "2024 rematch vs Van Orden — auto-WAR from 2024 WI-03"},
+    # all have prior House WAR records that will auto-match. (WI-03 Cooke is
+    # listed with the Wisconsin slate below.)
     "AZ-02": {"name": "Jonathan Nez", "party": "(D)", "war": 0.0,
               "note": "2024 rematch vs Crane — auto-WAR from 2024 AZ-02"},
     "IA-01": {"name": "Christina Bohannan", "party": "(D)", "war": 0.0,
@@ -861,51 +852,81 @@ INCUMBENCY_ADV = 1.7
 
 
 def _strip_suffix(s: str) -> str:
-    return re.sub(r"\b(jr|sr|ii|iii|iv)\.?\b", "", s, flags=re.IGNORECASE).strip()
+    # `\.?` sits after the closing `\b` so "Jr." loses its period too — otherwise
+    # "Ralph Scott Jr." leaves a stray "." that becomes the "last name".
+    return re.sub(r"\b(jr|sr|ii|iii|iv)\b\.?", "", s, flags=re.IGNORECASE).strip()
+
+
+def _strip_accents(s: str) -> str:
+    """Fold accented characters to ASCII so 'Linda Sánchez' matches the
+    'Linda Sanchez' spelling raw_war.csv uses in most cycles."""
+    return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
 
 
 def _last_name(name: str) -> str:
-    parts = _strip_suffix(name).split()
+    parts = _strip_suffix(_strip_accents(name)).split()
     return parts[-1].lower() if parts else ""
+
+
+def _first_name(name: str) -> str:
+    parts = _strip_suffix(_strip_accents(name)).split()
+    return parts[0].lower().rstrip(".") if parts else ""
+
+
+# Common nickname -> formal first name, for the last-name fallback match.
+NICKNAMES = {
+    "jim": "james", "jimmy": "james", "tom": "thomas", "tommy": "thomas",
+    "bob": "robert", "rob": "robert", "bobby": "robert", "bill": "william",
+    "will": "william", "mike": "michael", "dave": "david", "chris": "christopher",
+    "chuck": "charles", "charlie": "charles", "ron": "ronald", "don": "donald",
+    "dan": "daniel", "danny": "daniel", "joe": "joseph", "steve": "steven",
+    "cindy": "cynthia", "cinde": "cynthia", "liz": "elizabeth", "beth": "elizabeth",
+    "kate": "katherine", "katie": "katherine", "pat": "patricia", "jen": "jennifer",
+    "matt": "matthew", "nick": "nicholas", "tony": "anthony", "ed": "edward",
+    "ted": "edward", "andy": "andrew", "drew": "andrew", "ben": "benjamin",
+    "sam": "samuel", "greg": "gregory", "jeff": "jeffrey", "rick": "richard",
+    "dick": "richard", "al": "albert", "fred": "frederick", "jon": "jonathan",
+    "abe": "abraham", "jake": "jacob", "zach": "zachary", "nate": "nathan",
+    "vince": "vincent", "jerry": "gerald", "larry": "lawrence", "debbie": "deborah",
+}
+
+
+def _first_names_compatible(a: str, b: str) -> bool:
+    """True if two full names plausibly share a first name: same name, an
+    initial-only form ("L. Holloway"), a known nickname, or a prefix of 3+
+    letters ("Tom"/"Tommy"). Rejects mere same-initial pairs like
+    Trever/Troy Nehls (twins) or Donna/Darrel Miller."""
+    fa, fb = _first_name(a), _first_name(b)
+    if not fa or not fb:
+        return False
+    if len(fa) == 1 or len(fb) == 1:
+        return fa[0] == fb[0]
+    if fa == fb or NICKNAMES.get(fa, fa) == NICKNAMES.get(fb, fb):
+        return True
+    return min(len(fa), len(fb)) >= 3 and (fa.startswith(fb) or fb.startswith(fa))
 
 
 RAW_WAR_CSV = DATA_DIR / "raw_war.csv"
 
-# Time-weighting for multi-cycle WAR blend. Per the WAR creator's guidance:
-# blend the last three cycles 0.50 / 0.30 / 0.20; zero-fill missing cycles to
-# regress toward the mean (so a 1-cycle candidate is heavily mean-reverted).
 # Recency weights for the WAR blend. Per-record windowing: each candidate's
 # records are sorted by year (most recent first), and the top 3 slot into
 # 0.50 / 0.30 / 0.20 — a record's weight depends on its rank among the
-# candidate's records of its own office, not the calendar year. This keeps
-# recent races from being discarded when the candidate moves between offices.
+# candidate's records of its own office, not the calendar year. Missing slots
+# contribute 0 (zero-fill), which is the only thin-record regression: a
+# 1-record candidate carries 0.5× of their WAR, 2 records 0.8×, 3 records 1.0×.
 WAR_WEIGHTS = (0.50, 0.30, 0.20)
 
-# Sample-size shrinkage. Candidates with fewer than 3 surviving records have
-# their blended WAR shrunk toward zero by n/(n+k) / (3/(3+k)), normalized so
-# 3-cycle candidates are unaffected.
-WAR_SHRINK_K = 1.0
-
-
-def _shrinkage(n: int) -> float:
-    """Normalized sample-size factor. n=0→0; n=3→1.0; smaller n → smaller factor."""
-    if n <= 0:
-        return 0.0
-    return (n / (n + WAR_SHRINK_K)) / (3 / (3 + WAR_SHRINK_K))
+# Only the last three House cycles before 2026 are eligible (2020/2022/2024).
+# Older races describe a different electorate and, under positional slotting,
+# would otherwise take the full 0.50 slot when they're a candidate's only record.
+WAR_FIRST_YEAR = 2020
 
 
 def time_weighted_war(records: list[dict]) -> float:
     """Per-record positional blend. `records` is the candidate's House cycle
     history, sorted year-desc; top 3 slot at 0.50 / 0.30 / 0.20 by recency
-    rank. Sample-size shrinkage applies (3-cycle candidates unaffected;
-    n=1 shrinks to 0.667× of blend; missing slots contribute 0)."""
-    s = 0.0
-    n = 0
-    for i, w in enumerate(WAR_WEIGHTS):
-        if i < len(records):
-            s += w * records[i]["war"]
-            n += 1
-    return s * _shrinkage(min(n, 3))
+    rank; missing slots contribute 0."""
+    return sum(w * rec["war"] for w, rec in zip(WAR_WEIGHTS, records))
 
 
 def load_recent_war() -> tuple[dict, dict]:
@@ -913,7 +934,8 @@ def load_recent_war() -> tuple[dict, dict]:
       - primary:   (name, party) -> list of records, year desc
       - fallback:  (last_name, party, state) -> list of records, year desc
     Each record carries year, geography, and `war` in the candidate's
-    party-perspective (D-positive for D, R-positive for R).
+    party-perspective (D-positive for D, R-positive for R). Primary keys are
+    accent-folded; look them up with `_strip_accents(name)`.
     """
     primary: dict[tuple[str, str], list[dict]] = {}
     by_last_party_state: dict[tuple[str, str, str], list[dict]] = {}
@@ -928,8 +950,8 @@ def load_recent_war() -> tuple[dict, dict]:
                 sortable = float(r["Sortable"])
             except (ValueError, KeyError, TypeError):
                 continue
-            # No year-based filter: the term-length calendar window in
-            # time_weighted_war naturally excludes pre-2020 House cycles.
+            if year < WAR_FIRST_YEAR:
+                continue
             geo = (r.get("Geography") or "").strip()
             state = geo.split("-")[0] if "-" in geo else geo
             for party_letter, name_field in (("D", "Democrat"), ("R", "Republican")):
@@ -938,7 +960,7 @@ def load_recent_war() -> tuple[dict, dict]:
                     continue
                 war_signed = -sortable if party_letter == "D" else +sortable
                 rec = {"name": name, "war": war_signed, "year": year, "geography": geo}
-                primary.setdefault((name, party_letter), []).append(rec)
+                primary.setdefault((_strip_accents(name), party_letter), []).append(rec)
                 by_last_party_state.setdefault(
                     (_last_name(name), party_letter, state), []
                 ).append(rec)
@@ -948,6 +970,30 @@ def load_recent_war() -> tuple[dict, dict]:
     for lst in by_last_party_state.values():
         lst.sort(key=lambda r: r["year"], reverse=True)
     return primary, by_last_party_state
+
+
+def _fallback_records(name: str, party_letter: str, state: str, fallback: dict) -> list[dict] | None:
+    """Last-name + party + state match, requiring a compatible first name
+    (see `_first_names_compatible`) so same-surname relatives don't collide
+    (Adelita vs Raul Grijalva, Trever vs Troy Nehls). Returns the history of
+    the most-recent matching spelling, year-desc."""
+    candidates = fallback.get((_last_name(name), party_letter, state), [])
+    ok = [c for c in candidates if _first_names_compatible(c["name"], name)]
+    if not ok:
+        return None
+    exact_name = ok[0]["name"]
+    return [c for c in ok if c["name"] == exact_name]
+
+
+def _nominee_records(name: str, party_letter: str, state: str,
+                     primary: dict, fallback: dict) -> list[dict] | None:
+    """Federal House record for a non-incumbent nominee: exact (aliased,
+    accent-folded) name whose most recent race was in `state`, else the
+    last-name fallback."""
+    recs = primary.get((_strip_accents(NAME_ALIASES.get(name, name)), party_letter))
+    if recs and (recs[0].get("geography") or "").split("-")[0] != state:
+        recs = None
+    return recs or _fallback_records(name, party_letter, state, fallback)
 
 
 def apply_recent_war(row: dict, primary: dict, fallback: dict) -> dict:
@@ -979,29 +1025,18 @@ def apply_recent_war(row: dict, primary: dict, fallback: dict) -> dict:
 
     if not matched and name and (is_d or is_r):
         party_letter = "D" if is_d else "R"
-        # Try alias first. `primary` is now (name, party) -> list of records desc-sorted.
+        # Try alias first. `primary` is (accent-folded name, party) -> records year-desc.
         alias_name = NAME_ALIASES.get(name, name)
-        recs = primary.get((alias_name, party_letter))
+        recs = primary.get((_strip_accents(alias_name), party_letter))
         if recs is None and alias_name != name:
-            recs = primary.get((name, party_letter))
+            recs = primary.get((_strip_accents(name), party_letter))
         if recs:
-            match_type = "exact" if recs[0]["name"] == name else "alias"
+            match_type = "exact" if _strip_accents(recs[0]["name"]) == _strip_accents(name) else "alias"
         else:
-            # Fallback: last_name + party + state, BUT require the first name's
-            # first letter to match — avoids false matches between same-surname
-            # relatives (e.g. Adelita Grijalva vs Raul Grijalva). Pick the
-            # most-recent matching record's *exact name*, then pull its full
-            # history under that key (handles spelling variants between cycles).
             state = (row.get("state") or row.get("district", "").split("-")[0]).upper()
-            candidates = fallback.get((_last_name(name), party_letter, state), [])
-            v18_first_initial = (_strip_suffix(name).split() or [""])[0][:1].lower()
-            ok = [c for c in candidates
-                  if (_strip_suffix(c["name"]).split() or [""])[0][:1].lower() == v18_first_initial]
-            if ok:
-                # `ok` is year-desc; group by exact name and take the most-recent name's history.
-                exact_name = ok[0]["name"]
-                recs = [c for c in ok if c["name"] == exact_name]
-                match_type = f"last+state ({exact_name})"
+            recs = _fallback_records(name, party_letter, state, fallback)
+            if recs:
+                match_type = f"last+state ({recs[0]['name']})"
         if recs:
             new_war = round(time_weighted_war(recs), 3)
             new_year = recs[0]["year"]
@@ -1027,6 +1062,45 @@ def apply_recent_war(row: dict, primary: dict, fallback: dict) -> dict:
         row["incumbency_adj"] = INCUMBENCY_ADV
     else:
         row["incumbency_adj"] = -INCUMBENCY_ADV
+    return row
+
+
+def apply_nominee_war(row: dict, primary: dict, fallback: dict) -> dict:
+    """WAR for a named nominee in the incumbent slot who isn't a sitting
+    member (open seat, or the incumbent lost renomination). Treated exactly
+    like a challenger: their own federal House record if one exists (no
+    redistricting discount), and no structural incumbency bonus."""
+    party = (row.get("party") or "").strip()
+    is_d = party == "(D)"
+    is_r = party == "(R)"
+    district = row.get("district", "")
+    state = district.split("-")[0]
+    name = parse_incumbent(row.get("incumbent", ""))
+
+    war = 0.0
+    year = None
+    match_type = None
+    if name and (is_d or is_r):
+        override = WAR_OVERRIDES.get((district, name))
+        if override is not None:
+            war = override
+            match_type = "manual_override"
+        else:
+            recs = _nominee_records(name, "D" if is_d else "R", state, primary, fallback)
+            if recs:
+                war = round(time_weighted_war(recs), 3)
+                year = recs[0]["year"]
+                match_type = f"nominee ({recs[0]['year']} House {recs[0]['geography']})"
+
+    war_adj = war if is_d else -war if is_r else 0.0
+    row["war"] = round(war, 3)
+    row["war_n"] = 1 if match_type else 0
+    row["war_adj"] = round(war_adj, 3)
+    row["war_adj_discounted"] = round(war_adj, 3)
+    row["war_year"] = year
+    row["war_matched"] = match_type is not None
+    row["war_match_type"] = match_type
+    row["incumbency_adj"] = 0.0
     return row
 
 
@@ -1065,34 +1139,21 @@ def apply_house_challenger(row: dict, primary: dict, fallback: dict) -> dict:
     war_year = None
     war_source = None
 
-    # Step 1 — try primary (name, party). Reject if most-recent state mismatch.
-    # `primary` is (name, party) -> list of records year-desc.
-    recs = primary.get((name, party_letter))
-    if recs:
-        rec_state = (recs[0].get("geography") or "").split("-")[0]
-        if rec_state != state:
-            recs = None
-
-    # Step 2 — fallback by (last_name, party, state) for nickname / suffix variants
-    if not recs:
-        last = _last_name(name)
-        first_initial = (_strip_suffix(name).split() or [""])[0][:1].lower()
-        candidates = fallback.get((last, party_letter, state), [])
-        ok = [c for c in candidates
-              if (_strip_suffix(c["name"]).split() or [""])[0][:1].lower() == first_initial]
-        if ok:
-            exact_name = ok[0]["name"]
-            recs = [c for c in ok if c["name"] == exact_name]
+    # Steps 1-2 — exact name in this state, else last-name fallback for
+    # nickname / suffix variants.
+    recs = _nominee_records(name, party_letter, state, primary, fallback)
 
     # Step 3 — anti-double-count: any cycle the challenger ran in THIS district
     # against THIS incumbent is already captured by the incumbent's WAR blend.
-    # Drop all of the challenger's cycles in this district when the incumbent
-    # has a matched WAR. Capture the most-recent dropped year for the "rematch"
-    # tooltip — that's the actual year of the head-to-head, which may pre-date
-    # the incumbent's most-recent race against a different opponent.
+    # Drop all of the challenger's cycles in this district when a sitting
+    # incumbent has a matched WAR (a non-sitting nominee's WAR comes from
+    # other races, so nothing is double-counted). Capture the most-recent
+    # dropped year for the "rematch" tooltip — that's the actual year of the
+    # head-to-head, which may pre-date the incumbent's most-recent race
+    # against a different opponent.
     skipped_same_race = False
     rematch_year: int | None = None
-    if recs and row.get("war_matched"):
+    if recs and row.get("war_matched") and row.get("incumbent_is_sitting"):
         dropped = [c for c in recs if c.get("geography") == district]
         if dropped:
             rematch_year = dropped[0]["year"]  # recs are year-desc, dropped preserves order
@@ -1130,7 +1191,23 @@ def apply_house_challenger(row: dict, primary: dict, fallback: dict) -> dict:
     return row
 
 
+def assert_no_duplicate_keys(path: Path):
+    """Python keeps only the last copy of a repeated dict-literal key, so an
+    edit to an earlier duplicate in a candidate table (INCUMBENT_OVERRIDES,
+    HOUSE_CHALLENGERS, ...) would be silently ignored. Fail loudly instead."""
+    tree = ast.parse(path.read_text())
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.Assign, ast.AnnAssign)) and isinstance(node.value, ast.Dict):
+            seen = set()
+            for k in node.value.keys:
+                if isinstance(k, ast.Constant):
+                    if k.value in seen:
+                        sys.exit(f"duplicate key {k.value!r} at {path.name}:{k.lineno}")
+                    seen.add(k.value)
+
+
 def main():
+    assert_no_duplicate_keys(Path(__file__))
     if not DEMOS_CSV.exists():
         sys.exit(f"missing {DEMOS_CSV}. Run fetch_acs.py + build_demographics.py first.")
 
@@ -1172,18 +1249,17 @@ def main():
                     row["incumbent"] = override["incumbent"]
                 if "party" in override:
                     row["party"] = override["party"]
-            apply_recent_war(row, primary_war, fallback_war)
             # Named-but-not-sitting nominee (e.g. Crenshaw lost primary to Toth):
-            # zero out the incumbency / WAR contribution that apply_recent_war
-            # added based on the override name.
-            if override and override.get("is_incumbent") is False:
-                row["incumbency_adj"] = 0.0
-                row["war"] = 0.0
-                row["war_adj"] = 0.0
-                row["war_adj_discounted"] = 0.0
-                row["war_matched"] = False
-                row["war_match_type"] = None
-                row["war_year"] = None
+            # no incumbency bonus, and WAR comes from their own federal record
+            # (if any) the same way a challenger's does.
+            row["incumbent_is_sitting"] = (
+                parse_incumbent(row.get("incumbent", "")) is not None
+                and not (override and override.get("is_incumbent") is False)
+            )
+            if row["incumbent_is_sitting"]:
+                apply_recent_war(row, primary_war, fallback_war)
+            else:
+                apply_nominee_war(row, primary_war, fallback_war)
             apply_house_challenger(row, primary_war, fallback_war)
             # Lockout: top-two primary advanced two same-party candidates.
             # Override the challenger field with the intra-party opponent and

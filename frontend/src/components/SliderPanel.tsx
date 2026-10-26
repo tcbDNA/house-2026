@@ -12,7 +12,6 @@ type Props = {
   sliders: SliderValues;
   trendDiscount: number;
   frame: DemoFrame;
-  axisWeight: number;
   onEnvironment: (v: number) => void;
   onSlider: (k: SliderKey, v: number) => void;
   onSliders: (v: SliderValues) => void;
@@ -64,6 +63,30 @@ function impliedEnvAge(s: SliderValues): number {
   );
 }
 
+type Axis = "race" | "edu" | "age";
+const AXIS_KEYS: Record<Axis, SliderKey[]> = {
+  race: ["white_nh", "black", "hispanic", "asian"],
+  edu:  ["white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college"],
+  age:  ["under_30", "age_30_44", "age_45_64", "age_65_plus"],
+};
+const ELECTORATE_SHARE: Record<SliderKey, number> = {
+  ...CATALIST_ELECTORATE_SHARES_RACE,
+  ...CATALIST_ELECTORATE_SHARES_EDU,
+  ...CATALIST_ELECTORATE_SHARES_AGE,
+};
+
+// Mirrors backend model.axis_weights: the axes describe the same voters, so
+// when more than one is moved they're averaged, weighted by how far each was
+// moved (electorate-share-weighted |Δ|). A lone moved axis gets full weight.
+function axisWeights(s: SliderValues): Record<Axis, number> {
+  const mag = (axis: Axis) => AXIS_KEYS[axis].reduce(
+    (acc, k) => acc + ELECTORATE_SHARE[k] * Math.abs(s[k] - CATALIST_BASELINES[k]), 0);
+  const m = { race: mag("race"), edu: mag("edu"), age: mag("age") };
+  const total = m.race + m.edu + m.age;
+  if (total <= 1e-6) return { race: 1, edu: 1, age: 1 };
+  return { race: m.race / total, edu: m.edu / total, age: m.age / total };
+}
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function _activePreset_unused(sliders: SliderValues, frame: DemoFrame): "2020" | "2022" | "2024" | null {
   // Only compare sliders that are actually editable under the current frame.
@@ -83,9 +106,10 @@ function _activePreset_unused(sliders: SliderValues, frame: DemoFrame): "2020" |
 }
 
 const TREND_PRESETS: { value: number; label: string; hint: string }[] = [
-  { value: 1.0, label: "Full",    hint: "trends persist at full strength (default)" },
-  { value: 0.5, label: "Partial", hint: "50% mean-reversion — useful for >1 cycle out" },
-  { value: 0.0, label: "None",    hint: "pure structural baseline — no trend term" },
+  { value: 1.0,  label: "Full",    hint: "2020→2024 trends continue at full strength" },
+  { value: 0.5,  label: "Partial", hint: "trends continue at half strength (default)" },
+  { value: 0.0,  label: "None",    hint: "pure structural baseline — no trend term" },
+  { value: -0.5, label: "Reverse", hint: "half of the 2020→2024 shift snaps back" },
 ];
 
 const axisLabel: Record<"race" | "edu" | "age", string> = {
@@ -95,7 +119,7 @@ const axisLabel: Record<"race" | "edu" | "age", string> = {
 };
 
 export function SliderPanel({
-  environment, sliders, trendDiscount, frame, axisWeight,
+  environment, sliders, trendDiscount, frame,
   onEnvironment, onSlider, onSliders, onTrendDiscount, onFrame, onReset,
 }: Props) {
   // Cycle preset disabled — baseline is fixed at Catalist 2024.
@@ -112,17 +136,14 @@ export function SliderPanel({
   const impliedAge  = impliedAgeNow  - impliedAgeBaseline;
 
   // Anti-double-count: race-or-edu axis and the age axis describe the same
-  // voters. Backend halves the contribution when both are moved; display
-  // matches.
-  const ageKeysForCheck: SliderKey[] = ["under_30", "age_30_44", "age_45_64", "age_65_plus"];
-  const demoKeysForCheck: SliderKey[] = frame === "race"
-    ? ["white_nh", "black", "hispanic", "asian"]
-    : ["white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college"];
-  const isAxisMoved = (ks: SliderKey[]) => ks.some((k) => Math.abs(sliders[k] - CATALIST_BASELINES[k]) > 1e-6);
-  const demoMoved = isAxisMoved(demoKeysForCheck);
-  const ageMoved = isAxisMoved(ageKeysForCheck);
-  const compositionalWeight = demoMoved && ageMoved ? 0.5 : 1.0;
-  const implied = compositionalWeight * (impliedDemo + impliedAge);
+  // voters, so when both are moved the backend averages them (weighted by how
+  // far each was moved); display matches.
+  const weights = axisWeights(sliders);
+  const demoAxis: Axis = frame === "race" ? "race" : "edu";
+  const demoWeight = weights[demoAxis];
+  const ageWeight = weights.age;
+  const blended = demoWeight > 1e-6 && ageWeight > 1e-6 && Math.abs(impliedDemo) + Math.abs(impliedAge) > 1e-6;
+  const implied = demoWeight * impliedDemo + ageWeight * impliedAge;
   // Cycle preset disabled — kept for future re-enable.
   // const applyPreset = (cycleKey: "2020" | "2022" | "2024") => {
   //   const preset = CATALIST_PRESETS[cycleKey];
@@ -216,7 +237,7 @@ export function SliderPanel({
 
         <div
           className="pt-1 border-t border-slate-200 space-y-0.5 text-xs"
-          title="Compositional shift (delta from 2024 baseline) attributable to your demographic sliders. Each axis is a separate reconstruction of the same electorate; when both are moved they're half-weighted to avoid double-counting."
+          title="Compositional shift (delta from 2024 baseline) attributable to your demographic sliders. Each axis is a separate reconstruction of the same electorate; when both are moved they're averaged, weighted by how far each was moved, to avoid double-counting."
         >
           <div className="flex justify-between">
             <span className="text-slate-600">
@@ -232,9 +253,11 @@ export function SliderPanel({
               {formatMargin(Math.round(impliedAge * 10) / 10)}
             </span>
           </div>
-          {compositionalWeight < 1 && (
+          {blended && (
             <div className="text-[10px] text-slate-400 italic pt-0.5">
-              Both axes moved → 0.5× weighting applied to total (anti-double-count).
+              Both axes moved → averaged ({frame === "race" ? "race" : "race × edu"}{" "}
+              {Math.round(demoWeight * 100)}% · age {Math.round(ageWeight * 100)}%) to avoid
+              double-counting.
             </div>
           )}
         </div>
@@ -356,17 +379,11 @@ export function SliderPanel({
           })}
         </div>
         <div className="text-[10px] text-slate-500 mt-1 italic">
-          Multiplies rel_trend (House) / state_trend (Senate). Default 1.0
-          assumes 2020→2024 trends repeat in 2026.
+          Multiplies each district's / state's 2020→2024 shift relative to the
+          nation. Default 0.5 assumes half of that trend continues into 2026;
+          Reverse assumes half of it snaps back.
         </div>
       </div>
-
-      {axisWeight < 1 && (
-        <div className="text-xs text-slate-500 italic border-t pt-2">
-          Multiple axes (race / education / age) active: each axis is half-weighted
-          to avoid double-counting voters.
-        </div>
-      )}
     </div>
   );
 }

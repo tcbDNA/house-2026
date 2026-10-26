@@ -2,28 +2,38 @@
 runs in <1ms.
 
 Formula per district:
-  proj = margin_2024 + uniform_swing + rel_trend + war_adj_discounted
-       + incumbency_adj + challenger_adj
+  proj = margin_2024 + uniform_swing + trend × trend_discount
+       + war_adj_discounted + incumbency_adj + challenger_adj
        + demographic_shift
 
-  uniform_swing = environment_d_minus_r - (-2.6)   # 2024 House popvote was R+2.6
-  demographic_shift = sum_g (pct_g_in_district / 100) * shift_g
+  trend         = district's 2020→2024 presidential shift relative to the nation
+  uniform_swing = environment − turnout-weighted mean of everything above
+                  except demographic_shift, so that with sliders at baseline the
+                  national (2024-turnout-weighted) margin equals the environment.
+  demographic_shift = Σ_axis w_axis × Σ_g electorate_share_g × (slider_g − baseline_g)
 
-Race-vs-education double-counting is handled by halving the contribution
-of each axis when sliders on both axes are simultaneously nonzero.
+Electorate shares are ACS population shares rescaled so their national
+turnout-weighted averages match Catalist's electorate composition. When more
+than one demographic axis (race / race×edu / age) is moved, the axes are
+averaged, weighted by how far each was moved (see `axis_weights`).
 """
 
 from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
 
-DATA_PATH = Path(__file__).resolve().parent / "data" / "districts.json"
+DATA_DIR = Path(__file__).resolve().parent / "data"
+DATA_PATH = DATA_DIR / "districts.json"
+SLICES_PATH = DATA_DIR / "district_county_slices.json"
 
 HOUSE_2024_POPVOTE = -2.6  # D-R; R won the 2024 House popular vote by 2.6
+# 2020 Biden D+4.5 → 2024 Trump R+1.5 (matches senate_data.NATIONAL_PRES_SHIFT).
+NATIONAL_PRES_SHIFT = -6.0
 TOSSUP_THRESHOLD = 3.0
 
 # Catalist 2024 demographic baselines — D-R margin among each group in the
@@ -38,8 +48,8 @@ TOSSUP_THRESHOLD = 3.0
 # Race × education: the education axis is now a four-cell decomposition
 # (white_college, white_non_college, nonwhite_college, nonwhite_non_college)
 # matching how Catalist actually reports. Each cell's share of the district's
-# adults-25+ is its weight in the demographic_shift formula. The four cells
-# together sum to 100% of the 25+ population.
+# adults-25+ (rescaled to the electorate — see `electorate_factors`) is its
+# weight in the demographic_shift formula. The four cells sum to 100%.
 #
 # Vintage: these are 2024-cycle values. Update when Catalist publishes a new
 # "What Happened" report (typically ~6 months post-election).
@@ -68,10 +78,25 @@ CATALIST_BASELINES = {
 }
 EPSILON = 1e-6   # for "is this slider parked at the baseline" checks
 
+# Catalist electorate composition (2022 midterm shares — who shows up in a
+# midterm), from the same "What Happened 2024" crosstabs. Mirrors the
+# CATALIST_ELECTORATE_SHARES_* constants in frontend/src/types.ts, which the
+# slider panel uses to display each axis's national shift.
+CATALIST_ELECTORATE_SHARES = {
+    "white_nh": 0.7581, "black": 0.0959, "hispanic": 0.0804, "asian": 0.0365, "other": 0.0292,
+    "white_college": 0.3351, "white_non_college": 0.4230,
+    "nonwhite_college": 0.1010, "nonwhite_non_college": 0.1409,
+    "under_30": 0.1000, "age_30_44": 0.2001, "age_45_64": 0.3652, "age_65_plus": 0.3347,
+}
+
 RACE_SLIDERS = ("white_nh", "black", "hispanic", "asian")
 EDU_SLIDERS = ("white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college")
 AGE_SLIDERS = ("under_30", "age_30_44", "age_45_64", "age_65_plus")
 ALL_SLIDERS = RACE_SLIDERS + EDU_SLIDERS + AGE_SLIDERS
+AXIS_SLIDERS = {"race": RACE_SLIDERS, "edu": EDU_SLIDERS, "age": AGE_SLIDERS}
+# Groups that partition each axis ("other" race has no slider but takes up
+# part of the race electorate).
+AXIS_GROUPS = {"race": RACE_SLIDERS + ("other",), "edu": EDU_SLIDERS, "age": AGE_SLIDERS}
 
 # Slider name -> demographic field in district record
 SLIDER_TO_PCT = {
@@ -88,16 +113,98 @@ SLIDER_TO_PCT = {
     "age_45_64":             "pct_45_64",
     "age_65_plus":           "pct_65_plus",
 }
+GROUP_TO_PCT = {**SLIDER_TO_PCT, "other": "pct_other"}
+
+
+def district_turnout(rows: list[dict]) -> np.ndarray:
+    """2024 presidential votes cast per district, summed from the precinct-
+    aggregated (district, county) slices."""
+    slices = json.loads(SLICES_PATH.read_text())
+    return np.array([sum(s["total_2024"] for s in slices.get(r["district"], []))
+                     for r in rows], dtype=float)
+
+
+def _population_shares(rows: list[dict]) -> dict[str, np.ndarray]:
+    return {g: np.array([(r.get(f) or 0.0) for r in rows], dtype=float) / 100.0
+            for g, f in GROUP_TO_PCT.items()}
+
+
+def _rescale(pop: dict[str, np.ndarray], factors: dict[str, float]) -> dict[str, np.ndarray]:
+    """Multiply each group's population share by its turnout factor, then
+    renormalize within each axis so the unit's shares sum to 1."""
+    out = {}
+    for groups in AXIS_GROUPS.values():
+        scaled = {g: pop[g] * factors[g] for g in groups}
+        total = sum(scaled.values())
+        total = np.where(total > 0, total, 1.0)
+        for g in groups:
+            out[g] = scaled[g] / total
+    return out
+
+
+@lru_cache(maxsize=1)
+def electorate_factors() -> dict[str, float]:
+    """Per-group turnout factors (iterative proportional fitting over House
+    districts) such that the 2024-turnout-weighted national average of each
+    rescaled share equals Catalist's electorate share. ACS shares are of total
+    population (race, incl. children / non-citizens) or adults (age, edu), so
+    without this e.g. Hispanic voters would be weighted at ~18% instead of ~8%."""
+    rows = json.loads(DATA_PATH.read_text())["districts"]
+    pop = _population_shares(rows)
+    w = district_turnout(rows)
+    w = w / w.sum()
+    target = {}
+    for groups in AXIS_GROUPS.values():
+        axis_total = sum(CATALIST_ELECTORATE_SHARES[g] for g in groups)
+        target.update({g: CATALIST_ELECTORATE_SHARES[g] / axis_total for g in groups})
+    factors = {g: 1.0 for g in GROUP_TO_PCT}
+    for _ in range(200):
+        shares = _rescale(pop, factors)
+        for g in factors:
+            factors[g] *= target[g] / float(shares[g] @ w)
+    return factors
+
+
+def electorate_shares(rows: list[dict]) -> dict[str, np.ndarray]:
+    """Slider key -> per-row share of the electorate (0..1). Works for any
+    geography (districts, states, counties) carrying the ACS pct_* fields."""
+    shares = _rescale(_population_shares(rows), electorate_factors())
+    return {k: shares[k] for k in ALL_SLIDERS}
+
+
+def axis_weights(deltas: dict[str, float]) -> dict[str, float]:
+    """Weight on each demographic axis. Race, race×education and age are
+    alternative descriptions of the same voters, so when more than one is
+    moved their shifts are averaged rather than stacked — weighted by how far
+    each axis was moved (electorate-share-weighted |Δ|). A lone moved axis
+    gets full weight, two equally-moved axes get 0.5 each, and nudging a
+    second axis slightly only takes a sliver of weight (no step change)."""
+    mag = {axis: sum(CATALIST_ELECTORATE_SHARES[k] * abs(deltas[k]) for k in keys)
+           for axis, keys in AXIS_SLIDERS.items()}
+    total = sum(mag.values())
+    if total <= EPSILON:
+        return {axis: 1.0 for axis in mag}
+    return {axis: m / total for axis, m in mag.items()}
+
+
+def demographic_shift(pct: dict[str, np.ndarray], sliders: dict[str, float]):
+    """Returns ({axis: weighted per-row shift}, {axis: weight})."""
+    deltas = {k: sliders[k] - CATALIST_BASELINES[k] for k in ALL_SLIDERS}
+    weights = axis_weights(deltas)
+    shifts = {axis: weights[axis] * sum(pct[k] * deltas[k] for k in keys)
+              for axis, keys in AXIS_SLIDERS.items()}
+    return shifts, weights
 
 
 @dataclass
 class DataBundle:
     districts: list[dict]
     # Arrays indexed parallel to `districts`:
-    # `base_margin` excludes rel_trend so it can be discounted at project time.
+    # `base_margin` excludes trend so it can be discounted at project time.
     base_margin: np.ndarray         # margin_2024 + war_adj_discounted + incumbency_adj + challenger_adj
-    rel_trend: np.ndarray           # district-relative trend; full-weight at trend_discount=1.0
-    pct: dict[str, np.ndarray]      # slider key -> per-district share (0..1)
+    rel_trend: np.ndarray           # district trend vs. the nation; full-weight at trend_discount=1.0
+    pct: dict[str, np.ndarray]      # slider key -> per-district electorate share (0..1)
+    turnout_w: np.ndarray           # 2024 votes, normalized to sum to 1
 
     @property
     def n(self) -> int:
@@ -107,21 +214,22 @@ class DataBundle:
 def load_bundle(path: Path = DATA_PATH) -> DataBundle:
     raw = json.loads(path.read_text())
     rows = raw["districts"]
-    n = len(rows)
 
     margin_2024 = np.array([r.get("margin_2024") or 0.0 for r in rows], dtype=float)
-    rel_trend = np.array([r.get("rel_trend") or 0.0 for r in rows], dtype=float)
+    # `rel_trend` in the source data is relative to the district's state;
+    # adding the state's own shift vs. the nation makes it comparable to the
+    # Senate model's state_trend (state vs. nation).
+    rel_trend = np.array([(r.get("rel_trend") or 0.0)
+                          + (r.get("state_shift") or 0.0) - NATIONAL_PRES_SHIFT
+                          for r in rows], dtype=float)
     war_adj = np.array([r.get("war_adj_discounted") or 0.0 for r in rows], dtype=float)
     incumbency_adj = np.array([r.get("incumbency_adj") or 0.0 for r in rows], dtype=float)
     challenger_adj = np.array([r.get("challenger_adj") or 0.0 for r in rows], dtype=float)
     base_margin = margin_2024 + war_adj + incumbency_adj + challenger_adj
 
-    pct = {
-        slider: np.array(
-            [(r.get(field) or 0.0) for r in rows], dtype=float) / 100.0
-        for slider, field in SLIDER_TO_PCT.items()
-    }
-    return DataBundle(districts=rows, base_margin=base_margin, rel_trend=rel_trend, pct=pct)
+    turnout = district_turnout(rows)
+    return DataBundle(districts=rows, base_margin=base_margin, rel_trend=rel_trend,
+                      pct=electorate_shares(rows), turnout_w=turnout / turnout.sum())
 
 
 def project(
@@ -135,37 +243,27 @@ def project(
     Parameters
     ----------
     environment : float
-        D popular-vote target (D+N).
+        National House popular-vote margin (D+N) with sliders at baseline.
     sliders : dict[str, float] | None
         Per-group absolute D-R margins. Per-district shifts are computed as
-        deltas from CATALIST_BASELINES.
+        deltas from CATALIST_BASELINES and add on top of the environment.
     trend_discount : float, default 0.5
-        Multiplier applied to ``rel_trend`` before combining into the projection.
-        1.0 = full trend persistence (the default; preserves prior behavior).
-        0.5 = partial mean-reversion. 0.0 = trends fully ignored.
+        Multiplier applied to the trend term. 1.0 = full trend persistence,
+        0.5 = partial mean-reversion, 0.0 = trends ignored, negative = the
+        2020→2024 shift partially reverses.
     """
     sliders = dict(sliders or {})
     for k in ALL_SLIDERS:
         sliders.setdefault(k, CATALIST_BASELINES[k])
 
-    uniform_swing = environment - HOUSE_2024_POPVOTE
-
-    # Deltas: how much each group's margin has moved vs. 2024 (Catalist baseline)
-    deltas = {k: sliders[k] - CATALIST_BASELINES[k] for k in ALL_SLIDERS}
-
-    race_shift = sum(bundle.pct[k] * deltas[k] for k in RACE_SLIDERS)
-    edu_shift = sum(bundle.pct[k] * deltas[k] for k in EDU_SLIDERS)
-    age_shift = sum(bundle.pct[k] * deltas[k] for k in AGE_SLIDERS)
-
-    # Anti-double-count: if multiple axes have been moved from baseline,
-    # half-weight each
-    active_axes = sum(1 for keys in (RACE_SLIDERS, EDU_SLIDERS, AGE_SLIDERS)
-                       if any(abs(deltas[k]) > EPSILON for k in keys))
-    weight = 0.5 if active_axes >= 2 else 1.0
-
-    demo_shift = weight * (race_shift + edu_shift + age_shift)
+    shifts, weights = demographic_shift(bundle.pct, sliders)
+    demo_shift = sum(shifts.values())
     rel_trend_applied = bundle.rel_trend * trend_discount
-    projections = bundle.base_margin + rel_trend_applied + uniform_swing + demo_shift
+    structural = bundle.base_margin + rel_trend_applied
+    # Calibrate so the turnout-weighted national margin equals the environment.
+    # (Lockouts are included at their pre-override margin.)
+    uniform_swing = environment - float(structural @ bundle.turnout_w)
+    projections = structural + uniform_swing + demo_shift
 
     # Lockout override: in CA top-two primaries, some districts advanced two
     # same-party candidates to the general — the seat is guaranteed to stay
@@ -177,15 +275,13 @@ def project(
         elif lockout == "R":
             projections[i] = -100.0
 
-    return _summarize(bundle, projections, demo_shift, environment, sliders, weight,
-                      race_shift, edu_shift, age_shift, uniform_swing,
-                      rel_trend_applied, trend_discount)
+    return _summarize(bundle, projections, demo_shift, environment, sliders, weights,
+                      shifts, uniform_swing, rel_trend_applied, trend_discount)
 
 
 def _summarize(
-    bundle, projections, demo_shift, environment, sliders, weight,
-    race_shift, edu_shift, age_shift, uniform_swing,
-    rel_trend_applied, trend_discount,
+    bundle, projections, demo_shift, environment, sliders, weights,
+    shifts, uniform_swing, rel_trend_applied, trend_discount,
 ) -> dict:
     d_seats = int(np.sum(projections > 0))
     r_seats = int(np.sum(projections < 0))
@@ -221,8 +317,9 @@ def _summarize(
             "party": party,
             "state": row.get("state"),
             "lines": row.get("lines"),
+            "open_seat": not row.get("incumbent_is_sitting", False),
             "margin_2024": row.get("margin_2024"),
-            "rel_trend": row.get("rel_trend"),
+            "rel_trend": round(float(bundle.rel_trend[i]), 2),
             "rel_trend_applied": round(float(rel_trend_applied[i]), 2),
             "war_adj_discounted": row.get("war_adj_discounted"),
             "incumbency_adj": row.get("incumbency_adj"),
@@ -236,9 +333,9 @@ def _summarize(
             "challenger_war_source": row.get("challenger_war_source"),
             "projection": round(proj, 2),
             "demo_shift": round(float(demo_shift[i]), 2),
-            "race_shift": round(float(race_shift[i] * weight), 2),
-            "edu_shift": round(float(edu_shift[i] * weight), 2),
-            "age_shift": round(float(age_shift[i] * weight), 2),
+            "race_shift": round(float(shifts["race"][i]), 2),
+            "edu_shift": round(float(shifts["edu"][i]), 2),
+            "age_shift": round(float(shifts["age"][i]), 2),
             "is_tossup": abs(proj) <= TOSSUP_THRESHOLD,
             "flip": "to_D" if flipped_to_d else ("to_R" if flipped_to_r else None),
             "demo_source": row.get("demo_source"),
@@ -247,8 +344,8 @@ def _summarize(
     return {
         "environment": environment,
         "sliders": sliders,
-        "axis_weight": weight,
-        "uniform_swing": uniform_swing,
+        "axis_weights": weights,
+        "uniform_swing": round(uniform_swing, 2),
         "trend_discount": trend_discount,
         "summary": {
             "d_seats": d_seats,
@@ -268,6 +365,7 @@ def district_detail(bundle: DataBundle, district_id: str) -> dict | None:
         if row["district"] == district_id:
             return {
                 **row,
+                "rel_trend": round(float(bundle.rel_trend[i]), 2),
                 # base_margin here = full pre-environment baseline at trend_discount=1.0
                 "base_margin": round(float(bundle.base_margin[i] + bundle.rel_trend[i]), 2),
             }

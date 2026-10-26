@@ -244,7 +244,13 @@ export type SeatDistribution = {
   d_p90: number;
   p_d_majority: number;
   p_r_majority: number;
+  // Senate only: control accounts for the VP tiebreak (R controls at 50).
+  p_d_control?: number;
+  p_r_control?: number;
 };
+
+// Weight on each demographic axis (see backend model.axis_weights).
+export type AxisWeights = Record<"race" | "edu" | "age", number>;
 
 export type Summary = {
   d_seats: number;
@@ -263,7 +269,7 @@ export type Summary = {
 export type ProjectResponse = {
   environment: number;
   sliders: SliderValues;
-  axis_weight: number;
+  axis_weights: AxisWeights;
   uniform_swing: number;
   trend_discount: number;
   summary: Summary;
@@ -325,7 +331,7 @@ export type SenateSummary = {
 export type SenateResponse = {
   environment: number;
   sliders: SliderValues;
-  axis_weight: number;
+  axis_weights: AxisWeights;
   uniform_swing: number;
   trend_discount: number;
   summary: SenateSummary;
