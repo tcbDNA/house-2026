@@ -1,4 +1,5 @@
 import type { SenateSummary } from "../types";
+import { ErrorModelFooter } from "./ErrorModelFooter";
 
 export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
   const { final_d, final_r, d_seats_up, r_seats_up, seats_up, tossups_up,
@@ -82,6 +83,7 @@ export function SenateSummaryView({ summary }: { summary: SenateSummary }) {
               </span>
             </div>
           )}
+          <ErrorModelFooter model={summary.error_model} />
           <div className="text-[10px] text-slate-400 mt-1">
             D needs 51; a 50-50 split is R control (VP tiebreak). The independent
             nominees are assumed to caucus with Democrats if they win

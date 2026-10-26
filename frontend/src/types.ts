@@ -171,7 +171,15 @@ export const EDU_FRAME_DEFAULTS: Pick<SliderValues,
 
 // Default uniform wave: the 2024 level plus the "other" race group's shift.
 // Fallback value; overwritten by applyModelDefaults().
-export const MODEL_DEFAULTS = { wave: -1.25, trend: 0.5 };
+export const MODEL_DEFAULTS: {
+  wave: number;
+  trend: number;
+  settings: Record<string, unknown>;      // default model settings (config.Settings)
+  pollToplineAverage: number | null;      // topline average of the included polls
+  publicAverages: PublicAverage[];
+} = { wave: -1.25, trend: 0.5, settings: {}, pollToplineAverage: null, publicAverages: [] };
+
+export type PublicAverage = { source: string; margin: number; as_of: string; url: string; local_file: string };
 
 // Response of /api/defaults (backend environment.default_scenario).
 export type ModelDefaults = {
@@ -183,6 +191,8 @@ export type ModelDefaults = {
   total: number;
   trend_discount: number;
   settings: Record<string, unknown>;
+  poll_topline_average: number;
+  public_averages: PublicAverage[];
 };
 
 export type Axis = "race" | "edu" | "age";
@@ -201,6 +211,11 @@ const ELECTORATE_SHARE: Record<SliderKey, number> = {
 export function applyModelDefaults(d: ModelDefaults): void {
   MODEL_DEFAULTS.wave = d.wave;
   MODEL_DEFAULTS.trend = d.trend_discount;
+  // The first call (default settings) fixes the baseline settings the
+  // settings panel compares against.
+  if (!Object.keys(MODEL_DEFAULTS.settings).length) MODEL_DEFAULTS.settings = d.settings;
+  MODEL_DEFAULTS.pollToplineAverage = d.poll_topline_average;
+  MODEL_DEFAULTS.publicAverages = d.public_averages ?? [];
   Object.assign(DEFAULT_SLIDERS, d.sliders);
   Object.assign(EDU_FRAME_DEFAULTS, d.edu_frame_sliders);
   for (const shares of [CATALIST_ELECTORATE_SHARES_RACE, CATALIST_ELECTORATE_SHARES_EDU,
@@ -357,6 +372,21 @@ export type Summary = {
     r_tossup: number; r_lean: number; r_likely: number; r_safe: number;
   };
   seat_distribution?: SeatDistribution;
+  error_model?: ErrorModel;
+};
+
+// Every error term the Monte Carlo used (backend probability.error_model_summary).
+export type ErrorModel = {
+  national: number;
+  composition: number;
+  level: number;
+  region: number;
+  state: number;
+  race: number | string;
+  open_seat_extra: number;
+  new_lines_extra?: number;
+  groups: Record<string, { sigma: number; se: number; tau: number }>;
+  n_sims: number;
 };
 
 export type ProjectResponse = {
@@ -367,6 +397,7 @@ export type ProjectResponse = {
   trend_discount: number;
   summary: Summary;
   districts: District[];
+  national_margin?: number;
 };
 
 // ── Senate types ──
@@ -427,6 +458,7 @@ export type SenateSummary = {
   d_pickups: string[];
   r_pickups: string[];
   seat_distribution?: SeatDistribution;
+  error_model?: ErrorModel;
 };
 
 export type SenateResponse = {

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SliderPanel } from "./components/SliderPanel";
+import { SettingsPanel } from "./components/SettingsPanel";
 import { NationalSummary } from "./components/NationalSummary";
 import { DistrictTable } from "./components/DistrictTable";
 import { BucketTable } from "./components/BucketTable";
@@ -9,10 +10,10 @@ import { SenateSummaryView } from "./components/SenateSummary";
 import { SenateTable } from "./components/SenateTable";
 import { SenateMap } from "./components/SenateMap";
 import { CountyMap } from "./components/CountyMap";
-import { fetchProjection, fetchSenate, setRequestContext } from "./api";
+import { fetchDefaults, fetchProjection, fetchSenate, setRequestContext } from "./api";
 import {
   AXIS_KEYS, CATALIST_BASELINES, DEFAULT_SLIDERS, EDU_FRAME_DEFAULTS, MODEL_DEFAULTS, SLIDER_DEFS,
-  compositionalShift,
+  applyModelDefaults, compositionalShift,
   type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues,
 } from "./types";
 
@@ -84,6 +85,8 @@ export default function App() {
   const [sliders, setSliders] = useState<SliderValues>(initial.sliders);
   const [trendDiscount, setTrendDiscount] = useState<number>(initial.trendDiscount);
   const [frame, setFrame] = useState<DemoFrame>(initial.frame);
+  // Model-settings overrides (config.Settings); not kept in the URL.
+  const [settings, setSettings] = useState<Record<string, unknown>>({});
   const [houseResult, setHouseResult] = useState<ProjectResponse | null>(null);
   const [senateResult, setSenateResult] = useState<SenateResponse | null>(null);
   const [pickedState, setPickedState] = useState<string | null>(null);
@@ -110,16 +113,31 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    setRequestContext({ frame });
+    setRequestContext({ frame, settings });
     const t = window.setTimeout(() => {
       run(tab, environment, sliders, trendDiscount);
       writeUrl(tab, environment, sliders, trendDiscount, frame);
     }, 80);
     return () => window.clearTimeout(t);
-  }, [tab, environment, sliders, trendDiscount, frame, run]);
+  }, [tab, environment, sliders, trendDiscount, frame, settings, run]);
+
+  // New settings change the default scenario (wave, slider positions, shares):
+  // fetch it and reset the sliders to it.
+  const onSettings = async (next: Record<string, unknown>) => {
+    try {
+      const d = await fetchDefaults(next);
+      applyModelDefaults(d);
+      setSettings(next);
+      setEnvironment(frameDefaultEnv(frame));
+      setSliders({ ...frameDefaults(frame) });
+      setError(null);
+    } catch (e: any) {
+      setError(e.message);
+    }
+  };
 
   const onSlider = (k: SliderKey, v: number) => setSliders((cur) => ({ ...cur, [k]: v }));
-  const onReset = () => { setEnvironment(MODEL_DEFAULTS.wave); setSliders(DEFAULT_SLIDERS); setTrendDiscount(MODEL_DEFAULTS.trend); setFrame("race"); };
+  const onReset = () => { setEnvironment(MODEL_DEFAULTS.wave); setSliders({ ...DEFAULT_SLIDERS }); setTrendDiscount(MODEL_DEFAULTS.trend); setFrame("race"); };
 
   // Switching frames: the axis being left snaps back to its 2024 baseline (so
   // it contributes zero to demographic_shift) and the axis being entered
@@ -181,12 +199,13 @@ export default function App() {
             onFrame={onFrameChange}
             onReset={onReset}
           />
+          <SettingsPanel settings={settings} onSettings={onSettings} />
         </div>
 
         <div className="space-y-4">
           {tab === "house" && houseResult && (
             <>
-              <NationalSummary summary={houseResult.summary} />
+              <NationalSummary summary={houseResult.summary} nationalMargin={houseResult.national_margin} />
               <div className="hidden md:block">
                 <DistrictMap
                   districts={houseResult.districts}

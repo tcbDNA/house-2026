@@ -177,9 +177,11 @@ export function SliderPanel({
         </div>
 
         <div>
-          <div className="flex items-baseline justify-between text-xs mb-0.5">
-            <span className="text-slate-600">Uniform wave (unattributed)</span>
-            <div className="flex items-center gap-1 font-mono">
+          <div className="flex items-center justify-between gap-2 text-xs mb-0.5">
+            <span className="text-slate-600 min-w-0" title="What every district shares: the 2024 result (R+1.5) plus the 'other' race group's shift, which has no slider. All movement since 2024 comes from the group sliders.">
+              Uniform wave (2024 level + other groups)
+            </span>
+            <div className="flex items-center gap-1 font-mono shrink-0">
               <span className="text-slate-500">{envSign}+</span>
               <input
                 type="number"
@@ -207,8 +209,16 @@ export function SliderPanel({
             onChange={(e) => onEnvironment(Number(e.target.value))}
             className="w-full"
           />
-          <div className="flex justify-between text-[10px] text-slate-500 mt-0.5">
+          <div className="relative flex justify-between text-[10px] text-slate-500 mt-0.5">
             <span>R+20</span><span>R+10</span><span>tie</span><span>D+10</span><span>D+20</span>
+            {/* 2024 result (R+1.5) — the neutral point for the wave, not "tie". */}
+            <span
+              className="absolute -top-3 text-[9px] font-semibold text-slate-700"
+              style={{ left: `${((-1.5 + 20) / 40) * 100}%`, transform: "translateX(-50%)" }}
+              title="2024 presidential result, R+1.5"
+            >
+              ▲2024
+            </span>
           </div>
         </div>
 
@@ -355,6 +365,19 @@ export function SliderPanel({
               </button>
             );
           })}
+        </div>
+        <div className="flex items-center gap-2 mt-1">
+          <input
+            type="range"
+            min={-1}
+            max={1}
+            step={0.05}
+            value={trendDiscount}
+            onChange={(e) => onTrendDiscount(Number(e.target.value))}
+            className="flex-1"
+            aria-label="Trend weight"
+          />
+          <span className="text-xs font-mono w-12 text-right">{trendDiscount.toFixed(2)}×</span>
         </div>
         <div className="text-[10px] text-slate-500 mt-1 italic">
           Multiplies each district's / state's 2020→2024 shift (vs. the nation)

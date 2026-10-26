@@ -1,7 +1,12 @@
-import type { Summary } from "../types";
+import { MODEL_DEFAULTS, formatMargin, type Summary } from "../types";
+import { ErrorModelFooter } from "./ErrorModelFooter";
 
-export function NationalSummary({ summary }: { summary: Summary }) {
+export function NationalSummary({ summary, nationalMargin }: { summary: Summary; nationalMargin?: number }) {
   const { d_seats, r_seats, tossups, d_pickups, r_pickups, majority, buckets, seat_distribution } = summary;
+  // Headline: the simulated median of D seats (what the probabilities are
+  // built on). The count of projected leads is a secondary line.
+  const dMedian = seat_distribution?.d_median ?? d_seats;
+  const rMedian = 435 - dMedian;
   const total = d_seats + r_seats;
   const dPct = total ? (d_seats / total) * 100 : 50;
 
@@ -30,20 +35,42 @@ export function NationalSummary({ summary }: { summary: Summary }) {
   return (
     <div className="bg-white rounded-lg shadow p-4">
       <h2 className="text-lg font-semibold mb-3">National total</h2>
-      <div className="flex items-end justify-between mb-2">
+      <div className="flex items-end justify-between mb-1">
         <div>
-          <div className="text-3xl font-bold text-blue-700">{d_seats}</div>
-          <div className="text-xs text-slate-500">D</div>
+          <div className="text-3xl font-bold text-blue-700">{dMedian}</div>
+          <div className="text-xs text-slate-500">D (simulated median)</div>
         </div>
         <div className="text-center">
-          <div className={`text-sm font-semibold ${majorityColor}`}>{majorityLabel}</div>
+          <div className={`text-sm font-semibold ${dMedian >= 218 ? "text-blue-700" : "text-red-700"}`}>
+            {dMedian >= 218 ? "Democratic majority" : "Republican majority"}
+          </div>
           <div className="text-xs text-slate-500">218 to flip</div>
         </div>
         <div className="text-right">
-          <div className="text-3xl font-bold text-red-700">{r_seats}</div>
+          <div className="text-3xl font-bold text-red-700">{rMedian}</div>
           <div className="text-xs text-slate-500">R</div>
         </div>
       </div>
+      <div className="text-xs text-slate-500 mb-2">
+        Projected leads: <b className="text-blue-700">{d_seats} D</b> – <b className="text-red-700">{r_seats} R</b>
+        {" "}<span className={majorityColor}>({majorityLabel.toLowerCase()})</span>
+      </div>
+      {nationalMargin !== undefined && (
+        <div className="text-xs text-slate-600 mb-2 border-t pt-2">
+          <div className="flex justify-between">
+            <span>National House margin</span>
+            <b className="font-mono">{formatMargin(Math.round(nationalMargin * 10) / 10)}</b>
+          </div>
+          {MODEL_DEFAULTS.pollToplineAverage !== null && (
+            <ComparisonRow label="Topline avg of included polls" margin={MODEL_DEFAULTS.pollToplineAverage}
+                           national={nationalMargin} />
+          )}
+          {MODEL_DEFAULTS.publicAverages.map((a) => (
+            <ComparisonRow key={a.source} label={`${a.source} (${a.as_of})`} margin={a.margin}
+                           national={nationalMargin} href={a.url} />
+          ))}
+        </div>
+      )}
 
       <div className="relative h-4 bg-slate-200 rounded overflow-hidden flex">
         {segments
@@ -84,9 +111,7 @@ export function NationalSummary({ summary }: { summary: Summary }) {
             D seats: median <b>{seat_distribution.d_median}</b>{" "}
             · 80% CI <b>[{seat_distribution.d_p10}, {seat_distribution.d_p90}]</b>
           </div>
-          <div className="text-[10px] text-slate-400 italic mt-1">
-            Monte Carlo: σ_national=2.5 (correlated), σ_district=4.0 (independent), N=10k
-          </div>
+          <ErrorModelFooter model={summary.error_model} />
         </div>
       )}
 
@@ -110,6 +135,21 @@ export function NationalSummary({ summary }: { summary: Summary }) {
       <div className="text-[10px] text-slate-400 mt-3 italic border-t pt-2">
         Projections within ±3 pts are tilts (very narrow leads). Demographic models are approximations.
       </div>
+    </div>
+  );
+}
+
+// One public-average line: its margin and the gap (model − average).
+function ComparisonRow({ label, margin, national, href }:
+    { label: string; margin: number; national: number; href?: string }) {
+  const gap = national - margin;
+  return (
+    <div className="flex justify-between text-slate-500">
+      <span>{href ? <a href={href} target="_blank" rel="noreferrer" className="underline">{label}</a> : label}</span>
+      <span className="font-mono">
+        {formatMargin(Math.round(margin * 10) / 10)}{" "}
+        <span className="text-slate-400">(gap {gap >= 0 ? "+" : ""}{gap.toFixed(1)})</span>
+      </span>
     </div>
   );
 }
