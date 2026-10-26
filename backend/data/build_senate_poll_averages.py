@@ -1,13 +1,16 @@
 """Senate polling averages for the poll blend -> senate_poll_averages.csv.
 
 Rules (user decisions, Oct 2026):
+  * Excluded pollsters: Rasmussen Reports and ActiVote (user decision), and
+    Wedgewood Polls, which admitted on Oct 20, 2026 that its polls were
+    fabricated (sources/excluded_pollsters/).
   * Start from RealClearPolling's average, with Rasmussen Reports removed:
-    the remaining polls RCP averaged, re-averaged (ActiVote is never in an
-    RCP average).
+    the remaining polls RCP averaged, re-averaged (ActiVote and Wedgewood are
+    never in an RCP average).
   * If a newer poll has come out since RCP last updated the average, or RCP
     publishes no average, recompute it from the most recent poll by each
     pollster whose fieldwork ended in the last three weeks (on or after
-    WINDOW_START), Rasmussen and ActiVote removed: a simple mean, using a
+    WINDOW_START), excluded pollsters removed: a simple mean, using a
     poll's head-to-head question where it released one (as RCP's two-way
     averages do), else its full ballot.
     "Newer" = fieldwork ended after the latest poll in RCP's average and
@@ -43,7 +46,7 @@ OUT = DATA / "senate_poll_averages.csv"
 
 RETRIEVED = date(2026, 10, 26)
 WINDOW_START = RETRIEVED - timedelta(days=21)
-EXCLUDED_POLLSTERS = ("rasmussen", "activote")
+EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood")
 # Polls that can't be traced to any release (no source recorded anywhere).
 UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
               "Poliwave only, 'Source: Not recorded'; no release found"}
@@ -242,9 +245,9 @@ def build():
             method = ("recomputed: newer polls than RCP's average" if rcp
                       else "recomputed: RCP publishes no average")
             src = (f"Recomputed (RCP average predates newer polls): latest poll by each pollster ending "
-                   f"{WINDOW_START} or later, Rasmussen/ActiVote removed" if rcp else
+                   f"{WINDOW_START} or later, Rasmussen/ActiVote/Wedgewood removed" if rcp else
                    f"RCP-style average (RCP publishes none): latest poll by each pollster ending "
-                   f"{WINDOW_START} or later, Rasmussen/ActiVote removed")
+                   f"{WINDOW_START} or later, Rasmussen/ActiVote/Wedgewood removed")
             as_of = RETRIEVED.isoformat()
             url = f"https://www.poliwave.com/us/{st.lower()}/sen-fed"
             local = ("sources/senate_polls_2026/recent/recent_polls_compiled.json" if st in comp
