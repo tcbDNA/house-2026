@@ -91,6 +91,15 @@ class Settings:
     # every slice there takes the district's residual. Overlay only.
     overlay_estimated_slice_trends: bool = True
 
+    # District weights (model.district_turnout): each district's 2024
+    # presidential votes, which set the national total, the electorate
+    # composition fit and the trend regression. In the 12 states without
+    # 2024 precinct results the slice totals were 2020 votes until Oct 27;
+    # now they are the raked 2024 totals (official 2024 county results split
+    # by district). A data correction (user decision, Oct 27). Off: those
+    # states' 2020 votes, as before.
+    district_weights_2024_votes: bool = True
+
     # Item 2 — residualized trend (trend.py). Remove from the carried trend
     # the part explained by the active frame's demographic shares (+ age, +
     # intercept) and/or the 2024 battleground-state part; trend_discount then

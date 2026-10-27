@@ -15,6 +15,13 @@ type Toggle = { key: string; label: string; hint: string };
 
 const GROUPS: { title: string; toggles: Toggle[] }[] = [
   {
+    title: "District weights",
+    toggles: [
+      { key: "district_weights_2024_votes", label: "2024 votes in all 435 districts",
+        hint: "Weight districts by 2024 presidential votes everywhere (correction, Oct 27). Off: 2020 votes in AK AR CT ID ME MI ND NJ OK OR PA SD, the old weights." },
+    ],
+  },
+  {
     title: "Electorate composition (item 1)",
     toggles: [
       { key: "white_share_enabled", label: "2026 white-share target",

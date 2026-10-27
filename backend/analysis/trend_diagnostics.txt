@@ -1,53 +1,53 @@
 == Trend regressions (WLS, weights = 2024 votes; coef(SE); y = 2020→2024 trend vs nation)
 
-[race] n=435  R² with battleground 0.628, without 0.590
-  battleground coefficient +2.130  SE 0.324  (HC1 0.275)
-  const=-3.50(4.39)  black=-10.12(1.20)  hispanic=-28.70(1.36)  asian=-20.21(2.77)  other=+11.97(6.33)  under_30=+3.11(10.49)  age_30_44=+38.61(10.69)  age_65_plus=-0.15(6.89)  battleground=+2.13(0.32)
-  without age shares: R² 0.575; battleground +1.909
+[race] n=435  R² with battleground 0.629, without 0.591
+  battleground coefficient +2.128  SE 0.322  (HC1 0.273)
+  const=-3.49(4.38)  black=-10.08(1.20)  hispanic=-28.63(1.35)  asian=-20.14(2.76)  other=+11.93(6.32)  under_30=+2.85(10.46)  age_30_44=+38.73(10.68)  age_65_plus=-0.19(6.88)  battleground=+2.13(0.32)
+  without age shares: R² 0.575; battleground +1.902
 
-[race_edu] n=435  R² with battleground 0.573, without 0.523
-  battleground coefficient +2.409  SE 0.342  (HC1 0.307)
-  const=-7.48(4.62)  white_college=-3.72(2.14)  nonwhite_college=-10.63(2.89)  nonwhite_non_college=-26.34(2.53)  under_30=+12.22(11.79)  age_30_44=+50.70(11.61)  age_65_plus=+8.87(7.26)  battleground=+2.41(0.34)
-  without age shares: R² 0.516; battleground +2.226
+[race_edu] n=435  R² with battleground 0.573, without 0.524
+  battleground coefficient +2.401  SE 0.341  (HC1 0.305)
+  const=-7.49(4.62)  white_college=-3.73(2.14)  nonwhite_college=-10.54(2.88)  nonwhite_non_college=-26.32(2.52)  under_30=+12.06(11.76)  age_30_44=+50.84(11.61)  age_65_plus=+8.88(7.25)  battleground=+2.40(0.34)
+  without age shares: R² 0.516; battleground +2.214
 
 == Headline metrics (trend weight 0.5)
-  raw trend (both parts kept)        {'national_margin': 8.54, 'house_d_seats': 236, 'house_median': 237, 'house_p10': 222, 'house_p90': 257, 'house_p_d_majority': 0.956, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.604}
-  both parts removed                 {'national_margin': 8.54, 'house_d_seats': 230, 'house_median': 236, 'house_p10': 222, 'house_p90': 256, 'house_p_d_majority': 0.96, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.515}
-  remove demographic part only (default) {'national_margin': 8.54, 'house_d_seats': 232, 'house_median': 237, 'house_p10': 222, 'house_p90': 257, 'house_p_d_majority': 0.962, 'senate_d_seats': 50, 'senate_median': 50, 'senate_p_d_control': 0.497}
-  remove battleground part only      {'national_margin': 8.54, 'house_d_seats': 234, 'house_median': 236, 'house_p10': 221, 'house_p90': 257, 'house_p_d_majority': 0.951, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.598}
-  both removed, basis without age    {'national_margin': 8.54, 'house_d_seats': 231, 'house_median': 236, 'house_p10': 222, 'house_p90': 256, 'house_p_d_majority': 0.959, 'senate_d_seats': 50, 'senate_median': 51, 'senate_p_d_control': 0.524}
+  raw trend (both parts kept)        {'national_margin': 9.47, 'house_d_seats': 237, 'house_median': 238, 'house_p10': 224, 'house_p90': 259, 'house_p_d_majority': 0.974, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.72}
+  both parts removed                 {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 238, 'house_p10': 224, 'house_p90': 258, 'house_p_d_majority': 0.974, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.688}
+  remove demographic part only (default) {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 224, 'house_p90': 258, 'house_p_d_majority': 0.976, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.684}
+  remove battleground part only      {'national_margin': 9.47, 'house_d_seats': 235, 'house_median': 238, 'house_p10': 223, 'house_p90': 258, 'house_p_d_majority': 0.971, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.717}
+  both removed, basis without age    {'national_margin': 9.47, 'house_d_seats': 233, 'house_median': 238, 'house_p10': 223, 'house_p90': 257, 'house_p_d_majority': 0.973, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.69}
 
 == 15 districts whose projections change most (both parts removed − raw trend)
   district  change     raw   resid Hisp % pop Hisp % electorate  BG
-  TX-28      +8.92    +9.5   +18.4       89.5              77.6    
-  FL-26      +7.35   -13.4    -6.1       74.3              57.1    
-  TX-16      +7.24   +23.3   +30.5       80.7              64.1    
-  CA-38      +6.97   +24.2   +31.1       56.6              41.6    
-  CA-44      +6.82   +48.6   +55.5       67.8              52.4    
-  FL-28      +6.78   -17.7   -10.9       73.2              54.6    
-  FL-27      +6.69    -8.5    -1.8       74.3              55.4    
-  TX-15      +6.40    -6.6    -0.2       78.3              59.2    
-  TX-34      +5.85    +3.1    +8.9       73.7              53.2    
-  CA-43      +5.46   +55.0   +60.4       54.1              38.4    
-  CA-31      +5.30   +18.4   +23.7       53.2              36.3    
-  NY-15      +5.23   +57.8   +63.0       54.1              37.2    
-  CA-22      +5.13    +0.5    +5.7       69.8              51.2    
-  CA-46      +4.99   +32.3   +37.3       59.8              42.0    
-  CA-45      +4.94   +22.5   +27.4       31.6              20.3    
-  seats changing side: [('MI-04', 0.3, -1.5), ('WI-01', 1.0, -0.5), ('PA-08', 0.3, -0.8), ('CO-05', 0.5, -0.6), ('CO-04', 0.4, -0.7), ('ME-02', 0.4, -0.4)]
+  TX-28      +8.91   +11.8   +20.7       89.5              77.6    
+  FL-26      +7.33   -13.7    -6.3       74.3              57.1    
+  TX-16      +7.23   +25.6   +32.8       80.7              64.2    
+  CA-38      +6.96   +25.0   +31.9       56.6              41.6    
+  CA-44      +6.80   +50.9   +57.7       67.8              52.4    
+  FL-28      +6.77   -17.9   -11.2       73.2              54.7    
+  FL-27      +6.68    -8.7    -2.0       74.3              55.5    
+  TX-15      +6.39    -6.9    -0.5       78.3              59.3    
+  TX-34      +5.85    +5.5   +11.3       73.7              53.3    
+  CA-43      +5.44   +57.3   +62.7       54.1              38.4    
+  CA-31      +5.30   +20.6   +25.9       53.2              36.3    
+  NY-15      +5.21   +60.1   +65.4       54.1              37.2    
+  CA-22      +5.12    +0.2    +5.4       69.8              51.3    
+  CA-46      +4.98   +34.5   +39.5       59.8              42.0    
+  CA-45      +4.94   +24.5   +29.4       31.6              20.3    
+  seats changing side: [('TX-23', -1.9, 1.0), ('MI-04', 0.1, -1.8), ('WI-01', 0.8, -0.8), ('PA-08', 0.1, -1.0), ('CO-05', 0.2, -0.8), ('CO-04', 0.1, -0.9), ('AL-02', -0.1, 0.2)]
 
 == 10 Senate races whose projections change most
   state  change     raw   resid Hisp % pop  BG
-  AK      -2.57    -0.2    -2.7        7.2    
-  NM      +2.00   +19.7   +21.7       48.1    
-  SD      -1.79   -27.8   -29.6        4.6    
-  MI      -1.75    +9.2    +7.5        5.7   Y
-  MT      -1.70   -10.4   -12.1        4.4    
-  NC      -1.48   +10.3    +8.8        8.9   Y
-  WY      -1.43   -34.9   -36.3       10.4    
-  OK      -1.42   -23.4   -24.8       12.3    
-  ID      -1.29   -23.6   -24.9       13.3    
-  KY      -1.24   -20.7   -21.9        4.7    
+  WY      -1.43   -33.9   -35.3       10.4    
+  OK      -1.42   -22.5   -23.9       12.3    
+  KY      -1.23   -19.7   -20.9        4.7    
+  WV      -1.17   -36.8   -37.9        2.0    
+  NM      +1.06   +19.5   +20.5       48.1    
+  OR      -1.04   +29.6   +28.5       14.3    
+  TN      -0.95   -24.1   -25.0        5.7    
+  CO      -0.87   +26.9   +26.0       22.2    
+  ID      -0.86   -17.3   -18.1       13.3    
+  NJ      +0.81   +18.5   +19.3       21.9    
 
 == Including age in the basis (default) vs not
-  district projections: mean |change| 0.37, max 2.15; House D seats 230 vs 231
+  district projections: mean |change| 0.37, max 2.16; House D seats 234 vs 233

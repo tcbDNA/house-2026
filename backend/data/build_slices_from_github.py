@@ -20,7 +20,8 @@ other votes split within each county by 2020 shares (rake_state). The
 earlier estimate — 2020 margin + the district's 2020→2024 shift, 2020
 totals — is kept in each slice's district_shift_estimate (setting
 overlay_raked_slices off), and total_2020 keeps the 2020 votes the model's
-district turnout weights use there (model.district_turnout).
+district weights used there before Oct 27 (model.district_turnout, setting
+district_weights_2024_votes off).
 
 Usage:
   python data/build_slices_from_github.py GA

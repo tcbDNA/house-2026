@@ -54,7 +54,10 @@ export function Methodology() {
         The panel's <b>Total</b> (wave + sliders) is the national margin, D+9.5. For the House, the <b>uniform swing</b> is
         calibrated so that, with the demographic sliders at their 2024 values, the
         2024-turnout-weighted average of all 435 district margins equals the
-        uniform wave; the sliders then add on top. (The Senate swings from the 2024
+        uniform wave; the sliders then add on top. (Correction, Oct 27: in the
+        12 states without 2024 precinct results the district weights were 2020
+        votes; they are now 2024 totals, which moves every House projection
+        0.07–0.11 toward D and takes WI-01 from R+0.01 to D+0.09.) (The Senate swings from the 2024
         presidential popular vote, R+1.5, which is already consistent.){" "}
         <b>Trend</b> starts from each district's / state's 2020→2024 presidential
         movement relative to the nation. A 2024-vote-weighted regression of
@@ -127,7 +130,7 @@ export function Methodology() {
         <b>Generic incumbency</b> in the House is a setting, default ±3.0 (D-positive
         for D incumbents): Split Ticket's most recent estimate, and the 2024 WAR
         records were measured with it already removed. Their 2020 analysis put it at
-        1.7, kept as a scenario (House median 237 instead of 234 D — most competitive
+        1.7, kept as a scenario (House median 241 instead of 239 D — most competitive
         seats are R-held). Senate uses ±3.0. WAR explicitly
         excludes this structural incumbency baseline, so the two terms compose rather
         than double-count. California districts where the top-two primary sent two
@@ -254,7 +257,7 @@ export function Methodology() {
         district's and state's share-weighted sum. Together they raise the
         standard deviation of the simulated national margin from 2.6 to 2.9 pts
         and the average correlation among the five most Hispanic competitive
-        districts from 0.36 to 0.56. These are all polling error around the
+        districts from 0.34 to 0.52. These are all polling error around the
         scenario; the σ values and allowances are modeling judgments, not fitted.
       </p>
       <p className="mb-2">

@@ -39,7 +39,7 @@ def main_cli():
     base = run(S)
     rows = base["house"]["districts"]
     hisp = model.electorate_shares(main.BUNDLE.pop, S)["hispanic"]
-    w = main.BUNDLE.turnout_w
+    w = main.BUNDLE.turnout_weights(S)
     comp = [i for i, r in enumerate(rows) if abs(r["projection"]) < 10]
     five = sorted(comp, key=lambda i: -hisp[i])[:5]
 

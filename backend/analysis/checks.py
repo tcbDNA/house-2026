@@ -61,7 +61,7 @@ def cross_level(settings=DEFAULT_SETTINGS, frame: str = "race") -> None:
     env, sliders = d["wave"], d["sliders"]
     house = model.project(main.BUNDLE, env, sliders, DEFAULT_TREND_WEIGHT, settings, frame)
     swing = house["uniform_swing"]
-    w = main.BUNDLE.turnout_w
+    w = main.BUNDLE.turnout_weights(settings)
     by_state: dict[str, list[tuple[float, dict]]] = defaultdict(list)
     for i, row in enumerate(house["districts"]):
         by_state[row["state"]].append((w[i], row))
