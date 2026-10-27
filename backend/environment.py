@@ -233,8 +233,17 @@ def _matchable(g: str, m: dict) -> bool:
     return not (g in MATCH_ALL_REQUIRED and m["missing"])
 
 
+def included_polls(polls: dict[str, dict], settings: Settings = DEFAULT_SETTINGS) -> dict[str, dict]:
+    """Drop polls without a Black or Hispanic crosstab unless
+    settings.crosstab_white_only_polls."""
+    if settings.crosstab_white_only_polls:
+        return polls
+    return {k: p for k, p in polls.items() if "black" in p["margins"] or "hispanic" in p["margins"]}
+
+
 def estimate(polls: dict[str, dict], settings: Settings = DEFAULT_SETTINGS,
              equal_weights: bool = False, polls_2024: dict[str, dict] | None = None) -> dict:
+    polls = included_polls(polls, settings)
     by_group: dict[str, list[tuple[float, float]]] = defaultdict(list)
     for p in polls.values():
         for g, m in p["margins"].items():

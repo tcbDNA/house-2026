@@ -107,6 +107,11 @@ class Settings:
     # subgroup n, or total n × the group's published share where only
     # percentages are given) instead of the poll's total n.
     subgroup_n_weights: bool = True
+    # Count polls whose race breakdown is only White vs Non-white (Marist,
+    # Oct 19-20): they enter the white and white × education averages, and
+    # so the national level, but no other group (user decision, Oct 27).
+    # Off: only polls that report Black or Hispanic voters separately.
+    crosstab_white_only_polls: bool = True
     # Take the pattern across groups from pollster-matched comparisons: for
     # each pollster, r = (2026 group margin − 2024 group margin) − (2026
     # topline − 2024 topline), averaged across pollsters; group shift =

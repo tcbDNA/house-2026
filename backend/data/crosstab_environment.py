@@ -32,7 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import settings_from  # noqa: E402
 from environment import (  # noqa: E402
     CSV_2024_PATH, CSV_PATH, EDU_GROUPS, GROUPS, LOO_THRESHOLD, PRES_2024_POPVOTE, WHITE_EDU,
-    default_scenario, estimate, load_polls,
+    default_scenario, estimate, included_polls, load_polls,
 )
 
 
@@ -57,7 +57,7 @@ def parse_args(argv: list[str]):
 
 def main():
     csv_path, settings = parse_args(sys.argv[1:])
-    polls = load_polls(csv_path)
+    polls = included_polls(load_polls(csv_path), settings)
     est = estimate(polls, settings)
     eq = estimate(polls, settings, equal_weights=True)
     base = est["baselines"]
