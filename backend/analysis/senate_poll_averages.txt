@@ -55,9 +55,10 @@ KS: recomputed: newer polls than RCP's average; 2 poll(s); anti-R 46.00 / R 46.8
     newer than RCP's average (built 2026-10-15): RedBox Research for A Fight Worth Having (super PAC) (D-flagged) ending 2026-10-23 released 2026-10-25
     - RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (full ballot, 45/45.7)
     - InsiderAdvantage, ending 2026-10-14 (full ballot, 47/48)
-ME: RCP average, Rasmussen removed; 9 poll(s); anti-R 48.67 / R 47.56 -> margin +1.11, blend margin +1.15 (RCP published +1.2)
+ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed by RCP, not yet averaged); 10 poll(s); anti-R 48.90 / R 47.20 -> margin +1.70, blend margin +1.77 (RCP published +1.2)
     - Marist 10/22 - 10/25
     - Trafalgar Group 10/21 - 10/23
+    - Echelon Insights 10/16 - 10/23 (listed by RCP, counted ahead of RCP)
     - FOX News 10/16 - 10/20
     - InsiderAdvantage 10/13 - 10/14
     - Suffolk University 10/8 - 10/11

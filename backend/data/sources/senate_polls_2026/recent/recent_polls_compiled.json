@@ -1444,7 +1444,7 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; RCP; NYT poll list (per user)",
-    "note": "State oversample (n=413) of NetChoice's Antitrust & Tech Policy Survey (3,644 LV nationwide, Oct 16-23). Full ballot with leaners (topline Q19 p.10): Jackson 51, Collins 44, someone else 1, unsure 4. RCP listed it Oct 25 as 'Echelon Insights**' (3,544 LV, i.e. the national sample), not averaged. Memo dated Oct 26; NetChoice published it Oct 27."
+    "note": "State oversample (n=413) of NetChoice's Antitrust & Tech Policy Survey (3,644 LV nationwide, Oct 16-23). Full ballot with leaners (topline Q19 p.10): Jackson 51, Collins 44, someone else 1, unsure 4. RCP listed it Oct 25 as 'Echelon Insights**' (3,544 LV, i.e. the national sample), not averaged. Memo dated Oct 26; NetChoice published it Oct 27. Counted in Maine's RCP average ahead of RCP (user decision Oct 27: RCP will add it; COUNT_RCP_PENDING in build_senate_poll_averages.py)."
    },
    {
     "pollster": "Marist",

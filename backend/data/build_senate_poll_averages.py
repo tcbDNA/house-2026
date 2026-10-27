@@ -6,7 +6,9 @@ Rules (user decisions, Oct 2026):
     fabricated (sources/excluded_pollsters/).
   * Start from RealClearPolling's average, with Rasmussen Reports removed:
     the remaining polls RCP averaged, re-averaged (ActiVote and Wedgewood are
-    never in an RCP average).
+    never in an RCP average). A poll RCP lists but has not yet averaged can
+    be counted ahead of RCP (RCP_PENDING; user decision Oct 27 for Echelon
+    Insights' Maine poll; COUNT_RCP_PENDING = False turns it off).
   * If a newer poll has come out since RCP last updated the average, or RCP
     publishes no average, recompute it from the most recent poll by each
     pollster whose fieldwork ended in the last three weeks (on or after
@@ -54,6 +56,12 @@ EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood")
 # Polls that can't be traced to any release (no source recorded anywhere).
 UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
               "Poliwave only, 'Source: Not recorded'; no release found"}
+# Polls RCP lists but has not yet put in its average, counted in the RCP
+# average ahead of RCP (user decision, Oct 27: RCP will add it). Keyed by
+# (state, pollster and dates as RCP's feed lists them). False: RCP's
+# averaged set as published.
+COUNT_RCP_PENDING = True
+RCP_PENDING = {("ME", "Echelon Insights", "10/16 - 10/23")}
 
 INDEPENDENT = {"NE", "MT", "ID", "SD"}
 THREE_WAY = {"MT"}
@@ -130,9 +138,12 @@ def load_rcp(st: str) -> dict | None:
         else:
             a = [float(c["value"]) for c in p["candidate"] if c.get("affiliation") != "Republican"]
         return a[0], r[0]
+    def pending(p):
+        return COUNT_RCP_PENDING and (st, p["pollster"].replace("*", "").strip(), p["date"]) in RCP_PENDING
     averaged = [{"pollster": p["pollster"].replace("*", "").strip(), "dates": p["date"],
-                 "end": rcp_end(p["date"]), "anti_r": shares(p)[0], "r": shares(p)[1]}
-                for p in rows if p["type"] == "poll_rcp_avg"]
+                 "end": rcp_end(p["date"]), "anti_r": shares(p)[0], "r": shares(p)[1],
+                 "pending": p["type"] != "poll_rcp_avg"}
+                for p in rows if p["type"] == "poll_rcp_avg" or (p["type"] == "poll" and pending(p))]
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0]),
             "averaged": averaged, "local_file": f"sources/senate_polls_2026/{rel}",
             "url": f"https://www.realclearpolling.com/polls/{mi['poll_contentful_fullpath']}/{mi['poll_contentful_slug']}"}
@@ -223,14 +234,18 @@ def build():
         if rcp and not newer:
             kept = [a for a in rcp["averaged"] if not excluded(a["pollster"])]
             ras = len(kept) < len(rcp["averaged"])
+            added = [a for a in kept if a["pending"]]
             anti = sum(a["anti_r"] for a in kept) / len(kept)
             rep = sum(a["r"] for a in kept) / len(kept)
-            if not ras:   # nothing removed: must reproduce RCP's published average
+            if not ras and not added:   # nothing changed: must reproduce RCP's published average
                 assert abs(round(anti, 1) - rcp["published"][0]) < 0.051 and \
                        abs(round(rep, 1) - rcp["published"][1]) < 0.051, (st, anti, rep, rcp["published"])
-            used = [f"{a['pollster']} {a['dates']}" for a in kept]
-            method = "RCP average, Rasmussen removed" if ras else "RCP average"
-            src = "RealClearPolling" + (", Rasmussen removed" if ras else "")
+            used = [f"{a['pollster']} {a['dates']}" + (" (listed by RCP, counted ahead of RCP)" if a["pending"] else "")
+                    for a in kept]
+            plus = "; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in added) + \
+                " (listed by RCP, not yet averaged)" if added else ""
+            method = ("RCP average, Rasmussen removed" if ras else "RCP average") + plus
+            src = "RealClearPolling" + (", Rasmussen removed" if ras else "") + plus
             as_of, url, local = rcp["built"].isoformat(), rcp["url"], rcp["local_file"]
             published = round(rcp["published"][0] - rcp["published"][1], 1)
             n = len(kept)
