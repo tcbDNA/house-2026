@@ -273,8 +273,10 @@ export function Methodology() {
         district's or state's with weight votes / (votes + 25,000) since small
         counties' shifts are noisy, plus the district's (or Senate's) uniform swing
         and candidate effects. One reconciling shift per district or state then
-        makes the slices add up exactly to its projection. Where the 2024 slice
-        results are estimated (AK, AR, CT, ID, ME, MI, ND, NJ, OK, OR, PA, SD),
+        makes the slices add up exactly to its projection. In the 12 states
+        without 2024 precinct results (AK, AR, CT, ID, ME, MI, ND, NJ, OK, OR,
+        PA, SD), a split county's slices are estimated by raking their 2020
+        D and R votes to the actual 2024 county and district totals; those
         slices take the district's residual instead, and Alaska's boroughs the
         state's. This changes only the map shading, never a projection. Estimated 2026 vote counts use each race's own Kalshi turnout market: the
         market-implied median total vote divided by the 2024 presidential vote —

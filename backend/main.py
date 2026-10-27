@@ -216,6 +216,24 @@ _DISTRICT_COUNTY_SLICES = (
 )
 
 
+def _district_slices(did: str, settings: Settings) -> list[dict] | None:
+    """A district's slices; with overlay_raked_slices off, slices in the
+    states without 2024 precinct results take their earlier
+    district-shift estimate instead of the raked one."""
+    slices = _DISTRICT_COUNTY_SLICES.get(did)
+    if slices is None or settings.overlay_raked_slices:
+        return slices
+    return [s | s["district_shift_estimate"] if "district_shift_estimate" in s else s for s in slices]
+
+
+def _turnout_basis(did: str, slices: list[dict]) -> float:
+    """Turnout ratios are relative to the slice file's 2024 totals; when the
+    district-shift estimates (2020 totals) are in use, rescale so the
+    slices' 2026 vote estimates still add up to the same total."""
+    used = sum(s["total_2024"] for s in slices)
+    return sum(s["total_2024"] for s in _DISTRICT_COUNTY_SLICES[did]) / used if used else 1.0
+
+
 @app.get("/api/state/{state}/county_geojson")
 def state_county_geojson(state: str):
     """Static GeoJSON boundaries for all counties in a state. Browser-cacheable
@@ -399,6 +417,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
         r = overlay.district_slices(did, drow, slices, district_proj["uniform_swing"], terms,
                                     req.trend_discount, settings, req.frame)
         turnout, turnout_source = county.turnout_ratio(district=did)
+        turnout *= _turnout_basis(did, slices)
         for s in r["counties"]:
             s["state"] = state
             s["estimated_turnout_2026"], s["estimated_d_votes"], s["estimated_r_votes"] = \
@@ -429,7 +448,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     # while district margin_2024 comes from the sensitivity CSV, and (b) per-slice
     # rel_trend weighted avg ≠ district-level rel_trend. Compute a uniform shift
     # that reconciles the two so the header aggregate matches the district projection.
-    TURNOUT_2026_RATIO = county.turnout_ratio(district=did)[0]
+    TURNOUT_2026_RATIO = county.turnout_ratio(district=did)[0] * _turnout_basis(did, slices)
 
     first_pass = []
     for s in slices:
@@ -504,7 +523,7 @@ def district_counties(district_id: str, req: ProjectRequest):
         term ensures the aggregate matches the district projection.
     """
     did = district_id.upper()
-    slices = _DISTRICT_COUNTY_SLICES.get(did)
+    slices = _district_slices(did, _settings(req.settings))
     if slices is not None:
         return _district_counties_from_slices(did, req, slices)
 

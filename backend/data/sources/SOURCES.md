@@ -28,7 +28,7 @@ because pollster PDFs and news pages get moved or edited.
 | `downballot_2024_pres_by_cd/downballot_presbycd_2024_lines.xlsx` | https://docs.google.com/spreadsheets/d/1ng1i_Dm_RMDnEvauH44pgE6JCUsapcuu8F2pCfeLWFo | 2026-10-26 | 2020 & 2024 results on the 2024 lines |
 | `downballot_2024_pres_by_cd/downballot_methodology.txt` | https://docs.google.com/document/d/1efGEHGAQGaDGnIrdedwxVg1uUrjZYz06IPLTHRCg9zM/ | 2026-10-26 | Methodology: precinct results for split counties, county results for unsplit counties |
 
-Comparison against national_sensitivity_v20.csv: `backend/analysis/v20_vs_downballot.csv`.
+Comparison against national_sensitivity_v20.csv: `backend/analysis/v20_vs_downballot.csv`. The current-lines 'Vote totals' sheet (Harris, Trump, total) is also the district target when `build_slices_from_github.py` rakes the slices of the 12 states without 2024 precinct results (added 2026-10-27).
 
 ## Dave's Redistricting precinct (VTD) data
 

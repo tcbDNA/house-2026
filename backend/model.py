@@ -120,10 +120,14 @@ GROUP_TO_PCT = {**SLIDER_TO_PCT, "other": "pct_other"}
 
 
 def district_turnout(rows: list[dict]) -> np.ndarray:
-    """2024 presidential votes cast per district, summed from the precinct-
-    aggregated (district, county) slices."""
+    """Presidential votes cast per district, summed from the precinct-
+    aggregated (district, county) slices: 2024 votes, except in the 12
+    states without 2024 precinct results (slices tagged pres_year_source
+    2020), where it is their 2020 votes — the basis these weights have
+    always had there. The slices' raked 2024 totals are overlay-only."""
     slices = json.loads(SLICES_PATH.read_text())
-    return np.array([sum(s["total_2024"] for s in slices.get(r["district"], []))
+    return np.array([sum(s["total_2020"] if s.get("pres_year_source") == 2020 else s["total_2024"]
+                         for s in slices.get(r["district"], []))
                      for r in rows], dtype=float)
 
 

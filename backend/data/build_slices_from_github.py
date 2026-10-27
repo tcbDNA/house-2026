@@ -12,6 +12,16 @@ For each VTD (≈precinct):
                    (uses our frontend/public/districts.geojson)
   3. aggregate by (county_fips, district) → sum D / R / Total presidential votes
 
+States whose file has no 2024 presidential results (AK AR CT ID ME MI ND NJ
+OK OR PA SD) get 2024 estimates: D and R raked from each slice's 2020
+votes to the official 2024 county totals (county_pres.csv) and The
+Downballot's 2024 district totals (sources/downballot_2024_pres_by_cd/),
+other votes split within each county by 2020 shares (rake_state). The
+earlier estimate — 2020 margin + the district's 2020→2024 shift, 2020
+totals — is kept in each slice's district_shift_estimate (setting
+overlay_raked_slices off), and total_2020 keeps the 2020 votes the model's
+district turnout weights use there (model.district_turnout).
+
 Usage:
   python data/build_slices_from_github.py GA
   python data/build_slices_from_github.py GA TX FL          # multiple states
@@ -110,6 +120,93 @@ def load_county_margins() -> dict[str, tuple[float, float]]:
     return out
 
 COUNTY_MARGINS = load_county_margins()
+
+COUNTY_PRES = DATA_DIR / "county_pres.csv"
+DOWNBALLOT_XLSX = DATA_DIR / "sources" / "downballot_2024_pres_by_cd" / "downballot_presbycd_current_lines.xlsx"
+
+
+def load_county_votes_2024() -> dict[str, tuple[float, float, float]]:
+    """county FIPS → official 2024 (Harris, Trump, other) votes from
+    county_pres.csv. Targets for raking the fallback states' slices."""
+    out = {}
+    with COUNTY_PRES.open() as f:
+        for r in csv.DictReader(f):
+            d, rep, t = (float(r[k]) for k in ("harris_2024", "trump_2024", "total_2024"))
+            out[r["fips"]] = (d, rep, t - d - rep)
+    return out
+
+
+def load_district_votes_2024() -> dict[str, tuple[float, float, float]]:
+    """district → The Downballot's 2024 (Harris, Trump, other) votes on the
+    current lines ('Vote totals' sheet). Targets for raking the fallback
+    states' slices."""
+    from xlsx_table import read_sheet
+    out = {}
+    for r in read_sheet(DOWNBALLOT_XLSX, "Vote totals"):
+        if len(r) > 6 and "-" in r[0] and r[0][:2].isalpha() and r[4]:
+            d, rep, t = float(r[4]), float(r[5]), float(r[6])
+            out[r[0]] = (d, rep, t - d - rep)
+    return out
+
+COUNTY_VOTES_2024 = load_county_votes_2024()
+DISTRICT_VOTES_2024 = load_district_votes_2024()
+
+
+def rake(seed: dict[tuple, float], row_target: dict, col_target: dict,
+         tol: float = 1e-10, max_iter: int = 10_000) -> tuple[dict[tuple, float], int, float]:
+    """Iterative proportional fitting: scale the cells {(row, col): seed}
+    until every row sums to its row target and every column to its column
+    target (the two sets of targets must have the same grand total).
+    Returns (cells, iterations, largest relative row error)."""
+    cells = dict(seed)
+    for it in range(1, max_iter + 1):
+        for axis, target in ((0, row_target), (1, col_target)):
+            sums: dict = defaultdict(float)
+            for k, v in cells.items():
+                sums[k[axis]] += v
+            cells = {k: v * target[k[axis]] / sums[k[axis]] if sums[k[axis]] > 0 else 0.0
+                     for k, v in cells.items()}
+        sums = defaultdict(float)
+        for k, v in cells.items():
+            sums[k[0]] += v
+        err = max(abs(sums[r] - t) / t for r, t in row_target.items() if t > 0)
+        if err < tol:
+            break
+    return cells, it, err
+
+
+def rake_state(sa: str, slice_data: dict) -> dict[tuple[str, str], list[float]]:
+    """(county FIPS, district) → estimated 2024 (D, R, other) votes for a
+    state without 2024 precinct results. Each slice starts from its 2020
+    precinct votes; D and R are raked, one party at a time, to the official
+    2024 county totals and The Downballot's 2024 district totals (scaled
+    within the state to the counties' sum, since the two sources count a
+    few votes differently). Other votes follow the county's 2024 total,
+    split by the slices' 2020 shares (the sources' other-vote counts differ
+    by up to a third, mostly write-ins). A county wholly inside one district
+    is a single cell, so it gets its real result."""
+    keys = list(slice_data)
+    rows = {f for f, _ in keys}
+    cols = {d for _, d in keys}
+    out: dict[tuple[str, str], list[float]] = {k: [0.0, 0.0, 0.0] for k in keys}
+    for p, (name, key) in enumerate((("D", "d20"), ("R", "r20"))):
+        seed = {k: float(slice_data[k][key]) for k in keys}
+        row_t = {f: COUNTY_VOTES_2024[f][p] for f in rows}
+        col_raw = {d: DISTRICT_VOTES_2024[f"{sa}-{d}"][p] for d in cols}
+        scale = sum(row_t.values()) / sum(col_raw.values())
+        col_t = {d: v * scale for d, v in col_raw.items()}
+        cells, it, err = rake(seed, row_t, col_t)
+        print(f"  {sa}: raked {name} votes in {it} iterations (largest county error {err:.1e}; "
+              f"district totals scaled by {scale:.4f})")
+        for k, v in cells.items():
+            out[k][p] = v
+    other20 = {k: float(slice_data[k]["t20"] - slice_data[k]["d20"] - slice_data[k]["r20"]) for k in keys}
+    county_other20: dict = defaultdict(float)
+    for (f, _), v in other20.items():
+        county_other20[f] += v
+    for k in keys:
+        out[k][2] = COUNTY_VOTES_2024[k[0]][2] * other20[k] / county_other20[k[0]] if county_other20[k[0]] else 0.0
+    return out
 
 
 def build_district_lookup(state_abbr: str):
@@ -297,7 +394,10 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
             county_totals[county_fips]["t20"] += t
 
     # 4. Format output. For fallback (2020-only) states, calibrate each slice's
-    # margin to estimated 2024 by adding the district-level 2020→2024 shift.
+    # margin to estimated 2024 by adding the district-level 2020→2024 shift
+    # (kept as district_shift_estimate), and rake the slices to the 2024
+    # county and district totals (the slice's main fields).
+    raked = rake_state(sa, slice_data) if not has_24 else {}
     out: dict[str, list[dict]] = defaultdict(list)
     for (fips, district), v in slice_data.items():
         # Use whichever year has data as the "primary" turnout / share denominator
@@ -330,7 +430,7 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
         else:
             m20 = None
         d_id = f"{sa}-{district}"
-        out[d_id].append({
+        row = {
             "fips": fips,
             "name": COUNTY_NAMES.get(fips, f"FIPS {fips}"),
             "d_2024": v["d24"] or v["d20"],
@@ -341,7 +441,19 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
             "share_of_county_2024": round(share, 4),
             "fully_contained": share >= 0.99,
             "pres_year_source": int(pres_year),
-        })
+        }
+        if raked:
+            estimate_keys = ("d_2024", "r_2024", "total_2024", "margin_2024",
+                             "share_of_county_2024", "fully_contained")
+            shift_estimate = {k: row[k] for k in estimate_keys}
+            d24, r24, o24 = raked[(fips, district)]
+            t24 = d24 + r24 + o24
+            share24 = t24 / sum(COUNTY_VOTES_2024[fips])
+            row.update({"d_2024": round(d24), "r_2024": round(r24), "total_2024": round(t24),
+                        "margin_2024": round(100.0 * (d24 - r24) / t24, 1),
+                        "share_of_county_2024": round(share24, 4), "fully_contained": share24 >= 0.99,
+                        "total_2020": v["t20"], "district_shift_estimate": shift_estimate})
+        out[d_id].append(row)
     for d_id in out:
         out[d_id].sort(key=lambda x: -x["share_of_county_2024"])
     return dict(out)

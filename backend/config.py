@@ -78,6 +78,12 @@ class Settings:
     # shift. Off: every slice shifted by the same amount. Overlay only.
     overlay_slice_projections: bool = True
     overlay_shrink_k: float = 25000.0
+    # In the 12 states without 2024 precinct results (AK AR CT ID ME MI ND NJ
+    # OK OR PA SD), estimate each slice's 2024 votes by raking its 2020
+    # precinct D and R votes to the actual 2024 county and district totals
+    # (build_slices_from_github.py). Off: 2020 margin + the district's
+    # 2020→2024 shift, weighted by 2020 votes. Overlay only.
+    overlay_raked_slices: bool = True
 
     # Item 2 — residualized trend (trend.py). Remove from the carried trend
     # the part explained by the active frame's demographic shares (+ age, +

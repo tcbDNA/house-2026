@@ -49,7 +49,8 @@ def districts():
     terms = {st: overlay.CountyTerms(cs, population_shares(cs), d["sliders"], S, FRAME)
              for st, cs in by_state.items()}
     out = []
-    for did, slices in main._DISTRICT_COUNTY_SLICES.items():
+    for did in main._DISTRICT_COUNTY_SLICES:
+        slices = main._district_slices(did, S)
         drow, st = rows[did], did[:2]
         if st not in terms:   # no county rows — slices use district values
             terms[st] = overlay.CountyTerms([], population_shares([]), d["sliders"], S, FRAME)
