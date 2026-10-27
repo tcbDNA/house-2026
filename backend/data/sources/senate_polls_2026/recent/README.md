@@ -128,3 +128,13 @@ Retrieved **2026-10-27 16:33 UTC** with curl. VoteHub (re-downloaded 16:33 UTC, 
 | `NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf` | https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf | Topline. Senate full ballot with leaners (early voters merged): GA Q12 p.7 Ossoff 55, Collins 40; OH Q16 p.9 Husted 47, Brown 47; ME Q19 p.10 Jackson 51, Collins 44; NE Q21 p.11 Ricketts 47, Osborn 46; FL Q23 p.12 Moody 51, Nixon 43; IA Q26 p.15 Turek 45, Hinson 43. No separate two-way questions. Generic ballot Q7 p.3 (51/46) has no race breakdown. |
 
 The NYT poll list the user pasted (Oct 27) shows the same FL, NE, ME, OH and GA numbers; Iowa is in the release but was not in the pasted excerpt. Effect: Georgia and Iowa are now recomputed (the Echelon poll ended after the latest poll in RCP's average and came out after RCP's last update); Florida, Ohio and Nebraska (already recomputed) gain a poll; Maine stays on RCP's average (Marist 10/22-25 is newer). Follow-up (user decision, Oct 27): the Maine poll is counted in Maine's RCP average ahead of RCP (`RCP_PENDING` / `COUNT_RCP_PENDING` in the build script), since RCP lists it and is expected to add it.
+
+### Cor Strategies for Heritage Action, Texas (added 2026-10-27, from the user's NYT poll list paste)
+
+| File | URL | Notes |
+|---|---|---|
+| `nyt_poll_list_user_paste_2026-10-27_tx_cor_strategies.txt` | NYT poll list (pasted by the user) | Talarico 44, Paxton 40, Oct 10-15, Republican sponsor Heritage Action. The only record of the Senate numbers. |
+| `heritage_action_cor_texas_poll_release_2026-10-26.html` | https://heritageaction.com/press/new-heritage-action-poll-82-of-texas-voters-support-proof-of-citizenship-to-register-to-vote | Retrieved 2026-10-27 17:34 UTC. Release dated Oct 26: Oct 10-15, 1,409 likely Texas voters, MOE 2.61, with Cor Strategies; no Senate numbers. Its linked Daily Signal article (https://www.dailysignal.com/2026/10/23/texas-poll-election-integrity-proof-citizenship-support/) returned 403 (curl and WebFetch) and has no Wayback copy. |
+
+RCP (feed re-downloaded 17:34 UTC), VoteHub and Poliwave did not list it. RCP's Texas average (built Oct 27, polls through 10/21) is current and this poll ended Oct 15, so it is recorded but not averaged.
+

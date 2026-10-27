@@ -412,6 +412,24 @@
     "note": "RCP 3-way: 48/49, Brown 2."
    },
    {
+    "pollster": "Cor Strategies",
+    "sponsor": "Heritage Action",
+    "partisan": "R",
+    "start": "2026-10-10",
+    "end": "2026-10-15",
+    "released": "2026-10-26",
+    "population": "LV",
+    "n": 1409,
+    "anti_r": 44,
+    "r": 40,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "NYT poll list as pasted by the user (Senate numbers); Heritage Action release (methodology)",
+    "note": "Heritage Action release (Oct 26): Oct 10-15, 1,409 likely Texas voters, live calls, online panels and IVR, MOE 2.61, directed by Heritage Action with Cor Strategies, paid by Heritage Action. Talarico 44, Paxton 40 only from the NYT poll list (user paste, Oct 27; NYT labels it 'Republican sponsor'); the Daily Signal write-up the release links returned 403. Not in RCP, VoteHub or Poliwave as of Oct 27 17:34 UTC. Ends before the latest poll in RCP's current TX average (10/21), so it does not enter the average under the freshness rule."
+   },
+   {
     "pollster": "CBS News/YouGov",
     "sponsor": "CBS News",
     "partisan": null,

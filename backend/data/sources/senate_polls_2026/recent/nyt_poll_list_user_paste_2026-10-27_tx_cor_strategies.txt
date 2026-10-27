@@ -1,0 +1,15 @@
+Source: The New York Times' poll list, entry as pasted by the user into the session on 2026-10-27 (~17:30 UTC; the paste did not include the page URL). The Senate numbers below are not in Heritage Action's release, and the Daily Signal article it links (https://www.dailysignal.com/2026/10/23/texas-poll-election-integrity-proof-citizenship-support/) returned HTTP 403 to curl and WebFetch with no Wayback copy, so this paste is the only record of them.
+
+POLL    POLLSTER    MARGIN
+Texas Senate
+ADDED 8M AGO    poll fromCor Strategies ,
+Republican sponsor: Heritage Action
+,conducted Oct. 10 to 15.
+Oct. 10-15
+Talarico +4
+Results:
+44%
+James Talarico (D)
+.
+40%
+Ken Paxton (R)
