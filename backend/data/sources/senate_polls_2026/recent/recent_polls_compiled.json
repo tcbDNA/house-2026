@@ -211,9 +211,27 @@
     "excluded_pollster": false,
     "source": "Pollster release (afightworthhaving.com/polling/2026/ohio)",
     "note": "Full ballot (Levy 1.2, Redpath 0.9). Not yet in VoteHub, Poliwave, RCP or 270toWin for OH. Partisan D = VoteHub's flag on this sponsor's KS/MI rows."
+   },
+   {
+    "pollster": "Echelon Insights",
+    "sponsor": "NetChoice",
+    "partisan": null,
+    "start": "2026-10-16",
+    "end": "2026-10-23",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 508,
+    "anti_r": 47,
+    "r": 47,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
+    "note": "State oversample (n=508) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q16 p.9): Husted 47, Brown 47, Levy 2, Redpath (L) 1, someone else 1, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
    }
   ],
-  "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27."
+  "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
  },
  "TX": {
   "polls": [
@@ -866,9 +884,27 @@
     "excluded_pollster": false,
     "source": "Poliwave; pollster release (afightworthhaving.com/polling/2026/florida)",
     "note": "Full ballot (Gillespie 1.1). Poliwave lists 50/43, n=4,832; release says 4,823. Not in VoteHub, RCP or 270toWin."
+   },
+   {
+    "pollster": "Echelon Insights",
+    "sponsor": "NetChoice",
+    "partisan": null,
+    "start": "2026-10-16",
+    "end": "2026-10-23",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 515,
+    "anti_r": 43,
+    "r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
+    "note": "State oversample (n=515) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q23 p.12): Moody 51, Nixon 43, Gillespie (NPA) 3, unsure 4. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
    }
   ],
-  "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21."
+  "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
  },
  "IA": {
   "polls": [
@@ -1065,9 +1101,27 @@
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
     "note": "RCP lists two rows: 47/45 (Hinson/Turek, averaged) and 47/46 (from an X image; matches the 3-way 47/46, Laehn 3). VoteHub, Poliwave and 270toWin: 45/47."
+   },
+   {
+    "pollster": "Echelon Insights",
+    "sponsor": "NetChoice",
+    "partisan": null,
+    "start": "2026-10-16",
+    "end": "2026-10-23",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 403,
+    "anti_r": 45,
+    "r": 43,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
+    "note": "State oversample (n=403) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q26 p.15): Turek 45, Hinson 43, Laehn (L) 7, someone else 2, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
    }
   ],
-  "notes": "RCP two-way average (feed 8930, built Oct 25): 9/29-10/22, Hinson 46.1, Turek 45.5 (Hinson +0.6), 8 polls. RCP 3-way (feed 9215): Hinson 46.0, Turek 45.7, Laehn 3.5. No Rasmussen or ActiVote poll ended in October. Pre-Oct: Fox 9/24-28, Quantus 9/28-29, Rasmussen 9/28-30."
+  "notes": "RCP two-way average (feed 8930, built Oct 25): 9/29-10/22, Hinson 46.1, Turek 45.5 (Hinson +0.6), 8 polls. RCP 3-way (feed 9215): Hinson 46.0, Turek 45.7, Laehn 3.5. No Rasmussen or ActiVote poll ended in October. Pre-Oct: Fox 9/24-28, Quantus 9/28-29, Rasmussen 9/28-30. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
  },
  "KS": {
   "polls": [
@@ -1376,21 +1430,21 @@
    },
    {
     "pollster": "Echelon Insights",
-    "sponsor": null,
+    "sponsor": "NetChoice",
     "partisan": null,
     "start": "2026-10-16",
     "end": "2026-10-23",
-    "released": "2026-10-25",
+    "released": "2026-10-27",
     "population": "LV",
-    "n": 3544,
+    "n": 413,
     "anti_r": 51,
     "r": 44,
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": false,
     "excluded_pollster": false,
-    "source": "RCP only",
-    "note": "Listed by RCP as 'Echelon Insights**' (3,544 LV, MOE 3.2), not in its average; RCP links only echeloninsights.com. No release found (Oct 27). Released = RCP row's updated timestamp (Oct 25)."
+    "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; RCP; NYT poll list (per user)",
+    "note": "State oversample (n=413) of NetChoice's Antitrust & Tech Policy Survey (3,644 LV nationwide, Oct 16-23). Full ballot with leaners (topline Q19 p.10): Jackson 51, Collins 44, someone else 1, unsure 4. RCP listed it Oct 25 as 'Echelon Insights**' (3,544 LV, i.e. the national sample), not averaged. Memo dated Oct 26; NetChoice published it Oct 27."
    },
    {
     "pollster": "Marist",
@@ -1411,7 +1465,7 @@
     "note": "Likely voters (LV n not published; 1,449 RV, LV MOE +/-6.6; RCP and VoteHub list 1,449). Full ballot Jackson 49, Collins 47, another party 1, undecided 3. Poliwave shows 53/47. Among RV Jackson +9."
    }
   ],
-  "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22."
+  "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27."
  },
  "SC": {
   "polls": [
@@ -2264,9 +2318,27 @@
     "excluded_pollster": true,
     "source": "VoteHub; Poliwave; 270toWin",
     "note": "Poliwave dates it Sep 26-Oct 20."
+   },
+   {
+    "pollster": "Echelon Insights",
+    "sponsor": "NetChoice",
+    "partisan": null,
+    "start": "2026-10-16",
+    "end": "2026-10-23",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 508,
+    "anti_r": 55,
+    "r": 40,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
+    "note": "State oversample (n=508) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q12 p.7): Ossoff 55, Collins 40, Buckley (L) 3, unsure 2. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
    }
   ],
-  "notes": "RCP average (feed 8718, built Oct 21): 9/21-10/17, Ossoff 51.2, Collins 43.0 (+8.2), 5 polls (3 October + InsiderAdvantage 9/22-23 and Big Data 9/21-23). No non-excluded poll ended after Oct 17."
+  "notes": "RCP average (feed 8718, built Oct 21): 9/21-10/17, Ossoff 51.2, Collins 43.0 (+8.2), 5 polls (3 October + InsiderAdvantage 9/22-23 and Big Data 9/21-23). No non-excluded poll ended after Oct 17. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
  },
  "NE": {
   "polls": [
@@ -2375,9 +2447,27 @@
     "in_rcp_average": null,
     "excluded_pollster": false,
     "source": "VoteHub; Poliwave; GBAO memo (ne_senate_2026/)"
+   },
+   {
+    "pollster": "Echelon Insights",
+    "sponsor": "NetChoice",
+    "partisan": null,
+    "start": "2026-10-16",
+    "end": "2026-10-23",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 407,
+    "anti_r": 46,
+    "r": 47,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": null,
+    "excluded_pollster": false,
+    "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
+    "note": "State oversample (n=407) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q21 p.11): Ricketts 47, Osborn (non-partisan) 46, Richards (NWP) 2, Conboy (AFP) 1, someone else 1, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
    }
   ],
-  "notes": "RCP has no Nebraska average (feed 9035 has no average row, built Oct 7; the page sets hideRcpAverageRow). in_rcp_average is null. Release details come from ../../ne_senate_2026/README.md (same day). Pre-Oct: co/efficient 9/28-30 (270toWin dates it 10/02). No Rasmussen or ActiVote poll."
+  "notes": "RCP has no Nebraska average (feed 9035 has no average row, built Oct 7; the page sets hideRcpAverageRow). in_rcp_average is null. Release details come from ../../ne_senate_2026/README.md (same day). Pre-Oct: co/efficient 9/28-30 (270toWin dates it 10/02). No Rasmussen or ActiVote poll. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
  },
  "MT": {
   "polls": [

@@ -180,7 +180,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (68.3% vs 64.0% by default; Osborn's race is nearly all of the
+        them does (67.9% vs 63.8% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -201,18 +201,18 @@ export function Methodology() {
         never used, nor Wedgewood, which admitted its polls were fabricated); where a newer poll came out after RCP last updated the
         average, or RCP publishes none, the average is recomputed from the most
         recent poll by each pollster in the last three weeks (as of Oct 27: Ohio,
-        Florida, Kansas, South Carolina and Alabama, plus
+        Florida, Kansas, Georgia, Iowa, South Carolina and Alabama, plus
         Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
         Louisiana and 11 safe races have no recent poll and use the model alone.
         The blend takes Texas from the model's R+1.4 to Talarico D+1.0, Nebraska
-        from R+4.9 to Ricketts +0.9 and Alaska from R+2.2 to D+0.2; P(D control)
-        is 68.3% (60.1% on the model alone; 67.7% / 68.6% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        from R+4.9 to Ricketts +1.2 and Alaska from R+2.2 to D+0.2; P(D control)
+        is 67.9% (60.1% on the model alone; 67.4% / 68.1% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
         polls, so 2/3 polls and 1/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
-        Democratic nominee) has four recent polls, Osborn +0.8; blended 0.7 / 0.3
-        with the model's Ricketts +4.9, it projects Ricketts +0.9 (Osborn 44%). As
+        Democratic nominee) has five recent polls, Osborn +0.4; blended 0.7 / 0.3
+        with the model's Ricketts +4.9, it projects Ricketts +1.2 (Osborn 42%). As
         a cross-check, Economist/YouGov had Fischer +7 over
         Osborn in late October 2024 and Fischer won by 6.7; YouGov's 2026 poll has
         Osborn +1, an 8-point move — about the size of the national swing since

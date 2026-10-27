@@ -1,8 +1,9 @@
 Senate polling averages, built from sources retrieved 2026-10-27; recompute window: polls ending on or after 2026-10-05.
 
-OH: recomputed: newer polls than RCP's average; 9 poll(s); anti-R 48.04 / R 44.09 -> margin +3.96, blend margin +4.29 (RCP published +3.3)
-    newer than RCP's average (built 2026-10-25): RedBox Research for A Fight Worth Having (super PAC) (D-flagged) ending 2026-10-23 released 2026-10-25
+OH: recomputed: newer polls than RCP's average; 10 poll(s); anti-R 47.94 / R 44.38 -> margin +3.56, blend margin +3.86 (RCP published +3.3)
+    newer than RCP's average (built 2026-10-25): RedBox Research for A Fight Worth Having (super PAC) (D-flagged) ending 2026-10-23 released 2026-10-25; Echelon Insights for NetChoice ending 2026-10-23 released 2026-10-27
     - RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (full ballot, 46.9/44.2)
+    - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 47/47)
     - InsiderAdvantage, ending 2026-10-22 (full ballot, 47/44)
     - VoteHub/Verasight for VoteHub, ending 2026-10-20 (full ballot, 47.5/43.6)
     - Fox News (Beacon Research/Shaw & Co.) for Fox News, ending 2026-10-19 (full ballot, 52/47)
@@ -28,24 +29,28 @@ AK: RCP average, Rasmussen removed; 5 poll(s); anti-R 49.40 / R 48.20 -> margin 
     - InsiderAdvantage 10/9 - 10/10
     - Alaska Survey Research 10/1 - 10/3
     - Quantus Insights 9/28 - 9/30
-FL: recomputed: newer polls than RCP's average; 7 poll(s); anti-R 42.60 / R 49.17 -> margin -6.57, blend margin -7.16 (RCP published -7.3)
-    newer than RCP's average (built 2026-10-21): RedBox Research for A Fight Worth Having (super PAC) (D-flagged) ending 2026-10-23 released 2026-10-25
+FL: recomputed: newer polls than RCP's average; 8 poll(s); anti-R 42.65 / R 49.40 -> margin -6.75, blend margin -7.33 (RCP published -7.3)
+    newer than RCP's average (built 2026-10-21): RedBox Research for A Fight Worth Having (super PAC) (D-flagged) ending 2026-10-23 released 2026-10-25; Echelon Insights for NetChoice ending 2026-10-23 released 2026-10-27
     - RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (full ballot, 42.8/49.6)
+    - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 43/51)
     - co/efficient (R-flagged), ending 2026-10-20 (full ballot, 40/48)
     - Univ. of North Florida, ending 2026-10-19 (full ballot, 45/49)
     - Univision/YouGov for Univision, ending 2026-10-15 (full ballot, 42/51)
     - MDW Communications for EDGE Communications (co-author), ending 2026-10-10 (full ballot, 42.4/47.6)
     - Stetson University, ending 2026-10-09 (full ballot, 41/52)
     - St. Pete Polls for Florida Politics, ending 2026-10-07 (full ballot, 45/47)
-IA: RCP average; 8 poll(s); anti-R 45.50 / R 46.12 -> margin -0.62, blend margin -0.68 (RCP published -0.6)
-    - InsiderAdvantage 10/21 - 10/22
-    - co/efficient 10/15 - 10/19
-    - Trafalgar Group 10/13 - 10/15
-    - Cook Political Report 10/9 - 10/13
-    - YouGov 10/6 - 10/12
-    - Marist 10/8 - 10/11
-    - Emerson 10/5 - 10/6
-    - CNN 9/29 - 10/5
+IA: recomputed: newer polls than RCP's average; 10 poll(s); anti-R 45.60 / R 46.00 -> margin -0.40, blend margin -0.44 (RCP published -0.6)
+    newer than RCP's average (built 2026-10-25): Echelon Insights for NetChoice ending 2026-10-23 released 2026-10-27
+    - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 45/43)
+    - InsiderAdvantage, ending 2026-10-22 (head-to-head, 45/47)
+    - co/efficient (R-flagged), ending 2026-10-19 (head-to-head, 46/49)
+    - Trafalgar Group (R-flagged), ending 2026-10-15 (full ballot, 44/46)
+    - New River Strategies/GS Strategy Group for The Cook Political Report, ending 2026-10-13 (full ballot, 46/44)
+    - YouGov, ending 2026-10-12 (full ballot, 47/46)
+    - National Public Affairs, ending 2026-10-12 (head-to-head, 47/48)
+    - Marist, ending 2026-10-11 (full ballot, 48/45)
+    - Emerson College for Nexstar Media, ending 2026-10-06 (full ballot, 45/47)
+    - CNN/SSRS for CNN, ending 2026-10-05 (full ballot, 43/45)
 KS: recomputed: newer polls than RCP's average; 2 poll(s); anti-R 46.00 / R 46.85 -> margin -0.85, blend margin -0.92 (RCP published -0.3)
     newer than RCP's average (built 2026-10-15): RedBox Research for A Fight Worth Having (super PAC) (D-flagged) ending 2026-10-23 released 2026-10-25
     - RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (full ballot, 45/45.7)
@@ -94,12 +99,12 @@ MN: RCP average, Rasmussen removed; 4 poll(s); anti-R 46.25 / R 42.75 -> margin 
     - KSTP/SurveyUSA 10/8 - 10/12
     - Star Tribune/Mason-Dixon 10/5 - 10/7
     - Daily Agenda/Morning Consult 10/2 - 10/7
-GA: RCP average; 5 poll(s); anti-R 51.20 / R 43.00 -> margin +8.20, blend margin +8.70 (RCP published +8.2)
-    - Atlanta Journal-Constitution 10/7 - 10/15
-    - Quantus Insights 10/15 - 10/17
-    - Trafalgar Group 10/7 - 10/9
-    - InsiderAdvantage 9/22 - 9/23
-    - Big Data Poll 9/21 - 9/23
+GA: recomputed: newer polls than RCP's average; 4 poll(s); anti-R 51.45 / R 41.98 -> margin +9.48, blend margin +10.14 (RCP published +8.2)
+    newer than RCP's average (built 2026-10-21): Echelon Insights for NetChoice ending 2026-10-23 released 2026-10-27
+    - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 55/40)
+    - Quantus Insights, ending 2026-10-17 (full ballot, 51.8/44.9)
+    - Univ. of Georgia SPIA for The Atlanta Journal-Constitution, ending 2026-10-15 (full ballot, 48/40)
+    - Trafalgar Group (R-flagged), ending 2026-10-09 (full ballot, 51/43)
 MT: RCP average; 2 poll(s); anti-R 29.00 / R 41.00 -> margin -12.00, blend margin -12.00 (RCP published -12.0)
     - Quantus Insights 10/15 - 10/18
     - Montana Free Press 8/27 - 9/7
@@ -126,7 +131,8 @@ SD: RCP average; 3 poll(s); anti-R 38.67 / R 54.33 -> margin -15.67, blend margi
 MS: recomputed: RCP publishes no average; 1 poll(s); anti-R 40.00 / R 43.00 -> margin -3.00, blend margin -3.61
     - Change Research (D-flagged), ending 2026-10-22 (full ballot, 40/43)
 LA: no RCP average and no poll ending on/after 2026-10-05 -> model only
-NE: recomputed: RCP publishes no average; 4 poll(s); anti-R 47.25 / R 46.50 -> margin +0.75, blend margin +0.80
+NE: recomputed: RCP publishes no average; 5 poll(s); anti-R 47.00 / R 46.60 -> margin +0.40, blend margin +0.43
+    - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 46/47)
     - GBAO for Working Class Majority PAC (D-flagged), ending 2026-10-22 (full ballot, 46/45)
     - Impact Research for Dan Osborn (per VoteHub) (D-flagged), ending 2026-10-20 (head-to-head, 48/50)
     - National Public Affairs, ending 2026-10-18 (head-to-head, 47/50)

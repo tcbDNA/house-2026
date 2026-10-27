@@ -116,3 +116,16 @@ Retrieved **2026-10-27 16:21-16:30 UTC** with curl, saved as served (read only a
 | `msu_ippsr_soss95_topline.pdf` | https://ippsr.msu.edu/sites/default/files/soss/soss95.pdf | SOSS 95 topline (YouGov, Oct 2-19): 836 LV; with leaners 48.0/45.5, without 47.7/44.2. The compiled entry was corrected from RCP's 48/46, n=863. |
 
 Compiled-table additions: TX Univision/YouGov; ME Marist (Oct 22-25) and Echelon Insights (Oct 16-23, RCP only, no release found; not in any average); MI Glengariff; NC Quantus; SC Targoz. With these, North Carolina uses RCP's own average again (it now includes a poll newer than RedBox), and South Carolina's recomputed average has three polls (Trafalgar, Impact, Targoz).
+
+### Echelon Insights for NetChoice (added 2026-10-27, after the user pasted the NYT poll list)
+
+Retrieved **2026-10-27 16:33 UTC** with curl. VoteHub (re-downloaded 16:33 UTC, not saved: unchanged for these races) had no rows for these polls yet; RCP listed only the Maine result (Oct 25).
+
+| File | URL | Notes |
+|---|---|---|
+| `netchoice_echelon_insights_poll_2026-10-27.html` | https://netchoice.org/netchoice-echelon-insights-poll-voters-rank-ai-regulation-far-behind-cost-of-living-want-one-national-ai-standard/ | NetChoice release (published 2026-10-27 14:30 UTC), linking the two PDFs below. |
+| `Echelon-Insights-Release-Memo.pdf` | https://netchoice.org/wp-content/uploads/2026/10/Echelon-Insights-Release-Memo.pdf | Echelon memo dated Oct 26. Methodology p.7: 3,644 LV nationwide, Oct 16-23, text-to-web and online; base sample 1,004 plus oversamples FL 515, OH 508, GA 508, IA 403, NE 407, ME 413 (weighted down to national shares). Senate results p.2. |
+| `NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf` | https://netchoice.org/wp-content/uploads/2026/10/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf | Topline. Senate full ballot with leaners (early voters merged): GA Q12 p.7 Ossoff 55, Collins 40; OH Q16 p.9 Husted 47, Brown 47; ME Q19 p.10 Jackson 51, Collins 44; NE Q21 p.11 Ricketts 47, Osborn 46; FL Q23 p.12 Moody 51, Nixon 43; IA Q26 p.15 Turek 45, Hinson 43. No separate two-way questions. Generic ballot Q7 p.3 (51/46) has no race breakdown. |
+
+The NYT poll list the user pasted (Oct 27) shows the same FL, NE, ME, OH and GA numbers; Iowa is in the release but was not in the pasted excerpt. Effect: Georgia and Iowa are now recomputed (the Echelon poll ended after the latest poll in RCP's average and came out after RCP's last update); Florida, Ohio and Nebraska (already recomputed) gain a poll; Maine stays on RCP's average (Marist 10/22-25 is newer).
+
