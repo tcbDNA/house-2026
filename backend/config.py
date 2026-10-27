@@ -66,6 +66,10 @@ class Settings:
     senate_poll_blend: bool = True
     senate_poll_weight: float = 0.7
     senate_poll_full_n: float = 3.0
+    # Nebraska (Osborn (I) vs Ricketts) blends polls and model like a
+    # two-party race (w = senate_poll_weight) instead of polls only (user
+    # decision, Oct 27). It keeps the independent races' extra error.
+    senate_nebraska_model_blend: bool = True
 
     # Item 7 — county overlay (overlay.py). Project each county slice from its
     # own 2024 margin, demographic shift and residual trend (shrunk toward its

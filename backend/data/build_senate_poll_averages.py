@@ -86,8 +86,8 @@ OTHER_RACES = {
     "WV": ("West Virginia", "Democrat", "Capito"), "WY": ("Wyoming", "Democrat", "Lummis"),
 }
 RACE_NOTES = {
-    "NE": "Independent Dan Osborn (no Democratic nominee) vs Pete Ricketts (R). As an independent "
-          "race it rests on the polling average; the model fills in only with fewer than three polls.",
+    "NE": "Independent Dan Osborn (no Democratic nominee) vs Pete Ricketts (R). Unlike the other "
+          "independent races, it blends the polling average with the model like a two-party race.",
     "MT": "Three-way race: Alme (R) vs Bodnar (I), with Bankhead (D) polling a distant third, plus a "
           "Libertarian. The margin is Bodnar minus Alme from the three-way polls; as an independent "
           "race it rests on polls, the model filling in only with fewer than three.",

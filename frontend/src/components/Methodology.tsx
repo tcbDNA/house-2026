@@ -179,7 +179,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (66.0% vs 58.9% by default; Osborn's race is nearly all of the
+        them does (63.8% vs 58.9% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -191,10 +191,11 @@ export function Methodology() {
         scenario change is how far the current sliders and settings move the model
         from its default, so the sliders still move every race. w = 0.7 with at
         least three polls in the average, scaled down linearly below that (0.47
-        with two, 0.23 with one) and 0 with none. Races with an independent
-        nominee (NE, MT, ID, SD) take w = 1 with the same scaling, because the
-        partisan baseline can't describe an independent with cross-party appeal,
-        and get 3 extra points of race-level error (in quadrature). The averages
+        with two, 0.23 with one) and 0 with none. Montana, Idaho and South Dakota,
+        whose nominee is an independent, take w = 1 with the same scaling, because
+        the partisan baseline can't describe an independent with cross-party
+        appeal; Nebraska, the fourth, blends polls and model like a two-party race.
+        All four get 3 extra points of race-level error (in quadrature). The averages
         start from RealClearPolling's with any Rasmussen poll removed (ActiVote is
         never used, nor Wedgewood, which admitted its polls were fabricated); where a newer poll came out after RCP last updated the
         average, or RCP publishes none, the average is recomputed from the most
@@ -202,15 +203,16 @@ export function Methodology() {
         Florida, Kansas, North Carolina, South Carolina and Alabama, plus
         Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
         Louisiana and 11 safe races have no recent poll and use the model alone.
-        The blend takes Texas to Talarico (D+0.5) and Nebraska to Osborn (+0.8),
-        and Alaska from R+3.0 to R+0.0; P(D control) is 66.0% (59.5% before the
-        blend; 65.9% / 66.1% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        The blend takes Texas to Talarico (D+0.5), Nebraska from tied to Ricketts
+        +1.2 and Alaska from R+3.0 to R+0.0; P(D control) is 63.8% (59.5% before
+        the blend; 63.0% / 64.7% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
         polls, so 2/3 polls and 1/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
-        Democratic nominee) has four recent polls, Osborn +0.8, against the model's
-        Ricketts +5.8. As a cross-check, Economist/YouGov had Fischer +7 over
+        Democratic nominee) has four recent polls, Osborn +0.8; blended 0.7 / 0.3
+        with the model's Ricketts +5.8, it projects Ricketts +1.2 (Osborn 42%). As
+        a cross-check, Economist/YouGov had Fischer +7 over
         Osborn in late October 2024 and Fischer won by 6.7; YouGov's 2026 poll has
         Osborn +1, an 8-point move — about the size of the national swing since
         2024.

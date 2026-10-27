@@ -256,11 +256,15 @@ def all_state_residuals(bundle: SenateBundle, settings: Settings, frame: str) ->
 
 def poll_weights(bundle: SenateBundle, settings: Settings) -> np.ndarray:
     """Per-seat weight on the polling average: senate_poll_weight (1.0 for
-    independent races) × min(1, recent polls / senate_poll_full_n); 0 with
-    no polls or with the blend off."""
+    independent races, except Nebraska with senate_nebraska_model_blend) ×
+    min(1, recent polls / senate_poll_full_n); 0 with no polls or with the
+    blend off."""
     if not settings.senate_poll_blend or bundle.poll_n.size == 0:
         return np.zeros(len(bundle.seats))
-    base = np.where(bundle.independent, 1.0, settings.senate_poll_weight)
+    polls_only = bundle.independent.copy()
+    if settings.senate_nebraska_model_blend:
+        polls_only &= np.array([s["state"] != "NE" for s in bundle.seats])
+    base = np.where(polls_only, 1.0, settings.senate_poll_weight)
     scale = np.minimum(1.0, bundle.poll_n / settings.senate_poll_full_n)
     return np.where(np.isfinite(bundle.poll_margin), base * scale, 0.0)
 

@@ -46,7 +46,7 @@ def main_cli():
         if not override:
             pairs.append((m, raw, tp))
         print(f"{r['state']:4} {m:+7.1f} {raw:+7.1f} {tp:+8.1f} {m - raw:+9.1f} {m - tp:+8.1f} {r['n_polls']:>3}  "
-              f"{'[independent: polls only] ' if override else ''}{r['source']}; {r['sponsors']}")
+              f"{'[independent] ' if override else ''}{r['source']}; {r['sponsors']}")
     m, raw, tp = np.array(pairs).T
     s_raw = float(np.polyfit(m, raw, 1)[0])
     s_tp = float(np.polyfit(m, tp, 1)[0])
