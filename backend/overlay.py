@@ -19,12 +19,13 @@ amount:
                                    to its projection)
 
 Slices take their parent county's shares (no slice-level demographics) and
-the county's residual trend. Where the 2024 slice results are estimated
-(slices tagged pres_year_source 2020: AK AR CT ID ME MI ND NJ OK OR PA SD),
-slice-level trends aren't used anywhere: those slices take the district's
-residual. In the Senate view the counties are real counties, so they use
-their own residuals — except Alaska, whose borough-level 2024 results are
-estimated and so take the state's.
+the county's residual trend. That holds too where the 2024 slice results
+are estimated (slices tagged pres_year_source 2020: AK AR CT ID ME MI ND NJ
+OK OR PA SD), since only the split within a county is estimated, not the
+county's results (settings.overlay_estimated_slice_trends; off: those
+slices take the district's residual). Alaska's borough-level 2024 results
+are estimated, so its slices take the district's residual and, in the
+Senate view, its boroughs the state's.
 
 This changes only the overlay; no district, state or seat projection.
 The reconciling shift should be small: a large one means the slice inputs
@@ -86,6 +87,7 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
                      + (drow.get("challenger_adj") or 0.0))
     # Locked seats (CA same-party top-two) show ±100; reconcile the overlay to
     # the projection before the lock.
+    county_trends = settings.overlay_estimated_slice_trends and did[:2] not in ESTIMATED_COUNTY_STATES
     target = drow["projection"]
     if drow.get("lockout"):
         target = (drow["margin_2024"] + uniform_swing + (drow.get("rel_trend_applied") or 0.0)
@@ -94,7 +96,7 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
     for s in slices:
         i = terms.index.get(s["fips"])
         estimated = s.get("pres_year_source") == 2020
-        if i is None or estimated:
+        if i is None or (estimated and not county_trends):
             w, resid = 0.0, district_resid
             demo = (drow.get("demo_shift") or 0.0) if i is None else float(terms.demo[i])
         else:

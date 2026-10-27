@@ -84,6 +84,12 @@ class Settings:
     # (build_slices_from_github.py). Off: 2020 margin + the district's
     # 2020→2024 shift, weighted by 2020 votes. Overlay only.
     overlay_raked_slices: bool = True
+    # In those 12 states the county results are real (only the split within
+    # a county is estimated), so each slice takes its county's residual
+    # trend, shrunk toward the district's, as elsewhere — except Alaska,
+    # whose borough results are estimated and keep the district's. Off:
+    # every slice there takes the district's residual. Overlay only.
+    overlay_estimated_slice_trends: bool = True
 
     # Item 2 — residualized trend (trend.py). Remove from the carried trend
     # the part explained by the active frame's demographic shares (+ age, +

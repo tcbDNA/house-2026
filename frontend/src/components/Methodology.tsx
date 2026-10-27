@@ -276,9 +276,10 @@ export function Methodology() {
         makes the slices add up exactly to its projection. In the 12 states
         without 2024 precinct results (AK, AR, CT, ID, ME, MI, ND, NJ, OK, OR,
         PA, SD), a split county's slices are estimated by raking their 2020
-        D and R votes to the actual 2024 county and district totals; those
-        slices take the district's residual instead, and Alaska's boroughs the
-        state's. This changes only the map shading, never a projection. Estimated 2026 vote counts use each race's own Kalshi turnout market: the
+        D and R votes to the actual 2024 county and district totals. Their
+        slices still take their county's residual, since the county results
+        are real, except Alaska's: its borough results are estimated, so its
+        slices take the district's residual and its boroughs the state's. This changes only the map shading, never a projection. Estimated 2026 vote counts use each race's own Kalshi turnout market: the
         market-implied median total vote divided by the 2024 presidential vote —
         the state's Senate market (else its governor market) for a state's
         counties, and the district's House market for its slices (e.g. Georgia
