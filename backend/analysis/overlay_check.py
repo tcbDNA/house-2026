@@ -51,7 +51,7 @@ def districts():
     out = []
     for did, slices in main._DISTRICT_COUNTY_SLICES.items():
         drow, st = rows[did], did[:2]
-        if st not in terms:   # no county rows (CT: planning regions) — slices use district values
+        if st not in terms:   # no county rows — slices use district values
             terms[st] = overlay.CountyTerms([], population_shares([]), d["sliders"], S, FRAME)
         r = overlay.district_slices(did, drow, slices, house["uniform_swing"], terms[st], TD, S, FRAME)
         w = [s["total_2024"] for s in r["counties"]]

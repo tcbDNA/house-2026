@@ -28,14 +28,14 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   MA-07     +2.14   +1.13  +0.62  +0.38  FLAG
   TX-38     -2.09   -0.51  -1.79  +0.21  FLAG
   |shift| median 0.36, 90th pct 1.60; 177 of 435 above 0.5
-  mean |part|: margin 0.20, demographic 0.37, trend 0.36
+  mean |part|: margin 0.20, demographic 0.38, trend 0.36
   Upstream data mismatch (slices' 2024 margins vs the district's, |margin part| > 0.5): 51 districts, 22 of them in the estimated-slice states:
     AK-AL, AL-04, AR-03, AZ-08, AZ-05, CA-04, CA-13, CA-20, CA-23, ID-01, IL-16, IL-02, IL-01, IL-03, IL-07, LA-06, MA-08, MA-02, MA-05, MA-07, MD-05, MD-08, MD-07, ME-02, MI-02, MI-09, MI-06, ND-AL, NJ-02, NJ-06, NY-13, OK-02, OK-03, OK-04, OK-05, OR-04, PA-13, PA-17, PA-06, PA-05, PA-10, PA-14, SC-06, SD-AL, TN-05, TN-06, TX-10, TX-17, TX-37, TX-38, VA-08
   The demographic and trend parts come from slices taking their parent county's shares and
   residual (option (a)): in counties split among several districts every slice gets the county
   average. Of the 58 districts inside a single county, 37 have shifts above 0.5 for that reason alone.
 
-== States (49): reconciled to the Senate seat, or the state's fundamentals with no race
+== States (50): reconciled to the Senate seat, or the state's fundamentals with no race
   state  shift  margin   demo  trend override  notes
   SD    +12.89   -0.01  -0.01  -0.03   +12.94  poll blend (expected)
   MN     -7.06   -0.00  -0.01  -0.43    -6.63  poll blend (expected)
@@ -84,6 +84,7 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   WA     -0.09   +0.00  +0.01  -0.10    +0.00  no 2026 race
   NV     +0.07   -0.00  +0.01  +0.07    +0.00  no 2026 race
   HI     -0.06   +0.01  +0.04  -0.11    +0.00  no 2026 race
+  CT     -0.04   -0.00  +0.01  -0.04    +0.00  no 2026 race
   WV     +0.03   -0.06  -0.00  +0.09    +0.00  
   WY     -0.03   -0.00  +0.01  -0.03    +0.00  
   states flagged (|shift excluding override| > 0.5): AL, CA, DE, FL, GA, LA, MD, MO, MS, TN, TX, UT

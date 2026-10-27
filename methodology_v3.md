@@ -169,7 +169,7 @@ Per-race σ (excluding group terms) is ≈ 4.8 for an incumbent on unchanged lin
 
 ## County overlay
 
-County-level overlays use 2020 + 2024 presidential results aggregated to county / borough boundaries (total-vote margins, 100 × (D − R) / total, like every other margin; the source file's two-party margins put county aggregates up to 1.3 pts off the official statewide results). Alaska supplements with [Dave's Redistricting](https://davesredistricting.org) per-borough 2020 numbers (state doesn't publish official borough-level results).
+County-level overlays use 2020 + 2024 presidential results aggregated to county / borough boundaries (total-vote margins, 100 × (D − R) / total, like every other margin; the source file's two-party margins put county aggregates up to 1.3 pts off the official statewide results). Alaska supplements with [Dave's Redistricting](https://davesredistricting.org) per-borough 2020 numbers (state doesn't publish official borough-level results). Connecticut uses its nine planning regions, the Census Bureau's county equivalents since 2022 (the ACS and the county map shapes use them; the county results file still has the eight old counties): `supplement_ct_pres.py` sums the Secretary of the State's official 2020 and 2024 town results into planning regions with the Census town crosswalk, and Connecticut's 2020 precincts are moved into them by town for the district slices.
 
 **Slice-level projections** (`backend/overlay.py`, setting `overlay_slice_projections`). Each (district, county) slice — or each county of a Senate state — is projected from its own pieces:
 

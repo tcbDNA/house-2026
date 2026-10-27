@@ -5,7 +5,9 @@ Per state, expects two extracted directories under ~/Downloads/:
   Geojson_{STATE}.v07/{STATE}_2020_VD_tabblock.vtd.datasets.geojson
 
 For each VTD (≈precinct):
-  1. county_fips = GEOID20[:5]  (state+county FIPS per Census)
+  1. county_fips = GEOID20[:5]  (state+county FIPS per Census); Connecticut's
+     VTDs carry the old county codes, so they are moved by town into the
+     planning regions the Census has used as county equivalents since 2022
   2. district    = spatial join: which CD polygon contains the VTD centroid
                    (uses our frontend/public/districts.geojson)
   3. aggregate by (county_fips, district) → sum D / R / Total presidential votes
@@ -48,12 +50,28 @@ def load_county_names() -> dict[str, str]:
             fips = (row.get("fips") or "").strip()
             name = (row.get("county") or row.get("name") or "").strip()
             if fips and name:
-                if not name.lower().endswith("county"):
+                if not name.lower().endswith(("county", "planning region")):
                     name = f"{name} County"
                 names[fips] = name
     return names
 
 COUNTY_NAMES = load_county_names()
+
+CT_CROSSWALK = DATA_DIR / "sources" / "ct_planning_regions" / "census_ct_cou_to_cousub_crosswalk.txt"
+
+
+def ct_town_regions() -> dict[str, str]:
+    """Connecticut town name -> planning-region FIPS (Census county-subdivision
+    crosswalk). DRA's 2020 VTD GEOIDs use the eight old counties; the ACS,
+    the county shapes and counties.json use the nine planning regions."""
+    rows = list(csv.reader(CT_CROSSWALK.open(encoding="utf-8-sig"), delimiter="|"))
+    hdr = [h.split("\n")[0] for h in rows[0]]
+    out = {}
+    for r in rows[1:]:
+        rec = dict(zip(hdr, r)) if len(r) == len(hdr) else {}
+        if rec.get("COUSUB_NAMELSAD", "").endswith(" town"):
+            out[rec["COUSUB_NAMELSAD"][:-len(" town")]] = "09" + rec["NEW_COUNTYFP"]
+    return out
 
 
 def load_district_shifts() -> dict[str, float]:
@@ -193,6 +211,10 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
     # district-level 2020→2024 shift.
     pres24_by_geoid: dict[str, tuple[int, int, int]] = {}
     pres20_by_geoid: dict[str, tuple[int, int, int]] = {}
+    # VTD GEOID -> county FIPS where it isn't GEOID20[:5] (Connecticut: by the
+    # town in the VTD's name, e.g. "Waterford 002-00").
+    county_of: dict[str, str] = {}
+    town_regions = ct_town_regions() if sa == "CT" else {}
     with csv_path.open() as f:
         rdr = csv.DictReader(f)
         cols = rdr.fieldnames or []
@@ -205,6 +227,9 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
             g = (row.get("GEOID20") or "").strip()
             if not g:
                 continue
+            if town_regions:
+                town = (row.get("Name") or "").rsplit(" ", 1)[0]
+                county_of[g] = town_regions[town]
             if has_24:
                 d24 = int(row.get("E_24_PRES_Dem") or 0)
                 r24 = int(row.get("E_24_PRES_Rep") or 0)
@@ -253,7 +278,7 @@ def process_state(state_abbr: str) -> dict[str, list[dict]]:
         district = vtd_to_district.get(gid)
         if district is None:
             continue
-        county_fips = gid[:5]
+        county_fips = county_of.get(gid, gid[:5])
         if gid in pres24_by_geoid:
             d, r, t = pres24_by_geoid[gid]
             slice_data[(county_fips, district)]["d24"] += d

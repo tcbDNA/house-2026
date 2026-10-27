@@ -260,7 +260,9 @@ export function Methodology() {
         <a className="underline" href="https://davesredistricting.org" target="_blank" rel="noreferrer">
           Dave's Redistricting
         </a>{" "}
-        per-borough 2020 numbers (state doesn't publish official borough-level results).
+        per-borough 2020 numbers (state doesn't publish official borough-level results),
+        and Connecticut uses its nine planning regions (the Census Bureau's county
+        equivalents since 2022), built from the state's official town results.
         Each county slice of a district (and each county of a Senate state) is
         projected from its own pieces: its 2024 margin, the demographic shift and
         residual trend of its county (item-2 coefficients with the intercept, the
