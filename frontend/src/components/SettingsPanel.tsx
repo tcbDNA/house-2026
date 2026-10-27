@@ -39,6 +39,8 @@ const GROUPS: { title: string; toggles: Toggle[] }[] = [
     toggles: [
       { key: "subgroup_n_weights", label: "Weight polls by subgroup size",
         hint: "Weight each poll's group margin by √(subgroup n) rather than √(total n)." },
+      { key: "crosstab_white_only_polls", label: "Count white-only crosstabs",
+        hint: "Include polls that report race only as White vs Non-white (Marist) in the white groups' averages. Off: only polls with Black or Hispanic crosstabs (D+8.8 instead of D+9.5)." },
       { key: "pollster_matched_shifts", label: "Pollster-matched pattern",
         hint: "Take the pattern across groups from each pollster's 2026 vs final-2024 change, net of its topline change. Off: 2026 poll average minus the 2024 baseline." },
       { key: "matched_inverse_variance", label: "Inverse-variance pooling",
