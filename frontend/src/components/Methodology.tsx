@@ -179,7 +179,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (64.7% vs 60.0% by default; Osborn's race is nearly all of the
+        them does (66.1% vs 61.7% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -199,13 +199,13 @@ export function Methodology() {
         start from RealClearPolling's with any Rasmussen poll removed (ActiVote is
         never used, nor Wedgewood, which admitted its polls were fabricated); where a newer poll came out after RCP last updated the
         average, or RCP publishes none, the average is recomputed from the most
-        recent poll by each pollster in the last three weeks (as of Oct 26: Ohio,
-        Florida, Kansas, North Carolina, South Carolina and Alabama, plus
+        recent poll by each pollster in the last three weeks (as of Oct 27: Ohio,
+        Florida, Kansas, South Carolina and Alabama, plus
         Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
         Louisiana and 11 safe races have no recent poll and use the model alone.
-        The blend takes Texas from the model's R+2.1 to Talarico D+0.6, Nebraska
+        The blend takes Texas from the model's R+2.1 to Talarico D+0.9, Nebraska
         from R+5.5 to Ricketts +1.1 and Alaska from R+2.7 to D+0.05; P(D control)
-        is 64.7% (52.9% on the model alone; 64.1% / 65.4% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        is 66.1% (52.9% on the model alone; 65.3% / 66.9% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
