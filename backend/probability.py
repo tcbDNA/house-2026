@@ -460,11 +460,15 @@ def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate
     wins = sims > 0
     for r, p in zip(rows, wins.mean(axis=0)):
         r["p_d"] = round(float(p), 3)
-    indep = np.array([r.get("anti_r_party") == "(I)" for r in rows])
+    # Each race's two sides: the anti-R candidate's party when the margin is
+    # positive, the opponent's (R, or an independent in Rhode Island) when not.
+    pos = np.array([r.get("anti_r_party") or "(D)" for r in rows])
+    neg = np.array([r.get("opponent_party") or "(R)" for r in rows])
     s = result.setdefault("summary", {})
-    total_d = wins[:, ~indep].sum(axis=1) + s.get("not_up_d", 0)
-    total_i = wins[:, indep].sum(axis=1) + s.get("not_up_i", 0)
-    total_r = (~wins).sum(axis=1) + s.get("not_up_r", 0)
+    def total(party):
+        return (wins[:, pos == party].sum(axis=1) + (~wins[:, neg == party]).sum(axis=1)
+                + s.get(f"not_up_{party.strip('()').lower()}", 0))
+    total_d, total_i, total_r = total("(D)"), total("(I)"), total("(R)")
     s["governorships"] = {
         "d_median": int(np.median(total_d)), "d_p10": int(np.quantile(total_d, 0.10)),
         "d_p90": int(np.quantile(total_d, 0.90)), "d_mean": round(float(total_d.mean()), 1),

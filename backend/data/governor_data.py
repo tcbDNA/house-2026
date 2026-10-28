@@ -48,6 +48,16 @@ NOT_UP = SRC / "governors_2026" / "not_up_2026.csv"
 RESULTS = SRC / "gov_results" / "gov_results.csv"
 OVERRIDES = SRC / "gov_results" / "official_overrides.csv"
 POLLS = DATA / "governor_poll_averages.csv"
+# A computed record from a race where a third candidate won more than this
+# share of the vote measures that candidate as much as the nominees; the model
+# leaves such records out by default (settings.governor_war_exclude_third_candidate).
+THIRD_CANDIDATE_PCT = 5.0
+# Races whose Democrat's main opponent is an independent (user decision, Oct 28;
+# matches build_governor_poll_averages.INDEPENDENT_OPPONENT).
+INDEPENDENT_OPPONENT = {"RI": ("Ken Block", "(I)")}
+# WAR variants stored per race: (drop the challenger's record from a rematch
+# against the sitting incumbent, leave out third-candidate records).
+VARIANTS = {f"rematch{int(rm)}_third{int(tc)}": (rm, tc) for rm in (True, False) for tc in (True, False)}
 WAR_OUT = DATA / "gov_war_computed.csv"
 OUT = DATA / "governor_states.json"
 PRES_YEARS = (2008, 2012, 2016, 2020, 2024)
@@ -125,7 +135,9 @@ def computed_records() -> list[dict]:
         out.append({"year": year, "state": st, "d_candidate": r["d_candidate"], "r_candidate": r["r_candidate"],
                     "d_pct": float(r["d_pct"]), "r_pct": float(r["r_pct"]), "margin": round(margin, 2),
                     "baseline": round(base, 2), "baseline_note": how, "war": round(margin - base, 2),
-                    "incumbent_side": {1: "D", -1: "R", 0: ""}[k], "k": k, "label": "computed",
+                    "incumbent_side": {1: "D", -1: "R", 0: ""}[k], "k": k,
+                    "other_candidate": r["other_candidate"], "other_pct": _f(r["other_pct"]),
+                    "third_candidate": (_f(r["other_pct"]) or 0) > THIRD_CANDIDATE_PCT, "label": "computed",
                     "source": r.get("official_source") or r["source_file"]})
     return out
 
@@ -137,27 +149,50 @@ def governor_wars(records: list[dict]) -> dict:
     for rec in records:
         if rec["year"] < sd.WAR_FIRST_YEAR["Governor"]:
             continue
-        for letter, name in (("D", rec["d_candidate"]), ("R", rec["r_candidate"])):
+        for letter, name, opp in (("D", rec["d_candidate"], rec["r_candidate"]),
+                                  ("R", rec["r_candidate"], rec["d_candidate"])):
             key = (rec["state"], sd._strip_accents(sd._clean_name(name)), letter)
             allw.setdefault(key, []).append({
                 "year": rec["year"], "geo": sd.STATE_NAMES[rec["state"]], "chamber": "Governor",
-                "sortable": -rec["war"], "k": rec["k"], "war_text": f"computed {rec['war']:+.2f}"})
+                "sortable": -rec["war"], "k": rec["k"], "war_text": f"computed {rec['war']:+.2f}",
+                "opponent": opp, "third_candidate": rec["third_candidate"],
+                "other": f"{rec['other_candidate']} {rec['other_pct']:.1f}%" if rec["third_candidate"] else ""})
     for v in allw.values():
         v.sort(key=lambda x: x["year"], reverse=True)
     return {k: v for k, v in allw.items() if v}
 
 
-def candidate_war(state: str, name: str | None, letter: str, allw: dict) -> dict:
-    """D-positive WAR effect of one candidate: a + governor_incumbency × b."""
-    recs = sd.find_war(state, name, letter, allw) if name else None
-    if not recs:
-        return {"name": name, "a": 0.0, "b": 0.0, "records": []}
+def _blend(recs: list[dict], name: str) -> tuple[float, float]:
     a = -sd._time_weighted_sortable(recs, candidate_name=name, office="Governor")
     b = -sd._time_weighted_sortable([{**x, "sortable": x.get("k", 0)} for x in recs],
                                     candidate_name=name, office="Governor")
-    return {"name": name, "a": round(a, 3), "b": round(b, 3),
+    return round(a, 3), round(b, 3)
+
+
+def candidate_war(state: str, name: str | None, letter: str, allw: dict, sitting_incumbent: str | None = None) -> dict:
+    """D-positive WAR effect of one candidate, a + governor_incumbency × b, for
+    each rule variant (VARIANTS):
+      rematch: a challenger's governor record from a race against the sitting
+        incumbent is dropped (the incumbent keeps it; the House model's rule).
+      third: governor records from races with a third candidate over
+        THIRD_CANDIDATE_PCT are left out."""
+    recs = sd.find_war(state, name, letter, allw) if name else None
+    if not recs:
+        return {"name": name, "variants": {v: {"a": 0.0, "b": 0.0} for v in VARIANTS}, "records": []}
+    inc_last = sd._strip_suffix(sitting_incumbent).split()[-1].lower() if sitting_incumbent else None
+
+    def rematch(x):
+        return (inc_last is not None and x["chamber"] == "Governor" and x.get("opponent")
+                and sd._strip_suffix(x["opponent"]).split()[-1].lower() == inc_last)
+    variants = {}
+    for v, (rm, tc) in VARIANTS.items():
+        keep = [x for x in recs if not (rm and rematch(x)) and not (tc and x.get("third_candidate"))]
+        a, b = _blend(keep, name) if keep else (0.0, 0.0)
+        variants[v] = {"a": a, "b": b}
+    return {"name": name, "variants": variants,
             "records": [{"year": x["year"], "office": x["chamber"], "geo": x["geo"], "war": x["war_text"],
-                         "k": x.get("k", 0)} for x in recs]}
+                         "k": x.get("k", 0), "rematch": bool(rematch(x)),
+                         "third_candidate": x.get("other", "")} for x in recs]}
 
 
 TITLES = ("Governor ", "State Senator ", "Senator ", "Lt. Governor ", "Lieutenant Governor ")
@@ -195,7 +230,9 @@ def load_poll_averages() -> dict[str, dict]:
     out = {}
     for r in csv.DictReader(POLLS.open()):
         out[r["state"]] = {"margin": float(r["blend_margin"]), "raw_margin": float(r["margin"]),
-                           "n_polls": int(r["n_polls"]), "third_party_share": _f(r["third_party_share"]),
+                           "n_polls": int(r["n_polls"]), "n_eff": float(r["n_eff"]),
+                           "three_way": r["three_way"] == "yes", "opponent": r["opponent"] or None,
+                           "third_party_share": _f(r["third_party_share"]),
                            "rcv_final_polls": int(r["rcv_final_polls"] or 0), "method": r["method"],
                            "as_of": r["as_of"], "polls": r["polls"], "url": r["url"], "local_file": r["local_file"]}
     return out
@@ -226,8 +263,10 @@ def main():
         running = (r["incumbent_status"] or "").strip().lower() == "running"
         won = (r["incumbent_has_won_gov_election"] or "").strip().lower() == "yes"
         d_name, r_name = clean_name(r["d_nominee"]), clean_name(r["r_nominee"])
-        d = candidate_war(st, d_name, "D", allw)
-        rr = candidate_war(st, r_name, "R", allw)
+        sitting = clean_name(r["incumbent"]) if running else None
+        d = candidate_war(st, d_name, "D", allw, sitting if sitting != d_name else None)
+        rr = candidate_war(st, r_name, "R", allw, sitting if sitting != r_name else None)
+        opponent, opponent_party = INDEPENDENT_OPPONENT.get(st, (r_name, "(R)"))
         inc_sign = (1 if inc_party == "(D)" else -1 if inc_party == "(R)" else 0) if running and won else 0
         races[st] = {
             "state": st, "name": sd.STATE_NAMES[st], "party": inc_party,
@@ -238,8 +277,11 @@ def main():
             "d_nominee": d_name, "r_nominee": r_name,
             "d_ballot_name": r["d_nominee"], "r_ballot_name": r["r_nominee"],
             "anti_r_candidate": d_name, "anti_r_party": "(D)",
+            "opponent": opponent, "opponent_party": opponent_party,
+            "independent_race": opponent_party == "(I)",
             "other_candidates": other_candidates(r["other_candidates"]),
-            "war_a": round(d["a"] + rr["a"], 3), "war_b": round(d["b"] + rr["b"], 3),
+            "war": {v: {"a": round(d["variants"][v]["a"] + rr["variants"][v]["a"], 3),
+                        "b": round(d["variants"][v]["b"] + rr["variants"][v]["b"], 3)} for v in VARIANTS},
             "war_detail": {"d": d, "r": rr}, "inc_sign": inc_sign,
             "poll_average": polls.get(st), "note": r.get("notes") or None,
             "source_files": r["source_files"],

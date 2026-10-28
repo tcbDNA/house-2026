@@ -21,6 +21,12 @@ Governor-specific:
     (rcv_final_d / rcv_final_r) are used.
   * third_party_share: mean share of every candidate other than the two in the
     averaged polls (for Georgia's runoff and Vermont's legislature flags).
+  * Sparse polling (user decision Oct 28; EXTEND_SPARSE_WINDOW): a recomputed
+    average with fewer than three polls since WINDOW_START reaches back to
+    Sep 1, each older poll counting half for the blend weight (n_eff).
+  * Rhode Island (user decision Oct 28; INDEPENDENT_OPPONENT): the Democrat's
+    main opponent is the independent, Ken Block; the margin is Foulkes − Block
+    (raw, three-way), and Block's campaign poll is out as partisan-sponsored.
 
 Inputs: sources/gov_polls_2026/ (README.md there): rcp_gov_<st>_<id>.json,
 gov_polls_compiled.json.
@@ -34,12 +40,28 @@ from __future__ import annotations
 import csv
 import json
 import re
+from datetime import date
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 from build_senate_poll_averages import (
     WINDOW_START, d, label, partisan_sponsor, pollster_key, rcp_end, same_poll,
 )
+
+# Sparse polling (user decision, Oct 28): a race with fewer than
+# SPARSE_MIN_POLLS polls in the standard window (on or after WINDOW_START)
+# reaches back to SPARSE_WINDOW_START, and each poll older than the standard
+# window counts as OLD_POLL_WEIGHT of a poll for the blend weight (n_eff).
+# EXTEND_SPARSE_WINDOW = False: the standard window only.
+EXTEND_SPARSE_WINDOW = True
+SPARSE_MIN_POLLS = 3
+SPARSE_WINDOW_START = date(2026, 9, 1)
+OLD_POLL_WEIGHT = 0.5
+# Races whose Democrat's main opponent is an independent, not the Republican
+# (user decision, Oct 28): state -> the independent's surname in the polls.
+# The margin is the raw D − independent margin (three-way, like the Senate's
+# Montana), on polls only.
+INDEPENDENT_OPPONENT = {"RI": "Block"}
 
 DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "gov_polls_2026"
@@ -99,6 +121,10 @@ def poll_rows(race: dict, st: str) -> list[dict]:
         anti, rep = ((p["rcv_final_d"], p["rcv_final_r"]) if rcv else
                      (p["h2h_anti_r"], p["h2h_r"]) if h2h else (p["anti_r"], p["r"]))
         others = sum(o.get("pct") or 0 for o in (p.get("others") or [])) if not (rcv or h2h) else 0.0
+        if st in INDEPENDENT_OPPONENT:   # D vs the independent; the Republican counts as a third party
+            ind = [o.get("pct") for o in (p.get("others") or []) if INDEPENDENT_OPPONENT[st] in (o.get("name") or "")]
+            others = others - (ind[0] or 0) + (rep or 0) if ind else others
+            rep = ind[0] if ind else None
         out.append({"pollster": p["pollster"], "sponsor": p.get("sponsor"), "partisan": p.get("partisan"),
                     "end": d(p["end"]), "released": d(p.get("released")), "anti_r": anti, "r": rep,
                     "others": others,
@@ -143,13 +169,18 @@ def build() -> str:
             published = round(rcp["published"][0] - rcp["published"][1], 1) \
                 if None not in rcp["published"] else ""
         else:
-            window = [p for p in usable if p["end"] >= WINDOW_START]
-            if st == "AK" and rcv_polls:
-                window = [p for p in window if p["rcv"]]
-            latest_by = {}
-            for p in sorted(window, key=lambda p: p["end"]):
-                latest_by[pollster_key(p["pollster"])] = p
-            kept = sorted(latest_by.values(), key=lambda p: p["end"], reverse=True)
+            def latest(start):
+                window = [p for p in usable if p["end"] >= start]
+                if st == "AK" and rcv_polls:
+                    window = [p for p in window if p["rcv"]]
+                latest_by = {}
+                for p in sorted(window, key=lambda p: p["end"]):
+                    latest_by[pollster_key(p["pollster"])] = p
+                return sorted(latest_by.values(), key=lambda p: p["end"], reverse=True)
+            kept = latest(WINDOW_START)
+            extended = EXTEND_SPARSE_WINDOW and len(kept) < SPARSE_MIN_POLLS
+            if extended:
+                kept = latest(SPARSE_WINDOW_START)
             if not kept:
                 report.append(f"{st}: no RCP average and no poll ending on/after {WINDOW_START} -> model only")
                 continue
@@ -159,6 +190,8 @@ def build() -> str:
             used = [f"{label(p)}, ending {p['end']} ({p['question']}, {p['anti_r']:g}/{p['r']:g})" for p in kept]
             method = ("recomputed: newer polls than RCP's average" if newer else
                       "recomputed: RCP publishes no average")
+            if extended:
+                method += f" (fewer than {SPARSE_MIN_POLLS} polls since {WINDOW_START}: window from {SPARSE_WINDOW_START}, older polls count half)"
             if st == "AK" and rcv_polls:
                 method += " (final-round polls only)"
             as_of = max(p["end"] for p in kept).isoformat()
@@ -166,15 +199,21 @@ def build() -> str:
             published = round(rcp["published"][0] - rcp["published"][1], 1) \
                 if rcp and None not in rcp["published"] else ""
         margin = anti - rep
-        blend = 100 * margin / (anti + rep)
+        three_way = st in INDEPENDENT_OPPONENT
+        blend = margin if three_way else 100 * margin / (anti + rep)
+        n_eff = (len(kept) if use_rcp else
+                 sum(1.0 if p["end"] >= WINDOW_START else OLD_POLL_WEIGHT for p in kept))
         rows.append({"state": st, "d": round(anti, 2), "r": round(rep, 2), "margin": round(margin, 2),
-                     "blend_margin": round(blend, 2), "n_polls": len(kept),
+                     "blend_margin": round(blend, 2), "n_polls": len(kept), "n_eff": n_eff,
+                     "three_way": "yes" if three_way else "no",
+                     "opponent": INDEPENDENT_OPPONENT.get(st, ""),
                      "third_party_share": round(third, 2), "rcv_final_polls": sum(1 for p in kept if p.get("rcv")),
                      "margin_published": published, "method": method, "as_of": as_of,
                      "polls": "; ".join(used), "url": url, "local_file": local,
                      "newer_polls": "; ".join(f"{label(p)} ending {p['end']}, released {p['released'] or 'n/a'}"
                                               for p in newer)})
-        report.append(f"{st}: {method}; {len(kept)} poll(s); anti-R {anti:.2f} / R {rep:.2f} -> margin {margin:+.2f}, "
+        report.append(f"{st}: {method}; {len(kept)} poll(s) (n_eff {n_eff:g}); anti-R {anti:.2f} / "
+                      f"{'R' if not three_way else INDEPENDENT_OPPONENT[st]} {rep:.2f} -> margin {margin:+.2f}, "
                       f"blend margin {blend:+.2f}, third parties {third:.1f}"
                       + (f" (RCP published {published:+.1f})" if published != "" else ""))
         for u in used:

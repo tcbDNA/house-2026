@@ -88,6 +88,13 @@ class Settings:
     governor_poll_weight: float = 0.7
     governor_poll_full_n: float = 3.0
     governor_race_sigma_extra: float = 3.0
+    # Governor WAR rules (user decisions, Oct 28). Rematch: a challenger's
+    # governor record from a race against the sitting incumbent is dropped
+    # (the incumbent keeps it, as in the House model). Third candidate:
+    # computed records from races where a third candidate won more than 5%
+    # are left out (they measure that candidate as much as the nominees).
+    governor_war_drop_rematch: bool = True
+    governor_war_exclude_third_candidate: bool = True
 
     # Item 7 — county overlay (overlay.py). Project each county slice from its
     # own 2024 margin, demographic shift and residual trend (shrunk toward its

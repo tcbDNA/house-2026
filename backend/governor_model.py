@@ -22,7 +22,11 @@ governor's election; successors who haven't get none (as appointed senators).
 
 Polls: w = governor_poll_weight with at least governor_poll_full_n polls,
 scaled down linearly below that, 0 with none; races whose anti-R candidate is
-an independent use polls only (w = 1, same scaling).
+an independent use polls only (w = 1, same scaling). Poll counts are effective
+counts (data/build_governor_poll_averages.py: polls older than the standard
+window count half). Rhode Island, where the Democrat's main opponent is an
+independent, rests on polls alone (w = 1 with any poll): the model's
+D-vs-R baseline doesn't describe that race.
 """
 from __future__ import annotations
 
@@ -45,12 +49,14 @@ class GovernorBundle:
     fund: senate.SenateBundle      # the races' fundamentals (base_margin = 2024 presidential margin)
     races: list[dict]
     not_up: dict[str, dict]        # state -> {"governor", "party"}
-    war_a: np.ndarray              # D-positive WAR effect at governor_incumbency = 0
-    war_b: np.ndarray              # its change per point of governor_incumbency
+    war: dict[str, tuple[np.ndarray, np.ndarray]]   # rule variant -> (a, b): WAR = a + governor_incumbency × b
     inc_sign: np.ndarray           # +1 D / −1 R incumbent eligible for the bonus, else 0
     poll_margin: np.ndarray = field(default_factory=lambda: np.zeros(0))
     poll_n: np.ndarray = field(default_factory=lambda: np.zeros(0))
     independent: np.ndarray = field(default_factory=lambda: np.zeros(0, dtype=bool))
+    # Races against an independent (Rhode Island): the model's D-vs-R baseline
+    # says nothing about the independent, so they rest on polls alone.
+    polls_only: np.ndarray = field(default_factory=lambda: np.zeros(0, dtype=bool))
 
     @property
     def n(self) -> int:
@@ -76,12 +82,13 @@ def load_bundle(path: Path = DATA_PATH, senate_bundle: senate.SenateBundle | Non
     pa = [r.get("poll_average") or {} for r in races]
     return GovernorBundle(
         fund=fund, races=races, not_up=raw["not_up"],
-        war_a=np.array([r["war_a"] for r in races], dtype=float),
-        war_b=np.array([r["war_b"] for r in races], dtype=float),
+        war={v: (np.array([r["war"][v]["a"] for r in races], dtype=float),
+                 np.array([r["war"][v]["b"] for r in races], dtype=float)) for v in races[0]["war"]},
         inc_sign=np.array([r["inc_sign"] for r in races], dtype=float),
         poll_margin=np.array([p.get("margin", np.nan) for p in pa], dtype=float),
-        poll_n=np.array([p.get("n_polls", 0) for p in pa], dtype=float),
-        independent=np.array([r.get("anti_r_party") == "(I)" for r in races]))
+        poll_n=np.array([p.get("n_eff", p.get("n_polls", 0)) for p in pa], dtype=float),
+        polls_only=np.array([bool(r.get("independent_race")) for r in races]),
+        independent=np.array([r.get("anti_r_party") == "(I)" or bool(r.get("independent_race")) for r in races]))
 
 
 def poll_weights(bundle: GovernorBundle, settings: Settings) -> np.ndarray:
@@ -89,14 +96,17 @@ def poll_weights(bundle: GovernorBundle, settings: Settings) -> np.ndarray:
     if not settings.governor_poll_blend or bundle.poll_n.size == 0:
         return np.zeros(bundle.n)
     base = np.where(bundle.independent, 1.0, settings.governor_poll_weight)
-    scale = np.minimum(1.0, bundle.poll_n / settings.governor_poll_full_n)
+    scale = np.where(bundle.polls_only, 1.0, np.minimum(1.0, bundle.poll_n / settings.governor_poll_full_n))
     return np.where(np.isfinite(bundle.poll_margin), base * scale, 0.0)
 
 
 def candidate_effects(bundle: GovernorBundle, settings: Settings) -> tuple[np.ndarray, np.ndarray]:
-    """(WAR, incumbency), D-positive."""
+    """(WAR, incumbency), D-positive. WAR uses the rule variant the settings
+    pick (rematch / third-candidate records; data/governor_data.py)."""
     inc = settings.governor_incumbency
-    return bundle.war_a + inc * bundle.war_b, inc * bundle.inc_sign
+    a, b = bundle.war[f"rematch{int(settings.governor_war_drop_rematch)}"
+                      f"_third{int(settings.governor_war_exclude_third_candidate)}"]
+    return a + inc * b, inc * bundle.inc_sign
 
 
 def _fundamentals(bundle: GovernorBundle, environment: float, sliders: dict, trend_discount: float,
@@ -137,6 +147,10 @@ def _flags(r: dict, proj: float) -> list[dict]:
     return out
 
 
+def _winner(row: dict) -> str:
+    return row["anti_r_party"] if row["projection"] > 0 else row["opponent_party"]
+
+
 def project(bundle: GovernorBundle, environment: float, sliders: dict | None = None,
             trend_discount: float = DEFAULT_TREND_WEIGHT, settings: Settings = DEFAULT_SETTINGS,
             frame: str = "race") -> dict:
@@ -154,7 +168,8 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
     for i, r in enumerate(bundle.races):
         p = float(proj[i])
         prior = r.get("party") or ""
-        winner = ("D" if r.get("anti_r_party") != "(I)" else "I") if p > 0 else "R"
+        neg_party = r.get("opponent_party") or "(R)"
+        winner = (r.get("anti_r_party") or "(D)").strip("()") if p > 0 else neg_party.strip("()")
         flip = None
         if prior and prior.strip("()") != winner:
             flip = f"to_{winner}"
@@ -165,6 +180,7 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
             "incumbent_won_gov_election": r.get("incumbent_won_gov_election"),
             "d_nominee": r.get("d_nominee"), "r_nominee": r.get("r_nominee"),
             "anti_r_candidate": r.get("anti_r_candidate"), "anti_r_party": r.get("anti_r_party"),
+            "opponent": r.get("opponent") or r.get("r_nominee"), "opponent_party": neg_party,
             "other_candidates": r.get("other_candidates") or [],
             "presidential_margin_2024": r.get("presidential_margin_2024"),
             "state_trend_applied": round(float(trend_applied[i]), 2),
@@ -172,7 +188,7 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
             "fundamentals": round(float(fund[i]), 2),
             "war_effect": round(float(war[i]), 2), "war_detail": r.get("war_detail"),
             "incumbency_adj": round(float(inc[i]), 2),
-            "model_projection": round(float(model[i]), 2),
+            "model_projection": None if bundle.polls_only[i] else round(float(model[i]), 2),
             "poll_average": r.get("poll_average"),
             "poll_weight": round(float(w[i]), 3),
             "independent_candidate": bool(bundle.independent[i]),
@@ -189,9 +205,9 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
         "uniform_swing": swing, "trend_discount": trend_discount,
         "summary": {
             "races_up": bundle.n,
-            "d_up": sum(1 for x in rows if x["projection"] > 0 and x["anti_r_party"] != "(I)"),
-            "i_up": sum(1 for x in rows if x["projection"] > 0 and x["anti_r_party"] == "(I)"),
-            "r_up": sum(1 for x in rows if x["projection"] < 0),
+            "d_up": sum(1 for x in rows if _winner(x) == "(D)"),
+            "i_up": sum(1 for x in rows if _winner(x) == "(I)"),
+            "r_up": sum(1 for x in rows if _winner(x) == "(R)"),
             "not_up_d": sum(1 for p in not_up.values() if p == "(D)"),
             "not_up_r": sum(1 for p in not_up.values() if p == "(R)"),
             "not_up_i": sum(1 for p in not_up.values() if p not in ("(D)", "(R)")),
