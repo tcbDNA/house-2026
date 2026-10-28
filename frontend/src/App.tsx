@@ -95,6 +95,7 @@ export default function App() {
   const [senateResult, setSenateResult] = useState<SenateResponse | null>(null);
   const [governorResult, setGovernorResult] = useState<GovernorResponse | null>(null);
   const [pickedState, setPickedState] = useState<string | null>(null);
+  const [pickedGovState, setPickedGovState] = useState<string | null>(null);
   const [pickedDistrictCounties, setPickedDistrictCounties] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -253,7 +254,7 @@ export default function App() {
             <>
               <GovernorSummaryView summary={governorResult.summary} />
               <div className="hidden md:block">
-                <GovernorMap races={governorResult.races} />
+                <GovernorMap races={governorResult.races} onPickState={setPickedGovState} />
               </div>
               <GovernorTable races={governorResult.races} />
             </>
@@ -275,6 +276,16 @@ export default function App() {
           sliders={sliders}
           trendDiscount={trendDiscount}
           onClose={() => setPickedDistrictCounties(null)}
+        />
+      )}
+      {pickedGovState && (
+        <CountyMap
+          state={pickedGovState}
+          environment={environment}
+          sliders={sliders}
+          trendDiscount={trendDiscount}
+          race="governor"
+          onClose={() => setPickedGovState(null)}
         />
       )}
       {pickedState && (() => {

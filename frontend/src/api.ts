@@ -83,8 +83,9 @@ export async function fetchCounties(
   sliders: SliderValues,
   trendDiscount: number,
   signal?: AbortSignal,
+  race: "senate" | "governor" = "senate",
 ): Promise<CountyResponse> {
-  const res = await fetch(`/api/state/${state}/counties`, {
+  const res = await fetch(`/api/state/${state}/counties${race === "governor" ? "?race=governor" : ""}`, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount, ...requestContext }),

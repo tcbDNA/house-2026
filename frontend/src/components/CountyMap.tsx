@@ -12,6 +12,8 @@ type Props = {
   sliders: SliderValues;
   trendDiscount: number;
   indWinner?: boolean;
+  /** Which statewide race the counties reconcile to (state mode only). */
+  race?: "senate" | "governor";
   onClose: () => void;
   /** District-mode: when set, only show counties touching this district,
    *  with partial counties (overlap < 99%) rendered at reduced opacity and
@@ -107,7 +109,7 @@ function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtra
   </div>`;
 }
 
-export function CountyMap({ state, environment, sliders, trendDiscount, indWinner, onClose, district }: Props) {
+export function CountyMap({ state, environment, sliders, trendDiscount, indWinner, race = "senate", onClose, district }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MLMap | null>(null);
   const popupRef = useRef<Popup | null>(null);
@@ -135,7 +137,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
             // works unchanged.
             uniform_swing: 0, axis_weight: 0, turnout_ratio_2026: d.turnout_ratio_2026 ?? 0,
           }) as unknown as CountyResponse)
-      : fetchCounties(state, environment, sliders, trendDiscount, ac.signal);
+      : fetchCounties(state, environment, sliders, trendDiscount, ac.signal, race);
     fetcher
       .then(setData)
       .catch((e) => { if (e.name !== "AbortError") setError(e.message); });
@@ -393,7 +395,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
       <div className={`bg-white rounded-lg shadow-xl w-full ${district ? "max-w-6xl" : "max-w-5xl"} max-h-[90vh] flex flex-col`} onClick={(e) => e.stopPropagation()}>
         <div className="p-4 border-b flex justify-between items-start">
           <div>
-            <h2 className="text-xl font-bold">{district ? `${district} · County overlay` : `${state} · County projections`}</h2>
+            <h2 className="text-xl font-bold">{district ? `${district} · County overlay` : `${state} · County projections${race === "governor" ? " (governor)" : ""}`}</h2>
             {district && districtDetail && (
               <div className="text-xs mt-0.5">
                 <span className={districtDetail.party === "(D)" ? "text-blue-700" : districtDetail.party === "(R)" ? "text-red-700" : "text-slate-600"}>

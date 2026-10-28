@@ -293,21 +293,41 @@ def _vote_estimates(total_24: float, proj: float, ratio: float) -> tuple[int, in
     return est, d, est - d
 
 
-def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, settings: Settings) -> dict:
+def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, settings: Settings,
+                            race: str = "senate") -> dict:
     """Item 7: each county projected from its own margin, demographic shift
     and shrunk residual trend, plus the Senate swing and candidate effects and
-    one reconciling shift to the seat (or, with no race, the state) projection."""
+    one reconciling shift to the seat (or, with no race, the state) projection.
+    race="governor": the same for the state's governor race — candidate terms
+    from the governors model, county partisanship scaled by its partisan
+    slope, reconciled to the governor projection."""
     st = state.upper()
     sb = SENATE_BUNDLE
     resid, center = senate.all_state_residuals(sb, settings, req.frame)
     counties = [c for c in COUNTY_BUNDLE.counties if c["state"] == st]
-    senate_result = senate.project(sb, environment=req.environment, sliders=sliders,
-                                   trend_discount=req.trend_discount, settings=settings, frame=req.frame)
-    seat = next((s for s in senate_result["seats"] if s["state"] == st), None)
+    if race == "governor":
+        gov = governors.project(GOVERNOR_BUNDLE, environment=req.environment, sliders=sliders,
+                                trend_discount=req.trend_discount, settings=settings, frame=req.frame)
+        g = next((r for r in gov["races"] if r["state"] == st), None)
+        seat = None if g is None else {"projection": g["projection"], "war_adj_discounted": g["war_effect"],
+                                       "incumbency_adj": g["incumbency_adj"], "challenger_adj": 0.0}
+    else:
+        senate_result = senate.project(sb, environment=req.environment, sliders=sliders,
+                                       trend_discount=req.trend_discount, settings=settings, frame=req.frame)
+        seat = next((s for s in senate_result["seats"] if s["state"] == st), None)
     turnout, turnout_source = county.turnout_ratio(state=st)
     result = {"environment": req.environment, "sliders": sliders, "trend_discount": req.trend_discount,
               "turnout_ratio_2026": turnout, "turnout_source": turnout_source,
               "senate_seat": seat, "counties": [], "overlay": "slice_projections"}
+    slope = 1.0
+    if race == "governor":
+        result.update({"senate_seat": None, "race": "governor", "governor_race": g})
+        if g is not None and g.get("model_projection") is None:
+            result["unavailable_reason"] = (f"{st}'s governor race is modeled on polls only (the Democrat against an "
+                                            "independent), so there is no county-level projection for it.")
+            return result
+        if g is not None:
+            slope = settings.governor_partisan_slope
     if not counties:
         result["unavailable_reason"] = f"No county-level 2024 presidential data available for {st}."
         return result
@@ -325,7 +345,7 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
                   + swing + float(demo_state))
     terms = overlay.CountyTerms(counties, population_shares(counties), sliders, settings, req.frame, center)
     r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
-                               req.trend_discount, settings)
+                               req.trend_discount, settings, slope)
     for c, i, w, res, demo, proj in r["rows"]:
         est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj, turnout)
         result["counties"].append({
@@ -347,13 +367,19 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
 
 
 @app.post("/api/state/{state}/counties")
-def state_counties(state: str, req: ProjectRequest):
+def state_counties(state: str, req: ProjectRequest, race: str = "senate"):
+    """County projections for a state's Senate race (default) or, with
+    ?race=governor, its governor race (slice projections only)."""
     sliders = req.sliders.model_dump()
     for k in ("hispanic", "black", "asian", "white_nh",
               "white_college", "white_non_college", "nonwhite_college", "nonwhite_non_college",
               "under_30", "age_30_44", "age_45_64", "age_65_plus"):
         sliders[k] = max(-100, min(100, sliders[k]))
     settings = _settings(req.settings)
+    if race == "governor":
+        if GOVERNOR_BUNDLE is None:
+            raise HTTPException(status_code=503, detail="governor data not built")
+        return _state_counties_overlay(state, req, sliders, settings, race="governor")
     if settings.overlay_slice_projections:
         return _state_counties_overlay(state, req, sliders, settings)
 
