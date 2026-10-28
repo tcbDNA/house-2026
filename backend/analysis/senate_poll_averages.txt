@@ -10,7 +10,7 @@ OH: RCP average, Rasmussen removed; 9 poll(s); anti-R 48.22 / R 44.33 -> margin 
     - Bowling Green/YouGov 9/29 - 10/9
     - CNN 9/29 - 10/5
     - NY Times/Siena 9/22 - 10/1
-TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.17 / R 45.28 -> margin +2.89, blend margin +3.10 (RCP published +1.8)
+TX: recomputed: newer polls than RCP's average; 14 poll(s); anti-R 48.47 / R 45.66 -> margin +2.81, blend margin +2.99 (RCP published +1.8)
     newer than RCP's average (built 2026-10-27): YouGov Blue for 254 Labs ending 2026-10-26 released 2026-10-28
     - YouGov Blue for 254 Labs, ending 2026-10-26 (full ballot, 51/43)
     - VoteHub/Verasight for VoteHub, ending 2026-10-20 (full ballot, 47.6/45.2)
@@ -18,7 +18,6 @@ TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.17 / R 45.
     - Emerson College for Nexstar Media, ending 2026-10-19 (full ballot, 48/46)
     - Slingshot Strategies (TPOR) for Texas Public Opinion Research, ending 2026-10-18 (full ballot, 51/47)
     - Pollfinity, ending 2026-10-18 (full ballot, 48/43)
-    - Cor Strategies for Heritage Action (R-flagged), ending 2026-10-15 (full ballot, 44/40)
     - Univ. of Houston Hobby School, ending 2026-10-14 (full ballot, 48/46)
     - InsiderAdvantage, ending 2026-10-14 (full ballot, 48/49)
     - New River Strategies/GS Strategy Group for The Cook Political Report, ending 2026-10-13 (full ballot, 49/44)
@@ -27,6 +26,7 @@ TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.17 / R 45.
     - ReconMR/Siena, ending 2026-10-08 (full ballot, 48/44)
     - Trafalgar Group (R-flagged), ending 2026-10-08 (full ballot, 47/44)
     - Univ. of Texas/Texas Politics Project (YouGov) for University of Texas, ending 2026-10-05 (full ballot, 50/47)
+    left out: Cor Strategies (Heritage Action; not counted, user decision Oct 28)
 AK: RCP average, Rasmussen removed; 4 poll(s); anti-R 50.00 / R 48.25 -> margin +1.75, blend margin +1.78 (RCP published +1.2)
     - Data for Progress 10/8 - 10/16
     - PPP 10/14 - 10/15
@@ -70,7 +70,7 @@ SC: RCP average, Rasmussen removed; 4 poll(s); anti-R 44.50 / R 46.50 -> margin 
     - The Citadel 10/14 - 10/25
     - Trafalgar Group 10/16 - 10/18
     - InsiderAdvantage 9/28 - 9/29
-    left out (unverified): onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found)
+    left out: onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found)
 MI: RCP average, Rasmussen removed; 7 poll(s); anti-R 48.43 / R 45.86 -> margin +2.57, blend margin +2.73 (RCP published +2.5)
     - Detroit News/Glengariff 10/19 - 10/22
     - InsiderAdvantage 10/21 - 10/22

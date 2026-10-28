@@ -4,6 +4,8 @@ Rules (user decisions, Oct 2026):
   * Excluded pollsters: Rasmussen Reports and ActiVote (user decision), and
     Wedgewood Polls, which admitted on Oct 20, 2026 that its polls were
     fabricated (sources/excluded_pollsters/).
+  * Heritage Action's Cor Strategies poll in Texas is not counted (user
+    decision Oct 28; NOT_COUNTED, LEAVE_OUT_NOT_COUNTED = False counts it).
   * Start from RealClearPolling's average, with Rasmussen Reports removed:
     the remaining polls RCP averaged, re-averaged (ActiVote and Wedgewood are
     never in an RCP average). A poll RCP lists but has not yet averaged can
@@ -56,6 +58,10 @@ EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood")
 # Polls that can't be traced to any release (no source recorded anywhere).
 UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
               "Poliwave only, 'Source: Not recorded'; no release found"}
+# Polls left out by user decision, keyed by (state, pollster as compiled).
+# LEAVE_OUT_NOT_COUNTED = False counts them like any other poll.
+LEAVE_OUT_NOT_COUNTED = True
+NOT_COUNTED = {("TX", "Cor Strategies"): "Heritage Action; not counted, user decision Oct 28"}
 # Polls RCP lists but has not yet put in its average, counted in the RCP
 # average ahead of RCP (user decision, Oct 27: RCP will add it). Keyed by
 # (state, pollster and dates as RCP's feed lists them). False: RCP's
@@ -222,9 +228,10 @@ def build():
                   f"recompute window: polls ending on or after {WINDOW_START}.\n")
     for st in RCP_FEEDS:
         polls = comp[st] if st in comp else other_polls(st)
-        usable = [p for p in polls if not excluded(p["pollster"]) and (st, p["pollster"]) not in UNVERIFIED]
-        dropped = [f"{p['pollster']} ({UNVERIFIED[(st, p['pollster'])]})" for p in polls
-                   if (st, p["pollster"]) in UNVERIFIED]
+        left_out = {**UNVERIFIED, **(NOT_COUNTED if LEAVE_OUT_NOT_COUNTED else {})}
+        usable = [p for p in polls if not excluded(p["pollster"]) and (st, p["pollster"]) not in left_out]
+        dropped = [f"{p['pollster']} ({left_out[(st, p['pollster'])]})" for p in polls
+                   if (st, p["pollster"]) in left_out]
         rcp = load_rcp(st)
         newer = []
         if rcp:
@@ -293,7 +300,7 @@ def build():
         for u in used:
             report.append(f"    - {u}")
         if dropped:
-            report.append(f"    left out (unverified): {'; '.join(dropped)}")
+            report.append(f"    left out: {'; '.join(dropped)}")
     with OUT.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
