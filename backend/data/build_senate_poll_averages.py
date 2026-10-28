@@ -6,6 +6,8 @@ Rules (user decisions, Oct 2026):
     fabricated (sources/excluded_pollsters/).
   * Heritage Action's Cor Strategies poll in Texas is not counted (user
     decision Oct 28; NOT_COUNTED, LEAVE_OUT_NOT_COUNTED = False counts it).
+  * Polls with a partisan sponsor are not counted, including any RCP has
+    averaged (user decision Oct 28; LEAVE_OUT_PARTISAN_SPONSORS).
   * Recomputed averages take one poll per pollster; polls sponsored by others
     are the pollster's, but YouGov Blue counts separately from YouGov (user
     decision Oct 28; YOUGOV_BLUE_OWN_POLLSTER).
@@ -65,6 +67,10 @@ UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
 # LEAVE_OUT_NOT_COUNTED = False counts them like any other poll.
 LEAVE_OUT_NOT_COUNTED = True
 NOT_COUNTED = {("TX", "Cor Strategies"): "Heritage Action; not counted, user decision Oct 28"}
+# Polls with a partisan sponsor (a named sponsor plus a partisan flag: a
+# candidate, campaign, party, PAC or partisan group) are not counted, including
+# any RCP has averaged (user decision, Oct 28). False: counted like any other poll.
+LEAVE_OUT_PARTISAN_SPONSORS = True
 # YouGov Blue counts as its own pollster rather than as YouGov (user decision,
 # Oct 28). False: one key for every YouGov poll.
 YOUGOV_BLUE_OWN_POLLSTER = True
@@ -129,6 +135,18 @@ def pollster_key(name: str) -> str:
 
 def excluded(name: str) -> bool:
     return any(x in name.lower() for x in EXCLUDED_POLLSTERS)
+
+
+def partisan_sponsor(p: dict) -> bool:
+    return LEAVE_OUT_PARTISAN_SPONSORS and bool(p.get("sponsor") and p.get("partisan"))
+
+
+def same_poll(q: dict, a: dict) -> bool:
+    """Compiled poll `q` is RCP row `a`: same end date, and the pollster's or
+    sponsor's first word is in RCP's name."""
+    words = set(re.findall(r"[a-z]+", a["pollster"].lower()))
+    first = lambda s: next((w for w in re.findall(r"[a-z]+", (s or "").lower()) if w not in ("a", "an", "the")), None)
+    return q["end"] == a["end"] and (first(q["pollster"]) in words or first(q.get("sponsor")) in words)
 
 
 def rcp_end(dates: str, year: int = 2026) -> date:
@@ -238,9 +256,13 @@ def build():
     for st in RCP_FEEDS:
         polls = comp[st] if st in comp else other_polls(st)
         left_out = {**UNVERIFIED, **(NOT_COUNTED if LEAVE_OUT_NOT_COUNTED else {})}
-        usable = [p for p in polls if not excluded(p["pollster"]) and (st, p["pollster"]) not in left_out]
+        usable = [p for p in polls if not excluded(p["pollster"]) and (st, p["pollster"]) not in left_out
+                  and not partisan_sponsor(p)]
         dropped = [f"{p['pollster']} ({left_out[(st, p['pollster'])]})" for p in polls
                    if (st, p["pollster"]) in left_out]
+        sponsored = [p for p in polls if partisan_sponsor(p)]
+        dropped += [f"{label(p)}, ending {p['end']} (partisan sponsor)" for p in sponsored
+                    if p["end"] >= WINDOW_START and (st, p["pollster"]) not in left_out]
         rcp = load_rcp(st)
         newer = []
         if rcp:
@@ -248,20 +270,23 @@ def build():
             newer = [p for p in usable if p["end"] > latest
                      and (p["released"] is None or p["released"] >= rcp["built"])]
         if rcp and not newer:
-            kept = [a for a in rcp["averaged"] if not excluded(a["pollster"])]
-            ras = len(kept) < len(rcp["averaged"])
+            ps = [a for a in rcp["averaged"] if any(same_poll(q, a) for q in sponsored)]
+            kept = [a for a in rcp["averaged"] if not excluded(a["pollster"]) and a not in ps]
+            ras = any(excluded(a["pollster"]) for a in rcp["averaged"])
             added = [a for a in kept if a["pending"]]
             anti = sum(a["anti_r"] for a in kept) / len(kept)
             rep = sum(a["r"] for a in kept) / len(kept)
-            if not ras and not added:   # nothing changed: must reproduce RCP's published average
+            if not ras and not added and not ps:   # nothing changed: must reproduce RCP's published average
                 assert abs(round(anti, 1) - rcp["published"][0]) < 0.051 and \
                        abs(round(rep, 1) - rcp["published"][1]) < 0.051, (st, anti, rep, rcp["published"])
             used = [f"{a['pollster']} {a['dates']}" + (" (listed by RCP, counted ahead of RCP)" if a["pending"] else "")
                     for a in kept]
             plus = "; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in added) + \
                 " (listed by RCP, not yet averaged)" if added else ""
-            method = ("RCP average, Rasmussen removed" if ras else "RCP average") + plus
-            src = "RealClearPolling" + (", Rasmussen removed" if ras else "") + plus
+            minus = ("; partisan-sponsored poll removed: " + ", ".join(f"{a['pollster']} {a['dates']}" for a in ps)
+                     if ps else "")
+            method = ("RCP average, Rasmussen removed" if ras else "RCP average") + minus + plus
+            src = "RealClearPolling" + (", Rasmussen removed" if ras else "") + minus + plus
             as_of, url, local = rcp["built"].isoformat(), rcp["url"], rcp["local_file"]
             published = round(rcp["published"][0] - rcp["published"][1], 1)
             n = len(kept)
@@ -283,6 +308,8 @@ def build():
                    f"{WINDOW_START} or later, Rasmussen/ActiVote/Wedgewood removed" if rcp else
                    f"RCP-style average (RCP publishes none): latest poll by each pollster ending "
                    f"{WINDOW_START} or later, Rasmussen/ActiVote/Wedgewood removed")
+            if any(p["end"] >= WINDOW_START for p in sponsored):
+                src += ", partisan-sponsored polls left out"
             as_of = RETRIEVED.isoformat()
             url = f"https://www.poliwave.com/us/{st.lower()}/sen-fed"
             local = ("sources/senate_polls_2026/recent/recent_polls_compiled.json" if st in comp

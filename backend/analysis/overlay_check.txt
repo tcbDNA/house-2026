@@ -42,18 +42,18 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   MN     -5.93   -0.00  -0.01  -0.42    -5.49  poll blend (expected)
   GA     -5.57   -0.01  -0.02  -0.75    -4.80  FLAG · poll blend (expected)
   MI     -4.58   +0.00  +0.01  -0.11    -4.47  poll blend (expected)
-  NE     +4.17   +0.00  +0.02  +0.22    +3.93  poll blend (expected)
   RI     -3.61   +0.21  +0.05  +0.08    -3.95  poll blend (expected)
   FL     -3.56   -0.05  -0.26  -0.71    -2.55  FLAG · poll blend (expected)
   ME     -3.40   +0.49  -0.00  -0.02    -3.86  poll blend (expected)
   IA     +3.39   -0.00  -0.00  +0.14    +3.26  poll blend (expected)
   NH     -3.37   -0.00  +0.00  +0.02    -3.39  poll blend (expected)
+  KS     +3.23   -0.10  +0.04  -0.06    +3.35  poll blend (expected)
   AK     +2.97   +0.09  -0.07  -0.00    +2.96  poll blend (expected)
   SC     +2.85   -0.00  +0.00  -0.37    +3.22  poll blend (expected)
   AR     +2.74   -0.00  +0.02  -0.29    +3.02  poll blend (expected)
   TX     +2.16   -0.02  -0.30  -0.78    +3.25  FLAG · poll blend (expected)
   NM     -1.91   -0.00  -0.02  -0.14    -1.75  poll blend (expected)
-  KS     +1.85   -0.10  +0.04  -0.06    +1.97  poll blend (expected)
+  NE     +1.68   +0.00  +0.02  +0.22    +1.44  poll blend (expected)
   MA     +1.53   +0.01  +0.02  -0.16    +1.66  poll blend (expected)
   UT     -1.17   -0.35  -0.06  -0.76    +0.00  FLAG · no 2026 race
   OH     +1.00   -0.06  -0.05  -0.35    +1.47  poll blend (expected)
@@ -77,10 +77,10 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   AZ     -0.21   -0.02  +0.02  -0.21    +0.00  no 2026 race
   MT     -0.18   -0.04  -0.01  -0.01    -0.11  poll blend (expected)
   VT     -0.13   +0.00  -0.00  -0.13    +0.00  no 2026 race
-  NC     -0.10   +0.00  -0.13  -0.35    +0.38  poll blend (expected)
   NJ     -0.10   +0.02  +0.04  -0.16    +0.00  
   WI     -0.10   -0.00  -0.01  -0.10    +0.00  no 2026 race
   WA     -0.09   +0.00  +0.01  -0.10    +0.00  no 2026 race
+  NC     -0.08   +0.00  -0.13  -0.35    +0.40  poll blend (expected)
   NV     +0.08   -0.00  +0.01  +0.07    +0.00  no 2026 race
   NY     -0.07   +0.06  +0.07  -0.20    +0.00  no 2026 race
   HI     -0.06   +0.01  +0.04  -0.11    +0.00  no 2026 race
