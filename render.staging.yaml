@@ -1,43 +1,45 @@
-# Render Blueprint for a STAGING copy of the app, built from the model-v4
-# branch, so the new model and UI can be checked before merging into main.
-# Production (render.yaml, main branch) is untouched.
+# Render Blueprint for a PREVIEW copy of the app, built from the `governors`
+# branch, so the governors forecast can be checked before it is merged into
+# main. Production (render.yaml, main branch) is untouched: the services
+# below have their own names, and nothing here refers to a production service.
 #
 # One-time setup (Render dashboard): New → Blueprint → this repo, branch
-# model-v4, Blueprint Path "render.staging.yaml". Render creates the two
-# services below; each push to model-v4 redeploys them.
+# `governors`, Blueprint Path `render.staging.yaml`. Render creates the two
+# services below; each push to `governors` redeploys them.
 #
-# Why not Render's preview environments: those need a Pro workspace, and
-# per-service PR previews would send the preview frontend's /api calls to the
-# production backend. This pair keeps staging frontend → staging backend.
+# Cost: the backend is on the free plan (it sleeps after 15 min idle, ~30 s to
+# wake; free web services share the workspace's monthly free hours with
+# production). Static sites are always free. No databases, workers, disks or
+# environment groups are created.
 #
 # If Render can't give the backend the URL below (onrender.com names are
 # global), change the rewrite destination to the URL it assigns.
 #
 # Git LFS: .lfsconfig keeps clones from downloading the archived sources.
-# After merging, delete these services (or point them at another branch).
+# After the merge, delete these two services in the dashboard.
 services:
   - type: web
-    name: house-2026-backend-staging
+    name: house-2026-gov-preview-backend
     runtime: python
     rootDir: backend
-    branch: model-v4
+    branch: governors
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     autoDeploy: true
 
   - type: web
-    name: house-2026-frontend-staging
+    name: house-2026-gov-preview-frontend
     runtime: static
     rootDir: frontend
-    branch: model-v4
+    branch: governors
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     autoDeploy: true
     routes:
       - type: rewrite
         source: /api/*
-        destination: https://house-2026-backend-staging.onrender.com/api/*
+        destination: https://house-2026-gov-preview-backend.onrender.com/api/*
       - type: rewrite
         source: /*
         destination: /index.html
