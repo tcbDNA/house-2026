@@ -739,7 +739,7 @@
     "r": 50,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
     "note": "RCP labels the sample RV; VoteHub and 270toWin say LV."
@@ -811,7 +811,7 @@
     "r": 52,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin"
    },
@@ -994,7 +994,7 @@
     "note": "Moody 49, Nixon 45, 916 LV, MOE 3.2 (RCP). The Florida Politics article RCP links (https://floridapolitics.com/archives/827487-final-st-pete-polls-byron-donalds-leads-david-jolly-48-to-46-as-long-as-republicans-show-up/) could not be retrieved: HTTP 403 browser block to curl and headless Chrome, 402 to WebFetch, no archive.ph copy, Wayback rate-limited. St. Pete Polls' own site lists no 2026 polls. Third-party and undecided shares not checked."
    }
   ],
-  "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate Oct 24, content through Oct 28) now averages 9/28-10/26, Moody 49.6, Nixon 42.4, 7 polls: NYT/Siena 10/19-26 added. Its latest poll ends after RedBox and Echelon, so Florida uses RCP's average again. A new ActiVote poll (Oct 17-27) is recorded only (excluded pollster). Oct 28 second check (13:48 UTC): RCP (built Oct 28 08:26 CT) added St. Pete Polls 10/25-27 (Moody 49, Nixon 45) in place of St. Pete's 10/5-7 poll: 9/28-10/27, Moody 49.9, Nixon 42.4, 7 polls."
+  "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate Oct 24, content through Oct 28) now averages 9/28-10/26, Moody 49.6, Nixon 42.4, 7 polls: NYT/Siena 10/19-26 added. Its latest poll ends after RedBox and Echelon, so Florida uses RCP's average again. A new ActiVote poll (Oct 17-27) is recorded only (excluded pollster). Oct 28 second check (13:48 UTC): RCP (built Oct 28 08:26 CT) added St. Pete Polls 10/25-27 (Moody 49, Nixon 45) in place of St. Pete's 10/5-7 poll: 9/28-10/27, Moody 49.9, Nixon 42.4, 7 polls. Oct 28 third check (17:29 UTC): RCP (built Oct 28 08:27 CT) dropped NBC 6/Mason-Dixon 9/28-10/1 and Stetson 10/1-10/9 from the average: 10/2-10/27, Moody 49.4, Nixon 43.2, 5 polls."
  },
  "IA": {
   "polls": [
@@ -2611,7 +2611,7 @@
     "note": "State oversample (n=407) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q21 p.11): Ricketts 47, Osborn (non-partisan) 46, Richards (NWP) 2, Conboy (AFP) 1, someone else 1, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
    }
   ],
-  "notes": "RCP has no Nebraska average (feed 9035 has no average row, built Oct 7; the page sets hideRcpAverageRow). in_rcp_average is null. Release details come from ../../ne_senate_2026/README.md (same day). Pre-Oct: co/efficient 9/28-30 (270toWin dates it 10/02). No Rasmussen or ActiVote poll. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
+  "notes": "RCP has no Nebraska average (feed 9035 has no average row, built Oct 7; the page sets hideRcpAverageRow). in_rcp_average is null. Release details come from ../../ne_senate_2026/README.md (same day). Pre-Oct: co/efficient 9/28-30 (270toWin dates it 10/02). No Rasmussen or ActiVote poll. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 third check: RCP's feed was rebuilt (Oct 28 10:41 CT) and now lists Echelon 10/16-23, National Public Affairs 10/15-18 and 10/2-5, and Wedgewood 9/14-15 (excluded), still with no average; the first three are already compiled here."
  },
  "MT": {
   "polls": [

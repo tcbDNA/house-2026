@@ -21,13 +21,13 @@ IA      -4.8    -0.4     -0.4      -4.4     -4.4  10  Recomputed (RCP average pr
 SD     -28.9   -15.7    -16.8     -13.3    -12.1   3  [independent] RealClearPolling; Emerson 10/19 - 10/20; Quantus Insights 10/17 - 10/19; SDNW/Mason-Dixon 10/12 - 10/14
 AK      -2.2    +1.8     +1.8      -4.0     -4.0   4  RealClearPolling, Rasmussen removed; Data for Progress 10/8 - 10/16; PPP 10/14 - 10/15; InsiderAdvantage 10/9 - 10/10; Alaska Survey Research 10/1 - 10/3
 TX      -1.5    +2.0     +2.1      -3.5     -3.6  10  RealClearPolling, Rasmussen removed; Univision/YouGov 10/13 - 10/21; Emerson 10/17 - 10/19; FOX News 10/15 - 10/19; TPOR 10/15 - 10/18; InsiderAdvantage 10/13 - 10/14; University of Houston 10/10 - 10/14; CBS News 10/8 - 10/16; Cook Political Report 10/9 - 10/13; Quantus Insights 10/9 - 10/11; Marist 10/8 - 10/11
-FL      -3.0    -7.4     -8.1      +4.4     +5.0   7  RealClearPolling; NY Times/Siena 10/19 - 10/26; St. Pete Polls 10/25 - 10/27; co/efficient 10/18 - 10/20; Univ. of North Florida 10/12 - 10/19; Univision/YouGov 10/2 - 10/15; Stetson University 10/1 - 10/9; NBC 6/Mason-Dixon 9/28 - 10/1
 NC     +10.6   +10.2    +11.2      +0.3     -0.7   8  RealClearPolling; Quantus Insights 10/24 - 10/25; Carolina Journal/Harper 10/18 - 10/20; Trafalgar Group 10/8 - 10/10; WRAL-TV/SurveyUSA 10/1 - 10/7; Carolina Forward/Change Res. 10/1 - 10/7; Elon University 9/29 - 10/8; East Carolina U. 9/30 - 10/3; Big Data Poll 9/27 - 9/29
+FL      -3.0    -6.2     -6.7      +3.2     +3.6   5  RealClearPolling; NY Times/Siena 10/19 - 10/26; St. Pete Polls 10/25 - 10/27; co/efficient 10/18 - 10/20; Univ. of North Florida 10/12 - 10/19; Univision/YouGov 10/2 - 10/15
 OH      +2.2    +3.9     +4.2      -1.7     -2.0   9  RealClearPolling, Rasmussen removed; Suffolk University 10/21 - 10/26; InsiderAdvantage 10/21 - 10/22; FOX News 10/15 - 10/19; Marist 10/15 - 10/18; Cook Political Report 10/9 - 10/13; co/efficient 10/5 - 10/6; Bowling Green/YouGov 9/29 - 10/9; CNN 9/29 - 10/5; NY Times/Siena 9/22 - 10/1
 MT     -11.5   -12.0    -12.0      +0.5     +0.5   2  [independent] RealClearPolling; Quantus Insights 10/15 - 10/18; Montana Free Press 8/27 - 9/7
 
-Races differing by more than 5 pts: raw ID, AR, RI, MS, NM, MN, GA, NH, MI, ME, SC, NE, SD; two-party ID, AR, RI, MN, GA, NH, MI, ME, NE, SD, FL
+Races differing by more than 5 pts: raw ID, AR, RI, MS, NM, MN, GA, NH, MI, ME, SC, NE, SD; two-party ID, AR, RI, MN, GA, NH, MI, ME, NE, SD
 Across the 19 two-party races, the slope of the polling average on the
-model projection is 0.67 on raw margins and 0.76 on two-party margins
+model projection is 0.66 on raw margins and 0.76 on two-party margins
 (mean |model| 12.3; mean |poll| raw 8.0, two-party 9.0).
-Mean model − poll (two-party): +0.19; RMS difference 5.48.
+Mean model − poll (two-party): +0.12; RMS difference 5.43.

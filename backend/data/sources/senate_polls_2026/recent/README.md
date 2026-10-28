@@ -171,3 +171,15 @@ Every RCP feed, VoteHub's Senate dump and Poliwave's 35 race pages were download
 | `poliwave_mn_sen.html`, `poliwave_sc_sen.html` | https://www.poliwave.com/us/<st>/sen-fed | Now list the NYT/Siena polls (MN 54/40, n 752; SC 48/48, n 707; Oct 19-26), matching RCP. |
 
 The release RCP links, https://floridapolitics.com/archives/827487-final-st-pete-polls-byron-donalds-leads-david-jolly-48-to-46-as-long-as-republicans-show-up/, could not be retrieved: curl and headless Chrome got Florida Politics' "Browser Update Required" block (HTTP 403), WebFetch got HTTP 402, archive.ph has no copy and the Wayback Machine was rate-limiting. St. Pete Polls' own site (https://stpetepolls.org/) lists no 2026 polls. The poll's numbers therefore come from RCP's feed, matching the NYT list.
+
+### Third check, 2026-10-28 17:29 UTC (RCP drops two Florida polls; from the user's third NYT poll list paste)
+
+Every RCP feed, VoteHub's Senate dump and Poliwave's 35 race pages were downloaded again (17:29 UTC) and compared with the saved copies.
+
+| File | URL | Notes |
+|---|---|---|
+| `rcp_fl_8948.json` | https://orig.realclearpolitics.com/poll/race/8948/polling_data.json | Built Oct 28 08:27 CT: NBC 6/Mason-Dixon 9/28-10/1 and Stetson 10/1-10/9 are out of the average, which is now 10/2-10/27, Moody 49.4, Nixon 43.2, 5 polls (NYT/Siena, St. Pete Polls 10/25-27, co/efficient, UNF, Univision/YouGov). |
+| `rcp_sc_9115.json`, `rcp_mn_8922.json` | same pattern | lastBuildDate only (SC 09:42 CT, MN 08:23 CT); rows and averages unchanged. |
+| `rcp_ne_9035.json` | https://orig.realclearpolitics.com/poll/race/9035/polling_data.json | Rebuilt Oct 28 10:41 CT (was Oct 7). Now lists Echelon Insights 10/16-23, National Public Affairs 10/15-18 and 10/2-5, and Wedgewood 9/14-15 (excluded pollster); still no average row. Not used by the build (Nebraska is recomputed from the compiled polls, which already have the first three). |
+| `votehub_senate_all.json` | https://polling.votehub.com/site/polls?poll_type=us-senator&limit=2000 | Five new 2026 rows, all already compiled from other sources: St. Pete Polls FL 10/25-27, NYT/Siena FL, MN and SC, Suffolk OH. |
+| `poliwave_oh_sen.html` | https://www.poliwave.com/us/oh/sen-fed | Now lists Suffolk 10/21-26 (47/44, n 500), matching RCP. |
