@@ -1,0 +1,247 @@
+{{Short description|none}}
+{{use mdy dates|date=January 2022}}
+{{for|related races|2025 United States elections}}
+{{Infobox election
+| election_name = 2025 United States gubernatorial elections
+| image1 = 
+| type = legislative
+| seats_for_election = 2 governorships
+| election_date = November 4, 2025
+| ongoing = no
+| previous_election = 2024 United States gubernatorial elections
+| previous_year = 2024
+| next_election = 2026 United States gubernatorial elections
+| next_year = 2026
+| previous_seat_election = 2021 United States gubernatorial elections
+| previous_seat_year = 2021
+| next_seat_election = 2029 United States gubernatorial elections
+| next_seat_year = ''2029''
+| image_size = x200px
+| country = United States
+| 1blank = Seats up
+| 2blank = Seats won
+| party1 = Republican Party (United States)
+| seats_before1 = '''27'''
+| seats_after1 = '''26'''
+| seat_change1 = {{decrease}} 1
+| popular_vote1 = 2,867,291
+| percentage1 = 42.37%
+| 1data1 = '''1'''
+| 2data1 = 0
+| party2 = Democratic Party (United States)
+| seats_before2 = 23
+| seats_after2 = 24
+| seat_change2 = {{increase}} 1
+| popular_vote2 = '''3,873,467'''
+| percentage2 = '''57.23%'''
+| 1data2 = '''1'''
+| 2data2 = '''2'''
+| map_image = {{2025 United States gubernatorial elections imagemap}}
+| map_size = 324px
+| map_caption = {{legend0|#0671B0|Democratic gain}} {{legend0|#94C6DF|Democratic hold}}<br />{{Legend0|#D3D3D3|No election}}
+}}
+[[Elections in the United States#State elections|Gubernatorial elections]] were held in the United States on November 4, 2025, in [[New Jersey]] and [[Virginia]]. Both states had last elected governors in [[2021 United States gubernatorial elections|2021]], with both incumbents being ineligible to seek re-election due to term limits in their respective state constitutions.<ref>{{Cite web|agency=[[Associated Press]]|date=2021-11-03|title=Phil Murphy narrowly reelected governor in New Jersey, defeating Republican Jack Ciattarelli|url=https://6abc.com/11193888/|access-date=2021-11-03|website=6abc Philadelphia|language=en}}</ref><ref>{{Cite web|title=Term Limits on Governor|url=https://www.termlimits.com/governor_termlimits/|access-date=2021-11-03|work=U.S. Term Limits}}</ref>
+
+In the [[2024 United States presidential election]], both states voted for Democratic nominee [[Kamala Harris]] by a 5-6% margin.<ref>{{cite web |last1=Jamerson |first1=Joshua |title=New Jersey and Virginia Are Typically Blue States—but They Got Bluer |url=https://www.wsj.com/livecoverage/election-day-2025/card/new-jersey-and-virginia-are-typically-blue-states-but-they-got-bluer-bXyDOYfWEzLQKpIBYhTR?gaa_at=eafs&gaa_n=AWEtsqeZdeMDwv70wu73zsE3x7hnqS25E-IqwxCQu4DKvAFZrEdyecQ1i62mwVRJ7QA%3D&gaa_ts=6910e416&gaa_sig=QyZgpgSaN2RhXnDjwt7qhR6UPyWgHU2ynW9gFCOrwjmQ9MGDDz2ArBhWtr_00bdq_vnpKO9ZcpJCiD883Bazkw%3D%3D |publisher=Wall Street Journal |access-date=9 November 2025}}</ref> New Jersey in particular had a large swing to the right in 2024, with [[Donald Trump]] losing the state by only 6%, and had narrowly re-elected Democrat [[Phil Murphy]] in 2021, leading some to expect a close race.<ref>{{cite web |last1=Friedman |first1=Matt |last2=Han |first2=Daniel |title=New Jersey might be a swing state now |url=https://www.politico.com/news/2024/11/06/new-jersey-swing-state-red-00187965 |publisher=Politico |access-date=9 November 2025}}</ref><ref>{{cite web |last1=Catalini |first1=Mike |last2=Peoples |first2=Steve |title=Democrats wary support may be sliding among typically loyal voters in New Jersey governor’s race |url=https://apnews.com/article/new-jersey-governor-ciattarelli-sherrill-trump-812eb76552a8e6f8605d5d5bfbaccf0a |publisher=AP News |access-date=9 November 2025}}</ref> 
+
+Ultimately, Democratic nominees [[Mikie Sherrill]] and [[Abigail Spanberger]] won their races in New Jersey and Virginia, respectively, by wide margins and outperformed Harris.<ref>{{cite web |last1=Oliphant |first1=James |title=Takeaways from US election night 2025 |url=https://www.reuters.com/world/us/takeaways-us-election-night-2025-2025-11-05/ |publisher=Reuters |access-date=9 November 2025}}</ref> This is the first time since 1985 that every race in this cycle of governorships was decided by double digits. 
+
+== Partisan composition ==
+Heading into the election, there were 27 Republican governors and 23 Democratic governors in the United States.
+
+The gubernatorial seats were up in the moderately blue states of Virginia and New Jersey where there was one Republican and one Democratic seat. Republicans were defending one governorship in a state that [[Kamala Harris]] won in 2024 (Virginia). Democrats were defending one governorship in a state that Harris won (New Jersey).
+
+==Election predictions==
+Several sites and individuals publish predictions of competitive seats. These predictions looked at factors such as the strength of the [[incumbent]] (if the incumbent is running for re-election), the strength of the candidates, and the partisan leanings of the state (reflected in part by the state's [[Cook Partisan Voting Index]] rating). The predictions assigned ratings to each seat, with the rating indicating a party's predicted advantage in winning that seat.
+
+Most election predictors use:
+* "<u>tossup</u>": no advantage
+* "<u>tilt</u>" (used by some predictors): advantage that is not quite as strong as "lean"
+* "<u>lean</u>": slight advantage
+* "<u>likely</u>": significant, but surmountable, advantage
+* "<u>safe</u>" or "<u>solid</u>": near-certain chance of victory
+<!-- Colors and sorting:
+
+In many cases the incumbent has yet to say their intention of running for another term. If an incumbent intends to retire then place "<br />{{Small|(retiring)}}" after the incumbent's name.
+
+See [[Template:USRaceRating]] for how to apply rating.
+
+-->
+
+{|class="wikitable sortable"
+|- valign=bottom
+! State
+! [[Cook Partisan Voting Index|PVI]]<ref>{{Cite web |date=2025-03-06 |title=2025 Cook PVI℠: State Map and List |url=https://www.cookpolitical.com/cook-pvi/2025-partisan-voting-index/state-map-and-list |access-date=2025-05-10 |work=Cook Political Report}}</ref>
+! Incumbent
+! Last<br />race
+! scope="col" | [[Cook Political Report|Cook]]<br />{{Small|Sep. 11,<br />2025}}<ref>{{Cite web|title=2025 CPR Governor Race ratings|url=https://www.cookpolitical.com/ratings/governor-race-ratings|work=The Cook Political Report}}</ref>
+! scope="col" | [[Inside Elections|IE]]<br />{{Small|Aug. 28,<br />2025}}<ref>{{Cite web |title=Gubernatorial Ratings |url=https://insideelections.com/ratings/governor |access-date=2025-02-07 |website=insideelections.com}}</ref>
+! scope="col" | [[Sabato's Crystal Ball|Sabato]]<br />{{Small|Sep. 4,<br />2025}}<ref>{{Cite web |last=Coleman |first=J. Miles |date=2025-04-30 |title=The Governors, Part One: Democrats Start as Favorites in 2025 New Jersey and Virginia Races |url=https://centerforpolitics.org/crystalball/the-governors-part-one-democrats-start-as-favorites-in-2025-new-jersey-and-virginia/ |access-date=2025-04-30 |work=Sabato's Crystal Ball}}</ref>
+![[State Navigate|SN]]<br />{{Small|Sep. 30, <br />2025}}<ref>{{Cite web |title=Virginia, Forecast: Gov |url=https://projects.statenavigate.com/25-26/states/va/forecast-sw.html#gov |access-date=2025-09-02 |website=State Navigate |language=en-US}}</ref><ref>{{Cite web |title=2025 NJ Forecasts |url=https://projects.statenavigate.com/25-26/states/nj/forecast-sw.html#gov |access-date=2025-10-01 |website=projects.statenavigate.com |language=en}}</ref>
+!Result
+|-
+! [[#New Jersey|New Jersey]]
+| {{shading PVI|D|4}}
+| {{party shading/Democratic}} | {{sortname|Phil|Murphy}}<br />{{small|(term-limited)}}
+| {{party shading/Democratic}} data-sort-value="-51.22" | 51.22% D
+<!--Coo-->| {{USRaceRating|Lean|D}}
+<!--IE-->| {{USRaceRating|Lean|D}}
+<!--Sab-->| {{USRaceRating|Lean|D}}
+<!--WH-->| {{USRaceRating|Likely|D}}
+| {{party shading/Democratic}} data-sort-value="-56.88" | [[Mikie Sherrill|Sherrill]]<br/>56.88% D
+|-
+! [[#Virginia|Virginia]]
+| {{shading PVI|D|3}}
+| {{party shading/Republican}} | {{sortname|Glenn|Youngkin}}<br />{{small|(term-limited)}}
+| {{party shading/Republican}} data-sort-value="50.58" | 50.58% R
+<!--Coo-->| {{USRaceRating|Likely|D|Flip}}
+<!--IE-->| {{USRaceRating|Lean|D|Flip}}
+<!--Sab-->| {{USRaceRating|Likely|D|Flip}}
+<!--WH-->| {{USRaceRating|Solid|D|Flip}}
+| {{party shading/Democratic}} data-sort-value="-57.58" | [[Abigail Spanberger|Spanberger]]<br/>57.58% D {{small|(flip)}}
+|}
+
+== Race summary ==
+{| class="wikitable sortable"
+!State
+!Governor
+!Party
+!First<br />elected
+!Status
+!Candidates<ref>{{cite news |title=New Jersey Governor Election Results |work=[[The New York Times]] |date=November 4, 2025 |access-date=November 5, 2025 |url=https://www.nytimes.com/interactive/2025/11/04/us/elections/results-new-jersey-governor.html}}</ref><ref>{{cite news |title=Virginia Governor Election Results |work=[[The New York Times]] |date=November 4, 2025 |access-date=November 5, 2025 |url=https://www.nytimes.com/interactive/2025/11/04/us/elections/results-virginia-governor.html}}</ref>
+|-
+! [[2025 New Jersey gubernatorial election|New Jersey]]
+| {{sortname|Phil|Murphy}}
+| {{party shading/Text/Democratic}}
+| [[2017 New Jersey gubernatorial election|2017]]
+| {{Party shading/Democratic/Hold}} | Incumbent term-limited.<br />Democratic hold.
+| nowrap | {{Plainlist|
+* {{party stripe|Democratic Party (US)}}{{Aye}} '''[[Mikie Sherrill]]''' (Democratic) 56.9%
+* {{party stripe|Republican Party (US)}}[[Jack Ciattarelli]] (Republican) 42.5%
+*{{party stripe|Libertarian Party (US)}}Vic Kaplan (Libertarian) 0.4%
+*{{party stripe|Socialist Workers Party (US)}}Joanne Kuniansky (Socialist Workers) 0.2%
+}}
+|-
+! [[2025 Virginia gubernatorial election|Virginia]]
+| {{sortname|Glenn|Youngkin}}
+| {{party shading/Text/Republican}}
+| [[2021 Virginia gubernatorial election|2021]]
+| {{party shading/Democratic}} | Incumbent term-limited.<br/>'''Democratic gain.'''
+| nowrap | {{Plainlist|
+* {{party stripe|Democratic Party (US)}}{{Aye}} '''[[Abigail Spanberger]]''' (Democratic) 57.6%
+* {{party stripe|Republican Party (US)}}[[Winsome Earle-Sears]] (Republican) 42.2%
+}}
+|}
+
+== New Jersey ==
+{{main|2025 New Jersey gubernatorial election}}
+{{Infobox election
+| election_name = New Jersey gubernatorial election
+| country = New Jersey
+| type = presidential
+| ongoing = no
+| previous_election = 2021 New Jersey gubernatorial election
+| previous_year = 2021
+| next_election = 2029 New Jersey gubernatorial election
+| next_year = 2029
+| image1 = Gov. Mikie Sherril (cropped)1.jpg
+| nominee1 = '''[[Mikie Sherrill]]'''
+| party1 = Democratic Party (United States)
+| running_mate1 = '''[[Dale Caldwell]]'''
+| popular_vote1 = '''1,896,610'''
+| percentage1 = '''56.88%'''
+| image2 = Jack Ciattarelli Oct 2021 crop 2.png
+| nominee2 = [[Jack Ciattarelli]]
+| party2 = Republican Party (United States)
+| running_mate2 = [[Jim Gannon (sheriff)|Jim Gannon]]
+| popular_vote2 = 1,417,705
+| percentage2 = 42.52%
+| map_image = 2025 New Jersey gubernatorial election results map by county.svg
+| map_size = 280px
+| map_caption = County results
+| title = [[Governor of New Jersey|Governor]]
+| before_election = [[Phil Murphy]]
+| before_party = Democratic Party (United States)
+| after_election = [[Mikie Sherrill]]
+| after_party = Democratic Party (United States)
+}}
+[[Governor of New Jersey|Governor]] [[Phil Murphy]] was elected to a second term in [[2021 New Jersey gubernatorial election|2021]] with 51.2% of the vote. He was [[Term limits in the United States|term-limited]] by the [[New Jersey Constitution]] and couldn't seek re-election for a third consecutive term. [[Jersey City, New Jersey|Jersey City]] [[Mayor of Jersey City, New Jersey|mayor]] [[Steven Fulop]], former [[New Jersey Senate]] president [[Stephen Sweeney]], U.S. Representatives [[Josh Gottheimer]] and [[Mikie Sherrill]], and [[Newark, New Jersey|Newark]] [[Mayor of Newark, New Jersey|mayor]] [[Ras Baraka]] ran for the Democratic nomination.<ref>{{cite web|url=https://newjerseyglobe.com/governor/fulop-announces-bid-for-governor-in-2025/|title=Fulop announces bid for Governor in 2025|last=Wildstein|first=David|date=April 11, 2023|access-date=April 11, 2023|work=[[New Jersey Globe]]}}</ref><ref>{{cite web|url=https://www.politico.com/news/2023/12/11/steve-sweeney-new-jersey-governors-race-00131060|title=Sweeney enters NJ governor’s race after upset loss as Senate president|last=Racioppi|first=Dustin|date=December 11, 2023|access-date=December 11, 2023|work=Politico}}</ref><ref>{{cite web|url=https://newjerseyglobe.com/governor/baraka-says-hell-run-for-governor-in-2025/|title=Baraka Says He’ll Run For Governor In 2025|last=Wildstein|first=David|date=February 19, 2024|access-date=February 19, 2024|work=[[New Jersey Globe]]}}</ref><ref>{{cite web|title=Rep. Josh Gottheimer makes it official: He's running for governor of New Jersey|url=https://www.northjersey.com/story/news/politics/elections/2024/11/15/josh-gottheimer-nj-governor-2025-race-election/76291264007/|last=Sobko|first=Katie|date=November 15, 2024|access-date=November 15, 2024|work=[[North Jersey]]}}</ref><ref name="Sherrill">{{cite news |title=New Jersey Rep. Mikie Sherrill’s campaign for governor takes flight |first=Matt |last=Friedman |work=[[Politico]] |date=November 18, 2024 |access-date=November 18, 2024 |url=https://www.politico.com/news/2024/11/18/sherrill-2025-campaign-takes-off-00190108}}</ref> Ultimately, Sherrill won the Democratic nomination on June 10. Former state Assemblyman [[Jack Ciattarelli]], who was the Republican nominee in [[2021 New Jersey gubernatorial election|2021]], was the Republican nominee.
+
+Sherrill won the election, becoming the second female governor of New Jersey when several media outlets called the race for her over Ciattarelli on November 4, 2025.<ref name=":0">{{Cite news |last=Fernandez |first=Madison |date=November 4, 2025 |title=Sherrill Wins NJ gov |url=https://www.politico.com/news/2025/11/04/mikie-sherrill-new-jersey-governor-wins-00635466 |url-status=live |access-date=November 17, 2025 |work=[[Politico]]}}</ref><ref>{{Cite news |date=November 4, 2025 |title=AP Race Call: Democrat Mikie Sherrill elected NJ governor over Trump-backed Jack Ciattarelli |url=https://apnews.com/article/new-jersey-nj-governor-bf74d0bf8607149b54930b3aff6236bb |url-status=live |access-date=November 17, 2025 |work=[[Associated Press]]}}</ref><ref>{{Cite news |last=Saenz |first=Arlette |date=November 4, 2025 |title=Democrat Mikie Sherrill wins New Jersey governor’s race |url=https://www.cnn.com/2025/11/04/politics/nj-governor-mikie-sherrill-wins |url-status=live |access-date=November 17, 2025 |work=[[CNN]]}}</ref> In addition, she won three consecutive terms for her party for the first time in the state since 1961.<ref name=":0" /> Sherrill outperformed expectations after Republicans outperformed in [[2021 New Jersey gubernatorial election|2021]] & [[2024 United States presidential election in New Jersey|2024]], winning by approximately 14 points against Ciattarelli.<ref>{{Cite news |date=November 4, 2025 |title=New Jersey governor election results |url=https://www.cnn.com/election/2025/results/new-jersey |url-status=live |access-date=November 17, 2025 |work=[[CNN]]}}</ref>
+
+{{Election box begin no change |title=New Jersey Democratic primary<ref name=NJprimary>{{cite news |title=New Jersey Governor Primary Election Results |work=[[The New York Times]] |issn=1553-8095 |date=June 10, 2025 |access-date=June 11, 2025 |url=https://www.nytimes.com/interactive/2025/06/10/us/elections/results-new-jersey-governor-primary.html |archive-date=June 11, 2025 |archive-url=https://web.archive.org/web/20250611000037/https://www.nytimes.com/interactive/2025/06/10/us/elections/results-new-jersey-governor-primary.html |url-status=live }}</ref>}}
+{{Election box winning candidate with party link no change|party=Democratic Party (United States)|candidate=[[Mikie Sherrill]]|votes=286,244|percentage=34.02}}
+{{Election box candidate with party link no change|party=Democratic Party (United States)|candidate=[[Ras Baraka]]|votes=173,951|percentage=20.67}}
+{{Election box candidate with party link no change|party=Democratic Party (United States)|candidate=[[Steven Fulop]]|votes=134,573|percentage=15.99}}
+{{Election box candidate with party link no change|party=Democratic Party (United States)|candidate=[[Josh Gottheimer]]|votes=97,384|percentage=11.57}}
+{{Election box candidate with party link no change|party=Democratic Party (United States)|candidate=Sean Spiller|votes=89,472|percentage=10.63}}
+{{Election box candidate with party link no change|party=Democratic Party (United States)|candidate=[[Stephen Sweeney]]|votes=59,811|percentage=7.11}}
+{{Election box total no change|votes=841,435|percentage=100.00}}
+{{Election box end}}
+
+{{Election box begin no change |title=New Jersey Republican primary<ref name=NJprimary />}}
+{{Election box winning candidate with party link no change|party=Republican Party (United States)|candidate=[[Jack Ciattarelli]]|votes=316,283|percentage=67.82}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=[[Bill Spadea]]|votes=101,408|percentage=21.75}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=[[Jon Bramnick]]|votes=29,130|percentage=6.25}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=[[Mario Kranjac]]|votes=12,782|percentage=2.74}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=Justin Barbera|votes=6,743|percentage=1.45}}
+{{Election box total no change|votes=466,346|percentage=100.00}}
+{{Election box end}}
+
+{{Election box begin |title=New Jersey general election<ref>{{Cite news|url=https://www.nj.gov/state/elections/assets/pdf/election-results/2025/2025-official-general-results-governor.pdf |archive-url=https://web.archive.org/web/20260128180945/https://www.nj.gov/state/elections/assets/pdf/election-results/2025/2025-official-general-results-governor.pdf |archive-date=January 28, 2026 |url-status=live|title=Official General Election Results: Governor|last=Way|first=Tahesha|author-link=Tahesha Way|date=December 3, 2025|work=[[Secretary of State of New Jersey]]|access-date=December 4, 2025}}</ref>}}
+{{Election box winning candidate with party link|party=Democratic Party (United States)|candidate={{ubl|[[Mikie Sherrill]]|[[Dale Caldwell]]}}|votes=1,896,610|percentage=56.88%|change=+5.66}}
+{{Election box candidate with party link|party=Republican Party (United States)|candidate={{ubl|[[Jack Ciattarelli]]|[[Jim Gannon (sheriff)|Jim Gannon]]}}|votes=1,417,705|percentage=42.52%|change=–5.48}}
+{{Election box candidate with party link|party=Libertarian Party (United States)|candidate={{ubl|Vic Kaplan|Bruno Pereira}}|votes=11,880|percentage=0.36%|change=+0.06}}
+{{Election box candidate with party link|party=Socialist Workers Party (United States)|candidate={{ubl|Joanne Kuniansky|Craig Honts}}|votes=8,164|percentage=0.24%|change=+0.09}}
+{{Election box total|votes=3,334,359|percentage=100.0%|change=}}
+{{Election box hold with party link no swing|winner=Democratic Party (United States)}}
+{{Election box end}}
+{{clear}}
+
+==Virginia==
+{{main|2025 Virginia gubernatorial election}}
+{{Infobox election
+| election_name = Virginia gubernatorial election
+| country = Virginia
+| type = presidential
+| ongoing = no
+| previous_election = 2021 Virginia gubernatorial election
+| previous_year = 2021
+| next_election = 2029 Virginia gubernatorial election
+| next_year = 2029
+| image2 = Winsome Sears portrait, 2022 (cropped).jpg
+| nominee2 = [[Winsome Earle-Sears]]
+| party2 = Republican Party (United States)
+| popular_vote2 = 1,449,586
+| percentage2 = 42.22%
+| image1 = Rep. Abigail Spanberger - 118th Congress (cropped).jpg
+| nominee1 = '''[[Abigail Spanberger]]'''
+| party1 = Democratic Party (United States)
+| popular_vote1 = '''1,976,857'''
+| percentage1 = '''57.58%'''
+| map_image = 2025 Virginia gubernatorial election results map by county.svg
+| map_size = 280px
+| map_caption = County and independent city results
+| title = [[Governor of Virginia|Governor]]
+| before_election = [[Glenn Youngkin]]
+| before_party = Republican Party (United States)
+| after_election = [[Abigail Spanberger]]
+| after_party = Democratic Party (United States)
+}}
+
+[[Governor of Virginia|Governor]] [[Glenn Youngkin]] was elected in [[2021 Virginia gubernatorial election|2021]] with 50.6% of the vote. He was [[Term limits in the United States|term-limited]] by the [[Virginia Constitution]] and could not seek election to a second consecutive term. [[Lieutenant Governor of Virginia|Lieutenant Governor]] [[Winsome Earle-Sears]] was the Republican nominee.<ref>{{Cite web |last=Nadeau |first=Ryan |date=2025-04-05 |title=Earle-Sears secures Republican nomination for Virginia governor, creating historic gubernatorial ticket |url=https://www.wric.com/news/politics/local-election-hq/earle-sears-republican-nomination-virginia-governor/ |access-date=2025-04-05 |work=WIRC}}</ref> Former [[United States House of Representatives|U.S. Representative]] for [[Virginia's 7th congressional district]] [[Abigail Spanberger]] was the Democratic nominee.<ref>{{Cite web |last=Fortinsky |first=Sarah |date=2025-04-03 |title=Spanberger confirmed as Democratic nominee for Virginia governor’s race |url=https://thehill.com/homenews/5231525-spanberger-confirmed-as-democratic-nominee-for-virginia-governors-race/amp/ |access-date=2025-04-03 |work=The Hill}}</ref> Both candidates won their respective party’s nominations unopposed. Spanberger won the election by over 15 points, becoming the first [[List of female governors in the United States|female governor]] in Virginia's history.<ref>{{Cite news |date=2025-11-05 |title=Abigail Spanberger Flips Virginia, Becomes State’s First Female Governor |url=https://www.nytimes.com/2025/11/05/us/abigail-spanberger-virginia-governor-election.html |access-date=2025-11-05 |language=en}}</ref>
+
+{{Election box begin |title=Virginia general election<ref>{{Cite news|url=https://enr.elections.virginia.gov/results/public/virginia/elections/2025-November-General|title=2025 November General|last=O'Bannon|first=John|author-link=John O'Bannon|date=November 4, 2025|work=[[Virginia Department of Elections]]|access-date=November 4, 2025}}</ref>}}
+{{Election box winning candidate with party link|party=Democratic Party (United States)|candidate=[[Abigail Spanberger]]|votes=1,976,857|percentage=57.58%|change=+8.94}}
+{{Election box candidate with party link|party=Republican Party (United States)|candidate=[[Winsome Earle-Sears]]|votes=1,449,586|percentage=42.22%|change=–8.36}}
+{{Election box write-in with party link|votes=6,897|percentage=0.20%|change=+0.12}}
+{{Election box total|votes=3,433,340|percentage=100.0%|change=}}
+{{Election box end}}
+{{clear}}
+
+== References ==
+{{reflist}}
+{{2025 United States elections}}
+{{United States gubernatorial elections}}
+
+[[Category:2025 United States gubernatorial elections| ]]

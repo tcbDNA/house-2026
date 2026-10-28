@@ -15,10 +15,10 @@ reuses):
     in RCP's average and released on or after RCP's lastBuildDate.
   * blend_margin = two-party margin (anti-R − R), as in the Senate.
 Governor-specific:
-  * Alaska (ranked-choice): polls' final-round D / R numbers where a pollster
-    reports them (rcv_final_d / rcv_final_r) are used in place of first
-    choices; the RCP average is used only if none of its polls reports a final
-    round (noted).
+  * Alaska (ranked-choice): the model's margin is the final-round
+    two-candidate margin. RCP's Alaska average is a final-round average; when
+    it has to be recomputed, only polls reporting a final round
+    (rcv_final_d / rcv_final_r) are used.
   * third_party_share: mean share of every candidate other than the two in the
     averaged polls (for Georgia's runoff and Vermont's legislature flags).
 
@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
@@ -52,11 +53,14 @@ def excluded(name: str) -> bool:
 
 
 def rcp_feeds() -> dict[str, Path]:
-    """state -> its two-way RCP governor feed (rcp_gov_<st>_<id>.json)."""
+    """state -> its two-way RCP governor feed, rcp_gov_<st>_<id>.json (the
+    folder also keeps three-way, multi-candidate, first-round and placeholder
+    feeds, named rcp_gov_<st>_<kind>_<id>.json; those aren't averaged here)."""
     out = {}
-    for f in sorted(SRC.glob("rcp_gov_*_*.json")):
-        st = f.name.split("_")[2].upper()
-        out.setdefault(st, f)
+    for f in sorted(SRC.glob("rcp_gov_*.json")):
+        m = re.fullmatch(r"rcp_gov_([a-z]{2})_(\d+)\.json", f.name)
+        if m:
+            out[m.group(1).upper()] = f
     return out
 
 
@@ -123,7 +127,7 @@ def build() -> str:
             latest = max(a["end"] for a in rcp["averaged"])
             newer = [p for p in usable if p["end"] > latest
                      and (p["released"] is None or p["released"] >= rcp["built"])]
-        use_rcp = rcp and not newer and not (st == "AK" and rcv_polls)
+        use_rcp = rcp and not newer
         if use_rcp:
             ps = [a for a in rcp["averaged"] if any(same_poll(q, a) for q in sponsored)]
             kept = [a for a in rcp["averaged"] if not excluded(a["pollster"]) and a not in ps
@@ -154,8 +158,9 @@ def build() -> str:
             third = sum(p["others"] for p in kept) / len(kept)
             used = [f"{label(p)}, ending {p['end']} ({p['question']}, {p['anti_r']:g}/{p['r']:g})" for p in kept]
             method = ("recomputed: newer polls than RCP's average" if newer else
-                      "recomputed: final-round polls (ranked choice)" if rcp else
                       "recomputed: RCP publishes no average")
+            if st == "AK" and rcv_polls:
+                method += " (final-round polls only)"
             as_of = max(p["end"] for p in kept).isoformat()
             url, local = "", "sources/gov_polls_2026/gov_polls_compiled.json"
             published = round(rcp["published"][0] - rcp["published"][1], 1) \

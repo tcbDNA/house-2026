@@ -1,0 +1,574 @@
+{{Short description|American politician (born 1957)}}
+{{Use American English|date=November 2025}}
+{{Use mdy dates|date=June 2026}}
+{{Infobox officeholder
+| name                = Tom Tiffany
+| image               = Tom Tiffany.jpg
+| caption             = Official portrait, 2020
+| state               = [[Wisconsin]]
+| district            = {{ushr|WI|7|7th}}
+| term_start          = May 12, 2020{{efn|Tiffany's official service begins on the date of the [[2020 Wisconsin's 7th congressional district special election|special election]], while he was not sworn in until May 19, 2020.<ref>{{cite web |url=https://history.house.gov/dropdowntemplate?id=36507224009&htmlContentID=36507224027 |title=House Vacancies and Successors – 116th Congress (2019–2021) |access-date=April 14, 2026 |publisher=[[Historian of the United States House of Representatives]]}}</ref>}}
+| term_end            =
+| predecessor         = [[Sean Duffy]]
+| successor           =
+| state_senate1       = Wisconsin
+| district1           = [[Wisconsin's 12th Senate district|12th]]
+| term_start1         = January 7, 2013
+| term_end1           = May 18, 2020
+| predecessor1        = [[Jim Holperin]]
+| successor1          = [[Mary Felzkowski]]
+| state_assembly2     = Wisconsin
+| district2           = [[Wisconsin's 35th Assembly district|35th]]
+| term_start2         = January 3, 2011
+| term_end2           = January 7, 2013
+| predecessor2        = [[Donald Friske]]
+| successor2          = Mary Felzkowski
+| birth_name          = Thomas Patrick Tiffany
+| birth_date          = {{birth date and age|1957|12|30}}
+| birth_place         = [[Wabasha, Minnesota]], U.S.
+| death_date          =
+| death_place         =
+| party               = [[Republican Party (United States)|Republican]]
+| spouse              = Christine Sully
+| children            = 3
+| education           = [[University of Wisconsin, River Falls]] ([[Bachelor of Science|BS]])
+| website             = {{URL|tiffany.house.gov|House website}}<br />{{URL|tomtiffany.com|Campaign website}}
+| footnotes = {{notelist}}
+}}
+'''Thomas Patrick Tiffany''' (born December 30, 1957)<ref>{{cite web |title=Senator Thomas Tiffany |url=https://docs.legis.wisconsin.gov/2019/legislators/senate/1922 |website=Wisconsin State Legislature |access-date=November 5, 2024}}</ref> is an American politician and businessman from Wisconsin. A member of the [[United States House of Representatives]], he has represented [[Wisconsin's 7th congressional district]] since 2020. A member of the [[Republican Party (United States)|Republican Party]], he is a member of the House [[Freedom Caucus]].
+
+Tiffany worked in business and as the supervisor of the town of [[Little Rice, Wisconsin|Little Rice]] before his election in 2010 to the [[Wisconsin State Assembly]]. Later elected to the [[Wisconsin State Senate]] in 2012,<ref name="bb2019bio">{{cite book|url= https://docs.legis.wisconsin.gov/misc/lrb/blue_book/2019_2020/040_state_legislators.pdf|title= Wisconsin Blue Book 2019-2020|publisher= State of Wisconsin|isbn= 978-1-7333817-0-3|location= [[Madison, Wisconsin]]|year=2019|page=56}}</ref> he became the chair of the Senate Committee on Sporting Heritage, Mining and Forestry.<ref name=SHMF>{{cite web|url=http://docs.legis.wisconsin.gov/2017/committees/senate/1762|title=2017 Senate Committee on Sporting Heritage, Mining and Forestry |website=Wisconsin State Legislature|archive-url= https://web.archive.org/web/20181026074905/http://docs.legis.wisconsin.gov/2017/committees/senate/1762|archive-date=October 26, 2018}}</ref> He was elected to the U.S. House of Representatives following a [[2020 Wisconsin's 7th congressional district special election|special election in 2020]]. Tiffany is the Republican nominee for [[governor of Wisconsin]] in the upcoming [[2026 Wisconsin gubernatorial election|2026 election]].<ref name=":2">{{cite news |last=Andrea |first=Lawrence |title=U.S. Rep. Tom Tiffany enters the 2026 race for Wisconsin governor, 3rd Republican in the field |url=https://www.jsonline.com/story/news/politics/2025/09/23/u-s-rep-tom-tiffany-enters-the-2026-race-for-wisconsin-governor/85375533007 |access-date=September 23, 2025 |work=[[Milwaukee Journal Sentinel]]|date=September 23, 2025 }}</ref>
+
+==Early life, education, and career==
+
+Tiffany was born in [[Wabasha, Minnesota]], and grew up on a dairy farm near [[Elmwood, Wisconsin]], with five brothers and two sisters.<ref name="bio">{{cite web|url=http://www.tomtiffanyforassembly.com/biography |title= Biography |website= Tom Tiffany for Assembly |archive-url=https://web.archive.org/web/20100807102243/http://www.tomtiffanyforassembly.com/biography |archive-date=August 7, 2010 |via=the [[Wayback Machine]]}}</ref> He graduated from [[Elmwood High School (Elmwood, Wisconsin)|Elmwood High School]] in 1976 and earned a [[Bachelor of Science]] in [[agricultural economics]] from the [[University of Wisconsin–River Falls]] in 1980.<ref name="bb2019bio"/>
+
+Tiffany managed the petroleum division of High Plains Cooperative<ref>{{cite web|url=https://drydenwire.com/news/15-things-you-might-not-know-about-me-tom-tiffany|title= 15 Things You Might Not Know About Me: Tom Tiffany|date=October 22, 2020|website=Dryden Wire}}</ref> in [[Plainview, Minnesota]], before moving to [[Minocqua, Wisconsin]], to manage Zenker Oil Company's petroleum distribution in 1988.<ref name="antigo2012">{{cite news|url=http://www.antigodailyjournal.com/full.php?id=14497 |title= Tom Tiffany will seek northern Senate post  |date= March 29, 2012 |newspaper= Antigo Daily Journal |archive-url=https://web.archive.org/web/20120401181533/http://www.antigodailyjournal.com/full.php?id=14497 |archive-date=April 1, 2012|access-date=May 2, 2020|via=the [[Wayback Machine]]}}</ref> He and his wife, Chris, operated an excursion business, Wilderness Queen Cruise Line, on the [[Willow Flowage]] from 1991 to 2006. They moved the business to the [[Wisconsin River]] in [[Rhinelander, Wisconsin|Rhinelander]] in 2007 before they sold the business in 2012.<ref>{{cite news|title=Sunday, October 5, 1997|newspaper=[[Milwaukee Journal Sentinel]]|date=October 5, 1997|quote=Tom Tiffany, manager of both the Cedar Falls campground on the north end of the flowage and the Wilderness Queen cruise line, walks through these bountiful acres every morning}}</ref><ref name="Bergquist2015">{{cite news|last=Bergquist|first=Lee|title=Tom Tiffany has been a lightning rod on environmental issues|work=Milwaukee Journal Sentinel|date=August 6, 2015|url=https://archive.jsonline.com/news/statepolitics/tom-tiffany-has-been-a-lightning-rod-on-environmental-issues-b99547320z1-320987941.html|access-date=March 30, 2026}}</ref>
+
+Tiffany was the supervisor of the town of [[Little Rice, Wisconsin]], from 2009 to 2013, was a dam tender for the [[Wisconsin Valley Improvement Company]],<ref name="bb2019bio"/> and is a former member of the Oneida County Economic Development Corporation.<ref>{{cite web|url=https://www.wpr.org/person/tom-tiffany|title=Tom Tiffany|website=[[Wisconsin Public Radio]]|access-date=August 2, 2026}}</ref>
+
+==Wisconsin Legislature (2011–2020)==
+In 2004 and 2008, he ran to represent the [[Wisconsin's 12th Senate district|12th district]] in the [[Wisconsin State Senate]], first against [[Roger Breske]], and then [[Jim Holperin]], losing both times.<ref name="2004DecWEC" /><ref name="2008NovWEC" />
+
+In 2010, Tiffany ran for the [[Wisconsin's 35th Assembly district|35th district]] of the Wisconsin State Assembly after the incumbent, [[Donald Friske]], retired. Tiffany won the primary and defeated Democratic nominee Jay Schmelling, 58.09% to 41.81%.<ref name="antigo2012"/>
+
+In 2012, Tiffany chose not to seek reelection to the Assembly and instead to run again for the state senate after Holperin announced he would not run for reelection. He defeated the Democratic nominee Susan Sommer, 56% to 40%, in the general election.<ref name="antigo2012"/><ref>{{cite news|url=http://badgerherald.com/news/2012/11/07/republicans_take_sta.php |title= Republicans Take State Senate |last=Kirkby|first= Sean |newspaper= [[The Badger Herald]] |date= November 7, 2012 |access-date= May 2, 2020}}</ref>
+
+In the state senate, Tiffany was the chair of the chair of the Senate Committee on Sporting Heritage, Mining and Forestry<ref name="SHMF">{{cite web|url=http://docs.legis.wisconsin.gov/2017/committees/senate/1762|title=2017 Senate Committee on Sporting Heritage, Mining and Forestry |website=Wisconsin State Legislature|archive-url= https://web.archive.org/web/20181026074905/http://docs.legis.wisconsin.gov/2017/committees/senate/1762|archive-date=October 26, 2018}}</ref> and a member of the [[Wisconsin Legislature Joint Committee on Finance|Joint Finance Committee]].<ref name="Bergquist2015"/> He supported mining operations, advocated more logging, and proposed reduced funding for the [[Wisconsin Department of Natural Resources]].<ref name="Bergquist2015"/><ref name="Bergquist2017">{{cite news|last=Bergquist|first=Lee|title=Bill would end Wisconsin moratorium on sulfide mining, create easier path to future mining|work=Milwaukee Journal Sentinel|date=August 22, 2017|url=https://www.jsonline.com/story/news/2017/08/22/bill-would-end-wisconsin-moratorium-sulfide-mining-create-easier-path-ease-restrictions-future-minin/587792001|access-date=March 30, 2026}}</ref> He also had a role in transferring powers over to the Wisconsin Legislature from the Wisconsin Department of Natural Resources on issues like operating rules for controversial dams in [[Vilas County, Wisconsin|Vilas County]].<ref name="BergquistDam">{{cite news|last=Bergquist|first=Lee|title=Panel says lawmakers — not regulators — will have final say over dam|work=Milwaukee Journal Sentinel |date = June 13, 2015|url=https://archive.jsonline.com/news/statepolitics/307279301.html|access-date=March 30, 2026}}</ref> Tiffany was proud to earn the enmity of the Wisconsin chapter of the [[League of Conservation Voters]] and called organizations such as the [[United States Environmental Protection Agency|Environmental Protection Agency]] under [[Barack Obama|President Obama]] "radical."<ref name="Bergquist2015"/>
+
+==U.S. House of Representatives (2020–present)==
+U.S. representative [[Sean Duffy]] resigned on September 23, 2019, after his youngest daughter was diagnosed with a heart condition. Tiffany announced that he would run in a [[2020 Wisconsin's 7th congressional district special election|special election]] to succeed him. He won the February 18, 2020, Republican primary and defeated [[Wausau, Wisconsin|Wausau]] attorney Tricia Zunker in the May 12, 2020, special election.<ref name="primary2020">{{cite news|url=https://www.wausaudailyherald.com/story/news/2020/02/18/tricia-zunker-and-tom-tiffany-advance-may-special-election-7th-congressional-district/4759598002|title=Tricia Zunker and Tom Tiffany advance to May special election for Wisconsin 7th Congressional District|date= February 18, 2020|access-date=May 2, 2020 |newspaper=[[Wausau Daily Herald]]|last=Schulte |first=Laura}}</ref> Tiffany was sworn in on May 19, 2020.<ref>{{cite news |last1=Poltrock |first1=Heather |title=Tom Tiffany sworn in to U.S. House of Representatives |url=https://www.wsaw.com/fox/content/news/Congressman-elect-Tom-Tiffany-to-be-sworn-in-Tuesday-570589881.html |publisher=WSAW |date=May 19, 2020 |access-date=May 19, 2020 |archive-date=May 26, 2020 |archive-url=https://web.archive.org/web/20200526105343/https://www.wsaw.com/fox/content/news/Congressman-elect-Tom-Tiffany-to-be-sworn-in-Tuesday-570589881.html|url-status=dead}}</ref> 
+
+Tiffany defeated Zunker in a rematch in the November 3, 2020, general election taking in 60.7% of the vote.<ref name="WIgenr" />
+
+In June 2021, Tiffany was one of 14 House Republicans to vote against legislation to establish June 19, or [[Juneteenth]], as a [[federal holiday]].<ref>{{cite news|url=https://www.cnn.com/2021/06/16/politics/house-vote-juneteenth-federal-holiday-senate-passed-june-19/index.html|title=Congress passes bill making Juneteenth a federal holiday|publisher=CNN|last1=Grayer|first1=Annie|last2=Diaz|first2=Danielle|date=June 16, 2021|access-date=June 16, 2021|archive-date=June 16, 2021|archive-url=https://web.archive.org/web/20210616160046/https://www.cnn.com/2021/06/16/politics/house-vote-juneteenth-federal-holiday-senate-passed-june-19/index.html|url-status=live}}</ref>
+
+In early 2026, Tiffany introduced legislation to raise the status of [[Apostle Islands National Lakeshore]] into a [[List of national parks of the United States|national park]].<ref name="HR5497">{{Cite web |title=H.R. 5497 — Apostle Islands National Park and Preserve Act |url=https://www.congress.gov/bill/119th-congress/house-bill/5497 |access-date=March 19, 2026 |website=[[Congress.gov]] |date=February 11, 2026 }}</ref>
+
+===Committee assignments===
+* [[United States House Committee on the Judiciary|Committee on the Judiciary]]<ref name=":0">{{Cite web |date=July 1, 2020 |title=Committees and Caucuses |url=https://tiffany.house.gov/committees-and-caucuses |access-date=February 1, 2021 |website=Representative Tom Tiffany |language=en}}</ref>
+* [[United States House Committee on Natural Resources|Committee on Natural Resources]]<ref name=":0" />
+
+===Caucus memberships===
+Tiffany is a member of the [[Freedom Caucus]].<ref>{{cite web|publisher=Roll Call|title=Outside groups flock to Wisconsin race to replace Sean Duffy|date=February 11, 2020|first=Bridget|last=Bowman|url=https://www.rollcall.com/2020/02/11/outside-groups-flock-to-race-to-replace-sean-duffy|access-date=May 20, 2020|archive-date=November 25, 2020|archive-url=https://web.archive.org/web/20201125060800/https://www.rollcall.com/2020/02/11/outside-groups-flock-to-race-to-replace-sean-duffy|url-status=live}}</ref><ref name="NBCFreedomCaucus2025">{{cite news |last = Kapur |first = Sahil |author2 = Scott Wong |title = Hard-right Freedom Caucus could be gutted as key members run for new jobs in 2026 |work = NBC News |date = August 27, 2025 |url = https://www.nbcnews.com/politics/congress/hard-right-freedom-caucus-gutted-key-members-run-new-jobs-2026-rcna227209 |access-date = March 19, 2026}}</ref> He is also a member of the following caucuses:
+* [[Republican Study Committee]]'''<ref>{{Cite web|date=December 6, 2017|title=Membership|url=https://rsc-banks.house.gov/about/membership|access-date=March 28, 2021|website=Republican Study Committee|language=en|archive-date=April 6, 2021|archive-url=https://web.archive.org/web/20210406003657/https://rsc-banks.house.gov/about/membership|url-status=dead}}</ref>'''
+* Congressional Dairy Farmer Caucus<ref name=":0" />
+* Congressional Sportsmen's Caucus<ref name=":0" />
+* [[Congressional Taiwan Caucus]]<ref>{{cite web|title=Congressional Taiwan Caucus|date=August 16, 2022 |url=https://sherman.house.gov/taiwancaucus| publisher=Congressman Brad Sherman|access-date=August 20, 2025}}</ref>
+* [[Congressional Western Caucus]]<ref>{{cite web|title=Caucus Memberships|author=|url=https://westerncaucus.house.gov/about/membership.htm|publisher=Congressional Western Caucus|date=|access-date=April 17, 2025|archive-date=May 2, 2019|archive-url=https://web.archive.org/web/20190502203316/https://westerncaucus.house.gov/about/membership.htm|url-status=live}}</ref>
+
+==2026 gubernatorial campaign==
+{{main|2026 Wisconsin gubernatorial election}}
+[[File:Tom Tiffany - 55022139480.jpg|thumb|Tiffany speaking at the 2025 [[AmericaFest]] convention]]
+
+On September 23, 2025, Tiffany announced his campaign for governor of Wisconsin in the [[2026 Wisconsin gubernatorial election|2026 election]].<ref name=":2" /> 
+
+He was endorsed by [[Donald Trump]] in January 2026.<ref>{{Cite web |date=January 28, 2026 |title=Trump endorses Republican Rep. Tom Tiffany in Wisconsin's open race for governor |url=https://apnews.com/article/trump-tom-tiffany-endorsement-wisconsin-governor-ba00045a282245436b822656fc80e6a7 |access-date=January 28, 2026 |website=AP News |language=en}}</ref> The next day, his main opponent in the primary dropped out of the race.<ref>{{cite web |date=January 30, 2026 |title=How Trump's Tom Tiffany endorsement scrambles Wisconsin governor race |url=https://www.jsonline.com/story/news/politics/2026/01/30/how-trumps-tom-tiffany-endorsement-scrambles-wisconsin-governor-race/88414093007/ |access-date=July 21, 2026 |website=WisPolitics}}</ref> All of Tiffany's Republican colleagues from Wisconsin in the U.S. House of Representatives have endorsed him.<ref>{{cite web |date=September 30, 2025 |title=Tiffany campaign: Congressman Scott Fitzgerald endorses Tom Tiffany's campaign for governor |url=https://www.wispolitics.com/2025/tiffany-campaign-congressman-scott-fitzgerald-endorses-tom-tiffanys-campaign-for-governor/ |access-date=September 30, 2025 |website=WisPolitics}}</ref><ref>{{cite web |date=October 3, 2025 |title=Tiffany campaign: Congressman Glenn Grothman officially endorses Tiffany's run for governor|url=https://www.wispolitics.com/2025/tiffany-campaign-congressman-glenn-grothman-officially-endorses-tiffanys-run-for-governor/|access-date=October 3, 2025 |website=WisPolitics}}</ref><ref name=SteilJan>{{cite web |date=December 19, 2025 |title=Tiffany campaign: Congressman Bryan Steil endorses Tom Tiffany's gubernatorial run
+|url=https://www.wispolitics.com/2025/tiffany-campaign-congressman-bryan-steil-endorses-tom-tiffanys-gubernatorial-run/|access-date=December 22, 2025 |website=WisPolitics}}</ref><ref>{{cite web |date=October 16, 2025 |title=Tiffany campaign: Tiffany campaign: Congressman Derrick Van Orden endorses Tom Tiffany's gubernatorial run |url=https://www.wispolitics.com/2025/tiffany-campaign-congressman-derrick-van-orden-endorses-tom-tiffanys-gubernatorial-run/|access-date=October 18, 2025 |website=WisPolitics}}</ref><ref>{{cite web |date=September 25, 2025 |title=Tiffany campaign: Congressman Tony Wied formally endorses Tom Tiffany for governor |url=https://www.wispolitics.com/2025/tiffany-campaign-congressman-tony-wied-formally-endorses-tom-tiffany-for-governor/ |access-date=September 25, 2025 |website=WisPolitics}}</ref> Republican strategists have said this allowed Tiffany to avoid rebuilding the party after the primary, noting that the election is for "only the second open gubernatorial seat in the last 60 years in Wisconsin, and there won't be a primary on the Republican side."<ref>{{cite web|last=Opoien|first=Jessie|date=January 30, 2026 |title=How Trump's Tom Tiffany endorsement scrambles Wisconsin governor race |url=https://www.jsonline.com/story/news/politics/2026/01/30/how-trumps-tom-tiffany-endorsement-scrambles-wisconsin-governor-race/88414093007|access-date=July 21, 2026|website=WisPolitics}}</ref>
+
+In 2026, Tiffany, while campaigning for governor, commented on the [[Menomonee Falls]] high school starting a black students' club, by stating that "Race-based preferences are un-American, illegal, and must end." Republican candidate for lieutenant governor Will Martin, an African-American whose mother, Tanya Martin, helped integrate his school in their Tennessee hometown,  commented that student clubs must be open to all without discrimination or exclusion.<ref>{{cite news |last=Bentley|first=Drake |date=May 26, 2026|title=Black Republican candidate for Wisconsin Lt. Gov. remarks on Menomonee Falls Black student club |url=https://milwaukeecourier.com/news/2026/05/26/black-republican-candidate-for-wisconsin-lt-gov-remarks-on-menomonee-falls-black-student-club|work=[[The Milwaukee Courier]] |access-date=August 9, 2026|ref=none}}</ref>
+
+In July 2026, Tiffany said most election clerks around Wisconsin do good work, "but there's a couple clerks that have fallen down on the job, and we've got to make sure we have election integrity."<ref>{{Cite web |last=Kremer|first=Rich|date=July 20, 2026 |title=As the Democratic primary heats up, Republican Tom Tiffany has campaigned for governor on his own terms |url=https://www.wpr.org/news/republican-tom-tiffany-campaign-wisconsin-governor-primary-2026 |url-status=live |archive-url=https://web.archive.org/web/20260720163144/https://www.wpr.org/news/republican-tom-tiffany-campaign-wisconsin-governor-primary-2026 |archive-date=July 20, 2026 |access-date=July 20, 2026 |website=[[Wisconsin Public Radio]]}}</ref>
+
+In August 2026, Tiffany proposed to have the [[Wisconsin Department of Natural Resources]] split, in order to "separate fish, wildlife, hunting, fishing, trapping from the environmental permitting part of it," saying that this would benefit the state's sportsmen.<ref>{{cite news |last= Bentley |first=Drake |date=August 4, 2026 |title=Tom Tiffany pushes extreme Wisconsin DNR break up plan opposed by Republican officials |url=https://milwaukeecourier.com/news/2026/08/04/tom-tiffany-pushes-extreme-wisconsin-dnr-break-up-plan-opposed-by-republican-officials |work=The Milwaukee Courier |access-date=August 10, 2026}}</ref>
+
+In September 2026, Tiffany was flying back from a campaign event when the light aircraft he was flying in lost power. The plane made an emergency landing on a lake; as the plane began to take on water, Tiffany and the pilot swam to safety. Tiffany received stitches on his face prior to being released from the hospital.<ref>{{cite news |last1=Sands |first1=Leo |title=Tom Tiffany, Wisconsin Representative, Sustains Minor Injuries After Plane Lands in Lake |url=https://www.nytimes.com/2026/09/13/us/politics/tom-tiffany-wisconsin-lake-wausau-plane-crash.html |access-date=14 September 2026 |work=The New York Times |date=13 September 2026}}</ref><ref>{{cite news |title=Rep. Tom Tiffany says he sustained minor injuries in emergency plane landing on lake |url=https://www.nbcnews.com/news/us-news/wisconsin-tom-tiffany-sustained-minor-injuries-plane-emergency-lake-rcna597456 |access-date=14 September 2026 |work=NBC News |date=13 September 2026 |language=en}}</ref>
+
+==Political positions==
+
+===2020 United States presidential election===
+In his first year in Congress, Tiffany supported [[Donald Trump]]'s [[attempts to overturn the 2020 United States presidential election]]. In December 2020, Tiffany was one of 126 Republican members of the U.S. House of Representatives to sign an [[amicus brief]] in support of ''[[Texas v. Pennsylvania]]'', a lawsuit filed at the [[Supreme Court of the United States|U.S. Supreme Court]] contesting the results of the [[2020 United States presidential election|2020 presidential election]], in which [[Joe Biden]] defeated<ref>{{cite web|last1=Blood|first1=Michael R.|last2=Riccardi|first2=Nicholas|date=December 5, 2020|title=Biden officially secures enough electors to become president|url=https://apnews.com/article/election-2020-joe-biden-donald-trump-elections-electoral-college-3e0b852c3cfadf853b08aecbfc3569fa|url-status=live|access-date=December 12, 2020|website=[[Associated Press|AP News]]|archive-date=December 8, 2020|archive-url=https://web.archive.org/web/20201208201209/https://apnews.com/article/election-2020-joe-biden-donald-trump-elections-electoral-college-3e0b852c3cfadf853b08aecbfc3569fa}}</ref> the incumbent president [[Donald Trump]]. The Supreme Court declined to hear the case on the basis that Texas lacked [[Standing (law)|standing]] under [[Article Three of the United States Constitution|Article III of the Constitution]] to challenge the results of an election held by another state.<ref>{{Cite news|last=Liptak|first=Adam|author-link=Adam Liptak|date=December 11, 2020|title=Supreme Court Rejects Texas Suit Seeking to Subvert Election|language=en-US|work=The New York Times|url=https://www.nytimes.com/2020/12/11/us/politics/supreme-court-election-texas.html|access-date=December 12, 2020|issn=0362-4331|archive-date=December 11, 2020|archive-url=https://web.archive.org/web/20201211234955/https://www.nytimes.com/2020/12/11/us/politics/supreme-court-election-texas.html|url-status=live}}</ref><ref name=":1">{{cite web|title=Order in Pending Case|url=https://www.supremecourt.gov/orders/courtorders/121120zr_p860.pdf|date=December 11, 2020|publisher=[[Supreme Court of the United States]]|access-date=December 11, 2020|archive-date=December 11, 2020|archive-url=https://web.archive.org/web/20201211234004/https://www.supremecourt.gov/orders/courtorders/121120zr_p860.pdf|url-status=live}}</ref><ref>{{cite news|url=https://www.cnn.com/2020/12/10/politics/read-house-republicans-texas-supreme-court/index.html|title=Brief from 126 Republicans supporting Texas lawsuit in Supreme Court|first=Daniella |last=Diaz|work=[[CNN]]|access-date=December 11, 2020|archive-date=December 12, 2020|archive-url=https://web.archive.org/web/20201212000435/https://www.cnn.com/2020/12/10/politics/read-house-republicans-texas-supreme-court/index.html|url-status=live}}</ref> Tiffany was also among the 120 House members, all [[Republican Party (United States)|Republicans]], who objected to counting Arizona's and Pennsylvania's [[United States Electoral College|electoral votes]] in the [[2020 United States presidential election|2020 presidential election]].<ref>{{cite web |url=https://www.theguardian.com/us-news/2021/jan/07/list-republicans-voted-to-reject-election-results |title=The long list of Republicans who voted to reject election results |last=Chang |first=Alvin |date=January 7, 2021 |work=The Guardian |access-date=January 8, 2021 |archive-date=May 17, 2021 |archive-url=https://web.archive.org/web/20210517192023/https://www.theguardian.com/us-news/2021/jan/07/list-republicans-voted-to-reject-election-results |url-status=live}}</ref><ref>{{cite web |url=https://apnews.com/article/joe-biden-donald-trump-wisconsin-elections-electoral-college-0657e37b099f9efaf7cfd8ce1bbe31de |title=GOP Reps. Tiffany, Fitzgerald object to certifying Biden win |last=Bauer |first=Scott |date=January 7, 2021 |website=AP News |publisher=Associated Press |access-date=January 8, 2021}}</ref>
+
+Tiffany supports ongoing efforts to revisit the [[2020 United States presidential election| 2020 election]] and has supported previous efforts to overturn it.<ref name="2020ElectionMJS20260519">{{Cite web |last1=Beck |first1=Molly |last2=Karnopp |first2=Hope |date=May 19, 2026 |title=As the Democratic primary heats up, Republican Tom Tiffany has campaigned for governor on his own terms |url=https://www.jsonline.com/story/news/politics/2026/05/19/tiffany-backs-fbi-probe-into-2020-vote-wont-say-whether-biden-won/90141082007/ |access-date=July 30, 2026 |website=[[Milwaukee Journal Sentinel]]}}</ref> He has said he would have rejected the 2020 vote for Biden in Wisconsin if it had been up to the legislature, and he supported a Texas lawsuit to overturn the 2020 election in various other states.<ref>{{Cite web |last1=Gilbert |first1=Craig |last2=Glauber |first2=Bill |date=January 6, 2021 |title=Tom Tiffany, Scott Fitzgerald say they would have rejected Biden's victory in Wisconsin had there been a vote in Congress|url=https://www.jsonline.com/story/news/politics/elections/2021/01/06/baldwin-johnson-vote-against-objecting-electoral-college-vote/6576579002|access-date=July 30, 2026 |website=[[Milwaukee Journal Sentinel]]}}</ref><ref name="2020ElectionMJS20260519" /><ref>{{Cite web |last=Glauber |first=Bill |date=December 10, 2020 |title=Tom Tiffany among 106 House Republicans backing Texas lawsuit to overturn election|url=https://www.jsonline.com/story/news/politics/elections/2020/12/10/tom-tiffany-backs-texas-lawsuit-overturn-election/3886417001 |access-date=July 30, 2026 |website=[[Milwaukee Journal Sentinel]]}}</ref>
+
+===Abortion===
+
+In September 2025, Tiffany declined to say whether he supported a heartbeat abortion ban such as one he supported during his time in the state legislature.<ref>{{Cite web |date=September 25, 2025 |title=Tiffany declines to say if he still backs 6-week abortion ban |url=https://www.wispolitics.com/2025/tiffany-declines-to-say-if-he-still-backs-6-week-abortion-ban |url-status=live |archive-url=https://web.archive.org/web/20260605060216/https://www.wispolitics.com/2025/tiffany-declines-to-say-if-he-still-backs-6-week-abortion-ban|archive-date=June 5, 2026 |access-date=July 8, 2026 |website=[[Wispolitics|WISPOLITICS]]}}</ref> In January 2026, [[PBS]] asked him "Would you like to see any changes to Wisconsin's abortion law?" and he answered "No. So, I voted for the current law, which, 10 years ago when I was in the state legislature, which is you can have an abortion up to five months. I voted for that law, and as governor I will uphold it."<ref>{{Cite web |last=Schultz |first=Zac |date=January 7, 2026 |title=Tom Tiffany on issues in Wisconsin's 2026 governor's race |url=https://pbswisconsin.org/news-item/tom-tiffany-on-issues-in-wisconsins-2026-governors-race/ |url-status=live |archive-url=https://web.archive.org/web/20260124050050/https://pbswisconsin.org/news-item/tom-tiffany-on-issues-in-wisconsins-2026-governors-race/ |archive-date=January 24, 2026 |access-date=July 8, 2026 |website=[[PBS Wisconsin]]}}</ref>
+
+===Foreign policy===
+
+====China and Taiwan====
+
+Tiffany has expressed support for recognition of [[Taiwan]] as an independent state. In 2023, Tiffany authored an op-ed in ''[[The Washington Times]]'', stating that "the United States should lead by example and end this tired charade."<ref>{{cite web |date=December 21, 2023 |title=2023-1221: U.S. Must End Its "One China" Policy: Rep. Tom Tiffany; Taiwan Retains No.1 in Asia on Freedom Index; U.S. Arms Sales to Taiwan |url=https://fapa.org/2023-1221-u-s-must-end-its-one-china-policy-rep-tom-tiffany-taiwan-retains-no-1-in-asia-on-freedom-index-u-s-arms-sales-to-taiwan |access-date=December 5, 2024 |website=Formosan Association for Public Affairs}}</ref> Since being elected to the House, Tiffany has introduced legislation in every session to establish diplomatic relations with Taiwan.<ref>{{cite web |title=H. CON. RES. |url=https://tiffany.house.gov/sites/evo-subsites/tiffany.house.gov/files/evo-media-document/taiwan_resolution_2023.pdf |access-date=December 5, 2024 |website=Congress.gov |publisher=United States House of Representatives}}</ref><ref>{{cite web |title=H. CON. RES. 21 |url=https://www.congress.gov/117/bills/hconres21/BILLS-117hconres21ih.pdf |access-date=December 5, 2024 |website=Congress.gov |publisher=United States House of Representatives}}</ref><ref>{{cite web |title=H. CON. RES. |url=https://tiffany.house.gov/sites/evo-subsites/tiffany.house.gov/files/evo-media-document/Taiwan_Resolution.pdf |access-date=February 24, 2025 |website=Congress.gov |publisher=United States House of Representatives}}</ref> In 2024, Tiffany introduced legislation expressing support for Taiwan's full participation at the [[World Health Organization]], as well as legislation restricting the [[United States Department of State|U.S. Department of State]] from using funds to enforce restrictions on "high-level communications" with Taiwanese officials. Both pieces of legislation were passed by Congress.<ref>{{cite web |date=September 14, 2024 |title=US House passes Taiwan WHO participation bill |url=https://www.taipeitimes.com/News/front/archives/2024/09/14/2003823758 |access-date=January 4, 2025 |website=Taipei Times}}</ref><ref>{{cite web |last1=Everington |first1=Keoni |date=June 28, 2024 |title=Congress approves amendment lifting limits between US, Taiwan officials |url=https://www.taiwannews.com.tw/news/5896780 |access-date=January 4, 2025 |website=Taiwan News}}</ref>
+
+====Russo-Ukrainian war====
+
+In May 2022, Tiffany "strongly" condemned the [[2022 Russian invasion of Ukraine]], but did not support a bill for almost $40 billion in additional American funding for Ukraine, stating that American taxpayers should not be financing "an open-ended European conflict."<ref>{{cite web |publisher=House of Representatives |date=May 10, 2022|website=Office of Tom Tiffany|url=https://tiffany.house.gov/media/press-releases/tiffany-statement-supplemental-funding-ukraine |title=Tiffany Statement on Supplemental Funding for Ukraine |access-date=August 10, 2026}}</ref> 
+
+On March 19, 2024, Tiffany was one of nine Republicans to vote against a resolution condemning the [[Child abductions in the Russo-Ukrainian war|abduction of Ukrainian children into Russia]] during the [[Russo-Ukrainian war]].<ref>{{cite web |last1=Metzger |first1=Bryan |date=March 19, 2024 |title=These 9 House Republicans voted against a resolution condemning the Russian abduction of Ukrainian children |url=https://www.businessinsider.com/house-republicans-vote-against-condemning-russian-abduction-ukrainian-children-2024-3 |website=Business Insider|access-date=August 7, 2026}}</ref>
+
+==== Israel ====
+
+After the [[October 7 attacks]], Tiffany said he firmly supported Israel and would not support a ceasefire until "Hamas has been neutralized by Israel".<ref name=":4">[https://www.wxpr.org/politics-government/2024-03-05/tiffany-supportive-of-israel-despite-calls-for-a-ceasefire ''Tiffany supportive of Israel despite calls for a ceasefire''], WXPR, March 5, 2024 </ref> In 2023, he voted in favor of a Republican-led House bill that would provide $14 billion in aid to Israel.<ref name=":4" />
+
+When asked why he supports foreign aid to Israel but not Ukraine, Tiffany said he trusted Israel to responsibly use aid but he does not feel the same way about Ukraine.<ref>''[https://www.cbs58.com/news/wi-members-of-congress-split-over-israel-aid-whether-us-should-back-ceasefire WI members of Congress split over Israel aid, whether U.S. should back ceasefire]'', Nov 1, 2023, CBS</ref>
+
+====War powers====
+In June 2021, Tiffany was one of 49 House Republicans who voted to repeal the [[Authorization for Use of Military Force Against Iraq Resolution of 2002]].<ref>{{Cite web |date=June 17, 2021 |title=House votes to repeal 2002 Iraq War authorization |url=https://www.nbcnews.com/politics/congress/house-set-repeal-2002-iraq-war-authorization-n1271107 |website=[[NBC News]] |access-date=June 17, 2021 |archive-date=June 18, 2021 |archive-url=https://web.archive.org/web/20210618123910/https://www.nbcnews.com/politics/congress/house-set-repeal-2002-iraq-war-authorization-n1271107 |url-status=live }}</ref><ref>{{cite web |title=Final vote results for roll call 172 |url=https://clerk.house.gov/evs/2021/roll172.xml |access-date=December 2, 2023 |website=clerk.house.gov|archive-date=June 27, 2021 |archive-url=https://web.archive.org/web/20210627182635/https://clerk.house.gov/evs/2021/roll172.xml|url-status=live}}</ref>
+
+In March 2023, Tiffany was among 47 Republicans to vote in favor of House Congressional Resolution 21, which directed President [[Joe Biden]] to remove U.S. troops from [[Syria]] within 180 days.<ref>{{cite web |date=March 8, 2023 |title=H.Con.Res. 21: Directing the President, pursuant to section 5(c) of ... -- House Vote #136 -- Mar 8, 2023 |url=https://www.govtrack.us/congress/votes/118-2023/h136 |access-date=March 10, 2023 |archive-date=September 19, 2024 |archive-url=https://web.archive.org/web/20240919032327/https://www.govtrack.us/congress/votes/118-2023/h136 |url-status=live }}</ref><ref>{{cite news |date=March 8, 2023 |title=House Votes Down Bill Directing Removal of Troops From Syria |url=https://www.usnews.com/news/politics/articles/2023-03-08/house-votes-down-bill-directing-removal-of-troops-from-syria |agency=Associated Press |archive-date=April 4, 2023 |access-date=March 10, 2023 |archive-url=https://web.archive.org/web/20230404204512/https://www.usnews.com/news/politics/articles/2023-03-08/house-votes-down-bill-directing-removal-of-troops-from-syria|url-status=live}}</ref> In June, Tiffany was among 71 members who voted against final passage of the [[Fiscal Responsibility Act of 2023]] in the House.<ref>{{Cite web |last=Gans |first=Jared |date=May 31, 2023 |title=Republicans and Democrats who bucked party leaders by voting no |url=https://thehill.com/homenews/house/4029522-republicans-and-democrats-who-bucked-party-leaders-by-voting-no |access-date=June 6, 2023 |work=[[The Hill (newspaper)|The Hill]] |archive-date=June 1, 2023 |archive-url=https://web.archive.org/web/20230601031919/https://thehill.com/homenews/house/4029522-republicans-and-democrats-who-bucked-party-leaders-by-voting-no|url-status=live }}</ref> Tiffany has supported some efforts for infrastructure in his district. In September 2023, he joined a bipartisan group of legislators to request a replacement for the [[John A. Blatnik Bridge|Blatnik Bridge]] connecting [[Duluth, Minnesota]] and [[Superior, Wisconsin]].<ref name="BlatnikLetter2023">{{cite web |last=Klobuchar |first=Amy |author-link=Amy Klobuchar |display-authors=et al. |date=September 27, 2023 |title=Letter to President Biden Regarding Blatnik Bridge Replacement |url=https://stauber.house.gov/sites/evo-subsites/stauber.house.gov/files/evo-media-document/letter-to-president-biden-re-blatnik-bridge-final.pdf |access-date=March 19, 2026 |publisher=U.S. House of Representatives}}</ref> The [[United States Department of Transportation|U.S. Department of Transportation]] under Joe Biden granted $1 billion to this project.<ref>{{Cite news |date=January 22, 2024 |title=More than $1 billion awarded to Minnesota, Wisconsin bridge |url=https://apnews.com/article/blatnik-bridge-minnesota-wisconsin-duluth-superior-25577cff694848f4c711acaa3e1a5ece |access-date=January 23, 2024 |work=[[Associated Press]]}}</ref>
+
+In May 2026, Tiffany voted against an Iran [[war powers resolution]].<ref name=":3">{{Cite news |last=Karnopp |first=Hope |date=May 18, 2026 |others=Milwaukee Journal Sentinel |title=Tom Tiffany's Iran war vote contradicts his own podcast comments |url=https://www.usatoday.com/story/news/politics/2026/05/18/tom-tiffany-says-time-to-wrap-up-iran-conflict-but-votes-no-on-ending-it/90133522007/?gnt-cfr=1&gca-cat=p |access-date=July 31, 2026 |work=USA Today}}</ref> The resolution was intended to limit the [[2026 Iran war]], directing President Trump to remove the U.S. military from the conflict, until congressional consent had been obtained.<ref name=":3"/> Tiffany said about his vote, "I think most Americans agree that it's reasonable to want things to start winding down in Iran, while also recognizing that it is unreasonable to undermine the president's role as [[commander-in-chief]]."<ref name=":3"/>
+
+===Tariffs===
+In January 2025, at a listening session in [[Rice Lake, Wisconsin]], Tiffany spoke in approval of [[tariffs in the second Trump administration]], saying that they are "very strategic, very targeted and ultimately they are meant to benefit the American people".<ref>{{cite web|url=https://fox99.com/tiffany-says-trump-tariffs-are-strategic-negotiation-tactic|title=Tiffany says Trump tariffs are strategic negotiation tactic|publisher=Fox 99|date=January 28, 2025}}</ref> In 2025, Tiffany stated "we clearly have not had [[fair trade]] here in America."<ref>{{cite news |last=van Wagtendonk |first=Anya |date=April 3, 2025 |title=Wisconsin leaders divide by party over support for Trump tariffs|url=https://www.wpr.org/news/wisconsin-trump-tariffs-johnson-baldwin-economic-development|work=Wisconsin Public Radio |access-date=August 10, 2026}}</ref>
+
+==Personal life==
+
+Tiffany and his wife, Christine, have three children.<ref name="bio"/> The Tiffanys are [[Protestantism in the United States|Protestant]].<ref>{{Cite report |url=https://www.pewresearch.org/religion/wp-content/uploads/sites/7/2022/12/PF_2023.01.03_congress_LIST.pdf |title=Religious affiliation of members of 118th Congress |date=January 3, 2023 |publisher=[[Pew Research Center]] |access-date=April 8, 2023 |archive-date=March 16, 2023 |archive-url=https://web.archive.org/web/20230316090407/https://www.pewresearch.org/religion/wp-content/uploads/sites/7/2022/12/PF_2023.01.03_congress_LIST.pdf |url-status=live }}</ref>
+
+==Electoral history==
+
+===Wisconsin Senate (2004, 2008)===
+{{Election box begin | title= Wisconsin Senate, 12th District Election, 2004<ref name=2004PPS>{{cite report |url=https://elections.wi.gov/sites/elections.wi.gov/files/2004%20Partisan%20Primary%20-%20Summary.pdf |title=Results of Fall Primary Election - 09/14/2004 |date=November 10, 2004 |publisher=[[Wisconsin Elections Commission]] |access-date=May 3, 2020 |page=14 |archive-date=May 11, 2022 |archive-url=https://web.archive.org/web/20220511100749/https://elections.wi.gov/sites/elections.wi.gov/files/2004%20Partisan%20Primary%20-%20Summary.pdf |url-status=live }}</ref><ref name=2004DecWEC>{{cite report |url= https://elections.wi.gov/sites/elections.wi.gov/files/2004_FallElection_Results_Summary.pdf |title= Results of Fall General Election - 11/02/2004 |date= December 1, 2004 |publisher= [[Wisconsin Elections Commission]] |access-date= May 3, 2020 |page= 8 |archive-date= May 11, 2022 |archive-url= https://web.archive.org/web/20220511100747/https://elections.wi.gov/sites/elections.wi.gov/files/2004_FallElection_Results_Summary.pdf |url-status= live }}</ref>}}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''Republican Primary Election, September 14, 2004'''
+{{Election box winning candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 8,910
+  |percentage = 60.44%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Gary Baier
+  |votes      = 2,998
+  |percentage = 20.34%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = William E. Raduege
+  |votes      = 2,828
+  |percentage = 19.19%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      =
+  |candidate  = ''Scattering''
+  |votes      = 5
+  |percentage = 0.03%
+  |change     =
+}}
+{{Election box total
+|  |votes      = 14,740
+  |percentage = 100.0%
+  |change     =
+}}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''General Election, November 2, 2004'''
+{{Election box winning candidate with party link
+|  |party      = Democratic Party (United States)
+  |candidate  = [[Roger Breske]] (incumbent)
+  |votes      = 47,287
+  |percentage = 53.47%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 41,119
+  |percentage = 46.49%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      =
+  |candidate  = ''Scattering''
+  |votes      = 38
+  |percentage = 0.04%
+  |change     =
+}}
+{{Election box plurality
+|  |votes      = 6,168
+  |percentage = 6.97%
+  |change     =
+}}
+{{Election box total
+|  |votes      = 88,444
+  |percentage = 100.0%
+  |change     =
+}}
+{{Election box hold with party link no swing
+ |winner = Democratic Party (United States)
+}}
+{{Election box end}}
+{{Election box begin | title= Wisconsin Senate, 12th District Election, 2008<ref name=2008NovWEC>{{cite report |url= https://elections.wi.gov/sites/elections.wi.gov/files/2008_FallElection_StateSenator_CountyReturns.pdf |title= Fall General Election - 11/04/2008 |date= November 24, 2008 |publisher= [[Wisconsin Elections Commission]] |access-date= May 3, 2020 |page= 6 |archive-date= October 23, 2020 |archive-url= https://web.archive.org/web/20201023124647/https://elections.wi.gov/sites/elections.wi.gov/files/2008_FallElection_StateSenator_CountyReturns.pdf |url-status= live }}</ref> }}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''General Election, November 4, 2008'''
+{{Election box winning candidate with party link
+|  |party      = Democratic Party (United States)
+  |candidate  = [[Jim Holperin]]
+  |votes      = 85,125
+  |percentage = 66.11%
+  |change     = +12.64%
+}}
+{{Election box candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 43,595
+  |percentage = 33.85%
+  |change     = -12.64%
+}}
+{{Election box candidate with party link
+|  |party      =
+  |candidate  = ''Scattering''
+  |votes      = 50
+  |percentage = 0.04%
+  |change     =
+}}
+{{Election box plurality
+|  |votes      = 41,530
+  |percentage = 32.25%
+  |change     = +25.28%
+}}
+{{Election box total
+|  |votes      = 128,770
+  |percentage = 100.0%
+  |change     = +45.59%
+}}
+{{Election box hold with party link no swing
+ |winner = Democratic Party (United States)
+}}
+{{Election box end}}
+
+===Wisconsin Assembly (2010)===
+{{Election box begin | title= [[2010 Wisconsin elections|Wisconsin Assembly, 35th District Election, 2010]]<ref>{{cite report |url= https://elections.wi.gov/sites/elections.wi.gov/files/2010%20Fall%20Primary%20summary%20post%20recount.pdf |title= 2010 Partisan Primary |date= October 4, 2010 |publisher= [[Wisconsin Elections Commission]] |access-date= May 3, 2020 |page= 5 |archive-date= January 15, 2021 |archive-url= https://web.archive.org/web/20210115192223/https://elections.wi.gov/sites/elections.wi.gov/files/2010%20Fall%20Primary%20summary%20post%20recount.pdf |url-status= live }}</ref><ref>{{cite report |url= https://elections.wi.gov/sites/elections.wi.gov/files/2010%20Fall%20General%20Election%20Results%20Summary.pdf |title= 2010 General Election |date= December 1, 2010 |publisher= [[Wisconsin Elections Commission]] |access-date= May 3, 2020 |pages= 17–18 |archive-date= April 21, 2020 |archive-url= https://web.archive.org/web/20200421202618/https://elections.wi.gov/sites/elections.wi.gov/files/2010%20Fall%20General%20Election%20Results%20Summary.pdf |url-status= live }}</ref>}}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''Republican Primary Election, September 14, 2010'''
+{{Election box winning candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 3,708
+  |percentage = 63.77%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Jeremy Cordova
+  |votes      = 2,107
+  |percentage = 36.23%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      =
+  |candidate  = ''Scattering''
+  |votes      = 0
+  |percentage = 0.00%
+  |change     =
+}}
+{{Election box total
+|  |votes      = 5,815
+  |percentage = 100.0%
+  |change     =
+}}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''General Election, November 2, 2010'''
+{{Election box winning candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 11,830
+  |percentage = 58.09%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      = Democratic Party (United States)
+  |candidate  = Jay Schmelling
+  |votes      = 8,515
+  |percentage = 41.81%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      =
+  |candidate  = ''Scattering''
+  |votes      = 21
+  |percentage = 0.10%
+  |change     =
+}}
+{{Election box plurality
+|  |votes      = 3,315
+  |percentage = 16.28%
+  |change     = +2.79%
+}}
+{{Election box total
+|  |votes      = 20,366
+  |percentage = 100.0%
+  |change     =
+}}
+{{Election box hold with party link no swing
+ |winner = Republican Party (United States)
+}}
+{{Election box end}}
+
+===Wisconsin Senate (2012, 2016)===
+
+{{Election box begin | title= Wisconsin Senate, 12th District Election, 2012<ref>{{cite report |url= https://elections.wi.gov/sites/elections.wi.gov/files/Amended%20Percentage%20Results-11.6.12%20President.pdf |title= Canvass Results for 2012 Presidential and General Election - 11/6/2012 |date= December 26, 2012 |publisher= [[Wisconsin Elections Commission]] |access-date= May 3, 2020 |page= 5 |archive-date= April 21, 2020 |archive-url= https://web.archive.org/web/20200421202609/https://elections.wi.gov/sites/elections.wi.gov/files/Amended%20Percentage%20Results-11.6.12%20President.pdf |url-status= live }}</ref> }}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''General Election, November 6, 2012'''
+{{Election box winning candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 51,176
+  |percentage = 56.24%
+  |change     = +22.39%
+}}
+{{Election box candidate with party link
+|  |party      = Democratic Party (United States)
+  |candidate  = Susan Sommer
+  |votes      = 36,809
+  |percentage = 40.45%
+  |change     = -25.65%
+}}
+{{Election box candidate with party link
+|  |party      = Independent
+  |candidate  = Paul O. Ehlers
+  |votes      = 2,964
+  |percentage = 3.26%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      =
+  |candidate  = ''Scattering''
+  |votes      = 45
+  |percentage = 0.05%
+  |change     =
+}}
+{{Election box plurality
+|  |votes      = 14,367
+  |percentage = 15.79%
+  |change     = -16.46%
+}}
+{{Election box total
+|  |votes      = 90,994
+  |percentage = 100.0%
+  |change     = -29.34%
+}}
+{{Election box gain with party link no swing
+ |winner = Republican Party (United States)
+ |loser  = Democratic Party (United States)
+}}
+{{Election box end}}
+
+===U.S. House of Representatives (2020–present)===
+{{Election box begin | title= [[2020 Wisconsin's 7th congressional district special election|Wisconsin's 7th congressional district special election, 2020]]<ref>{{cite report |url= https://elections.wi.gov/sites/elections.wi.gov/files/Canvass%20Results_spring%20primary_2_18_20_0.pdf |title= Canvass Results for 2020 Spring Primary - 2/18/2020 |date= March 3, 2020 |publisher= [[Wisconsin Elections Commission]] |access-date= May 3, 2020 |page= 1 |archive-date= June 15, 2020 |archive-url= https://web.archive.org/web/20200615174546/https://elections.wi.gov/sites/elections.wi.gov/files/Canvass%20Results_spring%20primary_2_18_20_0.pdf |url-status= live }}</ref><ref>{{cite news|url=https://www.wausaudailyherald.com/story/news/2020/05/12/wisconsin-7th-congressional-district-election-tom-tiffany-wins/3090312001/ |title=7th Congressional District: Republican Tom Tiffany wins seat held by former Rep. Sean Duffy, beating out Tricia Zunker |last1= Schulte |first1= Laura |last2= Stringer |first2= Megan |newspaper= [[Wausau Daily Herald]] |date= May 12, 2020  |access-date= May 13, 2020}}</ref> }}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''Republican Primary Election, February 18, 2020'''
+{{Election box winning candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 43,714
+  |percentage = 57.44%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Jason Church
+  |votes      = 32,339
+  |percentage = 42.50%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Michael Opela ''(write-in)''
+  |votes      = 18
+  |percentage = 0.02%
+  |change     =
+}}
+{{Election box candidate with party link
+|  |party      =
+  |candidate  = ''Scattering''
+  |votes      = 29
+  |percentage = 0.04%
+  |change     =
+}}
+{{Election box total
+|  |votes      = 76,100
+  |percentage = 100.0%
+  |change     =
+}}
+| colspan="6" style="text-align:center;background-color: #e9e9e9;"| '''Special Election, May 12, 2020'''
+{{Election box winning candidate with party link
+|  |party      = Republican Party (United States)
+  |candidate  = Tom Tiffany
+  |votes      = 109,592
+  |percentage = 57.22%
+  |change     = -2.89%
+}}
+{{Election box candidate with party link
+|  |party      = Democratic Party (United States)
+  |candidate  = Tricia Zunker
+  |votes      = 81,928
+  |percentage = 42.78%
+  |change     = +4.27%
+}}
+{{Election box plurality
+|  |votes      = 27,664
+  |percentage = 14.44%
+  |change     = -7.16%
+}}
+{{Election box total
+|  |votes      = 191,520
+  |percentage = 100.0%
+  |change     = -40.68%
+}}
+{{Election box hold with party link no swing
+ |winner = Republican Party (United States)
+}}
+{{Election box end}}
+{{Election box begin no change
+| title = Wisconsin's 7th congressional district, 2020<ref name="WIgenr">{{cite web |title=Canvass Results for 2020 General Election |url=https://elections.wi.gov/sites/elections.wi.gov/files/Statewide%20Results%20All%20Offices%20%28pre-Presidential%20recount%29.pdf |website=Wisconsin Elections Commission |access-date=December 2, 2020 |archive-date=March 15, 2021 |archive-url=https://web.archive.org/web/20210315220054/https://elections.wi.gov/sites/elections.wi.gov/files/Statewide%20Results%20All%20Offices%20%28pre-Presidential%20recount%29.pdf |url-status=live }}</ref>
+}}
+{{Election box winning candidate with party link no change
+| candidate = Tom Tiffany (incumbent)
+| party = Republican Party (United States)
+| votes = 252,048
+| percentage = 60.7
+}}
+{{Election box candidate with party link no change
+| candidate = Tricia Zunker
+| party = Democratic Party (United States)
+| votes = 162,741
+| percentage = 39.2
+}}
+{{Election box write-in with party link no change
+| votes      = 218
+| percentage = 0.1
+}}
+{{Election box total no change
+| votes = 415,007
+| percentage = 100.0
+}}
+{{Election box hold with party link without swing
+  |winner     = Republican Party (United States)
+}}
+{{Election box end}}
+
+{{Election box begin no change
+| title = Wisconsin's 7th congressional district, 2022<ref>{{Cite web |date=November 30, 2022 |title=Canvass Results for 2022 General Election |url=https://elections.wi.gov/sites/default/files/documents/Statewide%20Summary%20Results_1.pdf |url-status=live |archive-url=https://web.archive.org/web/20230215021732/https://elections.wi.gov/sites/default/files/documents/Statewide%20Summary%20Results_1.pdf |archive-date=February 15, 2023 |access-date=February 9, 2025 |publisher=[[Wisconsin Elections Commission]] |page=4}}</ref>
+}}
+{{Election box winning candidate with party link no change
+| candidate = Tom Tiffany (incumbent)
+| party = Republican Party (United States)
+| votes = 209,224
+| percentage = 61.8
+}}
+{{Election box candidate with party link no change
+| candidate = Richard Ausman
+| party = Democratic Party (United States)
+| votes = 128,877
+| percentage = 38.1
+}}
+{{Election box write-in with party link no change
+| votes      = 167
+| percentage = 0.1
+}}
+{{Election box total no change
+| votes = 338,268
+| percentage = 100.0
+}}
+{{Election box hold with party link without swing
+  |winner     = Republican Party (United States)
+}}
+{{Election box end}}
+
+{{Election box begin no change
+| title = Wisconsin's 7th congressional district, 2024<ref>{{Cite web |date=November 27, 2024 |title=County by County Report 2024 General Election |url=https://elections.wi.gov/sites/default/files/documents/County%20by%20County%20Report_US%20Congress_0.pdf |url-status=live |archive-url=https://web.archive.org/web/20250204224457/https://elections.wi.gov/sites/default/files/documents/County%20by%20County%20Report_US%20Congress_0.pdf |archive-date=February 4, 2025 |access-date=February 9, 2025 |publisher=[[Wisconsin Elections Commission]]}}</ref>
+}}
+{{Election box winning candidate with party link no change
+| candidate = Tom Tiffany (incumbent)
+| party = Republican Party (United States)
+| votes = 273,553
+| percentage = 63.6
+}}
+{{Election box candidate with party link no change
+| candidate = Kyle Kilbourn
+| party = Democratic Party (United States)
+| votes = 156,524
+| percentage = 36.4
+}}
+{{Election box write-in with party link no change
+| votes      = 307
+| percentage = 0.1
+}}
+{{Election box total no change
+| votes = 430,384
+| percentage = 100.0
+}}
+{{Election box hold with party link without swing
+  |winner     = Republican Party (United States)
+}}
+{{Election box end}}
+
+==References==
+{{reflist}}
+
+==External links==
+{{wikiquote}}
+{{commons category}}
+* [https://tiffany.house.gov/ Congressman Tom Tiffany] official U.S. House website
+* [https://tomtiffany.com/ Campaign website]
+* [https://docs.legis.wisconsin.gov/2019/legislators/senate/1922 Tom Tiffany] at [[Wisconsin Legislature]]
+* {{Ballotpedia|Tom_Tiffany|Tom Tiffany}}
+* {{ CongLinks | congbio = T000165 | fec = H0WI07101 | votesmart = 51831 | congress = thomas-tiffany/T000165}}
+* {{C-SPAN|126133}}
+
+{{s-start}}
+{{s-par|us-hs}}
+{{s-bef|before=[[Sean Duffy]]}}
+{{s-ttl|title=Member of the [[List of United States representatives from Wisconsin|U.S. House of Representatives]]<br />from [[Wisconsin's 7th congressional district]]|years=2020–present}}
+{{s-inc}}
+|-
+{{s-ppo}}
+{{s-bef|before=Tim Michels}}
+{{s-ttl|title=[[Republican Party (United States)|Republican]] nominee for [[Governor of Wisconsin]]|years=[[2026 Wisconsin gubernatorial election|2026]]}}
+{{s-inc|recent}}
+|-
+{{s-prec|usa}}
+{{s-bef|before=[[Greg Murphy (politician)|Greg Murphy]]}}
+{{s-ttl|title=[[Seniority in the United States House of Representatives|United States representatives by seniority]]|years=236th}}
+{{s-aft|after=[[Claudia Tenney]]}}
+{{s-end}}
+
+{{WI-FedRep}}
+{{Current U.S. representatives}}
+{{United States representatives from Wisconsin}}
+{{USCongRep-start |congresses=116th–present<!-- 119th --> [[United States Congress]] |state=[[Wisconsin's congressional delegations|Wisconsin]]}}
+{{USCongRep/WI/116}}
+{{USCongRep/WI/117}}
+{{USCongRep/WI/118}}
+{{USCongRep/WI/119}}
+{{USCongRep-end}}
+{{authority control}}
+
+{{DEFAULTSORT:Tiffany, Tom}}
+[[Category:1957 births]]
+[[Category:21st-century United States representatives]]
+[[Category:21st-century members of the Wisconsin Legislature]]
+[[Category:American Protestants]]
+[[Category:Businesspeople from Wisconsin]]
+[[Category:Candidates in the 2026 United States elections]]
+[[Category:Christians from Wisconsin]]
+[[Category:Living people]]
+[[Category:People from Minocqua, Wisconsin]]
+[[Category:People from Pierce County, Wisconsin]]
+[[Category:People from Wabasha, Minnesota]]
+[[Category:Protestants from Wisconsin]]
+[[Category:Republican Party United States representatives from Wisconsin]]
+[[Category:Republican Party members of the Wisconsin State Assembly]]
+[[Category:Republican Party Wisconsin state senators]]
+[[Category:University of Wisconsin–River Falls alumni]]
+[[Category:Wisconsin city council members]]
+[[Category:Survivors of aviation accidents or incidents]]

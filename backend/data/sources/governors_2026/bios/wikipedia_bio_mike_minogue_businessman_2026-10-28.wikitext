@@ -1,0 +1,123 @@
+{{Short description|American businessman and politician}}
+<!-- 
+Good Start to the page, but needs more information and citations, just a quick mock up so I could maybe reference from another page.
+-->
+{{Infobox person
+| name               = Michael Minogue
+| image              = 
+| caption            = 
+| birth_name         = Michael Roger Minogue
+| birth_date         = 
+| birth_place        = Georgia, USA
+| citizenship        = American
+| education          = [[United States Military Academy]] (BS)<br>[[University of Chicago]] (MBA)
+| occupation         = Business executive, politician
+| known_for          = Former chairman, president and CEO of [[Abiomed]]
+| political_party    = [[Republican Party (United States)|Republican]]
+| spouse             = Renee Minogue
+| children           = 5
+{{Infobox Military person
+| embed              = yes
+
+| allegiance         = {{Flagu|US}}
+| branch             = {{Flagicon|United States Army}} [[United States Army]]
+| service_years      = c. 1989–1993
+| battles            = [[Gulf War|Operation Desert Storm]]
+| awards             = [[Bronze Star Medal]]
+}}
+}}
+
+'''Michael Roger Minogue''' is an American businessman, military veteran, and politician who is the [[Republican Party (United States)|Republican Party]] nominee for [[Governor of Massachusetts]] in the [[2026 Massachusetts gubernatorial election]]. A former chairman, president and chief executive officer of medical-device manufacturer [[Abiomed]], Minogue entered the gubernatorial race in October 2025 and defeated businessman and former [[Massachusetts Bay Transportation Authority]] executive Brian Shortsleeve in the September 2026 Republican primary.<ref name="WBURLaunch">{{cite news |last=Van Buskirk |first=Chris |title=Businessman and GOP donor Michael Minogue jumps into Mass. governor's race |url=https://www.wbur.org/news/2025/10/01/republican-michael-minogue-candidate-mass-governors-race |work=[[WBUR-FM|WBUR]] |date=October 1, 2025 |access-date=October 6, 2026}}</ref><ref name="MAResults">{{cite web |title=2026 Governor Republican Primary |url=https://electionstats.state.ma.us/elections/search/year_from:1970/year_to:2026 |website=Massachusetts Election Statistics |publisher=Secretary of the Commonwealth of Massachusetts |access-date=October 6, 2026}}</ref>
+
+Before entering politics, Minogue spent nearly two decades leading [[Abiomed]], a Massachusetts-based medical technology company best known for the [[Impella]] heart pump. He served as chief executive beginning in 2004 and remained at the company until its acquisition by [[Johnson & Johnson]] in 2022 in a transaction valued at approximately $16.6 billion.<ref name="SEC2004">{{cite web |title=ABIOMED Appoints Michael R. Minogue as Its New President and Chief Executive Officer |url=https://www.sec.gov/Archives/edgar/data/815094/000110465904009677/a04-4150_2ex99d1.htm |publisher=[[U.S. Securities and Exchange Commission]] |date=April 6, 2004 |access-date=October 6, 2026}}</ref><ref name="JNJAcquire">{{cite press release |title=Johnson & Johnson to Acquire Abiomed |url=https://www.jnjmedtech.com/en-US/news-events/johnson-johnson-acquire-abiomed |publisher=[[Johnson & Johnson]] |date=November 1, 2022 |access-date=October 6, 2026}}</ref>
+
+==Early life and education==
+
+Michael Roger Minogue was born in [[Georgia (U.S. state)|Georgia]] and grew up in [[New Jersey]], the son of an [[Air force|Air Force]] pilot.<ref name=":1">{{Cite news |last=Weisman |first=Robert |date=2016-10-21 |title=Five things you should know about Mike Minogue |url=https://www.bostonglobe.com/business/2016/10/21/five-things-you-should-know-about-mike-minogue/gMpEMC3hLCwtvJeRtSYKMP/story.html |access-date=2026-10-06 |work=The Boston Globe |language=en-US |issn=0743-1791}}</ref><ref name="WBURProfile">{{cite news |last=Van Buskirk |first=Chris |title=Republican Mike Minogue brings big money, outsider status and business cred in run for Mass. governor |url=https://www.wbur.org/news/2026/04/13/mass-republican-governor-candidate-mike-minogue-biotech-campaign |work=[[WBUR-FM|WBUR]] |date=April 13, 2026 |access-date=October 6, 2026}}</ref> His campaign has described him as the youngest of four children in an [[Irish Catholics|Irish Catholic]] family<ref name="GlobeLaunch">{{cite news |title='Faith, heart, and the grit to serve': GOP megadonor Mike Minogue launches campaign for Mass. governor |url=https://www.bostonglobe.com/2025/10/01/metro/michael-minogue-gop-governor-healey/ |work=[[The Boston Globe]] |date=October 1, 2025 |access-date=October 6, 2026}}</ref> and [[WBUR-FM|WBUR]] stated that he is a devout Irish Catholic.<ref name="WBURProfile" />
+
+Minogue entered the [[United States Military Academy]] at [[West Point, New York|West Point]] in 1985.<ref name="WBURProfile" /> A company announcement shared after he joined Abiomed stated that he had graduate with a Bachelor of Science in engineering and afterwards earned an MBA from the University of Chicago.<ref name="SEC2004" /> Later filings described the West Point degree as an engineering management degree.<ref name="SEC2008">{{cite web |title=Abiomed, Inc. 2008 Proxy Statement |url=https://www.sec.gov/Archives/edgar/data/815094/000119312508148755/ddef14a.htm |publisher=[[U.S. Securities and Exchange Commission]] |date=2008 |access-date=October 6, 2026}}</ref><ref name=":2">{{Cite web |url=https://www.sec.gov/Archives/edgar/data/1145197/000115752317002348/a51666462ex99_1.htm |access-date=2026-10-06 |website=www.sec.gov|title=Insulet Appoints Michael R. Minogue to its Board of Directors|date=August 10, 2017|publisher=Insulet Corporation|via=U.S. Securities and Exchange Comission}}</ref>
+
+==Military service==
+
+After graduating from West Point, Minogue served on active duty in the [[United States Army]] for four years as an infantry officer.<ref name="SEC2008" /> He was a Ranger-qualified platoon leader during [[Operation Desert Storm]] in the [[Gulf War]].<ref name="WBURLaunch" /><ref name=":1" /> WBUR reported that he earned a [[Bronze Star Medal]] serving in Iraq in 1991.<ref name="WBURProfile" /><ref name="CampaignBio">{{cite web |title=Mike Minogue Announces Campaign for Governor of Massachusetts |url=https://minogueforma.com/press-release/mike-minogue-announces-campaign-for-governor-of-massachusetts/ |website=Mike Minogue for Governor |date=October 1, 2025 |access-date=October 6, 2026}}</ref> A later Insulet filing stated that he was an Airborne Ranger.<ref name=":2" />
+
+In 2016, Minogue told ''[[The Boston Globe]]'' that serving in infantry leadership meant "lead from the front," saying: "If you want to serve in these types of units, you have to serve something greater than yourself."<ref name=":1" />
+
+==Business career==
+
+===GE Medical Systems===
+
+After leaving active military service, Minogue began a career in the medical technology industry. He spent approximately twelve years with [[GE HealthCare|GE Medical Systems]], holding a number of management positions in sales, marketing, [[cardiology]], [[medical imaging]], and information technology.<ref name="SEC2008" />
+
+Among his positions at GE were general manager of the company's global [[positron emission tomography]] business, general manager of Americas cardiology and information technology sales, and vice president and general manager for Americas sales and marketing for GE Medical Systems Information Technology.<ref name="SEC2008" />
+
+===Abiomed===
+
+In April 2004, Minogue was appointed president and chief executive officer of [[Abiomed]], a medical-device company headquartered in [[Danvers, Massachusetts]]. He also joined the company's board of directors.<ref name="SEC2004" /> He became chairman of the board in 2005.<ref name="SEC2008" />
+
+During Minogue's tenure, Abiomed increasingly shifted its focus from artificial-heart replacement technology toward technology intended to assist heart recovery. A major component of that transition was the company's acquisition and development of the [[Impella]] line of miniature heart pumps.<ref name="WBURProfile" />
+
+Former Abiomed board member Dorothy Puhy told WBUR that Minogue presented the company's board with the plan to acquire the German company that controlled the intellectual property for the Impella heart pump, a transaction she described as beginning Abiomed's transformation into a much larger company.<ref name="WBURProfile" />
+
+The company expanded significantly during Minogue's leadership, and the Impella became its principal product line. By the time Johnson & Johnson announced its acquisition of Abiomed in November 2022, the transaction valued the company at approximately $16.6 billion.<ref name="JNJAcquire" />
+
+Johnson & Johnson completed its acquisition of Abiomed in December 2022.<ref name="JNJComplete">{{cite press release |title=Johnson & Johnson Completes Acquisition of Abiomed |url=https://www.jnjmedtech.com/en-US/news-events/johnson-johnson-completes-acquisition-abiomed |publisher=[[Johnson & Johnson]] |date=December 22, 2022 |access-date=October 6, 2026}}</ref> Minogue subsequently left the company.
+
+Media reports estimated that Minogue personally received at least $153 million as a result of the transaction, with his total proceeds potentially substantially higher depending on his stock interests.<ref name="WBURProfile" />
+
+During Minogue's tenure, Abiomed also faced regulatory and legal scrutiny involving some of its products and business practices. Federal regulators issued warnings and recalls involving the company's heart pumps, and Abiomed reached a federal settlement in 2018 concerning allegations involving physician payments and kickbacks.<ref name="GlobeAbiomed">{{cite news |title=Mike Minogue says he'll run Mass. like he ran Abiomed. The company has faced recalls and kickback allegations |url=https://www.bostonglobe.com/2026/03/26/metro/mike-minogue-gop-governor-candidate-abiomed/ |work=[[The Boston Globe]] |date=March 26, 2026 |access-date=October 6, 2026}}</ref> Minogue has defended the company's record and has argued that criticism of Abiomed does not accurately represent its overall performance and impact.<ref name="GlobeAbiomed" />
+
+==Philanthropy==
+
+Minogue founded MedTechVets, a nonprofit organization intended to help military veterans transition into careers in the medical technology industry.<ref name="WBURLaunch" />
+
+He and his wife also established the Michael & Renee Minogue Foundation. According to his campaign, the foundation supports organizations involved in education, veterans' programs, healthcare innovation, faith-based initiatives, and programs serving children.<ref name="WBURLaunch" />
+
+==Political activity==
+
+Before becoming a candidate himself, Minogue was a significant donor to Republican candidates and organizations at the state and national levels.<ref name="WBURLaunch" />
+
+He supported former Massachusetts governor [[Charlie Baker]] and Republican U.S. Senate candidate [[John Deaton (attorney)|John Deaton]]. Minogue also made substantial contributions to national Republican organizations and candidates, including the [[Republican National Committee]].<ref name="WBURLaunch" />
+
+According to reporting by ''The Boston Globe'', Minogue had previously changed his Massachusetts voter registration from Republican to unenrolled in 2007 before registering again as a Republican in April 2025. Voting records reviewed by the newspaper indicated that while unenrolled he participated exclusively in Republican primaries.<ref name="GlobeLaunch" />
+
+Minogue and his wife also hosted or participated in fundraising activity associated with national Republican figures, including [[JD Vance]]. His support for President [[Donald Trump]] and other national Republicans became an issue raised by Democrats during his gubernatorial campaign.<ref name="WBURLaunch" />
+
+==2026 Massachusetts gubernatorial campaign==
+
+===Campaign launch===
+
+On October 1, 2025, Minogue announced his candidacy for the Republican nomination for governor of Massachusetts in the [[2026 Massachusetts gubernatorial election]].<ref name="WBURLaunch" />
+
+He entered a Republican field that initially included former Massachusetts secretary of housing and economic development [[Mike Kennealy]] and former [[Massachusetts Bay Transportation Authority]] chief administrator Brian Shortsleeve.<ref name="WBURLaunch" />
+
+Minogue described himself as a political outsider and made his experience managing Abiomed a central component of his campaign. He argued that Massachusetts government should operate with greater financial accountability and efficiency and said his private-sector management experience qualified him to reform state government.<ref name="WBURProfile" />
+
+The campaign also emphasized affordability, public safety, economic competitiveness, housing, education, and government accountability.<ref name="WBURProfile" />
+
+=== Republican primary ===
+Minogue and Brian Shortsleeve were on the September 1st Republican gubernatorial primary. Minogue garnered 194,758 votes to Shortsleeve's 62,161, with 612 write-ins reported.<ref>{{Cite web |last=Galvin |first=William Francis |title=2026 Governor Republican Primary |url=https://electionstats.state.ma.us/elections/view/172894/ |url-status=live |access-date=2026-10-09 |website=Secretary of the Commonwealth of Massachusetts |language=en-US}}</ref><ref>{{Cite news |date=2026-09-01 |title=Massachusetts Governor Primary Election Results |url=https://www.nytimes.com/interactive/2026/09/01/us/elections/results-massachusetts-governor-primary.html |access-date=2026-10-09 |work=The New York Times |language=en-US |issn=0362-4331}}</ref> Shortsleeve endorsed Minogue on the night of the primary and said that Republicans ought to unite to defeat the democratic incumbent, [[Maura Healey]].<ref name=":3">{{Cite web |last=Dumcius |first=Gintautas |date=2026-09-01 |title=Minogue defeats Shortsleeve in GOP primary for governor |url=https://www.wbur.org/news/2026/09/01/massachusetts-gop-governor-primary-minogue-shortsleeve |access-date=2026-10-09 |website=www.wbur.org |language=en}}</ref> Shortsleeve had previously argued during the primary that Minogue's opposition to [[abortion]] would be a hinderance in winning over moderate voters in the general election.<ref name=":3" />
+
+=== Platform ===
+On September 10, nine days after winning the primary, Minogue released a "Blueprint for a Better Future," which focused on affordability, opportunity, public safety, and accountability for the state government.<ref name=":4">{{Cite web |last=Colin A. Young |first=State House News Service |date=2026-09-11 |title=Minogue's blueprint promises audits, tax cuts and a net-zero emissions repeal |url=https://www.wbur.org/news/2026/09/11/mike-minogue-gop-governor-policy-blueprint |access-date=2026-10-09 |website=www.wbur.org |language=en}}</ref><ref name=":5">{{Cite news |last=Buskirk |first=Chris Van |date=2026-09-10 |title=Minogue vows tax cuts, to give 'girls fair and safe sports' |url=https://www.bostonglobe.com/2026/09/10/metro/minogue-blueprint-massachusetts-governors-race-healey/ |access-date=2026-10-09 |work=The Boston Globe |language=en-US |issn=0743-1791}}</ref> WBUR and The Boston Globe reported that the document calls for an outside audit of the state legislature and budget, a public spending dashboard, tax cuts, a gas-tax holiday when prices top $4 per gallon, the repealing of the state's net-zero emissions mandate, an end to sanctuary-state policies, and ending cashless bail. Also proposed was the leasing or selling of state land for manufacturing, hiring veterans into private-sector jobs, and using artificial intelligence to manage traffic.<ref name=":4" /><ref name=":5" /> The Globe noted that several of these proposals, including the climate mandate repeal, gas tax holiday, and legislative audit, would require approval beyond the governor's office.<ref name=":5" />
+
+Maura Healey responded the same day by saying that "If he doesn't explain how he, as governor, would stand up to the damage that Donald Trump is doing to our residents, to our healthcare system, to our economy, that's not a blueprint."<ref name=":4" />
+
+===Campaign financing===
+
+Minogue largely self-financed his campaign during its early stages. In October 2025, his first full month as a candidate, he contributed $1.5 million of his own money to the campaign while raising more than $373,000 from individual donors.<ref name="WBURMoney">{{cite news |last=Van Buskirk |first=Chris |title=GOP mega-donor Michael Minogue pours $1.5 million into his own Mass. gubernatorial campaign |url=https://www.wbur.org/news/2025/11/04/minogue-gop-governor-fundraising-healey |work=[[WBUR-FM|WBUR]] |date=November 4, 2025 |access-date=October 6, 2026}}</ref>
+
+By March 2026, he had put approximately $12.5 million of his own money into the campaign, making him the best-funded Republican candidate in the race.<ref name="WBURProfile" />
+
+Minogue said that his personal financial resources would allow him to compete with Healey in the general election without being dependent on traditional political fundraising.
+
+== References ==
+{{Reflist}}
+
+[[Category:Massachusetts Republicans]]
+[[Category:American business executives]]
+[[Category:United States Military Academy alumni]]
+[[Category:University of Chicago Booth School of Business alumni]]
+[[Category:United States Army Rangers]]
+[[Category:Living people]]
+[[Category:21st-century Massachusetts politicians]]

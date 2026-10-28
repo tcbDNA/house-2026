@@ -1,0 +1,274 @@
+{{short description|American politician (born 1976)}}
+{{AI-generated|date=July 2026|reason=Text added in [[Special:Diff/1294906630|this 2025 edit]], note [[WP:AISIGNS]] here and in user's other edits; here, most noticeably AIATTR/overgeneralization}}
+{{Use American English|date=July 2026}}
+{{Use mdy dates|date=June 2025}}
+{{Infobox officeholder
+| name = Hannah Pingree
+| image = Headshot of Hannah Pingree in February 2026.jpg
+| caption = Pingree in 2026
+| office = 99th [[Speaker of the Maine House of Representatives]]
+| term_start = December 3, 2008
+| term_end = December 6, 2010
+| predecessor = [[Glenn Cummings]]
+| successor = [[Robert Nutting (politician)|Robert Nutting]]
+| office1 = Majority Leader of the [[Maine House of Representatives]]
+| term_start1 = 2006
+| term_end1 = 2008
+| predecessor1 = Glenn Cummings
+| successor1 = John Piotti
+| state_house2 = Maine
+| district2 = 36th
+| term_start2 = December 4, 2002
+| term_end2 = December 1, 2010
+| predecessor2 = Paul Volenik
+| successor2 = Walter Kumiega
+| birth_date = {{birth date and age|1976|10|18}}
+| birth_place = [[Belfast, Maine]], U.S.
+| death_date = 
+| death_place = 
+| party = [[Democratic Party (United States)|Democratic]]
+| spouse = Jason Mann<!-- not the director from Project Greenlight currently at [[Jason Mann]] -->
+| children = 2
+| relatives = [[Chellie Pingree]] (mother)
+| education = [[Brown University]] ([[Bachelor of Arts|BA]])
+| website = {{url|hannahforgovernor.com|Campaign website}}
+}}
+'''Hannah M. Pingree''' (born October 18, 1976) is an American politician who served as the 99th [[speaker of the Maine House of Representatives]] from 2008 to 2010. A member of the [[Democratic Party (United States)|Democratic Party]], she was the second woman to hold the position in Maine history.<ref name="MaineMag" />
+
+Pingree represented the 36th district from 2002 to 2010, encompassing ten islands and coastal towns in [[Knox County, Maine|Knox]] and [[Hancock County, Maine|Hancock Counties]], before leaving office due to state [[term limit]]s.<ref name=BDN>{{cite web|title=Pingree, Tardy, now out of House, already positioning for future elections|url=http://new.bangordailynews.com/2010/12/27/politics/pingree-tardy-already-positioning-for-future-elections/|publisher=Bangor Daily News|access-date=January 21, 2011|year=2010|url-status=dead|archive-url=https://archive.today/20130118032639/http://new.bangordailynews.com/2010/12/27/politics/pingree-tardy-already-positioning-for-future-elections/|archive-date=January 18, 2013}}</ref><ref name="ballotpedia">{{cite web|url=https://ballotpedia.org/Hannah_Pingree|title=Hannah Pingree|work=Ballotpedia|access-date=June 10, 2025}}</ref> Most recently, she served as director of the Office of Policy Innovation and the Future under [[Governor of Maine|Governor]] [[Janet Mills]] from 2019 to 2025.<ref name=":0">{{Cite web |last=Flisiuk |first=Francis |date=June 10, 2025 |title=Hannah Pingree announces campaign for Maine Governor |url=https://www.wmtw.com/article/hannah-pingree-announces-campaign-for-maine-governor/65019587 |access-date=2025-06-10 |website=WMTW |language=en}}</ref> She is the daughter of [[United States House of Representatives|US representative]] [[Chellie Pingree]].
+
+On June 10, 2025, Pingree announced her candidacy for the [[2026 Maine gubernatorial election]].<ref name=":1" /> Pingree won the Democratic nomination on June 9, and will face Republican [[Robert B. Charles|Bobby Charles]] and independent [[Rick Bennett (Maine politician)|Rick Bennett]] in the general election.<ref name=":2">{{Cite web |date=2026-06-19 |title=Hannah Pingree wins ranked-choice runoff in Democratic primary for governor |url=https://www.pressherald.com/2026/06/19/hannah-pingree-wins-ranked-choice-runoff-in-democratic-primary-for-governor/ |access-date=2026-06-19 |website=The Portland Press Herald |language=en-US}}</ref>
+
+==Early life and education==
+Hannah Pingree was born on October 18, 1976, in [[Belfast, Maine|Belfast]], Maine.<ref name="BDNEnters" /><ref>{{Cite web |date= |title=Meet Hannah |url=https://hannahforgovernor.com/meet-hannah-pingree/ |access-date=June 28, 2025 |website=Hannah Pingree for Governor |language=en-US}}</ref> She grew up on the island of [[North Haven, Maine|North Haven]], where her father Charlie Pingree is a boat-builder.<ref>{{Cite web |last=Griffin |first=Walter |date=October 3, 2008 |title=Chellie Pingree: Maine island living shapes longtime politician's views |url=http://www.bangordailynews.com/2008/10/03/news/chellie-pingree-maine-island-living-shapes-longtime-politicians-views/ |access-date=2025-06-28 |website=Bangor Daily News |language=en-US}}</ref> Her mother, [[Chellie Pingree]], is a small business owner and has been the [[U.S. representative]] for [[Maine's 1st congressional district]] since 2009.<ref>{{Cite web |last=Mundry |first=Jackie |date=2026-04-24 |title=Meet the candidates for governor: Hannah Pingree |url=https://www.wmtw.com/article/meet-the-candidates-governor-hannah-pingree/71083835 |access-date=2026-05-04 |website=WMTW |language=en}}</ref> She graduated from North Haven Community School and [[Brown University]] with a degree in political science.<ref>{{Cite news |last=Thistle |first=Scott |date=January 17, 2019 |title=Mills names former House Speaker Hannah Pingree to head new office of innovation |url=https://www.pressherald.com/2019/01/17/mills-names-hannah-pingree-as-head-of-new-office-of-innovation/ |access-date=June 28, 2025 |work=[[Portland Press Herald]]}}</ref> She was a 1998–1999 Fellow for Leadership in Public Affairs for the [[Coro Foundation]] in [[New York City]].<ref>{{Cite news |date=December 3, 2008 |title=Hannah Pingree Elected Speaker of Maine House |work=US Fed News Service, Including US State News |id={{ProQuest|470832272}} |agency=[[HT Media]]}}</ref>
+
+==Political career==
+===Early career===
+Prior to serving in the Legislature, Pingree worked as an intern at the [[New York City Mayor's Office of Management and Budget]] in 1998, then as political director and "Election 2000" producer for [[iVillage.com]] from 1999 to 2001.<ref name="ballotpedia" /> She was a fundraiser for the unsuccessful [[United States Senate]] [[2002 United States Senate election in Maine|campaign]] of her mother [[Chellie Pingree]] in 2002,{{citation needed|date=June 2025}} who later was elected to represent [[Maine's 1st congressional district]] in the [[United States House of Representatives]]. From 2002 to 2004, she worked as development director of Waterman's Community Center.<ref name="ballotpedia" />
+
+===Maine Legislature===
+Pingree served four terms in the [[Maine House of Representatives]] from 2002 to 2010, representing the 36th district. During her legislative tenure, she served as Chair of the Committee on Health and Human Services and as a member of the Committee on Appropriations and Financial Affairs.<ref name="GOPIF">{{cite web|url=https://www.maine.gov/future/about/our-team?q=about/our-team|title=Our Team|work=Office of Policy Innovation & Future|access-date=June 10, 2025}}</ref><ref name="PPH2019">{{cite web |date=January 18, 2019 |title=Mills names former House Speaker Hannah Pingree to head new office of innovation |url=https://www.pressherald.com/2019/01/18/mills-names-former-house-speaker-hannah-pingree-to-head-new-office-of-innovation/ |access-date=June 10, 2025 |work=[[The Portland Press Herald]]}}</ref> Her legislative work focused on energy efficiency, housing, health care, and bipartisan budget initiatives.<ref name="MaineMag">{{cite web|url=https://www.themainemag.com/hannah-pingree/|title=Hannah Pingree|work=The Maine Mag|date=June 22, 2021|access-date=June 10, 2025}}</ref>
+
+In her third term, Pingree was elected House Majority Leader (2006-2008) at age 30, becoming the third woman in Maine history to serve in the role.<ref name=BDN /><ref name="MaineMag" /> She was subsequently elected Speaker of the House from 2008 to 2010, serving at age 32 as the second woman in Maine history to hold the position, and the youngest woman to serve in that position in American history.<ref name="MaineMag" /><ref name="BDNEnters">{{cite web|url=https://www.bangordailynews.com/2025/06/10/uncategorized/hannah-pingree-enters-maine-gubernatorial-race-2025-joam40zk0w/|title=Hannah Pingree enters the Democratic race to be Maine's next governor|work=Bangor Daily News|date=June 10, 2025|access-date=June 10, 2025}}</ref><ref>{{Cite news |last=Russell |first=Jenna |date=2026-06-19 |title=Hannah Pingree and Bobby Charles Will Face Off in Maine Governor’s Race |url=https://www.nytimes.com/2026/06/19/us/politics/maine-governor-pingree-charles.html |access-date=2026-06-20 |work=The New York Times |language=en-US |issn=0362-4331}}</ref> In her final term (2008), she ran unopposed for reelection.<ref name="ballotpedia" />
+
+Pingree co-sponsored legislation that became the Kid-Safe Product Act, which addressed toxic chemicals in household products.<ref name="MaineMag" />
+
+In 2009, while serving as Speaker, Pingree testified before a Congressional committee alongside her mother, advocating for national campaign finance reform based on Maine's Clean Elections system.<ref>{{cite web|url=https://pingree.house.gov/news/documentsingle.aspx?DocumentID=614|title=Congresswoman Chellie Pingree and Maine House Speaker Hannah Pingree call for national campaign finance reform|work=U.S. Representative Chellie Pingree|date=July 30, 2009|access-date=June 10, 2025}}</ref>
+
+In 2010, [[Time (magazine)|''Time'' magazine]] included Pingree in its list of 40 leaders under 40, describing her as a "rising star of American politics."<ref name="ballotpedia" /><ref>{{cite web|url=http://bangordailynews.com/2010/10/18/politics/time-magazine-honors-hannah-pingree/|title=Time magazine honors Hannah Pingree|work=[[The Bangor Daily News]]|access-date=May 11, 2016}}</ref>
+
+===Post-legislative career===
+After leaving the legislature, Pingree managed her mother and step-father's inn and restaurant, Nebo Lodge, and served on the North Haven Community School Board.<ref name=BDN /> She also served on the board of trustees of the Island Institute.<ref name="ballotpedia" /> She led fundraising campaigns to build an island community center, a new public school, and an elder-care facility on North Haven.<ref name="MaineMag" /> She also managed North Haven Sustainable Housing, an organization that builds housing for year-round residents and island seniors, and hosted a weekly public affairs show on Maine Public Broadcasting Network.<ref name="Belisle">{{cite web|url=https://www.themainemag.com/radio/radio-guests/hannah-chellie-pingree/|title=Hannah and Chellie Pingree|work=The Maine Mag|date=February 23, 2018|access-date=June 10, 2025}}</ref>
+
+In 2012, when U.S. Senator [[Olympia Snowe]] announced her retirement, Pingree briefly considered running for her mother's congressional seat if Chellie Pingree had decided to run for the Senate. She collected signatures for a potential congressional campaign but ended her consideration when her mother decided against the Senate race.<ref name="ballotpedia" /><ref>{{cite web|url=https://www.bangordailynews.com/2012/03/04/politics/aclu-advocate-portland-lawmaker-explore-1st-district-seat-race/|title=Hannah Pingree, ACLU advocate, Portland lawmaker explore 1st District seat race|work=Bangor Daily News|date=March 5, 2012|access-date=June 10, 2025}}</ref>
+
+Pingree worked as a part-time consultant for Safer Chemicals, Safer Families, a national coalition advocating for better regulation of chemicals. On July 24, 2012, she testified before the United States Senate Committee on Environment and Public Works about chemical regulations, particularly flame retardants.<ref name="ballotpedia" />
+
+In 2017, Pingree became a prominent advocate for Maine's ranked-choice voting law, writing op-eds opposing legislative efforts to repeal the citizen-initiated measure and calling for its preservation.<ref>{{cite web|url=https://www.pressherald.com/2017/06/30/hannah-pingree-ranked-choice-voting-gives-voters-more-voice/|title=Hannah Pingree: Ranked-choice voting gives voters more voice|work=Portland Press Herald|date=June 30, 2017|access-date=June 10, 2025}}</ref>
+
+===Mills administration===
+In January 2019, Maine Governor [[Janet Mills]] appointed Pingree to lead the newly created Office of Policy Innovation and the Future.<ref name=PPH>{{cite web|url=https://www.pressherald.com/2019/01/17/mills-names-hannah-pingree-as-head-of-new-office-of-innovation/|title=Mills names former House Speaker Hannah Pingree to head new office of innovation|work=[[The Portland Press Herald]]|date=January 17, 2019|access-date=June 10, 2025}}</ref> In this role, she oversaw cross-agency efforts on climate change, housing, economic development, and other long-term policy challenges. She also co-chaired the Maine Climate Council.<ref name="GOPIF" />
+
+As co-chair of the Maine Climate Council, Pingree oversaw development of Maine's climate action plan, "Maine Won't Wait." According to the Mills administration, the plan led to the installation of more than 100,000 heat pumps by 2023, reaching the state's 2025 target ahead of schedule.<ref name="MillsDeparture">{{cite web|url=https://www.maine.gov/governor/mills/news/governor-mills-announces-departure-hannah-pingree-director-governors-office-policy-innovation|title=Governor Mills Announces Departure of Hannah Pingree|work=Office of Governor Janet T. Mills|date=May 15, 2025|access-date=June 10, 2025}}</ref><ref name="WashPost">{{cite news|url=https://www.washingtonpost.com/climate-environment/2023/02/07/maine-gas-industry-heat-pumps/|title=Heat pumps prove popular in Maine, despite oil industry pushback|newspaper=The Washington Post|date=February 10, 2023|access-date=June 10, 2025}}</ref> The heat-pump initiative faced significant opposition from fossil fuel industry groups, who argued the technology was not ideal for Maine's climate and funded campaigns questioning the effectiveness of heat pumps in cold weather conditions.<ref name="WashPost" /> The National Oilheat Research Alliance, representing heating oil sellers, funded promotional campaigns that directed viewers to websites containing what experts characterized as exaggerated or misleading claims about electric-powered heat pumps.<ref name="WashPost" />
+
+Under her leadership, GOPIF established the Community Resilience Partnership in 2021, which according to state data included 263 participating communities and provided $18.8 million in grants for climate and energy projects.<ref name="MillsDeparture" /> Following severe storms in late 2023 and early 2024, GOPIF coordinated a $60- million relief package for Maine communities.<ref name="MillsDeparture" />
+
+Industry observers have noted potential challenges for Maine's clean energy workforce development programs, including federal funding uncertainty and the possibility of tariffs affecting equipment costs.<ref name="MaineMonitor">{{cite web|url=https://themainemonitor.org/heat-pump-workforce-development/|title=Can Maine's heat pump and workforce development boom last?|work=The Maine Monitor|date=May 20, 2025|access-date=June 10, 2025}}</ref>
+
+GOPIF also worked on LD 1 legislation for emergency planning and severe weather preparation, which was enacted in April 2025.<ref name="MillsDeparture" /> Pingree resigned from the position on May 16, 2025.<ref>{{Cite web |date=May 15, 2025 |title=Hannah Pingree, a possible gubernatorial candidate, to leave Mills administration |url=https://www.mainepublic.org/politics/2025-05-15/hannah-pingree-a-possible-gubernatorial-candidate-to-leave-mills-administration |access-date=2025-05-23 |website=Maine Public |language=en}}</ref>
+
+=== 2026 gubernatorial campaign ===
+[[File:Hannah Pingree logo.png|thumb|upright|Pingree's gubernatorial campaign logo.]]{{Main|2026 Maine gubernatorial election}}
+On June 10, 2025, Pingree announced her candidacy for the [[2026 Maine gubernatorial election|2026 Democratic primary for Governor of Maine]].<ref name=":1">{{cite web|url=https://www.wmtw.com/article/hannah-pingree-announces-campaign-for-maine-governor/65019587|title=Hannah Pingree announces campaign for Maine Governor|work=WMTW|access-date=June 10, 2025|date=June 10, 2025}}</ref><ref>{{cite web|url=https://www.centralmaine.com/2025/06/10/hannah-pingree-announces-run-for-maine-governor/|title=Hannah Pingree announces run for Maine governor|work=Kennebec Journal and Morning Sentinel|access-date=June 10, 2025|date=June 10, 2025}}</ref>
+
+Her campaign announcement included events in Rockland, Lewiston, Biddeford, and Portland, where she outlined a platform focusing on economic opportunity, climate resilience, affordable housing, and health care.<ref>{{cite web|url=https://mainemorningstar.com/briefs/hannah-pingree-officially-launches-run-for-governor/|title=Hannah Pingree officially launches bid for governor|work=Maine Morning Star|access-date=June 10, 2025|date=June 10, 2025}}</ref>
+
+A Pan Atlantic Research poll released in May 2025, before her official announcement, showed Pingree with 20% support among likely Democratic primary voters.<ref name=":1"/> She entered a Democratic primary field that included Secretary of State [[Shenna Bellows]], former Senate President [[Troy Jackson]], former director of the Maine Centers for Disease Control and Prevention [[Nirav D. Shah|Nirav Shah]], and [[Angus King III]], son of incumbent U.S. Senator [[Angus King]].<ref>{{cite web|url=https://www.sunjournal.com/2025/06/10/hannah-pingree-announces-run-for-maine-governor/|title=Hannah Pingree announces run for Maine governor|work=Lewiston Sun Journal|date=June 10, 2025|access-date=June 10, 2025}}</ref>
+
+Pingree finished second to Shah in the first round of results in the primary, and won the nomination following ranked-choice voting.<ref name=":2" /> Pingree will face Republican [[Robert B. Charles]] and independent [[Rick Bennett (Maine politician)|Rick Bennett]] in the general election.<ref name=":2" />
+
+==Personal life==
+[[File:Pingree_Family.jpg|thumb|Pingree (far right) and her two siblings and mother (from left to right): Asa, Cecily and Chellie]]
+Pingree is married to Jason Mann and has two children, a son named Oscar and a daughter named Elsie. She and her family reside on North Haven.<ref name="PPH2019" /> Her sister, Cecily, is an artist and Maine Arts Commission Fellow.<ref name="ballotpedia" /> She also has a brother, Asa.
+
+== Electoral history ==
+{{Election box begin no change|title=2002 Maine House of Representatives election, District 129}}
+{{Election box winning candidate with party link no change|party=Democratic Party (United States)|candidate=Hannah Pingree|votes=2,530|percentage=61.6%}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=Frank Stanley|votes=1,575|percentage=38.4%}}{{Election box end}}{{Election box begin no change|title=2004 Maine House of Representatives election, District 36}}
+{{Election box winning candidate with party link no change|party=Democratic Party (United States)|candidate=Hannah Pingree|votes=3,770|percentage=69.7%}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=John C. Bradford|votes=1,642|percentage=30.3%}}{{Election box end}}{{Election box begin no change|title=2006 Maine House of Representatives election, District 36}}
+{{Election box winning candidate with party link no change|party=Democratic Party (United States)|candidate=Hannah Pingree|votes=2,920|percentage=68.4%}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=Seth G. Joy|votes=1,346|percentage=31.6%}}{{Election box end}}{{Election box begin no change|title=2008 Maine House of Representatives election, District 36}}
+{{Election box winning candidate with party link no change|party=Democratic Party (United States)|candidate=Hannah Pingree|votes=4,447|percentage=100%}}
+{{Election box end}}
+{| class="wikitable"
+|+
+! colspan="14" |2026 Maine Democratic gubernatorial primary results<ref>{{Cite web |date=2026-06-19 |title=Hannah Pingree wins ranked-choice runoff in Democratic primary for governor |url=https://www.pressherald.com/2026/06/19/hannah-pingree-wins-ranked-choice-runoff-in-democratic-primary-for-governor/ |access-date=2026-06-20 |website=The Portland Press Herald |language=en-US}}</ref>
+|-
+! colspan="2" rowspan="2" |Party
+! rowspan="2" |Candidate
+! colspan="2" |Round 1
+!
+! colspan="2" |Round 2
+!
+! colspan="2" |Round 3
+!
+! colspan="2" |Round 4
+|-
+!Votes
+!%
+!Transfer
+!Votes
+!%
+!Transfer
+!Votes
+!%
+!Transfer
+!Votes
+!%
+|- align=right
+|style="background-color:{{party color|Democratic Party (United States)}}" |
+|align=left|[[Democratic Party (United States)|Democratic]]
+|align=left|'''[[Hannah Pingree]]'''
+|<!--RD1 votes-->50,552
+|23.3
+|'''+4,808'''
+|55,360
+|26.0
+|'''+ 20,311'''
+|'''75,671'''
+|'''36.3'''
+|'''+ 36,079'''
+|'''111,750'''
+|'''56.2'''
+|- align=right
+|style="background-color:{{party color|Democratic Party (United States)}}" |
+|align=left|[[Democratic Party (United States)|Democratic]]
+|align=left|[[Nirav D. Shah|Nirav Shah]]
+|'''<!--RD1 votes-->58,606'''
+|'''26.8'''
+| + 4,255
+|'''62,860'''
+|'''29.5'''
+| +9,821
+|72,681
+|34.8
+| + 14,269
+|86,950
+|43.8
+|- align=right
+|style="background-color:{{party color|Democratic Party (United States)}}" |
+|align=left|[[Democratic Party (United States)|Democratic]]
+|align=left|[[Troy Jackson]]
+|<!--RD1 votes-->45,959
+|21.1
+| + 1,638
+|47,597
+|22.3
+| + 12,413
+|60,010
+|28.8
+|BGCOLOR=pink| - 60,010
+| colspan="2" align="center" bgcolor="lightgray" |''Eliminated''
+|- align=right
+|style="background-color:{{party color|Democratic Party (United States)}}" |
+|align=left|[[Democratic Party (United States)|Democratic]]
+|align=left|[[Shenna Bellows]]
+|<!--RD1 votes-->44,770
+|20.6
+| + 2,279
+|47,049
+|22.1
+|BGCOLOR=pink| - 47,049
+| colspan="5" align="center" bgcolor="lightgray" |''Eliminated''
+|- align="right"
+|style="background-color:{{party color|Democratic Party (United States)}}" |
+|align=left|[[Democratic Party (United States)|Democratic]]
+|align=left|[[Angus King III]]
+|<!--RD1 votes-->17,860
+|8.3
+|BGCOLOR=pink| - 17,860
+| colspan="8" bgcolor="lightgray" align="center" |''Eliminated''
+|- align="right"
+| colspan="3" align="right" | '''Continuing ballots'''
+|217,747
+|100.0
+|<br />
+|212,848
+|97.8
+|<br />
+|208,542
+|100.0
+|<br />
+|198,700
+|91.1
+|- align="right"
+| colspan="3" | Exhausted ballots
+| colspan="2" align="center" | –
+| '''+ 4,881'''
+| align="center" | 4,881
+|2.2
+| + 4,504 
+| align="center" | 9,385
+|4.3
+| + 9,662
+| align="center" | 19,047
+|8.9
+|- align="right"
+| colspan="3" align="right" | '''Total votes'''
+|217,747
+|100.0
+|<br />
+|217,747
+|100.0
+|<br />
+|217,747
+|100.0
+|<br />
+|217,747
+|100.0
+|}
+
+==References==
+{{Reflist}}
+
+==Further reading==
+* {{cite journal | last = Wright | first = Virginia | title = Maine's Newest Political Dynasty | journal = Down East: The Magazine of Maine | issue = January 2009 }}
+
+==External links==
+{{commonscat}}
+*[https://hannahforgovernor.com/ Hannah Pingree for Governor] campaign website
+* {{C-SPAN|149645}}
+* {{CongLinks | congbio= | votesmart=36769 | fec= | congress= }}
+
+{{s-start}}
+{{s-par|us-me-hs}}
+{{s-bef|before=[[Glenn Cummings]]}}
+{{s-ttl|title=Majority Leader of the [[Maine House of Representatives]]|years=2006–2008}}
+{{s-aft|after=[[John Piotti]]}}
+|-
+{{s-bef|before=[[Glenn Cummings]]}}
+{{s-ttl|title=[[Speaker of the Maine House of Representatives]]|years=2008–2010}}
+{{s-aft|after=[[Robert Nutting (politician)|Robert Nutting]]}}
+|-
+{{s-ppo}}
+{{s-bef|before=[[Janet Mills]]}}
+{{s-ttl|title=[[Democratic Party (United States)|Democratic]] nominee for [[Governor of Maine]]|years=[[2026 Maine gubernatorial election|2026]]}}
+{{s-inc|recent}}
+{{s-end}}
+
+{{Speakers of the Maine House of Representatives}}
+{{authority control}}
+
+{{DEFAULTSORT:Pingree, Hannah}}
+[[Category:1976 births]]
+[[Category:Living people]]
+[[Category:21st-century American women politicians]]
+[[Category:21st-century members of the Maine Legislature]]
+[[Category:Brown University alumni]]
+[[Category:Candidates in the 2026 United States elections]]
+[[Category:Democratic Party members of the Maine House of Representatives]]
+[[Category:Majority leaders of the Maine House of Representatives]]
+[[Category:People from North Haven, Maine]]
+[[Category:Speakers of the Maine House of Representatives]]
+[[Category:Women state legislators in Maine]]

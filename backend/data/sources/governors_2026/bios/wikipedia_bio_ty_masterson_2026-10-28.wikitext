@@ -1,0 +1,123 @@
+{{short description|American politician (born 1969)}}
+{{Use American English|date=April 2026}}
+{{Use mdy dates|date=April 2026}}
+{{Infobox officeholder
+| name               = Ty Masterson
+| office             = President of the [[Kansas Senate]]
+| image              = TY mASTERSON (cropped).jpg
+| caption            = Masterson in 2025
+| term_start         = January 11, 2021
+| term_end           = 
+| predecessor        = [[Susan Wagle]]
+| successor          = 
+| state_senate1      = Kansas
+| district1          = [[Kansas's 16th Senate district|16th]]
+| term_start1        = January 12, 2009
+| term_end1          = 
+| predecessor1       = [[Peggy Palmer]]
+| successor1         = 
+| state_house2       = Kansas
+| district2          = 99th
+| term_start2        = October 28, 2005
+| term_end2          = January 12, 2009
+| preceded2          = [[Todd Novascone]]
+| succeeded2         = [[Aaron Jack]]
+| birth_date         = {{nowrap|{{birth date and age|1969|9|23}}}}
+| birth_place        = [[El Dorado, Kansas]], U.S.
+| death_date         = 
+| death_place        = 
+| party              = [[Republican Party (United States)|Republican]]
+| spouse             = Marlo Masterson
+| children           = 6
+| education          = [[Kansas State University]] (attended)
+}}
+
+'''Ty Masterson''' (born September 23, 1969)<ref name=":1">{{cite web | url=https://www.legistorm.com/person/bio/191361/Ty_Masterson.html | title=Kansas State Sen. Ty Masterson - Biography &#124; LegiStorm }}</ref> is an American politician who is the president of the [[Kansas Senate]]. A member of the [[Republican Party (United States)|Republican]] Party, he has represented the [[Kansas's 16th Senate district|16th district]] since 2009.<ref>[http://www.votesmart.org/summary.php?can_id=57517 Project Vote Smart profile]</ref><ref>{{Cite web|url=http://www.kanfocus.com/FMPro.php?-DB=House_Profiles_KS&-Lay=Contact&-format=Contact_Senate.html&Name=Ty%20Masterson,%20R-16th&-find|title=KanFocus -- Error}}</ref>  From 2005 to 2008, he was a representative in the [[Kansas House of Representatives]]. He lives in [[Andover, Kansas|Andover]] and served on the Andover City Council. 
+
+Masterson is the [[Republican Party (United States)|Republican]] nominee in the [[2026 Kansas gubernatorial election]] facing [[Democratic Party (United States)|Democratic]] nominee [[Cindy Holscher]].
+
+== Early life and education ==
+Masterson was born on September 23, 1969 in [[El Dorado, Kansas]]. He attended [[Kansas State University]] for two years before he dropped out and moved to Wichita, Kansas to start his career as a small [[business owner]], [[contractor]], [[realtor]], and a [[developer]] before he entered [[politics]].<ref name=":1" /><ref>{{Cite web |date=2026-09-24 |title=Ty Masterson |url=https://ballotpedia.org/Ty_Masterson |access-date=2026-10-07 |website=Ballotpedia |language=en}}</ref><ref>{{Cite web |last=Carpenter |first=Tim |date=2026-09-14 |title=Kansas Republican Ty Masterson concentrates gubernatorial campaign on generational change • Kansas Reflector |url=https://kansasreflector.com/2026/09/14/kansas-republican-ty-masterson-concentrates-gubernatorial-campaign-on-generational-change/ |access-date=2026-10-07 |website=Kansas Reflector |language=en-US}}</ref>
+
+==Committee assignments==
+Masterson serves on these [[Kansas State Legislature|legislative committees]]:<ref>[http://www.kslegislature.org/legsrv-senate/searchSenate.do?rep=4465 Profile from the Kansas Legislature]</ref>
+* Federal and State Affairs
+* Public Health and Welfare
+* Utilities
+
+==2026 Kansas gubernatorial campaign==
+{{main|2026 Kansas gubernatorial election}}
+Masterson is the Republican nominee in the 2026 gubernatorial election in Kansas, and is endorsed by President [[Donald Trump]].<ref>{{Cite web |last=Carpenter |first=Tim |date=July 20, 2025 |title=Kansas Senate President Ty Masterson launches Republican campaign for governor |url=https://kansasreflector.com/2025/07/20/kansas-senate-president-ty-masterson-launches-republican-campaign-for-governor/ |access-date=February 16, 2026 |website=[[Kansas Reflector]]}}</ref>
+
+== Personal life ==
+Masterson filed for bankruptcy in 2011 after his construction business went under.<ref>{{cite news |last1=Kelly |first1=Matthew |url=https://www.kansascity.com/news/politics-government/article311074450.html |title=Senate President Ty Masterson wades into crowded Kansas governor’s race |access-date=10 December 2025 |date=July 22, 2025}}</ref><ref>{{cite web|last1=Sylvester|first1=Ron|title=Andover state senator files for bankruptcy|website=The Wichita Eagle|url=https://www.kansas.com/news/local/article1055219.html}}</ref>
+
+== Electoral History ==
+{{Election box begin no change|title=[[2012 Kansas elections|2012 Kansas Senate election]], District 16<ref name="Ballotpedia"/>}}
+{{Election box winning candidate with party link no change|party=Republican Party (United States)|candidate=[[Ty Masterson]] (incumbent)|votes=23,354|percentage=100|change=}}
+{{Election box total no change|votes=23,354|percentage=100|change=}}
+{{Election box hold with party link no change|winner=Republican Party (United States)|swing=}}
+{{Election box end}}
+{{Election box open primary begin no change|title=2016 Kansas Senate election, District 16<ref name="Ballotpedia"/>}}
+{{Election box winning candidate with party link no change|party=Republican Party (United States)|candidate=[[Ty Masterson]] (incumbent)|votes=4,697|percentage=59.3|change=}}
+{{Election box candidate with party link no change|party=Republican Party (United States)|candidate=Troy Tabor II|votes=3,226|percentage=40.7|change=}}
+{{Election box total no change|votes=7,923|percentage=100|change=}}
+{{Election box open primary general election no change}}
+{{Election box winning candidate with party link no change|party=Republican Party (United States)|candidate=[[Ty Masterson]] (incumbent)|votes=20,980|percentage=64.7|change=}}
+{{Election box candidate with party link no change|party=Democratic Party (United States)|candidate=Gabriel Costilla|votes=11,467|percentage=35.3|change=}}
+{{Election box total no change|votes=32,447|percentage=100|change=}}
+{{Election box hold with party link no change|winner=Republican Party (United States)|swing=}}
+{{Election box end}}{{Election box begin no change|title=[[2020 Kansas Senate election]], District 16<ref name="Ballotpedia">{{Cite web|url=https://ballotpedia.org/Kansas_State_Senate_District_16|title=Kansas State Senate District 16|publisher=Ballotpedia|access-date=December 7, 2020}}</ref>}}
+{{Election box winning candidate with party link no change|party=Republican Party (United States)|candidate=[[Ty Masterson]] (incumbent)|votes=27,199|percentage=69.0|change=}}
+{{Election box candidate with party link no change|party=Democratic Party (United States)|candidate=Timothy Fry II|votes=12,246|percentage=31.0|change=}}
+{{Election box total no change|votes=39,445|percentage=100|change=}}
+{{Election box hold with party link no change|winner=Republican Party (United States)|swing=}}
+{{Election box end}}{{Election box begin no change|title=2024 Kansas Senate District 16 Republican primary}}
+{{Election box winning candidate with party link no change|party=Republican Party (United States)|candidate=[[Ty Masterson]] (incumbent)|votes=3,972|percentage=100.00}}
+{{Election box total no change|votes=3,972|percentage=100.00}}
+{{Election box end}}{{Election box begin no change|title=2024 Kansas Senate District 16 general election}}{{Election box winning candidate with party link no change|candidate=[[Ty Masterson]] (incumbent)|party=Republican Party (United States)|votes=25,347|percentage=65.59}}{{Election box candidate with party link no change|candidate=Sasha Islam|party=Democratic Party (United States)|votes=13,300|percentage=34.41}}{{Election box total no change|votes=38,647|percentage=100.00}}{{Election box hold with party link without swing|winner=Republican Party (United States)}}
+{{Election box end}}{{Election box begin no change|title=[[2026 Kansas gubernatorial election]], Republican primary results}}
+{{Election box winning candidate with party link no change|candidate=[[Ty Masterson]]<br>[[Jeff Klemp]]|party=Republican Party (United States)|votes=147,213|percentage=43.2}}
+{{Election box candidate with party link no change|candidate=Philip Sarnecki<br>Joy Eakins|party=Republican Party (United States)|votes=76,292|percentage=22.4}}
+{{Election box candidate with party link no change|candidate=[[Vicki Schmidt]]<br>[[Joe Newland]]|party=Republican Party (United States)|votes=46,693|percentage=13.7}}
+{{Election box candidate with party link no change|candidate=[[Scott Schwab]]<br>[[Ken Rahjes]]|party=Republican Party (United States)|votes=37,318|percentage=10.9}}
+{{Election box candidate with party link no change|candidate=[[Charlotte O'Hara]]<br>Michelle Dombrosky|party=Republican Party (United States)|votes=14,493|percentage=4.3}}
+{{Election box candidate with party link no change|candidate=Stacy Rogers<br>Michael Smith|party=Republican Party (United States)|votes=11,789|percentage=3.5}}
+{{Election box candidate with party link no change|candidate=Nick Reinecker<br>Katy Reinecker|party=Republican Party (United States)|votes=7,122|percentage=2.1}}
+{{Election box total no change|votes=340,920|percentage=100.0}}
+{{Election box end}}
+
+==References==
+{{reflist}}
+
+==External links==
+* [http://www.kslegislature.org/legsrv-senate/searchSenate.do?rep=4465 Kansas Senate]
+* [https://www.mastersonforgovernor.com/ Campaign website]
+
+{{s-start}}
+{{s-off}}
+{{s-bef|before=[[Susan Wagle]]}}
+{{s-ttl|title=President of the [[Kansas Senate]]|years=2021–present}}
+{{s-inc}}
+|-
+{{s-ppo}}
+{{s-bef|before=[[Derek Schmidt]]}}
+{{s-ttl|title=[[Republican Party (United States)|Republican]] nominee for [[Governor of Kansas]]|years=[[2026 Kansas gubernatorial election|2026]]}}
+{{s-inc|recent}}
+{{s-end}}
+
+{{Kansas statewide political officials}}
+{{U.S. State Senate Presidents}}
+{{Kansas State Senators}}
+
+{{DEFAULTSORT:Masterson, Ty}}
+[[Category:1969 births]]
+[[Category:21st-century members of the Kansas Legislature]]
+[[Category:Candidates in the 2026 United States elections]]
+[[Category:Kansas city council members]]
+[[Category:Living people]]
+[[Category:People from Andover, Kansas]]
+[[Category:People from El Dorado, Kansas]]
+[[Category:Presidents of the Kansas Senate]]
+[[Category:Republican Party Kansas state senators]]
+[[Category:Republican Party members of the Kansas House of Representatives]]

@@ -1,0 +1,2184 @@
+{
+ "races": {
+  "AL": {
+   "state": "AL",
+   "name": "Alabama",
+   "party": "(R)",
+   "incumbent": "Kay Ivey",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "succeeded (Lt. Gov.; Robert Bentley resigned); since elected 2018 and 2022",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Doug Jones",
+   "r_nominee": "Tommy Tuberville",
+   "d_ballot_name": "Doug Jones",
+   "r_ballot_name": "Tommy Tuberville",
+   "anti_r_candidate": "Doug Jones",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 6.025,
+   "war_b": -0.0,
+   "war_detail": {
+    "d": {
+     "name": "Doug Jones",
+     "a": 4.775,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2020,
+       "office": "Senate",
+       "geo": "Alabama",
+       "war": "D+5",
+       "k": 0
+      },
+      {
+       "year": 2018,
+       "office": "Senate",
+       "geo": "Alabama",
+       "war": "D+23.5",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Tommy Tuberville",
+     "a": 1.25,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2020,
+       "office": "Senate",
+       "geo": "Alabama",
+       "war": "D+5",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": -12.71,
+    "raw_margin": -11.5,
+    "n_polls": 2,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average; removed: RMG Research 9/21 - 9/25",
+    "as_of": "2026-10-21",
+    "polls": "Alabama Daily News 10/16 - 10/17; The Alabama Poll 10/15 - 10/16",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/alabama/tuberville-vs-jones",
+    "local_file": "sources/gov_polls_2026/rcp_gov_al_8891.json"
+   },
+   "note": "Rematch of 2020 U.S. Senate race. Ballot names: SOS certifications (Aug 26) + SOS-hosted sample ballot; no independent governor candidate certified.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_alabama_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_kay_ivey_2026-10-28.wikitext;bios/wikipedia_bio_doug_jones_politician_2026-10-28.wikitext;bios/wikipedia_bio_tommy_tuberville_2026-10-28.wikitext;bios/ballotpedia_doug_jones_alabama_2026-10-28.html;bios/ballotpedia_tommy_tuberville_2026-10-28.html;official_candidate_lists/alabama_sos_general_state_certification_democratic_candidates_2026-10-28.pdf;official_candidate_lists/alabama_sos_general_state_certification_republican_candidates_2026-10-28.pdf;official_candidate_lists/alabama_sos_general_state_certification_independent_candidate_2026-10-28.pdf;official_candidate_lists/alabama_sos_autauga_county_general_sample_ballot_2026-10-28.pdf"
+  },
+  "AK": {
+   "state": "AK",
+   "name": "Alaska",
+   "party": "(R)",
+   "incumbent": "Mike Dunleavy",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Jonathan Kreiss-Tomkins",
+   "r_nominee": "Bernadette Wilson",
+   "d_ballot_name": "Jonathan S. \"JKT\" Kreiss-Tomkins",
+   "r_ballot_name": "Bernadette M. Wilson / Dave Bronson / Treg Taylor (three Republicans; top-four, no party nominee)",
+   "anti_r_candidate": "Jonathan Kreiss-Tomkins",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Jonathan Kreiss-Tomkins",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Bernadette Wilson",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 6.5,
+    "raw_margin": 6.5,
+    "n_polls": 4,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-20",
+    "polls": "Alaska Survey Research 10/23 - 10/25; Data for Progress 10/8 - 10/16; NY Times/Siena 9/22 - 10/1; Fabrizio/Anzalone 9/8 - 9/11",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/alaska/wilson-vs-kreiss-tompkins",
+    "local_file": "sources/gov_polls_2026/rcp_gov_ak_9190.json"
+   },
+   "note": "AK top-four primary (Aug 18) + RCV general. General-election four: Jonathan Kreiss-Tomkins (D), Bernadette Wilson (R), Dave Bronson (R), Treg Taylor (R). Primary order: Kreiss-Tomkins 22.5, Tom Begich (D) 20.8, Wilson 10.0, Bronson 8.1, Taylor 7.3, Click Bishop (R) 7.0. Begich withdrew (ADN Aug 28) and Bishop also withdrew, so 5th-place Taylor advanced; Lt. Gov. Dahlstrom refused to certify Taylor Aug 31 (financial disclosure), reversed Sep 5 (Alaska Story). No independent or third party in the general. Ballot names: Division of Elections certified general list prints \"Kreiss-Tomkins, Jonathan S. \u201cJKT\u201d\" (Registered Democrat), \"Wilson, Bernadette M.\", \"Bronson, Dave\", \"Taylor, Treg\" (Registered Republican); also two certified write-ins not printed (Meda DeWitt, James W. \"JP4\" Parkin).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_alaska_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;news/adn_2026-08-28_begich_withdraws_2026-10-28.html;news/alaskastory_2026-09-05_taylor_back_on_ballot_2026-10-28.html;bios/wikipedia_bio_mike_dunleavy_politician_2026-10-28.wikitext;bios/wikipedia_bio_jonathan_kreiss_tomkins_2026-10-28.wikitext;bios/wikipedia_bio_dave_bronson_2026-10-28.wikitext;bios/wikipedia_bio_treg_taylor_2026-10-28.wikitext;bios/ballotpedia_bernadette_wilson_2026-10-28.html;bios/ballotpedia_jonathan_s_kreiss_tomkins_2026-10-28.html;bios/ballotpedia_david_bronson_2026-10-28.html;bios/ballotpedia_treg_taylor_2026-10-28.html;official_candidate_lists/alaska_doe_general_candidate_list_2026-10-28.html"
+  },
+  "AZ": {
+   "state": "AZ",
+   "name": "Arizona",
+   "party": "(D)",
+   "incumbent": "Katie Hobbs",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Katie Hobbs",
+   "r_nominee": "Andy Biggs",
+   "d_ballot_name": "Katie Hobbs",
+   "r_ballot_name": "Andy Biggs",
+   "anti_r_candidate": "Katie Hobbs",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 5.235,
+   "war_b": -0.0,
+   "war_detail": {
+    "d": {
+     "name": "Katie Hobbs",
+     "a": 3.64,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Arizona",
+       "war": "computed +7.28",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Andy Biggs",
+     "a": 1.595,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "House",
+       "geo": "AZ-05",
+       "war": "D+3.8",
+       "k": 0
+      },
+      {
+       "year": 2022,
+       "office": "House",
+       "geo": "AZ-05",
+       "war": "D+2.3",
+       "k": 0
+      },
+      {
+       "year": 2020,
+       "office": "House",
+       "geo": "AZ-05",
+       "war": "D+3",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": {
+    "margin": 11.96,
+    "raw_margin": 10.6,
+    "n_polls": 5,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-27",
+    "polls": "Highground Public Affairs 10/21 - 10/25; Arizona State 8/18 - 9/4; Quantus Insights 8/14 - 8/17; Noble Predictive Insights 8/10 - 8/13; Fabrizio/Anzalone 7/26 - 7/28",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/arizona/hobbs-vs-biggs",
+    "local_file": "sources/gov_polls_2026/rcp_gov_az_8683.json"
+   },
+   "note": "Also on ballot: Teri Hourihan (No Labels), Risa Lombardo (Green); no poll since Sep 1 shows either >=10%. Ballot names: Mohave County sample ballot (state SOS site blocked): Hobbs, Katie (DEM); Biggs, Andy (REP); Lombardo, Risa (GRN); Hourihan, Teri Ann (NOL).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_arizona_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_katie_hobbs_2026-10-28.wikitext;bios/wikipedia_bio_andy_biggs_2026-10-28.wikitext;bios/ballotpedia_andy_biggs_2026-10-28.html;official_candidate_lists/arizona_mohave_county_general_sample_ballot_2026-10-28.pdf"
+  },
+  "AR": {
+   "state": "AR",
+   "name": "Arkansas",
+   "party": "(R)",
+   "incumbent": "Sarah Huckabee Sanders",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Fred Love",
+   "r_nominee": "Sarah Huckabee Sanders",
+   "d_ballot_name": "State Senator Fred Love",
+   "r_ballot_name": "Governor Sarah Huckabee Sanders",
+   "anti_r_candidate": "Fred Love",
+   "anti_r_party": "(D)",
+   "other_candidates": [
+    {
+     "name": "Colt Shelby",
+     "party": "(L)",
+     "max_poll_share": 11.0,
+     "poll": "Hendrix College/Talk Business & Politics, Oct 8-13 2026, 709 LV (polls/ar_hendrix_talkbusiness_2026-10-08_13_2026-10-28.html)"
+    }
+   ],
+   "war_a": 3.39,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Fred Love",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Sarah Huckabee Sanders",
+     "a": 3.39,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Arkansas",
+       "war": "computed +6.78",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": -1,
+   "poll_average": {
+    "margin": -22.89,
+    "raw_margin": -19.0,
+    "n_polls": 1,
+    "third_party_share": 11.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: RCP publishes no average",
+    "as_of": "2026-10-13",
+    "polls": "Hendrix College for Talk Business & Politics, ending 2026-10-13 (full ballot, 32/51)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Shelby 11% vs Love 32% (21 pts behind 2nd) - not a top-two threat. VoteHub's row for this poll omits Shelby (and misspells Sanders). Ballot names: SOS filing database CanBallotName (titles are part of the ballot name); same strings in Pulaski County general ballot-position draw. Colt Shelby (Libertarian).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_arkansas_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;polls/ar_hendrix_talkbusiness_2026-10-08_13_2026-10-28.html;bios/wikipedia_bio_sarah_huckabee_sanders_2026-10-28.wikitext;bios/wikipedia_bio_fredrick_love_2026-10-28.wikitext;bios/ballotpedia_fredrick_love_2026-10-28.html;bios/ballotpedia_colt_shelby_2026-10-28.html;official_candidate_lists/arkansas_sos_candidate_search_governor_api_2026-10-28.json;official_candidate_lists/arkansas_pulaski_county_bec_general_ballot_position_draw_2026-10-28.pdf"
+  },
+  "CA": {
+   "state": "CA",
+   "name": "California",
+   "party": "(D)",
+   "incumbent": "Gavin Newsom",
+   "incumbent_party": "(D)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Xavier Becerra",
+   "r_nominee": "Steve Hilton",
+   "d_ballot_name": "Xavier Becerra",
+   "r_ballot_name": "Steve Hilton",
+   "anti_r_candidate": "Xavier Becerra",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Xavier Becerra",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Steve Hilton",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 25.76,
+    "raw_margin": 23.6,
+    "n_polls": 5,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-28",
+    "polls": "PPIC 10/16 - 10/22; KGTV-TV/SurveyUSA 10/19 - 10/24; Emerson 10/18 - 10/20; Politico/Citrin 10/9 - 10/14; LA Times/Berkeley IGS 9/15 - 9/20",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/california/hilton-vs-becerra",
+    "local_file": "sources/gov_polls_2026/rcp_gov_ca_9014.json"
+   },
+   "note": "Top-two (June 2 primary): general is Xavier Becerra (D) vs Steve Hilton (R) - one D vs one R. Ballot names: SOS certified list (Aug 27); designations 'Voting Rights Attorney' (Becerra), 'Small Business Owner' (Hilton).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_california_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_gavin_newsom_2026-10-28.wikitext;bios/wikipedia_bio_xavier_becerra_2026-10-28.wikitext;bios/wikipedia_bio_steve_hilton_2026-10-28.wikitext;bios/ballotpedia_xavier_becerra_2026-10-28.html;bios/ballotpedia_steve_hilton_2026-10-28.html;official_candidate_lists/california_sos_certified_list_of_candidates_general_2026-10-28.pdf"
+  },
+  "CO": {
+   "state": "CO",
+   "name": "Colorado",
+   "party": "(D)",
+   "incumbent": "Jared Polis",
+   "incumbent_party": "(D)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Phil Weiser",
+   "r_nominee": "Victor Marx",
+   "d_ballot_name": "Phil Weiser",
+   "r_ballot_name": "Victor Marx",
+   "anti_r_candidate": "Phil Weiser",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Phil Weiser",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Victor Marx",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": null,
+   "note": "Also on ballot: Greg Lopez (unaffiliated; former U.S. Rep. CO-4 2024-2025, previously ran for governor as a Republican), Eric Mulder (L), Stephen Hamilton (American Constitution), Jeff Peckman (Unity), Erik Underwood (Approval Voting). No general-election poll ending on/after 2026-09-01 found (none in VoteHub; none in Wikipedia's table). Ballot names: SOS official list certified Sep 4; also Stephen T. Hamilton (American Constitution), Eric Mulder (L), Jeff Peckman (Unity), Erik Underwood (Approval Voting), Greg Lopez (Unaffiliated).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_colorado_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;bios/wikipedia_bio_jared_polis_2026-10-28.wikitext;bios/wikipedia_bio_phil_weiser_2026-10-28.wikitext;bios/wikipedia_bio_victor_marx_2026-10-28.wikitext;bios/ballotpedia_phil_weiser_2026-10-28.html;bios/ballotpedia_victor_marx_2026-10-28.html;official_candidate_lists/colorado_sos_general_official_candidate_list_2026-10-28.html;official_candidate_lists/colorado_sos_general_official_candidate_list_2026-10-28.xlsx"
+  },
+  "CT": {
+   "state": "CT",
+   "name": "Connecticut",
+   "party": "(D)",
+   "incumbent": "Ned Lamont",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Ned Lamont",
+   "r_nominee": "Ryan Fazio",
+   "d_ballot_name": "Ned Lamont",
+   "r_ballot_name": "Ryan Fazio",
+   "anti_r_candidate": "Ned Lamont",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -5.323,
+   "war_b": -0.5,
+   "war_detail": {
+    "d": {
+     "name": "Ned Lamont",
+     "a": -5.323,
+     "b": -0.5,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Connecticut",
+       "war": "computed -0.23",
+       "k": 1
+      },
+      {
+       "year": 2018,
+       "office": "Governor",
+       "geo": "Connecticut",
+       "war": "computed -17.36",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Ryan Fazio",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": {
+    "margin": 17.54,
+    "raw_margin": 16.0,
+    "n_polls": 5,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-19",
+    "polls": "Emerson 10/10 - 10/12; Quinnipiac 10/8 - 10/12; WFSB-TV/CT Insider 10/6 - 10/12; UNH 9/17 - 9/21; co/efficient 9/16 - 9/17",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/connecticut/fazio-vs-lamont",
+    "local_file": "sources/gov_polls_2026/rcp_gov_ct_9118.json"
+   },
+   "note": "Fusion: Lamont also on Working Families line; Fazio also on Independent Party of CT line (Ballotpedia). Ballot names: SOTS-hosted sample ballots: Lamont on Democratic + Working Families lines; Fazio on Republican + Independent Party lines; no other governor candidates.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_connecticut_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_ned_lamont_2026-10-28.wikitext;bios/wikipedia_bio_ryan_fazio_2026-10-28.wikitext;bios/ballotpedia_ryan_fazio_2026-10-28.html;official_candidate_lists/connecticut_sots_westport_sample_ballot_2026-10-28.pdf;official_candidate_lists/connecticut_sots_avon_sample_ballot_ada_2026-10-28.pdf"
+  },
+  "FL": {
+   "state": "FL",
+   "name": "Florida",
+   "party": "(R)",
+   "incumbent": "Ron DeSantis",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "David Jolly",
+   "r_nominee": "Byron Donalds",
+   "d_ballot_name": "David Jolly",
+   "r_ballot_name": "Byron Donalds",
+   "anti_r_candidate": "David Jolly",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.105,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "David Jolly",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Byron Donalds",
+     "a": 0.105,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "House",
+       "geo": "FL-19",
+       "war": "D+0.9",
+       "k": 0
+      },
+      {
+       "year": 2022,
+       "office": "House",
+       "geo": "FL-19",
+       "war": "R+1.4",
+       "k": 0
+      },
+      {
+       "year": 2020,
+       "office": "House",
+       "geo": "FL-19",
+       "war": "D+0.9",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": -5.4,
+    "raw_margin": -5.0,
+    "n_polls": 5,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-28",
+    "polls": "NY Times/Siena 10/19 - 10/25; St. Pete Polls 10/25 - 10/27; co/efficient 10/18 - 10/20; Univ. of North Florida 10/12 - 10/19; Univision/YouGov 10/2 - 10/15",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/florida/donalds-vs-jolly",
+    "local_file": "sources/gov_polls_2026/rcp_gov_fl_8881.json"
+   },
+   "note": "Jolly was a Republican when in Congress. Also on ballot: Scott Jewett (L) and 5 NPA candidates; none polled >=10%. Ballot names: Division of Elections qualified list: Jolly, David (DEM); Donalds, Byron (REP); Jewett, Scott Eckhard (LPF); NPA: Dean Ocean Abrams, Charles Burkett, Jeffrey Peter \"Dr. Jeff\" Datto, Moliere \"Moe\" Dimanche, Frank J. Russo; 2 write-ins.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_florida_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_ron_desantis_2026-10-28.wikitext;bios/wikipedia_bio_byron_donalds_2026-10-28.wikitext;bios/wikipedia_bio_david_jolly_2026-10-28.wikitext;bios/ballotpedia_byron_donalds_2026-10-28.html;bios/ballotpedia_david_jolly_2026-10-28.html;official_candidate_lists/florida_dos_candidate_list_governor_2026_general_2026-10-28.html"
+  },
+  "GA": {
+   "state": "GA",
+   "name": "Georgia",
+   "party": "(R)",
+   "incumbent": "Brian Kemp",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Keisha Lance Bottoms",
+   "r_nominee": "Rick Jackson",
+   "d_ballot_name": "Keisha Lance Bottoms",
+   "r_ballot_name": "Rick Jackson",
+   "anti_r_candidate": "Keisha Lance Bottoms",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Keisha Lance Bottoms",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Rick Jackson",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": -0.13,
+    "raw_margin": -0.12,
+    "n_polls": 5,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: newer polls than RCP's average",
+    "as_of": "2026-10-27",
+    "polls": "State Navigate, ending 2026-10-27 (full ballot, 50/47); Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 49/48); Quantus Insights, ending 2026-10-17 (full ballot, 46.6/48.2); University of Georgia SPIA for The Atlanta Journal-Constitution, ending 2026-10-15 (full ballot, 45/46); InsiderAdvantage, ending 2026-10-13 (full ballot, 47/49)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Jackson beat Lt. Gov. Burt Jones in June 16 runoff. Libertarian Chase Oliver withdrew (Ballotpedia). Ballot names: Fulton and DeKalb county sample ballots (state SOS site blocked); no third governor candidate.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_georgia_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_brian_kemp_2026-10-28.wikitext;bios/wikipedia_bio_rick_jackson_businessman_2026-10-28.wikitext;bios/wikipedia_bio_keisha_lance_bottoms_2026-10-28.wikitext;bios/ballotpedia_rick_jackson_georgia_2026-10-28.html;bios/ballotpedia_keisha_lance_bottoms_2026-10-28.html;official_candidate_lists/georgia_fulton_county_consolidated_general_sample_ballot_2026-10-28.pdf;official_candidate_lists/georgia_dekalb_county_composite_general_sample_ballot_2026-10-28.pdf"
+  },
+  "HI": {
+   "state": "HI",
+   "name": "Hawaii",
+   "party": "(D)",
+   "incumbent": "Josh Green",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Josh Green",
+   "r_nominee": "Gary Cordery",
+   "d_ballot_name": "Josh Green",
+   "r_ballot_name": "Gary Cordery",
+   "anti_r_candidate": "Josh Green",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 1.89,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Josh Green",
+     "a": 1.89,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Hawaii",
+       "war": "computed +3.78",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Gary Cordery",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": null,
+   "note": "No general-election poll ending on/after 2026-09-01 found (none in VoteHub or Wikipedia). Ballot names: Office of Elections candidate report BallotName 'GREEN, Josh' (legal name Joshua Green) and 'CORDERY, Gary', status 'In General'; no other governor candidate in general.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_hawaii_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;bios/wikipedia_bio_josh_green_politician_2026-10-28.wikitext;bios/ballotpedia_gary_cordery_2026-10-28.html;official_candidate_lists/hawaii_oe_candidate_report_2026_export_2026-10-28.csv;official_candidate_lists/hawaii_oe_candidate_report_2026_page1_2026-10-28.html"
+  },
+  "ID": {
+   "state": "ID",
+   "name": "Idaho",
+   "party": "(R)",
+   "incumbent": "Brad Little",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Terri Pickens",
+   "r_nominee": "Brad Little",
+   "d_ballot_name": "Terri Pickens",
+   "r_ballot_name": "Brad Little",
+   "anti_r_candidate": "Terri Pickens",
+   "anti_r_party": "(D)",
+   "other_candidates": [
+    {
+     "name": "John Stegner",
+     "party": "(I)",
+     "max_poll_share": 12.8,
+     "poll": "Advanced Targeting Research, Sep 13-16 2026, 700 RV (polls/id_advanced_targeting_research_2026-09-13_16_2026-10-28.pdf)"
+    }
+   ],
+   "war_a": -0.272,
+   "war_b": 0.5,
+   "war_detail": {
+    "d": {
+     "name": "Terri Pickens",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Brad Little",
+     "a": -0.272,
+     "b": 0.5,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Idaho",
+       "war": "computed -2.53",
+       "k": -1
+      },
+      {
+       "year": 2018,
+       "office": "Governor",
+       "geo": "Idaho",
+       "war": "computed +3.31",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": -1,
+   "poll_average": {
+    "margin": -24.05,
+    "raw_margin": -19.0,
+    "n_polls": 1,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: RCP publishes no average",
+    "as_of": "2026-10-22",
+    "polls": "VoteNexus (D-flagged), ending 2026-10-22 (full ballot, 30/49)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Stegner 12.8% vs Pickens 27.2% (14.4 pts behind 2nd): not flagged as top-two. VoteNexus Oct 21-22 (listed partisan DEM by VoteHub) had Stegner 10%. Also on ballot: Pro-Life (Constitution), Paul Sand (L). Ballot names: Cassia County sample ballot (no state general list file found) + state primary canvass: Brad Little (REP), Terri Pickens (DEM), John R. Stegner (IND), Pro-Life (CON), Paul Sand (LIB).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_idaho_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;polls/id_advanced_targeting_research_2026-09-13_16_2026-10-28.pdf;bios/wikipedia_bio_brad_little_2026-10-28.wikitext;bios/wikipedia_bio_john_stegner_2026-10-28.wikitext;bios/ballotpedia_terri_pickens_2026-10-28.html;bios/ballotpedia_john_stegner_2026-10-28.html;official_candidate_lists/idaho_cassia_county_general_sample_ballot_2026-10-28.pdf;official_candidate_lists/idaho_sos_primary_canvass_report_2026-10-28.pdf"
+  },
+  "IL": {
+   "state": "IL",
+   "name": "Illinois",
+   "party": "(D)",
+   "incumbent": "JB Pritzker",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "JB Pritzker",
+   "r_nominee": "Darren Bailey",
+   "d_ballot_name": "JB Pritzker",
+   "r_ballot_name": "Darren Bailey",
+   "anti_r_candidate": "JB Pritzker",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.005,
+   "war_b": -0.7,
+   "war_detail": {
+    "d": {
+     "name": "JB Pritzker",
+     "a": -1.235,
+     "b": -0.2,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Illinois",
+       "war": "computed +2.48",
+       "k": 1
+      },
+      {
+       "year": 2018,
+       "office": "Governor",
+       "geo": "Illinois",
+       "war": "computed -8.25",
+       "k": -1
+      }
+     ]
+    },
+    "r": {
+     "name": "Darren Bailey",
+     "a": 1.24,
+     "b": -0.5,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Illinois",
+       "war": "computed +2.48",
+       "k": 1
+      }
+     ]
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": null,
+   "note": "Rematch of 2022. Also on ballot: Collin Corbett (I). Ballot names: State Board of Elections general list: Pritzker, JB (D); Bailey, Darren (R); Corbett, Collin (Independent).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_illinois_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_jb_pritzker_2026-10-28.wikitext;bios/wikipedia_bio_darren_bailey_2026-10-28.wikitext;bios/ballotpedia_darren_bailey_2026-10-28.html;official_candidate_lists/illinois_sbe_candidate_list_governor_2026_general_2026-10-28.html"
+  },
+  "IA": {
+   "state": "IA",
+   "name": "Iowa",
+   "party": "(R)",
+   "incumbent": "Kim Reynolds",
+   "incumbent_party": "(R)",
+   "incumbent_status": "retiring",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "succeeded (Lt. Gov.; Terry Branstad resigned); since elected 2018 and 2022",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Rob Sand",
+   "r_nominee": "Zach Lahn",
+   "d_ballot_name": "Rob Sand",
+   "r_ballot_name": "Zach Lahn",
+   "anti_r_candidate": "Rob Sand",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Rob Sand",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Zach Lahn",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 6.54,
+    "raw_margin": 6.21,
+    "n_polls": 8,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: newer polls than RCP's average",
+    "as_of": "2026-10-23",
+    "polls": "Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 50/46); co/efficient (R-flagged), ending 2026-10-19 (full ballot, 49/45); New River for The Cook Political Report, ending 2026-10-13 (full ballot, 54/43); National Public Affairs, ending 2026-10-12 (full ballot, 50/45); YouGov, ending 2026-10-12 (full ballot, 50/44); Marist University, ending 2026-10-11 (full ballot, 52/45); Emerson College for Nexstar Media, ending 2026-10-06 (full ballot, 49/45.3); CNN/SSRS, ending 2026-10-05 (full ballot, 51/42)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Reynolds announced Apr 11 2025 she would not seek re-election (CBS2 Iowa). Lahn upset Rep. Randy Feenstra in June 2 primary. Ballot names: Linn and Grundy county sample ballots (state SOS site blocked); only two governor tickets printed (no Sondra Wilson, who is listed in the Wikipedia overview).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_iowa_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;news/cbs2iowa_2025-04-11_reynolds_not_seeking_reelection_2026-10-28.html;bios/wikipedia_bio_kim_reynolds_2026-10-28.wikitext;bios/wikipedia_bio_rob_sand_2026-10-28.wikitext;bios/ballotpedia_rob_sand_2026-10-28.html;bios/ballotpedia_zach_lahn_2026-10-28.html;official_candidate_lists/iowa_linn_county_auditor_general_sample_ballot_style012_2026-10-28.pdf;official_candidate_lists/iowa_grundy_county_general_sample_ballots_2026-10-28.pdf"
+  },
+  "KS": {
+   "state": "KS",
+   "name": "Kansas",
+   "party": "(D)",
+   "incumbent": "Laura Kelly",
+   "incumbent_party": "(D)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Cindy Holscher",
+   "r_nominee": "Ty Masterson",
+   "d_ballot_name": "Cindy Holscher",
+   "r_ballot_name": "Ty Masterson",
+   "anti_r_candidate": "Cindy Holscher",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Cindy Holscher",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Ty Masterson",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 0.0,
+    "raw_margin": 0.0,
+    "n_polls": 1,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: newer polls than RCP's average",
+    "as_of": "2026-10-22",
+    "polls": "Global Strategy Group (D-flagged), ending 2026-10-22 (full ballot, 47/47)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Aug 4 primaries. Ballot names: SOS 2026 General candidate list; only two governor tickets.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_kansas_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_laura_kelly_2026-10-28.wikitext;bios/wikipedia_bio_cindy_holscher_2026-10-28.wikitext;bios/wikipedia_bio_ty_masterson_2026-10-28.wikitext;bios/ballotpedia_cindy_holscher_2026-10-28.html;bios/ballotpedia_ty_masterson_2026-10-28.html;official_candidate_lists/kansas_sos_candidate_list_2026_general_2026-10-28.html"
+  },
+  "ME": {
+   "state": "ME",
+   "name": "Maine",
+   "party": "(D)",
+   "incumbent": "Janet Mills",
+   "incumbent_party": "(D)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Hannah Pingree",
+   "r_nominee": "Robert Charles",
+   "d_ballot_name": "Hannah M. Pingree",
+   "r_ballot_name": "Robert B. Charles",
+   "anti_r_candidate": "Hannah Pingree",
+   "anti_r_party": "(D)",
+   "other_candidates": [
+    {
+     "name": "Rick Bennett",
+     "party": "(I)",
+     "max_poll_share": 11.0,
+     "poll": "Washington Post-Schar School, Sep 30-Oct 5 2026, 800 LV (polls/me_wapo_schar_2026-09-30_10-05_crosstabs_2026-10-28.xlsx)"
+    }
+   ],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Hannah Pingree",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Robert Charles",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 10.67,
+    "raw_margin": 9.5,
+    "n_polls": 8,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-27",
+    "polls": "Marist 10/22 - 10/25; FOX News 10/16 - 10/20; Suffolk University 10/8 - 10/11; Washington Post 9/30 - 10/5; CBS News 9/23 - 10/1; co/efficient 9/28 - 9/30; Fabrizio/Anzalone 9/20 - 9/22; UNH 9/17 - 9/21",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/maine/charles-vs-pingree",
+    "local_file": "sources/gov_polls_2026/rcp_gov_me_9030.json"
+   },
+   "note": "Plurality general (RCV only in primaries). Bennett 11% vs Charles 36% (25 pts behind 2nd): not flagged. All other post-Sep-1 polls have Bennett 2-9%. Ballot names: SOS final general list: Pingree, Hannah M. (D); Charles, Robert B. (R) [campaigns as Bobby Charles]; Bennett, Rick (Independent).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_maine_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;polls/me_wapo_schar_2026-09-30_10-05_wayback_2026-10-28.html;polls/me_wapo_schar_2026-09-30_10-05_crosstabs_2026-10-28.xlsx;bios/wikipedia_bio_janet_mills_2026-10-28.wikitext;bios/wikipedia_bio_hannah_pingree_2026-10-28.wikitext;bios/wikipedia_bio_robert_b_charles_2026-10-28.wikitext;bios/wikipedia_bio_rick_bennett_maine_politician_2026-10-28.wikitext;bios/ballotpedia_hannah_pingree_2026-10-28.html;bios/ballotpedia_bobby_charles_2026-10-28.html;bios/ballotpedia_richard_bennett_maine_2026-10-28.html;official_candidate_lists/maine_sos_general_candidate_list_final_2026-10-28.xlsx;official_candidate_lists/maine_sos_post_primary_withdrawals_replacements_2026-10-28.pdf"
+  },
+  "MD": {
+   "state": "MD",
+   "name": "Maryland",
+   "party": "(D)",
+   "incumbent": "Wes Moore",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Wes Moore",
+   "r_nominee": "Dan Cox",
+   "d_ballot_name": "Wes Moore",
+   "r_ballot_name": "Dan Cox",
+   "anti_r_candidate": "Wes Moore",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 6.12,
+   "war_b": -0.0,
+   "war_detail": {
+    "d": {
+     "name": "Wes Moore",
+     "a": 3.06,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Maryland",
+       "war": "computed +6.12",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Dan Cox",
+     "a": 3.06,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Maryland",
+       "war": "computed +6.12",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": null,
+   "note": "Rematch of 2022. Also on ballot: Andy Ellis (Green), Cathy White (Working Class). Ballot names: SBE general list (updated 10/16/2026): also Andy Ellis (Green), Cathy White (Working Class Party).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_maryland_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_wes_moore_2026-10-28.wikitext;bios/wikipedia_bio_dan_cox_2026-10-28.wikitext;bios/ballotpedia_dan_cox_maryland_2026-10-28.html;official_candidate_lists/maryland_sbe_general_governor_candidate_list_2026-10-28.csv;official_candidate_lists/maryland_sbe_general_statewide_candidate_list_2026-10-28.html"
+  },
+  "MA": {
+   "state": "MA",
+   "name": "Massachusetts",
+   "party": "(D)",
+   "incumbent": "Maura Healey",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Maura Healey",
+   "r_nominee": "Michael Roger Minogue",
+   "d_ballot_name": "Maura Healey [ballot prints HEALEY AND DRISCOLL]",
+   "r_ballot_name": "Michael Roger Minogue [ballot prints MINOGUE AND OLIVER]",
+   "anti_r_candidate": "Maura Healey",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 1.32,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Maura Healey",
+     "a": 1.32,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Massachusetts",
+       "war": "computed +2.64",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Michael Roger Minogue",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": {
+    "margin": 23.76,
+    "raw_margin": 21.5,
+    "n_polls": 4,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-19",
+    "polls": "Boston Globe/Suffolk 10/10 - 10/18; WCVB-TV/Amherst 10/6 - 10/13; UNH 9/17 - 9/21; CWB/MassINC 9/14 - 9/22",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/massachusetts/minogue-vs-healey",
+    "local_file": "sources/gov_polls_2026/rcp_gov_ma_8937.json"
+   },
+   "note": "Also on ballot: Andrea James (unenrolled), max 6% since Sep 1. R Lt. Gov. nominee Shawn Oliver withdrew but remains on ballot (Wikipedia). Ballot names: MA ballots print team surnames only (Milford town sample ballot; state site blocked); full names from state primary results. Third ticket: JAMES AND KITTREDGE (Independent) = Andrea James per Ballotpedia/Wikipedia (first name not in an official file).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_massachusetts_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_maura_healey_2026-10-28.wikitext;bios/wikipedia_bio_mike_minogue_businessman_2026-10-28.wikitext;bios/ballotpedia_michael_minogue_2026-10-28.html;official_candidate_lists/massachusetts_milford_town_clerk_state_election_sample_ballot_2026-10-28.pdf;official_candidate_lists/massachusetts_electionstats_2026_governor_primaries_2026-10-28.html"
+  },
+  "MI": {
+   "state": "MI",
+   "name": "Michigan",
+   "party": "(D)",
+   "incumbent": "Gretchen Whitmer",
+   "incumbent_party": "(D)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Jocelyn Benson",
+   "r_nominee": "John James",
+   "d_ballot_name": "Jocelyn Benson",
+   "r_ballot_name": "John James",
+   "anti_r_candidate": "Jocelyn Benson",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.1,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Jocelyn Benson",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "John James",
+     "a": 0.1,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "House",
+       "geo": "MI-10",
+       "war": "D+2.9",
+       "k": 0
+      },
+      {
+       "year": 2022,
+       "office": "House",
+       "geo": "MI-10",
+       "war": "D+0.9",
+       "k": 0
+      },
+      {
+       "year": 2020,
+       "office": "Senate",
+       "geo": "Michigan",
+       "war": "R+1",
+       "k": 0
+      },
+      {
+       "year": 2018,
+       "office": "Senate",
+       "geo": "Michigan",
+       "war": "R+3",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 7.64,
+    "raw_margin": 7.17,
+    "n_polls": 6,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-26",
+    "polls": "Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; Mitchell Research 10/1 - 10/1; FOX News 9/24 - 9/28",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/michigan/benson-vs-james",
+    "local_file": "sources/gov_polls_2026/rcp_gov_mi_8992.json"
+   },
+   "note": "Independent Mike Duggan ended his campaign May 21 2026 (Detroit News) - not in any post-Sep-1 poll. Minor parties on ballot (L, Green, U.S. Taxpayers) poll <=4%. Ballot names: Board of Elections official general listing: Benson, Jocelyn (D); James, John (R); Hudson, Anthony (L); Brandenburg, Donna (U.S. Taxpayers); Campbell, Douglas (Green). Duggan not listed.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_michigan_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;news/detroitnews_2026-05-21_duggan_ends_campaign_wayback_2026-10-28.html;bios/wikipedia_bio_gretchen_whitmer_2026-10-28.wikitext;bios/wikipedia_bio_jocelyn_benson_2026-10-28.wikitext;bios/wikipedia_bio_john_james_michigan_politician_2026-10-28.wikitext;bios/ballotpedia_jocelyn_benson_2026-10-28.html;bios/ballotpedia_john_james_michigan_2026-10-28.html;official_candidate_lists/michigan_boe_public_candidate_report_2026_general_2026-10-28.html"
+  },
+  "MN": {
+   "state": "MN",
+   "name": "Minnesota",
+   "party": "(D)",
+   "incumbent": "Tim Walz",
+   "incumbent_party": "(D)",
+   "incumbent_status": "retiring",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Amy Klobuchar",
+   "r_nominee": "Lisa Demuth",
+   "d_ballot_name": "Amy Klobuchar",
+   "r_ballot_name": "Lisa Demuth",
+   "anti_r_candidate": "Amy Klobuchar",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 3.55,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Amy Klobuchar",
+     "a": 3.55,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "Senate",
+       "geo": "Minnesota",
+       "war": "D+8.5",
+       "k": 0
+      },
+      {
+       "year": 2018,
+       "office": "Senate",
+       "geo": "Minnesota",
+       "war": "D+9.5",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Lisa Demuth",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 11.91,
+    "raw_margin": 10.75,
+    "n_polls": 4,
+    "third_party_share": 0.75,
+    "rcv_final_polls": 0,
+    "method": "recomputed: newer polls than RCP's average",
+    "as_of": "2026-10-26",
+    "polls": "The New York Times/Siena University, ending 2026-10-26 (full ballot, 56/38); SurveyUSA for KSTP-TV (St. Paul); KAAL-TV (Austin); WDIO-DT (Duluth), ending 2026-10-12 (full ballot, 48/41); Mason-Dixon for StarTribune; KARE, ending 2026-10-07 (full ballot, 50/41); Morning Consult, ending 2026-10-07 (full ballot, 48/39)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Walz launched a 3rd-term bid then ended it Jan 5 2026 (Axios) - status recorded as retiring. VoteHub's 'GQR Oct 1-4' row under 2026 Minnesota governor (Flanagan vs Tafoya) is a Senate poll mislabeled; ignored. Ballot names: SOS official candidate media file (Klobuchar DFL, Demuth R, Steven Young Green).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_minnesota_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;news/axios_2026-01-05_walz_ends_reelection_campaign_wayback_2026-10-28.html;bios/wikipedia_bio_tim_walz_2026-10-28.wikitext;bios/wikipedia_bio_amy_klobuchar_2026-10-28.wikitext;bios/wikipedia_bio_lisa_demuth_2026-10-28.wikitext;bios/ballotpedia_amy_klobuchar_2026-10-28.html;bios/ballotpedia_lisa_demuth_2026-10-28.html;official_candidate_lists/minnesota_sos_general_candidate_media_file_cand_2026-10-28.txt;official_candidate_lists/minnesota_sos_general_party_table_2026-10-28.txt"
+  },
+  "NE": {
+   "state": "NE",
+   "name": "Nebraska",
+   "party": "(R)",
+   "incumbent": "Jim Pillen",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Lynne Walz",
+   "r_nominee": "Jim Pillen",
+   "d_ballot_name": "Lynne Walz",
+   "r_ballot_name": "Jim Pillen",
+   "anti_r_candidate": "Lynne Walz",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 1.37,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Lynne Walz",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Jim Pillen",
+     "a": 1.37,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Nebraska",
+       "war": "computed +2.74",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": -1,
+   "poll_average": {
+    "margin": -3.41,
+    "raw_margin": -3.0,
+    "n_polls": 4,
+    "third_party_share": 4.75,
+    "rcv_final_polls": 0,
+    "method": "recomputed: RCP publishes no average",
+    "as_of": "2026-10-23",
+    "polls": "Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 40/47); National Public Affairs, ending 2026-10-18 (full ballot, 41/47); Concord Public Opinion Partners (D-flagged), ending 2026-10-18 (full ballot, 43/40); Public Policy Polling (D-flagged), ending 2026-10-14 (full ballot, 46/48)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Brett Lindstrom (America First Party) max 9% (Lake Research for Walz, Sep 8-14) - below 10%; Lindstrom ran for governor 2022 (lost R primary). Rick Beard (Legal Marijuana Now) max 7%. Ballot names: SOS final general list 9/11/2026; also Brett Lindstrom (America First), Rick Beard (Legal Marijuana NOW).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_nebraska_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_jim_pillen_2026-10-28.wikitext;bios/wikipedia_bio_lynne_walz_2026-10-28.wikitext;bios/wikipedia_bio_brett_lindstrom_2026-10-28.wikitext;bios/ballotpedia_lynne_walz_2026-10-28.html;bios/ballotpedia_brett_lindstrom_2026-10-28.html;official_candidate_lists/nebraska_sos_final_statewide_general_candidate_list_9.11.26_2026-10-28.pdf"
+  },
+  "NV": {
+   "state": "NV",
+   "name": "Nevada",
+   "party": "(R)",
+   "incumbent": "Joe Lombardo",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Aaron Ford",
+   "r_nominee": "Joseph Lombardo",
+   "d_ballot_name": "Aaron D. Ford",
+   "r_ballot_name": "Joseph Lombardo",
+   "anti_r_candidate": "Aaron Ford",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 1.51,
+   "war_b": -0.5,
+   "war_detail": {
+    "d": {
+     "name": "Aaron Ford",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Joseph Lombardo",
+     "a": 1.51,
+     "b": -0.5,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Nevada",
+       "war": "computed +3.02",
+       "k": 1
+      }
+     ]
+    }
+   },
+   "inc_sign": -1,
+   "poll_average": {
+    "margin": 4.26,
+    "raw_margin": 4.0,
+    "n_polls": 1,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: newer polls than RCP's average",
+    "as_of": "2026-10-25",
+    "polls": "Hart Research Associates for A More Affordable Nevada, ending 2026-10-25 (full ballot, 49/45)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Also on ballot: Danielle Ford (no political party); not in any post-Sep-1 poll at >=10%. Ballot names: Clark County official list (state SOS site blocked): Ford, Aaron D. (DEM); Lombardo, Joseph (REP); Ford, Danielle (NPP); plus 'None of these candidates'.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_nevada_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_joe_lombardo_2026-10-28.wikitext;bios/wikipedia_bio_aaron_ford_nevada_politician_2026-10-28.wikitext;bios/ballotpedia_aaron_ford_nevada_2026-10-28.html;official_candidate_lists/nevada_clark_county_election_dept_all_contests_candidates_general_2026-10-28.pdf"
+  },
+  "NH": {
+   "state": "NH",
+   "name": "New Hampshire",
+   "party": "(R)",
+   "incumbent": "Kelly Ayotte",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2024)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Cinde Warmington",
+   "r_nominee": "Kelly Ayotte",
+   "d_ballot_name": "Cinde Warmington",
+   "r_ballot_name": "Kelly Ayotte",
+   "anti_r_candidate": "Cinde Warmington",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -4.96,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Cinde Warmington",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Kelly Ayotte",
+     "a": -4.96,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "Governor",
+       "geo": "New Hampshire",
+       "war": "computed -12.12",
+       "k": 0
+      },
+      {
+       "year": 2016,
+       "office": "Senate",
+       "geo": "New Hampshire",
+       "war": "D+4.4",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": -1,
+   "poll_average": {
+    "margin": -10.22,
+    "raw_margin": -9.33,
+    "n_polls": 3,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average; removed: Rasmussen Reports 10/20 - 10/23",
+    "as_of": "2026-10-27",
+    "polls": "St. Anselm 10/19 - 10/20; YouGov 9/28 - 10/5; NY Times/Siena 9/15 - 9/22",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/new-hampshire/ayotte-vs-warmington",
+    "local_file": "sources/gov_polls_2026/rcp_gov_nh_8953.json"
+   },
+   "note": "2-year term. Libertarian Stephen Villee on ballot (Ballotpedia, NH page). Jon Kiper (Community First) listed in Wikipedia overview but 'failed to qualify' per NH page and 'withdrew' per Ballotpedia. Ballot names: Dover Ward 1 sample ballot (state SOS site blocked); also Stephen Villee (Libertarian). Jon Kiper not on ballot.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_new_hampshire_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_kelly_ayotte_2026-10-28.wikitext;bios/wikipedia_bio_cinde_warmington_2026-10-28.wikitext;bios/ballotpedia_cinde_warmington_2026-10-28.html;official_candidate_lists/new_hampshire_dover_ward1_general_sample_ballot_2026-10-28.pdf"
+  },
+  "NM": {
+   "state": "NM",
+   "name": "New Mexico",
+   "party": "(D)",
+   "incumbent": "Michelle Lujan Grisham",
+   "incumbent_party": "(D)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Deb Haaland",
+   "r_nominee": "Greggory Hull",
+   "d_ballot_name": "Deb Haaland",
+   "r_ballot_name": "Greggory D Hull",
+   "anti_r_candidate": "Deb Haaland",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -1.625,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Deb Haaland",
+     "a": -1.625,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2020,
+       "office": "House",
+       "geo": "NM-01",
+       "war": "R+6.5",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Greggory Hull",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 7.26,
+    "raw_margin": 6.5,
+    "n_polls": 2,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-05",
+    "polls": "Albuquerque Journal 10/1 - 10/9; KOB-TV/SurveyUSA 9/25 - 9/30",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/new-mexico/hull-vs-haaland",
+    "local_file": "sources/gov_polls_2026/rcp_gov_nm_9029.json"
+   },
+   "note": "Two-candidate race per Ballotpedia; four independents were disqualified. Ballot names: SOS general list prints 'DEB HAALAND AND STEPHANIE GARCIA RICHARD' and 'GREGGORY D HULL AND DAVID M GALLEGOS' (case normalized here); four DTS candidates disqualified.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_new_mexico_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_michelle_lujan_grisham_2026-10-28.wikitext;bios/wikipedia_bio_deb_haaland_2026-10-28.wikitext;bios/wikipedia_bio_gregg_hull_2026-10-28.wikitext;bios/ballotpedia_debra_haaland_2026-10-28.html;bios/ballotpedia_gregg_hull_2026-10-28.html;official_candidate_lists/new_mexico_sos_2026_general_election_contest_candidate_list_2026-10-28.html"
+  },
+  "NY": {
+   "state": "NY",
+   "name": "New York",
+   "party": "(D)",
+   "incumbent": "Kathy Hochul",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "succeeded (Lt. Gov.; Andrew Cuomo resigned); since elected 2022",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Kathy Hochul",
+   "r_nominee": "Bruce Blakeman",
+   "d_ballot_name": "Kathy C. Hochul",
+   "r_ballot_name": "Bruce A. Blakeman",
+   "anti_r_candidate": "Kathy Hochul",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -4.905,
+   "war_b": -0.5,
+   "war_detail": {
+    "d": {
+     "name": "Kathy Hochul",
+     "a": -4.905,
+     "b": -0.5,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "New York",
+       "war": "computed -9.81",
+       "k": 1
+      }
+     ]
+    },
+    "r": {
+     "name": "Bruce Blakeman",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": {
+    "margin": 12.3,
+    "raw_margin": 11.5,
+    "n_polls": 4,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-28",
+    "polls": "Marist 10/22 - 10/25; Quinnipiac 10/15 - 10/19; Emerson 10/3 - 10/5; Siena 9/11 - 9/17",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/new-york/hochul-vs-blakeman",
+    "local_file": "sources/gov_polls_2026/rcp_gov_ny_8742.json"
+   },
+   "note": "Fusion: Hochul also Working Families; Blakeman also Conservative (+ Vote Affordable per Ballotpedia). Larry Sharpe (Coalition) disqualified. Ballot names: SBOE certification 10/7/2026: Hochul on Democratic + Working Families; Blakeman on Republican + Conservative + Vote Affordable.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_new_york_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_kathy_hochul_2026-10-28.wikitext;bios/wikipedia_bio_bruce_blakeman_2026-10-28.wikitext;bios/ballotpedia_bruce_blakeman_2026-10-28.html;official_candidate_lists/new_york_sboe_general_ballot_certification_10.7.2026_2026-10-28.pdf"
+  },
+  "OH": {
+   "state": "OH",
+   "name": "Ohio",
+   "party": "(R)",
+   "incumbent": "Mike DeWine",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Amy Acton",
+   "r_nominee": "Vivek Ramaswamy",
+   "d_ballot_name": "Amy Acton",
+   "r_ballot_name": "Vivek Ramaswamy",
+   "anti_r_candidate": "Amy Acton",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Amy Acton",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Vivek Ramaswamy",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 4.62,
+    "raw_margin": 4.29,
+    "n_polls": 7,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-24",
+    "polls": "Suffolk University 10/21 - 10/26; FOX News 10/15 - 10/19; Marist 10/15 - 10/18; Cook Political Report 10/9 - 10/13; Bowling Green/YouGov 9/29 - 10/9; co/efficient 10/5 - 10/6; CNN 9/29 - 10/5",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/ohio/ramaswamy-vs-acton",
+    "local_file": "sources/gov_polls_2026/rcp_gov_oh_8720.json"
+   },
+   "note": "Also on ballot: Don Kissick (L). Ballot names: Wood County BOE certified list (state SOS site blocked); also Don Kissick (L); 4 write-ins not printed.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_ohio_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_mike_dewine_2026-10-28.wikitext;bios/wikipedia_bio_vivek_ramaswamy_2026-10-28.wikitext;bios/wikipedia_bio_amy_acton_2026-10-28.wikitext;bios/ballotpedia_vivek_ramaswamy_2026-10-28.html;bios/ballotpedia_amy_acton_2026-10-28.html;official_candidate_lists/ohio_wood_county_boe_general_candidate_list_2026-10-28.pdf"
+  },
+  "OK": {
+   "state": "OK",
+   "name": "Oklahoma",
+   "party": "(R)",
+   "incumbent": "Kevin Stitt",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Cyndi Munson",
+   "r_nominee": "Mike Mazzei",
+   "d_ballot_name": "Cyndi Munson",
+   "r_ballot_name": "Mike Mazzei",
+   "anti_r_candidate": "Cyndi Munson",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Cyndi Munson",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Mike Mazzei",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": null,
+   "note": "Mazzei beat AG Gentner Drummond in Aug 25 runoff. Three independents on ballot. Ballot names: State Election Board list prints MIKE MAZZEI, CYNDI MUNSON (case normalized); independents Orlando Lynn Bush, Robert E Brooks Sr, Jerry Griffin.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_oklahoma_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_kevin_stitt_2026-10-28.wikitext;bios/wikipedia_bio_mike_mazzei_2026-10-28.wikitext;bios/wikipedia_bio_cyndi_munson_2026-10-28.wikitext;bios/ballotpedia_mike_mazzei_2026-10-28.html;bios/ballotpedia_cyndi_munson_2026-10-28.html;official_candidate_lists/oklahoma_seb_nov3_general_election_list_by_county_2026-10-28.html"
+  },
+  "OR": {
+   "state": "OR",
+   "name": "Oregon",
+   "party": "(D)",
+   "incumbent": "Tina Kotek",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Tina Kotek",
+   "r_nominee": "Christine Drazan",
+   "d_ballot_name": "Tina Kotek",
+   "r_ballot_name": "Christine Drazan",
+   "anti_r_candidate": "Tina Kotek",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -5.74,
+   "war_b": -0.0,
+   "war_detail": {
+    "d": {
+     "name": "Tina Kotek",
+     "a": -2.87,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Oregon",
+       "war": "computed -5.74",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Christine Drazan",
+     "a": -2.87,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Oregon",
+       "war": "computed -5.74",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": null,
+   "note": "Rematch of 2022. Fusion: Kotek also WFP; Drazan also Libertarian (Ballotpedia). Brett Smith (Pacific Green) max 6%. Ballot names: SOS Directive 2026-09 ballot statement (copy hosted by Multnomah County): Kotek (Democrat, Working Families), Drazan (Republican, Libertarian), Brett Smith (Pacific Green).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_oregon_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_tina_kotek_2026-10-28.wikitext;bios/wikipedia_bio_christine_drazan_2026-10-28.wikitext;bios/ballotpedia_christine_drazan_2026-10-28.html;official_candidate_lists/oregon_sos_directive_2026-09_official_ballot_statement_via_multco_2026-10-28.pdf;official_candidate_lists/oregon_sos_general_voters_pamphlet_book1_2026-10-28.pdf"
+  },
+  "PA": {
+   "state": "PA",
+   "name": "Pennsylvania",
+   "party": "(D)",
+   "incumbent": "Josh Shapiro",
+   "incumbent_party": "(D)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Josh Shapiro",
+   "r_nominee": "Stacy Garrity",
+   "d_ballot_name": "Josh Shapiro",
+   "r_ballot_name": "Stacy Garrity",
+   "anti_r_candidate": "Josh Shapiro",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 10.27,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Josh Shapiro",
+     "a": 10.27,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Pennsylvania",
+       "war": "computed +20.54",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Stacy Garrity",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 1,
+   "poll_average": {
+    "margin": 26.27,
+    "raw_margin": 23.8,
+    "n_polls": 5,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-22",
+    "polls": "Franklin &amp; Marshall 10/7 - 10/18; PennLive 10/5 - 10/11; Quinnipiac 10/1 - 10/5; Susquehanna 9/22 - 9/30; NY Times/Siena 9/15 - 9/22",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/pennsylvania/shapiro-vs-garrity",
+    "local_file": "sources/gov_polls_2026/rcp_gov_pa_8860.json"
+   },
+   "note": "Also on ballot: Ken Krawchuk (L). Ballot names: Bucks County official listing (ballot names); Dept of State database legal names SHAPIRO, JOSHUA D / GARRITY, STACY LORRAINE; also Ken Krawchuk (L).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_pennsylvania_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_josh_shapiro_2026-10-28.wikitext;bios/wikipedia_bio_stacy_garrity_2026-10-28.wikitext;bios/ballotpedia_stacy_garrity_2026-10-28.html;official_candidate_lists/pennsylvania_bucks_county_official_candidate_listing_upd_09-17-2026_2026-10-28.pdf;official_candidate_lists/pennsylvania_dos_candidate_database_2026_general_2026-10-28.html"
+  },
+  "RI": {
+   "state": "RI",
+   "name": "Rhode Island",
+   "party": "(D)",
+   "incumbent": "Dan McKee",
+   "incumbent_party": "(D)",
+   "incumbent_status": "lost primary",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "succeeded (Lt. Gov.; Gina Raimondo resigned); since elected 2022",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Helena Buonanno Foulkes",
+   "r_nominee": "Aaron Guckian",
+   "d_ballot_name": "Helena Buonanno Foulkes",
+   "r_ballot_name": "Aaron C. Guckian",
+   "anti_r_candidate": "Helena Buonanno Foulkes",
+   "anti_r_party": "(D)",
+   "other_candidates": [
+    {
+     "name": "Ken Block",
+     "party": "(I)",
+     "max_poll_share": 35.0,
+     "poll": "Emerson College/WPRI-TV, Oct 8-11 2026, 800 LV (polls/ri_emerson_2026-10-08_11_2026-10-28.html)"
+    }
+   ],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Helena Buonanno Foulkes",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Aaron Guckian",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 50.91,
+    "raw_margin": 28.0,
+    "n_polls": 2,
+    "third_party_share": 32.5,
+    "rcv_final_polls": 0,
+    "method": "recomputed: RCP publishes no average",
+    "as_of": "2026-10-11",
+    "polls": "Emerson College, ending 2026-10-11 (full ballot, 44/10); Embold Research for Salve Regina University Pell Center for International Relations and Public Policy, ending 2026-10-08 (full ballot, 39/17)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "TOP-TWO FLAG: independent Ken Block is 2nd in every poll since Sep 1 (Emerson 35 vs Guckian 10; Embold 28 vs 17; UNH 25 vs 17; Block internal 24 vs 19); 9 pts behind Foulkes in Emerson. VoteHub lists the Emerson poll as 48/38/12 (apparently undecided leaners allocated); release headline is 44/35/10 with 9% undecided. Also on ballot: Jasjit Gotra (I), Christopher 'CD' Reynolds (I). Ballot names: UNVERIFIED as general-ballot strings: names from the official Sep 9 primary results (no general list or sample ballot could be fetched; vote.sos.ri.gov blocked). Independents per SOS declared-candidates report (Jul 30): Block, Kenneth; Gotra, Jasjit S; Reynolds, C D.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_rhode_island_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;news/nbcnews_2026-09-09_mckee_loses_ri_primary_2026-10-28.html;polls/ri_emerson_2026-10-08_11_2026-10-28.html;polls/ri_salve_pell_embold_2026-10-05_08_2026-10-28.html;polls/ri_turnto10_pell_center_2026-10-20_2026-10-28.html;polls/ri_unh_2026-09-17_21_2026-10-28.html;polls/ri_golocal_block_internal_opinion_diagnostics_2026-09-23_25_2026-10-28.html;bios/wikipedia_bio_dan_mckee_2026-10-28.wikitext;bios/wikipedia_bio_helena_foulkes_2026-10-28.wikitext;bios/wikipedia_bio_ken_block_politician_2026-10-28.wikitext;bios/ballotpedia_helena_foulkes_2026-10-28.html;bios/ballotpedia_aaron_guckian_2026-10-28.html;bios/ballotpedia_ken_block_2026-10-28.html;official_candidate_lists/rhode_island_boe_2026_primary_summary_results_2026-10-28.pdf;official_candidate_lists/rhode_island_sos_declared_candidates_report_2026-10-28.xlsx"
+  },
+  "SC": {
+   "state": "SC",
+   "name": "South Carolina",
+   "party": "(R)",
+   "incumbent": "Henry McMaster",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "succeeded (Lt. Gov.; Nikki Haley resigned); since elected 2018 and 2022",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Jermaine Johnson",
+   "r_nominee": "Alan Wilson",
+   "d_ballot_name": "Jermaine Johnson",
+   "r_ballot_name": "Alan Wilson",
+   "anti_r_candidate": "Jermaine Johnson",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Jermaine Johnson",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Alan Wilson",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": -13.18,
+    "raw_margin": -11.33,
+    "n_polls": 3,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-28",
+    "polls": "NY Times/Siena 10/19 - 10/26; The Citadel 10/14 - 10/25; Trafalgar Group 10/16 - 10/18",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/south-carolina/wilson-vs-johnson",
+    "local_file": "sources/gov_polls_2026/rcp_gov_sc_9025.json"
+   },
+   "note": "Wilson beat Lt. Gov. Pamela Evette in June 23 runoff. Also on ballot: Walid Hakim (Green), Michael Addison (United Citizens). Ballot names: Election Commission 'Name on Ballot'; also Michael Addison (United Citizens), Walid Hakim (Green).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_south_carolina_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_henry_mcmaster_2026-10-28.wikitext;bios/wikipedia_bio_alan_wilson_politician_2026-10-28.wikitext;bios/wikipedia_bio_jermaine_johnson_politician_2026-10-28.wikitext;bios/ballotpedia_alan_wilson_south_carolina_2026-10-28.html;bios/ballotpedia_jermaine_johnson_2026-10-28.html;official_candidate_lists/south_carolina_sec_candidate_search_governor_2026_general_2026-10-28.html"
+  },
+  "SD": {
+   "state": "SD",
+   "name": "South Dakota",
+   "party": "(R)",
+   "incumbent": "Larry Rhoden",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "succeeded (Lt. Gov.; Kristi Noem resigned to become Secretary of Homeland Security); has not won a governor election",
+   "incumbent_won_gov_election": false,
+   "d_nominee": "Dan Ahlers",
+   "r_nominee": "Larry Rhoden",
+   "d_ballot_name": "Dan Ahlers",
+   "r_ballot_name": "Larry Rhoden",
+   "anti_r_candidate": "Dan Ahlers",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.15,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Dan Ahlers",
+     "a": 0.15,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2020,
+       "office": "Senate",
+       "geo": "South Dakota",
+       "war": "D+0.6",
+       "k": 0
+      }
+     ]
+    },
+    "r": {
+     "name": "Larry Rhoden",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": -17.56,
+    "raw_margin": -16.33,
+    "n_polls": 3,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: RCP publishes no average",
+    "as_of": "2026-10-20",
+    "polls": "Emerson College for KELO-TV, ending 2026-10-20 (full ballot, 41/60); Mason-Dixon for South Dakota News Watch; Chiesman Center for Democracy at the University of South Dakota, ending 2026-10-14 (full ballot, 36/56); Concord Public Opinion Partners (D-flagged), ending 2026-10-08 (full ballot, 38/48)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Rhoden won July 28 R runoff over Toby Doeden. First run for governor at top of ticket. Ballot names: SOS general list; two tickets only.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_south_dakota_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_larry_rhoden_2026-10-28.wikitext;bios/wikipedia_bio_dan_ahlers_2026-10-28.wikitext;bios/ballotpedia_dan_ahlers_2026-10-28.html;official_candidate_lists/south_dakota_sos_2026_general_election_candidate_list_2026-10-28.html"
+  },
+  "TN": {
+   "state": "TN",
+   "name": "Tennessee",
+   "party": "(R)",
+   "incumbent": "Bill Lee",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Jerri Green",
+   "r_nominee": "Marsha Blackburn",
+   "d_ballot_name": "Jerri Green",
+   "r_ballot_name": "Marsha Blackburn",
+   "anti_r_candidate": "Jerri Green",
+   "anti_r_party": "(D)",
+   "other_candidates": [
+    {
+     "name": "David Hatley",
+     "party": "(I)",
+     "max_poll_share": 11.9,
+     "poll": "Spry Strategies, Oct 10-16 2026, 635 LV (polls/tn_spry_2026-10-10_16_2026-10-28.html)"
+    }
+   ],
+   "war_a": 1.715,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Jerri Green",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Marsha Blackburn",
+     "a": 1.715,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "Senate",
+       "geo": "Tennessee",
+       "war": "D+1.4",
+       "k": 0
+      },
+      {
+       "year": 2018,
+       "office": "Senate",
+       "geo": "Tennessee",
+       "war": "D+9.1",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": -15.79,
+    "raw_margin": -12.0,
+    "n_polls": 1,
+    "third_party_share": 13.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: newer polls than RCP's average",
+    "as_of": "2026-10-16",
+    "polls": "Spry Strategies, ending 2026-10-16 (full ballot, 32/44)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "Hatley 11.9% vs Green 32.0% (20 pts behind 2nd): not flagged. TargetSmart/Progress Fund (Sep 9-12) release: Hatley 10%; VoteHub shows 19% for that poll (not in the release). Ballot names: SOS governor list: Blackburn (R), Green (D), 13 independents incl. David Hatley.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_tennessee_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;polls/tn_spry_2026-10-10_16_2026-10-28.html;polls/tn_targetsmart_progress_fund_2026-09-09_12_2026-10-28.html;bios/wikipedia_bio_bill_lee_tennessee_politician_2026-10-28.wikitext;bios/wikipedia_bio_marsha_blackburn_2026-10-28.wikitext;bios/ballotpedia_marsha_blackburn_2026-10-28.html;bios/ballotpedia_jerri_green_2026-10-28.html;bios/ballotpedia_david_hatley_2026-10-28.html;official_candidate_lists/tennessee_sos_governor_candidate_list_nov2026_2026-10-28.pdf;official_candidate_lists/tennessee_sos_governor_candidate_list_nov2026_2026-10-28.xlsx;official_candidate_lists/tennessee_sos_2026_candidate_lists_page_2026-10-28.html"
+  },
+  "TX": {
+   "state": "TX",
+   "name": "Texas",
+   "party": "(R)",
+   "incumbent": "Greg Abbott",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2014; re-elected 2018, 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Gina Hinojosa",
+   "r_nominee": "Greg Abbott",
+   "d_ballot_name": "Gina Hinojosa",
+   "r_ballot_name": "Greg Abbott",
+   "anti_r_candidate": "Gina Hinojosa",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -1.608,
+   "war_b": 0.8,
+   "war_detail": {
+    "d": {
+     "name": "Gina Hinojosa",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Greg Abbott",
+     "a": -1.608,
+     "b": 0.8,
+     "records": [
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Texas",
+       "war": "computed +1.60",
+       "k": -1
+      },
+      {
+       "year": 2018,
+       "office": "Governor",
+       "geo": "Texas",
+       "war": "computed -11.18",
+       "k": -1
+      },
+      {
+       "year": 2014,
+       "office": "Governor",
+       "geo": "Texas",
+       "war": "computed +4.73",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": -1,
+   "poll_average": {
+    "margin": -3.24,
+    "raw_margin": -3.11,
+    "n_polls": 9,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-24",
+    "polls": "Univision/YouGov 10/13 - 10/21; Emerson 10/17 - 10/19; FOX News 10/15 - 10/19; TPOR 10/15 - 10/18; CBS News 10/8 - 10/16; University of Houston 10/10 - 10/14; Cook Political Report 10/9 - 10/13; Marist 10/8 - 10/11; ReconMR/Siena 10/5 - 10/8",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/texas/abbott-vs-hinojosa",
+    "local_file": "sources/gov_polls_2026/rcp_gov_tx_8910.json"
+   },
+   "note": "Pat Dixon (L) max 6% (Big Data Poll). Ballot names: SOS candidate API txFullNameBallot 'GREG ABBOTT', 'GINA HINOJOSA' (case normalized); Pat Dixon (L); 4 declared write-ins.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_texas_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_greg_abbott_2026-10-28.wikitext;bios/wikipedia_bio_gina_hinojosa_2026-10-28.wikitext;bios/ballotpedia_gina_hinojosa_2026-10-28.html;official_candidate_lists/texas_sos_qualified_candidates_governor_2026_general_2026-10-28.json;official_candidate_lists/texas_sos_cbp_party_codes_2026-10-28.json;official_candidate_lists/texas_sos_cbp_candidate_status_codes_2026-10-28.json;official_candidate_lists/texas_sos_cbp_declaration_status_codes_2026-10-28.json;official_candidate_lists/texas_sos_cbp_elections_2026_2026-10-28.json"
+  },
+  "VT": {
+   "state": "VT",
+   "name": "Vermont",
+   "party": "(R)",
+   "incumbent": "Phil Scott",
+   "incumbent_party": "(R)",
+   "incumbent_status": "running",
+   "incumbent_running": true,
+   "incumbent_elected_or_succeeded": "elected (2016; re-elected 2018-2024)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Amanda Janoo",
+   "r_nominee": "Phil Scott",
+   "d_ballot_name": "Amanda Janoo",
+   "r_ballot_name": "Phil Scott",
+   "anti_r_candidate": "Amanda Janoo",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -79.518,
+   "war_b": 1.0,
+   "war_detail": {
+    "d": {
+     "name": "Amanda Janoo",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Phil Scott",
+     "a": -79.518,
+     "b": 1.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "Governor",
+       "geo": "Vermont",
+       "war": "computed -83.11",
+       "k": -1
+      },
+      {
+       "year": 2022,
+       "office": "Governor",
+       "geo": "Vermont",
+       "war": "computed -75.51",
+       "k": -1
+      },
+      {
+       "year": 2020,
+       "office": "Governor",
+       "geo": "Vermont",
+       "war": "computed -76.55",
+       "k": -1
+      },
+      {
+       "year": 2018,
+       "office": "Governor",
+       "geo": "Vermont",
+       "war": "computed -48.23",
+       "k": -1
+      },
+      {
+       "year": 2016,
+       "office": "Governor",
+       "geo": "Vermont",
+       "war": "computed -35.14",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": -1,
+   "poll_average": {
+    "margin": -3.16,
+    "raw_margin": -3.0,
+    "n_polls": 1,
+    "third_party_share": 2.0,
+    "rcv_final_polls": 0,
+    "method": "recomputed: RCP publishes no average",
+    "as_of": "2026-10-25",
+    "polls": "State Navigate, ending 2026-10-25 (full ballot, 46/49)",
+    "url": "",
+    "local_file": "sources/gov_polls_2026/gov_polls_compiled.json"
+   },
+   "note": "2-year term. Also on ballot: Dean Roy (Freedom and Unity), June Goodband (Green Mountain Peace & Justice), Brian Judd (I). Ballot names: SOS list 'Name On Ballot' PHIL SCOTT (REPUBLICAN), AMANDA JANOO (DEM/PROG) (case normalized); also June Goodband, Dean Roy, Brian Judd.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_vermont_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;bios/wikipedia_bio_phil_scott_2026-10-28.wikitext;bios/ballotpedia_amanda_janoo_2026-10-28.html;official_candidate_lists/vermont_sos_2026_general_election_qualified_candidates_2026-10-28.xlsx"
+  },
+  "WI": {
+   "state": "WI",
+   "name": "Wisconsin",
+   "party": "(D)",
+   "incumbent": "Tony Evers",
+   "incumbent_party": "(D)",
+   "incumbent_status": "retiring",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "David Crowley",
+   "r_nominee": "Tom Tiffany",
+   "d_ballot_name": "David Crowley",
+   "r_ballot_name": "Tom Tiffany",
+   "anti_r_candidate": "David Crowley",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": -0.48,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "David Crowley",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Tom Tiffany",
+     "a": -0.48,
+     "b": -0.0,
+     "records": [
+      {
+       "year": 2024,
+       "office": "House",
+       "geo": "WI-07",
+       "war": "R+2.2",
+       "k": 0
+      },
+      {
+       "year": 2022,
+       "office": "House",
+       "geo": "WI-07",
+       "war": "R+0.8",
+       "k": 0
+      },
+      {
+       "year": 2020,
+       "office": "House",
+       "geo": "WI-07",
+       "war": "D+1.9",
+       "k": 0
+      }
+     ]
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": {
+    "margin": 5.42,
+    "raw_margin": 5.0,
+    "n_polls": 3,
+    "third_party_share": 0.0,
+    "rcv_final_polls": 0,
+    "method": "RCP average",
+    "as_of": "2026-10-28",
+    "polls": "Marquette 10/14 - 10/22; TIPP 8/14 - 8/18; Platform Communications 8/12 - 8/13",
+    "url": "https://www.realclearpolling.com/polls/governor/general/2026/wisconsin/crowley-vs-tiffany",
+    "local_file": "sources/gov_polls_2026/rcp_gov_wi_9105.json"
+   },
+   "note": "Evers announced Jul 24 2025 he would not seek a third term (TMJ4). Ballot names: Elections Commission 'Candidates on Ballot' (archive.org copy of the WEC PDF; state site blocked); two tickets only.",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_wisconsin_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;votehub_governor_all_2026-10-28.json;news/tmj4_2025-07-24_evers_not_seeking_third_term_2026-10-28.html;bios/wikipedia_bio_tony_evers_2026-10-28.wikitext;bios/wikipedia_bio_david_crowley_wisconsin_politician_2026-10-28.wikitext;bios/wikipedia_bio_tom_tiffany_2026-10-28.wikitext;bios/ballotpedia_david_crowley_wisconsin_2026-10-28.html;bios/ballotpedia_tom_tiffany_2026-10-28.html;official_candidate_lists/wisconsin_wec_candidates_on_ballot_nov3_2026_general_via_archive_org_2026-10-28.pdf;official_candidate_lists/wisconsin_dane_county_clerk_whats_on_the_ballot_nov2026_2026-10-28.pdf"
+  },
+  "WY": {
+   "state": "WY",
+   "name": "Wyoming",
+   "party": "(R)",
+   "incumbent": "Mark Gordon",
+   "incumbent_party": "(R)",
+   "incumbent_status": "term-limited",
+   "incumbent_running": false,
+   "incumbent_elected_or_succeeded": "elected (2018; re-elected 2022)",
+   "incumbent_won_gov_election": true,
+   "d_nominee": "Kenneth Casner",
+   "r_nominee": "Eric Barlow",
+   "d_ballot_name": "Kenneth R. Casner",
+   "r_ballot_name": "Eric Barlow",
+   "anti_r_candidate": "Kenneth Casner",
+   "anti_r_party": "(D)",
+   "other_candidates": [],
+   "war_a": 0.0,
+   "war_b": 0.0,
+   "war_detail": {
+    "d": {
+     "name": "Kenneth Casner",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    },
+    "r": {
+     "name": "Eric Barlow",
+     "a": 0.0,
+     "b": 0.0,
+     "records": []
+    }
+   },
+   "inc_sign": 0,
+   "poll_average": null,
+   "note": "No general-election poll ending on/after 2026-09-01 found (none in VoteHub or Wikipedia). Constitution Party candidate differs by source (Joseph Kibler per Wikipedia overview; Rebecca Bextel per Ballotpedia, which lists Kibler as withdrawn). Ballot names: SOS roster 'Ballot Name'; also Rebecca Bextel (Constitution).",
+   "source_files": "wikipedia_2026_gubernatorial_elections_2026-10-28.wikitext;ballotpedia_gubernatorial_elections_2026_2026-10-28.html;wikipedia_2026_wyoming_gubernatorial_election_2026-10-28.wikitext;wikipedia_list_of_current_us_governors_2026-10-28.wikitext;bios/wikipedia_bio_mark_gordon_2026-10-28.wikitext;bios/wikipedia_bio_eric_barlow_2026-10-28.wikitext;bios/ballotpedia_eric_barlow_2026-10-28.html;bios/ballotpedia_ken_casner_2026-10-28.html;official_candidate_lists/wyoming_sos_2026_general_election_candidates_2026-10-28.csv;official_candidate_lists/wyoming_sos_2026_general_election_candidates_roster_2026-10-28.pdf"
+  }
+ },
+ "not_up": {
+  "DE": {
+   "governor": "Matt Meyer",
+   "party": "(D)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "IN": {
+   "governor": "Mike Braun",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "KY": {
+   "governor": "Andy Beshear",
+   "party": "(D)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2023_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "LA": {
+   "governor": "Jeff Landry",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2023_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "MS": {
+   "governor": "Tate Reeves",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2023_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "MO": {
+   "governor": "Mike Kehoe",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "MT": {
+   "governor": "Greg Gianforte",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "NJ": {
+   "governor": "Mikie Sherrill",
+   "party": "(D)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2025_gubernatorial_elections_2026-10-28.wikitext;bios/wikipedia_bio_mikie_sherrill_2026-10-28.wikitext"
+  },
+  "NC": {
+   "governor": "Josh Stein",
+   "party": "(D)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "ND": {
+   "governor": "Kelly Armstrong",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "UT": {
+   "governor": "Spencer Cox",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "VA": {
+   "governor": "Abigail Spanberger",
+   "party": "(D)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2025_gubernatorial_elections_2026-10-28.wikitext;bios/wikipedia_bio_abigail_spanberger_2026-10-28.wikitext"
+  },
+  "WA": {
+   "governor": "Bob Ferguson",
+   "party": "(D)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  },
+  "WV": {
+   "governor": "Patrick Morrisey",
+   "party": "(R)",
+   "source_files": "wikipedia_list_of_current_us_governors_2026-10-28.wikitext;nga_governors_2026-10-28.html;wikipedia_2024_gubernatorial_elections_2026-10-28.wikitext"
+  }
+ }
+}

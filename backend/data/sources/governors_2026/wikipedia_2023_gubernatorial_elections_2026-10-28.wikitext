@@ -1,0 +1,603 @@
+{{Short description|none}}
+{{For|related races|2023 United States elections}}
+{{Use mdy dates|date=January 2025}}
+
+<!-- "none" is preferred when the title is already sufficiently detailed; see [[WP:SDNONE]] -->
+{{Infobox election
+| election_name = 2023 United States gubernatorial elections
+| country = United States
+| type = legislative
+| seats_for_election = 3 governorships
+| election_date = November 7, 2023 <br/>{{small|October 14 ([[2023 Louisiana gubernatorial election|Louisiana]])}}
+| ongoing = no
+| previous_election = 2022 United States gubernatorial elections
+| previous_year = 2022
+| next_election = 2024 United States gubernatorial elections
+| next_year = 2024
+| previous_seat_election = 2019 United States gubernatorial elections
+| previous_seat_year = 2019
+| next_seat_election = 2027 United States gubernatorial elections
+| next_seat_year = ''2027''
+| image_size = 
+| 1blank = Seats up
+| 2blank = Races won
+| party1 = Republican Party (United States)
+| seats_before1 = '''26'''
+| seats_after1 = '''27'''
+| seat_change1 = {{increase}} 1
+| popular_vote1 = '''1,741,855'''
+| percentage1 = '''54.34%'''
+| 1data1 = 1
+| 2data1 = '''2'''
+| image2 = 
+| leader2 = 
+| party2 = Democratic Party (United States)
+| leader_since2 = 
+| seats_before2 = 24
+| seats_after2 = 23
+| seat_change2 = {{decrease}} 1
+| popular_vote2 = 1,389,283
+| percentage2 = 43.34%
+| 1data2 = '''2'''
+| 2data2 = 1
+| map_image = {{2023 United States gubernatorial elections imagemap}}
+| map_size = 
+| map_caption = {{legend0|#CA0120|Republican gain}} {{legend0|#92C5DE|Democratic hold}}<br/>{{legend0|#F48984|Republican hold}}
+}}
+'''United States gubernatorial elections''' were held on November 7, 2023, in the states of [[Kentucky]] and [[Mississippi]], with an election having occurred in [[Louisiana]] on October 14. These elections form part of the [[2023 United States elections]]. The last regular gubernatorial elections for all three states were in [[2019 United States gubernatorial elections|2019]].
+
+In Louisiana, term-limited incumbent [[John Bel Edwards]] was succeeded by [[Jeff Landry]], flipping the seat from [[Democratic Party (United States)|Democratic]] to [[Republican Party (United States)|Republican]] control. In Kentucky, Democrat [[Andy Beshear]] won re-election to a second term. In Mississippi, Republican [[Tate Reeves]] won re-election to a second term.
+
+== Partisan composition ==
+Going into the election, there were 26 Republican governors and 24 Democratic governors in the United States. This class of governors was made up of 1 Republican and 2 Democrats. Democrats were defending two governorships in states [[Donald Trump]] won in 2020 (Kentucky and Louisiana).<ref>{{Cite web |last=Vakil |first=Caroline |date=2023-01-02 |title=Here are the governors' races to watch in 2023 |url=https://thehill.com/homenews/campaign/3791114-here-are-the-governors-races-to-watch-in-2023/ |access-date=2024-01-05 |website=The Hill |language=en-US}}</ref><ref>{{Cite news |last=Jacobson |first=Louis |date=June 8, 2023 |title=Democrats Face Uphill Challenge in Three Off-Year Races for Governor |url=https://www.usnews.com/news/elections/articles/2023-06-08/democrats-face-uphill-challenge-in-three-off-year-races-for-governor |access-date=January 5, 2023 |work=[[US News & World Report]]}}</ref>
+
+==Election predictions==
+
+Several sites and individuals published predictions of competitive seats. These predictions looked at factors such as the strength of the [[incumbent]] (if the incumbent is running for re-election), the strength of the candidates, and the partisan leanings of the state (reflected in part by the state's [[Cook Partisan Voting Index]] rating). The predictions assigned ratings to each seat, with the rating indicating a party's predicted advantage in winning that seat.
+
+Most election predictors use:
+* "<u>tossup</u>": no advantage
+* "<u>tilt</u>" (used by some predictors): advantage that is not quite as strong as "lean"
+* "<u>lean</u>": slight advantage
+* "<u>likely</u>": significant, but surmountable, advantage 
+* "<u>safe</u>" or "<u>solid</u>": near-certain chance of victory
+<!-- Colors and sorting:
+
+In many cases the incumbent has yet to say their intention of running for another term. If an incumbent intends to retire then place "<br/>{{Small|(retiring)}}" after the incumbent's name.
+
+See [[Template:USRaceRating]] for how to apply rating.
+
+-->
+
+{|class="wikitable sortable"
+|- valign=bottom
+! State
+! [[Cook Partisan Voting Index|PVI]]
+! Incumbent
+! Last<br>race
+! scope="col" | [[Cook Political Report|Cook]]<br>{{Small|October 23,<br>2023}}<ref>{{Cite web |title=2024 CPR Governor Race ratings |url=https://www.cookpolitical.com/ratings/governor-race-ratings |access-date=2023-07-23 |website=Cook Political Report |language=en}}</ref>
+! [[Inside Elections|IE]]<br/>{{small|September 1,<br/>2023}}<ref>{{Cite web |last1= |first1=  |title=Gubernatorial Ratings |url=https://insideelections.com/ratings/governor |access-date=2023-07-23 |website=insideelections.com |language=en}}</ref>
+! [[Sabato's Crystal Ball|Sabato]]<br />{{small|October 16,<br />2023}}<ref>{{Cite web |title=2024 Governor – Sabato's Crystal Ball |url=https://centerforpolitics.org/crystalball/2024-governor/ |access-date=2023-07-23 |language=en-US}}</ref>
+! [[Elections Daily|ED]]<br />{{small|November 7,<br />2023}}<ref>{{Cite web |last=Cunningham |first=Eric |date=2023-11-07 |title=Final 2023 Gubernatorial Ratings: Kentucky Moves to Leans Democratic, Mississippi is Likely Republican |url=https://elections-daily.com/2023/11/07/final-2023-gubernatorial-ratings-kentucky-moves-to-leans-democratic-mississippi-is-likely-republican/ |access-date=2023-11-07 |website=Elections Daily |language=en-US}}</ref>
+!Result<br />
+|-
+! [[#Kentucky|Kentucky]]
+| {{Party shading/Republican}} data-sort-value="16" | R+16
+| {{party shading/Democratic}} | {{sortname|Andy|Beshear}}
+| {{party shading/Democratic}} data-sort-value="-49.20" | 49.20% D
+<!--Coo-->| {{USRaceRating|Lean|D}}
+<!--IE-->| {{USRaceRating|Tilt|D}}
+<!--Sab-->|{{USRaceRating|Lean|D}}
+<!--ED-->|{{USRaceRating|Lean|D}}
+| {{party shading/Democratic}} data-sort-value="-52.53" | Beshear<br/>52.53% D
+|-
+! [[#Louisiana|Louisiana]]
+| {{Party shading/Republican}} data-sort-value="12" | R+12
+| {{party shading/Democratic}} | {{sortname|John|Bel Edwards}}<br/>{{small|(term-limited)}}
+| {{party shading/Democratic}} data-sort-value="-51.33" | 51.33% D
+<!--Coo-->| {{USRaceRating|Lean|R|Flip}}
+<!--IE-->| {{USRaceRating|Likely|R|Flip}}
+<!--Sab-->|{{USRaceRating|Likely|R|Flip}}
+<!--ED-->|{{USRaceRating|Safe|R|Flip}}
+| {{party shading/Republican}} data-sort-value="51.56" | [[Jeff Landry|Landry]]<br/>51.56% R {{small|(flip)}}
+|-
+! [[#Mississippi|Mississippi]]
+| {{Party shading/Republican}} data-sort-value="11" | R+11
+| {{party shading/Republican}} | {{sortname|Tate|Reeves}}
+| {{party shading/Republican}} data-sort-value="51.91" | 51.91% R
+<!--Coo-->| {{USRaceRating|Lean|R}}
+<!--IE-->| {{USRaceRating|Lean|R}}
+<!--Sab-->|{{USRaceRating|Likely|R}}
+<!--ED-->|{{USRaceRating|Likely|R}}
+| {{party shading/Republican}} data-sort-value="50.94" | Reeves<br/>50.94% R
+|}
+
+==Race summary==
+{| class="wikitable sortable"
+
+|- valign=bottom
+! State
+! Incumbent
+! Party
+! First elected
+! Result
+! General election
+
+|-
+! [[2023 Kentucky gubernatorial election|Kentucky]]
+| {{sortname|Andy|Beshear}}
+| {{party shading/Text/Democratic}}
+| [[2019 Kentucky gubernatorial election|2019]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist|
+* {{party stripe|Democratic Party (US)}}{{Aye}} '''[[Andy Beshear]]''' (Democratic) 52.5%
+* {{party stripe|Republican Party (US)}}[[Daniel Cameron (American politician)|Daniel Cameron]] (Republican) 47.5%
+}}
+|-
+! [[2023 Louisiana gubernatorial election|Louisiana]]
+| {{sortname|John Bel|Edwards}}
+| {{party shading/Text/Democratic}}
+| [[2015 Louisiana gubernatorial election|2015]]
+| {{party shading/Republican}} | Incumbent term-limited.<br>'''Republican gain.'''
+| nowrap | {{Plainlist|
+* {{party stripe|Republican Party (US)}}{{Aye}} '''[[Jeff Landry]]''' (Republican) 51.6%
+* {{party stripe|Democratic Party (US)}}[[Shawn Wilson (politician)|Shawn Wilson]] (Democratic) 25.9%
+* {{party stripe|Republican Party (US)}}Stephen Waguespack (Republican) 5.9%
+* {{party stripe|Republican Party (US)}}[[John Schroder]] (Republican) 5.3%}}
+{{collapsible list|title={{nobold|Others}}|
+| {{party stripe|Independent}}Hunter Lundy (Independent) 4.9%
+| {{party stripe|Democratic Party (US)}}Danny Cole (Democratic) 2.6%
+| {{party stripe|Republican Party (US)}}[[Sharon Hewitt]] (Republican) 1.7%
+| {{party stripe|Independent}}Benjamin Barnes (Independent) 0.5%
+| {{party stripe|Republican Party (US)}}Patrick "Dat" Barthel (Republican) 0.4%
+| {{party stripe|Republican Party (US)}}[[Richard Nelson (politician)|Richard Nelson]] (Republican) 0.3%
+| {{party stripe|Independent}}Jeffrey Istre (Independent) 0.3%
+| {{party stripe|Republican Party (US)}}Xavier Ellis (Republican) 0.2%
+| {{party stripe|Independent}}Keitron Gagnon (Independent) 0.1%
+| {{party stripe|Republican Party (US)}}Xan John (Republican) 0.1%
+| {{party stripe|Independent}}Frank Scurlock (Independent) 0.1%
+}}
+
+|-
+! [[2023 Mississippi gubernatorial election|Mississippi]]
+| {{sortname|Tate|Reeves}}
+| {{party shading/Text/Republican}}
+| [[2019 Mississippi gubernatorial election|2019]]
+| Incumbent re-elected.
+| nowrap | {{Plainlist|
+* {{party stripe|Republican Party (US)}}{{Aye}} '''[[Tate Reeves]]''' (Republican) 50.9%
+* {{party stripe|Democratic Party (US)}}[[Brandon Presley]] (Democratic) 47.7%
+* {{party stripe|Independent}}Gwendolyn Gray (Independent) 1.4%
+}}
+|}
+
+==Closest states==
+States where the margin of victory was between 1% and 5%:
+# '''<span style="color:red;">Mississippi, 3.24%</span>'''
+
+States where the margin of victory was between 5% and 10%:
+# '''<span style="color:blue;">Kentucky, 5.07%</span>'''
+
+<span style="color:red;">Red</span> denotes states won by Republicans. <span style="color:blue;">Blue</span> denotes states won by Democrats.
+
+==Kentucky==
+{{Infobox election
+| election_name = Kentucky gubernatorial election
+| country = Kentucky
+| type = presidential
+| ongoing = no
+| previous_election = 2019 Kentucky gubernatorial election
+| previous_year = 2019
+| next_election = 2027 Kentucky gubernatorial election
+| next_year = 2027
+| image_size = x136px
+| image1 = [[File:Governor Beshear 2023 (cropped).jpg|x150px]]
+| nominee1 = '''[[Andy Beshear]]'''
+| party1 = Kentucky Democratic Party
+| running_mate1 = '''[[Jacqueline Coleman]]'''
+| popular_vote1 = '''694,482'''
+| percentage1 = '''52.53%'''
+| image2 = [[File:Attorney General Daniel Cameron - Official Portrait (closer crop).jpg|x150px]]
+| nominee2 = [[Daniel Cameron (American politician)|Daniel Cameron]]
+| party2 = Republican Party of Kentucky
+| running_mate2 = [[Robby Mills]]
+| popular_vote2 = 627,457
+| percentage2 = 47.46%
+| map_image = File:2023 Kentucky gubernatorial election results map by county.svg
+| map_size = 290px
+| map_caption = '''Beshear:''' {{legend0|#7996e2|50–60%}} {{legend0|#6674de|60–70%}} {{legend0|#584CDE|70–80%}} <br/>'''Cameron:''' {{legend0|#e27f7f|50–60%}} {{legend0|#d75d5d|60–70%}} {{legend0|#d72f30|70–80%}}
+| turnout = 38.0% {{decrease}}
+| title = [[Governor of Kentucky|Governor]]
+| before_election = [[Andy Beshear]]
+| before_party = Kentucky Democratic Party
+| after_election = [[Andy Beshear]]
+| after_party = Kentucky Democratic Party
+}}
+{{main|2023 Kentucky gubernatorial election}}
+[[Governor of Kentucky|Governor]] [[Andy Beshear]] was elected in [[2019 Kentucky gubernatorial election|2019]] with 49.2% of the vote and ran for re-election to a second term.<ref name=KYCandidates>{{Cite web |title=Election Candidate Filings - Governor |url=https://web.sos.ky.gov/CandidateFilings/default.aspx?id=27 |access-date=May 3, 2023|website=web.sos.ky.gov}}</ref> He won the Democratic nomination with little opposition & won the general election.
+
+[[Attorney General of Kentucky|Attorney general]] [[Daniel Cameron (American politician)|Daniel Cameron]], former [[List of ambassadors of the United States to the United Nations|US Ambassador to the UN]] [[Kelly Craft]], [[Kentucky State Auditor|state auditor]] [[Mike Harmon (politician)|Mike Harmon]], and agriculture commissioner [[Ryan Quarles]] all ran for the Republican gubernatorial nomination.<ref name="KYCandidates" /> Cameron was supported by former [[President of the United States|president]] [[Donald Trump]], and led every poll leading to the primary, with Craft and Quarles trailing behind him.<ref>{{Cite web|url=https://spectrumnews1.com/ky/louisville/news/2022/06/17/daniel-cameron-donald-trump|title=Trump endorses Cameron's bid for governor in Kentucky|website=spectrumnews1.com|accessdate=April 6, 2023}}</ref> Cameron won the Republican nomination, becoming the first African American major party gubernatorial nominee in Kentucky's history.<ref>{{cite news |title=Daniel Cameron wins Republican primary for Kentucky governor |work=[[CBS News]] |date=May 16, 2023 |access-date=May 17, 2023 |url=https://www.cbsnews.com/news/daniel-cameron-wins-republican-primary-kentucky-governor/}}</ref>
+
+{{Election box begin no change |title=Democratic primary results<ref name="primresults">{{cite web |title=May 16, 2023 Official 2023 Primary Election Results |url=https://elect.ky.gov/results/2020-2029/Documents/Certification%20of%20Election%20Results%20for%202023%20Primary.pdf |website=Kentucky Secretary of State |access-date=October 6, 2023 |archive-date=July 30, 2023 |archive-url=https://web.archive.org/web/20230730133914/https://elect.ky.gov/results/2020-2029/Documents/Certification%20of%20Election%20Results%20for%202023%20Primary.pdf |url-status=live }}</ref>}}
+{{Election box winning candidate with party link no change
+  |party      = Kentucky Democratic Party
+  |candidate  = [[Andy Beshear]] (incumbent)
+  |votes      = 176,589
+  |percentage = 91.3
+}}{{Election box candidate with party link no change
+  |party      = Kentucky Democratic Party
+  |candidate  = [[Geoff Young]]
+  |votes      = 9,865
+  |percentage = 5.1
+}}{{Election box candidate with party link no change
+  |party      = Kentucky Democratic Party
+  |candidate  = [[Peppy Martin]]
+  |votes      = 6,913
+  |percentage = 3.6
+}}{{Election box total no change
+  |votes      = 193,367
+  |percentage = 100.0
+}}{{Election box end}}
+
+{{Election box begin no change |title=Republican primary results<ref name="primresults" />}}
+{{Election box winning candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = [[Daniel Cameron (American politician)|Daniel Cameron]]
+  |votes      = 144,576
+  |percentage = 47.7
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = [[Ryan Quarles]]
+  |votes      = 65,718
+  |percentage = 21.7
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = [[Kelly Craft]]
+  |votes      = 52,170
+  |percentage = 17.2
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = Eric Deters
+  |votes      = 17,464
+  |percentage = 5.8
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = [[Mike Harmon (politician)|Mike Harmon]]
+  |votes      = 7,797
+  |percentage = 2.6
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = Alan Keck
+  |votes      = 7,317
+  |percentage = 2.4
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = David Cooper
+  |votes      = 2,282
+  |percentage = 0.8
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = Jacob Clark
+  |votes      = 1,900
+  |percentage = 0.6
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = Robbie Smith
+  |votes      = 1,388
+  |percentage = 0.5
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = Bob DeVore
+  |votes      = 931
+  |percentage = 0.3
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = Johnny Rice
+  |votes      = 726
+  |percentage = 0.2
+}}{{Election box candidate with party link no change
+  |party      = Republican Party of Kentucky
+  |candidate  = Dennis Ormerod
+  |votes      = 696
+  |percentage = 0.2
+}}{{Election box total no change
+  |votes      = 302,965
+  |percentage = 100.0
+}}{{Election box end}}
+
+{{Election box begin |title=2023 Kentucky gubernatorial election}}
+{{Election box winning candidate with party link
+  |party      = Kentucky Democratic Party
+  |candidate  = {{ubl|[[Andy Beshear]] (incumbent)|[[Jacqueline Coleman]] (incumbent)}}
+  |votes      = 694,482
+  |percentage = 52.53%
+  |change     = +3.33%
+}}{{Election box candidate with party link
+  |party      = Republican Party of Kentucky
+  |candidate  = {{ubl|[[Daniel Cameron (American politician)|Daniel Cameron]]|[[Robby Mills]]}}
+  |votes      = 627,457
+  |percentage = 47.46%
+  |change     = -1.37%
+}}{{Election box write-in with party link
+  |votes      = 82
+  |percentage = 0.01%
+  |change     = N/A
+}}{{Election box total
+  |votes      = 1,322,021
+  |percentage = 100.00%
+}}
+{{Election box hold with party link no swing|
+  |winner     = Democratic Party (United States)
+  |loser      = Republican Party (United States)
+  |swing      = 
+}}{{Election box end}}
+{{clear}}
+
+==Louisiana==
+{{main|2023 Louisiana gubernatorial election}}{{Infobox election
+| election_name = 2023 Louisiana gubernatorial election
+| country = Louisiana
+| type = president
+| ongoing = no
+| previous_election = 2019 Louisiana gubernatorial election
+| previous_year = 2019
+| next_election = 2027 Louisiana gubernatorial election
+| next_year = 2027
+| election_date = October 14, 2023
+| image_size = x136px
+| image1 = [[File:Jeff Landry and Mike Johnson, March 2023 (cropped).jpg|x150px]]
+| candidate1 = '''[[Jeff Landry]]'''
+| party1 = Republican Party of Louisiana
+| popular_vote1 = '''547,827'''
+| percentage1 = '''51.6%'''
+| image2 = [[File:Shawn Wilson.jpg|x150px]]
+| candidate2 = [[Shawn Wilson (politician)|Shawn Wilson]]
+| party2 = Louisiana Democratic Party
+| popular_vote2 = 275,525
+| percentage2 = 25.9%
+| image4 = 
+| candidate4 = Stephen Waguespack
+| party4 = Republican Party of Louisiana
+| popular_vote4 = 62,287
+| percentage4 = 5.9%
+| image5 = [[File:John Schroder.jpg|x150px]]
+| candidate5 = [[John Schroder]]
+| party5 = Republican Party of Louisiana
+| popular_vote5 = 56,654
+| percentage5 = 5.3%
+| map_image = 2023 Louisiana gubernatorial election results map by parish.svg
+| map_size = 250px
+| map_caption = '''Landry:''' {{legend0|#ffc8cd|30–40%}} {{legend0|#ffb2b2|40–50%}} {{legend0|#e27f7f|50–60%}} {{legend0|#d75d5d|60–70%}} {{legend0|#d72f30|70–80%}} {{legend0|#c21b18|80–90%}} <br />'''Wilson:''' {{legend0|#A5B0FF|40–50%}} {{legend0|#584cde|70–80%}}
+| turnout = 36.3% {{decrease}}
+| title = [[Louisiana|Governor]]
+| before_election = [[John Bel Edwards]]
+| before_party = Democratic Party (United States)
+| after_election = [[Jeff Landry]]
+| after_party = Republican Party of Louisiana
+}}
+[[Governor of Louisiana|Governor]] [[John Bel Edwards]] was re-elected to a second term in [[2019 Louisiana gubernatorial election|2019]] with 51.3% of the vote. He was [[Term limits in the United States#Gubernatorial term limits|term-limited]] by the [[Constitution of Louisiana|Louisiana Constitution]] in 2023, and could not seek reelection for a third consecutive term.
+
+Louisiana utilizes a [[jungle primary]] system. Republican [[List of Attorneys General of Louisiana|Attorney General]] [[Jeff Landry]] was considered the frontrunner. Other candidates included [[Louisiana State Senate|state senator]] [[Sharon Hewitt]], and [[Louisiana State Treasurer|Treasurer]] [[John Schroder]]. Democratic Secretary of Transportation [[Shawn Wilson (politician)|Shawn Wilson]] also ran to succeed Edwards.<ref>{{cite web |last=Karlin|first=Sam|title=Billy Nungesser to announce he's not running for governor, will seek re-election |url=https://www.theadvocate.com/baton_rouge/news/politics/elections/billy-nungesser-to-announce-hes-not-running-for-governor-will-seek-re-election/article_5cd6018a-9053-11ed-9089-678da36fdfa2.html|website=The Advocate|date=9 January 2023|access-date=11 January 2023}}</ref><ref>{{cite news |last1=Doyle |first1=Matt |title=2023 Governor's race could be packed with GOP heavy hitters |url=https://louisianaradionetwork.com/2019/11/19/2023-governors-race-could-be-packed-with-gop-heavy-hitters/ |access-date=November 29, 2020 |work=[[Louisiana Radio Network]] |publisher=[[Louisiana Farm Bureau Federation]] |date=November 19, 2019}}</ref>
+
+Landry won with over 51% of the vote in the primary, becoming the first person to win a Louisiana gubernatorial election without a runoff since [[Bobby Jindal]] in [[2011 Louisiana gubernatorial election|2011]]. Landry easily prevailed over several Republican opponents and the leading Democratic candidate.<ref>{{cite news |work=[[Politico]] |access-date=October 14, 2023 |date=October 14, 2023 |url=https://www.politico.com/news/2023/10/14/jeff-landry-wins-louisiana-governor-00121598 |last=Montellaro |first=Zach |title=Landry wins Louisiana governor's race, flipping state red}}</ref> All the Republican candidates collectively won 65.52% of the vote, including a candidate who got 0.34% of the vote as he dropped out of the race but remained on the ballot. All the Democrats collectively won 28.53% of the vote, and all the Independents collectively won 5.95% of the vote. This was the only governorship to flip parties in the 2023 elections.
+
+{{Election box begin no change| title=2023 Louisiana gubernatorial election<ref>{{cite web|url=https://voterportal.sos.la.gov/static/2023-10-14/resultsRegion/63500|title=Official Results for Election Date: 10/14/2023 Governor}}</ref>}}
+{{Election box winning candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = [[Jeff Landry]]
+  |votes      = 547,827	
+  |percentage = 51.56%
+}}
+{{Election box candidate with party link no change|
+  |party      = Democratic Party (United States)
+  |candidate  = [[Shawn Wilson]]
+  |votes      = 275,525	
+  |percentage = 25.93%
+}}
+{{Election box candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = Stephen Waguespack
+  |votes      = 62,287	
+  |percentage = 5.86%
+}}
+{{Election box candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = [[John Schroder]]
+  |votes      = 56,654
+  |percentage = 5.33%
+}}
+{{Election box candidate with party link no change|
+  |party      = Independent
+  |candidate  = Hunter Lundy
+  |votes      = 52,165
+  |percentage = 4.91%
+}}
+{{Election box candidate with party link no change|
+  |party      = Democratic Party (United States)
+  |candidate  = Danny Cole
+  |votes      = 27,662	
+  |percentage = 2.60%
+}}
+{{Election box candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = [[Sharon Hewitt]]
+  |votes      = 18,468	
+  |percentage = 1.74%
+}}
+{{Election box candidate with party link no change|
+  |party      = Independent
+  |candidate  = Benjamin Barnes
+  |votes      = 5,190	
+  |percentage = 0.49%
+}}
+{{Election box candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = Dat Barthel
+  |votes      = 4,426
+  |percentage = 0.42%
+}}
+{{Election box candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = [[Richard Nelson (politician)|Richard Nelson]] ''(withdrawn)''
+  |votes      = 3,605	
+  |percentage = 0.34%
+}}
+{{Election box candidate with party link no change|
+  |party      = Independent
+  |candidate  = Jeffery Istre
+  |votes      = 3,400	
+  |percentage = 0.32%
+}}
+{{Election box candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = Xavier Ellis
+  |votes      = 1,734	
+  |percentage = 0.16%
+}}
+{{Election box candidate with party link no change|
+  |party      = Independent
+  |candidate  = Keitron Gagnon
+  |votes      = 1,260	
+  |percentage = 0.12%
+}}
+{{Election box candidate with party link no change|
+  |party      = Republican Party (United States)
+  |candidate  = Xan John
+  |votes      = 1,164
+  |percentage = 0.11%
+}}
+{{Election box candidate with party link no change|
+  |party      = Independent
+  |candidate  = Frank Scurlock
+  |votes      = 1,131	
+  |percentage = 0.11%
+}}
+{{Election box total no change
+  |votes      = 1,062,498
+  |percentage = 100.00%
+}}
+{{Election box gain with party link no swing
+|winner = Republican Party (United States)
+|loser = Democratic Party (United States)
+}}
+{{Election box end}}
+{{clear}}
+
+==Mississippi==
+{{Infobox election
+| election_name     = Mississippi gubernatorial election
+| country           = Mississippi
+| type              = presidential
+| ongoing           = no
+| previous_election = 2019 Mississippi gubernatorial election
+| previous_year     = 2019
+| next_election     = 2027 Mississippi gubernatorial election
+| next_year         = 2027
+| image_size        = x136px
+| image1            = [[File:Gov. Tate Reeves Signs House Bill 1486 (cropped).jpg|x150px]]
+| nominee1          = '''[[Tate Reeves]]'''
+| party1            = Mississippi Republican Party
+| popular_vote1     = '''418,233'''
+| percentage1       = '''50.9%'''
+| image2            = [[File:Brandon Presley, MS Public Service Commissioner.jpg|x150px]]
+| nominee2          = [[Brandon Presley]]
+| party2            = Mississippi Democratic Party
+| popular_vote2     = 391,614
+| percentage2       = 47.7%
+| map_image         = File:2023 Mississippi gubernatorial election results map by county.svg
+| map_size          = 250px
+| map_caption       = '''Reeves:''' {{legend0|#ffb2b2|40–50%}} {{legend0|#e27f7f|50–60%}} {{legend0|#d75d5d|60–70%}} {{legend0|#d72f30|70–80%}} {{legend0|#c21b18|80–90%}}<br/>'''Presley:''' {{legend0|#a5b0ff|40–50%}} {{legend0|#7996e2|50–60%}} {{legend0|#6674de|60–70%}} {{legend0|#584cde|70–80%}} {{legend0|#3933e5|80–90%}}
+| turnout = 42.6%
+| title             = [[Governor of Mississippi|Governor]]
+| before_election   = [[Tate Reeves]]
+| before_party      = Mississippi Republican Party
+| after_election    = [[Tate Reeves]]
+| after_party       = Mississippi Republican Party
+}}
+{{main|2023 Mississippi gubernatorial election}}
+[[Governor of Mississippi|Governor]] [[Tate Reeves]] was elected in [[2019 Mississippi gubernatorial election|2019]] with 51.9% of the vote and ran for re-election to a second term.<ref name = "reeves">{{cite news |url=https://www.clarionledger.com/story/news/2023/01/03/mississippi-governor-tate-reeves-files-reelection-bid-republican-2023-election/69773467007/ |title=Mississippi Republican Gov. Tate Reeves files for reelection bid |work=[[Clarion Ledger]] |date=January 3, 2023|author=Reily, Ross}}</ref>
+
+Democrat [[Brandon Presley]], [[Mississippi Public Service Commission]]er for the Northern District, was the Democratic nominee to challenge Reeves.<ref name="presley">{{Cite web |last=Hernandez |first=Rachel |date=2023-01-12 |title=Brandon Presley joins race for Mississippi governor |url=https://www.wkrg.com/state-regional/mississippi-news/brandon-presley-joins-race-for-mississippi-governor/ |access-date=2023-01-12 |website=[[WKRG]] |language=en-US}}</ref>
+
+Reeves won re-election.<ref>{{Cite web |date=2023-11-08 |title=Republican Gov. Tate Reeves wins re-election in Mississippi |url=https://www.nbcnews.com/politics/elections/mississippi-gov-tate-reeves-wins-re-election-extending-republicans-two-rcna122075 |access-date=2023-12-12 |website=NBC News |language=en}}</ref> 
+
+{{Election box begin no change
+| title = Republican primary results<ref>{{cite web|url=https://www.sos.ms.gov/elections-voting/2023-republican-primary|title=2023 Republican primary results|publisher=[[Mississippi Secretary of State]]|access-date=September 16, 2023}}</ref>
+}}
+{{Election box winning candidate with party link no change
+  |party      = Mississippi Republican Party
+  |candidate  = [[Tate Reeves]] (incumbent)
+  |votes      = 281,213
+  |percentage = 74.7
+}}{{Election box candidate with party link no change
+  |party      = Mississippi Republican Party
+  |candidate  = John Witcher
+  |votes      = 66,698
+  |percentage = 17.7
+}}{{Election box candidate with party link no change
+  |party      = Mississippi Republican Party
+  |candidate  = David Grady Hardigree
+  |votes      = 28,561
+  |percentage = 7.6
+}}{{Election box total no change
+  |votes      = 376,472
+  |percentage = 100.0
+}}{{Election box end}}
+
+{{Election box begin no change
+| title = Democratic primary results<ref>{{cite web|url=https://www.sos.ms.gov/elections-voting/2023-democratic-primary|title=2023 Democratic primary results|publisher=[[Mississippi Secretary of State]]|access-date=September 16, 2023}}</ref>
+}}
+{{Election box winning candidate with party link no change
+| candidate = [[Brandon Presley]]
+| party = Democratic Party (United States)
+| votes = 196,307
+| percentage = 100.0
+}}
+{{Election box total no change
+| votes = 196,307
+| percentage = 100.0
+}}
+{{Election box end}}
+
+{{Election box begin |title=2023 Mississippi gubernatorial election<ref>{{Cite news |title= Mississippi Governor Election Results |work=The New York Times |date=7 November 2023 |url=https://www.nytimes.com/interactive/2023/11/07/us/elections/results-mississippi-governor.html |access-date=November 14, 2023}}</ref><ref>{{Cite web |url=https://www.cnn.com/election/2023/results/mississippi/governor |title=Mississippi Governor |website=[[CNN]] |access-date=November 20, 2023}}</ref>}}
+{{Election box winning candidate with party link
+  |party      = Mississippi Republican Party
+  |candidate  = [[Tate Reeves]] (incumbent)
+  |votes      = 418,233
+  |percentage = 50.94
+  |change     = –0.97
+}}{{Election box candidate with party link
+  |party      = Mississippi Democratic Party
+  |candidate  = [[Brandon Presley]]
+  |votes      = 391,614
+  |percentage = 47.70
+  |change     = +0.87
+}}{{Election box candidate with party link
+  |party      = Independent
+  |candidate  = Gwendolyn Gray ''(withdrawn)''
+  |votes      = 11,153
+  |percentage = 1.36
+  |change     = N/A
+}}{{Election box total
+  |votes      = 821,000
+  |percentage = 100.00
+}}
+{{Election box hold with party link no swing|
+  |winner     = Republican Party (United States)
+  |loser      = Democratic Party (United States)
+  |swing      = 
+}}
+{{Election box end}}
+{{clear}}
+
+==See also==
+* [[List of elections in 2023]]
+
+==References==
+{{reflist}}
+
+{{United States gubernatorial elections}}
+{{2023 United States elections}}
+
+[[Category:2023 United States gubernatorial elections| ]]
+[[Category:November 2023 in the United States|Gubernatorial elections]]

@@ -1,0 +1,191 @@
+{{short description|none}} <!-- "none" is preferred when the title alone is adequate; see [[WP:SDNONE]] -->
+{{Use mdy dates|date=August 2026}}
+{{Use American English|date=January 2025}}
+{{for|related races|2026 United States gubernatorial elections}}
+{{Infobox election
+| election_name = 2026 Arkansas gubernatorial election
+| country = Arkansas
+| type = gubernatorial
+| ongoing = yes
+| previous_election = 2022 Arkansas gubernatorial election
+| previous_year = 2022
+| next_election = 2030 Arkansas gubernatorial election
+| next_year = 2030
+| election_date = November 3, 2026
+| image1 = Governor Sarah Huckabee Sanders 2026.jpg
+| candidate1 = [[Sarah Huckabee Sanders]]
+| party1 = Republican Party (United States)
+| popular_vote1 = 
+| percentage1 = 
+| image2 = Rep Fredrick J Love (cropped).jpg
+| candidate2 = [[Fredrick Love]]
+| party2 = Democratic Party (Arkansas)
+| popular_vote2 = 
+| percentage2 = 
+| image3 = 3x4.svg
+| candidate3 = Colt Shelby
+| party3 = Libertarian Party (United States)
+| popular_vote3 = 
+| percentage3 = 
+| map_image          = <!-- Please keep this map hidden until election day. {{switcher |[[File:2026 Arkansas gubernatorial election results map by county.svg|210px]] |County results}}-->
+| map_caption        = 
+| title = governor
+| before_election = [[Sarah Huckabee Sanders]]
+| before_party = Republican Party (United States)
+| after_election = 
+| after_party = 
+}}
+{{ElectionsAR}}
+The '''2026 Arkansas gubernatorial election''' will be held on November 3, 2026, to elect the [[governor of Arkansas]]. [[Republican Party (United States)|Republican]] incumbent [[Sarah Huckabee Sanders]] is seeking a second term. She is being challenged by [[Democratic Party (United States)|Democratic]] state senator [[Fredrick Love]] and [[Libertarian Party (United States)|Libertarian]] Colt Shelby.
+
+[[Primary elections]] took place on March 3, 2026. Huckabee Sanders secured the Republican nomination unopposed. Love defeated businesswoman Xayprasith-Mays in the Democratic primary with 81.0% of the vote.
+
+==Republican primary==
+===Candidates===
+====Nominee====
+*[[Sarah Huckabee Sanders]], incumbent governor (2023–present)<ref>{{Cite web|date=March 3, 2026|title=Arkansas Governor Primary Results 2026|url=https://www.nbcnews.com/politics/2026-primary-elections/arkansas-governor-results|url-status=live|archive-url=https://web.archive.org/web/20260717192937/https://www.nbcnews.com/politics/2026-primary-elections/arkansas-governor-results|archive-date=July 17, 2026|access-date=August 6, 2026|work=[[NBC News]]}}</ref>
+
+===Endorsements===
+{{Endorsements box|title=Sarah Huckabee Sanders|list=;Executive branch officials
+*[[Donald Trump]], [[president of the United States]] (2017–2021, 2025–present)<ref>{{Cite web|last=Roberts|first=Adams|date=November 3, 2025|title=President Donald Trump endorses Gov. Sarah Huckabee Sanders, other Republican incumbents|url=https://www.4029tv.com/article/trump-arkansas-endorsements/69237355|url-status=live|archive-url=https://web.archive.org/web/20260806161305/https://www.4029tv.com/article/trump-arkansas-endorsements/69237355|archive-date=August 6, 2026|access-date=August 6, 2026|work=4029-TV}}</ref>
+;Organizations
+*[[Maggie's List]]<ref>{{cite web|last=Biddison|first=Jennifer|date=December 3, 2025|title=Maggie's List Endorses Eight More Candidates|url=https://maggieslist.org/maggies-list-endorses-eight-more-candidates/|url-status=live|archive-url=https://web.archive.org/web/20260306033357/https://maggieslist.org/maggies-list-endorses-eight-more-candidates/|archive-date=March 6, 2026|website=[[Maggie's List]]|access-date=December 4, 2025}}</ref>}}
+
+==Democratic primary==
+===Candidates===
+====Nominee====
+*[[Fredrick Love]], [[Arkansas Senate|state senator]] from SD-15 (2023–present)<ref>{{Cite web|last=Gelder|first=Austin|date=June 23, 2025|title=Democrat Fred Love jumps into the 2026 governor’s race|url=https://arktimes.com/arkansas-blog/2025/06/23/democrat-fred-love-jumps-into-the-2026-governors-race|url-status=live|archive-url=https://web.archive.org/web/20250624031952/https://arktimes.com/arkansas-blog/2025/06/23/democrat-fred-love-jumps-into-the-2026-governors-race|archive-date=June 24, 2025|access-date=August 6, 2026|work=[[Arkansas Times]]}}</ref>
+====Eliminated in primary====
+*Supha Xayprasith-Mays, businesswoman and candidate for governor in [[2022 Arkansas gubernatorial election|2022]]<ref>{{cite web|last=Wickline|first=Michael R.|date=October 28, 2025|title=Bentonville businesswoman running again for governor|url=https://www.nwaonline.com/news/2025/oct/28/bentonville-businesswoman-running-again-for/|url-access=subscription|url-status=live|archive-url=https://web.archive.org/web/20260218032545/https://www.nwaonline.com/news/2025/oct/28/bentonville-businesswoman-running-again-for/|archive-date=February 18, 2026|access-date=November 3, 2025|work=[[Northwest Arkansas Democrat-Gazette]]}}</ref>
+
+===Results===
+[[File:2026 Arkansas gubernatorial Democratic primary election results map by county.svg|thumb|210px|Results by county
+{{collapsible list
+| title = {{legend|#8da9e2|Love}}
+|{{legend|#678cd7|60–70%}}
+|{{legend|#4170cd|70–80%}}
+|{{legend|#3358a2|80–90%}}
+|{{legend|#244079|90–100%}}
+}}
+]]
+{{Election box begin no change
+ | title=Democratic primary results<ref name=":1">{{cite web|title=2026 Special Primary Election|url=https://enr.totalresults.com/arkansas#election=7f77a178-af02-40ec-92db-c5cc50882c68&contest=32eedf4d-f628-4868-8ddc-10b83bdd8030&filter=Statewide&bucket=results|website=[[Arkansas Secretary of State]]|access-date=March 8, 2026}}</ref>}}
+{{Election box winning candidate with party link no change
+ | party=Democratic Party (United States)
+ | candidate=[[Fredrick Love]]
+ | votes= 104,725
+ | percentage= 81.0}}
+{{Election box candidate with party link no change
+| candidate = Supha Xayprasith-Mays
+| party = Democratic Party (United States)
+| votes = 24,520
+| percentage = 19.0
+}}
+{{Election box total no change
+| votes = 129,245
+| percentage = 100.0
+}}
+{{Election box end}}
+==Libertarian primary==
+===Candidates===
+====Nominee====
+*Colt Shelby, farmer<ref>{{Cite web|last=Grajeda|first=Antoinette|date=February 23, 2026|title=Libertarian Party of Arkansas nominates 2026 general election candidates|url=https://arkansasadvocate.com/briefs/libertarian-party-of-arkansas-nominates-2026-general-election-candidates/|url-status=live|archive-url=https://web.archive.org/web/20260317205342/https://arkansasadvocate.com/briefs/libertarian-party-of-arkansas-nominates-2026-general-election-candidates/|archive-date=March 17, 2026|access-date=August 6, 2026|work=[[Arkansas Advocate]]}}</ref>
+
+==General election==
+===Predictions===
+{|class="wikitable"style=text-align:center
+!Source
+!Ranking
+!As of
+|-
+|align=left|''[[The Cook Political Report]]''<ref>{{cite web|title=2026 CPR Governor Race ratings|url=https://www.cookpolitical.com/ratings/governor-race-ratings|work=[[The Cook Political Report]]|access-date=October 23, 2026}}</ref>
+|{{USRaceRating|Solid|R}}
+|October 23, 2026
+|-
+|align=left|[[Decision Desk HQ]]<ref name="DDHQ">{{cite web |title=2026 Governor Forecast |url=https://votes.decisiondeskhq.com/forecast/2026/governor |website=[[Decision Desk HQ]] |access-date=October 23, 2026}}</ref>
+|{{USRaceRating|Safe|R}}
+|October 23, 2026
+|-
+|align=left|[[Fox News]]<ref>{{Cite news |last=Numa |first=Rémy |title=Fox News Power Rankings: Trump country at a crossroads |url=https://www.foxnews.com/politics/fox-news-power-rankings-trump-country-crossroads |work=[[Fox News]] |date=October 20, 2026 |access-date=October 23, 2026}}</ref>
+|{{USRaceRating|Solid|R}}
+|October 20, 2026
+|-
+|align=left|''[[Inside Elections]]''<ref>{{Cite web|title=Gubernatorial Ratings|url=https://insideelections.com/ratings/governor|access-date=October 23, 2026|work=[[Inside Elections]]}}</ref>
+|{{USRaceRating|Solid|R}}
+|October 15, 2026
+|-
+|align="left"|[[RealClearPolitics]]<ref>{{Cite web|url=https://www.realclearpolling.com/maps/governor/2026/toss-up |title=2026 Governor Races |website=[[RealClearPolitics]] |access-date=October 23, 2026}}</ref>
+|{{USRaceRating|Solid|R}}
+|October 12, 2026
+|-
+|align="left"|[[NBC News]]<ref>{{Cite news |title=The race for Congress: 2026 midterms |url=https://www.nbcnews.com/politics/2026-elections/midterms#governor-section |work=[[NBC News]] |access-date=October 23, 2026}}</ref>
+|{{USRaceRating|Solid|R}}
+|October 23, 2026
+|-
+|align=left|''[[Sabato's Crystal Ball]]''<ref>{{cite web|title=2026 Governor|url=https://centerforpolitics.org/crystalball/2026-governor/|work=[[Sabato's Crystal Ball]]|access-date=October 23, 2026}}</ref>
+|{{USRaceRating|Safe|R}}
+|October 22, 2026
+|-
+|align="left"|''[[Silver Bulletin]]''<ref name="Silver">{{Cite web |url=https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model |title=FLIPR 2026 midterm election forecast |last1=Silver |first1=Nate |author1-link=Nate Silver |last2=McKown-Dawson |first2=Eli |website=[[Silver Bulletin]] |via=[[Substack]] |date=October 23, 2026 |orig-date=August 11, 2026 |access-date=October 23, 2026 |url-access=subscription}}</ref>
+|{{USRaceRating|Solid|R}}
+|October 23, 2026
+|}
+
+===Polling===
+{|class="wikitable"style="font-size:90%;text-align:center;"
+|-valign=bottom
+!Poll source
+!Date(s)<br/>administered
+!Sample<br/>size{{efn|Key:<br />A – all adults<br />RV – registered voters<br />LV – likely voters<br />V – unclear}}
+!Margin<br/>of error
+!style="width:100px"|Sarah<br/>Huckabee Sanders (R)
+!style="width:100px"|Fredrick<br/>Love (D)
+!style="width:100px"|Colt<br/>Shelby (L)
+!Undecided
+|-
+|style="text-align:left;"|[[Hendrix College]]<ref>{{Cite web|title=Poll: Gov. Sanders stretches lead over two opponents; Shelby support grows|url=https://talkbusiness.net/2026/10/poll-gov-sanders-stretches-lead-over-two-opponents-shelby-support-grows/|url-status=live|archive-url=https://web.archive.org/web/20261018154425/https://talkbusiness.net/2026/10/poll-gov-sanders-stretches-lead-over-two-opponents-shelby-support-grows/|archive-date=October 18, 2026|work=Talk Business & Politics|date=October 18, 2026|access-date=October 18, 2026}}</ref>{{efn-ua|name=A|Poll sponsored by ''Talk Business & Politics''}}
+|October 8–13, 2026
+|709 (LV)
+|±&nbsp;5.0%
+|{{party shading/Republican}}|'''51%'''
+|32%
+|11%
+|6%
+|-
+|style="text-align:left;"|[[Hendrix College]]<ref>{{Cite web|title=Poll: Gov. Sanders holds lead over two opponents|url=https://talkbusiness.net/2026/08/poll-gov-sanders-holds-lead-over-two-opponents/|url-status=live|archive-url=https://web.archive.org/web/20261011190614/https://talkbusiness.net/2026/08/poll-gov-sanders-holds-lead-over-two-opponents/|archive-date=October 11, 2026|work=Talk Business & Politics|date=August 18, 2026|access-date=August 19, 2026}}</ref>{{efn-ua|name=A}}
+|August 11–12, 2026
+|1,217 (LV)
+|±&nbsp;4.7%
+|{{party shading/Republican}}|'''45%'''
+|40%
+|7%
+|8%
+|-
+|}
+
+==See also==
+*[[2026 United States elections]]
+*[[2026 Arkansas elections]]
+*[[2026 United States Senate election in Arkansas]]
+*[[2026 Arkansas Senate election]]
+*[[2026 Arkansas House of Representatives election]]
+
+==Notes==
+{{notelist}}
+'''Partisan clients'''<br/>
+{{notelist-ua}}
+
+==References==
+{{reflist}}
+
+==External links==
+;Official campaign websites
+*[https://www.fredloveforarkansas.com/ Fredrick Love (D)]
+*[https://www.sarahforgovernor.com/ Sarah Huckabee Sanders (R)]
+*[https://www.colt4arkansas.org/ Colt Shelby (L)]
+
+{{Arkansas elections}}
+{{2026 United States elections}}
+[[Category:Arkansas gubernatorial elections]]
+[[Category:2026 elections in Arkansas|Gubernatorial]]
+[[Category:2026 United States gubernatorial elections|Arkansas]]

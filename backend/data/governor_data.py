@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from pathlib import Path
 
 import senate_data as sd
@@ -62,9 +63,9 @@ def pres_state_margins() -> dict[int, dict[str, float]]:
     with (SRC / "gov_results" / "pres_state_2008_2012.csv").open() as f:
         for r in csv.DictReader(f):
             out[int(r["year"])][r["state"]] = float(r["d_pct"]) - float(r["r_pct"])
-    with (SRC / "fec_backtest" / "pres_2016_by_state.csv").open() as f:
+    with (SRC / "fec_backtest" / "pres_2016_by_state.csv").open(encoding="utf-8-sig") as f:
         for r in csv.DictReader(f):
-            out[2016][r["State"]] = float(r["margin"])
+            out[2016][r["state"]] = float(r["margin"])
     with (DATA / "state_pres_results.csv").open() as f:
         for r in csv.DictReader(f):
             out[2020][r["state"]] = float(r["margin_2020"])
@@ -113,6 +114,8 @@ def computed_records() -> list[dict]:
     for r in results():
         if not (r["d_candidate"] and r["r_candidate"] and r["d_pct"] and r["r_pct"]):
             continue
+        if int(r["year"]) % 2:   # California's 2021 recall: a yes/no question, no baseline year
+            continue
         year, st = int(r["year"]), r["state"]
         margin = float(r["d_pct"]) - float(r["r_pct"])
         base, how = baseline(year, st, pres, nat)
@@ -155,3 +158,98 @@ def candidate_war(state: str, name: str | None, letter: str, allw: dict) -> dict
     return {"name": name, "a": round(a, 3), "b": round(b, 3),
             "records": [{"year": x["year"], "office": x["chamber"], "geo": x["geo"], "war": x["war_text"],
                          "k": x.get("k", 0)} for x in recs]}
+
+
+TITLES = ("Governor ", "State Senator ", "Senator ", "Lt. Governor ", "Lieutenant Governor ")
+
+
+def clean_name(ballot: str | None) -> str | None:
+    """The roster's official ballot string -> the candidate's name for display
+    and WAR matching: drops bracketed notes, quoted nicknames, office titles
+    and middle initials. Alaska's top-four R entry lists three Republicans
+    ("A / B / C ..."); the first is the polls' final-round Republican."""
+    if not ballot:
+        return None
+    s = re.sub(r"\[.*?\]|\(.*?\)", "", ballot.split(" / ")[0])
+    s = re.sub(r'"[^"]*"', "", s)
+    for title in TITLES:
+        if s.startswith(title):
+            s = s[len(title):]
+    s = re.sub(r"\b[A-Z]\.?(?=\s)", "", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def party_tag(p: str | None) -> str:
+    """'D' / 'Democratic' / '(D)' -> '(D)', etc."""
+    s = (p or "").strip().strip("()").lower()
+    if s.startswith("d"):
+        return "(D)"
+    if s.startswith("r"):
+        return "(R)"
+    return f"({s[:1].upper()})" if s else ""
+
+
+def load_poll_averages() -> dict[str, dict]:
+    if not POLLS.exists():
+        return {}
+    out = {}
+    for r in csv.DictReader(POLLS.open()):
+        out[r["state"]] = {"margin": float(r["blend_margin"]), "raw_margin": float(r["margin"]),
+                           "n_polls": int(r["n_polls"]), "third_party_share": _f(r["third_party_share"]),
+                           "rcv_final_polls": int(r["rcv_final_polls"] or 0), "method": r["method"],
+                           "as_of": r["as_of"], "polls": r["polls"], "url": r["url"], "local_file": r["local_file"]}
+    return out
+
+
+def other_candidates(field: str) -> list[dict]:
+    out = []
+    for item in filter(None, (x.strip() for x in (field or "").split(";"))):
+        parts = [p.strip() for p in item.split("|")]
+        out.append({"name": parts[0], "party": party_tag(parts[1]) if len(parts) > 1 else "",
+                    "max_poll_share": _f(parts[2]) if len(parts) > 2 else None,
+                    "poll": parts[3] if len(parts) > 3 else None})
+    return out
+
+
+def main():
+    records = computed_records()
+    with WAR_OUT.open("w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(records[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(records)
+    allw = governor_wars(records)
+    polls = load_poll_averages()
+    races = {}
+    for r in csv.DictReader(ROSTER.open()):
+        st = r["state"]
+        inc_party = party_tag(r["incumbent_party"])
+        running = (r["incumbent_status"] or "").strip().lower() == "running"
+        won = (r["incumbent_has_won_gov_election"] or "").strip().lower() == "yes"
+        d_name, r_name = clean_name(r["d_nominee"]), clean_name(r["r_nominee"])
+        d = candidate_war(st, d_name, "D", allw)
+        rr = candidate_war(st, r_name, "R", allw)
+        inc_sign = (1 if inc_party == "(D)" else -1 if inc_party == "(R)" else 0) if running and won else 0
+        races[st] = {
+            "state": st, "name": sd.STATE_NAMES[st], "party": inc_party,
+            "incumbent": r["incumbent"], "incumbent_party": inc_party,
+            "incumbent_status": r["incumbent_status"], "incumbent_running": running,
+            "incumbent_elected_or_succeeded": r["incumbent_elected_or_succeeded"],
+            "incumbent_won_gov_election": won,
+            "d_nominee": d_name, "r_nominee": r_name,
+            "d_ballot_name": r["d_nominee"], "r_ballot_name": r["r_nominee"],
+            "anti_r_candidate": d_name, "anti_r_party": "(D)",
+            "other_candidates": other_candidates(r["other_candidates"]),
+            "war_a": round(d["a"] + rr["a"], 3), "war_b": round(d["b"] + rr["b"], 3),
+            "war_detail": {"d": d, "r": rr}, "inc_sign": inc_sign,
+            "poll_average": polls.get(st), "note": r.get("notes") or None,
+            "source_files": r["source_files"],
+        }
+    not_up = {r["state"]: {"governor": r["governor"], "party": party_tag(r["party"]),
+                           "source_files": r["source_files"]}
+              for r in csv.DictReader(NOT_UP.open())}
+    OUT.write_text(json.dumps({"races": races, "not_up": not_up}, indent=1))
+    print(f"{len(races)} races, {len(not_up)} governorships not up, {len(records)} computed WAR records")
+
+
+if __name__ == "__main__":
+    main()
