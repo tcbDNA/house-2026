@@ -50,7 +50,7 @@ OUT = DATA / "senate_poll_averages.csv"
 # recomputed averages). WINDOW_START is fixed at three weeks before the first
 # build (Oct 26): user decision, keep the polls already in the averages and add
 # new ones as they come out rather than rolling the window forward.
-RETRIEVED = date(2026, 10, 27)
+RETRIEVED = date(2026, 10, 28)
 WINDOW_START = date(2026, 10, 5)
 EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood")
 # Polls that can't be traced to any release (no source recorded anywhere).

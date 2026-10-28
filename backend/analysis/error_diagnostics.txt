@@ -15,10 +15,10 @@ Five competitive districts (|projection| < 10) with the highest Hispanic elector
 
 == Before / after
   before (no group or extra national terms)  national SD 2.58   avg pairwise corr (5 Hispanic seats) 0.342
-                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 225, 'house_p90': 256, 'house_p_d_majority': 0.986, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.705}
+                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 225, 'house_p90': 256, 'house_p_d_majority': 0.986, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.714}
   group errors only                          national SD 2.58   avg pairwise corr (5 Hispanic seats) 0.491
-                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 225, 'house_p90': 256, 'house_p_d_majority': 0.986, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.704}
+                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 225, 'house_p90': 256, 'house_p_d_majority': 0.986, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.714}
   composition + level only                   national SD 2.94   avg pairwise corr (5 Hispanic seats) 0.397
-                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 238, 'house_p10': 224, 'house_p90': 258, 'house_p_d_majority': 0.975, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.686}
+                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 238, 'house_p10': 224, 'house_p90': 258, 'house_p_d_majority': 0.975, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.693}
   item 4 default (both)                      national SD 2.94   avg pairwise corr (5 Hispanic seats) 0.524
-                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 224, 'house_p90': 258, 'house_p_d_majority': 0.976, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.684}
+                                             {'national_margin': 9.47, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 224, 'house_p90': 258, 'house_p_d_majority': 0.976, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.694}

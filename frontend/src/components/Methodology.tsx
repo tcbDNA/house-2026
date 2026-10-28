@@ -115,8 +115,8 @@ export function Methodology() {
         was a 68%-31% blowout that would inflate her personal-vote signal; Sullivan
         2014 vs Begich, D+18.8, is excluded as a judgment call — an outlier against
         his 2020 record, from twelve years ago — and Alaska is shown both ways: in
-        the model R+2.2 without it, D+3.5 with it; after the poll blend D+0.2 and
-        D+1.9); these are listed in code and trigger at blend time.{" "}
+        the model R+2.2 without it, D+3.5 with it; after the poll blend D+0.6 and
+        D+2.3); these are listed in code and trigger at blend time.{" "}
         <b>Manual WAR overrides</b> are applied in a small number of cases where the
         blended value would misrepresent expected 2026 performance. Currently:{" "}
         <i>Richard Ojeda (NC-09, D) = 0</i> — his only prior race is 2018 WV-03,
@@ -183,7 +183,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (68.4% vs 64.4% by default; Osborn's race is nearly all of the
+        them does (69.4% vs 65.3% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -205,13 +205,13 @@ export function Methodology() {
         Maine, Echelon's NetChoice poll, which RCP lists but hasn't yet averaged,
         is counted ahead of RCP); where a newer poll came out after RCP last updated the
         average, or RCP publishes none, the average is recomputed from the most
-        recent poll by each pollster in the last three weeks (as of Oct 27: Ohio,
-        Florida, Kansas, Georgia, Iowa, South Carolina and Alabama, plus
+        recent poll by each pollster in the last three weeks (as of Oct 28: Kansas,
+        Georgia, Iowa and Alabama, plus
         Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
         Louisiana and 11 safe races have no recent poll and use the model alone.
         The blend takes Texas from the model's R+1.4 to Talarico D+1.0, Nebraska
-        from R+4.9 to Ricketts +1.2 and Alaska from R+2.2 to D+0.2; P(D control)
-        is 68.4% (60.1% on the model alone; 67.9% / 68.7% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        from R+4.9 to Ricketts +1.2 and Alaska from R+2.2 to D+0.6; P(D control)
+        is 69.4% (60.1% on the model alone; 68.4% / 70.0% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two

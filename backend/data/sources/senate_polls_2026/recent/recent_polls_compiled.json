@@ -228,10 +228,28 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
-    "note": "State oversample (n=508) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q16 p.9): Husted 47, Brown 47, Levy 2, Redpath (L) 1, someone else 1, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
+    "note": "State oversample (n=508) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q16 p.9): Husted 47, Brown 47, Levy 2, Redpath (L) 1, someone else 1, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27. RCP lists it (Brown 47, Husted 47, marked **) but left it out of the average it rebuilt on Oct 27 with Suffolk."
+   },
+   {
+    "pollster": "Suffolk University",
+    "sponsor": "USA TODAY Network Ohio",
+    "partisan": null,
+    "start": "2026-10-21",
+    "end": "2026-10-26",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 500,
+    "anti_r": 46.6,
+    "r": 43.8,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "Suffolk marginals PDF (Q7 p.2) and tables PDF; RCP",
+    "note": "500 likely Ohio voters, live phone, Oct 21-26 (17.2% already voted). Full ballot with leaners: Brown 46.6, Husted 43.8, Levy (other party) 1.6, Redpath (L) 1.6, undecided 4.4, refused 2.0. No separate two-way question. RCP lists it as 47/44 (updated Oct 27 17:18 CT, averaged); Suffolk's files are dated Oct 28."
    }
   ],
-  "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
+  "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate still Oct 25 10:05, content through Oct 27) now averages 9/22-10/26, Brown 48.1, Husted 44.8, 10 polls: Suffolk 10/21-26 added. Its latest poll ends after RedBox and Echelon, so Ohio uses RCP's average again (Rasmussen removed)."
  },
  "TX": {
   "polls": [
@@ -704,7 +722,7 @@
     "note": "First round 44/42 (Heikes 4, J. Sullivan 3). Final round 47/48 is in the RCP average; RCP added it to the two-way average on Oct 26."
    }
   ],
-  "notes": "RCP two-way (final-round) average (feed 8754, built Oct 26): 9/28-10/16, Peltola 49.0, Sullivan 48.2 (+0.8), 6 polls: PPP, Rasmussen, DFP, InsiderAdvantage, ASR and Quantus 9/28-30. No AK poll with fieldwork ending after Oct 16 was found. Pre-Oct: Quantus 9/28-30 (737/758 LV)."
+  "notes": "RCP two-way (final-round) average (feed 8754, built Oct 26): 9/28-10/16, Peltola 49.0, Sullivan 48.2 (+0.8), 6 polls: PPP, Rasmussen, DFP, InsiderAdvantage, ASR and Quantus 9/28-30. No AK poll with fieldwork ending after Oct 16 was found. Pre-Oct: Quantus 9/28-30 (737/758 LV). Oct 28 check: RCP (built Oct 27 18:30 CT) dropped Quantus 9/28-30: 10/1-10/16, Peltola 49.4, Sullivan 48.2, 5 polls. No new Alaska poll."
  },
  "FL": {
   "polls": [
@@ -920,9 +938,44 @@
     "excluded_pollster": false,
     "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
     "note": "State oversample (n=515) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q23 p.12): Moody 51, Nixon 43, Gillespie (NPA) 3, unsure 4. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-19",
+    "end": "2026-10-26",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 813,
+    "anti_r": 44,
+    "r": 50,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "Siena release page (toplines); RCP (dates, n). The NYT topline and crosstab pages (nytimes.com/interactive/2026/10/28/polls/times-siena-<st>-poll-toplines.html) block automated downloads (curl, headless Chrome, WebFetch) and had no archive copy, so third-party and undecided shares and the field dates were not checked against them.",
+    "note": "Moody 50, Nixon 44 (Siena release). RCP: 10/19-10/26, 813 LV. The NYT poll list (user paste, nyt_poll_list_user_paste_2026-10-28.txt) gives Oct 19-25 for the Florida poll."
+   },
+   {
+    "pollster": "ActiVote",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-17",
+    "end": "2026-10-27",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 400,
+    "anti_r": 47,
+    "r": 53,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": true,
+    "source": "VoteHub; Poliwave"
    }
   ],
-  "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
+  "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate Oct 24, content through Oct 28) now averages 9/28-10/26, Moody 49.6, Nixon 42.4, 7 polls: NYT/Siena 10/19-26 added. Its latest poll ends after RedBox and Echelon, so Florida uses RCP's average again. A new ActiVote poll (Oct 17-27) is recorded only (excluded pollster)."
  },
  "IA": {
   "polls": [
@@ -1575,9 +1628,45 @@
     "excluded_pollster": false,
     "source": "FOX Carolina article (Oct 26); VoteHub; Poliwave",
     "note": "1,200 RV, results among 895 likely or already-voted voters. Graham 47, Andrews 46, Whitener (L) 2, Hackett (Constitution) 1, undecided 4. Released Monday Oct 26 (FOX Carolina); VoteHub added it Oct 27. Not in RCP (SC average last built Oct 18)."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-19",
+    "end": "2026-10-26",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 707,
+    "anti_r": 48,
+    "r": 48,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "Siena release page (toplines); RCP (dates, n). The NYT topline and crosstab pages (nytimes.com/interactive/2026/10/28/polls/times-siena-<st>-poll-toplines.html) block automated downloads (curl, headless Chrome, WebFetch) and had no archive copy, so third-party and undecided shares and the field dates were not checked against them.",
+    "note": "Andrews 48, Graham 48 (Siena release: 'Graham leads by less than one point'). RCP: 10/19-10/26, 707 LV, Graham Nordone 48, Andrews 48."
+   },
+   {
+    "pollster": "The Citadel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-14",
+    "end": "2026-10-25",
+    "released": "2026-10-27",
+    "population": "LV",
+    "n": 890,
+    "anti_r": 39,
+    "r": 43,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "The Citadel Poll release (Oct 27), report PDF (Q12 p.4) and methodology statement; RCP",
+    "note": "1,009 registered voters (L2 voter file; phone and text-to-web), 890 likely voters (LV MOE +/-4). Q12 LV: Andrews 39, Graham 43, Whitener 1, Hackett 1, not sure 15 (RV: 40/35). With planned Ralph Norman write-ins reassigned (Q12 after Q16): Andrews 39, Graham 42, Norman 2, truly undecided 14. RCP lists 43/39."
    }
   ],
-  "notes": "RCP average (feed 9115, built Oct 18): 9/28-10/18, Graham Nordone 48.0, Andrews 45.3 (+2.7), 3 polls: Trafalgar, Rasmussen and InsiderAdvantage 9/28-29. Only Trafalgar is non-excluded and ended in October. VoteHub has only Trafalgar. Impact (D, 10/15-21) is missing from RCP. Targoz Market Research for the SC Policy Council (10/16-25, released Oct 26) is in VoteHub and Poliwave, not RCP (as of Oct 27)."
+  "notes": "RCP average (feed 9115, built Oct 18): 9/28-10/18, Graham Nordone 48.0, Andrews 45.3 (+2.7), 3 polls: Trafalgar, Rasmussen and InsiderAdvantage 9/28-29. Only Trafalgar is non-excluded and ended in October. VoteHub has only Trafalgar. Impact (D, 10/15-21) is missing from RCP. Targoz Market Research for the SC Policy Council (10/16-25, released Oct 26) is in VoteHub and Poliwave, not RCP (as of Oct 27). Oct 28 check: RCP (built Oct 28) now averages 9/28-10/26, Graham Nordone 47.0, Andrews 44.6, 5 polls: NYT/Siena 10/19-26 and The Citadel 10/14-25 added. Its latest poll ends after Targoz and Impact, so South Carolina uses RCP's average again (Rasmussen removed); Impact and Targoz, which RCP never added, drop out."
  },
  "MI": {
   "polls": [
@@ -2239,9 +2328,27 @@
     "in_rcp_average": true,
     "excluded_pollster": true,
     "source": "RCP; Poliwave"
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-19",
+    "end": "2026-10-26",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 752,
+    "anti_r": 54,
+    "r": 40,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "Siena release page (toplines); RCP (dates, n). The NYT topline and crosstab pages (nytimes.com/interactive/2026/10/28/polls/times-siena-<st>-poll-toplines.html) block automated downloads (curl, headless Chrome, WebFetch) and had no archive copy, so third-party and undecided shares and the field dates were not checked against them.",
+    "note": "Flanagan 54, Tafoya 40 (Siena release). RCP: 10/19-10/26, 752 LV."
    }
   ],
-  "notes": "RCP two-way average (feed 8922, built Oct 22): 10/2-10/21, Flanagan 46.6, Tafoya 43.2 (+3.4), 5 polls, including Rasmussen 10/20-21. The newest non-excluded poll ended Oct 15. Pre-Oct: Big Data 9/29-30, InsiderAdvantage 9/28-29."
+  "notes": "RCP two-way average (feed 8922, built Oct 22): 10/2-10/21, Flanagan 46.6, Tafoya 43.2 (+3.4), 5 polls, including Rasmussen 10/20-21. The newest non-excluded poll ended Oct 15. Pre-Oct: Big Data 9/29-30, InsiderAdvantage 9/28-29. Oct 28 check: RCP (built Oct 28) now averages 10/2-10/26, Flanagan 47.8, Tafoya 42.7, 6 polls: NYT/Siena 10/19-26 added."
  },
  "LA": {
   "polls": [],
