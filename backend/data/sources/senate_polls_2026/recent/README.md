@@ -197,3 +197,16 @@ Neither poll is in RCP, VoteHub or Poliwave yet. Texas: the 254 Labs poll ended 
 #### Partisan sponsors (user decision, 2026-10-28)
 
 Polls with a partisan sponsor are not counted: a named sponsor (in the compiled polls or VoteHub's dump) together with a partisan flag, i.e. a candidate, campaign, party, PAC or partisan group. This includes any poll RCP has averaged; such a poll is matched to RCP's row by end date and the pollster's or sponsor's name (`LEAVE_OUT_PARTISAN_SPONSORS`, `same_poll` in the build script). Pollsters flagged partisan with no named sponsor (Trafalgar, co/efficient, PPP in Alaska, Change Research in Mississippi, Impact Research in South Carolina, Peak Insights) are not affected. Left out as of Oct 28: GBAO for Working Class Majority PAC, Impact Research for Dan Osborn and Concord for Education Reform Now Advocacy (Nebraska); RedBox for A Fight Worth Having (Kansas, Ohio, Florida, Michigan, North Carolina); Change Research for Carolina Forward (in RCP's North Carolina average); The Tyson Group for Alliance for a Better Future (Michigan); Victory Insights for Michele Tafoya (Minnesota); Concord for the Bodnar campaign (Montana); Cor Strategies for Heritage Action (Texas, also in `NOT_COUNTED`).
+
+### Fourth check, 2026-10-28 19:23 UTC (from the user's fourth NYT poll list paste)
+
+Every RCP feed, VoteHub's Senate dump and Poliwave's 35 race pages were downloaded again. No RCP feed changed.
+
+| File | URL | Notes |
+|---|---|---|
+| `nyt_poll_list_user_paste_2026-10-28_fourth.txt` | NYT poll list (pasted by the user) | High Point University NC Senate (Oct 1-20) Cooper 54, Whatley 40; Clarity Campaign Labs generic ballot (Oct 15-21) 52/44 (see `../../SOURCES.md`, checked, not used: no race breakdown). |
+| `votehub_senate_all.json` | https://polling.votehub.com/site/polls?poll_type=us-senator&limit=2000 | New rows: YouGov Blue for 254 Labs TX (partisan flag DEM), The Citadel SC, Victory Insights MN (REP, 1,194 LV), Cor Strategies TX (REP). |
+| `poliwave_fl_sen.html`, `poliwave_tx_sen.html` | https://www.poliwave.com/us/<st>/sen-fed | Now list NYT/Siena FL and YouGov Blue TX. |
+| `victoryinsights_PollReport_MN-GE-26_10-28-26.pdf` | https://irp.cdn-website.com/07e08705/files/uploaded/PollReport_MN-GE-26_10-28-26.pdf | Victory Insights, Oct 21-22, 1,194 LV, "Commissioned by Michele Tafoya": Senate Flanagan 47.8, Tafoya 44.4 (p.6). Found while collecting governor polls (also saved in `../../gov_polls_2026/`). Replaces the paste-only record; still not counted (partisan sponsor). |
+
+Texas: VoteHub now flags the 254 Labs poll Democratic, so under the partisan-sponsor rule (a named sponsor plus a partisan flag) it no longer counts; with no newer poll left, Texas returns to RCP's average. North Carolina: High Point's poll isn't in RCP, VoteHub or Poliwave and no release was found (HPU's Survey Research Center page lists no October Senate poll), so it is recorded from the paste only; it ended before Quantus 10/24-25, the latest poll in RCP's average.
