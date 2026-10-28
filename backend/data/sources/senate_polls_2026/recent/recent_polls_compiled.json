@@ -607,9 +607,26 @@
     "excluded_pollster": false,
     "source": "Univision release and base crosstabs PDF (p.25); VoteHub; RCP",
     "note": "Online sample of 1,000 Texas voters (VoteHub and RCP: RV), Oct 13-21. Senate full ballot: Talarico 50, Paxton 45, other 1, undecided 5. Univision article published Oct 27; added to RCP's average Oct 27 (08:01 CT)."
+   },
+   {
+    "pollster": "YouGov Blue",
+    "sponsor": "254 Labs",
+    "partisan": null,
+    "start": "2026-10-21",
+    "end": "2026-10-26",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 1000,
+    "anti_r": 51,
+    "r": 43,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "254 Labs release page and PDF (Oct 28): 1,000 registered voters weighted to likely-voter targets, results among likely voters; NYT poll list (per user)"
    }
   ],
-  "notes": "RCP two-way average (feed 8867, built Oct 27 08:17): 10/8-10/21, Talarico 48.5, Paxton 46.7 (+1.8), 11 polls, including Rasmussen and Univision/YouGov (added Oct 27). Earlier (built Oct 24): Talarico 48.4, Paxton 46.9 (+1.5), 10 polls. RCP 3-way (feed 8985): Talarico 48.0, Paxton 46.3, Brown 2.8. Not in RCP's two-way average: VoteHub/Verasight, Pollfinity, Trafalgar, ReconMR/Siena, YouGov, UT/TPP. Pre-Oct polls excluded: NYT/Siena 9/21-30, Fox 9/24-28, UMass Lowell 9/18-28, Guidant 9/20-28, Rasmussen 9/28-29 (270toWin dates some of these by release date in October)."
+  "notes": "RCP two-way average (feed 8867, built Oct 27 08:17): 10/8-10/21, Talarico 48.5, Paxton 46.7 (+1.8), 11 polls, including Rasmussen and Univision/YouGov (added Oct 27). Earlier (built Oct 24): Talarico 48.4, Paxton 46.9 (+1.5), 10 polls. RCP 3-way (feed 8985): Talarico 48.0, Paxton 46.3, Brown 2.8. Not in RCP's two-way average: VoteHub/Verasight, Pollfinity, Trafalgar, ReconMR/Siena, YouGov, UT/TPP. Pre-Oct polls excluded: NYT/Siena 9/21-30, Fox 9/24-28, UMass Lowell 9/18-28, Guidant 9/20-28, Rasmussen 9/28-29 (270toWin dates some of these by release date in October). Oct 28 third check: YouGov Blue for 254 Labs (Oct 21-26, released Oct 28; 1,000 RV weighted to likely-voter targets) Talarico 51, Paxton 43, from 254 Labs' release (user's NYT poll list paste). Not in RCP, VoteHub or Poliwave yet. It ended after the latest poll in RCP's average (10/21) and came out after RCP's last update (Oct 27), so Texas is now recomputed."
  },
  "AK": {
   "polls": [
@@ -2365,9 +2382,26 @@
     "excluded_pollster": false,
     "source": "Siena release page (toplines); RCP (dates, n). The NYT topline and crosstab pages (nytimes.com/interactive/2026/10/28/polls/times-siena-<st>-poll-toplines.html) block automated downloads (curl, headless Chrome, WebFetch) and had no archive copy, so third-party and undecided shares and the field dates were not checked against them.",
     "note": "Flanagan 54, Tafoya 40 (Siena release). RCP: 10/19-10/26, 752 LV."
+   },
+   {
+    "pollster": "Victory Insights",
+    "sponsor": "Michele Tafoya (R)",
+    "partisan": "R",
+    "start": "2026-10-21",
+    "end": "2026-10-22",
+    "released": null,
+    "population": null,
+    "n": null,
+    "anti_r": 48,
+    "r": 44,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "NYT poll list as pasted by the user (Oct 28); no release found (Victory Insights' domain is parked), so no n, population or release date"
    }
   ],
-  "notes": "RCP two-way average (feed 8922, built Oct 22): 10/2-10/21, Flanagan 46.6, Tafoya 43.2 (+3.4), 5 polls, including Rasmussen 10/20-21. The newest non-excluded poll ended Oct 15. Pre-Oct: Big Data 9/29-30, InsiderAdvantage 9/28-29. Oct 28 check: RCP (built Oct 28) now averages 10/2-10/26, Flanagan 47.8, Tafoya 42.7, 6 polls: NYT/Siena 10/19-26 added."
+  "notes": "RCP two-way average (feed 8922, built Oct 22): 10/2-10/21, Flanagan 46.6, Tafoya 43.2 (+3.4), 5 polls, including Rasmussen 10/20-21. The newest non-excluded poll ended Oct 15. Pre-Oct: Big Data 9/29-30, InsiderAdvantage 9/28-29. Oct 28 check: RCP (built Oct 28) now averages 10/2-10/26, Flanagan 47.8, Tafoya 42.7, 6 polls: NYT/Siena 10/19-26 added. Oct 28 third check: Victory Insights for Michele Tafoya (R), Oct 21-22, Flanagan 48, Tafoya 44, recorded from the user's NYT poll list paste only; not in RCP, VoteHub or Poliwave. It ended before NYT/Siena 10/19-26, so Minnesota stays on RCP's average."
  },
  "LA": {
   "polls": [],

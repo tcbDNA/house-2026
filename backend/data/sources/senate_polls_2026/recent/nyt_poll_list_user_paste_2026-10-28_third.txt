@@ -1,0 +1,83 @@
+NYT poll list, as pasted by the user on 2026-10-28 (about 17:28 UTC). Verbatim.
+
+POLL    POLLSTER    MARGIN
+Texas Senate
+ADDED 34M AGO    poll fromYouGov Blue ,
+Sponsored by 254 Labs
+,conducted Oct. 21 to 26.
+Oct. 21-26
+Poll details:
+1,000 likely voters.
+This pollster does not meet our criteria for select pollsters.
+Poll added Oct. 28. Link to poll ›
+Talarico +8
+Results:
+51%
+James Talarico (D)
+.
+43%
+Ken Paxton (R)
+.
+5%
+Don't know
+.
+Texas governor
+34M AGO    poll fromYouGov Blue ,
+Sponsored by 254 Labs
+,conducted Oct. 21 to 26.
+Oct. 21-26
+Poll details:
+1,000 likely voters.
+This pollster does not meet our criteria for select pollsters.
+Poll added Oct. 28. Link to poll ›
+Hinojosa +3
+Results:
+49%
+Gina Hinojosa (D)
+.
+46%
+Greg Abbott (R)
+.
+2026 Congressional ballot
+44M AGO    poll fromCygnal   conducted Oct. 23 to 24.
+Oct. 23-24
+Poll details:
+1,500 likely voters.
+This pollster meets our criteria for select pollsters.
+Poll added Oct. 28. Link to poll ›
+Democrat +8
+Results:
+52%
+Generic Democrat
+.
+43%
+Generic Republican
+.
+5%
+Don't know
+.
+Minnesota Senate
+1H AGO    poll fromVictory Insights ,
+Sponsored by Michele Tafoya (R)
+,conducted Oct. 21 to 22.
+Oct. 21-22
+Flanagan +3
+Results:
+48%
+Peggy Flanagan (D)
+.
+44%
+Michele Tafoya (R)
+.
+Minnesota governor
+1H AGO    poll fromVictory Insights ,
+Sponsored by Michele Tafoya (R)
+,conducted Oct. 21 to 22.
+Oct. 21-22
+Klobuchar +7
+Results:
+50%
+Amy Klobuchar (D)
+.
+43%
+Lisa Demuth (R)

@@ -183,3 +183,13 @@ Every RCP feed, VoteHub's Senate dump and Poliwave's 35 race pages were download
 | `rcp_ne_9035.json` | https://orig.realclearpolitics.com/poll/race/9035/polling_data.json | Rebuilt Oct 28 10:41 CT (was Oct 7). Now lists Echelon Insights 10/16-23, National Public Affairs 10/15-18 and 10/2-5, and Wedgewood 9/14-15 (excluded pollster); still no average row. Not used by the build (Nebraska is recomputed from the compiled polls, which already have the first three). |
 | `votehub_senate_all.json` | https://polling.votehub.com/site/polls?poll_type=us-senator&limit=2000 | Five new 2026 rows, all already compiled from other sources: St. Pete Polls FL 10/25-27, NYT/Siena FL, MN and SC, Suffolk OH. |
 | `poliwave_oh_sen.html` | https://www.poliwave.com/us/oh/sen-fed | Now lists Suffolk 10/21-26 (47/44, n 500), matching RCP. |
+
+#### YouGov Blue for 254 Labs, Texas; Victory Insights for Tafoya, Minnesota (same paste)
+
+| File | URL | Notes |
+|---|---|---|
+| `nyt_poll_list_user_paste_2026-10-28_third.txt` | NYT poll list (pasted by the user) | Verbatim: YouGov Blue for 254 Labs TX Senate (Oct 21-26) 51/43 and governor; Cygnal generic ballot (Oct 23-24) 52/43 (used in `../../polls_2026/`); Victory Insights for Michele Tafoya (R) MN Senate (Oct 21-22) 48/44 and governor. |
+| `254labs_tx_statewide_poll_2026-10-28.html` | https://254labs.io/news/2026-10-tx | 254 Labs release, Oct 28: YouGov Blue, Oct 21-26, 1,000 Texas registered voters (online and text-to-web) weighted to 254 Labs' likely-voter targets, including early-vote turnout; MOE about 4.6. Senate: Talarico 51, Paxton 43, 5% undecided (total vote with leaners). Crosstabs are for subscribers only. |
+| `254labs_2026-10-tx.pdf` | https://254labs.io/news/2026-10-tx.pdf | The same release as a PDF. |
+
+Neither poll is in RCP, VoteHub or Poliwave yet. Texas: the 254 Labs poll ended after the latest poll in RCP's average (10/21) and came out after RCP's last update (Oct 27), so Texas is recomputed. Minnesota: no release was found (web search; victoryinsights.com is a parked domain), so the poll is recorded from the paste alone, with no n or release date; it ended before NYT/Siena (10/19-26), so Minnesota stays on RCP's average.

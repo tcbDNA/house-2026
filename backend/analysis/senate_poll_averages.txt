@@ -10,17 +10,23 @@ OH: RCP average, Rasmussen removed; 9 poll(s); anti-R 48.22 / R 44.33 -> margin 
     - Bowling Green/YouGov 9/29 - 10/9
     - CNN 9/29 - 10/5
     - NY Times/Siena 9/22 - 10/1
-TX: RCP average, Rasmussen removed; 10 poll(s); anti-R 48.90 / R 46.90 -> margin +2.00, blend margin +2.09 (RCP published +1.8)
-    - Univision/YouGov 10/13 - 10/21
-    - Emerson 10/17 - 10/19
-    - FOX News 10/15 - 10/19
-    - TPOR 10/15 - 10/18
-    - InsiderAdvantage 10/13 - 10/14
-    - University of Houston 10/10 - 10/14
-    - CBS News 10/8 - 10/16
-    - Cook Political Report 10/9 - 10/13
-    - Quantus Insights 10/9 - 10/11
-    - Marist 10/8 - 10/11
+TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.17 / R 45.28 -> margin +2.89, blend margin +3.10 (RCP published +1.8)
+    newer than RCP's average (built 2026-10-27): YouGov Blue for 254 Labs ending 2026-10-26 released 2026-10-28
+    - YouGov Blue for 254 Labs, ending 2026-10-26 (full ballot, 51/43)
+    - VoteHub/Verasight for VoteHub, ending 2026-10-20 (full ballot, 47.6/45.2)
+    - Fox News (Beacon Research/Shaw & Co.) for Fox News, ending 2026-10-19 (full ballot, 49/49)
+    - Emerson College for Nexstar Media, ending 2026-10-19 (full ballot, 48/46)
+    - Slingshot Strategies (TPOR) for Texas Public Opinion Research, ending 2026-10-18 (full ballot, 51/47)
+    - Pollfinity, ending 2026-10-18 (full ballot, 48/43)
+    - Cor Strategies for Heritage Action (R-flagged), ending 2026-10-15 (full ballot, 44/40)
+    - Univ. of Houston Hobby School, ending 2026-10-14 (full ballot, 48/46)
+    - InsiderAdvantage, ending 2026-10-14 (full ballot, 48/49)
+    - New River Strategies/GS Strategy Group for The Cook Political Report, ending 2026-10-13 (full ballot, 49/44)
+    - Marist, ending 2026-10-11 (full ballot, 47/45)
+    - Quantus Insights, ending 2026-10-11 (head-to-head, 47/47)
+    - ReconMR/Siena, ending 2026-10-08 (full ballot, 48/44)
+    - Trafalgar Group (R-flagged), ending 2026-10-08 (full ballot, 47/44)
+    - Univ. of Texas/Texas Politics Project (YouGov) for University of Texas, ending 2026-10-05 (full ballot, 50/47)
 AK: RCP average, Rasmussen removed; 4 poll(s); anti-R 50.00 / R 48.25 -> margin +1.75, blend margin +1.78 (RCP published +1.2)
     - Data for Progress 10/8 - 10/16
     - PPP 10/14 - 10/15
