@@ -1,0 +1,4 @@
+20181104221900 https://www.realclearpolitics.com/epolls/2018/governor/nh/new_hampshire_governor_sununu_vs_kelly-6561.html 200 6091
+20181013053909 http://www1.realclearpolitics.com:80/epolls/2018/governor/nh/new_hampshire_governor_sununu_vs_marchand 404 3654
+20181011061533 http://www1.realclearpolitics.com:80/epolls/2018/governor/nh/new_hampshire_governor_sununu_vs_marchand-6423.html 200 4964
+20181104221903 https://www.realclearpolitics.com/epolls/2018/governor/nh/null 403 4271

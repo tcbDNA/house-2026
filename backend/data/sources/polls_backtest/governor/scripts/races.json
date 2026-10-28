@@ -1,0 +1,790 @@
+[
+ {
+  "year": 2018,
+  "state": "ak",
+  "tag": "ak_6711",
+  "rid": "6711",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ak/alaska_governor_dunleavy_vs_begich-6711.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "al",
+  "tag": "al_6405",
+  "rid": "6405",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/al/alabama_governor_ivey_vs_maddox-6405.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ar",
+  "tag": "ar_6408",
+  "rid": "6408",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ar/arkansas_governor_hutchinson_vs_henderson-6408.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "az",
+  "tag": "az_6614",
+  "rid": "6614",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/az/arizona_governor_ducey_vs_garcia-6614.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ca",
+  "tag": "ca_6593",
+  "rid": "6593",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ca/california_governor_cox_vs_newsom-6593.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "co",
+  "tag": "co_6409",
+  "rid": "6409",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/co/colorado_governor_stapleton_vs_polis-6409.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ct",
+  "tag": "ct_6577",
+  "rid": "6577",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ct/connecticut_governor_stefanowski_vs_lamont-6577.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "fl",
+  "tag": "fl_6518",
+  "rid": "6518",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/fl/florida_governor_desantis_vs_gillum-6518.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ga",
+  "tag": "ga_6628",
+  "rid": "6628",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ga/georgia_governor_kemp_vs_abrams-6628.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "hi",
+  "tag": "hi_6412",
+  "rid": "6412",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/hi/hawaii_governor_tupola_vs_ige-6412.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ia",
+  "tag": "ia_6477",
+  "rid": "6477",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ia/iowa_governor_reynolds_vs_hubbell-6477.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "id",
+  "tag": "id_6413",
+  "rid": "6413",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/id/idaho_governor_little_vs_jordan-6413.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "il",
+  "tag": "il_6439",
+  "rid": "6439",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/il/illinois_governor_rauner_vs_pritzker-6439.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ks",
+  "tag": "ks_6660",
+  "rid": "6660",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ks/kansas_governor_kobach_vs_kelly_vs_orman-6660.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ma",
+  "tag": "ma_6418",
+  "rid": "6418",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ma/massachusetts_governor_baker_vs_gonzalez-6418.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "md",
+  "tag": "md_6273",
+  "rid": "6273",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/md/maryland_governor_hogan_vs_jealous-6273.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "me",
+  "tag": "me_6643",
+  "rid": "6643",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/me/maine_governor_moody_vs_mills-6643.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "mi",
+  "tag": "mi_6441",
+  "rid": "6441",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/mi/michigan_governor_schuette_vs_whitmer-6441.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "mn",
+  "tag": "mn_6443",
+  "rid": "6443",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/mn/minnesota_governor_johnson_vs_walz-6443.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ne",
+  "tag": "ne_6421",
+  "rid": "6421",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ne/nebraska_governor_ricketts_vs_krist-6421.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "nh",
+  "tag": "nh_6561",
+  "rid": "6561",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/nh/new_hampshire_governor_sununu_vs_kelly-6561.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "nm",
+  "tag": "nm_6440",
+  "rid": "6440",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/nm/new_mexico_governor_pearce_vs_grisham-6440.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "nv",
+  "tag": "nv_6692",
+  "rid": "6692",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/nv/nevada_governor_laxalt_vs_sisolak_vs_lord-6692.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ny",
+  "tag": "ny_6536",
+  "rid": "6536",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ny/new_york_governor_molinaro_vs_cuomo-6536.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "oh",
+  "tag": "oh_6426",
+  "rid": "6426",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/oh/ohio_governor_dewine_vs_cordray-6426.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ok",
+  "tag": "ok_6633",
+  "rid": "6633",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ok/oklahoma_governor_stitt_vs_edmondson-6633.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "or",
+  "tag": "or_6428",
+  "rid": "6428",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/or/oregon_governor_buehler_vs_brown-6428.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "pa",
+  "tag": "pa_6542",
+  "rid": "6542",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/pa/pennsylvania_governor_wagner_vs_wolf-6542.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ri",
+  "tag": "ri_6544",
+  "rid": "6544",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ri/rhode_island_governor_fung_vs_raimondo-6544.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "sc",
+  "tag": "sc_6431",
+  "rid": "6431",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/sc/south_carolina_governor_mcmaster_vs_smith-6431.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "sd",
+  "tag": "sd_6433",
+  "rid": "6433",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/sd/south_dakota_governor_noem_vs_sutton-6433.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "tn",
+  "tag": "tn_6644",
+  "rid": "6644",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/tn/tennessee_governor_lee_vs_dean-6644.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "tx",
+  "tag": "tx_6435",
+  "rid": "6435",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/tx/texas_governor_abbott_vs_valdez-6435.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "vt",
+  "tag": "vt_6657",
+  "rid": "6657",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/vt/vermont_governor_scott_vs_hallquist-6657.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "wi",
+  "tag": "wi_6682",
+  "rid": "6682",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/wi/wisconsin_governor_walker_vs_evers_vs_anderson-6682.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "wy",
+  "tag": "wy_6666",
+  "rid": "6666",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/wy/wyoming_governor_gordon_vs_throne-6666.html",
+  "role": "map-linked",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "ga",
+  "tag": "ga_6696",
+  "rid": "6696",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ga/georgia_governor_kemp_vs_abrams_vs_metz-6696.html",
+  "role": "alternative matchup",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv",
+  "exclude": "alternative 3-way page (Kemp/Abrams/Metz); the 2018 governor map linked the 2-way race 6628"
+ },
+ {
+  "year": 2018,
+  "state": "ks",
+  "tag": "ks_6630",
+  "rid": "6630",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ks/kansas_governor_kobach_vs_kelly-6630.html",
+  "role": "alternative matchup",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv",
+  "exclude": "alternative 2-way page (Kobach/Kelly); the 2018 governor map linked the 3-way race 6660"
+ },
+ {
+  "year": 2018,
+  "state": "nv",
+  "tag": "nv_6422",
+  "rid": "6422",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/nv/nevada_governor_laxalt_vs_sisolak-6422.html",
+  "role": "alternative matchup",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv",
+  "exclude": "alternative 2-way page (Laxalt/Sisolak); the 2018 governor map linked the 3-way race 6692"
+ },
+ {
+  "year": 2018,
+  "state": "wi",
+  "tag": "wi_6606",
+  "rid": "6606",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/wi/wisconsin_governor_walker_vs_evers-6606.html",
+  "role": "alternative matchup",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv",
+  "exclude": "alternative 2-way page (Walker/Evers); the 2018 governor map linked the 3-way race 6682"
+ },
+ {
+  "year": 2018,
+  "state": "ct",
+  "tag": "ct_6667",
+  "rid": "6667",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ct/connecticut_governor_stefanowski_vs_lamont_vs_hanscomb_vs_griebel-6667.html",
+  "role": "alternative matchup",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv",
+  "exclude": "alternative 4-way page; the 2018 governor map linked the 2-way race 6577"
+ },
+ {
+  "year": 2018,
+  "state": "ak",
+  "tag": "ak_6669",
+  "rid": "6669",
+  "url": "https://www.realclearpolitics.com/epolls/2018/governor/ak/alaska_governor_dunleavy_vs_begich_vs_walker-6669.html",
+  "role": "alternative matchup",
+  "sub": "rcp_2018_governor",
+  "out": "governor_2018_rcp_final.csv",
+  "exclude": "3-way page from before Walker (I) withdrew on Oct 19; the 2018 governor map linked Dunleavy vs. Begich (6711)"
+ },
+ {
+  "year": 2022,
+  "state": "ak",
+  "tag": "ak_7484",
+  "rid": "7484",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ak/alaska_governor_-7484.html",
+  "role": "not linked from the 2022 map (the state's only general-election page found)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ak",
+  "tag": "ak_7918",
+  "rid": "7918",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ak/alaska_governor_dunleavy_vs_pierce_vs_gara_vs_walker_1st_round-7918.html",
+  "role": "ranked-choice round page (no capture before the cutoff)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ak",
+  "tag": "ak_7919",
+  "rid": "7919",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ak/alaska_governor_dunleavy_vs_gara_vs_walker_2nd_round-7919.html",
+  "role": "ranked-choice round page (no capture before the cutoff)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ak",
+  "tag": "ak_7920",
+  "rid": "7920",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ak/alaska_governor_dunleavy_vs_gara_final_round-7920.html",
+  "role": "ranked-choice round page (no capture before the cutoff)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "al",
+  "tag": "al_7755",
+  "rid": "7755",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/al/alabama_governor_ivery_vs_flowers-7755.html",
+  "role": "not linked from the 2022 map (the state's only general-election page found)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ar",
+  "tag": "ar_7698",
+  "rid": "7698",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ar/arkansas_governor_huckabee_sanders_vs_jones-7698.html",
+  "role": "not linked from the 2022 map (the state's only general-election page found)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "az",
+  "tag": "az_7842",
+  "rid": "7842",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/az/arizona_governor_lake_vs_hobbs-7842.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ca",
+  "tag": "ca_7488",
+  "rid": "7488",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ca/california_governor_dahle_vs_newsom-7488.html",
+  "role": "not linked from the 2022 map (the state's only general-election page found)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv",
+  "exclude": "only usable capture (Oct 20, 2022) predates the election-eve window and shows 9/2 - 10/10 Newsom 56.0 / Dahle 32.7; RCP's current feed hides the average and has different values (Newsom 58.0, Dahle 34.0) with no polls flagged, so RCP's final average cannot be retrieved"
+ },
+ {
+  "year": 2022,
+  "state": "co",
+  "tag": "co_7774",
+  "rid": "7774",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/co/colorado_governor_ganahl_vs_polis-7774.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ct",
+  "tag": "ct_7684",
+  "rid": "7684",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ct/connecticut_governor_stefanowski_vs_lamont-7684.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "fl",
+  "tag": "fl_7324",
+  "rid": "7324",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/fl/florida_governor_desantis_vs_crist-7324.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ga",
+  "tag": "ga_7538",
+  "rid": "7538",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ga/georgia_governor_kemp_vs_abrams-7538.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ia",
+  "tag": "ia_7494",
+  "rid": "7494",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ia/iowa_governor_reynolds_vs_dejear-7494.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "il",
+  "tag": "il_7768",
+  "rid": "7768",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/il/illinois_governor_bailey_vs_pritzker-7768.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ks",
+  "tag": "ks_7388",
+  "rid": "7388",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ks/kansas-governor-schmidt-vs-kelly-7388.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ma",
+  "tag": "ma_7609",
+  "rid": "7609",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ma/massachusetts_governor_diehl_vs_healey-7609.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "md",
+  "tag": "md_7841",
+  "rid": "7841",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/md/maryland_governor_cox_vs_moore_-7841.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "me",
+  "tag": "me_7623",
+  "rid": "7623",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/me/maine_governor_lepage_vs_mills-7623.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "mi",
+  "tag": "mi_7545",
+  "rid": "7545",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/mi/michigan_governor_dixon_vs_whitmer-7545.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "mn",
+  "tag": "mn_7405",
+  "rid": "7405",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/mn/minnesota_governor_jensen_vs_walz-7405.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "nh",
+  "tag": "nh_7498",
+  "rid": "7498",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/nh/new_hampshire_governor_sununu_vs_sherman-7498.html",
+  "role": "not linked from the 2022 map (the state's only general-election page found)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "nm",
+  "tag": "nm_7646",
+  "rid": "7646",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/nm/new_mexico_governor_ronchetti_vs_lujan_grisham-7646.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "nv",
+  "tag": "nv_7394",
+  "rid": "7394",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/nv/nevada_governor_lombardo_vs_sisolak-7394.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ny",
+  "tag": "ny_7749",
+  "rid": "7749",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ny/new_york_governor_zeldin_vs_hochul-7749.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "oh",
+  "tag": "oh_7697",
+  "rid": "7697",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/oh/ohio_governor_dewine_vs_whaley-7697.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ok",
+  "tag": "ok_7775",
+  "rid": "7775",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ok/oklahoma_governor_stitt_vs_hofmeister-7775.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "or",
+  "tag": "or_7908",
+  "rid": "7908",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/or/oregon_governor_drazan_vs_kotek_vs_johnson-7908.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv",
+  "note": "current RCP feed's hidden average (Kotek 40.8, Drazan 40.8, Johnson 12.8) equals the mean of the four polls averaged before Data for Progress 11/1 - 11/6 was entered (feed stamp Mon, 07 Nov 2022 15:41:13 -0600); the archived page is later and includes that poll"
+ },
+ {
+  "year": 2022,
+  "state": "pa",
+  "tag": "pa_7696",
+  "rid": "7696",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/pa/pennsylvania_governor_mastriano_vs_shapiro-7696.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "ri",
+  "tag": "ri_7913",
+  "rid": "7913",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/ri/rhode_island_governor_kalus_vs_mckee-7913.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "sc",
+  "tag": "sc_7505",
+  "rid": "7505",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/sc/south_carolina_governor_mcmaster_vs_cunningham-7505.html",
+  "role": "not linked from the 2022 map (the state's only general-election page found)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "sd",
+  "tag": "sd_7927",
+  "rid": "7927",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/sd/south_dakota_governor_noem_vs_smith-7927.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "tn",
+  "tag": "tn_7925",
+  "rid": "7925",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/tn/tennessee_governor_lee_vs_martin-7925.html",
+  "role": "not linked from the 2022 map (the state's only general-election page found)",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "tx",
+  "tag": "tx_7376",
+  "rid": "7376",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/tx/texas-governor-abbott-vs-orourke-7376.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "vt",
+  "tag": "vt_7906",
+  "rid": "7906",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/vt/vermont_governor_scott_vs_siegel-7906.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2022,
+  "state": "wi",
+  "tag": "wi_7761",
+  "rid": "7761",
+  "url": "https://www.realclearpolitics.com/epolls/2022/governor/wi/wisconsin_governor_michels_vs_evers-7761.html",
+  "role": "map-linked",
+  "sub": "rcp_2022_governor",
+  "out": "governor_2022_rcp_final.csv"
+ },
+ {
+  "year": 2018,
+  "state": "us",
+  "tag": "gcb2018_6185",
+  "rid": "6185",
+  "url": "https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html",
+  "role": "generic ballot",
+  "sub": "rcp_generic_ballot",
+  "out": "generic_ballot_2018_rcp_final.csv"
+ }
+]

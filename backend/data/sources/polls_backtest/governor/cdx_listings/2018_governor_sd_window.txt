@@ -1,0 +1,4 @@
+20181104222143 https://www.realclearpolitics.com/epolls/2018/governor/sd/null 403 4283
+20181103135538 https://www.realclearpolitics.com/epolls/2018/governor/sd/south_dakota_governor_noem_vs_sutton-6433.html 200 4928
+20181104222141 https://www.realclearpolitics.com/epolls/2018/governor/sd/south_dakota_governor_noem_vs_sutton-6433.html 200 5390
+20181105221739 https://www.realclearpolitics.com/epolls/2018/governor/sd/south_dakota_governor_noem_vs_sutton-6433.html 200 5089

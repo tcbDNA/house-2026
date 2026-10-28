@@ -155,6 +155,7 @@ def governor_wars(records: list[dict]) -> dict:
             allw.setdefault(key, []).append({
                 "year": rec["year"], "geo": sd.STATE_NAMES[rec["state"]], "chamber": "Governor",
                 "sortable": -rec["war"], "k": rec["k"], "war_text": f"computed {rec['war']:+.2f}",
+                "margin": rec["margin"], "baseline": rec["baseline"],
                 "opponent": opp, "third_candidate": rec["third_candidate"],
                 "other": f"{rec['other_candidate']} {rec['other_pct']:.1f}%" if rec["third_candidate"] else ""})
     for v in allw.values():
@@ -162,11 +163,24 @@ def governor_wars(records: list[dict]) -> dict:
     return {k: v for k, v in allw.items() if v}
 
 
-def _blend(recs: list[dict], name: str) -> tuple[float, float]:
-    a = -sd._time_weighted_sortable(recs, candidate_name=name, office="Governor")
-    b = -sd._time_weighted_sortable([{**x, "sortable": x.get("k", 0)} for x in recs],
-                                    candidate_name=name, office="Governor")
-    return round(a, 3), round(b, 3)
+def _blend(recs: list[dict], name: str) -> dict[str, float]:
+    """The candidate's D-positive WAR effect as a0 − slope × c + incumbency × b.
+
+    Computed governor records are margin − slope × baseline − k × incumbency
+    (user decision Oct 28: measured against the same partisan slope the model
+    applies, so a fitted slope isn't applied twice); Split Ticket's House /
+    Senate records are fixed. The blend is linear in each record's value, so:
+      a0 = the blend at slope 0 and incumbency 0 (governor records = margin),
+      c  = the blend of the governor records' baselines (others 0),
+      b  = minus the blend of the governor records' k (others 0)."""
+    gov = lambda x: x["chamber"] == "Governor" and "baseline" in x
+    def blend(vals):
+        return sd._time_weighted_sortable([{**x, "sortable": v} for x, v in zip(recs, vals)],
+                                          candidate_name=name, office="Governor")
+    a0 = -blend([-x["margin"] if gov(x) else x["sortable"] for x in recs])
+    c = blend([x["baseline"] if gov(x) else 0.0 for x in recs])
+    b = -blend([x.get("k", 0) if gov(x) else 0 for x in recs])
+    return {"a0": round(a0, 3), "c": round(c, 3), "b": round(b, 3)}
 
 
 def candidate_war(state: str, name: str | None, letter: str, allw: dict, sitting_incumbent: str | None = None) -> dict:
@@ -178,7 +192,7 @@ def candidate_war(state: str, name: str | None, letter: str, allw: dict, sitting
         THIRD_CANDIDATE_PCT are left out."""
     recs = sd.find_war(state, name, letter, allw) if name else None
     if not recs:
-        return {"name": name, "variants": {v: {"a": 0.0, "b": 0.0} for v in VARIANTS}, "records": []}
+        return {"name": name, "variants": {v: {"a0": 0.0, "c": 0.0, "b": 0.0} for v in VARIANTS}, "records": []}
     inc_last = sd._strip_suffix(sitting_incumbent).split()[-1].lower() if sitting_incumbent else None
 
     def rematch(x):
@@ -187,8 +201,7 @@ def candidate_war(state: str, name: str | None, letter: str, allw: dict, sitting
     variants = {}
     for v, (rm, tc) in VARIANTS.items():
         keep = [x for x in recs if not (rm and rematch(x)) and not (tc and x.get("third_candidate"))]
-        a, b = _blend(keep, name) if keep else (0.0, 0.0)
-        variants[v] = {"a": a, "b": b}
+        variants[v] = _blend(keep, name) if keep else {"a0": 0.0, "c": 0.0, "b": 0.0}
     return {"name": name, "variants": variants,
             "records": [{"year": x["year"], "office": x["chamber"], "geo": x["geo"], "war": x["war_text"],
                          "k": x.get("k", 0), "rematch": bool(rematch(x)),
@@ -280,8 +293,8 @@ def main():
             "opponent": opponent, "opponent_party": opponent_party,
             "independent_race": opponent_party == "(I)",
             "other_candidates": other_candidates(r["other_candidates"]),
-            "war": {v: {"a": round(d["variants"][v]["a"] + rr["variants"][v]["a"], 3),
-                        "b": round(d["variants"][v]["b"] + rr["variants"][v]["b"], 3)} for v in VARIANTS},
+            "war": {v: {k: round(d["variants"][v][k] + rr["variants"][v][k], 3) for k in ("a0", "c", "b")}
+                    for v in VARIANTS},
             "war_detail": {"d": d, "r": rr}, "inc_sign": inc_sign,
             "poll_average": polls.get(st), "note": r.get("notes") or None,
             "source_files": r["source_files"],

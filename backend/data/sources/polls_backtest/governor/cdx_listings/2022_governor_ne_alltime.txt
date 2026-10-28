@@ -1,0 +1,3 @@
+20220124090103 https://www.realclearpolitics.com/epolls/2022/governor/Nevada.html 200
+20220510110626 https://www.realclearpolitics.com/epolls/2022/governor/NewHampshire.html 200
+20220629071019 https://www.realclearpolitics.com/epolls/2022/governor/NewYork.html 200

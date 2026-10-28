@@ -1,0 +1,6 @@
+20181030235314 https://www.realclearpolitics.com/epolls/2018/governor/tn/null 403 3907
+20181104222004 https://www.realclearpolitics.com/epolls/2018/governor/tn/null 403 4278
+20180906214128 https://www.realclearpolitics.com/epolls/2018/governor/tn/tennessee_governor_lee_vs_dean-6644.html 200 4993
+20181030235305 https://www.realclearpolitics.com/epolls/2018/governor/tn/tennessee_governor_lee_vs_dean-6644.html 200 5627
+20181104222002 https://www.realclearpolitics.com/epolls/2018/governor/tn/tennessee_governor_lee_vs_dean-6644.html 200 6452
+20180916172832 http://www98.realclearpolitics.com:80/epolls/2018/governor/tn/tennessee_governor_republican_primary-6625.html 200 3964

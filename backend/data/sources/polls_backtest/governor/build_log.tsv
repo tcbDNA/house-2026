@@ -1,0 +1,79 @@
+year	state	tag	source	race	polls_listed	polls_in_avg	avg_start	avg_end	dem	rep	third_candidate	third	spread	status
+2018	ak	ak_6711	wayback 20181106164955	Alaska Governor - Dunleavy vs. Begich	0	0								page shows no RCP Average row
+2018	al	al_6405	feed	Alabama Governor - Ivey vs. Maddox	0	0								feed: show_rcp_avg=0 (no average displayed)
+2018	ar	ar_6408	wayback 20181104222156	Arkansas Governor - Hutchinson vs. Henderson	0	0								page shows no RCP Average row
+2018	az	az_6614	feed (archive 20181105200240 superseded)	2018 Arizona Governor - Ducey vs. Garcia	18	4	2018-10-24	2018-11-04	38.5	54.8			Ducey +16.3	archive superseded by later pre-election RCP edits
+2018	ca	ca_6593	feed (archive 20181104222116 superseded)	2018 California Governor - Cox vs. Newsom	18	4	2018-10-19	2018-11-05	55.3	38.8			Newsom +16.5	archive superseded by later pre-election RCP edits
+2018	co	co_6409	wayback 20181104221801	Colorado Governor - Stapleton vs. Polis	4	2	2018-10-25	2018-10-30	47.5	41.0			Polis +6.5	
+2018	ct	ct_6577	wayback 20181104221649	Connecticut Governor - Stefanowski vs. Lamont	9	4	2018-10-22	2018-11-01	44.3	39.8			Lamont +4.5	
+2018	fl	fl_6518	wayback 20181106172052	Florida Governor - DeSantis vs. Gillum	37	5	2018-10-29	2018-11-05	49.4	45.8			Gillum +3.6	
+2018	ga	ga_6628	wayback 20181106222013	Georgia Governor - Kemp vs. Abrams	13	5	2018-10-14	2018-11-03	45.8	48.8			Kemp +3.0	
+2018	hi	hi_6412	feed	2018 Hawaii Governor - Tupola vs. Ige	0	0								feed: show_rcp_avg=0 (no average displayed)
+2018	ia	ia_6477	wayback 20181104221622	Iowa Governor - Reynolds vs. Hubbell	5	3	2018-10-08	2018-11-02	45.0	44.3			Hubbell +0.7	
+2018	id	id_6413	feed	Idaho Governor - Little vs. Jordan	0	0								feed: show_rcp_avg=0 (no average displayed)
+2018	il	il_6439	wayback 20181105145413	Illinois Governor - Rauner vs. Pritzker	4	3	2018-06-09	2018-09-29	43.7	28.0			Pritzker +15.7	
+2018	ks	ks_6660	wayback 20181106181330	Kansas Governor - Kobach vs. Kelly vs. Orman	0	0								page shows no RCP Average row
+2018	ma	ma_6418	wayback 20181104221911	Massachusetts Governor - Baker vs. Gonzalez	11	4	2018-10-01	2018-10-28	26.3	66.0			Baker +39.7	
+2018	md	md_6273	wayback 20181027184317	Maryland Governor - Hogan vs. Jealous	11	4	2018-09-11	2018-10-07	35.8	54.5			Hogan +18.7	capture predates window
+2018	me	me_6643	wayback 20181104222306	Maine Governor - Moody vs. Mills	0	0								page shows no RCP Average row
+2018	mi	mi_6441	wayback 20181106233751	Michigan Governor - Schuette vs. Whitmer	20	3	2018-10-24	2018-11-05	50.0	40.0			Whitmer +10.0	
+2018	mn	mn_6443	wayback 20181104222227	Minnesota Governor - Johnson vs. Walz	7	2	2018-10-15	2018-10-31	47.0	40.0			Walz +7.0	
+2018	ne	ne_6421	feed	Nebraska Governor - Ricketts vs. Krist	0	0								feed: show_rcp_avg=0 (no average displayed)
+2018	nh	nh_6561	feed (archive 20181104221900 superseded)	2018 New Hampshire Governor - Sununu vs. Kelly	7	2	2018-10-27	2018-11-04	46.0	50.0			Sununu +4.0	archive superseded by later pre-election RCP edits
+2018	nm	nm_6440	wayback 20181104222418	New Mexico Governor - Pearce vs. Grisham	6	3	2018-10-24	2018-11-01	52.3	44.3			Grisham +8.0	
+2018	nv	nv_6692	wayback 20181104221708	Nevada Governor - Laxalt vs. Sisolak vs. Lord	4	2	2018-09-30	2018-10-29	43.0	44.5	Lord (L)	5.0	Laxalt +1.5	
+2018	ny	ny_6536	wayback 20181104225547	New York Governor - Molinaro vs. Cuomo	8	2	2018-10-10	2018-11-01	53.5	35.5			Cuomo +18.0	
+2018	oh	oh_6426	wayback 20181106195131	Ohio Governor - DeWine vs. Cordray	0	0								page shows no RCP Average row
+2018	ok	ok_6633	wayback 20181106115137	Oklahoma Governor - Stitt vs. Edmondson	7	3	2018-09-25	2018-11-03	42.7	48.0			Stitt +5.3	
+2018	or	or_6428	wayback 20181104221757	Oregon Governor - Buehler vs. Brown	9	3	2018-10-04	2018-10-30	44.0	39.7			Brown +4.3	
+2018	pa	pa_6542	wayback 20181106195129	Pennsylvania Governor - Wagner vs. Wolf	11	3	2018-09-12	2018-11-01	56.3	36.7			Wolf +19.6	
+2018	ri	ri_6544	wayback 20181104222322	Rhode Island Governor - Fung vs. Raimondo	5	2	2018-09-27	2018-10-24	46.5	34.0			Raimondo +12.5	
+2018	sc	sc_6431	wayback 20181104222324	South Carolina Governor - McMaster vs. Smith	0	0								page shows no RCP Average row
+2018	sd	sd_6433	wayback 20181105221739	South Dakota Governor - Noem vs. Sutton	0	0								page shows no RCP Average row; feed differs from archive (feed 10/29 - 11/4 {'R': '47.5', 'D': '45.5'})
+2018	tn	tn_6644	wayback 20181104222002	Tennessee Governor - Lee vs. Dean	12	5	2018-10-22	2018-10-30	39.2	53.0			Lee +13.8	
+2018	tx	tx_6435	wayback 20181104221848	Texas Governor - Abbott vs. Valdez	19	6	2018-10-08	2018-10-30	37.8	55.7			Abbott +17.9	feed differs from archive (feed 10/15 - 10/30 {'R': '55.0', 'D': '38.3'})
+2018	vt	vt_6657	wayback 20181104222425	Vermont Governor - Scott vs. Hallquist	0	0								page shows no RCP Average row
+2018	wi	wi_6682	feed	2018 Wisconsin Governor - Walker vs. Evers vs. Anderson	0	0								feed: show_rcp_avg=0 (no average displayed)
+2018	wy	wy_6666	feed	Wyoming Governor - Gordon vs. Throne	0	0								feed: show_rcp_avg=0 (no average displayed)
+2018	ga	ga_6696	wayback 20181104143459	Georgia Governor - Kemp vs. Abrams vs. Metz	0	0								page shows no RCP Average row
+2018	ks	ks_6630	wayback 20181103135534	Kansas Governor - Kobach vs. Kelly	0	0								page shows no RCP Average row
+2018	nv	nv_6422	feed (archive 20181104221834 superseded)	2018 Nevada Governor - Laxalt vs. Sisolak	15	3	2018-10-29	2018-11-04	45.7	46.3			Laxalt +0.6	archive superseded by later pre-election RCP edits; EXCLUDED from CSV: alternative 2-way page (Laxalt/Sisolak); the 2018 governor map linked the 3-way race 6692
+2018	wi	wi_6606	wayback 20181106195132	Wisconsin Governor - Walker vs. Evers	0	0								page shows no RCP Average row
+2018	ct	ct_6667	feed	2018 Connecticut Governor - Stefanowski vs. Lamont vs. Hanscomb vs. Griebel	0	0								feed: show_rcp_avg=0 (no average displayed)
+2018	ak	ak_6669	feed	2018 Alaska Governor - Dunleavy vs. Begich vs. Walker	0	0								feed: show_rcp_avg=0 (no average displayed)
+2022	ak	ak_7484	wayback 20221027174209	Alaska Governor -	0	0								page shows no RCP Average row
+2022	ak	ak_7918	feed	2022 Alaska Governor - Dunleavy vs. Pierce vs. Gara vs. Walker	0	0								feed: show_rcp_avg=0 (no average displayed)
+2022	ak	ak_7919	feed	2022 Alaska Governor - Dunleavy vs. Gara vs. Walker (2nd Round)	0	0								feed: show_rcp_avg=0 (no average displayed)
+2022	ak	ak_7920	feed	2022 Alaska Governor - Dunleavy vs. Gara (Final Round)	0	0								feed: show_rcp_avg=0 (no average displayed)
+2022	al	al_7755	wayback 20221101192844	Alabama Governor - Ivery vs. Flowers	0	0								page shows no RCP Average row
+2022	ar	ar_7698	wayback 20221108042623	Arkansas Governor - Huckabee Sanders vs. Jones	0	0								page shows no RCP Average row
+2022	az	az_7842	wayback 20221109065543	Arizona Governor - Lake vs. Hobbs	29	4	2022-11-01	2022-11-07	47.3	50.8			Lake +3.5	
+2022	ca	ca_7488	wayback 20221020155803	California Governor - Dahle vs. Newsom	4	3	2022-09-02	2022-10-10	56.0	32.7			Newsom +23.3	capture predates window; EXCLUDED from CSV: only usable capture (Oct 20, 2022) predates the election-eve window and shows 9/2 - 10/10 Newsom 56.0 / Dahle 32.7; RCP's current feed hides the average and has different values (Newsom 58.0, Dahle 34.0) with no polls flagged, so RCP's final average cannot be retrieved
+2022	co	co_7774	wayback 20221109023753	Colorado Governor - Ganahl vs. Polis	9	3	2022-10-26	2022-11-05	53.0	42.3			Polis +10.7	
+2022	ct	ct_7684	wayback 20221106073702	Connecticut Governor - Stefanowski vs. Lamont	8	3	2022-10-10	2022-10-23	52.7	41.7			Lamont +11.0	
+2022	fl	fl_7324	wayback 20221109060931	Florida Governor - DeSantis vs. Crist	21	5	2022-10-17	2022-11-06	42.2	54.4			DeSantis +12.2	
+2022	ga	ga_7538	wayback 20221109020839	Georgia Governor - Kemp vs. Abrams	46	6	2022-11-01	2022-11-07	44.5	52.8			Kemp +8.3	
+2022	ia	ia_7494	wayback 20221109050731	Iowa Governor - Reynolds vs. DeJear	0	0								page shows no RCP Average row
+2022	il	il_7768	wayback 20221108010931	Illinois Governor - Bailey vs. Pritzker	0	0								page shows no RCP Average row
+2022	ks	ks_7388	wayback 20221104013552	Kansas Governor - Schmidt vs. Kelly	0	0								page shows no RCP Average row
+2022	ma	ma_7609	wayback 20221107114353	Massachusetts Governor - Diehl vs. Healey	8	2	2022-10-13	2022-10-26	58.5	33.0			Healey +25.5	
+2022	md	md_7841	wayback 20221108005422	Maryland Governor - Cox vs. Moore	3	3	2022-09-08	2022-10-23	57.0	28.7			Moore +28.3	
+2022	me	me_7623	wayback 20221103005705	Maine Governor - LePage vs. Mills	0	0								page shows no RCP Average row
+2022	mi	mi_7545	wayback 20221109020844	Michigan Governor - Dixon vs. Whitmer	25	4	2022-10-30	2022-11-07	48.3	47.3			Whitmer +1.0	
+2022	mn	mn_7405	wayback 20221108192223	Minnesota Governor - Jensen vs. Walz	11	3	2022-10-10	2022-10-30	48.0	43.7			Walz +4.3	
+2022	nh	nh_7498	feed (archive 20221107142546 superseded)	2022 New Hampshire Governor - Sununu vs. Sherman	17	5	2022-10-28	2022-11-06	39.4	56.4			Sununu +17.0	archive superseded by later pre-election RCP edits
+2022	nm	nm_7646	wayback 20221108132517	New Mexico Governor - Ronchetti vs. Lujan Grisham	0	0								page shows no RCP Average row
+2022	nv	nv_7394	wayback 20221109023843	Nevada Governor - Lombardo vs. Sisolak	27	5	2022-10-24	2022-11-07	45.0	47.8			Lombardo +2.8	
+2022	ny	ny_7749	wayback 20221109020842	New York Governor - Zeldin vs. Hochul	17	3	2022-10-26	2022-10-31	52.0	45.0			Hochul +7.0	
+2022	oh	oh_7697	wayback 20221109023749	Ohio Governor - DeWine vs. Whaley	19	5	2022-10-30	2022-11-05	35.6	58.0			DeWine +22.4	
+2022	ok	ok_7775	wayback 20221109055333	Oklahoma Governor - Stitt vs. Hofmeister	0	0								page shows no RCP Average row
+2022	or	or_7908	wayback 20221108000804	Oregon Governor - Drazan vs. Kotek vs. Johnson	10	4	2022-10-17	2022-11-06	42.3	41.0	Johnson (I)	11.5	Kotek +1.3	
+2022	pa	pa_7696	wayback 20221109053900	Pennsylvania Governor - Mastriano vs. Shapiro	33	3	2022-11-01	2022-11-03	51.0	42.7			Shapiro +8.3	
+2022	ri	ri_7913	wayback 20221011111455	Rhode Island Governor - Kalus vs. McKee	0	0								page shows no RCP Average row
+2022	sc	sc_7505	feed	2022 South Carolina Governor - McMaster vs. Cunningham	0	0								feed: show_rcp_avg=0 (no average displayed)
+2022	sd	sd_7927	feed	2022 South Dakota Governor - Noem vs. Smith	0	0								feed: show_rcp_avg=0 (no average displayed)
+2022	tn	tn_7925	feed	2022 Tennessee Governor - Lee vs. Martin	0	0								feed: show_rcp_avg=0 (no average displayed)
+2022	tx	tx_7376	wayback 20221109075355	Texas Governor - Abbott vs. O'Rourke	33	3	2022-10-16	2022-10-26	42.3	52.7			Abbott +10.4	
+2022	vt	vt_7906	wayback 20220911125513	Vermont Governor - Scott vs. Siegel	0	0								page shows no RCP Average row
+2022	wi	wi_7761	feed (archive 20221107180953 superseded)	2022 Wisconsin Governor - Michels vs. Evers	22	5	2022-10-24	2022-11-05	47.8	48.4			Michels +0.6	archive superseded by later pre-election RCP edits
+2018	us	gcb2018_6185	wayback 20181107000538	2018 Generic Congressional Vote	309	11	2018-10-13	2018-11-03	49.7	42.4			Democrats +7.3	

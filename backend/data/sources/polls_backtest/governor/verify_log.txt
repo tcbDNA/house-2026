@@ -1,0 +1,40 @@
+2018 AZ 6614 rcp_feed_current_2026-10-28 AVG DIFF archive 20181105200240=10/24 - 11/3 D39.5 R54.5 feed(show_rcp_avg=1)=10/24 - 11/4 D38.5 R54.8 | in-avg DIFF archive 20181105200240-only=[('10/24 - 10/29', '45', '52'), ('10/28 - 11/3', '36', '56')] feed-only=[(('10/24 - 11/2', '40', '53'), 'Gravis updated Mon, 05 Nov 2018 16:09:24 -0600'), (('10/29 - 11/4', '37', '56'), 'HarrisX updated Mon, 15 Nov 2021 13:01:51 -0600')]
+2018 CA 6593 rcp_feed_current_2026-10-28 AVG DIFF archive 20181104222116=10/10 - 10/26 D53.3 R36.4 feed(show_rcp_avg=1)=10/19 - 11/5 D55.3 R38.8 | in-avg DIFF archive 20181104222116-only=[('10/10 - 10/24', '53', '34'), ('10/12 - 10/14', '52', '35'), ('10/12 - 10/21', '49', '38'), ('10/17 - 10/19', '52', '32'), ('10/18 - 10/20', '54', '41')] feed-only=[(('10/25 - 10/27', '55', '42'), 'KFI-NBC 4 updated Tue, 06 Nov 2018 00:26:28 -0600'), (('11/1 - 11/5', '53', '38'), 'KABC/SurveyUSA updated Tue, 06 Nov 2018 00:21:42 -0600')]
+2018 CO 6409 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('10/25 - 10/30', '50', '42'), ('10/29 - 10/30', '45', '40')] feed-only=[]
+2018 CT 6577 wayback_page AVG same | in-avg same
+2018 FL 6518 wayback_page AVG same | in-avg same
+2018 GA 6628 wayback_page AVG same | in-avg same
+2018 IA 6477 wayback_page AVG same | in-avg same
+2018 IL 6439 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('6/9 - 6/11', '36', '27'), ('8/12 - 8/16', '46', '30'), ('9/24 - 9/29', '49', '27')] feed-only=[]
+2018 MA 6418 wayback_page AVG same | in-avg same
+2018 MD 6273 wayback_page AVG same | in-avg same
+2018 MI 6441 wayback_page AVG same | in-avg same
+2018 MN 6443 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('10/15 - 10/17', '45', '39'), ('10/29 - 10/31', '49', '41')] feed-only=[]
+2018 NH 6561 rcp_feed_current_2026-10-28 AVG DIFF archive 20181104221900=10/10 - 10/29 D41.0 R50.5 feed(show_rcp_avg=1)=10/27 - 11/4 D46.0 R50.0 | in-avg DIFF archive 20181104221900-only=[('10/10 - 10/18', '39', '50')] feed-only=[(('11/1 - 11/4', '49', '49'), 'UNH* updated Sun, 04 Nov 2018 22:46:43 -0600')]
+2018 NM 6440 wayback_page AVG same | in-avg same
+2018 NV 6692 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('10/24 - 10/29', '46', '45'), ('9/30 - 10/3', '40', '44')] feed-only=[]
+2018 NY 6536 wayback_page AVG same | in-avg same
+2018 OK 6633 wayback_page AVG same | in-avg same
+2018 OR 6428 wayback_page AVG same | in-avg same
+2018 PA 6542 wayback_page AVG same | in-avg same
+2018 RI 6544 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('10/20 - 10/24', '45', '34'), ('9/27 - 10/6', '48', '34')] feed-only=[]
+2018 TN 6644 wayback_page AVG same | in-avg same
+2018 TX 6435 wayback_page AVG DIFF wb=10/8 - 10/30 D37.8 R55.7 feed(show_rcp_avg=1)=10/15 - 10/30 D38.3 R55.0 | in-avg DIFF wb-only=[('10/8 - 10/11', '35', '57'), ('10/9 - 10/13', '39', '57')] feed-only=[]
+2022 AZ 7842 wayback_page AVG same | in-avg same
+2022 CO 7774 wayback_page AVG same | in-avg same
+2022 CT 7684 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('10/10 - 10/13', '50', '43'), ('10/19 - 10/21', '52', '41'), ('10/19 - 10/23', '56', '41')] feed-only=[]
+2022 FL 7324 wayback_page AVG same | in-avg same
+2022 GA 7538 wayback_page AVG same | in-avg same
+2022 MA 7609 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('10/13 - 10/16', '56', '33'), ('10/20 - 10/26', '61', '33')] feed-only=[]
+2022 MD 7841 wayback_page AVG same values, feed date placeholder | in-avg DIFF wb-only=[('10/20 - 10/23', '58', '27'), ('9/22 - 9/27', '60', '28'), ('9/8 - 9/12', '53', '31')] feed-only=[]
+2022 MI 7545 wayback_page AVG same | in-avg same
+2022 MN 7405 wayback_page AVG same | in-avg same
+2022 NH 7498 rcp_feed_current_2026-10-28 AVG DIFF archive 20221107142546=10/28 - 11/6 D39.3 R56.0 feed(show_rcp_avg=1)=10/28 - 11/6 D39.4 R56.4 | in-avg DIFF archive 20221107142546-only=[] feed-only=[(('11/2 - 11/5', '40', '58'), 'Data for Progress (D)** updated Mon, 07 Nov 2022 16:44:22 -0600')]
+2022 NV 7394 wayback_page AVG same | in-avg same
+2022 NY 7749 wayback_page AVG same | in-avg same
+2022 OH 7697 wayback_page AVG same | in-avg DIFF wb-only=[] feed-only=[(('10/18 - 10/22', '37', '55'), 'Cygnal (R) updated Sun, 23 Oct 2022 10:00:15 -0500')]
+2022 OR 7908 wayback_page AVG DIFF wb=10/17 - 11/6 D42.3 R41.0 feed(show_rcp_avg=0)=12/31 - 12/31 D40.8 R40.8 T12.8 | in-avg DIFF wb-only=[('10/17 - 10/18', '35', '37'), ('10/18 - 10/22', '40', '42'), ('10/31 - 11/1', '46', '41'), ('11/1 - 11/6', '48', '44')] feed-only=[]
+2022 PA 7696 wayback_page AVG same | in-avg same
+2022 TX 7376 wayback_page AVG same | in-avg same
+2022 WI 7761 rcp_feed_current_2026-10-28 AVG DIFF archive 20221107180953=10/24 - 11/4 D47.6 R48.0 feed(show_rcp_avg=1)=10/24 - 11/5 D47.8 R48.4 | in-avg DIFF archive 20221107180953-only=[('10/26 - 10/30', '47', '48')] feed-only=[(('11/2 - 11/5', '48', '50'), 'Data for Progress (D)** updated Mon, 07 Nov 2022 16:52:06 -0600')]
+2018 US 6185 wayback_page AVG same | in-avg DIFF wb-only=[] feed-only=[(('10/12 - 10/16', '54', '38'), 'Rasmussen Reports updated Tue, 17 Oct 2017 08:36:18 -0500'), (('4/23 - 4/25', '43', '34'), 'Rasmussen Reports updated Thu, 26 Apr 2018 11:16:21 -0500')]

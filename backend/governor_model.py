@@ -12,6 +12,8 @@ The bracket is exactly the Senate model's projection for that state without
 its candidate terms (senate_model._projections on the same inputs); slope =
 settings.governor_partisan_slope, 1.0 until the 2018/2022 calibration.
 
+Computed governor WAR records are margin − slope × baseline (the same slope),
+so a candidate's WAR is a0 − slope × c + governor_incumbency × b.
 WAR is the Senate blend with Governor as the office (data/governor_data.py):
 governor records at full weight, House and Senate records at the 0.5×
 cross-office discount. Governor records are computed (Split Ticket publishes
@@ -49,7 +51,8 @@ class GovernorBundle:
     fund: senate.SenateBundle      # the races' fundamentals (base_margin = 2024 presidential margin)
     races: list[dict]
     not_up: dict[str, dict]        # state -> {"governor", "party"}
-    war: dict[str, tuple[np.ndarray, np.ndarray]]   # rule variant -> (a, b): WAR = a + governor_incumbency × b
+    # rule variant -> (a0, c, b): WAR = a0 − slope × c + governor_incumbency × b
+    war: dict[str, tuple[np.ndarray, np.ndarray, np.ndarray]]
     inc_sign: np.ndarray           # +1 D / −1 R incumbent eligible for the bonus, else 0
     poll_margin: np.ndarray = field(default_factory=lambda: np.zeros(0))
     poll_n: np.ndarray = field(default_factory=lambda: np.zeros(0))
@@ -82,8 +85,8 @@ def load_bundle(path: Path = DATA_PATH, senate_bundle: senate.SenateBundle | Non
     pa = [r.get("poll_average") or {} for r in races]
     return GovernorBundle(
         fund=fund, races=races, not_up=raw["not_up"],
-        war={v: (np.array([r["war"][v]["a"] for r in races], dtype=float),
-                 np.array([r["war"][v]["b"] for r in races], dtype=float)) for v in races[0]["war"]},
+        war={v: tuple(np.array([r["war"][v][k] for r in races], dtype=float) for k in ("a0", "c", "b"))
+             for v in races[0]["war"]},
         inc_sign=np.array([r["inc_sign"] for r in races], dtype=float),
         poll_margin=np.array([p.get("margin", np.nan) for p in pa], dtype=float),
         poll_n=np.array([p.get("n_eff", p.get("n_polls", 0)) for p in pa], dtype=float),
@@ -104,9 +107,9 @@ def candidate_effects(bundle: GovernorBundle, settings: Settings) -> tuple[np.nd
     """(WAR, incumbency), D-positive. WAR uses the rule variant the settings
     pick (rematch / third-candidate records; data/governor_data.py)."""
     inc = settings.governor_incumbency
-    a, b = bundle.war[f"rematch{int(settings.governor_war_drop_rematch)}"
-                      f"_third{int(settings.governor_war_exclude_third_candidate)}"]
-    return a + inc * b, inc * bundle.inc_sign
+    a0, c, b = bundle.war[f"rematch{int(settings.governor_war_drop_rematch)}"
+                          f"_third{int(settings.governor_war_exclude_third_candidate)}"]
+    return a0 - settings.governor_partisan_slope * c + inc * b, inc * bundle.inc_sign
 
 
 def _fundamentals(bundle: GovernorBundle, environment: float, sliders: dict, trend_discount: float,
@@ -162,7 +165,11 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
     war, inc = candidate_effects(bundle, settings)
     model = fund + war + inc
     w = poll_weights(bundle, settings)
-    proj = model + np.where(w > 0, w * (bundle.poll_margin - _default_model(bundle, settings, frame)), 0.0)
+    default_model = _default_model(bundle, settings, frame)
+    proj = model + np.where(w > 0, w * (bundle.poll_margin - default_model), 0.0)
+    # Model − polls at the default scenario (scenario-invariant), for the
+    # disagreement error term; none on polls-only races.
+    gap = np.where((w > 0) & ~bundle.polls_only, default_model - bundle.poll_margin, np.nan)
 
     rows = []
     for i, r in enumerate(bundle.races):
@@ -191,6 +198,7 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
             "model_projection": None if bundle.polls_only[i] else round(float(model[i]), 2),
             "poll_average": r.get("poll_average"),
             "poll_weight": round(float(w[i]), 3),
+            "model_poll_gap": None if np.isnan(gap[i]) else round(float(gap[i]), 2),
             "independent_candidate": bool(bundle.independent[i]),
             "projection": round(p, 2) + 0.0,
             "is_tossup": abs(p) <= TOSSUP_THRESHOLD,

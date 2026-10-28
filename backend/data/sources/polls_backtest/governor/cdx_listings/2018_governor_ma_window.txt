@@ -1,0 +1,5 @@
+20181031192445 https://www.realclearpolitics.com/epolls/2018/governor/ma/massachusetts_governor_baker_vs_gonzalez-6418.html 200 5814
+20181104221911 https://www.realclearpolitics.com/epolls/2018/governor/ma/massachusetts_governor_baker_vs_gonzalez-6418.html 200 6364
+20181031192454 https://www.realclearpolitics.com/epolls/2018/governor/ma/null 403 3907
+20181104221917 https://www.realclearpolitics.com/epolls/2018/governor/ma/null 403 4279
+20180924114227 https://www.realclearpolitics.com/epolls/2018/governor/Maryland.html 200 4773

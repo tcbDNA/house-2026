@@ -1,0 +1,5 @@
+20180927120145 https://www.realclearpolitics.com/epolls/2018/governor/nm/new_mexico_governor_pearce_vs_grisham-6440.html 200 5372
+20181104170108 https://www.realclearpolitics.com/epolls/2018/governor/nm/new_mexico_governor_pearce_vs_grisham-6440.html 200 5590
+20181104222418 https://www.realclearpolitics.com/epolls/2018/governor/nm/new_mexico_governor_pearce_vs_grisham-6440.html 200 6138
+20181104170115 https://www.realclearpolitics.com/epolls/2018/governor/nm/null 403 3914
+20181104222420 https://www.realclearpolitics.com/epolls/2018/governor/nm/null 403 4259

@@ -408,27 +408,29 @@ def senate_draws(rows: list[dict], terms: ErrorTerms | None = None) -> SenateDra
                        seat=seat, dev=dev, common=comp + level)
 
 
-def governor_race_sigma(rows: list[dict], extra: float) -> np.ndarray:
+def governor_race_sigma(rows: list[dict], extra: float, gap_factor: float = 0.0) -> np.ndarray:
     """Per-race σ for governor races, besides the shared national, region and
     state parts: the race term, widened in quadrature for open seats (no
     incumbent who has won a governor's election), independent races on
-    polls only, and `extra` (settings.governor_race_sigma_extra)."""
+    polls only, `extra` (settings.governor_race_sigma_extra) and
+    gap_factor × |model − polls| (settings.governor_gap_sigma_factor)."""
     open_seat = np.array([not r.get("incumbency_adj") for r in rows], dtype=float)
     poll_override = np.array([bool(r.get("independent_candidate")) and (r.get("poll_weight") or 0) > 0
                               for r in rows], dtype=float)
+    gap = np.array([abs(r.get("model_poll_gap") or 0.0) for r in rows])
     return np.sqrt(_race_sigma(SIGMA_DISTRICT, open_seat, np.zeros(len(rows))) ** 2
-                   + poll_override * SIGMA_POLL_OVERRIDE_EXTRA ** 2 + extra ** 2)
+                   + poll_override * SIGMA_POLL_OVERRIDE_EXTRA ** 2 + extra ** 2 + (gap_factor * gap) ** 2)
 
 
 def governor_sims(rows: list[dict], senate_rows: list[dict], senate_terms: ErrorTerms | None,
-                  terms: ErrorTerms | None, extra: float) -> np.ndarray:
+                  terms: ErrorTerms | None, extra: float, gap_factor: float = 0.0) -> np.ndarray:
     """(N_SIMS, n_rows) simulated governor margins, sharing the Senate's draws."""
     shared = senate_draws(senate_rows, senate_terms)
     rng = np.random.default_rng(GOV_SEED)
     n = len(rows)
     proj = np.array([r["projection"] for r in rows], dtype=float)
     eta = rng.standard_normal((N_SIMS, n))
-    race = rng.standard_normal((N_SIMS, n)) * governor_race_sigma(rows, extra)[None, :]
+    race = rng.standard_normal((N_SIMS, n)) * governor_race_sigma(rows, extra, gap_factor)[None, :]
     out = proj[None, :] + shared.nat + race + shared.common
     for j, r in enumerate(rows):
         s = r["state"]
@@ -448,7 +450,7 @@ def governor_sims(rows: list[dict], senate_rows: list[dict], senate_terms: Error
 
 
 def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate_terms: ErrorTerms | None,
-                                   terms: ErrorTerms | None, extra: float) -> dict:
+                                   terms: ErrorTerms | None, extra: float, gap_factor: float = 0.0) -> dict:
     """Mutate `result` (governor_model.project) in place: `p_d` per race
     (P(the anti-R candidate wins)) and the governorships after the election
     — races up plus the governorships not up, which keep their party.
@@ -456,7 +458,7 @@ def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate
     rows = result.get("races") or []
     if not rows:
         return result
-    sims = governor_sims(rows, senate_rows, senate_terms, terms, extra)
+    sims = governor_sims(rows, senate_rows, senate_terms, terms, extra, gap_factor)
     wins = sims > 0
     for r, p in zip(rows, wins.mean(axis=0)):
         r["p_d"] = round(float(p), 3)
@@ -480,7 +482,7 @@ def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate
         "majority_threshold": 26,
     }
     s["error_model"] = {**error_model_summary(terms, senate=True),
-                        "race": f"{SIGMA_DISTRICT} + governor extra {extra} (in quadrature)",
+                        "race": f"{SIGMA_DISTRICT} + governor extra {extra} + {gap_factor} × |model − polls| (in quadrature)",
                         "state": f"{SIGMA_STATE}, shared with the state's Senate race where there is one",
                         "shared_with_senate": "national, region, state, group, composition and level draws"}
     return result

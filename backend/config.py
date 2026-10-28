@@ -94,6 +94,14 @@ class Settings:
     # computed records from races where a third candidate won more than 5%
     # are left out (they measure that candidate as much as the nominees).
     governor_war_drop_rematch: bool = True
+    # Model–poll disagreement (user decision, Oct 28): a race whose polls and
+    # model disagree gets governor_gap_sigma_factor × |model − polls| more
+    # race-level error, in quadrature (model and polls at the default
+    # scenario; races without polls, or on polls only, get none). 0 turns it off.
+    # Off by default pending the user's OK: the 2018/2022 backtest finds no
+    # relation between the gap and the blend's error (kappa 0, 95% interval
+    # 0-0.17; analysis/governor_backtest.txt); 0.5 is the user's fallback.
+    governor_gap_sigma_factor: float = 0.0
     governor_war_exclude_third_candidate: bool = True
 
     # Item 7 — county overlay (overlay.py). Project each county slice from its
