@@ -56,8 +56,10 @@ THIRD_CANDIDATE_PCT = 5.0
 # matches build_governor_poll_averages.INDEPENDENT_OPPONENT).
 INDEPENDENT_OPPONENT = {"RI": ("Ken Block", "(I)")}
 # WAR variants stored per race: (drop the challenger's record from a rematch
-# against the sitting incumbent, leave out third-candidate records).
-VARIANTS = {f"rematch{int(rm)}_third{int(tc)}": (rm, tc) for rm in (True, False) for tc in (True, False)}
+# against the sitting incumbent, leave out third-candidate records, a single
+# governor record at full weight instead of 0.5).
+VARIANTS = {f"rematch{int(rm)}_third{int(tc)}_single{int(sg)}": (rm, tc, sg)
+            for rm in (True, False) for tc in (True, False) for sg in (True, False)}
 WAR_OUT = DATA / "gov_war_computed.csv"
 OUT = DATA / "governor_states.json"
 PRES_YEARS = (2008, 2012, 2016, 2020, 2024)
@@ -163,7 +165,7 @@ def governor_wars(records: list[dict]) -> dict:
     return {k: v for k, v in allw.items() if v}
 
 
-def _blend(recs: list[dict], name: str) -> dict[str, float]:
+def _blend(recs: list[dict], name: str, single_full: bool = False) -> dict[str, float]:
     """The candidate's D-positive WAR effect as a0 − slope × c + incumbency × b.
 
     Computed governor records are margin − slope × baseline − k × incumbency
@@ -176,7 +178,7 @@ def _blend(recs: list[dict], name: str) -> dict[str, float]:
     gov = lambda x: x["chamber"] == "Governor" and "baseline" in x
     def blend(vals):
         return sd._time_weighted_sortable([{**x, "sortable": v} for x, v in zip(recs, vals)],
-                                          candidate_name=name, office="Governor")
+                                          candidate_name=name, office="Governor", single_record_full=single_full)
     a0 = -blend([-x["margin"] if gov(x) else x["sortable"] for x in recs])
     c = blend([x["baseline"] if gov(x) else 0.0 for x in recs])
     b = -blend([x.get("k", 0) if gov(x) else 0 for x in recs])
@@ -199,9 +201,9 @@ def candidate_war(state: str, name: str | None, letter: str, allw: dict, sitting
         return (inc_last is not None and x["chamber"] == "Governor" and x.get("opponent")
                 and sd._strip_suffix(x["opponent"]).split()[-1].lower() == inc_last)
     variants = {}
-    for v, (rm, tc) in VARIANTS.items():
+    for v, (rm, tc, sg) in VARIANTS.items():
         keep = [x for x in recs if not (rm and rematch(x)) and not (tc and x.get("third_candidate"))]
-        variants[v] = _blend(keep, name) if keep else {"a0": 0.0, "c": 0.0, "b": 0.0}
+        variants[v] = _blend(keep, name, sg) if keep else {"a0": 0.0, "c": 0.0, "b": 0.0}
     return {"name": name, "variants": variants,
             "records": [{"year": x["year"], "office": x["chamber"], "geo": x["geo"], "war": x["war_text"],
                          "k": x.get("k", 0), "rematch": bool(rematch(x)),

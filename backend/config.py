@@ -81,27 +81,43 @@ class Settings:
     # Polls blend as in the Senate (w with at least governor_poll_full_n
     # polls, scaled down below; polls only for independents). Governor races
     # get governor_race_sigma_extra more race-level error, in quadrature.
-    # Defaults are judgment calls until the 2018/2022 calibration.
-    governor_partisan_slope: float = 1.0
-    governor_incumbency: float = 3.0
+    # Defaults from the 2018/2022 calibration (analysis/governor_backtest.txt,
+    # user decisions Oct 28): incumbency fixed at 6, the bottom of the fitted
+    # 95% range (the free fit, 9.3, absorbs personal vote: robust and
+    # full-weight-record refits give 6.3-8.4); slope 0.640 (SE 0.057) and w
+    # 0.788 (SE 0.056) refit with it held there; race error from the blended
+    # projection's error (SD 4.14 -> extra 1.5) and the model's alone (SD 10.1 -> 9.4).
+    governor_partisan_slope: float = 0.64
+    governor_incumbency: float = 6.0
     governor_poll_blend: bool = True
-    governor_poll_weight: float = 0.7
+    governor_poll_weight: float = 0.79
     governor_poll_full_n: float = 3.0
-    governor_race_sigma_extra: float = 3.0
+    governor_race_sigma_extra: float = 1.5
+    # Race error scaled by the poll weight (user decision, Oct 28): extra² =
+    # f × governor_race_sigma_extra² + (1 − f) × governor_race_sigma_extra_no_polls²,
+    # f = the race's poll weight / governor_poll_weight (1 on polls only).
+    governor_race_sigma_extra_no_polls: float = 9.4
     # Governor WAR rules (user decisions, Oct 28). Rematch: a challenger's
     # governor record from a race against the sitting incumbent is dropped
     # (the incumbent keeps it, as in the House model). Third candidate:
     # computed records from races where a third candidate won more than 5%
     # are left out (they measure that candidate as much as the nominees).
     governor_war_drop_rematch: bool = True
+    # A candidate whose only governor record is one race gets full weight on it
+    # instead of 0.5 (a calibration test; user decision Oct 28).
+    governor_war_single_record_full: bool = False
     # Model–poll disagreement (user decision, Oct 28): a race whose polls and
     # model disagree gets governor_gap_sigma_factor × |model − polls| more
     # race-level error, in quadrature (model and polls at the default
     # scenario; races without polls, or on polls only, get none). 0 turns it off.
-    # Off by default pending the user's OK: the 2018/2022 backtest finds no
-    # relation between the gap and the blend's error (kappa 0, 95% interval
-    # 0-0.17; analysis/governor_backtest.txt); 0.5 is the user's fallback.
-    governor_gap_sigma_factor: float = 0.0
+    # The 2018/2022 backtest finds no relation between the gap and the blend's
+    # error where polls are plentiful (kappa 0, 95% interval 0-0.17); it has no
+    # sparse-poll races, so 0.5 (the user's fallback) applies only where there
+    # are fewer than governor_gap_max_polls effective polls (user decision Oct 28).
+    governor_gap_sigma_factor: float = 0.5
+    # Apply the gap term only where polling is sparse: fewer than this many
+    # effective polls (user decision, Oct 28: option (c)). 0 = every race.
+    governor_gap_max_polls: float = 3.0
     governor_war_exclude_third_candidate: bool = True
 
     # Item 7 — county overlay (overlay.py). Project each county slice from its

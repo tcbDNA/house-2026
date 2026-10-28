@@ -108,7 +108,8 @@ def candidate_effects(bundle: GovernorBundle, settings: Settings) -> tuple[np.nd
     pick (rematch / third-candidate records; data/governor_data.py)."""
     inc = settings.governor_incumbency
     a0, c, b = bundle.war[f"rematch{int(settings.governor_war_drop_rematch)}"
-                          f"_third{int(settings.governor_war_exclude_third_candidate)}"]
+                          f"_third{int(settings.governor_war_exclude_third_candidate)}"
+                          f"_single{int(settings.governor_war_single_record_full)}"]
     return a0 - settings.governor_partisan_slope * c + inc * b, inc * bundle.inc_sign
 
 
@@ -169,7 +170,11 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
     proj = model + np.where(w > 0, w * (bundle.poll_margin - default_model), 0.0)
     # Model − polls at the default scenario (scenario-invariant), for the
     # disagreement error term; none on polls-only races.
-    gap = np.where((w > 0) & ~bundle.polls_only, default_model - bundle.poll_margin, np.nan)
+    sparse = (bundle.poll_n < settings.governor_gap_max_polls) if settings.governor_gap_max_polls > 0 else (w > 0)
+    gap = np.where((w > 0) & ~bundle.polls_only & sparse, default_model - bundle.poll_margin, np.nan)
+    # Share of full poll weight, for the race error (1 on polls only).
+    poll_share = np.where(bundle.polls_only, np.minimum(1.0, w),
+                          np.minimum(1.0, w / settings.governor_poll_weight) if settings.governor_poll_weight > 0 else 0.0)
 
     rows = []
     for i, r in enumerate(bundle.races):
@@ -199,6 +204,7 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
             "poll_average": r.get("poll_average"),
             "poll_weight": round(float(w[i]), 3),
             "model_poll_gap": None if np.isnan(gap[i]) else round(float(gap[i]), 2),
+            "poll_share": round(float(poll_share[i]), 3),
             "independent_candidate": bool(bundle.independent[i]),
             "projection": round(p, 2) + 0.0,
             "is_tossup": abs(p) <= TOSSUP_THRESHOLD,

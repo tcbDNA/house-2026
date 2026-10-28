@@ -95,3 +95,15 @@ Model–poll gap term: error_i ~ N(0, σ0² + (κ × gap_i)²), gap = model − 
   κ = 0.000 (95% profile interval 0.000-0.170), σ0 = 4.00 (σ with κ = 0: 4.00); likelihood-ratio test of κ = 0: LR 0.00, p ≈ 1.000
   check: |error| on |gap|: slope -0.079 (SE 0.040), intercept 3.82
   with the gap term, the remaining race-level σ0 4.00 implies a governor extra of 1.04
+== 2018: generic ballot (RCP final, excluded pollsters removed) +8.20 from 10 polls (published +7.30); 2016 national presidential +2.10; uniform swing +6.10
+== 2022: generic ballot (RCP final, excluded pollsters removed) -2.38 from 16 polls (published -2.50); 2020 national presidential +4.46; uniform swing -6.83
+== 2018: generic ballot (RCP final, excluded pollsters removed) +8.20 from 10 polls (published +7.30); 2016 national presidential +2.10; uniform swing +6.10
+== 2022: generic ballot (RCP final, excluded pollsters removed) -2.38 from 16 polls (published -2.50); 2020 national presidential +4.46; uniform swing -6.83
+
+== Refit variants
+variant                                                              n    incumbency         slope             w model SD   MAE blend SD
+baseline (OLS)                                                      72   9.29 (1.69)  0.598 (0.059)  0.786 (0.056)     9.95  7.41     4.14
+robust: Huber loss                                                  72   8.41 (1.41)  0.690 (0.051)  0.777 (0.050)     9.98  7.17     4.07
+robust: Baker, Hogan, Scott, Sununu landslides dropped (6 races)    66   6.33 (1.48)  0.798 (0.053)  0.753 (0.090)     7.78  6.01     4.17
+single governor record at full weight (OLS)                         72   6.55 (1.53)  0.677 (0.057)  0.788 (0.058)     9.79  7.16     4.20
+incumbency fixed at 6 (OLS)                                         72  6.00 (fixed)  0.640 (0.057)  0.788 (0.056)    10.12  7.47     4.14

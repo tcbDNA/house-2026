@@ -21,22 +21,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 6.025,
      "c": 0.0,
      "b": -0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 6.025,
      "c": 0.0,
      "b": -0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 6.025,
      "c": 0.0,
      "b": -0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 6.025,
+     "c": 0.0,
+     "b": -0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 6.025,
+     "c": 0.0,
+     "b": -0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 6.025,
+     "c": 0.0,
+     "b": -0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 6.025,
+     "c": 0.0,
+     "b": -0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 6.025,
      "c": 0.0,
      "b": -0.0
@@ -46,22 +66,42 @@
     "d": {
      "name": "Doug Jones",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 4.775,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 4.775,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 4.775,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 4.775,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 4.775,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 4.775,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 4.775,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 4.775,
        "c": 0.0,
        "b": -0.0
@@ -91,22 +131,42 @@
     "r": {
      "name": "Tommy Tuberville",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 1.25,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 1.25,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 1.25,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 1.25,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 1.25,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 1.25,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 1.25,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 1.25,
        "c": 0.0,
        "b": -0.0
@@ -165,22 +225,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -190,22 +270,42 @@
     "d": {
      "name": "Jonathan Kreiss-Tomkins",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -216,22 +316,42 @@
     "r": {
      "name": "Bernadette Wilson",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -280,22 +400,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": 2.265,
+     "c": -6.61,
+     "b": -0.0
+    },
+    "rematch1_third1_single0": {
      "a0": 1.93,
      "c": -3.305,
      "b": -0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": 2.265,
+     "c": -6.61,
+     "b": -0.0
+    },
+    "rematch1_third0_single0": {
      "a0": 1.93,
      "c": -3.305,
      "b": -0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": 2.265,
+     "c": -6.61,
+     "b": -0.0
+    },
+    "rematch0_third1_single0": {
      "a0": 1.93,
      "c": -3.305,
      "b": -0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": 2.265,
+     "c": -6.61,
+     "b": -0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 1.93,
      "c": -3.305,
      "b": -0.0
@@ -305,22 +445,42 @@
     "d": {
      "name": "Katie Hobbs",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": 0.67,
+       "c": -6.61,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": 0.335,
        "c": -3.305,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": 0.67,
+       "c": -6.61,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": 0.335,
        "c": -3.305,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": 0.67,
+       "c": -6.61,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": 0.335,
        "c": -3.305,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 0.67,
+       "c": -6.61,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.335,
        "c": -3.305,
        "b": -0.0
@@ -341,22 +501,42 @@
     "r": {
      "name": "Andy Biggs",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 1.595,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 1.595,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 1.595,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 1.595,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 1.595,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 1.595,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 1.595,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 1.595,
        "c": 0.0,
        "b": -0.0
@@ -440,22 +620,42 @@
     }
    ],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": -27.76,
+     "c": -34.54,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": -13.88,
      "c": -17.27,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": -27.76,
+     "c": -34.54,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": -13.88,
      "c": -17.27,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": -27.76,
+     "c": -34.54,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
      "a0": -13.88,
      "c": -17.27,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": -27.76,
+     "c": -34.54,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": -13.88,
      "c": -17.27,
      "b": 0.0
@@ -465,22 +665,42 @@
     "d": {
      "name": "Fred Love",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -491,22 +711,42 @@
     "r": {
      "name": "Sarah Huckabee Sanders",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": -27.76,
+       "c": -34.54,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": -13.88,
        "c": -17.27,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": -27.76,
+       "c": -34.54,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": -13.88,
        "c": -17.27,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": -27.76,
+       "c": -34.54,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": -13.88,
        "c": -17.27,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": -27.76,
+       "c": -34.54,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": -13.88,
        "c": -17.27,
        "b": -0.0
@@ -565,22 +805,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -590,22 +850,42 @@
     "d": {
      "name": "Xavier Becerra",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -616,22 +896,42 @@
     "r": {
      "name": "Steve Hilton",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -680,22 +980,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -705,22 +1025,42 @@
     "d": {
      "name": "Phil Weiser",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -731,22 +1071,42 @@
     "r": {
      "name": "Victor Marx",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -781,22 +1141,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 7.408,
      "c": 12.731,
      "b": -0.5
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 7.408,
      "c": 12.731,
      "b": -0.5
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 7.408,
      "c": 12.731,
      "b": -0.5
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 7.408,
+     "c": 12.731,
+     "b": -0.5
+    },
+    "rematch0_third1_single1": {
+     "a0": 7.408,
+     "c": 12.731,
+     "b": -0.5
+    },
+    "rematch0_third1_single0": {
+     "a0": 7.408,
+     "c": 12.731,
+     "b": -0.5
+    },
+    "rematch0_third0_single1": {
+     "a0": 7.408,
+     "c": 12.731,
+     "b": -0.5
+    },
+    "rematch0_third0_single0": {
      "a0": 7.408,
      "c": 12.731,
      "b": -0.5
@@ -806,22 +1186,42 @@
     "d": {
      "name": "Ned Lamont",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 7.408,
        "c": 12.731,
        "b": -0.5
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 7.408,
        "c": 12.731,
        "b": -0.5
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 7.408,
        "c": 12.731,
        "b": -0.5
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 7.408,
+       "c": 12.731,
+       "b": -0.5
+      },
+      "rematch0_third1_single1": {
+       "a0": 7.408,
+       "c": 12.731,
+       "b": -0.5
+      },
+      "rematch0_third1_single0": {
+       "a0": 7.408,
+       "c": 12.731,
+       "b": -0.5
+      },
+      "rematch0_third0_single1": {
+       "a0": 7.408,
+       "c": 12.731,
+       "b": -0.5
+      },
+      "rematch0_third0_single0": {
        "a0": 7.408,
        "c": 12.731,
        "b": -0.5
@@ -851,22 +1251,42 @@
     "r": {
      "name": "Ryan Fazio",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -915,22 +1335,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.105,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.105,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.105,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.105,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.105,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.105,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.105,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.105,
      "c": 0.0,
      "b": 0.0
@@ -940,22 +1380,42 @@
     "d": {
      "name": "David Jolly",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -966,22 +1426,42 @@
     "r": {
      "name": "Byron Donalds",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.105,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.105,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.105,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.105,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.105,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.105,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.105,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.105,
        "c": 0.0,
        "b": -0.0
@@ -1058,22 +1538,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -1083,22 +1583,42 @@
     "d": {
      "name": "Keisha Lance Bottoms",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1109,22 +1629,42 @@
     "r": {
      "name": "Rick Jackson",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1173,22 +1713,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": 26.32,
+     "c": 22.54,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": 13.16,
      "c": 11.27,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": 26.32,
+     "c": 22.54,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": 13.16,
      "c": 11.27,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": 26.32,
+     "c": 22.54,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
      "a0": 13.16,
      "c": 11.27,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": 26.32,
+     "c": 22.54,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 13.16,
      "c": 11.27,
      "b": 0.0
@@ -1198,22 +1758,42 @@
     "d": {
      "name": "Josh Green",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": 26.32,
+       "c": 22.54,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": 13.16,
        "c": 11.27,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": 26.32,
+       "c": 22.54,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": 13.16,
        "c": 11.27,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": 26.32,
+       "c": 22.54,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": 13.16,
        "c": 11.27,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 26.32,
+       "c": 22.54,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 13.16,
        "c": 11.27,
        "b": -0.0
@@ -1234,22 +1814,42 @@
     "r": {
      "name": "Gary Cordery",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1291,22 +1891,42 @@
     }
    ],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": -21.58,
+     "c": -24.89,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": -10.79,
      "c": -12.445,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
      "a0": -26.589,
      "c": -26.317,
      "b": 0.5
     },
-    "rematch0_third1": {
+    "rematch1_third0_single0": {
+     "a0": -26.589,
+     "c": -26.317,
+     "b": 0.5
+    },
+    "rematch0_third1_single1": {
+     "a0": -21.58,
+     "c": -24.89,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
      "a0": -10.79,
      "c": -12.445,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": -26.589,
+     "c": -26.317,
+     "b": 0.5
+    },
+    "rematch0_third0_single0": {
      "a0": -26.589,
      "c": -26.317,
      "b": 0.5
@@ -1316,22 +1936,42 @@
     "d": {
      "name": "Terri Pickens",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1342,22 +1982,42 @@
     "r": {
      "name": "Brad Little",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": -21.58,
+       "c": -24.89,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": -10.79,
        "c": -12.445,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
        "a0": -26.589,
        "c": -26.317,
        "b": 0.5
       },
-      "rematch0_third1": {
+      "rematch1_third0_single0": {
+       "a0": -26.589,
+       "c": -26.317,
+       "b": 0.5
+      },
+      "rematch0_third1_single1": {
+       "a0": -21.58,
+       "c": -24.89,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": -10.79,
        "c": -12.445,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": -26.589,
+       "c": -26.317,
+       "b": 0.5
+      },
+      "rematch0_third0_single0": {
        "a0": -26.589,
        "c": -26.317,
        "b": 0.5
@@ -1425,22 +2085,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 10.98,
      "c": 12.215,
      "b": -0.2
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 10.98,
      "c": 12.215,
      "b": -0.2
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
+     "a0": 10.98,
+     "c": 12.215,
+     "b": -0.2
+    },
+    "rematch1_third0_single0": {
+     "a0": 10.98,
+     "c": 12.215,
+     "b": -0.2
+    },
+    "rematch0_third1_single1": {
+     "a0": 23.52,
+     "c": 22.275,
+     "b": -1.2
+    },
+    "rematch0_third1_single0": {
      "a0": 17.25,
      "c": 17.245,
      "b": -0.7
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": 23.52,
+     "c": 22.275,
+     "b": -1.2
+    },
+    "rematch0_third0_single0": {
      "a0": 17.25,
      "c": 17.245,
      "b": -0.7
@@ -1450,22 +2130,42 @@
     "d": {
      "name": "JB Pritzker",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 10.98,
        "c": 12.215,
        "b": -0.2
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 10.98,
        "c": 12.215,
        "b": -0.2
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 10.98,
        "c": 12.215,
        "b": -0.2
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 10.98,
+       "c": 12.215,
+       "b": -0.2
+      },
+      "rematch0_third1_single1": {
+       "a0": 10.98,
+       "c": 12.215,
+       "b": -0.2
+      },
+      "rematch0_third1_single0": {
+       "a0": 10.98,
+       "c": 12.215,
+       "b": -0.2
+      },
+      "rematch0_third0_single1": {
+       "a0": 10.98,
+       "c": 12.215,
+       "b": -0.2
+      },
+      "rematch0_third0_single0": {
        "a0": 10.98,
        "c": 12.215,
        "b": -0.2
@@ -1495,22 +2195,42 @@
     "r": {
      "name": "Darren Bailey",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 12.54,
+       "c": 10.06,
+       "b": -1.0
+      },
+      "rematch0_third1_single0": {
        "a0": 6.27,
        "c": 5.03,
        "b": -0.5
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 12.54,
+       "c": 10.06,
+       "b": -1.0
+      },
+      "rematch0_third0_single0": {
        "a0": 6.27,
        "c": 5.03,
        "b": -0.5
@@ -1555,22 +2275,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -1580,22 +2320,42 @@
     "d": {
      "name": "Rob Sand",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1606,22 +2366,42 @@
     "r": {
      "name": "Zach Lahn",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1670,22 +2450,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -1695,22 +2495,42 @@
     "d": {
      "name": "Cindy Holscher",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1721,22 +2541,42 @@
     "r": {
      "name": "Ty Masterson",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1792,22 +2632,42 @@
     }
    ],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -1817,22 +2677,42 @@
     "d": {
      "name": "Hannah Pingree",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1843,22 +2723,42 @@
     "r": {
      "name": "Robert Charles",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -1907,22 +2807,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": 32.41,
+     "c": 26.29,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": 16.205,
      "c": 13.145,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": 32.41,
+     "c": 26.29,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": 16.205,
      "c": 13.145,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": 64.82,
+     "c": 52.58,
+     "b": -0.0
+    },
+    "rematch0_third1_single0": {
      "a0": 32.41,
      "c": 26.29,
      "b": -0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": 64.82,
+     "c": 52.58,
+     "b": -0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 32.41,
      "c": 26.29,
      "b": -0.0
@@ -1932,22 +2852,42 @@
     "d": {
      "name": "Wes Moore",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": 32.41,
+       "c": 26.29,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": 16.205,
        "c": 13.145,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": 32.41,
+       "c": 26.29,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": 16.205,
        "c": 13.145,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": 32.41,
+       "c": 26.29,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": 16.205,
        "c": 13.145,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 32.41,
+       "c": 26.29,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 16.205,
        "c": 13.145,
        "b": -0.0
@@ -1968,22 +2908,42 @@
     "r": {
      "name": "Dan Cox",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 32.41,
+       "c": 26.29,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": 16.205,
        "c": 13.145,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 32.41,
+       "c": 26.29,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 16.205,
        "c": 13.145,
        "b": -0.0
@@ -2042,22 +3002,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": 29.17,
+     "c": 26.53,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": 14.585,
      "c": 13.265,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": 29.17,
+     "c": 26.53,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": 14.585,
      "c": 13.265,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": 29.17,
+     "c": 26.53,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
      "a0": 14.585,
      "c": 13.265,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": 29.17,
+     "c": 26.53,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 14.585,
      "c": 13.265,
      "b": 0.0
@@ -2067,22 +3047,42 @@
     "d": {
      "name": "Maura Healey",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": 29.17,
+       "c": 26.53,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": 14.585,
        "c": 13.265,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": 29.17,
+       "c": 26.53,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": 14.585,
        "c": 13.265,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": 29.17,
+       "c": 26.53,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": 14.585,
        "c": 13.265,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 29.17,
+       "c": 26.53,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 14.585,
        "c": 13.265,
        "b": -0.0
@@ -2103,22 +3103,42 @@
     "r": {
      "name": "Michael Roger Minogue",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -2167,22 +3187,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.1,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.1,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.1,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.1,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.1,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.1,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.1,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.1,
      "c": 0.0,
      "b": 0.0
@@ -2192,22 +3232,42 @@
     "d": {
      "name": "Jocelyn Benson",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -2218,22 +3278,42 @@
     "r": {
      "name": "John James",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.1,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.1,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.1,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.1,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.1,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.1,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.1,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.1,
        "c": 0.0,
        "b": -0.0
@@ -2319,22 +3399,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 3.55,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 3.55,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 3.55,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 3.55,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 3.55,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 3.55,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 3.55,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 3.55,
      "c": 0.0,
      "b": 0.0
@@ -2344,22 +3444,42 @@
     "d": {
      "name": "Amy Klobuchar",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 3.55,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 3.55,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 3.55,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 3.55,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 3.55,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 3.55,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 3.55,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 3.55,
        "c": 0.0,
        "b": -0.0
@@ -2389,22 +3509,42 @@
     "r": {
      "name": "Lisa Demuth",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -2453,22 +3593,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": -23.24,
+     "c": -25.98,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": -11.62,
      "c": -12.99,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": -23.24,
+     "c": -25.98,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": -11.62,
      "c": -12.99,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": -23.24,
+     "c": -25.98,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
      "a0": -11.62,
      "c": -12.99,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": -23.24,
+     "c": -25.98,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": -11.62,
      "c": -12.99,
      "b": 0.0
@@ -2478,22 +3638,42 @@
     "d": {
      "name": "Lynne Walz",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -2504,22 +3684,42 @@
     "r": {
      "name": "Jim Pillen",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": -23.24,
+       "c": -25.98,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": -11.62,
        "c": -12.99,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": -23.24,
+       "c": -25.98,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": -11.62,
        "c": -12.99,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": -23.24,
+       "c": -25.98,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": -11.62,
        "c": -12.99,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": -23.24,
+       "c": -25.98,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": -11.62,
        "c": -12.99,
        "b": -0.0
@@ -2578,22 +3778,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": -1.51,
+     "c": -4.53,
+     "b": -1.0
+    },
+    "rematch1_third1_single0": {
      "a0": -0.755,
      "c": -2.265,
      "b": -0.5
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": -1.51,
+     "c": -4.53,
+     "b": -1.0
+    },
+    "rematch1_third0_single0": {
      "a0": -0.755,
      "c": -2.265,
      "b": -0.5
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": -1.51,
+     "c": -4.53,
+     "b": -1.0
+    },
+    "rematch0_third1_single0": {
      "a0": -0.755,
      "c": -2.265,
      "b": -0.5
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": -1.51,
+     "c": -4.53,
+     "b": -1.0
+    },
+    "rematch0_third0_single0": {
      "a0": -0.755,
      "c": -2.265,
      "b": -0.5
@@ -2603,22 +3823,42 @@
     "d": {
      "name": "Aaron Ford",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -2629,22 +3869,42 @@
     "r": {
      "name": "Joseph Lombardo",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": -1.51,
+       "c": -4.53,
+       "b": -1.0
+      },
+      "rematch1_third1_single0": {
        "a0": -0.755,
        "c": -2.265,
        "b": -0.5
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": -1.51,
+       "c": -4.53,
+       "b": -1.0
+      },
+      "rematch1_third0_single0": {
        "a0": -0.755,
        "c": -2.265,
        "b": -0.5
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": -1.51,
+       "c": -4.53,
+       "b": -1.0
+      },
+      "rematch0_third1_single0": {
        "a0": -0.755,
        "c": -2.265,
        "b": -0.5
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": -1.51,
+       "c": -4.53,
+       "b": -1.0
+      },
+      "rematch0_third0_single0": {
        "a0": -0.755,
        "c": -2.265,
        "b": -0.5
@@ -2703,22 +3963,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": -5.493,
+     "c": 1.853,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": -3.57,
      "c": 1.39,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": -5.493,
+     "c": 1.853,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": -3.57,
      "c": 1.39,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": -5.493,
+     "c": 1.853,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
      "a0": -3.57,
      "c": 1.39,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": -5.493,
+     "c": 1.853,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": -3.57,
      "c": 1.39,
      "b": 0.0
@@ -2728,22 +4008,42 @@
     "d": {
      "name": "Cinde Warmington",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -2754,22 +4054,42 @@
     "r": {
      "name": "Kelly Ayotte",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": -5.493,
+       "c": 1.853,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": -3.57,
        "c": 1.39,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": -5.493,
+       "c": 1.853,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": -3.57,
        "c": 1.39,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": -5.493,
+       "c": 1.853,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": -3.57,
        "c": 1.39,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": -5.493,
+       "c": 1.853,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": -3.57,
        "c": 1.39,
        "b": -0.0
@@ -2837,22 +4157,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": -1.625,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": -1.625,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": -1.625,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": -1.625,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": -1.625,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": -1.625,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": -1.625,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": -1.625,
      "c": 0.0,
      "b": 0.0
@@ -2862,22 +4202,42 @@
     "d": {
      "name": "Deb Haaland",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": -1.625,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": -1.625,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": -1.625,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": -1.625,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": -1.625,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": -1.625,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": -1.625,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": -1.625,
        "c": 0.0,
        "b": -0.0
@@ -2898,22 +4258,42 @@
     "r": {
      "name": "Greggory Hull",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -2962,22 +4342,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": 6.39,
+     "c": 16.2,
+     "b": -1.0
+    },
+    "rematch1_third1_single0": {
      "a0": 3.195,
      "c": 8.1,
      "b": -0.5
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": 6.39,
+     "c": 16.2,
+     "b": -1.0
+    },
+    "rematch1_third0_single0": {
      "a0": 3.195,
      "c": 8.1,
      "b": -0.5
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": 6.39,
+     "c": 16.2,
+     "b": -1.0
+    },
+    "rematch0_third1_single0": {
      "a0": 3.195,
      "c": 8.1,
      "b": -0.5
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": 6.39,
+     "c": 16.2,
+     "b": -1.0
+    },
+    "rematch0_third0_single0": {
      "a0": 3.195,
      "c": 8.1,
      "b": -0.5
@@ -2987,22 +4387,42 @@
     "d": {
      "name": "Kathy Hochul",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": 6.39,
+       "c": 16.2,
+       "b": -1.0
+      },
+      "rematch1_third1_single0": {
        "a0": 3.195,
        "c": 8.1,
        "b": -0.5
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": 6.39,
+       "c": 16.2,
+       "b": -1.0
+      },
+      "rematch1_third0_single0": {
        "a0": 3.195,
        "c": 8.1,
        "b": -0.5
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": 6.39,
+       "c": 16.2,
+       "b": -1.0
+      },
+      "rematch0_third1_single0": {
        "a0": 3.195,
        "c": 8.1,
        "b": -0.5
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 6.39,
+       "c": 16.2,
+       "b": -1.0
+      },
+      "rematch0_third0_single0": {
        "a0": 3.195,
        "c": 8.1,
        "b": -0.5
@@ -3023,22 +4443,42 @@
     "r": {
      "name": "Bruce Blakeman",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3087,22 +4527,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -3112,22 +4572,42 @@
     "d": {
      "name": "Amy Acton",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3138,22 +4618,42 @@
     "r": {
      "name": "Vivek Ramaswamy",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3202,22 +4702,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -3227,22 +4747,42 @@
     "d": {
      "name": "Cyndi Munson",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3253,22 +4793,42 @@
     "r": {
      "name": "Mike Mazzei",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3303,22 +4863,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch1_third0_single1": {
+     "a0": 3.42,
+     "c": 9.16,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": 1.71,
      "c": 4.58,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 6.84,
+     "c": 18.32,
+     "b": -0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 3.42,
      "c": 9.16,
      "b": -0.0
@@ -3328,22 +4908,42 @@
     "d": {
      "name": "Tina Kotek",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch1_third0_single1": {
+       "a0": 3.42,
+       "c": 9.16,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": 1.71,
        "c": 4.58,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 3.42,
+       "c": 9.16,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 1.71,
        "c": 4.58,
        "b": -0.0
@@ -3364,22 +4964,42 @@
     "r": {
      "name": "Christine Drazan",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 3.42,
+       "c": 9.16,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 1.71,
        "c": 4.58,
        "b": -0.0
@@ -3438,22 +5058,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
+     "a0": 14.78,
+     "c": -5.76,
+     "b": 0.0
+    },
+    "rematch1_third1_single0": {
      "a0": 7.39,
      "c": -2.88,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third0_single1": {
+     "a0": 14.78,
+     "c": -5.76,
+     "b": 0.0
+    },
+    "rematch1_third0_single0": {
      "a0": 7.39,
      "c": -2.88,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch0_third1_single1": {
+     "a0": 14.78,
+     "c": -5.76,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
      "a0": 7.39,
      "c": -2.88,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch0_third0_single1": {
+     "a0": 14.78,
+     "c": -5.76,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 7.39,
      "c": -2.88,
      "b": 0.0
@@ -3463,22 +5103,42 @@
     "d": {
      "name": "Josh Shapiro",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
+       "a0": 14.78,
+       "c": -5.76,
+       "b": -0.0
+      },
+      "rematch1_third1_single0": {
        "a0": 7.39,
        "c": -2.88,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third0_single1": {
+       "a0": 14.78,
+       "c": -5.76,
+       "b": -0.0
+      },
+      "rematch1_third0_single0": {
        "a0": 7.39,
        "c": -2.88,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch0_third1_single1": {
+       "a0": 14.78,
+       "c": -5.76,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
        "a0": 7.39,
        "c": -2.88,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch0_third0_single1": {
+       "a0": 14.78,
+       "c": -5.76,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 7.39,
        "c": -2.88,
        "b": -0.0
@@ -3499,22 +5159,42 @@
     "r": {
      "name": "Stacy Garrity",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3570,22 +5250,42 @@
     }
    ],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -3595,22 +5295,42 @@
     "d": {
      "name": "Helena Buonanno Foulkes",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3621,22 +5341,42 @@
     "r": {
      "name": "Aaron Guckian",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3685,22 +5425,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -3710,22 +5470,42 @@
     "d": {
      "name": "Jermaine Johnson",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3736,22 +5516,42 @@
     "r": {
      "name": "Alan Wilson",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3800,22 +5600,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.15,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.15,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.15,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.15,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.15,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.15,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.15,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.15,
      "c": 0.0,
      "b": 0.0
@@ -3825,22 +5645,42 @@
     "d": {
      "name": "Dan Ahlers",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.15,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.15,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.15,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.15,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.15,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.15,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.15,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.15,
        "c": 0.0,
        "b": -0.0
@@ -3861,22 +5701,42 @@
     "r": {
      "name": "Larry Rhoden",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3932,22 +5792,42 @@
     }
    ],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 1.715,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 1.715,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 1.715,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 1.715,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 1.715,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 1.715,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 1.715,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 1.715,
      "c": 0.0,
      "b": 0.0
@@ -3957,22 +5837,42 @@
     "d": {
      "name": "Jerri Green",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -3983,22 +5883,42 @@
     "r": {
      "name": "Marsha Blackburn",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 1.715,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 1.715,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 1.715,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 1.715,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 1.715,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 1.715,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 1.715,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 1.715,
        "c": 0.0,
        "b": -0.0
@@ -4066,22 +5986,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": -13.514,
      "c": -11.906,
      "b": 0.8
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": -13.514,
      "c": -11.906,
      "b": 0.8
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": -13.514,
      "c": -11.906,
      "b": 0.8
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": -13.514,
+     "c": -11.906,
+     "b": 0.8
+    },
+    "rematch0_third1_single1": {
+     "a0": -13.514,
+     "c": -11.906,
+     "b": 0.8
+    },
+    "rematch0_third1_single0": {
+     "a0": -13.514,
+     "c": -11.906,
+     "b": 0.8
+    },
+    "rematch0_third0_single1": {
+     "a0": -13.514,
+     "c": -11.906,
+     "b": 0.8
+    },
+    "rematch0_third0_single0": {
      "a0": -13.514,
      "c": -11.906,
      "b": 0.8
@@ -4091,22 +6031,42 @@
     "d": {
      "name": "Gina Hinojosa",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -4117,22 +6077,42 @@
     "r": {
      "name": "Greg Abbott",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": -13.514,
        "c": -11.906,
        "b": 0.8
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": -13.514,
        "c": -11.906,
        "b": 0.8
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": -13.514,
        "c": -11.906,
        "b": 0.8
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": -13.514,
+       "c": -11.906,
+       "b": 0.8
+      },
+      "rematch0_third1_single1": {
+       "a0": -13.514,
+       "c": -11.906,
+       "b": 0.8
+      },
+      "rematch0_third1_single0": {
+       "a0": -13.514,
+       "c": -11.906,
+       "b": 0.8
+      },
+      "rematch0_third0_single1": {
+       "a0": -13.514,
+       "c": -11.906,
+       "b": 0.8
+      },
+      "rematch0_third0_single0": {
        "a0": -13.514,
        "c": -11.906,
        "b": 0.8
@@ -4209,22 +6189,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": -48.134,
      "c": 31.384,
      "b": 1.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": -48.134,
      "c": 31.384,
      "b": 1.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": -48.134,
      "c": 31.384,
      "b": 1.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": -48.134,
+     "c": 31.384,
+     "b": 1.0
+    },
+    "rematch0_third1_single1": {
+     "a0": -48.134,
+     "c": 31.384,
+     "b": 1.0
+    },
+    "rematch0_third1_single0": {
+     "a0": -48.134,
+     "c": 31.384,
+     "b": 1.0
+    },
+    "rematch0_third0_single1": {
+     "a0": -48.134,
+     "c": 31.384,
+     "b": 1.0
+    },
+    "rematch0_third0_single0": {
      "a0": -48.134,
      "c": 31.384,
      "b": 1.0
@@ -4234,22 +6234,42 @@
     "d": {
      "name": "Amanda Janoo",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -4260,22 +6280,42 @@
     "r": {
      "name": "Phil Scott",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": -48.134,
        "c": 31.384,
        "b": 1.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": -48.134,
        "c": 31.384,
        "b": 1.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": -48.134,
        "c": 31.384,
        "b": 1.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": -48.134,
+       "c": 31.384,
+       "b": 1.0
+      },
+      "rematch0_third1_single1": {
+       "a0": -48.134,
+       "c": 31.384,
+       "b": 1.0
+      },
+      "rematch0_third1_single0": {
+       "a0": -48.134,
+       "c": 31.384,
+       "b": 1.0
+      },
+      "rematch0_third0_single1": {
+       "a0": -48.134,
+       "c": 31.384,
+       "b": 1.0
+      },
+      "rematch0_third0_single0": {
        "a0": -48.134,
        "c": 31.384,
        "b": 1.0
@@ -4370,22 +6410,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": -0.48,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": -0.48,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": -0.48,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": -0.48,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": -0.48,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": -0.48,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": -0.48,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": -0.48,
      "c": 0.0,
      "b": 0.0
@@ -4395,22 +6455,42 @@
     "d": {
      "name": "David Crowley",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -4421,22 +6501,42 @@
     "r": {
      "name": "Tom Tiffany",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": -0.48,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": -0.48,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": -0.48,
        "c": 0.0,
        "b": -0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": -0.48,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": -0.48,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": -0.48,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": -0.48,
+       "c": 0.0,
+       "b": -0.0
+      },
+      "rematch0_third0_single0": {
        "a0": -0.48,
        "c": 0.0,
        "b": -0.0
@@ -4513,22 +6613,42 @@
    "independent_race": false,
    "other_candidates": [],
    "war": {
-    "rematch1_third1": {
+    "rematch1_third1_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch1_third0": {
+    "rematch1_third1_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third1": {
+    "rematch1_third0_single1": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
     },
-    "rematch0_third0": {
+    "rematch1_third0_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third1_single0": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single1": {
+     "a0": 0.0,
+     "c": 0.0,
+     "b": 0.0
+    },
+    "rematch0_third0_single0": {
      "a0": 0.0,
      "c": 0.0,
      "b": 0.0
@@ -4538,22 +6658,42 @@
     "d": {
      "name": "Kenneth Casner",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
@@ -4564,22 +6704,42 @@
     "r": {
      "name": "Eric Barlow",
      "variants": {
-      "rematch1_third1": {
+      "rematch1_third1_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch1_third0": {
+      "rematch1_third1_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third1": {
+      "rematch1_third0_single1": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
       },
-      "rematch0_third0": {
+      "rematch1_third0_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third1_single0": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single1": {
+       "a0": 0.0,
+       "c": 0.0,
+       "b": 0.0
+      },
+      "rematch0_third0_single0": {
        "a0": 0.0,
        "c": 0.0,
        "b": 0.0
