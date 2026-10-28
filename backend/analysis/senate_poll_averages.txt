@@ -10,9 +10,10 @@ OH: RCP average, Rasmussen removed; 9 poll(s); anti-R 48.22 / R 44.33 -> margin 
     - Bowling Green/YouGov 9/29 - 10/9
     - CNN 9/29 - 10/5
     - NY Times/Siena 9/22 - 10/1
-TX: recomputed: newer polls than RCP's average; 14 poll(s); anti-R 48.47 / R 45.66 -> margin +2.81, blend margin +2.99 (RCP published +1.8)
+TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.57 / R 45.61 -> margin +2.96, blend margin +3.14 (RCP published +1.8)
     newer than RCP's average (built 2026-10-27): YouGov Blue for 254 Labs ending 2026-10-26 released 2026-10-28
     - YouGov Blue for 254 Labs, ending 2026-10-26 (full ballot, 51/43)
+    - Univision/YouGov for N+ Univision, ending 2026-10-21 (full ballot, 50/45)
     - VoteHub/Verasight for VoteHub, ending 2026-10-20 (full ballot, 47.6/45.2)
     - Fox News (Beacon Research/Shaw & Co.) for Fox News, ending 2026-10-19 (full ballot, 49/49)
     - Emerson College for Nexstar Media, ending 2026-10-19 (full ballot, 48/46)

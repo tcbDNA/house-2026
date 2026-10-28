@@ -6,6 +6,9 @@ Rules (user decisions, Oct 2026):
     fabricated (sources/excluded_pollsters/).
   * Heritage Action's Cor Strategies poll in Texas is not counted (user
     decision Oct 28; NOT_COUNTED, LEAVE_OUT_NOT_COUNTED = False counts it).
+  * Recomputed averages take one poll per pollster; polls sponsored by others
+    are the pollster's, but YouGov Blue counts separately from YouGov (user
+    decision Oct 28; YOUGOV_BLUE_OWN_POLLSTER).
   * Start from RealClearPolling's average, with Rasmussen Reports removed:
     the remaining polls RCP averaged, re-averaged (ActiVote and Wedgewood are
     never in an RCP average). A poll RCP lists but has not yet averaged can
@@ -62,6 +65,9 @@ UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
 # LEAVE_OUT_NOT_COUNTED = False counts them like any other poll.
 LEAVE_OUT_NOT_COUNTED = True
 NOT_COUNTED = {("TX", "Cor Strategies"): "Heritage Action; not counted, user decision Oct 28"}
+# YouGov Blue counts as its own pollster rather than as YouGov (user decision,
+# Oct 28). False: one key for every YouGov poll.
+YOUGOV_BLUE_OWN_POLLSTER = True
 # Polls RCP lists but has not yet put in its average, counted in the RCP
 # average ahead of RCP (user decision, Oct 27: RCP will add it). Keyed by
 # (state, pollster and dates as RCP's feed lists them). False: RCP's
@@ -113,8 +119,11 @@ def d(s: str | None) -> date | None:
 
 
 def pollster_key(name: str) -> str:
-    """One key per polling firm (sponsored YouGov polls are YouGov's)."""
+    """One key per polling firm (sponsored YouGov polls are YouGov's; YouGov
+    Blue is its own if YOUGOV_BLUE_OWN_POLLSTER)."""
     n = re.sub(r"\(.*?\)", "", html.unescape(name)).lower().replace("*", "").strip()
+    if YOUGOV_BLUE_OWN_POLLSTER and n.startswith("yougov blue"):
+        return n
     return "yougov" if "yougov" in n else n
 
 
