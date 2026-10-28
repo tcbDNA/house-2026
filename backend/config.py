@@ -81,22 +81,23 @@ class Settings:
     # Polls blend as in the Senate (w with at least governor_poll_full_n
     # polls, scaled down below; polls only for independents). Governor races
     # get governor_race_sigma_extra more race-level error, in quadrature.
-    # Defaults from the 2018/2022 calibration (analysis/governor_backtest.txt,
-    # user decisions Oct 28): incumbency fixed at 6, the bottom of the fitted
-    # 95% range (the free fit, 9.3, absorbs personal vote: robust and
-    # full-weight-record refits give 6.3-8.4); slope 0.640 (SE 0.057) and w
-    # 0.788 (SE 0.056) refit with it held there; race error from the blended
-    # projection's error (SD 4.14 -> extra 1.5) and the model's alone (SD 10.1 -> 9.4).
-    governor_partisan_slope: float = 0.64
-    governor_incumbency: float = 6.0
+    # Defaults from the 2018/2022 calibration with a single governor record at
+    # full weight (analysis/governor_backtest.txt, user decision Oct 28):
+    # slope 0.677 (SE 0.057), incumbency 6.55 (SE 1.53), w 0.788 (SE 0.058);
+    # race error from the blended projection's error (SD 4.20 -> extra 1.6)
+    # and the model's alone (SD 9.79 -> 9.0). The free fit with half-weighted
+    # single records (incumbency 9.3) was rejected: about 3 points came from
+    # four blue-state Republican landslides and about 2.7 from the half weight.
+    governor_partisan_slope: float = 0.68
+    governor_incumbency: float = 6.55
     governor_poll_blend: bool = True
     governor_poll_weight: float = 0.79
     governor_poll_full_n: float = 3.0
-    governor_race_sigma_extra: float = 1.5
+    governor_race_sigma_extra: float = 1.6
     # Race error scaled by the poll weight (user decision, Oct 28): extra² =
     # f × governor_race_sigma_extra² + (1 − f) × governor_race_sigma_extra_no_polls²,
     # f = the race's poll weight / governor_poll_weight (1 on polls only).
-    governor_race_sigma_extra_no_polls: float = 9.4
+    governor_race_sigma_extra_no_polls: float = 9.0
     # Governor WAR rules (user decisions, Oct 28). Rematch: a challenger's
     # governor record from a race against the sitting incumbent is dropped
     # (the incumbent keeps it, as in the House model). Third candidate:
@@ -104,8 +105,18 @@ class Settings:
     # are left out (they measure that candidate as much as the nominees).
     governor_war_drop_rematch: bool = True
     # A candidate whose only governor record is one race gets full weight on it
-    # instead of 0.5 (a calibration test; user decision Oct 28).
-    governor_war_single_record_full: bool = False
+    # instead of 0.5 (governor WAR only; user decision Oct 28: it fits the
+    # 2018/2022 races better, MAE 7.16 vs 7.47). House and Senate unchanged.
+    governor_war_single_record_full: bool = True
+    # Parameter uncertainty (user decision, Oct 28): each simulation draws one
+    # slope and one incumbency value (the calibration's SEs and correlation),
+    # shared by every governor race; a race moves by its sensitivity to each
+    # ((1 − w) × its fundamentals for the slope, (1 − w) × its incumbency
+    # terms for incumbency).
+    governor_param_draws: bool = True
+    governor_slope_se: float = 0.057
+    governor_incumbency_se: float = 1.53
+    governor_slope_incumbency_corr: float = -0.22
     # Model–poll disagreement (user decision, Oct 28): a race whose polls and
     # model disagree gets governor_gap_sigma_factor × |model − polls| more
     # race-level error, in quadrature (model and polls at the default

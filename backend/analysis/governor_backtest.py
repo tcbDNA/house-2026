@@ -289,6 +289,11 @@ def main_cli():
 LANDSLIDES = {(2018, "MA"), (2018, "MD"), (2018, "VT"), (2022, "VT"), (2018, "NH"), (2022, "NH")}  # Baker, Hogan, Scott, Sununu
 
 
+def sbt_region(state: str) -> str:
+    from probability import STATE_TO_REGION
+    return STATE_TO_REGION.get(state, "")
+
+
 def huber_wls(X: np.ndarray, y: np.ndarray, iters: int = 50) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Huber M-estimate (k = 1.345 × MAD scale) by iteratively reweighted least
     squares; returns (beta, approximate SE, weights)."""
@@ -310,7 +315,8 @@ def huber_wls(X: np.ndarray, y: np.ndarray, iters: int = 50) -> tuple[np.ndarray
     return beta, np.sqrt(np.diag(s2 * np.linalg.inv(XtWX))), w
 
 
-def fit_variant(rows_all: list[dict], method: str = "ols", drop: set = frozenset(), fixed_inc: float | None = None) -> dict:
+def fit_variant(rows_all: list[dict], method: str = "ols", drop: set = frozenset(), fixed_inc: float | None = None,
+                northeast: bool = False) -> dict:
     """Fixed-point fit (WAR records rebuilt at the slope), then w, the blended
     and model-only error, for one variant."""
     rows = [r for r in rows_all if (r["year"], r["state"]) not in drop]
@@ -319,26 +325,38 @@ def fit_variant(rows_all: list[dict], method: str = "ols", drop: set = frozenset
     a0 = np.array([r["a0"] for r in rows]); c = np.array([r["c"] for r in rows]); b = np.array([r["b"] for r in rows])
     act = np.array([r["actual"] for r in rows]); Z = inc + b
     D = np.column_stack([(yr == 2018).astype(float), (yr == 2022).astype(float)])
+    ne = np.array([sbt_region(r["state"]) == "NE" for r in rows], dtype=float)
+    if northeast:   # a Northeast indicator alongside the year intercepts
+        D = np.column_stack([D, ne])
+    k0 = D.shape[1]
     est = (lambda X, y: huber_wls(X, y)[:2]) if method == "huber" else (lambda X, y: ols(X, y)[:2])
     s, fits = 1.0, 0
     for fits in range(1, 101):
         if fixed_inc is None:
-            beta, se = est(np.column_stack([D, F, Z]), act - (a0 - s * c))
-            new_s, binc, binc_se = beta[2], beta[3], se[3]
+            X = np.column_stack([D, F, Z])
+            beta, se = est(X, act - (a0 - s * c))
+            new_s, binc, binc_se = beta[k0], beta[k0 + 1], se[k0 + 1]
         else:
-            beta, se = est(np.column_stack([D, F]), act - (a0 - s * c) - fixed_inc * Z)
-            new_s, binc, binc_se = beta[2], fixed_inc, 0.0
+            X = np.column_stack([D, F])
+            beta, se = est(X, act - (a0 - s * c) - fixed_inc * Z)
+            new_s, binc, binc_se = beta[k0], fixed_inc, 0.0
         if abs(new_s - s) < 1e-6:
             s = float(new_s)
             break
         s = float(new_s)
-    slope_se = se[2]
+    slope_se = se[k0]
     model = s * F + binc * Z + a0 - s * c
-    res = act - model - D @ beta[:2]
-    sd_model = float(np.sqrt(res @ res / (len(res) - (4 if fixed_inc is None else 3))))
+    res = act - model - D @ beta[:k0]
+    npar = X.shape[1]
+    sd_model = float(np.sqrt(res @ res / (len(res) - npar)))
+    cov = np.linalg.inv(X.T @ X) * float(res @ res) / (len(res) - npar)
+    corr = float(cov[k0, k0 + 1] / np.sqrt(cov[k0, k0] * cov[k0 + 1, k0 + 1])) if fixed_inc is None else 0.0
+    aic = len(res) * np.log(float(res @ res) / len(res)) + 2 * npar
+    ne_coef = (float(beta[2]), float(se[2])) if northeast else None
     has = np.array([r["poll"] is not None for r in rows])
     poll = np.array([r["poll"] if r["poll"] is not None else np.nan for r in rows])
-    bw, sew = est(np.column_stack([D[has], poll[has] - model[has]]), act[has] - model[has])
+    Dy = D[:, :2]   # the poll-weight fit keeps year intercepts only
+    bw, sew = est(np.column_stack([Dy[has], poll[has] - model[has]]), act[has] - model[has])
     w = float(bw[2])
     rb = act[has] - (model[has] + w * (poll[has] - model[has]))
     for y in YEARS:
@@ -346,6 +364,7 @@ def fit_variant(rows_all: list[dict], method: str = "ols", drop: set = frozenset
     sd_blend = float(np.sqrt(rb @ rb / (has.sum() - 3)))
     senate_race = float(np.sqrt(1.2 ** 2 + 1.8 ** 2 + 3.2 ** 2))
     return {"n": len(rows), "slope": s, "slope_se": float(slope_se), "inc": float(binc), "inc_se": float(binc_se),
+            "slope_inc_corr": corr, "aic": float(aic), "northeast": ne_coef,
             "w": w, "w_se": float(sew[2]), "sd_model": sd_model, "mae_model": float(np.mean(np.abs(res))),
             "sd_blend": sd_blend, "fits": fits,
             "extra_full": float(np.sqrt(max(0.0, sd_blend ** 2 - senate_race ** 2))),
@@ -364,13 +383,16 @@ def variants_cli():
         "robust: Baker, Hogan, Scott, Sununu landslides dropped (6 races)": fit_variant(rows[0], drop=LANDSLIDES),
         "single governor record at full weight (OLS)": fit_variant(rows[1]),
         "incumbency fixed at 6 (OLS)": fit_variant(rows[0], fixed_inc=6.0),
+        "single record full weight + Northeast indicator (OLS)": fit_variant(rows[1], northeast=True),
     }
     print(f"\n== Refit variants\n{'variant':66} {'n':>3} {'incumbency':>13} {'slope':>13} {'w':>13} "
-          f"{'model SD':>8} {'MAE':>5} {'blend SD':>8}")
+          f"{'model SD':>8} {'MAE':>5} {'blend SD':>8} {'AIC':>7} {'corr(s,inc)':>11}")
     for k, v in out.items():
         inc = f"{v['inc']:5.2f} ({v['inc_se']:.2f})" if v["inc_se"] else f"{v['inc']:5.2f} (fixed)"
         print(f"{k:66} {v['n']:3d} {inc:>13} {v['slope']:6.3f} ({v['slope_se']:.3f}) {v['w']:6.3f} ({v['w_se']:.3f}) "
-              f"{v['sd_model']:8.2f} {v['mae_model']:5.2f} {v['sd_blend']:8.2f}")
+              f"{v['sd_model']:8.2f} {v['mae_model']:5.2f} {v['sd_blend']:8.2f} {v['aic']:7.1f} {v['slope_inc_corr']:11.2f}")
+    ne = out["single record full weight + Northeast indicator (OLS)"]["northeast"]
+    print(f"Northeast indicator (CT ME MA NH RI VT NJ NY PA), single records at full weight: {ne[0]:+.2f} (SE {ne[1]:.2f})")
     json.dump(out, open(BACKEND / "analysis" / "governor_backtest_variants.json", "w"), indent=1)
 
 

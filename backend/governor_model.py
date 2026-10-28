@@ -107,10 +107,14 @@ def candidate_effects(bundle: GovernorBundle, settings: Settings) -> tuple[np.nd
     """(WAR, incumbency), D-positive. WAR uses the rule variant the settings
     pick (rematch / third-candidate records; data/governor_data.py)."""
     inc = settings.governor_incumbency
-    a0, c, b = bundle.war[f"rematch{int(settings.governor_war_drop_rematch)}"
-                          f"_third{int(settings.governor_war_exclude_third_candidate)}"
-                          f"_single{int(settings.governor_war_single_record_full)}"]
+    a0, c, b = _war_terms(bundle, settings)
     return a0 - settings.governor_partisan_slope * c + inc * b, inc * bundle.inc_sign
+
+
+def _war_terms(bundle: GovernorBundle, settings: Settings) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    return bundle.war[f"rematch{int(settings.governor_war_drop_rematch)}"
+                      f"_third{int(settings.governor_war_exclude_third_candidate)}"
+                      f"_single{int(settings.governor_war_single_record_full)}"]
 
 
 def _fundamentals(bundle: GovernorBundle, environment: float, sliders: dict, trend_discount: float,
@@ -167,6 +171,14 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
     model = fund + war + inc
     w = poll_weights(bundle, settings)
     default_model = _default_model(bundle, settings, frame)
+    # Sensitivity of each projection to the slope and to incumbency (for the
+    # simulation's shared parameter draws): projection = model + w × (polls −
+    # default model), model = slope × (bracket − c) + a0 + incumbency × (inc + b).
+    a0, c, b = _war_terms(bundle, settings)
+    bracket = fund / settings.governor_partisan_slope if settings.governor_partisan_slope else fund * 0.0
+    bracket_def = senate._default_projections(bundle.fund, settings, frame)
+    d_slope = (bracket - c) - w * (bracket_def - c)
+    d_inc = (1 - w) * (bundle.inc_sign + b)
     proj = model + np.where(w > 0, w * (bundle.poll_margin - default_model), 0.0)
     # Model − polls at the default scenario (scenario-invariant), for the
     # disagreement error term; none on polls-only races.
@@ -205,6 +217,7 @@ def project(bundle: GovernorBundle, environment: float, sliders: dict | None = N
             "poll_weight": round(float(w[i]), 3),
             "model_poll_gap": None if np.isnan(gap[i]) else round(float(gap[i]), 2),
             "poll_share": round(float(poll_share[i]), 3),
+            "d_slope": round(float(d_slope[i]), 3), "d_incumbency": round(float(d_inc[i]), 3),
             "independent_candidate": bool(bundle.independent[i]),
             "projection": round(p, 2) + 0.0,
             "is_tossup": abs(p) <= TOSSUP_THRESHOLD,

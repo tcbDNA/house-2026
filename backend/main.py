@@ -232,7 +232,10 @@ def governors_project(req: ProjectRequest):
     return add_governor_win_probabilities(result, senate_rows, _terms("senate", settings, req.frame),
                                           _terms("governor", settings, req.frame),
                                           settings.governor_race_sigma_extra, settings.governor_gap_sigma_factor,
-                                          settings.governor_race_sigma_extra_no_polls)
+                                          settings.governor_race_sigma_extra_no_polls,
+                                          (settings.governor_slope_se, settings.governor_incumbency_se,
+                                           settings.governor_slope_incumbency_corr)
+                                          if settings.governor_param_draws else None)
 
 
 # ──────────────── County endpoints ────────────────

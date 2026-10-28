@@ -429,7 +429,8 @@ def governor_race_sigma(rows: list[dict], extra: float, gap_factor: float = 0.0,
 
 def governor_sims(rows: list[dict], senate_rows: list[dict], senate_terms: ErrorTerms | None,
                   terms: ErrorTerms | None, extra: float, gap_factor: float = 0.0,
-                  extra_no_polls: float | None = None) -> np.ndarray:
+                  extra_no_polls: float | None = None,
+                  param_se: tuple[float, float, float] | None = None) -> np.ndarray:
     """(N_SIMS, n_rows) simulated governor margins, sharing the Senate's draws."""
     shared = senate_draws(senate_rows, senate_terms)
     rng = np.random.default_rng(GOV_SEED)
@@ -452,12 +453,23 @@ def governor_sims(rows: list[dict], senate_rows: list[dict], senate_terms: Error
         if terms.loadings is None or terms.loadings.shape[0] != n:
             raise ValueError("group-error loadings don't match the governor rows")
         out += shared.dev @ terms.loadings.T
+    # Parameter uncertainty: one slope and one incumbency draw per simulation,
+    # shared by every race (drawn after the other governor draws, so turning it
+    # on or off leaves them unchanged).
+    z = rng.standard_normal((N_SIMS, 2))
+    if param_se is not None:
+        se_s, se_b, rho = param_se
+        ds = se_s * z[:, 0]
+        db = se_b * (rho * z[:, 0] + np.sqrt(1 - rho ** 2) * z[:, 1])
+        out += ds[:, None] * np.array([r.get("d_slope", 0.0) for r in rows])[None, :]
+        out += db[:, None] * np.array([r.get("d_incumbency", 0.0) for r in rows])[None, :]
     return out
 
 
 def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate_terms: ErrorTerms | None,
                                    terms: ErrorTerms | None, extra: float, gap_factor: float = 0.0,
-                                   extra_no_polls: float | None = None) -> dict:
+                                   extra_no_polls: float | None = None,
+                                   param_se: tuple[float, float, float] | None = None) -> dict:
     """Mutate `result` (governor_model.project) in place: `p_d` per race
     (P(the anti-R candidate wins)) and the governorships after the election
     — races up plus the governorships not up, which keep their party.
@@ -465,7 +477,7 @@ def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate
     rows = result.get("races") or []
     if not rows:
         return result
-    sims = governor_sims(rows, senate_rows, senate_terms, terms, extra, gap_factor, extra_no_polls)
+    sims = governor_sims(rows, senate_rows, senate_terms, terms, extra, gap_factor, extra_no_polls, param_se)
     wins = sims > 0
     for r, p in zip(rows, wins.mean(axis=0)):
         r["p_d"] = round(float(p), 3)
@@ -493,5 +505,7 @@ def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate
                                  f"{extra if extra_no_polls is None else extra_no_polls} without polls, + "
                                  f"{gap_factor} × |model − polls| where polls are sparse (in quadrature)"),
                         "state": f"{SIGMA_STATE}, shared with the state's Senate race where there is one",
-                        "shared_with_senate": "national, region, state, group, composition and level draws"}
+                        "shared_with_senate": "national, region, state, group, composition and level draws",
+                        "parameter_draws": ({"slope_se": param_se[0], "incumbency_se": param_se[1], "corr": param_se[2]}
+                                            if param_se else None)}
     return result

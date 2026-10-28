@@ -1,6 +1,10 @@
 2026 governors under the 2018/2022 refits (analysis/governor_backtest.txt, == Refit variants).
 Each run: that refit's slope, incumbency, w, race error at full poll weight and without polls; gap term 0.5 where fewer than 3 effective polls.
-Adopted defaults (user decision Oct 28): incumbency fixed at 6, slope 0.64, w 0.79, race error 1.5 / 9.4, gap option (c).
+Adopted defaults (user decision Oct 28, second): the single-record-full-weight fit: slope 0.68, incumbency 6.55, w 0.79,
+race error 1.6 / 9.0, gap option (c), shared per-simulation draws of slope (SE 0.057) and incumbency (SE 1.53, corr -0.22).
+Current defaults: analysis/governor_projection.txt. With vs without the parameter draws: SD of D governorships 2.644 vs 2.638,
+80% range 23-30 both, P(D majority) 0.706 both. Northeast indicator (single records at full weight): -3.20 (SE 3.15),
+AIC 333.6 vs 332.5 without it - not adopted.
 
 baseline governor_partisan_slope=0.598 governor_incumbency=9.29 governor_poll_weight=0.786 governor_race_sigma_extra=1.50 governor_race_sigma_extra_no_polls=9.17 governor_gap_sigma_factor=0.5
 huber governor_partisan_slope=0.690 governor_incumbency=8.41 governor_poll_weight=0.777 governor_race_sigma_extra=1.27 governor_race_sigma_extra_no_polls=9.20 governor_gap_sigma_factor=0.5
