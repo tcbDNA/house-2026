@@ -349,3 +349,134 @@ def add_senate_win_probabilities(result: dict, holdover_d: int, holdover_r: int,
     summary["seat_distribution"]["exclusion_alternatives"] = alternatives
     summary["error_model"] = error_model_summary(terms, senate=True)
     return result
+
+
+# ──────────────── Governors ────────────────
+# Governor races share the Senate's simulations: the same national, region,
+# group, composition and level draws, and — where the state also has a
+# Senate race — the state part of that seat's error (the Senate folds the
+# state's σ into each seat's idiosyncratic draw, so the governor race takes
+# the state component's conditional draw given it: covariance σ_state²).
+# The Senate's draws are replayed from its generator in the same order, so
+# House and Senate results are untouched. Governor-only draws (the state
+# component's residual, the race error) come from a separate generator.
+GOV_SEED = SEED + 1
+
+
+@dataclass
+class SenateDraws:
+    nat: np.ndarray                 # (N, 1)
+    region: dict[str, np.ndarray]   # region code -> (N,)
+    seat: dict[str, tuple[np.ndarray, float]]   # state -> (seat draw (N,), its σ)
+    dev: np.ndarray                 # (N, G) demeaned group deviations
+    common: np.ndarray              # (N, 1) composition + level
+
+
+def _senate_race_sigma(rows: list[dict]) -> np.ndarray:
+    """Per-seat idiosyncratic σ in senate_sims."""
+    open_seat = np.array([not r.get("incumbency_adj") for r in rows], dtype=float)
+    sigma_seat = float(np.sqrt(SIGMA_STATE ** 2 + SIGMA_DISTRICT ** 2))
+    poll_override = np.array([bool(r.get("independent_candidate")) and (r.get("poll_weight") or 0) > 0
+                              for r in rows], dtype=float)
+    return np.sqrt(_race_sigma(sigma_seat, open_seat, np.zeros(len(rows))) ** 2
+                   + poll_override * SIGMA_POLL_OVERRIDE_EXTRA ** 2)
+
+
+def senate_draws(rows: list[dict], terms: ErrorTerms | None = None) -> SenateDraws:
+    """Replay senate_sims' draws for Senate rows `rows` (same calls, same
+    order; checked against senate_sims in analysis/governor_checks.py)."""
+    rng = np.random.default_rng(SEED)
+    nat = rng.normal(0.0, SIGMA_NATIONAL, size=(N_SIMS, 1))
+    states = [r["state"] for r in rows]
+    regions = [STATE_TO_REGION.get(s, "OTHER") for s in states]
+    us_list, ur_list = sorted(set(states)), sorted(set(regions))
+    rng.normal(0.0, 0.0, size=(N_SIMS, len(us_list)))          # the Senate's (zero) state draws
+    region_draws = rng.normal(0.0, SIGMA_REGION, size=(N_SIMS, len(ur_list)))
+    sigma = _senate_race_sigma(rows)
+    seat_draws = rng.standard_normal(size=(N_SIMS, len(rows))) * sigma[None, :]
+    terms = terms or ErrorTerms()
+    G = len(terms.groups)
+    dev = rng.standard_normal((N_SIMS, G)) * terms.sigma[None, :]
+    comp = rng.standard_normal((N_SIMS, 1)) * terms.sigma_composition
+    level = rng.standard_normal((N_SIMS, 1)) * terms.sigma_level
+    if G:
+        dev = dev - (dev @ terms.nat_share)[:, None]
+    seat = {}
+    for i, s in enumerate(states):
+        seat.setdefault(s, (seat_draws[:, i], float(sigma[i])))
+    return SenateDraws(nat=nat, region={r: region_draws[:, k] for k, r in enumerate(ur_list)},
+                       seat=seat, dev=dev, common=comp + level)
+
+
+def governor_race_sigma(rows: list[dict], extra: float) -> np.ndarray:
+    """Per-race σ for governor races, besides the shared national, region and
+    state parts: the race term, widened in quadrature for open seats (no
+    incumbent who has won a governor's election), independent races on
+    polls only, and `extra` (settings.governor_race_sigma_extra)."""
+    open_seat = np.array([not r.get("incumbency_adj") for r in rows], dtype=float)
+    poll_override = np.array([bool(r.get("independent_candidate")) and (r.get("poll_weight") or 0) > 0
+                              for r in rows], dtype=float)
+    return np.sqrt(_race_sigma(SIGMA_DISTRICT, open_seat, np.zeros(len(rows))) ** 2
+                   + poll_override * SIGMA_POLL_OVERRIDE_EXTRA ** 2 + extra ** 2)
+
+
+def governor_sims(rows: list[dict], senate_rows: list[dict], senate_terms: ErrorTerms | None,
+                  terms: ErrorTerms | None, extra: float) -> np.ndarray:
+    """(N_SIMS, n_rows) simulated governor margins, sharing the Senate's draws."""
+    shared = senate_draws(senate_rows, senate_terms)
+    rng = np.random.default_rng(GOV_SEED)
+    n = len(rows)
+    proj = np.array([r["projection"] for r in rows], dtype=float)
+    eta = rng.standard_normal((N_SIMS, n))
+    race = rng.standard_normal((N_SIMS, n)) * governor_race_sigma(rows, extra)[None, :]
+    out = proj[None, :] + shared.nat + race + shared.common
+    for j, r in enumerate(rows):
+        s = r["state"]
+        out[:, j] += shared.region[STATE_TO_REGION[s]]
+        if s in shared.seat:
+            u, su = shared.seat[s]
+            b = SIGMA_STATE ** 2 / su ** 2
+            out[:, j] += b * u + SIGMA_STATE * np.sqrt(1.0 - b) * eta[:, j]
+        else:
+            out[:, j] += SIGMA_STATE * eta[:, j]
+    terms = terms or ErrorTerms()
+    if len(terms.groups):
+        if terms.loadings is None or terms.loadings.shape[0] != n:
+            raise ValueError("group-error loadings don't match the governor rows")
+        out += shared.dev @ terms.loadings.T
+    return out
+
+
+def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate_terms: ErrorTerms | None,
+                                   terms: ErrorTerms | None, extra: float) -> dict:
+    """Mutate `result` (governor_model.project) in place: `p_d` per race
+    (P(the anti-R candidate wins)) and the governorships after the election
+    — races up plus the governorships not up, which keep their party.
+    Democrats hold a majority of governorships at 26 of 50."""
+    rows = result.get("races") or []
+    if not rows:
+        return result
+    sims = governor_sims(rows, senate_rows, senate_terms, terms, extra)
+    wins = sims > 0
+    for r, p in zip(rows, wins.mean(axis=0)):
+        r["p_d"] = round(float(p), 3)
+    indep = np.array([r.get("anti_r_party") == "(I)" for r in rows])
+    s = result.setdefault("summary", {})
+    total_d = wins[:, ~indep].sum(axis=1) + s.get("not_up_d", 0)
+    total_i = wins[:, indep].sum(axis=1) + s.get("not_up_i", 0)
+    total_r = (~wins).sum(axis=1) + s.get("not_up_r", 0)
+    s["governorships"] = {
+        "d_median": int(np.median(total_d)), "d_p10": int(np.quantile(total_d, 0.10)),
+        "d_p90": int(np.quantile(total_d, 0.90)), "d_mean": round(float(total_d.mean()), 1),
+        "r_median": int(np.median(total_r)), "r_p10": int(np.quantile(total_r, 0.10)),
+        "r_p90": int(np.quantile(total_r, 0.90)),
+        "i_median": int(np.median(total_i)),
+        "p_d_majority": round(float((total_d >= 26).mean()), 3),
+        "p_r_majority": round(float((total_r >= 26).mean()), 3),
+        "majority_threshold": 26,
+    }
+    s["error_model"] = {**error_model_summary(terms, senate=True),
+                        "race": f"{SIGMA_DISTRICT} + governor extra {extra} (in quadrature)",
+                        "state": f"{SIGMA_STATE}, shared with the state's Senate race where there is one",
+                        "shared_with_senate": "national, region, state, group, composition and level draws"}
+    return result

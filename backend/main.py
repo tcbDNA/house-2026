@@ -17,10 +17,13 @@ from model import (
     ALL_SLIDERS, CATALIST_BASELINES, NATIONAL_PRES_SHIFT, district_detail, load_bundle, project,
 )
 import senate_model as senate
+import governor_model as governors
 import county_model as county
 import overlay
 from model import electorate_shares, demographic_shift, population_shares
-from probability import add_senate_win_probabilities, add_win_probabilities, error_terms
+from probability import (
+    add_governor_win_probabilities, add_senate_win_probabilities, add_win_probabilities, error_terms,
+)
 
 app = FastAPI(title="House 2026 Scenario API")
 
@@ -33,6 +36,9 @@ app.add_middleware(
 
 BUNDLE = load_bundle()
 SENATE_BUNDLE = senate.load_bundle()
+# Governors (built by data/governor_data.py); absent until that data exists.
+GOVERNOR_BUNDLE = (governors.load_bundle(senate_bundle=SENATE_BUNDLE)
+                   if governors.DATA_PATH.exists() else None)
 COUNTY_BUNDLE = county.load_bundle()
 
 # Default scenario for the default settings, computed from recent polls' race
@@ -80,7 +86,9 @@ class DefaultsRequest(BaseModel):
 
 @lru_cache(maxsize=64)
 def _terms(kind: str, settings: Settings = DEFAULT_SETTINGS, frame: str = "race"):
-    """Item 4 error terms (group loadings and σs) for the House or Senate rows."""
+    """Item 4 error terms (group loadings and σs) for the House, Senate or governor rows."""
+    if kind == "governor":
+        return error_terms(GOVERNOR_BUNDLE.pop, settings, frame)
     return error_terms((BUNDLE if kind == "house" else SENATE_BUNDLE).pop, settings, frame)
 
 
@@ -197,6 +205,33 @@ def senate_state_detail(state: str):
     if s is None:
         raise HTTPException(status_code=404, detail=f"state {state} not found")
     return s
+
+
+# ──────────────── Governor endpoints ────────────────
+
+
+def _clamped_sliders(req: ProjectRequest) -> dict:
+    sliders = req.sliders.model_dump()
+    for k in sliders:
+        sliders[k] = max(-100, min(100, sliders[k]))
+    return sliders
+
+
+@app.post("/api/governors/project")
+def governors_project(req: ProjectRequest):
+    """Governor races for the scenario. The simulations share the Senate's
+    draws for the same scenario (probability.governor_sims)."""
+    if GOVERNOR_BUNDLE is None:
+        raise HTTPException(status_code=503, detail="governor data not built")
+    sliders = _clamped_sliders(req)
+    settings = _settings(req.settings)
+    senate_rows = senate.project(SENATE_BUNDLE, environment=req.environment, sliders=sliders,
+                                 trend_discount=req.trend_discount, settings=settings, frame=req.frame)["seats"]
+    result = governors.project(GOVERNOR_BUNDLE, environment=req.environment, sliders=sliders,
+                               trend_discount=req.trend_discount, settings=settings, frame=req.frame)
+    return add_governor_win_probabilities(result, senate_rows, _terms("senate", settings, req.frame),
+                                          _terms("governor", settings, req.frame),
+                                          settings.governor_race_sigma_extra)
 
 
 # ──────────────── County endpoints ────────────────

@@ -71,6 +71,24 @@ class Settings:
     # decision, Oct 27). It keeps the independent races' extra error.
     senate_nebraska_model_blend: bool = True
 
+    # Governors (governor_model). Fundamentals = governor_partisan_slope ×
+    # (2024 presidential margin + national swing + demographic shift + trend,
+    # each as in the state's Senate race) + candidate effects: the WAR blend
+    # with Governor as the office, and ± governor_incumbency for an incumbent
+    # who has won a governor's election (successors get none). The same
+    # governor_incumbency nets the incumbent's edge out of computed governor
+    # WAR records (subtracted for the incumbent, added back for the opponent).
+    # Polls blend as in the Senate (w with at least governor_poll_full_n
+    # polls, scaled down below; polls only for independents). Governor races
+    # get governor_race_sigma_extra more race-level error, in quadrature.
+    # Defaults are judgment calls until the 2018/2022 calibration.
+    governor_partisan_slope: float = 1.0
+    governor_incumbency: float = 3.0
+    governor_poll_blend: bool = True
+    governor_poll_weight: float = 0.7
+    governor_poll_full_n: float = 3.0
+    governor_race_sigma_extra: float = 3.0
+
     # Item 7 — county overlay (overlay.py). Project each county slice from its
     # own 2024 margin, demographic shift and residual trend (shrunk toward its
     # district's / state's with weight votes / (votes + k), 2024 votes), plus

@@ -363,8 +363,11 @@ CROSS_CHAMBER_FULL_WEIGHT: set[str] = set()
 
 
 def _time_weighted_sortable(records: list[dict], candidate_name: str = "",
-                            exclusions: set[tuple[int, str, str]] | None = None) -> float:
-    """Per-record windowing for the Senate WAR blend.
+                            exclusions: set[tuple[int, str, str]] | None = None,
+                            office: str = "Senate") -> float:
+    """Per-record windowing for the Senate WAR blend (or another `office`'s:
+    records from that office at full weight, every other office at the 0.5×
+    cross-chamber discount; the governors model passes "Governor").
 
     Records are grouped by office (Senate / House / Governor). Within each
     office group, records are sorted year-desc and the top 3 slot at
@@ -400,11 +403,11 @@ def _time_weighted_sortable(records: list[dict], candidate_name: str = "",
 
     slotted = []  # (recency weight, cross-chamber discount, sortable)
     for chamber, lst in by_chamber.items():
-        if chamber == "Senate":
+        if chamber == office:
             d = 1.0
-        elif chamber == "Governor":
-            d = 1.0 if full_weight_gov else GOV_CROSS_CHAMBER_DISCOUNT
-        else:  # House (and any other cross-chamber)
+        elif chamber == "Governor" and full_weight_gov:
+            d = 1.0
+        else:  # cross-chamber
             d = GOV_CROSS_CHAMBER_DISCOUNT
         for w, rec in zip(WAR_WEIGHTS, lst):
             slotted.append((w, d, rec["sortable"]))
