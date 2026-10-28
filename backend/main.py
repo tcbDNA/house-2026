@@ -299,8 +299,10 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     and shrunk residual trend, plus the Senate swing and candidate effects and
     one reconciling shift to the seat (or, with no race, the state) projection.
     race="governor": the same for the state's governor race — candidate terms
-    from the governors model, county partisanship scaled by its partisan
-    slope, reconciled to the governor projection."""
+    from the governors model, reconciled to the governor projection. The
+    governor partisan slope isn't applied to counties: it was estimated across
+    states, and within a state the county pattern follows the presidential map
+    (counties keep their full spread; one uniform shift sets the level)."""
     st = state.upper()
     sb = SENATE_BUNDLE
     resid, center = senate.all_state_residuals(sb, settings, req.frame)
@@ -319,15 +321,12 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     result = {"environment": req.environment, "sliders": sliders, "trend_discount": req.trend_discount,
               "turnout_ratio_2026": turnout, "turnout_source": turnout_source,
               "senate_seat": seat, "counties": [], "overlay": "slice_projections"}
-    slope = 1.0
     if race == "governor":
         result.update({"senate_seat": None, "race": "governor", "governor_race": g})
         if g is not None and g.get("model_projection") is None:
             result["unavailable_reason"] = (f"{st}'s governor race is modeled on polls only (the Democrat against an "
                                             "independent), so there is no county-level projection for it.")
             return result
-        if g is not None:
-            slope = settings.governor_partisan_slope
     if not counties:
         result["unavailable_reason"] = f"No county-level 2024 presidential data available for {st}."
         return result
@@ -345,7 +344,7 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
                   + swing + float(demo_state))
     terms = overlay.CountyTerms(counties, population_shares(counties), sliders, settings, req.frame, center)
     r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
-                               req.trend_discount, settings, slope)
+                               req.trend_discount, settings)
     for c, i, w, res, demo, proj in r["rows"]:
         est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj, turnout)
         result["counties"].append({

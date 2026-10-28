@@ -133,9 +133,7 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
 
 def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_resid: float,
                    senate_swing: float, candidate_adj: float, target: float, trend_discount: float,
-                   settings: Settings, slope: float = 1.0) -> dict:
-    """`slope` scales each county's partisan part (the governors model's
-    partisan slope; 1 for the Senate) before the candidate terms are added."""
+                   settings: Settings) -> dict:
     first = []
     for c in counties:
         i = terms.index[c["fips"]]
@@ -145,7 +143,7 @@ def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_r
             w = float(shrink_weight(terms.votes[i], settings.overlay_shrink_k))
             resid = w * float(terms.resid[i]) + (1 - w) * state_resid
         demo = float(terms.demo[i])
-        proj = slope * ((c.get("margin_2024") or 0.0) + demo + trend_discount * resid + senate_swing) + candidate_adj
+        proj = (c.get("margin_2024") or 0.0) + demo + trend_discount * resid + senate_swing + candidate_adj
         first.append((c, i, w, resid, demo, proj))
     rec = _reconcile([f[5] for f in first], [f[0].get("total_2024") or 0.0 for f in first], target)
     return {"rows": [(c, i, w, resid, demo, proj + rec) for c, i, w, resid, demo, proj in first],
