@@ -256,7 +256,7 @@ export default function App() {
               <div className="hidden md:block">
                 <GovernorMap races={governorResult.races} onPickState={setPickedGovState} />
               </div>
-              <GovernorTable races={governorResult.races} />
+              <GovernorTable races={governorResult.races} onPick={setPickedGovState} />
             </>
           )}
 

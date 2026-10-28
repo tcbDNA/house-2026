@@ -23,7 +23,7 @@ function bucket(r: GovernorRace): string {
 
 type SortKey = "state" | "model_projection" | "projection" | "p_d";
 
-export function GovernorTable({ races }: { races: GovernorRace[] }) {
+export function GovernorTable({ races, onPick }: { races: GovernorRace[]; onPick?: (state: string) => void }) {
   const [sortKey, setSortKey] = useState<SortKey>("projection");
   const [asc, setAsc] = useState(true);
   const [filter, setFilter] = useState("");
@@ -81,7 +81,8 @@ export function GovernorTable({ races }: { races: GovernorRace[] }) {
           </thead>
           <tbody>
             {rows.map((r) => (
-              <tr key={r.state} className="border-t hover:bg-slate-50 align-top">
+              <tr key={r.state} className={`border-t hover:bg-slate-50 align-top ${onPick ? "cursor-pointer" : ""}`}
+                  onClick={() => onPick?.(r.state)} title={onPick ? "Click for the county map" : undefined}>
                 <td className="px-2 py-1 font-mono">{r.state}</td>
                 <td className="px-2 py-1">
                   <div>
@@ -134,7 +135,7 @@ export function GovernorTable({ races }: { races: GovernorRace[] }) {
         </table>
       </div>
       <div className="p-2 text-[10px] text-slate-400 border-t">
-        Proj = weight × (polls + scenario change) + (1 − weight) × model; polls older than Oct 5 count half for the
+        Click a row (or a state on the map) for its county map. Proj = weight × (polls + scenario change) + (1 − weight) × model; polls older than Oct 5 count half for the
         weight where a race has fewer than three recent polls. P(D) is the chance the Democrat wins (in Rhode Island,
         against independent Ken Block). Hover a flag for details.
       </div>
