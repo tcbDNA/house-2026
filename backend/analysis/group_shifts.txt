@@ -1,5 +1,5 @@
 settings: white share 0.7400; 2024 baseline catalist; subgroup-n weights; pollster-matched shifts on
-10 polls: Economist/YouGov (2026-10-26, RV, n=1430), CBS/YouGov (2026-10-23, LV, n=1749), Marist (2026-10-20, LV, n=1289), Bedrock Research (2026-10-20, RV, n=1279), NYT/Siena (2026-10-19, LV, n=3494), Echelon Insights (2026-10-19, LV, n=1010), Fox News (2026-10-12, RV, n=1202), Pew Research Center (2026-10-04, RV, n=3917), Cygnal (2026-10-02, LV, n=1500), Emerson College (2026-09-22, LV, n=1000)
+10 polls: Economist/YouGov (2026-10-26, RV, n=1430), Cygnal (2026-10-24, LV, n=1500), CBS/YouGov (2026-10-23, LV, n=1749), Marist (2026-10-20, LV, n=1289), Bedrock Research (2026-10-20, RV, n=1279), NYT/Siena (2026-10-19, LV, n=3494), Echelon Insights (2026-10-19, LV, n=1010), Fox News (2026-10-12, RV, n=1202), Pew Research Center (2026-10-04, RV, n=3917), Emerson College (2026-09-22, LV, n=1000)
 2026 subgroup n derived from published MOEs, n × (MOE_total/MOE_group)²: Fox News black 104, hispanic 117, white_nh 835
 2026 subgroup n estimated as total n × electorate share: Pew Research Center asian 154, black 403, hispanic 337, white_college 1279, white_nh 2899, white_non_college 1620; Cygnal black 154, hispanic 129, white_nh 1110
 2024 subgroup n derived from published MOEs, n × (MOE_total/MOE_group)²: Pew Research Center asian 297, black 631, hispanic 559, white_college 1121, white_nh 2523, white_non_college 1512; Fox News black 111, hispanic 156, white_nh 816
@@ -8,51 +8,51 @@ settings: white share 0.7400; 2024 baseline catalist; subgroup-n weights; pollst
 Current method (S): 2026 poll average − 2024 baseline
 group      polls  share  avg margin    2024   shift
 white_nh      10  0.740       R+5.2  R+15.2  +10.01
-black          9  0.103      D+75.0  D+70.8   +4.19
-hispanic       9  0.086      D+30.2   D+8.5  +21.73
+black          9  0.103      D+74.6  D+70.8   +3.77
+hispanic       9  0.086      D+30.0   D+8.5  +21.54
 asian          3  0.039      D+42.9  D+21.4  +21.53
-other          0  0.032           -   D+7.1  +10.90 (imputed: average shift)
-S = share-weighted shift since 2024: +10.90
+other          0  0.032           -   D+7.1  +10.84 (imputed: average shift)
+S = share-weighted shift since 2024: +10.84
 
 Pollster-matched pattern: r = (2026 group − 2024 group) − (2026 topline − 2024 topline),
 combined with inverse-variance weights (1/SE_r², SE_r from both years at deff 1.5); shift = S + (r_avg − c).
 If leaving out one pollster moves r_avg by more than 1.5 pts, the weighted median is used.
 group              old shift new shift   r_avg    SE    mean  median max LOO pooled n_eff  method
-white_nh              +10.01     +9.03   -2.55  1.69   -2.55   -3.01    0.53         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research]
-black                  +4.19    +11.62   +0.03  2.79   +0.03   +2.98    1.45          879  weighted mean  [no 2024 pair: Bedrock Research]
-hispanic              +21.73    +21.25   +9.66  4.13   +7.11   +9.66    2.58          821  weighted median [FLAGGED]  [no 2024 pair: Bedrock Research]
+white_nh              +10.01     +8.66   -2.47  1.69   -2.47   -3.01    0.51         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research]
+black                  +3.77    +14.11   +2.98  2.79   -0.23   +2.98    1.50          879  weighted median [FLAGGED]  [no 2024 pair: Bedrock Research]
+hispanic              +21.54    +20.79   +9.66  4.13   +7.01   +9.66    2.57          821  weighted median [FLAGGED]  [no 2024 pair: Bedrock Research]
 asian                 +21.53    +21.53  +11.83  9.74   +8.95  +11.83   15.92          124  weighted median [FLAGGED]  [kept current method]  [no 2024 pair: NYT/Siena]
-white_college         +17.04     +8.04   -4.47  3.30   -3.58   -4.47    2.09         1346  weighted median [FLAGGED]  [no 2024 pair: Marist]
-white_non_college      +4.18     +9.82   -2.69  2.91   -2.69   -3.32    1.26         1647  weighted mean  [no 2024 pair: Marist]
+white_college         +17.04     +7.66   -4.47  3.30   -3.58   -4.47    2.09         1346  weighted median [FLAGGED]  [no 2024 pair: Marist]
+white_non_college      +4.18     +9.45   -2.69  2.91   -2.69   -3.32    1.26         1647  weighted mean  [no 2024 pair: Marist]
 
 Per pollster: r (SE_r, n_eff) | r_avg with that pollster left out
   white_nh:
-    NYT/Siena              -3.6 ( 4.0,   938)  | -2.32 (+0.24)
-    CBS/YouGov             +0.9 ( 4.7,   683)  | -3.08 (-0.53)
-    Echelon Insights       -1.4 ( 5.9,   426)  | -2.66 (-0.11)
-    Economist/YouGov       -1.9 ( 5.5,   501)  | -2.62 (-0.07)
-    Pew Research Center    -3.0 ( 3.3,  1349)  | -2.40 (+0.16)
-    Fox News               -6.0 ( 6.0,   413)  | -2.26 (+0.29)
-    Emerson College        +3.9 ( 6.7,   331)  | -3.00 (-0.44)
-    Cygnal                 -6.7 ( 5.2,   556)  | -2.06 (+0.50)
+    NYT/Siena              -3.6 ( 4.0,   938)  | -2.21 (+0.26)
+    CBS/YouGov             +0.9 ( 4.7,   683)  | -2.98 (-0.51)
+    Echelon Insights       -1.4 ( 5.9,   426)  | -2.57 (-0.10)
+    Economist/YouGov       -1.9 ( 5.5,   501)  | -2.53 (-0.06)
+    Pew Research Center    -3.0 ( 3.3,  1349)  | -2.28 (+0.19)
+    Fox News               -6.0 ( 6.0,   413)  | -2.17 (+0.30)
+    Emerson College        +3.9 ( 6.7,   331)  | -2.91 (-0.44)
+    Cygnal                 -5.9 ( 5.2,   556)  | -2.06 (+0.41)
   black:
-    NYT/Siena              -3.0 ( 5.7,   179)  | +0.99 (+0.96)
-    CBS/YouGov            -11.8 ( 8.4,   109)  | +1.48 (+1.45)
-    Echelon Insights       -7.3 (10.4,    62)  | +0.61 (+0.57)
-    Economist/YouGov       +4.9 ( 9.2,    88)  | -0.46 (-0.49)
-    Pew Research Center    +3.0 ( 4.9,   246)  | -1.34 (-1.37)
-    Fox News              +23.3 (13.4,    54)  | -1.02 (-1.05)
-    Emerson College        -8.7 (11.7,    64)  | +0.56 (+0.53)
-    Cygnal                 +9.4 (10.4,    77)  | -0.69 (-0.72)
+    NYT/Siena              -3.0 ( 5.7,   179)  | +0.65 (+0.88)
+    CBS/YouGov            -11.8 ( 8.4,   109)  | +1.19 (+1.43)
+    Echelon Insights       -7.3 (10.4,    62)  | +0.32 (+0.56)
+    Economist/YouGov       +4.9 ( 9.2,    88)  | -0.75 (-0.52)
+    Pew Research Center    +3.0 ( 4.9,   246)  | -1.73 (-1.50)
+    Fox News              +23.3 (13.4,    54)  | -1.30 (-1.07)
+    Emerson College        -8.7 (11.7,    64)  | +0.28 (+0.52)
+    Cygnal                 +6.1 (10.7,    77)  | -0.69 (-0.46)
   hispanic:
-    NYT/Siena             +10.1 ( 9.0,   178)  | +6.29 (-0.82)
-    CBS/YouGov            -11.7 (11.9,   100)  | +9.69 (+2.58)
-    Echelon Insights      +10.7 (15.7,    58)  | +6.84 (-0.27)
-    Economist/YouGov       +6.4 (13.8,    76)  | +7.18 (+0.07)
-    Pew Research Center    +9.7 ( 8.0,   210)  | +6.19 (-0.91)
-    Fox News              +21.8 (14.3,    67)  | +5.77 (-1.33)
-    Emerson College        +9.2 (14.4,    67)  | +6.91 (-0.19)
-    Cygnal                 -0.8 (14.6,    65)  | +7.79 (+0.68)
+    NYT/Siena             +10.1 ( 9.0,   178)  | +6.17 (-0.85)
+    CBS/YouGov            -11.7 (11.9,   100)  | +9.58 (+2.57)
+    Echelon Insights      +10.7 (15.7,    58)  | +6.74 (-0.27)
+    Economist/YouGov       +6.4 (13.8,    76)  | +7.08 (+0.06)
+    Pew Research Center    +9.7 ( 8.0,   210)  | +6.06 (-0.95)
+    Fox News              +21.8 (14.3,    67)  | +5.67 (-1.34)
+    Emerson College        +9.2 (14.4,    67)  | +6.81 (-0.20)
+    Cygnal                 -2.0 (14.7,    65)  | +7.79 (+0.78)
   asian:
     Pew Research Center   +11.8 (10.6,   101)  | -6.98 (-15.92)
     Emerson College        -7.0 (24.9,    23)  | +11.83 (+2.88)
@@ -64,34 +64,34 @@ Per pollster: r (SE_r, n_eff) | r_avg with that pollster left out
     NYT/Siena              -3.3 ( 5.4,   473)  | -2.43 (+0.26)
     CBS/YouGov             +0.9 ( 6.0,   392)  | -3.78 (-1.10)
     Pew Research Center    -4.1 ( 4.2,   782)  | -1.42 (+1.26)
-other                 +10.90    +10.90       -            -  (keeps S)
-c (race frame) = -0.69; c (race × edu, white cells) = -1.60
-race × edu non-white cells (current rule: 2024 + non-white race groups' average shift): nonwhite_college +16.22, nonwhite_non_college +16.22
+other                 +10.84    +10.84       -            -  (keeps S)
+c (race frame) = -0.29; c (race × edu, white cells) = -1.29
+race × edu non-white cells (current rule: 2024 + non-white race groups' average shift): nonwhite_college +17.04, nonwhite_non_college +17.04
 
-Generic ballot = 2024 result R+1.5 + shift: D+9.4  (unrounded +9.40)
-  equal-weight-per-pollster version:   D+9.2
-  same polls' topline average (two-way): D+9.0
+Generic ballot = 2024 result R+1.5 + shift: D+9.3  (unrounded +9.34)
+  equal-weight-per-pollster version:   D+9.1
+  same polls' topline average (two-way): D+8.9
 
 Default scenario (served by /api/defaults):
-  uniform wave -1.15 (2024 -1.5 + other +0.35); race sliders carry +10.56; total D+9.4 (+9.40)
-  race sliders: {'white_nh': -6.21, 'black': 82.42, 'hispanic': 29.71, 'asian': 42.91}
-  race x edu sliders: {'white_college': 9.94, 'white_non_college': -17.46, 'nonwhite_college': 53.04, 'nonwhite_non_college': 48.07}
+  uniform wave -1.16 (2024 -1.5 + other +0.34); race sliders carry +10.50; total D+9.3 (+9.34)
+  race sliders: {'white_nh': -6.58, 'black': 84.91, 'hispanic': 29.25, 'asian': 42.91}
+  race x edu sliders: {'white_college': 9.56, 'white_non_college': -17.83, 'nonwhite_college': 53.86, 'nonwhite_non_college': 48.89}
 === Pew validated baseline ===
 Current method (S): 2026 poll average − 2024 baseline
 group      polls  share  avg margin    2024   shift
 white_nh      10  0.740       R+5.2  R+12.2   +7.02
-black          9  0.103      D+75.0  D+69.4   +5.61
-hispanic       9  0.086      D+30.2   D+3.0  +27.16
+black          9  0.103      D+74.6  D+69.4   +5.19
+hispanic       9  0.086      D+30.0   D+3.0  +26.97
 asian          3  0.039      D+42.9  D+17.5  +25.38
-other          0  0.032           -   D+7.1   +9.40 (imputed: average shift)
-S = share-weighted shift since 2024: +9.40
-Generic ballot = 2024 result R+1.5 + shift: D+7.9  (unrounded +7.90)
+other          0  0.032           -   D+7.1   +9.34 (imputed: average shift)
+S = share-weighted shift since 2024: +9.34
+Generic ballot = 2024 result R+1.5 + shift: D+7.8  (unrounded +7.84)
 === Square-root weights, no median rule (previous method) ===
 group              old shift new shift   r_avg    SE    mean  median max LOO pooled n_eff  method
-white_nh              +10.01     +9.25   -2.41  1.69   -2.41   -3.01    0.64         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research]
-black                  +4.19    +12.33   +0.67  2.79   +0.67   +2.98    2.25          879  weighted mean  [no 2024 pair: Bedrock Research]
-hispanic              +21.73    +18.57   +6.92  4.13   +6.92   +9.66    2.71          821  weighted mean  [no 2024 pair: Bedrock Research]
+white_nh              +10.01     +9.25   -2.31  1.69   -2.31   -3.01    0.63         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research]
+black                  +3.77    +11.87   +0.31  2.79   +0.31   +2.98    2.29          879  weighted mean  [no 2024 pair: Bedrock Research]
+hispanic              +21.54    +18.36   +6.79  4.13   +6.79   +9.66    2.70          821  weighted mean  [no 2024 pair: Bedrock Research]
 asian                 +21.53    +21.53   +5.79  9.74   +5.79  +11.83   12.77          124  weighted mean  [kept current method]  [no 2024 pair: NYT/Siena]
-white_college         +17.04     +8.87   -3.08  3.30   -3.08   -4.47    2.67         1346  weighted mean  [no 2024 pair: Marist]
-white_non_college      +4.18     +9.54   -2.41  2.91   -2.41   -3.32    1.33         1647  weighted mean  [no 2024 pair: Marist]
+white_college         +17.04     +8.88   -3.08  3.30   -3.08   -4.47    2.67         1346  weighted mean  [no 2024 pair: Marist]
+white_non_college      +4.18     +9.55   -2.41  2.91   -2.41   -3.32    1.33         1647  weighted mean  [no 2024 pair: Marist]
 
