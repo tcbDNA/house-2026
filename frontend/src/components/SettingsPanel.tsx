@@ -66,6 +66,21 @@ const GROUPS: { title: string; toggles: Toggle[] }[] = [
     ],
   },
   {
+    title: "Governors",
+    toggles: [
+      { key: "governor_poll_blend", label: "Blend governor polls",
+        hint: "Projection = w × (polling average + scenario change) + (1 − w) × model, w 0.79 with 3+ polls. Off: the model alone." },
+      { key: "governor_war_single_record_full", label: "Full weight on a single governor record",
+        hint: "A candidate whose only governor record is one race gets full weight on it instead of half (governors only; the 2018/2022 calibration fits better with it)." },
+      { key: "governor_war_drop_rematch", label: "Rematches: the incumbent keeps the record",
+        hint: "Drop a challenger's governor record from an earlier race against the sitting incumbent (MD Cox, IL Bailey, OR Drazan), as the House model does." },
+      { key: "governor_war_exclude_third_candidate", label: "Leave out third-candidate records",
+        hint: "Computed governor records from races where a third candidate won over 5% (e.g. OR 2022, Betsy Johnson) are left out." },
+      { key: "governor_param_draws", label: "Slope and incumbency uncertainty",
+        hint: "Each simulation draws one partisan slope and one incumbency bonus (the calibration's standard errors), shared by every governor race." },
+    ],
+  },
+  {
     title: "County overlay (item 7)",
     toggles: [
       { key: "overlay_slice_projections", label: "Slice-level projections",

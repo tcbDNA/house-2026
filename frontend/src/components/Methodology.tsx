@@ -245,6 +245,48 @@ export function Methodology() {
         and Osborn (2024) by 17+ points.
       </p>
       <p className="mb-2">
+        <b>Governors.</b> The 36 governor races use the Senate machinery. Each
+        race's fundamentals are the Senate model's bracket for that state (2024
+        presidential margin, uniform swing, demographic shift and trend) times a
+        <b> partisan slope of 0.68</b> — governor races follow federal
+        partisanship less than one-for-one — plus WAR with Governor as the office
+        (governor records full weight, House and Senate records half; a single
+        governor record at full weight) and <b>±6.55 incumbency</b> for an
+        incumbent who has won a governor's election. Split Ticket publishes no
+        governor WAR, so governor records are computed: the margin minus the slope
+        × the same year's presidential margin (in a midterm, the previous one plus
+        that year's national swing), net of the incumbent's edge, from Wikipedia's
+        results checked against official canvasses. In a rematch the incumbent
+        keeps the shared record, and records from races with a third candidate
+        over 5% are left out. Polls blend as in the Senate (w = 0.79 with three or
+        more polls; a race with fewer than three since Oct 5 reaches back to Sep 1,
+        older polls counting half). Governor races share the Senate's simulations,
+        so a state's Senate and governor races miss together; they get more
+        race-level error (an extra 1.6 at full poll weight, up to 9.0 without
+        polls), half the model–poll gap where polling is sparse, and shared draws of
+        the slope and incumbency. Special cases are flagged: Alaska's ranked-choice
+        final round, Georgia's runoff rule, Vermont's legislature rule, and Rhode
+        Island, where independent Ken Block runs second and the race is modeled
+        Foulkes vs Block on polls alone.
+      </p>
+      <p className="mb-2">
+        <b>Governor calibration.</b> A backtest reruns this structure on the 72
+        governor races of 2018 and 2022 with only pre-election inputs (RCP's final
+        averages) and a separate intercept per year, rebuilding the WAR records at
+        each new slope until it settles. With single records at half weight it
+        gave a 9.3-point incumbency bonus, rejected: dropping four blue-state
+        Republican landslides (Baker, Hogan, Scott, Sununu) took about 3 points
+        off it, and giving a single governor record full weight about 2.7, with a
+        better fit (MAE 7.16 vs 7.41). The adopted fit: slope 0.677 (SE 0.057),
+        incumbency 6.55 (SE 1.53), w 0.788 (SE 0.058); the blended projection
+        misses by SD 4.2 points where there are polls, the model alone by 9.8. The
+        model–poll gap didn't predict the blend's error in those well-polled
+        races, so its 0.5 × gap term is a judgment applied only where polling is
+        sparse; a Northeast indicator didn't improve the fit. Result (Oct 28):
+        Democrats are projected to win 27 governorships (median 27, 80% range
+        23–30), with a 70.6% chance of a majority.
+      </p>
+      <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the
         projection. Each simulation adds a national error (σ 2.5 pts), a
         census-region error (σ 1.2), a state error (σ 1.8) and a race-specific error

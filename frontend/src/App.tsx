@@ -9,15 +9,18 @@ import { DistrictMap } from "./components/DistrictMap";
 import { SenateSummaryView } from "./components/SenateSummary";
 import { SenateTable } from "./components/SenateTable";
 import { SenateMap } from "./components/SenateMap";
+import { GovernorSummaryView } from "./components/GovernorSummary";
+import { GovernorTable } from "./components/GovernorTable";
+import { GovernorMap } from "./components/GovernorMap";
 import { CountyMap } from "./components/CountyMap";
-import { fetchDefaults, fetchProjection, fetchSenate, setRequestContext } from "./api";
+import { fetchDefaults, fetchGovernors, fetchProjection, fetchSenate, setRequestContext } from "./api";
 import {
   AXIS_KEYS, CATALIST_BASELINES, DEFAULT_SLIDERS, EDU_FRAME_DEFAULTS, MODEL_DEFAULTS, SLIDER_DEFS,
   applyModelDefaults, compositionalShift,
-  type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues,
+  type GovernorResponse, type ProjectResponse, type SenateResponse, type SliderKey, type SliderValues,
 } from "./types";
 
-type Tab = "house" | "senate";
+type Tab = "house" | "senate" | "governors";
 export type DemoFrame = "race" | "race_edu";
 
 // Defaults (uniform wave, slider positions, national shares) come from the
@@ -44,7 +47,8 @@ function frameDefaultEnv(frame: DemoFrame): number {
 
 function readUrl(): { tab: Tab; env: number; sliders: SliderValues; trendDiscount: number; frame: DemoFrame } {
   const p = new URLSearchParams(window.location.search);
-  const tab: Tab = window.location.hash === "#senate" ? "senate" : "house";
+  const h = window.location.hash;
+  const tab: Tab = h === "#senate" ? "senate" : h === "#governors" ? "governors" : "house";
   const frame: DemoFrame = p.get("frame") === "race_edu" ? "race_edu" : "race";
   const env = Number(p.get("env") ?? frameDefaultEnv(frame));
   const out: SliderValues = { ...frameDefaults(frame) };
@@ -73,7 +77,7 @@ function writeUrl(tab: Tab, env: number, sliders: SliderValues, trendDiscount: n
   if (trendDiscount !== MODEL_DEFAULTS.trend) p.set("trend", String(trendDiscount));
   if (frame !== "race") p.set("frame", frame);
   const qs = p.toString();
-  const hash = tab === "senate" ? "#senate" : "";
+  const hash = tab === "house" ? "" : `#${tab}`;
   const next = (qs ? `?${qs}` : window.location.pathname) + hash;
   window.history.replaceState(null, "", next);
 }
@@ -89,6 +93,7 @@ export default function App() {
   const [settings, setSettings] = useState<Record<string, unknown>>({});
   const [houseResult, setHouseResult] = useState<ProjectResponse | null>(null);
   const [senateResult, setSenateResult] = useState<SenateResponse | null>(null);
+  const [governorResult, setGovernorResult] = useState<GovernorResponse | null>(null);
   const [pickedState, setPickedState] = useState<string | null>(null);
   const [pickedDistrictCounties, setPickedDistrictCounties] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -102,9 +107,12 @@ export default function App() {
       if (currentTab === "house") {
         const r = await fetchProjection(env, s, td, ac.signal);
         setHouseResult(r);
-      } else {
+      } else if (currentTab === "senate") {
         const r = await fetchSenate(env, s, td, ac.signal);
         setSenateResult(r);
+      } else {
+        const r = await fetchGovernors(env, s, td, ac.signal);
+        setGovernorResult(r);
       }
       setError(null);
     } catch (e: any) {
@@ -179,6 +187,7 @@ export default function App() {
       <div className="flex gap-1 border-b mb-4">
         {tabBtn("house", "House (435)")}
         {tabBtn("senate", "Senate (35 up)")}
+        {tabBtn("governors", "Governors (36 up)")}
       </div>
 
       {error && (
@@ -240,10 +249,21 @@ export default function App() {
             </>
           )}
 
+          {tab === "governors" && governorResult && (
+            <>
+              <GovernorSummaryView summary={governorResult.summary} />
+              <div className="hidden md:block">
+                <GovernorMap races={governorResult.races} />
+              </div>
+              <GovernorTable races={governorResult.races} />
+            </>
+          )}
+
           {tab === "house" && !houseResult && !error && <div className="text-slate-500">Loading…</div>}
+          {tab === "governors" && !governorResult && !error && <div className="text-slate-500">Loading…</div>}
           {tab === "senate" && !senateResult && !error && <div className="text-slate-500">Loading…</div>}
 
-          {(houseResult || senateResult) && <Methodology />}
+          {(houseResult || senateResult || governorResult) && <Methodology />}
         </div>
       </div>
 

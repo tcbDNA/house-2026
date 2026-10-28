@@ -1,4 +1,6 @@
-import type { AxisWeights, ModelDefaults, ProjectResponse, SenateResponse, SliderValues } from "./types";
+import type {
+  AxisWeights, GovernorResponse, ModelDefaults, ProjectResponse, SenateResponse, SliderValues,
+} from "./types";
 
 // Scenario-wide fields every projection request carries: the active slider
 // frame (it picks the trend regression's demographic basis) and settings
@@ -142,5 +144,21 @@ export async function fetchSenate(
     signal,
   });
   if (!res.ok) throw new Error(`senate projection failed: ${res.status}`);
+  return res.json();
+}
+
+export async function fetchGovernors(
+  environment: number,
+  sliders: SliderValues,
+  trendDiscount: number,
+  signal?: AbortSignal,
+): Promise<GovernorResponse> {
+  const res = await fetch("/api/governors/project", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ environment, sliders, trend_discount: trendDiscount, ...requestContext }),
+    signal,
+  });
+  if (!res.ok) throw new Error(`governor projection failed: ${res.status}`);
   return res.json();
 }

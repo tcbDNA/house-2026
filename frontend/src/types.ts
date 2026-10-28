@@ -385,7 +385,7 @@ export type ErrorModel = {
   composition: number;
   level: number;
   region: number;
-  state: number;
+  state: number | string;
   race: number | string;
   open_seat_extra: number;
   new_lines_extra?: number;
@@ -479,4 +479,72 @@ export type SenateResponse = {
   trend_discount: number;
   summary: SenateSummary;
   seats: SenateSeat[];
+};
+
+// ── Governor types ──
+export type GovernorFlag = { code: "rcv" | "runoff" | "legislature"; text: string; risk?: boolean };
+
+export type GovernorRace = {
+  state: string;
+  name: string;
+  party: string;                       // current governorship party, "(D)" / "(R)" / "(I)"
+  incumbent: string | null;
+  incumbent_party: string | null;
+  incumbent_status: string | null;     // running / term-limited / retiring / …
+  incumbent_won_gov_election: boolean | null;
+  d_nominee: string | null;
+  r_nominee: string | null;
+  anti_r_candidate: string | null;     // the R nominee's main opponent (usually the D nominee)
+  anti_r_party: string | null;
+  opponent: string | null;             // the other side: the R nominee, or an independent (RI: Ken Block)
+  opponent_party: string;
+  other_candidates: { name: string; party: string; max_poll_share?: number | null }[];
+  presidential_margin_2024: number | null;
+  state_trend_applied: number;
+  demo_shift: number;
+  fundamentals: number;
+  war_effect: number;
+  incumbency_adj: number;
+  model_projection: number | null;     // null on polls-only races (RI)
+  poll_average: {
+    margin: number; raw_margin: number; n_polls: number; third_party_share: number | null;
+    rcv_final_polls?: number; method: string; as_of: string; polls: string; url: string; local_file: string;
+  } | null;
+  poll_weight: number;
+  model_poll_gap: number | null;       // model − polls where polls are sparse (extra error)
+  independent_candidate: boolean;
+  projection: number;
+  is_tossup: boolean;
+  flip: "to_D" | "to_R" | "to_I" | null;
+  flags: GovernorFlag[];
+  note?: string | null;
+  p_d?: number;
+};
+
+export type GovernorSummary = {
+  races_up: number;
+  d_up: number;
+  i_up: number;
+  r_up: number;
+  not_up_d: number;
+  not_up_r: number;
+  not_up_i: number;
+  d_pickups: string[];
+  r_pickups: string[];
+  i_pickups: string[];
+  slope: number;
+  governorships?: {
+    d_median: number; d_p10: number; d_p90: number; d_mean: number;
+    r_median: number; r_p10: number; r_p90: number; i_median: number;
+    p_d_majority: number; p_r_majority: number; majority_threshold: number;
+  };
+  error_model?: ErrorModel;
+};
+
+export type GovernorResponse = {
+  environment: number;
+  uniform_swing: number;
+  trend_discount: number;
+  summary: GovernorSummary;
+  races: GovernorRace[];
 };
