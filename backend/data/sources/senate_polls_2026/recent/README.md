@@ -158,3 +158,16 @@ Retrieved **2026-10-28 11:59-12:03 UTC** with curl, saved as served (read only a
 | `Crosstabs_SC_Oct2026_lv.xlsx` | https://poll.citadel.edu/wp-content/uploads/2026/10/Crosstabs_SC_Oct2026_lv.xlsx | Likely-voter crosstabs. |
 
 Compiled-table additions: OH Suffolk; FL, MN and SC NYT/Siena; SC The Citadel; FL ActiVote (excluded). Effect: Ohio, Florida and South Carolina use RCP's average again (Rasmussen removed), because the newest poll in each now ends after the polls that had made it stale (RedBox and Echelon in OH and FL; Impact and Targoz in SC), and those polls, which RCP has not averaged, drop out. Minnesota and Alaska stay on RCP's average. Ohio's Echelon/NetChoice poll is listed by RCP but was left out when RCP rebuilt the average with Suffolk; it is not counted (only Maine's is, by the Oct 27 user decision).
+
+### Second check, 2026-10-28 13:48 UTC (St. Pete Polls, Florida; from the user's second NYT poll list paste)
+
+Every RCP feed, VoteHub's Senate dump and Poliwave's 35 race pages were downloaded again. VoteHub had no new rows.
+
+| File | URL | Notes |
+|---|---|---|
+| `nyt_poll_list_user_paste_2026-10-28_st_pete_fl.txt` | NYT poll list (pasted by the user) | St. Pete Polls for Florida Politics, Oct 25-27: Moody 49, Nixon 45. |
+| `rcp_fl_8948.json` | https://orig.realclearpolitics.com/poll/race/8948/polling_data.json | Built Oct 28 08:26 CT: St. Pete Polls 10/25-27 (916 LV, MOE 3.2, 49/45) replaces St. Pete's 10/5-7 poll in the average (9/28-10/27, Moody 49.9, Nixon 42.4, 7 polls). |
+| `rcp_sc_9115.json`, `rcp_mn_8922.json` | same pattern | Only row timestamps changed (and the MOE of NYT/Siena's MN row, now 4.1); averages unchanged. |
+| `poliwave_mn_sen.html`, `poliwave_sc_sen.html` | https://www.poliwave.com/us/<st>/sen-fed | Now list the NYT/Siena polls (MN 54/40, n 752; SC 48/48, n 707; Oct 19-26), matching RCP. |
+
+The release RCP links, https://floridapolitics.com/archives/827487-final-st-pete-polls-byron-donalds-leads-david-jolly-48-to-46-as-long-as-republicans-show-up/, could not be retrieved: curl and headless Chrome got Florida Politics' "Browser Update Required" block (HTTP 403), WebFetch got HTTP 402, archive.ph has no copy and the Wayback Machine was rate-limiting. St. Pete Polls' own site (https://stpetepolls.org/) lists no 2026 polls. The poll's numbers therefore come from RCP's feed, matching the NYT list.

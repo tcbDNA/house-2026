@@ -42,7 +42,7 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   MN     -6.06   -0.00  -0.01  -0.42    -5.63  poll blend (expected)
   GA     -5.27   -0.01  -0.02  -0.75    -4.50  FLAG · poll blend (expected)
   MI     -4.62   +0.00  -0.00  -0.11    -4.51  poll blend (expected)
-  FL     -4.28   -0.05  -0.22  -0.71    -3.30  FLAG · poll blend (expected)
+  FL     -4.48   -0.05  -0.22  -0.71    -3.50  FLAG · poll blend (expected)
   NE     +3.99   +0.00  +0.02  +0.22    +3.75  poll blend (expected)
   RI     -3.78   +0.21  +0.04  +0.08    -4.12  poll blend (expected)
   ME     -3.63   +0.49  -0.00  -0.02    -4.09  poll blend (expected)

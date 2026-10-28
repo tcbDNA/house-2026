@@ -185,7 +185,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (69.2% vs 65.1% by default; Osborn's race is nearly all of the
+        them does (69.2% vs 65.0% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -213,7 +213,7 @@ export function Methodology() {
         Louisiana and 11 safe races have no recent poll and use the model alone.
         The blend takes Texas from the model's R+1.5 to Talarico D+1.0, Nebraska
         from R+4.9 to Ricketts +1.2 and Alaska from R+2.2 to D+0.6; P(D control)
-        is 69.2% (59.5% on the model alone; 68.1% / 69.9% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        is 69.2% (59.5% on the model alone; 68.1% / 69.8% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
