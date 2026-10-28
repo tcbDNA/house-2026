@@ -274,12 +274,16 @@ export function Methodology() {
         governor races of 2018 and 2022 with only pre-election inputs (RCP's final
         averages) and a separate intercept per year, rebuilding the WAR records at
         each new slope until it settles. With single records at half weight it
-        gave a 9.3-point incumbency bonus, rejected: dropping four blue-state
-        Republican landslides (Baker, Hogan, Scott, Sununu) took about 3 points
-        off it, and giving a single governor record full weight about 2.7, with a
-        better fit (MAE 7.16 vs 7.41). The adopted fit: slope 0.677 (SE 0.057),
-        incumbency 6.55 (SE 1.53), w 0.788 (SE 0.058); the blended projection
-        misses by SD 4.2 points where there are polls, the model alone by 9.8. The
+        gave a 9.3-point incumbency bonus, rejected: about 3 of those points were
+        personal vote rather than incumbency. Dropping the six landslide races of
+        four blue-state Republicans (Baker, Hogan, Scott, Sununu) brings it to
+        6.3, and giving a single governor record full weight brings it to 6.6
+        with a better fit (MAE 7.16 vs 7.41). The adopted fit: slope 0.677 (SE
+        0.057), incumbency 6.55 (SE 1.53), w 0.788 (SE 0.058); the blended
+        projection misses by SD 4.2 points where there are polls, the model alone
+        by 9.8, and each race's extra error is interpolated between the two by its
+        poll weight. Shared draws of the slope and incumbency barely widen the
+        governorship range (80% range 23–30 with or without them). The
         model–poll gap didn't predict the blend's error in those well-polled
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 28):
