@@ -21,4 +21,4 @@ Five competitive districts (|projection| < 10) with the highest Hispanic elector
   composition + level only                   national SD 2.94   avg pairwise corr (5 Hispanic seats) 0.397
                                              {'national_margin': 9.34, 'house_d_seats': 234, 'house_median': 238, 'house_p10': 223, 'house_p90': 258, 'house_p_d_majority': 0.972, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.694}
   item 4 default (both)                      national SD 2.94   avg pairwise corr (5 Hispanic seats) 0.524
-                                             {'national_margin': 9.34, 'house_d_seats': 234, 'house_median': 238, 'house_p10': 223, 'house_p90': 258, 'house_p_d_majority': 0.972, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.691}
+                                             {'national_margin': 9.34, 'house_d_seats': 234, 'house_median': 238, 'house_p10': 223, 'house_p90': 258, 'house_p_d_majority': 0.972, 'senate_d_seats': 52, 'senate_median': 52, 'senate_p_d_control': 0.692}

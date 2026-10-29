@@ -2342,10 +2342,10 @@
     "r": 41,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": false,
+    "in_rcp_average": true,
     "excluded_pollster": false,
-    "source": "UMass Lowell release (umasslowell_yougov_nh_ma_2026-10-28.html)",
-    "note": "600 LV, adjusted MOE +/-5. Pappas 48, Sununu 41, LaPlante (Constitution) 4, undecided 7. Governor: Ayotte 48, Warmington 42 (RCP's governor average has it; its Senate feed does not list it). Not in VoteHub or Poliwave."
+    "source": "UMass Lowell release (umasslowell_yougov_nh_ma_2026-10-28.html); RCP",
+    "note": "600 LV, adjusted MOE +/-5. Pappas 48, Sununu 41, LaPlante (Constitution) 4, undecided 7. Governor: Ayotte 48, Warmington 42. RCP added it to its Senate average on Oct 29 (row 07:11 CT). Not in VoteHub or Poliwave."
    },
    {
     "pollster": "Saint Anselm College",
@@ -2383,7 +2383,7 @@
     "note": "Added to RCP on Oct 26. RCP multi shows the same question: Laplante 4, Harris 1."
    }
   ],
-  "notes": "RCP two-way average (feed 8845): 9/15-10/23, Pappas 49.7, Sununu 43.0 (+6.7), 6 polls, including Rasmussen 10/20-23. Its lastBuildDate field (Oct 22) lags the Oct 26 Rasmussen addition. Without Rasmussen, only 2 non-excluded October polls are averaged. Pre-Oct: St. Anselm/AARP 9/28-29, Trafalgar 9/26-27. Oct 29 check: UMass Lowell/YouGov (Oct 2-19, released Oct 28) Pappas 48, Sununu 41, from the UMass Lowell release; not in RCP's Senate feed, VoteHub or Poliwave. It ends before the latest poll in RCP's average (Rasmussen 10/20-23), so New Hampshire stays on RCP's average."
+  "notes": "RCP two-way average (feed 8845): 9/15-10/23, Pappas 49.7, Sununu 43.0 (+6.7), 6 polls, including Rasmussen 10/20-23. Its lastBuildDate field (Oct 22) lags the Oct 26 Rasmussen addition. Without Rasmussen, only 2 non-excluded October polls are averaged. Pre-Oct: St. Anselm/AARP 9/28-29, Trafalgar 9/26-27. Oct 29 check: UMass Lowell/YouGov (Oct 2-19, released Oct 28) Pappas 48, Sununu 41, from the UMass Lowell release; not in RCP's Senate feed, VoteHub or Poliwave. It ends before the latest poll in RCP's average (Rasmussen 10/20-23), so New Hampshire stays on RCP's average. Oct 29 second check: RCP added UMass Lowell (10/2-19) to its average (feed lastBuildDate Oct 26 14:25 CT): 9/15-10/23, Pappas 49.4, Sununu 42.7, Rasmussen still in it."
  },
  "MN": {
   "polls": [

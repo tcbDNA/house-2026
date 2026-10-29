@@ -246,3 +246,18 @@ Effects on the averages:
 - **Montana**: the Concord poll is published by Democrats for Education Reform. Its `partisan` field is the sponsor's affiliation (VoteHub has no row), so it is out as partisan-sponsored, like the same firm's poll for Education Reform Now Advocacy in Nebraska. Montana stays on RCP's average.
 - **New Hampshire**: UMass Lowell/YouGov (Oct 2-19) is not in RCP's Senate feed, VoteHub or Poliwave, so it is recorded from the release. It ends before Rasmussen 10/20-23, the latest poll in RCP's average, so New Hampshire stays on RCP.
 - **Massachusetts**: UMass Lowell/YouGov (Oct 7-18) ends on the same day as the latest poll in RCP's average (Boston Globe/Suffolk 10/10-18), so it is not newer and Massachusetts stays on RCP. Massachusetts is not in the compiled table, so the poll is recorded here only.
+
+### Second check, 2026-10-29 13:33 UTC (from the user's NYT poll list paste)
+
+Every RCP feed, VoteHub's Senate and generic-ballot dumps and Poliwave's 35 race pages were downloaded again. VoteHub had no new Senate rows.
+
+| File | URL | Notes |
+|---|---|---|
+| `nyt_poll_list_user_paste_2026-10-29.txt` | NYT poll list (pasted by the user) | Verbatim: Tufts generic ballot (Oct 23-27) D 52, R 40 and Trump approval 36/61; David Binder Research for Eric Jones (D) in CA-04 (Oct 15-21), Jones 45, Thompson (D) 35; State Navigate Minnesota governor (Oct 26-28), Klobuchar 52, Demuth 42, Young (G) 3 (see `../../gov_polls_2026/`). |
+| `rcp_nh_8845.json` | https://orig.realclearpolitics.com/poll/race/8845/polling_data.json | UMass Lowell 10/2-19 (48/41) added to the average: 9/15-10/23, Pappas 49.4, Sununu 42.7 (lastBuildDate Oct 26 14:25 CT; row Oct 29 07:11 CT). |
+| `../ma/rcp_polling_data_8899.json` | https://orig.realclearpolitics.com/poll/race/8899/polling_data.json | UMass Lowell 10/7-18 (55/26) added: 9/14-10/18, Markey 55.6, Deaton 29.0. |
+| `poliwave_ks_sen.html`, `poliwave_me_sen.html`, `poliwave_mi_sen.html` | https://www.poliwave.com/us/<st>/sen-fed | Now list the CNN/SSRS polls. The Michigan row gives Oct 20-26 and links Maine's PDF; CNN's Michigan topline says Oct 20-27. |
+
+Not used:
+- **Tufts, generic ballot (Oct 23-27).** No release was found on Tufts' sites (Tufts Now, Tisch College/CIRCLE), in VoteHub's generic-ballot dump or by web search. Without it there are no race crosstabs, so the poll can't enter the environment estimate.
+- **CA-04 (Binder for Eric Jones).** A candidate-sponsored poll, and the House model uses no district polls (CA-04 is a Democrat-vs-Democrat race).
