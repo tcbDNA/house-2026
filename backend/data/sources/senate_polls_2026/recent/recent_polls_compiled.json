@@ -14,7 +14,7 @@
     "r": 46,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin"
    },
@@ -31,7 +31,7 @@
     "r": 43,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin"
    },
@@ -66,7 +66,7 @@
     "r": 42,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
     "note": "Full ballot (Redpath 3, Levy 5)."
@@ -249,7 +249,7 @@
     "note": "500 likely Ohio voters, live phone, Oct 21-26 (17.2% already voted). Full ballot with leaners: Brown 46.6, Husted 43.8, Levy (other party) 1.6, Redpath (L) 1.6, undecided 4.4, refused 2.0. No separate two-way question. RCP lists it as 47/44 (updated Oct 27 17:18 CT, averaged); Suffolk's files are dated Oct 28."
    }
   ],
-  "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate still Oct 25 10:05, content through Oct 27) now averages 9/22-10/26, Brown 48.1, Husted 44.8, 10 polls: Suffolk 10/21-26 added. Its latest poll ends after RedBox and Echelon, so Ohio uses RCP's average again (Rasmussen removed)."
+  "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate still Oct 25 10:05, content through Oct 27) now averages 9/22-10/26, Brown 48.1, Husted 44.8, 10 polls: Suffolk 10/21-26 added. Its latest poll ends after RedBox and Echelon, so Ohio uses RCP's average again (Rasmussen removed). Oct 29 check: RCP rebuilt its average (feed lastBuildDate Oct 28 05:56 CT): 10/5-10/26, Brown 47.9, Husted 45.3, 7 polls including Rasmussen; InsiderAdvantage 10/21-22 in, NYT/Siena 9/22-10/1, CNN 9/29-10/5 and Bowling Green 9/29-10/9 out."
  },
  "TX": {
   "polls": [
@@ -609,6 +609,24 @@
     "note": "Online sample of 1,000 Texas voters (VoteHub and RCP: RV), Oct 13-21. Senate full ballot: Talarico 50, Paxton 45, other 1, undecided 5. Univision article published Oct 27; added to RCP's average Oct 27 (08:01 CT)."
    },
    {
+    "pollster": "Texas Southern University/YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-21",
+    "end": "2026-10-25",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 2000,
+    "anti_r": 49,
+    "r": 47,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "RCP (rcp_tx_8867.json row 'TSU/YouGov*')",
+    "note": "From RCP's row only: 2,000 LV, MOE 2.2, Talarico 49, Paxton 47; released = the RCP row's timestamp (Oct 29 07:04 CT). The release RCP links (WFAA, https://www.wfaa.com/article/news/politics/elections/new-poll-talarico-abbott-lead-as-early-voting-in-texas-nears-close/287-7f4cca13-6e1d-433c-9041-727931b591cd) returned HTTP 403 to curl, headless Chrome and WebFetch, as did its TEGNA sister sites; no TSU release was found. Not in VoteHub or Poliwave."
+   },
+   {
     "pollster": "YouGov Blue",
     "sponsor": "254 Labs",
     "partisan": "D",
@@ -624,9 +642,27 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "254 Labs release page and PDF (Oct 28): 1,000 registered voters weighted to likely-voter targets, results among likely voters; NYT poll list (per user); VoteHub (row added Oct 28: sponsor 254 Labs, partisan flag DEM)"
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": "CNN",
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-27",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 923,
+    "anti_r": 49,
+    "r": 43,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "CNN/SSRS topline PDF (cnn_ssrs_texas_october_2026.pdf, SENVOTETX); RCP",
+    "note": "923 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.2). Talarico 49, Paxton 43, neither 5, other 3. Embargoed to Oct 29, 5:00 a.m. Governor (GOVVOTETX): Hinojosa 46, Abbott 48."
    }
   ],
-  "notes": "RCP two-way average (feed 8867, built Oct 27 08:17): 10/8-10/21, Talarico 48.5, Paxton 46.7 (+1.8), 11 polls, including Rasmussen and Univision/YouGov (added Oct 27). Earlier (built Oct 24): Talarico 48.4, Paxton 46.9 (+1.5), 10 polls. RCP 3-way (feed 8985): Talarico 48.0, Paxton 46.3, Brown 2.8. Not in RCP's two-way average: VoteHub/Verasight, Pollfinity, Trafalgar, ReconMR/Siena, YouGov, UT/TPP. Pre-Oct polls excluded: NYT/Siena 9/21-30, Fox 9/24-28, UMass Lowell 9/18-28, Guidant 9/20-28, Rasmussen 9/28-29 (270toWin dates some of these by release date in October). Oct 28 third check: YouGov Blue for 254 Labs (Oct 21-26, released Oct 28; 1,000 RV weighted to likely-voter targets) Talarico 51, Paxton 43, from 254 Labs' release (user's NYT poll list paste). Not in RCP, VoteHub or Poliwave yet. It ended after the latest poll in RCP's average (10/21) and came out after RCP's last update (Oct 27), so Texas is now recomputed. Oct 28 user decision: the Cor Strategies / Heritage Action poll is not counted (NOT_COUNTED in the build script). Oct 28 user decision: YouGov Blue counts as its own pollster (YOUGOV_BLUE_OWN_POLLSTER), so Univision/YouGov (10/13-21) stays in the recomputed average as YouGov's latest poll. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: VoteHub now lists the 254 Labs poll with a Democratic partisan flag, so under the partisan-sponsor rule (named sponsor + partisan flag) it is not counted; with no newer poll left, Texas goes back to RCP's average."
+  "notes": "RCP two-way average (feed 8867, built Oct 27 08:17): 10/8-10/21, Talarico 48.5, Paxton 46.7 (+1.8), 11 polls, including Rasmussen and Univision/YouGov (added Oct 27). Earlier (built Oct 24): Talarico 48.4, Paxton 46.9 (+1.5), 10 polls. RCP 3-way (feed 8985): Talarico 48.0, Paxton 46.3, Brown 2.8. Not in RCP's two-way average: VoteHub/Verasight, Pollfinity, Trafalgar, ReconMR/Siena, YouGov, UT/TPP. Pre-Oct polls excluded: NYT/Siena 9/21-30, Fox 9/24-28, UMass Lowell 9/18-28, Guidant 9/20-28, Rasmussen 9/28-29 (270toWin dates some of these by release date in October). Oct 28 third check: YouGov Blue for 254 Labs (Oct 21-26, released Oct 28; 1,000 RV weighted to likely-voter targets) Talarico 51, Paxton 43, from 254 Labs' release (user's NYT poll list paste). Not in RCP, VoteHub or Poliwave yet. It ended after the latest poll in RCP's average (10/21) and came out after RCP's last update (Oct 27), so Texas is now recomputed. Oct 28 user decision: the Cor Strategies / Heritage Action poll is not counted (NOT_COUNTED in the build script). Oct 28 user decision: YouGov Blue counts as its own pollster (YOUGOV_BLUE_OWN_POLLSTER), so Univision/YouGov (10/13-21) stays in the recomputed average as YouGov's latest poll. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: VoteHub now lists the 254 Labs poll with a Democratic partisan flag, so under the partisan-sponsor rule (named sponsor + partisan flag) it is not counted; with no newer poll left, Texas goes back to RCP's average. Oct 29 check: RCP's feed (built Oct 29 05:41 CT) averages 10/8-10/27, Talarico 48.6, Paxton 46.5, 13 polls including Rasmussen: CNN/SSRS 10/20-27 and TSU/YouGov 10/21-25 added. Texas stays on RCP's average (Rasmussen removed)."
  },
  "AK": {
   "polls": [
@@ -1356,9 +1392,27 @@
     "excluded_pollster": false,
     "source": "VoteHub; Poliwave; pollster release (afightworthhaving.com/polling/2026/kansas)",
     "note": "Full ballot (Graham 3.0). VoteHub/Poliwave round to 45/46; VoteHub added it Oct 26."
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": "CNN",
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-26",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 838,
+    "anti_r": 49,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "CNN/SSRS topline PDF (cnn_ssrs_kansas_october_2026.pdf, SENVOTEKS); RCP",
+    "note": "838 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.5). Hamilton 49, Marshall 45, neither 4, other 1. Governor (GOVVOTEKS): Holscher 45, Masterson 50."
    }
   ],
-  "notes": "RCP two-way average (feed 9106, last built Oct 15): 9/8-10/14, Marshall 46.0, Hamilton 45.7 (Marshall +0.3), 6 polls. It has not been rebuilt since Oct 15, so RedBox (Oct 20-23) is missing. Pre-Oct: Emerson 9/15-16, GSG 9/13-16, Wedgewood 9/22-24. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script)."
+  "notes": "RCP two-way average (feed 9106, last built Oct 15): 9/8-10/14, Marshall 46.0, Hamilton 45.7 (Marshall +0.3), 6 polls. It has not been rebuilt since Oct 15, so RedBox (Oct 20-23) is missing. Pre-Oct: Emerson 9/15-16, GSG 9/13-16, Wedgewood 9/22-24. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (lastBuildDate still Oct 20, CNN row added Oct 29) averages 9/8-10/26, Hamilton 46.1, Marshall 45.9, 7 polls: CNN/SSRS 10/20-26 added."
  },
  "ME": {
   "polls": [
@@ -1570,9 +1624,27 @@
     "excluded_pollster": false,
     "source": "Marist release and tables PDF (p.7); VoteHub; RCP; Poliwave",
     "note": "Likely voters (LV n not published; 1,449 RV, LV MOE +/-6.6; RCP and VoteHub list 1,449). Full ballot Jackson 49, Collins 47, another party 1, undecided 3. Poliwave shows 53/47. Among RV Jackson +9."
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": "CNN",
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-26",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 783,
+    "anti_r": 49,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "CNN/SSRS topline PDF (cnn_ssrs_maine_october_2026.pdf, SENVOTEME); RCP",
+    "note": "783 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.5). Jackson 49, Collins 45, neither 4, other 2 (Aug 31-Sep 6: 48/45). Governor (GOVVOTEME): Pingree 53, Charles 39 (Bennett not offered)."
    }
   ],
-  "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27."
+  "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27. Oct 29 check: RCP's feed (lastBuildDate Oct 27 05:41, CNN row added Oct 29) averages 9/23-10/26, Jackson 48.7, Collins 47.3, 11 polls: CNN/SSRS 10/20-26 added. Echelon Insights 10/16-23 is still listed but not averaged (still counted ahead of RCP: RCP_PENDING)."
  },
  "SC": {
   "polls": [
@@ -1737,7 +1809,7 @@
     "r": 41,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
     "note": "Full ballot (Christensen 3, Long 1, Marsh 1, Kristy 2). RCP n=680."
@@ -1936,9 +2008,45 @@
     "excluded_pollster": false,
     "source": "VoteHub; Poliwave; pollster release (afightworthhaving.com/polling/2026/michigan)",
     "note": "Full ballot (Christensen 1.0, Long 0.7). Added to VoteHub on Oct 26."
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": "CNN",
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-27",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 768,
+    "anti_r": 49,
+    "r": 42,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "CNN/SSRS topline PDF (cnn_ssrs_michigan_october_2026.pdf, SENVOTEMI); RCP",
+    "note": "768 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.7). El-Sayed 49, Rogers 42, neither 5, other 3 (Aug 31-Sep 6: 47/44). Governor (GOVVOTEMI): Benson 53, James 41."
+   },
+   {
+    "pollster": "Mitchell Research & Communications",
+    "sponsor": "CBS Detroit and other Michigan TV stations",
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-27",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 636,
+    "anti_r": 51,
+    "r": 44,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "CBS Detroit article (cbsdetroit_mitchell_mi_2026-10-28.html); RCP; Poliwave",
+    "note": "636 LV, online panels plus survey links texted to randomly selected registered voters; weighted to 2022 and 2024 results; MOE +/-3.9. El-Sayed 51, Rogers 44, undecided 3, third-party candidates 1% or less each. RCP: 'CBS News/Mitchell'."
    }
   ],
-  "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script)."
+  "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (built Oct 28 17:42 CT, CNN row added Oct 29) averages 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls: CNN/SSRS 10/20-27 and CBS News/Mitchell 10/26-27 added; Mitchell's Oct 1 poll is now listed but not averaged."
  },
  "MS": {
   "polls": [
@@ -2146,24 +2254,25 @@
     "note": "722 LV. Full ballot Cooper 51.4, Whatley 42.8, undecided 3.4 (Bray 1.3, Dublin 0.7 per VoteHub); with leaners 52.4/43.4. RCP lists 51/43; Poliwave 53/44 (n=702). Added to RCP Oct 26 (17:06 CT)."
    },
    {
-    "pollster": "High Point University",
+    "pollster": "High Point University/YouGov",
     "sponsor": null,
     "partisan": null,
     "start": "2026-10-01",
     "end": "2026-10-20",
-    "released": null,
-    "population": null,
-    "n": null,
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 620,
     "anti_r": 54,
     "r": 40,
     "h2h_anti_r": null,
     "h2h_r": null,
-    "in_rcp_average": false,
+    "in_rcp_average": true,
     "excluded_pollster": false,
-    "source": "NYT poll list as pasted by the user (Oct 28); no release found (HPU's Survey Research Center page lists no October Senate poll), so no n, population or release date"
+    "source": "HPU release (hpu_yougov_nc_2026-10-28.html); RCP; first recorded from the NYT poll list as pasted by the user (Oct 28)",
+    "note": "HPU Poll 128, fielded by the HPU Survey Research Center with YouGov, Oct 1-20, online panel: 800 RV (matched from 1,046), 620 LV (credibility interval 4.7). Cooper 54, Whatley 40, Bray (L) 2, Dublin (G) 1, unsure/would not vote 4. RCP added it to its average on Oct 28."
    }
   ],
-  "notes": "RCP two-way average (feed 8753; lastBuildDate Oct 24 14:08, content updated Oct 26 17:06): 9/27-10/25, Cooper 50.8, Whatley 40.5 (+10.3), 8 polls, including Quantus 10/24-25. Earlier (built Oct 22): 9/27-10/20, Cooper 50.7, Whatley 40.1 (+10.6), 7 polls. RedBox (Oct 20-23, released Oct 25) is not in RCP's average. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: High Point University, Oct 1-20, Cooper 54, Whatley 40, recorded from the user's NYT poll list paste only; not in RCP, VoteHub or Poliwave. It ended before the latest poll in RCP's average (Quantus 10/24-25), so North Carolina stays on RCP's average."
+  "notes": "RCP two-way average (feed 8753; lastBuildDate Oct 24 14:08, content updated Oct 26 17:06): 9/27-10/25, Cooper 50.8, Whatley 40.5 (+10.3), 8 polls, including Quantus 10/24-25. Earlier (built Oct 22): 9/27-10/20, Cooper 50.7, Whatley 40.1 (+10.6), 7 polls. RedBox (Oct 20-23, released Oct 25) is not in RCP's average. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: High Point University, Oct 1-20, Cooper 54, Whatley 40, recorded from the user's NYT poll list paste only; not in RCP, VoteHub or Poliwave. It ended before the latest poll in RCP's average (Quantus 10/24-25), so North Carolina stays on RCP's average. Oct 29 check: RCP added High Point University/YouGov (Oct 1-20) to its average on Oct 28: 9/27-10/25, Cooper 51.1, Whatley 40.4, 9 polls. HPU's release (Oct 28) gives 620 LV."
  },
  "NH": {
   "polls": [
@@ -2221,6 +2330,24 @@
     "note": "Full ballot 50/43 (Laplante 4) per VoteHub, RCP multi and 270toWin. Head-to-head 50/45 per RCP two-way and Poliwave. Poliwave labels NPA (R)."
    },
    {
+    "pollster": "UMass Lowell/YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-02",
+    "end": "2026-10-19",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 600,
+    "anti_r": 48,
+    "r": 41,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "UMass Lowell release (umasslowell_yougov_nh_ma_2026-10-28.html)",
+    "note": "600 LV, adjusted MOE +/-5. Pappas 48, Sununu 41, LaPlante (Constitution) 4, undecided 7. Governor: Ayotte 48, Warmington 42 (RCP's governor average has it; its Senate feed does not list it). Not in VoteHub or Poliwave."
+   },
+   {
     "pollster": "Saint Anselm College",
     "sponsor": null,
     "partisan": null,
@@ -2256,7 +2383,7 @@
     "note": "Added to RCP on Oct 26. RCP multi shows the same question: Laplante 4, Harris 1."
    }
   ],
-  "notes": "RCP two-way average (feed 8845): 9/15-10/23, Pappas 49.7, Sununu 43.0 (+6.7), 6 polls, including Rasmussen 10/20-23. Its lastBuildDate field (Oct 22) lags the Oct 26 Rasmussen addition. Without Rasmussen, only 2 non-excluded October polls are averaged. Pre-Oct: St. Anselm/AARP 9/28-29, Trafalgar 9/26-27."
+  "notes": "RCP two-way average (feed 8845): 9/15-10/23, Pappas 49.7, Sununu 43.0 (+6.7), 6 polls, including Rasmussen 10/20-23. Its lastBuildDate field (Oct 22) lags the Oct 26 Rasmussen addition. Without Rasmussen, only 2 non-excluded October polls are averaged. Pre-Oct: St. Anselm/AARP 9/28-29, Trafalgar 9/26-27. Oct 29 check: UMass Lowell/YouGov (Oct 2-19, released Oct 28) Pappas 48, Sununu 41, from the UMass Lowell release; not in RCP's Senate feed, VoteHub or Poliwave. It ends before the latest poll in RCP's average (Rasmussen 10/20-23), so New Hampshire stays on RCP's average."
  },
  "MN": {
   "polls": [
@@ -2719,8 +2846,26 @@
     "excluded_pollster": false,
     "source": "RCP; Poliwave; 270toWin; VoteHub; pollster release (mt_senate_2026/)",
     "note": "Release: Alme 43.8, Bodnar 28.2, Bankhead 20.6, Austin 1.7. With leaners: 45.6/29.4/21.2. RCP 44/28/21/2. VoteHub swaps Bodnar and Bankhead (21/29). Poliwave 47/31/22 (n=667)."
+   },
+   {
+    "pollster": "Concord Public Opinion Partners",
+    "sponsor": "Democrats for Education Reform",
+    "partisan": "D",
+    "start": "2026-10-22",
+    "end": "2026-10-23",
+    "released": null,
+    "population": "LV",
+    "n": 410,
+    "anti_r": 39,
+    "r": 38,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "Poll findings PDF on dfer.org (DFER-MT-GE-PollFindings-OCT2026.pdf, p.7); Poliwave",
+    "note": "Published by Democrats for Education Reform (dfer.org/wp-content/uploads/2026/10/DFER-MT-GE-PollFindings-OCT2026.pdf); 'Conducted by Concord Public Opinion Partners', live calls and text-to-web, MOE +/-4.84. anti_r = Bodnar (I) 39; Alme (R) 38, Bankhead (D) 10, Austin (L) 2, undecided 11. partisan = the sponsor's affiliation (not in VoteHub), so the poll is out as partisan-sponsored. No release date stated."
    }
   ],
-  "notes": "anti_r = Bodnar (I); Bankhead (D) is also on the ballot, with shares in each note. RCP average (feed 9034): 8/27-10/18, Alme 41.0, Bodnar 29.0, Bankhead 18.5, Austin 3.5, from 2 polls (Quantus Oct and MTFP/Rutgers-Eagleton 8/27-9/7). The two internals are not in it. VoteHub has no MT Senate average. No Rasmussen or ActiVote poll."
+  "notes": "anti_r = Bodnar (I); Bankhead (D) is also on the ballot, with shares in each note. RCP average (feed 9034): 8/27-10/18, Alme 41.0, Bodnar 29.0, Bankhead 18.5, Austin 3.5, from 2 polls (Quantus Oct and MTFP/Rutgers-Eagleton 8/27-9/7). The two internals are not in it. VoteHub has no MT Senate average. No Rasmussen or ActiVote poll. Oct 29 check: Concord Public Opinion Partners for Democrats for Education Reform (Oct 22-23) Bodnar 39, Alme 38, Bankhead 10: partisan sponsor, not counted; Montana stays on RCP's average."
  }
 }

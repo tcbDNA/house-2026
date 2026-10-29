@@ -210,3 +210,39 @@ Every RCP feed, VoteHub's Senate dump and Poliwave's 35 race pages were download
 | `victoryinsights_PollReport_MN-GE-26_10-28-26.pdf` | https://irp.cdn-website.com/07e08705/files/uploaded/PollReport_MN-GE-26_10-28-26.pdf | Victory Insights, Oct 21-22, 1,194 LV, "Commissioned by Michele Tafoya": Senate Flanagan 47.8, Tafoya 44.4 (p.6). Found while collecting governor polls (also saved in `../../gov_polls_2026/`). Replaces the paste-only record; still not counted (partisan sponsor). |
 
 Texas: VoteHub now flags the 254 Labs poll Democratic, so under the partisan-sponsor rule (a named sponsor plus a partisan flag) it no longer counts; with no newer poll left, Texas returns to RCP's average. North Carolina: High Point's poll isn't in RCP, VoteHub or Poliwave and no release was found (HPU's Survey Research Center page lists no October Senate poll), so it is recorded from the paste only; it ended before Quantus 10/24-25, the latest poll in RCP's average.
+
+## Update, 2026-10-29 (manual poll check: CNN/SSRS state polls, user asked)
+
+Every RCP feed, VoteHub's Senate dump and Poliwave's 35 race pages were downloaded again at 12:09 UTC. VoteHub had no new rows (only VoteHub's own average weights and a sponsor-name edit changed), so its saved copy is kept. RCP's `lastBuildDate` again lags the content: Kansas still says Oct 20 and Maine Oct 27, but both feeds have CNN rows timestamped Oct 29.
+
+| File | URL | Notes |
+|---|---|---|
+| `cnn_ssrs_texas_october_2026.pdf` | https://s3.documentcloud.org/documents/28856724/cnn-poll-conducted-by-ssrs-texas-october.pdf (RCP links https://www.documentcloud.org/documents/28856724-cnn-poll-conducted-by-ssrs-texas-october/) | CNN/SSRS topline, embargoed to Oct 29 5:00 a.m.: 923 registered voters, online and phone, Oct 20-27; likely-voter results weight every respondent by predicted probability of voting, MOE +/-4.2. SENVOTETX: Talarico 49, Paxton 43, neither 5, other 3. GOVVOTETX: Hinojosa 46, Abbott 48. |
+| `cnn_ssrs_kansas_october_2026.pdf` | https://s3.documentcloud.org/documents/28856723/cnn-poll-conducted-by-ssrs-kansas-october.pdf | 838 RV, Oct 20-26, LV MOE +/-4.5. SENVOTEKS: Hamilton 49, Marshall 45, neither 4, other 1. GOVVOTEKS: Holscher 45, Masterson 50. |
+| `cnn_ssrs_maine_october_2026.pdf` | https://s3.documentcloud.org/documents/28856725/cnn-poll-conducted-by-ssrs-maine-october.pdf | 783 RV, Oct 20-26, LV MOE +/-4.5. SENVOTEME: Jackson 49, Collins 45, neither 4, other 2. GOVVOTEME: Pingree 53, Charles 39 (two-candidate question). |
+| `cnn_ssrs_michigan_october_2026.pdf` | https://s3.documentcloud.org/documents/28856720/cnn-poll-conducted-by-ssrs-michigan-october.pdf | 768 RV, Oct 20-27, LV MOE +/-4.7. SENVOTEMI: El-Sayed 49, Rogers 42, neither 5, other 3. GOVVOTEMI: Benson 53, James 41. |
+| `cbsdetroit_mitchell_mi_2026-10-28.html` | https://www.cbsnews.com/detroit/news/el-sayed-widens-lead-rogers-michigan-senate-poll/ | Mitchell Research & Communications for CBS Detroit and other Michigan TV stations, Oct 26-27, 636 LV, MOE +/-3.9: El-Sayed 51, Rogers 44, undecided 3. |
+| `hpu_yougov_nc_2026-10-28.html` | https://www.highpoint.edu/blog/2026/10/hpu-yougov-poll-north-carolina-likely-voters-weigh-in-on-u-s-senate-race-and-more/ | HPU Poll 128 (HPU Survey Research Center with YouGov), Oct 1-20, 800 RV / 620 LV, released Oct 28: Cooper 54, Whatley 40, Bray (L) 2, Dublin (G) 1. Replaces the paste-only record of Oct 28. |
+| `umasslowell_yougov_nh_ma_2026-10-28.html` | https://www.uml.edu/news/press-releases/2026/102826-new-england-polls.aspx | UMass Lowell/YouGov, released Oct 28. New Hampshire, Oct 2-19, 600 LV: Senate Pappas 48, Sununu 41, LaPlante 4; governor Ayotte 48, Warmington 42. Massachusetts, Oct 7-18, 850 LV: Senate Markey 55, Deaton 26; governor Healey 57, Minogue 29, James (I) 4. |
+| `DFER-MT-GE-PollFindings-OCT2026.pdf` | https://dfer.org/wp-content/uploads/2026/10/DFER-MT-GE-PollFindings-OCT2026.pdf | Published by Democrats for Education Reform; conducted by Concord Public Opinion Partners, Oct 22-23, 410 LV, MOE +/-4.84. Senate (p.7): Bodnar 39, Alme 38, Bankhead 10, Austin 2. |
+| `../al/chism_blueprint_al_2026-10-28.html` | https://www.chismstrategies.com/field-notes/new-alabama-poll-governors-race-a-toss-up-as-tuberville-edges-jones-48--45 | Chism Strategies field note (Oct 28): Blueprint Polling, Oct 22-24, 695 LV, text-to-web, MOE +/-3.72; Senate Moore 48, Wess 40; governor Tuberville 48, Jones 45. "This poll was not sponsored by any outside campaign or organization." |
+| `rcp_tx_8867.json`, `rcp_ks_9106.json`, `rcp_me_9100.json`, `rcp_mi_8802.json`, `rcp_nc_8753.json`, `rcp_oh_8689.json`, `../al/rcp_polling_data_9229.json` | https://orig.realclearpolitics.com/poll/race/<id>/polling_data.json | See below. |
+| `poliwave_tx_sen.html`, `poliwave_mi_sen.html`, `poliwave_mt_sen.html`, `../al/poliwave_al_sen.html` | https://www.poliwave.com/us/<st>/sen-fed | Now list SSRS TX, Mitchell MI, Concord MT (Oct 22-23) and Chism Strategies (D) AL (Oct 22-24). |
+
+RCP changes:
+- **Texas** (built Oct 29 05:41 CT): 10/8-10/27, Talarico 48.6, Paxton 46.5, 13 polls; CNN 10/20-27 (49/43) and TSU/YouGov 10/21-25 (2,000 LV, 49/47) added.
+- **Kansas**: 9/8-10/26, Hamilton 46.1, Marshall 45.9, 7 polls; CNN 10/20-26 (49/45) added.
+- **Maine**: 9/23-10/26, Jackson 48.7, Collins 47.3, 11 polls; CNN 10/20-26 (49/45) added. Echelon Insights 10/16-23 is still listed but not averaged, so it stays in `RCP_PENDING`.
+- **Michigan** (built Oct 28 17:42 CT): 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls; CNN 10/20-27 (49/42) and CBS News/Mitchell 10/26-27 (51/44) added. Mitchell's Oct 1 poll is now listed but not averaged.
+- **North Carolina**: High Point University (Oct 1-20, 54/40) added to the average on Oct 28: 9/27-10/25, Cooper 51.1, Whatley 40.4, 9 polls.
+- **Ohio** (lastBuildDate Oct 28 05:56 CT): rebuilt to 10/5-10/26, Brown 47.9, Husted 45.3, 7 polls; InsiderAdvantage 10/21-22 in; NYT/Siena 9/22-10/1, CNN 9/29-10/5 and Bowling Green 9/29-10/9 out.
+- **Alabama**: lastBuildDate Oct 20 -> Oct 21; average unchanged.
+
+TSU/YouGov (Texas) is recorded from RCP's row only. The release RCP links, https://www.wfaa.com/article/news/politics/elections/new-poll-talarico-abbott-lead-as-early-voting-in-texas-nears-close/287-7f4cca13-6e1d-433c-9041-727931b591cd, returned HTTP 403 to curl, headless Chrome and WebFetch, as did the same article path on WFAA's TEGNA sister sites. TSU's news page lists no 2026 poll, and a web search found no other copy.
+
+Effects on the averages:
+- Texas, Kansas, Maine, Michigan, North Carolina and Ohio stay on RCP's average (Rasmussen removed where present). No compiled poll is newer than the polls RCP added.
+- **Alabama** stays recomputed. Chism Strategies' Blueprint poll (Poliwave flags the firm D; the release says it had no sponsor, so it counts like other partisan pollsters without a named sponsor) ended Oct 24, after the latest poll in RCP's average (10/16-17). Moore +14.7 raw, +16.7 two-party (3 polls; was +18.0 / +20.5 with 2 polls).
+- **Montana**: the Concord poll is published by Democrats for Education Reform. Its `partisan` field is the sponsor's affiliation (VoteHub has no row), so it is out as partisan-sponsored, like the same firm's poll for Education Reform Now Advocacy in Nebraska. Montana stays on RCP's average.
+- **New Hampshire**: UMass Lowell/YouGov (Oct 2-19) is not in RCP's Senate feed, VoteHub or Poliwave, so it is recorded from the release. It ends before Rasmussen 10/20-23, the latest poll in RCP's average, so New Hampshire stays on RCP.
+- **Massachusetts**: UMass Lowell/YouGov (Oct 7-18) ends on the same day as the latest poll in RCP's average (Boston Globe/Suffolk 10/10-18), so it is not newer and Massachusetts stays on RCP. Massachusetts is not in the compiled table, so the poll is recorded here only.
