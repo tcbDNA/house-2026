@@ -64,6 +64,11 @@ OLD_POLL_WEIGHT = 0.5
 # The margin is the raw D − independent margin (three-way, like the Senate's
 # Montana), on polls only.
 INDEPENDENT_OPPONENT = {"RI": "Block"}
+# Polls RCP doesn't list at all, counted in its average anyway (user decision,
+# Oct 29: MSU's Michigan Election Survey, Oct 8-23). Keyed by (state, pollster
+# as compiled, fieldwork end). False: RCP's averaged set as published.
+COUNT_ADDED_TO_RCP = True
+ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight", date(2026, 10, 23))}
 
 DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "gov_polls_2026"
@@ -162,13 +167,19 @@ def build() -> str:
             kept = [a for a in rcp["averaged"] if not excluded(a["pollster"]) and a not in ps
                     and a["anti_r"] is not None and a["r"] is not None]
             removed = [a for a in rcp["averaged"] if a not in kept]
+            extra = [{"pollster": p["pollster"], "dates": f"ending {p['end']:%b %-d}", "end": p["end"],
+                      "anti_r": p["anti_r"], "r": p["r"], "others": p["others"]}
+                     for p in usable if COUNT_ADDED_TO_RCP and (st, p["pollster"], p["end"]) in ADDED_TO_RCP]
+            kept = kept + extra
             anti = sum(a["anti_r"] for a in kept) / len(kept)
             rep = sum(a["r"] for a in kept) / len(kept)
             third = sum(a["others"] for a in kept) / len(kept)
             reps = []   # RCP's two-way feeds carry no Republican share for a race against an independent
             used = [f"{a['pollster']} {a['dates']}" for a in kept]
             method = "RCP average" + ("; removed: " + ", ".join(f"{a['pollster']} {a['dates']}" for a in removed)
-                                      if removed else "")
+                                      if removed else "") + \
+                ("; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in extra) +
+                 " (not listed by RCP, counted by user decision)" if extra else "")
             as_of, url, local = rcp["built"].isoformat(), rcp["url"], rcp["local_file"]
             published = round(rcp["published"][0] - rcp["published"][1], 1) \
                 if None not in rcp["published"] else ""

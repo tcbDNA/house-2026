@@ -178,3 +178,5 @@ The source is the user's NYT poll list paste (`../senate_polls_2026/recent/nyt_p
 ## Update, 2026-10-29 (MSU Michigan survey, from the user's link)
 
 The source is MSU's 2026 Michigan Election Survey report (`../senate_polls_2026/recent/msu_ippsr_mi_2026_pre_election_report.pdf`, https://polisci.msu.edu/_assets/MI_2026_pre_election_report.pdf): MSU Political Science with the Office for Survey Research and Verasight, Oct 8-23, 1,383 likely voters, funded by MSU. Governor (MRP, initial response) Benson 48.5, James 38.7, someone else or none 3.3, undecided 9.6. RCP's Michigan governor feeds list the same polls as the saved copies. The poll is not in RCP's average and ends before RCP's latest averaged poll (CNN, Oct 20-27), so Michigan stays on RCP's average.
+
+User decision (Oct 29, after this check): count the MSU poll in RCP's Michigan average anyway (`COUNT_ADDED_TO_RCP` / `ADDED_TO_RCP` in `build_governor_poll_averages.py`). Michigan's average: 8 polls, Benson 50.6, James 42.5, two-party +8.37 -> +8.71.
