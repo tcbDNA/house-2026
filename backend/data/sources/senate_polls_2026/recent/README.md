@@ -259,5 +259,5 @@ Every RCP feed, VoteHub's Senate and generic-ballot dumps and Poliwave's 35 race
 | `poliwave_ks_sen.html`, `poliwave_me_sen.html`, `poliwave_mi_sen.html` | https://www.poliwave.com/us/<st>/sen-fed | Now list the CNN/SSRS polls. The Michigan row gives Oct 20-26 and links Maine's PDF; CNN's Michigan topline says Oct 20-27. |
 
 Not used:
-- **Tufts, generic ballot (Oct 23-27).** No release was found on Tufts' sites (Tufts Now, Tisch College/CIRCLE), in VoteHub's generic-ballot dump or by web search. Without it there are no race crosstabs, so the poll can't enter the environment estimate.
+- **Tufts, generic ballot (Oct 23-27).** No release was found at first (Tufts' sites, VoteHub, web search). The user then linked the Tufts Public Opinion Lab PDF, which has House vote by race, so the poll now enters the environment estimate: see `../../SOURCES.md` and `../../polls_2026/tufts_tpol/`.
 - **CA-04 (Binder for Eric Jones).** A candidate-sponsored poll, and the House model uses no district polls (CA-04 is a Democrat-vs-Democrat race).

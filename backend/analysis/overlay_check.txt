@@ -2,91 +2,91 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
 
 == House districts (435): reconciling shift = margin + demographic + trend parts
   district  shift  margin   demo  trend  notes
-  CA-32     -5.28   -0.43  -2.84  -2.00  FLAG
-  CA-45     +4.98   -0.08  +2.40  +2.66  FLAG
-  LA-06     +4.86   +1.83  +1.50  +1.52  FLAG
-  AZ-03     +4.57   +0.40  +3.68  +0.48  FLAG
-  FL-26     +4.38   +0.06  +2.16  +2.16  FLAG
-  CA-30     -4.30   +0.00  -3.29  -1.02  FLAG
+  CA-32     -5.27   -0.43  -2.82  -2.00  FLAG
+  CA-45     +4.90   -0.08  +2.33  +2.66  FLAG
+  LA-06     +4.85   +1.83  +1.50  +1.52  FLAG
+  AZ-03     +4.56   +0.40  +3.68  +0.48  FLAG
+  FL-26     +4.37   +0.06  +2.17  +2.16  FLAG
+  CA-30     -4.29   +0.00  -3.27  -1.02  FLAG
   FL-25     -4.15   +0.01  -2.32  -1.85  FLAG
-  CA-36     -3.88   +0.00  -3.36  -0.52  FLAG
-  LA-02     -3.87   +0.06  -1.61  -2.33  FLAG
-  CA-38     +3.70   -0.08  +3.06  +0.73  FLAG
-  CA-34     +3.44   -0.20  +2.67  +0.98  FLAG · locked D (reconciled to pre-lock projection)
-  CA-20     -3.17   -0.65  -2.58  +0.07  FLAG
-  CA-42     -2.97   +0.12  -1.94  -1.16  FLAG
-  GA-07     +2.88   -0.06  +2.01  +0.91  FLAG
-  CA-28     +2.86   +0.07  +0.49  +2.29  FLAG
-  CA-23     -2.84   -0.98  -2.18  +0.32  FLAG
-  TX-38     -2.44   -0.51  -2.15  +0.21  FLAG
-  MA-07     +2.39   +1.13  +0.86  +0.39  FLAG
-  CA-44     +2.35   +0.00  +2.62  -0.27  FLAG
-  CA-47     -2.27   +0.00  -1.05  -1.22  FLAG
-  TX-08     -2.24   +0.03  +0.11  -2.37  FLAG
-  CA-52     +2.18   -0.20  +3.53  -1.16  FLAG
-  CA-29     -2.18   -0.20  +0.28  -2.26  FLAG · locked D (reconciled to pre-lock projection)
-  MI-13     +2.18   +0.70  +0.67  +0.80  FLAG · estimated slices
-  CA-31     +2.10   +0.03  +1.23  +0.84  FLAG
-  |shift| median 0.34, 90th pct 1.59; 171 of 435 above 0.5
+  CA-36     -3.88   +0.00  -3.35  -0.52  FLAG
+  LA-02     -3.87   +0.06  -1.60  -2.33  FLAG
+  CA-38     +3.66   -0.08  +3.02  +0.73  FLAG
+  CA-34     +3.42   -0.20  +2.65  +0.98  FLAG · locked D (reconciled to pre-lock projection)
+  CA-20     -3.19   -0.65  -2.59  +0.07  FLAG
+  CA-42     -2.95   +0.12  -1.90  -1.16  FLAG
+  GA-07     +2.85   -0.06  +2.00  +0.91  FLAG
+  CA-23     -2.84   -0.98  -2.16  +0.32  FLAG
+  CA-28     +2.77   +0.07  +0.41  +2.29  FLAG
+  TX-38     -2.45   -0.51  -2.15  +0.21  FLAG
+  MA-07     +2.37   +1.13  +0.86  +0.39  FLAG
+  CA-44     +2.36   +0.00  +2.64  -0.27  FLAG
+  CA-47     -2.29   +0.00  -1.06  -1.22  FLAG
+  TX-08     -2.26   +0.03  +0.10  -2.37  FLAG
+  MI-13     +2.17   +0.70  +0.67  +0.80  FLAG · estimated slices
+  CA-52     +2.15   -0.20  +3.52  -1.16  FLAG
+  CA-29     -2.15   -0.20  +0.31  -2.26  FLAG · locked D (reconciled to pre-lock projection)
+  FL-27     +2.08   -0.20  -0.07  +2.35  FLAG
+  |shift| median 0.34, 90th pct 1.56; 175 of 435 above 0.5
   mean |part|: margin 0.16, demographic 0.42, trend 0.39
   Upstream data mismatch (slices' 2024 margins vs the district's, |margin part| > 0.5): 30 districts, 1 of them in the estimated-slice states:
     AL-04, AZ-08, AZ-05, CA-04, CA-13, CA-20, CA-23, IL-16, IL-02, IL-01, IL-03, IL-07, LA-06, MA-08, MA-02, MA-05, MA-07, MD-05, MD-08, MD-07, NY-13, SC-06, TN-05, TN-06, TX-10, TX-17, TX-37, TX-38, VA-08, MI-13
   The demographic and trend parts come from slices taking their parent county's shares and
   residual (option (a)): in counties split among several districts every slice gets the county
-  average. Of the 58 districts inside a single county, 36 have shifts above 0.5 for that reason alone.
+  average. Of the 58 districts inside a single county, 37 have shifts above 0.5 for that reason alone.
 
 == States (50): reconciled to the Senate seat, or the state's fundamentals with no race
   state  shift  margin   demo  trend override  notes
-  SD    +12.34   -0.01  -0.01  -0.03   +12.39  poll blend (expected)
-  ID     +6.26   +0.00  +0.02  +0.21    +6.02  poll blend (expected)
-  MN     -5.93   -0.00  -0.01  -0.42    -5.49  poll blend (expected)
-  GA     -5.57   -0.01  -0.02  -0.75    -4.80  FLAG · poll blend (expected)
-  MI     -4.00   +0.00  +0.01  -0.11    -3.89  poll blend (expected)
-  KS     +3.70   -0.10  +0.04  -0.06    +3.82  poll blend (expected)
-  RI     -3.61   +0.21  +0.05  +0.08    -3.95  poll blend (expected)
-  FL     -3.56   -0.05  -0.26  -0.71    -2.55  FLAG · poll blend (expected)
-  IA     +3.39   -0.00  -0.00  +0.14    +3.26  poll blend (expected)
-  NH     -3.32   -0.00  +0.00  +0.02    -3.34  poll blend (expected)
-  ME     -3.25   +0.49  -0.00  -0.02    -3.71  poll blend (expected)
-  AK     +2.97   +0.09  -0.07  -0.00    +2.96  poll blend (expected)
-  SC     +2.85   -0.00  +0.00  -0.37    +3.22  poll blend (expected)
-  AR     +2.74   -0.00  +0.02  -0.29    +3.02  poll blend (expected)
-  MA     +2.25   +0.01  +0.02  -0.16    +2.38  poll blend (expected)
-  NM     -1.91   -0.00  -0.02  -0.14    -1.75  poll blend (expected)
-  NE     +1.68   +0.00  +0.02  +0.22    +1.44  poll blend (expected)
-  TX     +1.67   -0.02  -0.30  -0.78    +2.76  FLAG · poll blend (expected)
-  AL     +1.65   +0.00  -0.13  -0.61    +2.39  FLAG · poll blend (expected)
+  SD    +11.96   -0.01  -0.02  -0.03   +12.01  poll blend (expected)
+  MN     -6.19   -0.00  -0.01  -0.42    -5.76  poll blend (expected)
+  ID     +6.13   +0.00  +0.02  +0.21    +5.90  poll blend (expected)
+  GA     -5.85   -0.01  -0.02  -0.75    -5.08  FLAG · poll blend (expected)
+  MI     -4.27   +0.00  +0.01  -0.11    -4.17  poll blend (expected)
+  RI     -3.89   +0.21  +0.05  +0.08    -4.23  poll blend (expected)
+  FL     -3.84   -0.05  -0.25  -0.71    -2.82  FLAG · poll blend (expected)
+  NH     -3.59   -0.00  +0.00  +0.02    -3.62  poll blend (expected)
+  ME     -3.52   +0.49  -0.00  -0.02    -3.99  poll blend (expected)
+  KS     +3.42   -0.10  +0.04  -0.06    +3.54  poll blend (expected)
+  IA     +3.12   -0.00  -0.00  +0.14    +2.98  poll blend (expected)
+  AK     +2.74   +0.09  -0.08  -0.00    +2.73  poll blend (expected)
+  AR     +2.65   -0.00  +0.02  -0.29    +2.93  poll blend (expected)
+  SC     +2.57   -0.00  +0.00  -0.37    +2.94  poll blend (expected)
+  NM     -2.07   -0.00  -0.02  -0.14    -1.91  poll blend (expected)
+  MA     +1.98   +0.01  +0.02  -0.16    +2.12  poll blend (expected)
+  NE     +1.49   +0.00  +0.02  +0.22    +1.26  poll blend (expected)
+  TX     +1.40   -0.02  -0.30  -0.78    +2.48  FLAG · poll blend (expected)
+  AL     +1.37   +0.00  -0.13  -0.61    +2.11  FLAG · poll blend (expected)
   UT     -1.17   -0.35  -0.06  -0.76    +0.00  FLAG · no 2026 race
   TN     -0.84   +0.00  -0.08  -0.77    +0.00  FLAG
   CA     -0.76   +0.01  -0.24  -0.54    +0.00  FLAG · no 2026 race
   MO     -0.66   -0.05  -0.01  -0.60    +0.00  FLAG · no 2026 race
   DE     -0.59   -0.00  +0.03  -0.61    +0.00  FLAG
   MD     -0.59   +0.00  -0.03  -0.56    +0.00  FLAG · no 2026 race
-  OH     +0.58   -0.06  -0.05  -0.35    +1.05  poll blend (expected)
-  LA     -0.55   +0.00  -0.07  -0.48    +0.00  FLAG
-  MS     +0.48   -0.02  -0.01  -0.50    +1.02  FLAG · poll blend (expected)
+  LA     -0.54   +0.00  -0.07  -0.48    +0.00  FLAG
+  MT     -0.43   -0.04  -0.01  -0.01    -0.37  poll blend (expected)
+  MS     +0.39   -0.02  -0.01  -0.50    +0.93  FLAG · poll blend (expected)
   ND     +0.38   +0.04  +0.01  +0.32    +0.00  no 2026 race
   KY     -0.37   -0.04  -0.02  -0.31    +0.00  
   IL     -0.36   +0.02  -0.03  -0.36    +0.00  
-  CO     -0.28   -0.00  +0.02  -0.30    +0.00  
-  IN     -0.28   -0.05  -0.00  -0.23    +0.00  no 2026 race
+  OH     +0.31   -0.06  -0.05  -0.35    +0.77  poll blend (expected)
+  CO     -0.29   -0.00  +0.02  -0.30    +0.00  
+  IN     -0.28   -0.05  +0.00  -0.23    +0.00  no 2026 race
   OR     -0.27   +0.00  +0.01  -0.29    +0.00  
-  NC     +0.25   +0.00  -0.13  -0.35    +0.73  poll blend (expected)
   OK     -0.25   +0.00  +0.03  -0.28    +0.00  
   VA     -0.25   -0.01  -0.02  -0.22    +0.00  
-  PA     -0.23   +0.00  -0.03  -0.21    +0.00  no 2026 race
+  PA     -0.23   +0.00  -0.02  -0.21    +0.00  no 2026 race
   AZ     -0.21   -0.02  +0.02  -0.21    +0.00  no 2026 race
-  MT     -0.18   -0.04  -0.01  -0.01    -0.11  poll blend (expected)
   VT     -0.13   +0.00  -0.00  -0.13    +0.00  no 2026 race
   NJ     -0.10   +0.02  +0.04  -0.16    +0.00  
   WI     -0.10   -0.00  -0.01  -0.10    +0.00  no 2026 race
   WA     -0.09   +0.00  +0.01  -0.10    +0.00  no 2026 race
   NV     +0.08   -0.00  +0.01  +0.07    +0.00  no 2026 race
+  HI     -0.07   +0.01  +0.04  -0.11    +0.00  no 2026 race
   NY     -0.07   +0.06  +0.07  -0.20    +0.00  no 2026 race
-  HI     -0.06   +0.01  +0.04  -0.11    +0.00  no 2026 race
   CT     -0.04   -0.00  +0.01  -0.04    +0.00  no 2026 race
-  WY     -0.03   -0.00  +0.01  -0.03    +0.00  
+  NC     -0.03   +0.00  -0.13  -0.35    +0.45  poll blend (expected)
   WV     +0.02   -0.06  -0.00  +0.09    +0.00  
+  WY     -0.02   -0.00  +0.01  -0.03    +0.00  
   states flagged (|shift excluding override| > 0.5): AL, CA, DE, FL, GA, LA, MD, MO, MS, TN, TX, UT
   The state shifts are mostly the trend part: counties' 2020→2024 shifts, averaged with 2024
   turnout weights, don't add up to the state's own shift (the turnout-composition offset also
