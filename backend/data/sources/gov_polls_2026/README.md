@@ -143,3 +143,23 @@ Files reused from elsewhere in the repo (not copied): `../senate_polls_2026/rece
 
 ## Verification
 15 randomly chosen compiled polls (seed 20261028: CA SurveyUSA 9/15-20, ME co/efficient, AZ HighGround 10/21-25, TX Emerson 10/17-19, GA Echelon, MI YouGov, AK Fabrizio/Impact, TX Marist 9/17-20, MA UMass/WCVB, ME Marist 10/1-4, AZ GrayHouse 10/18-20, AL RMG, PA NYT/Siena, NY Emerson, ME UMass Lowell) were re-read from the saved VoteHub and RCP files (and the AARP page and NetChoice topline for the two release-based entries); all fields matched.
+
+## Update, 2026-10-29 (manual poll check: CNN/SSRS state polls)
+
+Every RCP governor feed above and VoteHub's governor dump were downloaded again at 12:15 UTC. VoteHub had no new rows (only its average weights and a sponsor-name edit changed), so its saved copy is kept. Updated feeds: `rcp_gov_tx_8910.json`, `rcp_gov_tx_3way_9200.json`, `rcp_gov_ks_9017.json`, `rcp_gov_me_9030.json`, `rcp_gov_mi_8992.json`, `rcp_gov_nh_8953.json`, `rcp_gov_wi_9105.json`.
+
+| File | URL | Notes |
+|---|---|---|
+| `dailysignal_wi_2026-10-28.html` | https://www.dailysignal.com/2026/10/28/new-poll-shows-wisconsin-governors-race-is-up-for-grabs/ | Saved with headless Chrome; curl and WebFetch got HTTP 403. The League of American Workers conducted the poll itself (no sponsor named), Oct 19-23, 1,213 LV: Crowley 47.7, Tiffany 44.6, undecided 7.7. The Daily Signal reports it and quotes the group's founder, Steve Cortes. RCP lists it as "LAW/Daily Signal**" (48/45) in its average. |
+
+Files reused from elsewhere in the repo (not copied):
+- `../senate_polls_2026/recent/cnn_ssrs_{texas,kansas,maine,michigan}_october_2026.pdf`: CNN/SSRS, Oct 20-26/27, released Oct 29. GOVVOTE tables: TX Hinojosa 46, Abbott 48; KS Holscher 45, Masterson 50; ME Pingree 53, Charles 39 (two-candidate question, Bennett not offered); MI Benson 53, James 41.
+- `../senate_polls_2026/recent/umasslowell_yougov_nh_ma_2026-10-28.html`: UMass Lowell/YouGov, released Oct 28. NH (Oct 2-19, 600 LV): Ayotte 48, Warmington 42, Villee 3. MA (Oct 7-18, 850 LV): Healey 57, Minogue 29, James (I) 4.
+- `../senate_polls_2026/al/chism_blueprint_al_2026-10-28.html`: Blueprint Polling (Chism Strategies), Oct 22-24, 695 LV: Tuberville 48, Jones 45. "Not sponsored by any outside campaign or organization."
+- TSU/YouGov TX (Oct 21-25, 2,000 LV): Abbott 50, Hinojosa 47, Dixon (L) 2, from RCP's rows only. The WFAA release returned HTTP 403 (see `../senate_polls_2026/recent/README.md`, Oct 29).
+
+Effects on the governor averages:
+- RCP added CNN to its Texas, Kansas, Maine and Michigan averages, TSU/YouGov to Texas, UMass Lowell to New Hampshire and LAW to Wisconsin. All of these races use RCP's average.
+- **Kansas** goes back to RCP's average. CNN (ending Oct 26) is now its latest poll, so Global Strategy Group (Oct 21-22, which RCP never averaged) is no longer newer. Kansas had been recomputed on the extended window.
+- **Alabama** is recomputed. The Blueprint poll ended after the latest poll in RCP's average (Oct 17) and came out after RCP's last update (Oct 21). Its firm is flagged D, but it has no named sponsor, so it counts.
+- **Massachusetts** is recorded only. The UMass Lowell poll is not in RCP and ends on the same day as RCP's latest averaged poll, so it is not newer.

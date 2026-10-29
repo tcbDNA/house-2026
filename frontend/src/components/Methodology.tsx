@@ -286,9 +286,9 @@ export function Methodology() {
         governorship range (80% range 23–30 with or without them). The
         model–poll gap didn't predict the blend's error in those well-polled
         races, so its 0.5 × gap term is a judgment applied only where polling is
-        sparse; a Northeast indicator didn't improve the fit. Result (Oct 28):
+        sparse; a Northeast indicator didn't improve the fit. Result (Oct 29):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        23–30), with a 70.6% chance of a majority.
+        23–30), with a 70.1% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

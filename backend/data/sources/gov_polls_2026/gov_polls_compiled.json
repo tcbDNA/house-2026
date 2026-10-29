@@ -1,6 +1,6 @@
 {
  "AL": {
-  "notes": "RCP average (feed 8891, '2026 Alabama Governor - Tuberville vs. Jones', lastBuildDate Wed, 21 Oct 2026 12:31:55 -0500): 9/21 - 10/17, Tuberville 50.7, Jones 38.7 (Tuberville +12.0), 3 polls: Alabama Daily News 10/16 - 10/17; The Alabama Poll 10/15 - 10/16; RMG Research 9/21 - 9/25.",
+  "notes": "RCP average (feed 8891, '2026 Alabama Governor - Tuberville vs. Jones', lastBuildDate Wed, 21 Oct 2026 12:31:55 -0500): 9/21 - 10/17, Tuberville 50.7, Jones 38.7 (Tuberville +12.0), 3 polls: Alabama Daily News 10/16 - 10/17; The Alabama Poll 10/15 - 10/16; RMG Research 9/21 - 9/25. Oct 29 check: Blueprint Polling (Chism Strategies), Oct 22-24, released Oct 28, Tuberville 48, Jones 45, no sponsor: newer than RCP's average (built Oct 21), so Alabama is recomputed.",
   "polls": [
    {
     "pollster": "RMG Research",
@@ -80,6 +80,33 @@
     "excluded_pollster": false,
     "source": "rcp_gov_al_8891.json; wsfa_gray_alabama_daily_news_poll_2026-10-20.html",
     "note": "WSFA/Gray article (Oct 20): 500 likely voters, Oct 16-17, conducted by Cygnal, MOE 4. Not in VoteHub; RCP lists it as 'Alabama Daily News' 51/40. Not in VoteHub; RCP lists it as 'Alabama Daily News'."
+   },
+   {
+    "pollster": "Blueprint Polling (Chism Strategies)",
+    "sponsor": null,
+    "partisan": "D",
+    "start": "2026-10-22",
+    "end": "2026-10-24",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 695,
+    "d_candidate": "Doug Jones",
+    "r_candidate": "Tommy Tuberville",
+    "d": 45,
+    "r": 48,
+    "anti_r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 45,
+    "full_r": 48,
+    "others": [],
+    "undecided": 7,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/al/chism_blueprint_al_2026-10-28.html",
+    "note": "Chism Strategies field note (Oct 28): 695 LV, text-to-web, MOE +/-3.72; Tuberville 48, Jones 45 with leaners (45-44 before), 7 undecided. 'This poll was not sponsored by any outside campaign or organization.' partisan = Poliwave's label for the firm (D) on its Senate page; no sponsor, so it counts. Not in RCP or VoteHub."
    }
   ]
  },
@@ -2696,7 +2723,7 @@
   ]
  },
  "KS": {
-  "notes": "RCP average (feed 9017, '2026 Kansas Governor - Masterson vs. Holscher', lastBuildDate Tue, 06 Oct 2026 15:19:06 -0500): 9/8 - 10/4, Masterson 49.5, Holscher 43.8 (Masterson +5.7), 4 polls: YouGov 9/24 - 10/4; NY Times/Siena 9/22 - 10/1; Emerson 9/15 - 9/16; co/efficient 9/8 - 9/10.",
+  "notes": "RCP average (feed 9017, '2026 Kansas Governor - Masterson vs. Holscher', lastBuildDate Tue, 06 Oct 2026 15:19:06 -0500): 9/8 - 10/4, Masterson 49.5, Holscher 43.8 (Masterson +5.7), 4 polls: YouGov 9/24 - 10/4; NY Times/Siena 9/22 - 10/1; Emerson 9/15 - 9/16; co/efficient 9/8 - 9/10. Oct 29 check: RCP's feed (lastBuildDate Oct 7, CNN row added Oct 29) averages 9/8-10/26, Masterson 49.6, Holscher 44.0, 5 polls: CNN 10/20-26 added.",
   "polls": [
    {
     "pollster": "co/efficient",
@@ -2907,11 +2934,38 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json"
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-26",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 838,
+    "d_candidate": "Cindy Holscher",
+    "r_candidate": "Ty Masterson",
+    "d": 45,
+    "r": 50,
+    "anti_r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 45,
+    "full_r": 50,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/cnn_ssrs_kansas_october_2026.pdf (GOVVOTEKS); rcp_gov_ks_9017.json",
+    "note": "838 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.5). Two-candidate question: Holscher 45, Masterson 50, neither 4, other 1. RCP: 'CNN'."
    }
   ]
  },
  "ME": {
-  "notes": "Independent Rick Bennett is on the ballot (2-11% in polls). RCP keeps a two-way average (feed 9030, used for in_rcp_average) and a three-way average (feed 9101). RCP average (feed 9030, '2026 Maine Governor - Charles vs. Pingree', lastBuildDate Tue, 27 Oct 2026 05:38:53 -0500): 9/17 - 10/25, Pingree 49.3, Charles 39.8 (Pingree +9.5), 8 polls: Marist 10/22 - 10/25; FOX News 10/16 - 10/20; Suffolk University 10/8 - 10/11; Washington Post 9/30 - 10/5; CBS News 9/23 - 10/1; co/efficient 9/28 - 9/30; Fabrizio/Anzalone 9/20 - 9/22; UNH 9/17 - 9/21. Multi-candidate RCP average (feed 9101, '2026 Maine Governor - Charles vs. Pingree vs. Bennett', lastBuildDate Tue, 27 Oct 2026 12:19:42 -0500): 9/17 - 10/25, Pingree 48.5, Charles 39.3, Bennett 7.5 (Pingree +9.2), 6 polls: Marist 10/22 - 10/25; FOX News 10/16 - 10/20; Suffolk University 10/8 - 10/11; Washington Post 9/30 - 10/5; Fabrizio/Anzalone 9/20 - 9/22; UNH 9/17 - 9/21.",
+  "notes": "Independent Rick Bennett is on the ballot (2-11% in polls). RCP keeps a two-way average (feed 9030, used for in_rcp_average) and a three-way average (feed 9101). RCP average (feed 9030, '2026 Maine Governor - Charles vs. Pingree', lastBuildDate Tue, 27 Oct 2026 05:38:53 -0500): 9/17 - 10/25, Pingree 49.3, Charles 39.8 (Pingree +9.5), 8 polls: Marist 10/22 - 10/25; FOX News 10/16 - 10/20; Suffolk University 10/8 - 10/11; Washington Post 9/30 - 10/5; CBS News 9/23 - 10/1; co/efficient 9/28 - 9/30; Fabrizio/Anzalone 9/20 - 9/22; UNH 9/17 - 9/21. Multi-candidate RCP average (feed 9101, '2026 Maine Governor - Charles vs. Pingree vs. Bennett', lastBuildDate Tue, 27 Oct 2026 12:19:42 -0500): 9/17 - 10/25, Pingree 48.5, Charles 39.3, Bennett 7.5 (Pingree +9.2), 6 polls: Marist 10/22 - 10/25; FOX News 10/16 - 10/20; Suffolk University 10/8 - 10/11; Washington Post 9/30 - 10/5; Fabrizio/Anzalone 9/20 - 9/22; UNH 9/17 - 9/21. Oct 29 check: RCP's two-way feed (built Oct 29 05:46 CT) averages 9/17-10/26, Pingree 49.7, Charles 39.7, 9 polls: CNN 10/20-26 added.",
   "polls": [
    {
     "pollster": "CNN/SSRS",
@@ -3346,6 +3400,33 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_me_3way_9101.json; rcp_gov_me_9030.json"
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-26",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 783,
+    "d_candidate": "Hannah Pingree",
+    "r_candidate": "Bobby Charles",
+    "d": 53,
+    "r": 39,
+    "anti_r": 53,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 53,
+    "full_r": 39,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/cnn_ssrs_maine_october_2026.pdf (GOVVOTEME); rcp_gov_me_9030.json",
+    "note": "783 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.5). Two-candidate question (Bennett not offered): Pingree 53, Charles 39, neither 4, other 4 (Aug 31-Sep 6: 52/39). RCP: 'CNN'; not in RCP's three-way feed."
    }
   ]
  },
@@ -3392,7 +3473,7 @@
   ]
  },
  "MA": {
-  "notes": "RCP average (feed 8937, '2026 Massachusetts Governor - Minogue vs. Healey', lastBuildDate Mon, 19 Oct 2026 13:20:40 -0500): 9/14 - 10/18, Healey 56.0, Minogue 34.5 (Healey +21.5), 4 polls: Boston Globe/Suffolk 10/10 - 10/18; WCVB-TV/Amherst 10/6 - 10/13; UNH 9/17 - 9/21; CWB/MassINC 9/14 - 9/22.",
+  "notes": "RCP average (feed 8937, '2026 Massachusetts Governor - Minogue vs. Healey', lastBuildDate Mon, 19 Oct 2026 13:20:40 -0500): 9/14 - 10/18, Healey 56.0, Minogue 34.5 (Healey +21.5), 4 polls: Boston Globe/Suffolk 10/10 - 10/18; WCVB-TV/Amherst 10/6 - 10/13; UNH 9/17 - 9/21; CWB/MassINC 9/14 - 9/22. Oct 29 check: UMass Lowell/YouGov (Oct 7-18, released Oct 28) Healey 57, Minogue 29, from the release; not in RCP. It ends on the same day as RCP's latest averaged poll, so it is not newer.",
   "polls": [
    {
     "pollster": "University of New Hampshire",
@@ -3518,11 +3599,44 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_ma_8937.json",
     "note": "RCP dates 10-10 to 10-18."
+   },
+   {
+    "pollster": "UMass Lowell/YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-07",
+    "end": "2026-10-18",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 850,
+    "d_candidate": "Maura Healey",
+    "r_candidate": "Michael Minogue",
+    "d": 57,
+    "r": 29,
+    "anti_r": 57,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 57,
+    "full_r": 29,
+    "others": [
+     {
+      "name": "Andrea James",
+      "party": "I",
+      "pct": 4
+     }
+    ],
+    "undecided": 8,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/umasslowell_yougov_nh_ma_2026-10-28.html",
+    "note": "850 LV, MOE +/-4.4: Healey 57, Minogue 29, James (I) 4, undecided 8, would not vote 2. Not in RCP or VoteHub."
    }
   ]
  },
  "MI": {
-  "notes": "RCP average (feed 8992, '2026 Michigan Governor - James vs. Benson', lastBuildDate Mon, 26 Oct 2026 15:18:19 -0500): 9/24 - 10/22, Benson 50.5, James 43.3 (Benson +7.2), 6 polls: Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; Mitchell Research 10/1 - 10/1; FOX News 9/24 - 9/28. Multi-candidate RCP average (feed 9226, '2026 Michigan Governor - Multi-Candidate', lastBuildDate Wed, 31 Dec 1969 18:00:00 -0600): 9/16 - 9/21, Benson 48.0, James 36.0, Hudson 2.0, Campbell 1.5, Brandenburg 0.0 (Benson +12.0), 2 polls: Cygnal/Beacon Research 9/18 - 9/21; Suffolk 9/16 - 9/20.",
+  "notes": "RCP average (feed 8992, '2026 Michigan Governor - James vs. Benson', lastBuildDate Mon, 26 Oct 2026 15:18:19 -0500): 9/24 - 10/22, Benson 50.5, James 43.3 (Benson +7.2), 6 polls: Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; Mitchell Research 10/1 - 10/1; FOX News 9/24 - 9/28. Multi-candidate RCP average (feed 9226, '2026 Michigan Governor - Multi-Candidate', lastBuildDate Wed, 31 Dec 1969 18:00:00 -0600): 9/16 - 9/21, Benson 48.0, James 36.0, Hudson 2.0, Campbell 1.5, Brandenburg 0.0 (Benson +12.0), 2 polls: Cygnal/Beacon Research 9/18 - 9/21; Suffolk 9/16 - 9/20. Oct 29 check: RCP's feed (lastBuildDate Oct 27 13:14, CNN row added Oct 29) averages 9/24-10/27, Benson 50.9, James 43.0, 7 polls: CNN 10/20-27 added.",
   "polls": [
    {
     "pollster": "Glengariff Group",
@@ -4080,6 +4194,33 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json"
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-27",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 768,
+    "d_candidate": "Jocelyn Benson",
+    "r_candidate": "John James",
+    "d": 53,
+    "r": 41,
+    "anti_r": 53,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 53,
+    "full_r": 41,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/cnn_ssrs_michigan_october_2026.pdf (GOVVOTEMI); rcp_gov_mi_8992.json",
+    "note": "768 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.7). Two-candidate question: Benson 53, James 41, neither 3, other 2 (Aug 31-Sep 6: 50/41). RCP: 'CNN'."
    }
   ]
  },
@@ -4859,7 +5000,7 @@
   ]
  },
  "NH": {
-  "notes": "RCP average (feed 8953, '2026 New Hampshire Governor - Ayotte vs. Warmington', lastBuildDate Tue, 27 Oct 2026 05:49:01 -0500): 9/15 - 10/23, Ayotte 50.8, Warmington 41.3 (Ayotte +9.5), 4 polls: Rasmussen Reports 10/20 - 10/23; St. Anselm 10/19 - 10/20; YouGov 9/28 - 10/5; NY Times/Siena 9/15 - 9/22. Includes Rasmussen Reports (excluded pollster). RCP multi-candidate feed 9227 ('2026 New Hampshire Governor - Ayotte vs. Warmington vs. Villee', lastBuildDate Mon, 19 Oct 2026 14:41:20 -0500) lists polls without an average.",
+  "notes": "RCP average (feed 8953, '2026 New Hampshire Governor - Ayotte vs. Warmington', lastBuildDate Tue, 27 Oct 2026 05:49:01 -0500): 9/15 - 10/23, Ayotte 50.8, Warmington 41.3 (Ayotte +9.5), 4 polls: Rasmussen Reports 10/20 - 10/23; St. Anselm 10/19 - 10/20; YouGov 9/28 - 10/5; NY Times/Siena 9/15 - 9/22. Includes Rasmussen Reports (excluded pollster). RCP multi-candidate feed 9227 ('2026 New Hampshire Governor - Ayotte vs. Warmington vs. Villee', lastBuildDate Mon, 19 Oct 2026 14:41:20 -0500) lists polls without an average. Oct 29 check: RCP's feed averages 9/15-10/23, Ayotte 50.2, Warmington 41.4: UMass Lowell/YouGov 10/2-19 added (released Oct 28).",
   "polls": [
    {
     "pollster": "co/efficient",
@@ -5037,6 +5178,39 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_nh_3way_9227.json; rcp_gov_nh_8953.json",
     "note": "Third-party shares from RCP's multi-candidate feed."
+   },
+   {
+    "pollster": "UMass Lowell/YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-02",
+    "end": "2026-10-19",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 600,
+    "d_candidate": "Cinde Warmington",
+    "r_candidate": "Kelly Ayotte",
+    "d": 42,
+    "r": 48,
+    "anti_r": 42,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 42,
+    "full_r": 48,
+    "others": [
+     {
+      "name": "Stephen Villee",
+      "party": "L",
+      "pct": 3
+     }
+    ],
+    "undecided": 7,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/umasslowell_yougov_nh_ma_2026-10-28.html; rcp_gov_nh_8953.json",
+    "note": "600 LV, adjusted MOE +/-5: Ayotte 48, Warmington 42, Villee (L) 3, undecided 7. RCP: 'UMass Lowell'."
    },
    {
     "pollster": "Saint Anselm",
@@ -6757,7 +6931,7 @@
   ]
  },
  "TX": {
-  "notes": "RCP average (feed 8910, '2026 Texas Governor - Abbott vs. Hinojosa', lastBuildDate Sat, 24 Oct 2026 08:56:10 -0500): 10/5 - 10/21, Abbott 49.6, Hinojosa 46.4 (Abbott +3.2), 9 polls: Univision/YouGov 10/13 - 10/21; Emerson 10/17 - 10/19; FOX News 10/15 - 10/19; TPOR 10/15 - 10/18; CBS News 10/8 - 10/16; University of Houston 10/10 - 10/14; Cook Political Report 10/9 - 10/13; Marist 10/8 - 10/11; ReconMR/Siena 10/5 - 10/8. Multi-candidate RCP average (feed 9200, '2026 Texas Governor - Abbott vs. Hinojosa vs. Dixon', lastBuildDate Wed, 21 Oct 2026 16:05:01 -0500): 9/8 - 10/19, Abbott 48.7, Hinojosa 45.3, Dixon 1.7 (Abbott +3.4), 9 polls: Emerson 10/17 - 10/19; University of Houston 10/10 - 10/14; Cook Political Report 10/9 - 10/13; University of Texas 9/25 - 10/5; UMass Lowell 9/18 - 9/28; TPOR 9/19 - 9/22; TSU/YouGov 9/15 - 9/19; Emerson 9/12 - 9/14; Telemundo/Mason-Dixon 9/8 - 9/10.",
+  "notes": "RCP average (feed 8910, '2026 Texas Governor - Abbott vs. Hinojosa', lastBuildDate Sat, 24 Oct 2026 08:56:10 -0500): 10/5 - 10/21, Abbott 49.6, Hinojosa 46.4 (Abbott +3.2), 9 polls: Univision/YouGov 10/13 - 10/21; Emerson 10/17 - 10/19; FOX News 10/15 - 10/19; TPOR 10/15 - 10/18; CBS News 10/8 - 10/16; University of Houston 10/10 - 10/14; Cook Political Report 10/9 - 10/13; Marist 10/8 - 10/11; ReconMR/Siena 10/5 - 10/8. Multi-candidate RCP average (feed 9200, '2026 Texas Governor - Abbott vs. Hinojosa vs. Dixon', lastBuildDate Wed, 21 Oct 2026 16:05:01 -0500): 9/8 - 10/19, Abbott 48.7, Hinojosa 45.3, Dixon 1.7 (Abbott +3.4), 9 polls: Emerson 10/17 - 10/19; University of Houston 10/10 - 10/14; Cook Political Report 10/9 - 10/13; University of Texas 9/25 - 10/5; UMass Lowell 9/18 - 9/28; TPOR 9/19 - 9/22; TSU/YouGov 9/15 - 9/19; Emerson 9/12 - 9/14; Telemundo/Mason-Dixon 9/8 - 9/10. Oct 29 check: RCP's feed 8910 (built Oct 29 07:05 CT) averages 10/5-10/27, Abbott 49.5, Hinojosa 46.5, 11 polls: CNN 10/20-27 and TSU/YouGov 10/21-25 added (254 Labs/YouGov Blue listed, not averaged).",
   "polls": [
    {
     "pollster": "Fabrizio Ward/Impact Research",
@@ -7642,6 +7816,39 @@
     "source": "votehub_governor_all.json; rcp_gov_tx_8910.json"
    },
    {
+    "pollster": "Texas Southern University/YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-21",
+    "end": "2026-10-25",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 2000,
+    "d_candidate": "Gina Hinojosa",
+    "r_candidate": "Greg Abbott",
+    "d": 47,
+    "r": 50,
+    "anti_r": 47,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 47,
+    "full_r": 50,
+    "others": [
+     {
+      "name": "Dixon",
+      "party": "L",
+      "pct": 2
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "rcp_gov_tx_8910.json; rcp_gov_tx_3way_9200.json",
+    "note": "From RCP's rows only (2,000 LV; Raphoon (I) listed with no share); released = the RCP row's timestamp (Oct 29). The WFAA release RCP links returned HTTP 403 (see ../senate_polls_2026/recent/README.md, Oct 29). RCP: 'TSU/YouGov'."
+   },
+   {
     "pollster": "YouGov Blue",
     "sponsor": "254 Labs",
     "partisan": "D",
@@ -7667,6 +7874,33 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; ../senate_polls_2026/recent/254labs_tx_statewide_poll_2026-10-28.html; ../senate_polls_2026/recent/nyt_poll_list_user_paste_2026-10-28_third.txt",
     "note": "254 Labs release: Hinojosa 49, Abbott 46 (YouGov Blue, Oct 21-26, 1,000 RV weighted to likely-voter targets). The Senate compile has this poll's partisan flag null; VoteHub flags the governor row DEM."
+   },
+   {
+    "pollster": "CNN/SSRS",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-20",
+    "end": "2026-10-27",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 923,
+    "d_candidate": "Gina Hinojosa",
+    "r_candidate": "Greg Abbott",
+    "d": 46,
+    "r": 48,
+    "anti_r": 46,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 46,
+    "full_r": 48,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/cnn_ssrs_texas_october_2026.pdf (GOVVOTETX); rcp_gov_tx_8910.json",
+    "note": "923 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.2). Two-candidate question: Hinojosa 46, Abbott 48, neither 4, other 2. RCP: 'CNN'."
    }
   ]
  },
@@ -7828,7 +8062,7 @@
   ]
  },
  "WI": {
-  "notes": "RCP average (feed 9105, '2026 Wisconsin Governor - Tiffany vs. Crowley', lastBuildDate Wed, 28 Oct 2026 12:33:27 -0500): 8/12 - 10/22, Crowley 48.7, Tiffany 43.7 (Crowley +5.0), 3 polls: Marquette 10/14 - 10/22; TIPP 8/14 - 8/18; Platform Communications 8/12 - 8/13.",
+  "notes": "RCP average (feed 9105, '2026 Wisconsin Governor - Tiffany vs. Crowley', lastBuildDate Wed, 28 Oct 2026 12:33:27 -0500): 8/12 - 10/22, Crowley 48.7, Tiffany 43.7 (Crowley +5.0), 3 polls: Marquette 10/14 - 10/22; TIPP 8/14 - 8/18; Platform Communications 8/12 - 8/13. Oct 29 check: RCP's feed (built Oct 28 12:35 CT) averages 8/12-10/23, Crowley 48.5, Tiffany 44.0, 4 polls: LAW/Daily Signal 10/19-23 (League of American Workers, no named sponsor) added.",
   "polls": [
    {
     "pollster": "Marquette University Law School",
@@ -7933,6 +8167,33 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_wi_9105.json"
+   },
+   {
+    "pollster": "League of American Workers",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-19",
+    "end": "2026-10-23",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 1213,
+    "d_candidate": "David Crowley",
+    "r_candidate": "Tom Tiffany",
+    "d": 47.7,
+    "r": 44.6,
+    "anti_r": 47.7,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 47.7,
+    "full_r": 44.6,
+    "others": [],
+    "undecided": 7.7,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "dailysignal_wi_2026-10-28.html; rcp_gov_wi_9105.json",
+    "note": "Daily Signal article (Oct 28): 'conducted by the League of American Workers', 1,213 LV, Oct 19-23; Crowley 47.7, Tiffany 44.6, undecided 7.7. No sponsor named: the Daily Signal reports the poll, and the group's founder, Steve Cortes, is quoted. RCP: 'LAW/Daily Signal**' 48/45, in its average. Not in VoteHub."
    }
   ]
  },
