@@ -3636,7 +3636,7 @@
   ]
  },
  "MI": {
-  "notes": "RCP average (feed 8992, '2026 Michigan Governor - James vs. Benson', lastBuildDate Mon, 26 Oct 2026 15:18:19 -0500): 9/24 - 10/22, Benson 50.5, James 43.3 (Benson +7.2), 6 polls: Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; Mitchell Research 10/1 - 10/1; FOX News 9/24 - 9/28. Multi-candidate RCP average (feed 9226, '2026 Michigan Governor - Multi-Candidate', lastBuildDate Wed, 31 Dec 1969 18:00:00 -0600): 9/16 - 9/21, Benson 48.0, James 36.0, Hudson 2.0, Campbell 1.5, Brandenburg 0.0 (Benson +12.0), 2 polls: Cygnal/Beacon Research 9/18 - 9/21; Suffolk 9/16 - 9/20. Oct 29 check: RCP's feed (lastBuildDate Oct 27 13:14, CNN row added Oct 29) averages 9/24-10/27, Benson 50.9, James 43.0, 7 polls: CNN 10/20-27 added.",
+  "notes": "RCP average (feed 8992, '2026 Michigan Governor - James vs. Benson', lastBuildDate Mon, 26 Oct 2026 15:18:19 -0500): 9/24 - 10/22, Benson 50.5, James 43.3 (Benson +7.2), 6 polls: Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; Mitchell Research 10/1 - 10/1; FOX News 9/24 - 9/28. Multi-candidate RCP average (feed 9226, '2026 Michigan Governor - Multi-Candidate', lastBuildDate Wed, 31 Dec 1969 18:00:00 -0600): 9/16 - 9/21, Benson 48.0, James 36.0, Hudson 2.0, Campbell 1.5, Brandenburg 0.0 (Benson +12.0), 2 polls: Cygnal/Beacon Research 9/18 - 9/21; Suffolk 9/16 - 9/20. Oct 29 check: RCP's feed (lastBuildDate Oct 27 13:14, CNN row added Oct 29) averages 9/24-10/27, Benson 50.9, James 43.0, 7 polls: CNN 10/20-27 added. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) Benson 48.5, James 38.7; not in RCP's average and it ends before RCP's latest averaged poll (CNN, ending Oct 27), so Michigan stays on RCP's average.",
   "polls": [
    {
     "pollster": "Glengariff Group",
@@ -4194,6 +4194,33 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json"
+   },
+   {
+    "pollster": "Michigan State University (Political Science)/Verasight",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-08",
+    "end": "2026-10-23",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 1383,
+    "d_candidate": "Jocelyn Benson",
+    "r_candidate": "John James",
+    "d": 48.5,
+    "r": 38.7,
+    "anti_r": 48.5,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 48.5,
+    "full_r": 38.7,
+    "others": [],
+    "undecided": 9.6,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/msu_ippsr_mi_2026_pre_election_report.pdf (https://polisci.msu.edu/_assets/MI_2026_pre_election_report.pdf), p. 1 and p. 4",
+    "note": "MSU Department of Political Science (Prof. Corwin Smidt) with MSU's Office for Survey Research and Verasight; 1,530 respondents recruited by mail and text, Oct 8-23; funded by MSU's College of Social Science and Department of Political Science (no outside sponsor). A separate survey from the IPPSR/YouGov poll (Oct 2-19) already listed. Headline = the report's MRP estimates among 1,383 likely voters (initial response). Benson 48.5, James 38.7, someone else or none 3.3, undecided 9.6 (MOE about 3.1); with leaners 50.9/41.5; traditional weighted toplines 49.5/38.7 (p. 9). Not in RCP's feed (built Oct 27 13:14 CT) as of Oct 29."
    },
    {
     "pollster": "CNN/SSRS",
