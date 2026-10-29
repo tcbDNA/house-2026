@@ -15,7 +15,9 @@ Rules (user decisions, Oct 2026):
     the remaining polls RCP averaged, re-averaged (ActiVote and Wedgewood are
     never in an RCP average). A poll RCP lists but has not yet averaged can
     be counted ahead of RCP (RCP_PENDING; user decision Oct 27 for Echelon
-    Insights' Maine poll; COUNT_RCP_PENDING = False turns it off).
+    Insights' Maine poll; COUNT_RCP_PENDING = False turns it off), and so can
+    a poll RCP doesn't list at all (ADDED_TO_RCP; user decision Oct 29 for
+    MSU's Michigan survey; COUNT_ADDED_TO_RCP = False turns it off).
   * If a newer poll has come out since RCP last updated the average, or RCP
     publishes no average, recompute it from the most recent poll by each
     pollster whose fieldwork ended in the last three weeks (on or after
@@ -80,6 +82,11 @@ YOUGOV_BLUE_OWN_POLLSTER = True
 # averaged set as published.
 COUNT_RCP_PENDING = True
 RCP_PENDING = {("ME", "Echelon Insights", "10/16 - 10/23")}
+# Polls RCP doesn't list at all, counted in its average anyway (user decision,
+# Oct 29: MSU's Michigan Election Survey, Oct 8-23). Keyed by (state, pollster
+# as compiled, fieldwork end). False: RCP's averaged set as published.
+COUNT_ADDED_TO_RCP = True
+ADDED_TO_RCP = {("MI", "Michigan State Univ. (Political Science)/Verasight", date(2026, 10, 23))}
 
 INDEPENDENT = {"NE", "MT", "ID", "SD"}
 THREE_WAY = {"MT"}
@@ -274,17 +281,24 @@ def build():
             kept = [a for a in rcp["averaged"] if not excluded(a["pollster"]) and a not in ps]
             ras = any(excluded(a["pollster"]) for a in rcp["averaged"])
             added = [a for a in kept if a["pending"]]
+            extra = [{"pollster": p["pollster"], "dates": f"ending {p['end']:%b %-d}", "end": p["end"],
+                      "anti_r": p["anti_r"], "r": p["r"], "pending": False}
+                     for p in usable if COUNT_ADDED_TO_RCP and (st, p["pollster"], p["end"]) in ADDED_TO_RCP]
+            kept = kept + extra
             anti = sum(a["anti_r"] for a in kept) / len(kept)
             rep = sum(a["r"] for a in kept) / len(kept)
-            if not ras and not added and not ps:   # nothing changed: must reproduce RCP's published average
+            if not ras and not added and not ps and not extra:   # nothing changed: must reproduce RCP's published average
                 assert abs(round(anti, 1) - rcp["published"][0]) < 0.051 and \
                        abs(round(rep, 1) - rcp["published"][1]) < 0.051, (st, anti, rep, rcp["published"])
-            used = [f"{a['pollster']} {a['dates']}" + (" (listed by RCP, counted ahead of RCP)" if a["pending"] else "")
+            used = [f"{a['pollster']} {a['dates']}" + (" (listed by RCP, counted ahead of RCP)" if a["pending"] else
+                                                       " (not listed by RCP, counted by user decision)" if a in extra else "")
                     for a in kept]
             plus = "; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in added) + \
                 " (listed by RCP, not yet averaged)" if added else ""
             minus = ("; partisan-sponsored poll removed: " + ", ".join(f"{a['pollster']} {a['dates']}" for a in ps)
                      if ps else "")
+            plus += ("; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in extra) +
+                     " (not listed by RCP, counted by user decision)" if extra else "")
             method = ("RCP average, Rasmussen removed" if ras else "RCP average") + minus + plus
             src = "RealClearPolling" + (", Rasmussen removed" if ras else "") + minus + plus
             as_of, url, local = rcp["built"].isoformat(), rcp["url"], rcp["local_file"]
