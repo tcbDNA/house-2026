@@ -701,6 +701,44 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_az_8683.json"
+   },
+   {
+    "pollster": "Kreate Strategies (KStrat)",
+    "sponsor": "American Encore",
+    "partisan": "R",
+    "start": "2026-10-25",
+    "end": "2026-10-27",
+    "released": "2026-10-28",
+    "population": "LV",
+    "n": 900,
+    "d_candidate": "Katie Hobbs",
+    "r_candidate": "Andy Biggs",
+    "d": 48,
+    "r": 43,
+    "anti_r": 48,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 48,
+    "full_r": 43,
+    "others": [
+     {
+      "name": "Teri Ann Hourihan",
+      "party": "?",
+      "pct": 1
+     },
+     {
+      "name": "Risa Lombardo",
+      "party": "?",
+      "pct": 1
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "american_encore_kreate_az_2026-10-29.html (https://americanencore.org/blog/arizona-governor-survey-showing-our-work); votehub_governor_all.json (Oct 29)",
+    "note": "Published by American Encore (Oct 28): fielded Oct 25-27, 900 likely voters, MOE +/-3.3, 'Conducted by KStrat'; published topline Hobbs +5.1 (VoteHub: Hobbs 48, Biggs 43, Hourihan 1, Lombardo 1); the sponsor's own turnout model gives Biggs +3.1. VoteHub flags it REP: partisan-sponsored, not counted. Not in RCP's feed."
    }
   ]
  },
@@ -2299,7 +2337,7 @@
   ]
  },
  "IA": {
-  "notes": "RCP average (feed 9032, '2026 Iowa Governor - Lahn vs. Sand', lastBuildDate Wed, 21 Oct 2026 16:04:39 -0500): 10/5 - 10/19, Sand 50.6, Lahn 44.4 (Sand +6.2), 5 polls: co/efficient 10/15 - 10/19; Cook Political Report 10/9 - 10/13; YouGov 10/6 - 10/12; Marist 10/8 - 10/11; Emerson 10/5 - 10/6.",
+  "notes": "RCP average (feed 9032, '2026 Iowa Governor - Lahn vs. Sand', lastBuildDate Wed, 21 Oct 2026 16:04:39 -0500): 10/5 - 10/19, Sand 50.6, Lahn 44.4 (Sand +6.2), 5 polls: co/efficient 10/15 - 10/19; Cook Political Report 10/9 - 10/13; YouGov 10/6 - 10/12; Marist 10/8 - 10/11; Emerson 10/5 - 10/6. Oct 29 fourth check: RCP's feed (built Oct 24, rows Oct 29) averages 10/5-10/28, Sand 50.8, Lahn 44.4: co/efficient 10/28 added, co/efficient 10/15-19 dropped, Echelon Insights 10/16-23 listed but not averaged. No compiled poll ends after Oct 28, so Iowa is back on RCP's average.",
   "polls": [
    {
     "pollster": "Emerson College",
@@ -2689,7 +2727,7 @@
     "undecided": null,
     "rcv_final_d": null,
     "rcv_final_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_ia_9032.json"
    },
@@ -2719,6 +2757,33 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; ../senate_polls_2026/recent/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf",
     "note": "NetChoice topline Q25 (p.14): Sand 50, Lahn 46, unsure 3."
+   },
+   {
+    "pollster": "co/efficient",
+    "sponsor": null,
+    "partisan": "R",
+    "start": "2026-10-28",
+    "end": "2026-10-28",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 1020,
+    "d_candidate": "Rob Sand",
+    "r_candidate": "Zach Lahn",
+    "d": 50,
+    "r": 45,
+    "anti_r": 50,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 50,
+    "full_r": 45,
+    "others": [],
+    "undecided": 5,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/coefficient_ia_2026-10-29.html (https://battlegrounds.coefficient.org/ia/); rcp_gov_ia_9032.json",
+    "note": "Fielded Oct 28, 1,020 likely voters, MOE +/-3.05: Sand 50, Lahn 45, undecided 5. No sponsor named. RCP added it to its average (row Oct 29 12:56 CT) and dropped co/efficient 10/15-19."
    }
   ]
  },
@@ -8122,7 +8187,7 @@
   ]
  },
  "WI": {
-  "notes": "RCP average (feed 9105, '2026 Wisconsin Governor - Tiffany vs. Crowley', lastBuildDate Wed, 28 Oct 2026 12:33:27 -0500): 8/12 - 10/22, Crowley 48.7, Tiffany 43.7 (Crowley +5.0), 3 polls: Marquette 10/14 - 10/22; TIPP 8/14 - 8/18; Platform Communications 8/12 - 8/13. Oct 29 check: RCP's feed (built Oct 28 12:35 CT) averages 8/12-10/23, Crowley 48.5, Tiffany 44.0, 4 polls: LAW/Daily Signal 10/19-23 (League of American Workers, no named sponsor) added.",
+  "notes": "RCP average (feed 9105, '2026 Wisconsin Governor - Tiffany vs. Crowley', lastBuildDate Wed, 28 Oct 2026 12:33:27 -0500): 8/12 - 10/22, Crowley 48.7, Tiffany 43.7 (Crowley +5.0), 3 polls: Marquette 10/14 - 10/22; TIPP 8/14 - 8/18; Platform Communications 8/12 - 8/13. Oct 29 check: RCP's feed (built Oct 28 12:35 CT) averages 8/12-10/23, Crowley 48.5, Tiffany 44.0, 4 polls: LAW/Daily Signal 10/19-23 (League of American Workers, no named sponsor) added. Oct 29 fourth check: the League of American Workers poll is Wick Research for LAW (VoteHub: partisan REP), so it is a partisan-sponsored poll and comes out of RCP's average here.",
   "polls": [
    {
     "pollster": "Marquette University Law School",
@@ -8229,9 +8294,9 @@
     "source": "votehub_governor_all.json; rcp_gov_wi_9105.json"
    },
    {
-    "pollster": "League of American Workers",
-    "sponsor": null,
-    "partisan": null,
+    "pollster": "Wick Research",
+    "sponsor": "LAW (League of American Workers)",
+    "partisan": "R",
     "start": "2026-10-19",
     "end": "2026-10-23",
     "released": "2026-10-28",
@@ -8252,8 +8317,8 @@
     "rcv_final_r": null,
     "in_rcp_average": true,
     "excluded_pollster": false,
-    "source": "dailysignal_wi_2026-10-28.html; rcp_gov_wi_9105.json",
-    "note": "Daily Signal article (Oct 28): 'conducted by the League of American Workers', 1,213 LV, Oct 19-23; Crowley 47.7, Tiffany 44.6, undecided 7.7. No sponsor named: the Daily Signal reports the poll, and the group's founder, Steve Cortes, is quoted. RCP: 'LAW/Daily Signal**' 48/45, in its average. Not in VoteHub."
+    "source": "dailysignal_wi_2026-10-28.html; rcp_gov_wi_9105.json; cortes_wick_law_wi_2026-10-29.html (https://stevecortes.substack.com/p/breaking-news-wisconsin-heads-for); votehub_governor_all.json (Oct 29)",
+    "note": "Daily Signal article (Oct 28): 'conducted by the League of American Workers', 1,213 LV, Oct 19-23; Crowley 47.7, Tiffany 44.6, undecided 7.7. No sponsor named: the Daily Signal reports the poll, and the group's founder, Steve Cortes, is quoted. RCP: 'LAW/Daily Signal**' 48/45, in its average. Not in VoteHub. Oct 29: Steve Cortes, the League of American Workers' president, calls it 'my newest poll for League of American Workers' conducted by Wick Research (1,213 LV; Crowley 47.7, Tiffany 44.7); VoteHub lists pollster Wick, sponsor League of American Workers, partisan REP. A named sponsor with a partisan flag, so it is not counted (user rule, Oct 28), though RCP averages it. Sponsor written as RCP abbreviates it ('LAW/Daily Signal') so the RCP row is matched."
    }
   ]
  },

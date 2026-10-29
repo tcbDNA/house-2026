@@ -218,7 +218,7 @@ export function Methodology() {
         average, or RCP publishes none, the average is recomputed from the most
         recent poll by each pollster in the last three weeks, YouGov Blue counted
         apart from YouGov (as of Oct 29:
-        Georgia, Iowa and Alabama, plus
+        Georgia and Alabama, plus
         Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
         Louisiana and 11 safe races have no recent poll and use the model alone.
         The blend takes Texas from the model's R+1.1 to Talarico D+1.4, Nebraska

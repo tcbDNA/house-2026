@@ -180,3 +180,13 @@ The source is the user's NYT poll list paste (`../senate_polls_2026/recent/nyt_p
 The source is MSU's 2026 Michigan Election Survey report (`../senate_polls_2026/recent/msu_ippsr_mi_2026_pre_election_report.pdf`, https://polisci.msu.edu/_assets/MI_2026_pre_election_report.pdf): MSU Political Science with the Office for Survey Research and Verasight, Oct 8-23, 1,383 likely voters, funded by MSU. Governor (MRP, initial response) Benson 48.5, James 38.7, someone else or none 3.3, undecided 9.6. RCP's Michigan governor feeds list the same polls as the saved copies. The poll is not in RCP's average and ends before RCP's latest averaged poll (CNN, Oct 20-27), so Michigan stays on RCP's average.
 
 User decision (Oct 29, after this check): count the MSU poll in RCP's Michigan average anyway (`COUNT_ADDED_TO_RCP` / `ADDED_TO_RCP` in `build_governor_poll_averages.py`). Michigan's average: 8 polls, Benson 50.6, James 42.5, two-party +8.37 -> +8.71.
+
+## Update, 2026-10-29 18:20 UTC (fourth check, user asked)
+
+Every RCP governor feed and VoteHub's governor dump were downloaded again. Only `rcp_gov_ia_9032.json` changed: co/efficient 10/28 (Sand 50, Lahn 45) added to the average, co/efficient 10/15-19 dropped, Echelon Insights 10/16-23 listed but not averaged (10/5-10/28, Sand 50.8, Lahn 44.4). No compiled poll ends after Oct 28, so Iowa is back on RCP's average (two-party +6.54 -> +6.72).
+
+| File | URL | Notes |
+|---|---|---|
+| `cortes_wick_law_wi_2026-10-29.html` | https://stevecortes.substack.com/p/breaking-news-wisconsin-heads-for | Steve Cortes, president of the League of American Workers: "My newest poll for League of American Workers", conducted by Wick Research, 1,213 LV, Crowley 47.7, Tiffany 44.7. VoteHub (Oct 29) lists pollster Wick, sponsor League of American Workers, partisan REP. A named sponsor with a partisan flag, so it is not counted (user rule, Oct 28) and comes out of RCP's Wisconsin average: 4 polls -> 3, two-party +4.86 -> +5.42. |
+| `american_encore_kreate_az_2026-10-29.html` | https://americanencore.org/blog/arizona-governor-survey-showing-our-work | KStrat for American Encore, Oct 25-27, 900 LV: published topline Hobbs +5.1 (VoteHub: Hobbs 48, Biggs 43). VoteHub flags it REP: partisan-sponsored, not counted; not in RCP's feed. |
+| `votehub_governor_all.json` | https://polling.votehub.com/site/polls?poll_type=governor&limit=2000 | Refreshed. New 2026 rows: the two above, plus polls already compiled (CNN/SSRS TX, KS, ME, MI; TSU TX; Blueprint AL; UMass Lowell NH, MA; State Navigate MN) and Concord for Democrats for Education Reform in Ohio (DEM-sponsored, fielded Aug 29-31: not counted). |
