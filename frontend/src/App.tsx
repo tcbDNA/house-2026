@@ -199,10 +199,17 @@ export default function App() {
         {tabBtn("house", "House (435)")}
         {tabBtn("senate", "Senate (35 up)")}
         {tabBtn("governors", "Governors (36 up)")}
-        <span className={`ml-auto self-center text-xs text-slate-500 ${loading ? "animate-pulse" : "invisible"}`}>
-          Updating…
-        </span>
       </div>
+
+      {/* Fixed to the viewport, so it shows wherever the page is scrolled
+          (e.g. down at the settings panel). */}
+      {loading && (
+        <div role="status" aria-live="polite"
+             className="fixed top-3 right-3 z-50 flex items-center gap-2 rounded-full bg-slate-800/90 px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+          <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+          Updating…
+        </div>
+      )}
 
       {error && (
         <div className="mb-3 p-3 bg-red-100 text-red-800 text-sm rounded">{error}</div>
