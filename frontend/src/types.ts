@@ -329,6 +329,8 @@ export type District = {
   challenger_war?: number | null;
   challenger_war_year?: number | null;
   challenger_war_source?: string | null;
+  // Louisiana: no nominees; every candidate on the all-party primary ballot.
+  open_primary?: OpenPrimary | null;
   projection: number;
   demo_shift: number;
   race_shift: number;
@@ -338,6 +340,12 @@ export type District = {
   flip: "to_D" | "to_R" | null;
   demo_source: string;
   p_d?: number;
+};
+
+export type OpenPrimary = {
+  date: string;     // ISO date of the all-party primary
+  runoff: string;   // ISO date of the top-two runoff if no one wins a majority
+  candidates: { name: string; party: string }[];
 };
 
 export type SeatDistribution = {

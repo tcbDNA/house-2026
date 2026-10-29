@@ -500,6 +500,7 @@ def _summarize(
             "challenger_war": row.get("challenger_war"),
             "challenger_war_year": row.get("challenger_war_year"),
             "challenger_war_source": row.get("challenger_war_source"),
+            "open_primary": row.get("open_primary"),
             "projection": round(proj, 2),
             "demo_shift": round(float(demo_shift[i]), 2),
             "race_shift": round(float(shifts["race"][i]), 2),

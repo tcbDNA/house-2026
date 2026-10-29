@@ -127,8 +127,9 @@ export function Methodology() {
         NC-09 2026. The override documents these reasons explicitly so the zero
         is auditable, not accidental. <i>Nick Begich (AK-AL, R) = 0</i>{" "}
         — 2024 race vs. Mary Peltola is a high-WAR outlier that won't repeat in 2026.{" "}
-        <i>Cleo Fields (LA-06, D) = 0</i> — a placeholder in the redrawn R+32 seat
-        who is unlikely to run; his 2024 WAR was earned on the old D-leaning lines.{" "}
+        Louisiana's House races have no nominees: Nov 3 is an all-party primary, with a
+        Dec 12 runoff if no one wins a majority, so LA-05 and LA-06 (Cleo Fields is not
+        running) are open seats with no candidate WAR on either side.{" "}
         <b>Generic incumbency</b> in the House is a setting, default ±3.0 (D-positive
         for D incumbents): Split Ticket's most recent estimate, and the 2024 WAR
         records were measured with it already removed. Their 2020 analysis put it at

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { partyColorClass, partyTag, formatProjection, type District } from "../types";
+import { OpenPrimaryField } from "./OpenPrimaryField";
 
 type Props = {
   districts: District[];
@@ -43,6 +44,7 @@ export function DistrictTable({ districts, onPick }: Props) {
         (d) =>
           d.district.toLowerCase().includes(q) ||
           (d.incumbent || "").toLowerCase().includes(q) ||
+          (d.open_primary?.candidates ?? []).some((c) => c.name.toLowerCase().includes(q)) ||
           (d.state || "").toLowerCase().includes(q),
       );
     }
@@ -129,6 +131,7 @@ export function DistrictTable({ districts, onPick }: Props) {
                       )}
                     </div>
                   )}
+                  {d.open_primary && <OpenPrimaryField primary={d.open_primary} short />}
                 </td>
                 <td className="px-2 py-1 text-right font-mono">{d.margin_2024?.toFixed(1)}</td>
                 <td className={`px-2 py-1 text-right font-mono ${bucket(d.projection)}`}>

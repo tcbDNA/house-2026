@@ -93,7 +93,8 @@ Applied where the blended value would misrepresent expected 2026 performance:
 
 - **Richard Ojeda (NC-09, D) = 0** — his only prior race (WV-03, 2018) is outside the House window and rejected by the auto-match on state mismatch (WV ≠ NC); it was also earned under WV-2018-specific conditions that don't transfer to NC-09 2026. The override documents these reasons explicitly so the zero is auditable, not accidental.
 - **Nick Begich (AK-AL, R) = 0** — 2024 race vs. Mary Peltola is a high-WAR outlier that won't repeat in 2026.
-- **Cleo Fields (LA-06, D) = 0** — a placeholder in the redrawn R+32 seat who is unlikely to run; his 2024 WAR was earned on the old D-leaning lines.
+
+Louisiana's House races have no nominees: the Nov 3 race is an all-party primary, with a Dec 12 runoff between the top two if no one wins a majority. LA-05 and LA-06 are open seats with no candidate WAR on either side (Cleo Fields, LA-06, is not running), and each Louisiana district lists its full ballot (`load_data.LA_OPEN_PRIMARY`, from Ballotpedia).
 
 ### Anti-double-count
 

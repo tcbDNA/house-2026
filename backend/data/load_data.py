@@ -88,10 +88,6 @@ WAR_OVERRIDES = {
     # biographical appeal) doesn't transfer to NC-09 2026. Explicit zero
     # documents the model's already-implicit conclusion.
     ("NC-09", "Richard Ojeda"): 0.0,
-    # Fields is a placeholder in the incumbent slot (unlikely to run in the
-    # redrawn R+32 seat); his 2024 WAR was earned on the old D-leaning LA-06
-    # and shouldn't ride along with the placeholder.
-    ("LA-06", "Cleo Fields"): 0.0,
 }
 
 # Incumbent column overrides for cases v20 missed.
@@ -130,7 +126,9 @@ INCUMBENT_OVERRIDES = {
     "FL-11": {"incumbent": "Joe Strada", "party": "(R)", "is_incumbent": False},
     "FL-16": {"incumbent": "Sydney Gruters", "party": "(R)", "is_incumbent": False},
     "ME-02": {"incumbent": "Matthew Dunlap", "party": "(D)", "is_incumbent": False},
-    "LA-05": {"incumbent": "Michael Echols", "party": "(R)", "is_incumbent": False},
+    # LA-05: open (Letlow won the R Senate nomination). No nominee: Louisiana's
+    # House races are a Nov 3 open primary (LA_OPEN_PRIMARY).
+    "LA-05": {"incumbent": "(open, Letlow→Senate)", "party": "(R)", "is_incumbent": False},
     "GA-11": {"incumbent": "John Cowan", "party": "(R)", "is_incumbent": False},
     "AL-01": {"incumbent": "Jerry Carl", "party": "(R)", "is_incumbent": False},
     "SC-01": {"incumbent": "Jenny Costa Honeycutt", "party": "(R)", "is_incumbent": False},
@@ -277,10 +275,10 @@ INCUMBENT_OVERRIDES = {
     # TX-32: SB4 redrew this from Johnson's D seat into an R-leaning seat
     # (Johnson moved to TX-33). Yarbrough is R nominee (Binkley withdrew from runoff).
     "TX-32": {"incumbent": "Jace Yarbrough", "party": "(R)", "is_incumbent": False},
-    # LA-06: post-redraw the seat is R-leaning (R+32 pres). Cleo Fields keeps the
-    # incumbent label as a placeholder but is unlikely to run; is_incumbent=False
-    # zeros the +1.7 D incumbency boost that he won't actually carry into a hostile seat.
-    "LA-06": {"incumbent": "Cleo Fields", "party": "(D)", "is_incumbent": False},
+    # LA-06: post-redraw the seat is R-leaning (R+32 pres). Cleo Fields (D) is
+    # not running (Roll Call, Jul 21; Ballotpedia lists him as withdrawn), so
+    # the seat is open. No nominee: Nov 3 open primary (LA_OPEN_PRIMARY).
+    "LA-06": {"incumbent": "(open, Fields not running)", "party": "(D)", "is_incumbent": False},
     # === 2026-06-02 primaries ===
     # IA-02: open (Hinson→Senate). Trump-endorsed Mitchell won R primary.
     "IA-02": {"incumbent": "Joe Mitchell", "party": "(R)", "is_incumbent": False},
@@ -773,13 +771,8 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "HI-02": {"name": "Brenton Awa", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
     "ID-01": {"name": "Kaylee Peterson", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "ID-02": {"name": "Elinor Gilbreath", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
-    "LA-01": {"name": "Lauren Jewett", "party": "(D)", "war": 0.0, "note": "2026 D nominee (LA jungle primary)"},
-    # LA-02: no R filed — Libertarian only opposition. Uncontested by R.
-    "LA-03": {"name": "John Day", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
-    "LA-04": {"name": "Conrad Cable", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
-    "LA-05": {"name": "Patricia \"Pat\" Moore", "party": "(D)", "war": 0.0,
-              "note": "Leading D in LA jungle primary (state rep HD-17). Open seat (Letlow→Senate)."},
-    "LA-06": {"name": "Blake Miguez", "party": "(R)", "war": 0.0, "note": "2026 R nominee; Fields withdrew after redraw"},
+    # LA-01..06: no nominees — the Nov 3 race is an open primary; the full
+    # ballot is in LA_OPEN_PRIMARY.
     # MA-02: uncontested by R.
     "MA-04": {"name": "Tom Stalcup", "party": "(R)", "war": 0.0, "note": "2026 R nominee"},
     "MA-05": {"name": "Derek Fleming", "party": "(I)", "war": 0.0, "note": "2026 I candidate; no R filed"},
@@ -848,6 +841,32 @@ HOUSE_CHALLENGERS: dict[str, dict] = {
     "WI-06": {"name": "Brad Smith", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
     "WI-08": {"name": "Rick Crosson", "party": "(D)", "war": 0.0, "note": "2026 D nominee"},
 }
+
+# Louisiana's House races: Gov. Landry cancelled the May closed party
+# primaries after Louisiana v. Callais, so Nov 3 is an all-party primary with
+# a Dec 12 runoff between the top two if no one wins a majority. Every
+# candidate on the ballot, in Ballotpedia's order (sources/2026_nominees/
+# ballotpedia_la0N_2026-10-29.html; matches WWNO's qualifying list,
+# wwno_2026-08-12_la_house_qualifying.html, with Ballotpedia's party labels).
+# Display only: written to the row as open_primary.
+LA_OPEN_PRIMARY = {
+    "LA-01": [("Steve Scalise", "(R)"), ("Lauren Jewett", "(D)"), ("Randall Arrington", "(R)"),
+              ("Liddy Glass", "(NP)")],
+    "LA-02": [("Troy Carter", "(D)"), ("Peter Williams", "(R)"), ("Lisa Ballay", "(L)"),
+              ("Walter Beach", "(NP)"), ("Renada Collins", "(NP)")],
+    "LA-03": [("Clay Higgins", "(R)"), ("John Day", "(D)"), ("Priscilla Gonzalez", "(D)"),
+              ("Caleb Walker", "(D)"), ("Kate Cotten", "(R)"), ("Tia LeBrun", "(NP)")],
+    "LA-04": [("Mike Johnson", "(R)"), ("Conrad Cable", "(D)"), ("Matthew Gromlich", "(D)"),
+              ("Gordon Heslop", "(R)"), ("Mike Nichols", "(R)")],
+    "LA-05": [("Dan McKay", "(D)"), ("Pat Moore", "(D)"), ("Antonio Wilson", "(D)"),
+              ("Stewart Cathey", "(R)"), ("Misti Cordell", "(R)"), ("Oscar Dantzler", "(R)"),
+              ("Michael Echols", "(R)"), ("Gabe Firment", "(R)"), ("Austin Magee", "(R)")],
+    "LA-06": [("Chauna Banks", "(D)"), ("Patrick Forbes", "(D)"), ("Lindsay Garcia", "(D)"),
+              ("Monique Appeaning", "(R)"), ("Larry Davis", "(R)"), ("Rick Edmonds", "(R)"),
+              ("Michael Mebruer", "(R)"), ("Blake Miguez", "(R)"), ("Stephen Wagley", "(R)"),
+              ("Rufus Craig", "(L)")],
+}
+LA_PRIMARY_DATE, LA_RUNOFF_DATE = "2026-11-03", "2026-12-12"
 
 # Generic incumbency advantage in D-R margin points, as baked into
 # districts.json. The model keeps only its sign: the size is the runtime
@@ -1417,6 +1436,10 @@ def main():
                 row["challenger_war"] = None
                 row["challenger_war_year"] = None
                 row["challenger_war_source"] = None
+            if d_id in LA_OPEN_PRIMARY:
+                row["open_primary"] = {
+                    "date": LA_PRIMARY_DATE, "runoff": LA_RUNOFF_DATE,
+                    "candidates": [{"name": n, "party": p} for n, p in LA_OPEN_PRIMARY[d_id]]}
             districts.append(row)
 
     with OUT_JSON.open("w") as f:

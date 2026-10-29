@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import maplibregl, { Map as MLMap, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { bucketLabel, partyColorHex, partyTag, type District } from "../types";
+import { day } from "./OpenPrimaryField";
 
 type Props = {
   districts: District[];
@@ -90,6 +91,13 @@ function buildPopupHtml(d: District, uniformSwing: number): string {
   const challengerLine = d.challenger
     ? `<div style="margin-bottom:3px">${candPrefix}<b style="color:${chColor}">${d.challenger}</b>${isOpen ? "" : ` <span style="color:#888">${d.challenger_party ?? ""}</span>`}${sourceTag}</div>`
     : "";
+  // Louisiana: all-party primary, no nominees — list the ballot by party.
+  const primaryLine = d.open_primary
+    ? `<div style="margin-bottom:3px;color:#666;max-width:260px">${day(d.open_primary.date)} open primary: ${
+        [...new Set(d.open_primary.candidates.map((c) => c.party))].map((p) =>
+          `${d.open_primary!.candidates.filter((c) => c.party === p).map((c) => c.name.split(" ").slice(-1)[0]).join(", ")} ${p}`,
+        ).join(" · ")}</div>`
+    : "";
 
   // Always show all rows — keep zeros visible so the projection arithmetic
   // is fully transparent regardless of whether candidate info exists.
@@ -98,6 +106,7 @@ function buildPopupHtml(d: District, uniformSwing: number): string {
   return `<div style="font:11px ui-sans-serif,system-ui;line-height:1.35;min-width:180px">
     <div style="margin-bottom:3px"><b>${d.district}</b> · <span style="color:${incColor}">${d.incumbent ?? ""}</span> <span style="color:#888">${partyTag(d.party, !!d.incumbency_adj)}</span></div>
     ${challengerLine}
+    ${primaryLine}
     ${row("2024 margin", m24)}
     ${row("+ rel. trend", trend)}
     ${row("+ WAR adj", war)}

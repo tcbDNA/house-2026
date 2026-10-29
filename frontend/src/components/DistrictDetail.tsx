@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { District } from "../types";
 import { formatProjection } from "../types";
 import { fetchDistrict } from "../api";
+import { OpenPrimaryField } from "./OpenPrimaryField";
 
 type Props = {
   district: District | null;
@@ -52,6 +53,7 @@ export function DistrictDetail({ district, onClose, onViewCounties }: Props) {
                 </div>
               );
             })()}
+            {district.open_primary && <OpenPrimaryField primary={district.open_primary} />}
             <div className="text-xs text-slate-500 mt-1">Lines: {district.lines}</div>
           </div>
           <div className="flex items-center gap-2">
