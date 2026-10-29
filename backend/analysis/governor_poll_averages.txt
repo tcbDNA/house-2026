@@ -65,16 +65,17 @@ KS: RCP average; 5 poll(s) (n_eff 5); anti-R 44.00 / R 49.60 -> margin -5.60, bl
     - Emerson 9/15 - 9/16
     - co/efficient 9/8 - 9/10
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-MA: RCP average; 4 poll(s) (n_eff 4); anti-R 56.00 / R 34.50 -> margin +21.50, blend margin +23.76, third parties 0.0 (RCP published +21.5)
+MA: RCP average; 5 poll(s) (n_eff 5); anti-R 56.20 / R 33.40 -> margin +22.80, blend margin +25.45, third parties 0.0 (RCP published +22.8)
     - Boston Globe/Suffolk 10/10 - 10/18
+    - UMass Lowell 10/7 - 10/18
     - WCVB-TV/Amherst 10/6 - 10/13
     - UNH 9/17 - 9/21
     - CWB/MassINC 9/14 - 9/22
 MD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 0.5); anti-R 51.00 / R 24.00 -> margin +27.00, blend margin +36.00, third parties 6.0
     - University of Maryland Baltimore County Institute of Politics, ending 2026-09-27 (full ballot, 51/24)
 ME: RCP average; 9 poll(s) (n_eff 9); anti-R 49.67 / R 39.67 -> margin +10.00, blend margin +11.19, third parties 0.0 (RCP published +10.0)
-    - CNN 10/20 - 10/26
     - Marist 10/22 - 10/25
+    - CNN 10/20 - 10/26
     - FOX News 10/16 - 10/20
     - Suffolk University 10/8 - 10/11
     - Washington Post 9/30 - 10/5
@@ -91,7 +92,8 @@ MI: RCP average; 7 poll(s) (n_eff 7); anti-R 50.86 / R 43.00 -> margin +7.86, bl
     - Mitchell Research 10/1 - 10/1
     - FOX News 9/24 - 9/28
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-MN: recomputed: newer polls than RCP's average; 4 poll(s) (n_eff 4); anti-R 50.50 / R 39.75 -> margin +10.75, blend margin +11.91, third parties 0.8 (RCP published +10.7)
+MN: recomputed: newer polls than RCP's average; 5 poll(s) (n_eff 5); anti-R 50.80 / R 40.20 -> margin +10.60, blend margin +11.65, third parties 1.2 (RCP published +10.7)
+    - State Navigate, ending 2026-10-28 (full ballot, 52/42)
     - The New York Times/Siena University, ending 2026-10-26 (full ballot, 56/38)
     - SurveyUSA for KSTP-TV (St. Paul); KAAL-TV (Austin); WDIO-DT (Duluth), ending 2026-10-12 (full ballot, 48/41)
     - Mason-Dixon for StarTribune; KARE, ending 2026-10-07 (full ballot, 50/41)

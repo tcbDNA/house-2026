@@ -3473,7 +3473,7 @@
   ]
  },
  "MA": {
-  "notes": "RCP average (feed 8937, '2026 Massachusetts Governor - Minogue vs. Healey', lastBuildDate Mon, 19 Oct 2026 13:20:40 -0500): 9/14 - 10/18, Healey 56.0, Minogue 34.5 (Healey +21.5), 4 polls: Boston Globe/Suffolk 10/10 - 10/18; WCVB-TV/Amherst 10/6 - 10/13; UNH 9/17 - 9/21; CWB/MassINC 9/14 - 9/22. Oct 29 check: UMass Lowell/YouGov (Oct 7-18, released Oct 28) Healey 57, Minogue 29, from the release; not in RCP. It ends on the same day as RCP's latest averaged poll, so it is not newer.",
+  "notes": "RCP average (feed 8937, '2026 Massachusetts Governor - Minogue vs. Healey', lastBuildDate Mon, 19 Oct 2026 13:20:40 -0500): 9/14 - 10/18, Healey 56.0, Minogue 34.5 (Healey +21.5), 4 polls: Boston Globe/Suffolk 10/10 - 10/18; WCVB-TV/Amherst 10/6 - 10/13; UNH 9/17 - 9/21; CWB/MassINC 9/14 - 9/22. Oct 29 check: UMass Lowell/YouGov (Oct 7-18, released Oct 28) Healey 57, Minogue 29, from the release; not in RCP. It ends on the same day as RCP's latest averaged poll, so it is not newer. Oct 29 second check: RCP added UMass Lowell (10/7-18) to its average: 9/14-10/18, Healey 56.2, Minogue 33.4, 5 polls.",
   "polls": [
    {
     "pollster": "University of New Hampshire",
@@ -3628,10 +3628,10 @@
     "undecided": 8,
     "rcv_final_d": null,
     "rcv_final_r": null,
-    "in_rcp_average": false,
+    "in_rcp_average": true,
     "excluded_pollster": false,
-    "source": "../senate_polls_2026/recent/umasslowell_yougov_nh_ma_2026-10-28.html",
-    "note": "850 LV, MOE +/-4.4: Healey 57, Minogue 29, James (I) 4, undecided 8, would not vote 2. Not in RCP or VoteHub."
+    "source": "../senate_polls_2026/recent/umasslowell_yougov_nh_ma_2026-10-28.html; rcp_gov_ma_8937.json",
+    "note": "850 LV, MOE +/-4.4: Healey 57, Minogue 29, James (I) 4, undecided 8, would not vote 2. RCP added it to its average on Oct 29. Not in VoteHub."
    }
   ]
  },
@@ -4225,7 +4225,7 @@
   ]
  },
  "MN": {
-  "notes": "Klobuchar (DFL) vs Demuth (R). RCP average (feed 8915, '2026 Minnesota Governor - Demuth vs. Klobuchar', lastBuildDate Fri, 16 Oct 2026 21:53:06 -0500): 10/2 - 10/25, Klobuchar 50.5, Demuth 39.8 (Klobuchar +10.7), 4 polls: NY Times/Siena 10/19 - 10/25; KSTP/SurveyUSA 10/8 - 10/12; Star Tribune/Mason-Dixon 10/5 - 10/7; Daily Agenda/Morning Consult 10/2 - 10/7. VoteHub files a GQR / Senate Majority PAC poll (Oct 1-4, Flanagan 53, Tafoya 44) under the governor race; those are the Senate candidates, so it is left out.",
+  "notes": "Klobuchar (DFL) vs Demuth (R). RCP average (feed 8915, '2026 Minnesota Governor - Demuth vs. Klobuchar', lastBuildDate Fri, 16 Oct 2026 21:53:06 -0500): 10/2 - 10/25, Klobuchar 50.5, Demuth 39.8 (Klobuchar +10.7), 4 polls: NY Times/Siena 10/19 - 10/25; KSTP/SurveyUSA 10/8 - 10/12; Star Tribune/Mason-Dixon 10/5 - 10/7; Daily Agenda/Morning Consult 10/2 - 10/7. VoteHub files a GQR / Senate Majority PAC poll (Oct 1-4, Flanagan 53, Tafoya 44) under the governor race; those are the Senate candidates, so it is left out. Oct 29 second check: State Navigate (Oct 26-28, released Oct 29) Klobuchar 52, Demuth 42, Young 3, from the user's NYT poll list paste and State Navigate's release; not in RCP or VoteHub yet.",
   "polls": [
    {
     "pollster": "TIPP Insights",
@@ -4454,6 +4454,39 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_mn_8915.json",
     "note": "RCP dates 10-19 to 10-25."
+   },
+   {
+    "pollster": "State Navigate",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-28",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 806,
+    "d_candidate": "Amy Klobuchar",
+    "r_candidate": "Lisa Demuth",
+    "d": 52,
+    "r": 42,
+    "anti_r": 52,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 52,
+    "full_r": 42,
+    "others": [
+     {
+      "name": "Steven Young",
+      "party": "G",
+      "pct": 3
+     }
+    ],
+    "undecided": 3,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "statenavigate_mn_statewide_poll_october_2026.html; statenavigate_mn_klobuchar_crossover_appeal_2026-10-29.html; ../senate_polls_2026/recent/nyt_poll_list_user_paste_2026-10-29.txt",
+    "note": "State Navigate interactive and article (Oct 29): 806 LV (919 unweighted responses), Oct 26-28, MOE 3.5; with leaners Klobuchar 52, Demuth 42, Young (Green) 3, don't know 3. No sponsor named. No Senate question (governor and attorney general only). Not in RCP or VoteHub yet."
    }
   ]
  },

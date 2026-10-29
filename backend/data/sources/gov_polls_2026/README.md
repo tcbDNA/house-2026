@@ -163,3 +163,14 @@ Effects on the governor averages:
 - **Kansas** goes back to RCP's average. CNN (ending Oct 26) is now its latest poll, so Global Strategy Group (Oct 21-22, which RCP never averaged) is no longer newer. Kansas had been recomputed on the extended window.
 - **Alabama** is recomputed. The Blueprint poll ended after the latest poll in RCP's average (Oct 17) and came out after RCP's last update (Oct 21). Its firm is flagged D, but it has no named sponsor, so it counts.
 - **Massachusetts** is recorded only. The UMass Lowell poll is not in RCP and ends on the same day as RCP's latest averaged poll, so it is not newer.
+
+### Second check, 2026-10-29 13:33 UTC (from the user's NYT poll list paste)
+
+The RCP governor feeds and VoteHub's governor dump were downloaded again. VoteHub had no new rows. Updated feeds: `rcp_gov_ma_8937.json` (UMass Lowell 10/7-18 added to the average: Healey 56.2, Minogue 33.4, 5 polls), `rcp_gov_me_9030.json` (lastBuildDate only) and `rcp_gov_me_3way_9101.json` (lists CNN; not averaged here).
+
+| File | URL | Notes |
+|---|---|---|
+| `statenavigate_mn_statewide_poll_october_2026.html` | https://projects.statenavigate.com/interactives/mn/statewide-poll-october-2026/ | State Navigate interactive: Oct 26-28, 806 LV (919 unweighted), MOE 3.5; with leaners Klobuchar 52, Demuth 42, Young (Green) 3, don't know 3. |
+| `statenavigate_mn_klobuchar_crossover_appeal_2026-10-29.html` | https://articles.statenavigate.com/mn/new-minnesota-governor-poll-shows-amy-klobuchars-crossover-appeal-fading/ | Article, published Oct 29. Same numbers. No sponsor named; no Senate question. |
+
+The source is the user's NYT poll list paste (`../senate_polls_2026/recent/nyt_poll_list_user_paste_2026-10-29.txt`). Minnesota was already recomputed (newer polls than RCP's Oct 16 build); with State Navigate it averages 5 polls, two-party +11.91 -> +11.65.
