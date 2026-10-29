@@ -40,6 +40,9 @@ def _total_vote_margin(dem, rep, total, fallback):
 def main():
     pres = {r["fips"]: r for r in csv.DictReader((DATA / "county_pres.csv").open())}
     demos = {r["fips"]: r for r in csv.DictReader((DATA / "demographics_acs_counties.csv").open())}
+    # 2019-2023 ACS (the county file before the Oct 29 switch to 2020-2024),
+    # as demo_acs2023 for settings.acs_2020_2024=False.
+    demos_acs2023 = {r["fips"]: r for r in csv.DictReader((DATA / "demographics_counties_acs2023.csv").open())}
 
     counties = []
     missing_pres = missing_demo = 0
@@ -68,6 +71,8 @@ def main():
         for k in NUMERIC_DEMOS:
             row[k] = to_num(d.get(k))
         row["demo_source"] = d.get("source", "")
+        if fips in demos_acs2023:
+            row["demo_acs2023"] = {k: to_num(demos_acs2023[fips].get(k)) for k in NUMERIC_DEMOS}
         counties.append(row)
 
     # Any pres rows without ACS demos

@@ -75,7 +75,7 @@ export function Methodology() {
         the movement persists); the trend-persistence control offers none (0×),
         full (1×) and a partial reversal (−0.5×). A limited check: in the 2025 New
         Jersey and Virginia governor's races, counties' 2020→2024 trend predicted
-        no further movement once demographics were controlled (coefficient +0.02,
+        no further movement once demographics were controlled (coefficient +0.01,
         robust SE 0.11) — but governor's races differ from federal ones, and the
         test covers two states, an off-year election and county-level data.
       </p>
@@ -140,9 +140,16 @@ export function Methodology() {
         candidates of the same party to November are locked to that party.
       </p>
       <p className="mb-2">
-        <b>District demographics</b> are American Community Survey (ACS) 2023 5-year
-        estimates from the U.S. Census Bureau, computed on current district boundaries
-        (post-redistricting where applicable). (Correction, Oct 29: Louisiana's had been
+        <b>District demographics</b> are American Community Survey (ACS) 2020–2024
+        5-year estimates from the U.S. Census Bureau, computed on current district
+        boundaries (post-redistricting where applicable); state and county
+        demographics come from the same release. (Update, Oct 29: these were
+        2019–2023 estimates, whose district tables are on the pre-2024 lines, so
+        Georgia's redrawn districts carried their old map's demographics: GA-06
+        showed 64% white and 9% Black, against 29% and 51% on the current lines.
+        GA-07 moves from R+10.0 to R+14.4 and GA-06 from D+65.3 to D+68.5; the
+        average district moves 0.07, and the House, Senate and governor
+        probabilities are unchanged or within 0.001.) (Correction, Oct 29: Louisiana's had been
         built from a block file for a different plan, so LA-02 showed 70% white and
         LA-06 58% Black. They now come from the Legislature's block file for the enacted
         map, Act 2 of 2026: LA-06 is 65% white and 24% Black, and LA-02 30% white and 56%
@@ -291,7 +298,9 @@ export function Methodology() {
         0.057), incumbency 6.55 (SE 1.53), w 0.788 (SE 0.058); the blended
         projection misses by SD 4.2 points where there are polls, the model alone
         by 9.8, and each race's extra error is interpolated between the two by its
-        poll weight. Shared draws of the slope and incumbency barely widen the
+        poll weight. (These fits used the 2019–2023 ACS; on the 2020–2024 release
+        the same fit gives slope 0.678, incumbency 6.53 and w 0.787, and the
+        settings are unchanged.) Shared draws of the slope and incumbency barely widen the
         governorship range (80% range 23–30 with or without them). The
         model–poll gap didn't predict the blend's error in those well-polled
         races, so its 0.5 × gap term is a judgment applied only where polling is

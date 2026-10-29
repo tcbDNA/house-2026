@@ -49,6 +49,12 @@ Comparison against national_sensitivity_v20.csv: `backend/analysis/v20_vs_downba
 |---|---|---|---|
 | `census_cd119/cb_2024_us_cd119_5m.zip` | https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_cd119_5m.zip | 2025-05 (cached) | 2024-lines shapes: Missouri districts restored after its 2025 map was overturned (`data/restore_census_lines.py MO`); old-district side of `data/core_retention.csv` |
 
+## Census American Community Survey (district, state and county demographics)
+
+| File | URL | Retrieved | Used for |
+|---|---|---|---|
+| `acs_2020_2024/` (release schedule, API catalog and variable labels, Georgia district names in both releases) | https://api.census.gov/data/2024/acs/acs5 (fetched by `data/fetch_acs.py`, `data/fetch_acs_counties.py`, `data/aggregate_acs_new_lines.py`); https://www.census.gov/programs-surveys/acs/news/data-releases/2024/release-schedule.html | 2026-10-29 | 2020-2024 5-year estimates (released Jan 29, 2026) for `demographics.csv` and `demographics_acs_counties.csv` (setting `acs_2020_2024`). The 2019-2023 files (https://api.census.gov/data/2023/acs/acs5, on 118th Congress lines) are kept as `demographics_acs2023.csv` and `demographics_counties_acs2023.csv`. See `acs_2020_2024/README.md` |
+
 ## FEC official presidential results by state
 
 | File | URL | Retrieved | Used for |

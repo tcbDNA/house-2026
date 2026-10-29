@@ -27,6 +27,9 @@ from load_data import (
 DATA_DIR = Path(__file__).resolve().parent
 V20 = DATA_DIR.parent.parent / "national_sensitivity_v20.csv"
 DEMOS = DATA_DIR / "demographics.csv"
+# The 2019-2023 ACS district file (before the Oct 29 switch); its state
+# averages go on each row as demo_acs2023 (settings.acs_2020_2024=False).
+DEMOS_ACS2023 = DATA_DIR / "demographics_acs2023.csv"
 RAW_WAR = DATA_DIR / "raw_war.csv"
 OUT = DATA_DIR / "senate_states.json"
 # Polling average for each Senate race that has one (RCP-style, Rasmussen
@@ -285,7 +288,7 @@ def load_state_presidential_margins():
     return out
 
 
-def aggregate_state_demographics():
+def aggregate_state_demographics(path: Path = DEMOS):
     """Population-weighted average of district demographics, per state."""
     pcts = ("pct_white_nh", "pct_black", "pct_hispanic", "pct_asian", "pct_other",
             "pct_college",
@@ -294,7 +297,7 @@ def aggregate_state_demographics():
             "pct_under_30", "pct_30_44", "pct_45_64", "pct_65_plus",
             "median_age", "median_income")
     accum = defaultdict(lambda: {"pop": 0.0, **{k: 0.0 for k in pcts}})
-    with DEMOS.open() as f:
+    with path.open() as f:
         for r in csv.DictReader(f):
             district = r["district"]
             state = district.split("-")[0]
@@ -541,6 +544,7 @@ def main():
     poll_averages = load_poll_averages()
     margins = load_state_presidential_margins()
     demos = aggregate_state_demographics()
+    demos_acs2023 = aggregate_state_demographics(DEMOS_ACS2023)
     all_wars = load_all_wars()
     # Senate-only history per (state, name, party). Drop entries with no Senate cycles.
     wars = {}
@@ -664,6 +668,7 @@ def main():
             "presidential_margin_2020": m.get("state_margin_2020"),
             "state_trend": round(state_trend, 2),
             **d,
+            "demo_acs2023": demos_acs2023.get(state),
             "seat_up_2026": seat is not None,
             "seat_type": seat["type"] if seat else None,
             "incumbent": seat["incumbent"] if seat else None,

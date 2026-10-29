@@ -1,0 +1,246 @@
+{
+ "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B03002_003E,B03002_004E&for=congressional%20district:*&in=state:13": [
+  [
+   "NAME",
+   "B01003_001E",
+   "B03002_003E",
+   "B03002_004E",
+   "state",
+   "congressional district"
+  ],
+  [
+   "Congressional District 1 (118th Congress), Georgia",
+   "778015",
+   "443973",
+   "220736",
+   "13",
+   "01"
+  ],
+  [
+   "Congressional District 2 (118th Congress), Georgia",
+   "757600",
+   "297747",
+   "375600",
+   "13",
+   "02"
+  ],
+  [
+   "Congressional District 3 (118th Congress), Georgia",
+   "775231",
+   "497933",
+   "182465",
+   "13",
+   "03"
+  ],
+  [
+   "Congressional District 4 (118th Congress), Georgia",
+   "770385",
+   "197517",
+   "410798",
+   "13",
+   "04"
+  ],
+  [
+   "Congressional District 5 (118th Congress), Georgia",
+   "759666",
+   "273570",
+   "363974",
+   "13",
+   "05"
+  ],
+  [
+   "Congressional District 6 (118th Congress), Georgia",
+   "776224",
+   "493106",
+   "68620",
+   "13",
+   "06"
+  ],
+  [
+   "Congressional District 7 (118th Congress), Georgia",
+   "769543",
+   "228921",
+   "222147",
+   "13",
+   "07"
+  ],
+  [
+   "Congressional District 8 (118th Congress), Georgia",
+   "768869",
+   "442858",
+   "228054",
+   "13",
+   "08"
+  ],
+  [
+   "Congressional District 9 (118th Congress), Georgia",
+   "779431",
+   "499573",
+   "77899",
+   "13",
+   "09"
+  ],
+  [
+   "Congressional District 10 (118th Congress), Georgia",
+   "789054",
+   "490476",
+   "186191",
+   "13",
+   "10"
+  ],
+  [
+   "Congressional District 11 (118th Congress), Georgia",
+   "779392",
+   "475681",
+   "130815",
+   "13",
+   "11"
+  ],
+  [
+   "Congressional District 12 (118th Congress), Georgia",
+   "768903",
+   "397993",
+   "279222",
+   "13",
+   "12"
+  ],
+  [
+   "Congressional District 13 (118th Congress), Georgia",
+   "775125",
+   "126863",
+   "498020",
+   "13",
+   "13"
+  ],
+  [
+   "Congressional District 14 (118th Congress), Georgia",
+   "775152",
+   "527860",
+   "105853",
+   "13",
+   "14"
+  ]
+ ],
+ "https://api.census.gov/data/2024/acs/acs5?get=NAME,B01003_001E,B03002_003E,B03002_004E&for=congressional%20district:*&in=state:13": [
+  [
+   "NAME",
+   "B01003_001E",
+   "B03002_003E",
+   "B03002_004E",
+   "state",
+   "congressional district"
+  ],
+  [
+   "Congressional District 1 (119th Congress), Georgia",
+   "787122",
+   "444848",
+   "219952",
+   "13",
+   "01"
+  ],
+  [
+   "Congressional District 2 (119th Congress), Georgia",
+   "754620",
+   "295196",
+   "372529",
+   "13",
+   "02"
+  ],
+  [
+   "Congressional District 3 (119th Congress), Georgia",
+   "785402",
+   "496295",
+   "183157",
+   "13",
+   "03"
+  ],
+  [
+   "Congressional District 4 (119th Congress), Georgia",
+   "765448",
+   "152556",
+   "368052",
+   "13",
+   "04"
+  ],
+  [
+   "Congressional District 5 (119th Congress), Georgia",
+   "764559",
+   "234044",
+   "367222",
+   "13",
+   "05"
+  ],
+  [
+   "Congressional District 6 (119th Congress), Georgia",
+   "778880",
+   "222641",
+   "394336",
+   "13",
+   "06"
+  ],
+  [
+   "Congressional District 7 (119th Congress), Georgia",
+   "790971",
+   "490298",
+   "63592",
+   "13",
+   "07"
+  ],
+  [
+   "Congressional District 8 (119th Congress), Georgia",
+   "774685",
+   "440567",
+   "232212",
+   "13",
+   "08"
+  ],
+  [
+   "Congressional District 9 (119th Congress), Georgia",
+   "800737",
+   "477677",
+   "96636",
+   "13",
+   "09"
+  ],
+  [
+   "Congressional District 10 (119th Congress), Georgia",
+   "801805",
+   "476616",
+   "200412",
+   "13",
+   "10"
+  ],
+  [
+   "Congressional District 11 (119th Congress), Georgia",
+   "784112",
+   "521499",
+   "91675",
+   "13",
+   "11"
+  ],
+  [
+   "Congressional District 12 (119th Congress), Georgia",
+   "774597",
+   "397633",
+   "280932",
+   "13",
+   "12"
+  ],
+  [
+   "Congressional District 13 (119th Congress), Georgia",
+   "794711",
+   "185229",
+   "396156",
+   "13",
+   "13"
+  ],
+  [
+   "Congressional District 14 (119th Congress), Georgia",
+   "782758",
+   "538851",
+   "95407",
+   "13",
+   "14"
+  ]
+ ]
+}

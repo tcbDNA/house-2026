@@ -34,6 +34,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from aggregate_dra import OFFICIAL_BAF, fill_from_block_groups, merge_rows, read_official_baf
+from fetch_acs import ACS_BASE, ACS_YEAR
 
 DATA_DIR = Path(__file__).resolve().parent
 CACHE = DATA_DIR / "cache"
@@ -47,8 +48,6 @@ STATE_USPS_TO_FIPS = {
     "TN": "47", "MO": "29", "UT": "49", "FL": "12", "LA": "22", "AL": "01",
 }
 
-ACS_YEAR = "2023"
-ACS_BASE = f"https://api.census.gov/data/{ACS_YEAR}/acs/acs5"
 
 # Variables — same set as fetch_acs.py minus race (already from DRA)
 B15003_TOTAL = "B15003_001E"

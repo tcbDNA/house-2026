@@ -4,8 +4,8 @@ districts in states that did NOT redistrict mid-decade.
 Outputs demographics_acs.csv in this directory.
 
 Why CD-level instead of tract + spatial join: for non-redrawn states the
-Census-published CD aggregations are exactly on the lines we want (118th =
-119th = v18 "2024" lines), so the spatial join would just reproduce the
+Census-published CD aggregations are exactly on the lines we want (119th =
+v18 "2024" lines), so the spatial join would just reproduce the
 Census's own work. Redrawn states (CA/TX/FL/OH/NC/MO/UT/TN) are excluded
 here and come from DRA via Path B.
 """
@@ -17,7 +17,11 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
-ACS_YEAR = "2023"
+# 2020-2024 5-year estimates (released Jan 29, 2026), on 119th Congress
+# lines. The 2019-2023 release used 118th Congress lines, which put
+# Georgia's and New York's districts on their pre-2024 maps; its merged
+# output is kept as demographics_acs2023.csv (settings.acs_2020_2024).
+ACS_YEAR = "2024"
 ACS_BASE = f"https://api.census.gov/data/{ACS_YEAR}/acs/acs5"
 
 REDRAWN_STATES = {"CA", "TX", "OH", "NC", "MO", "UT", "TN", "FL", "LA", "AL"}  # tagged as old-lines estimates; DRA aggregation overrides

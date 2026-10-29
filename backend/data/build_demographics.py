@@ -13,6 +13,8 @@ import csv
 import sys
 from pathlib import Path
 
+from fetch_acs import ACS_YEAR
+
 DATA_DIR = Path(__file__).resolve().parent
 V18_CSV = DATA_DIR.parent.parent / "national_sensitivity_v20.csv"
 
@@ -80,7 +82,7 @@ REVERTED_TO_2024_LINES = {"MO"}
 
 
 def main():
-    acs = [normalize_row(r, "ACS_2023_5yr") for r in load_csv(DATA_DIR / "demographics_acs.csv")]
+    acs = [normalize_row(r, f"ACS_{ACS_YEAR}_5yr") for r in load_csv(DATA_DIR / "demographics_acs.csv")]
 
     dra_rows = []
     dra_paths = sorted(DATA_DIR.glob("demographics_dra*.csv"))

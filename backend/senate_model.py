@@ -29,7 +29,7 @@ from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
 import trend as trend_mod
 from model import (
     ALL_SLIDERS, AXIS_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, carried_trend, demographic_shift,
-    electorate_shares, population_shares,
+    demo_key, electorate_shares, population_shares, population_variants,
 )
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "senate_states.json"
@@ -58,10 +58,20 @@ class SenateBundle:
     poll_margin: np.ndarray = field(default_factory=lambda: np.zeros(0))
     poll_n: np.ndarray = field(default_factory=lambda: np.zeros(0))
     independent: np.ndarray = field(default_factory=lambda: np.zeros(0, dtype=bool))
+    # pop / all_pop per model.demo_key (Louisiana / ACS vintage settings).
+    # Empty: pop / all_pop whatever the settings.
+    pops: dict = field(default_factory=dict)
+    all_pops: dict = field(default_factory=dict)
 
     @property
     def n(self) -> int:
         return len(self.seats)
+
+    def demographics(self, settings: Settings = DEFAULT_SETTINGS) -> dict[str, np.ndarray]:
+        return self.pops[demo_key(settings)] if self.pops else self.pop
+
+    def all_demographics(self, settings: Settings = DEFAULT_SETTINGS) -> dict[str, np.ndarray]:
+        return self.all_pops[demo_key(settings)] if self.all_pops else self.all_pop
 
 
 def load_bundle(path: Path = DATA_PATH) -> SenateBundle:
@@ -89,7 +99,8 @@ def load_bundle(path: Path = DATA_PATH) -> SenateBundle:
                         poll_margin=np.array([(s.get("poll_average") or {}).get("margin", np.nan)
                                               for s in seats], dtype=float),
                         poll_n=np.array([(s.get("poll_average") or {}).get("n_polls", 0) for s in seats], dtype=float),
-                        independent=np.array([s.get("challenger_party") == "(I)" for s in seats]))
+                        independent=np.array([s.get("challenger_party") == "(I)" for s in seats]),
+                        pops=population_variants(seats), all_pops=population_variants(all_states))
 
 
 def project(
@@ -226,7 +237,7 @@ def project(
 def _projections(bundle: SenateBundle, environment: float, sliders: dict, trend_discount: float,
                  settings: Settings, frame: str):
     uniform_swing = environment - PRES_2024_POPVOTE
-    shares = electorate_shares(bundle.pop, settings)
+    shares = electorate_shares(bundle.demographics(settings), settings)
     shifts, weights = demographic_shift(shares, sliders, settings)
     demo_shift = sum(shifts.values())
     # Residualized like the House trend: same district-fitted coefficients,
@@ -234,7 +245,7 @@ def _projections(bundle: SenateBundle, environment: float, sliders: dict, trend_
     state_trend_carried = carried_trend(bundle.state_trend, shares, bundle.battleground, settings, frame)
     if settings.trend_center_states and (settings.trend_remove_demographic
                                          or settings.trend_remove_battleground):
-        national = carried_trend(bundle.all_trend, electorate_shares(bundle.all_pop, settings),
+        national = carried_trend(bundle.all_trend, electorate_shares(bundle.all_demographics(settings), settings),
                                  bundle.all_battleground, settings, frame) @ bundle.all_votes_w
         state_trend_carried = state_trend_carried - national
     state_trend_applied = state_trend_carried * trend_discount
@@ -245,7 +256,7 @@ def _projections(bundle: SenateBundle, environment: float, sliders: dict, trend_
 def all_state_residuals(bundle: SenateBundle, settings: Settings, frame: str) -> tuple[dict[str, float], float]:
     """(state -> carried residual trend, centering constant) for every state,
     on the same footing as the seats' state_trend_applied / trend_discount."""
-    carried = carried_trend(bundle.all_trend, electorate_shares(bundle.all_pop, settings),
+    carried = carried_trend(bundle.all_trend, electorate_shares(bundle.all_demographics(settings), settings),
                             bundle.all_battleground, settings, frame)
     center = 0.0
     if settings.trend_center_states and (settings.trend_remove_demographic

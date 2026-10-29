@@ -22,6 +22,8 @@ const GROUPS: { title: string; toggles: Toggle[] }[] = [
         hint: "Weight districts by 2024 presidential votes everywhere (correction, Oct 27). Off: 2020 votes in AK AR CT ID ME MI ND NJ OK OR PA SD, the old weights." },
       { key: "la_enacted_demographics", label: "Louisiana demographics on the enacted map",
         hint: "Louisiana's district demographics from the Legislature's block file for the enacted map (correction, Oct 29). Off: the old values, built from a different plan (LA-06 58% Black, LA-02 70% white)." },
+      { key: "acs_2020_2024", label: "2020–2024 Census ACS demographics",
+        hint: "District, state and county demographics from the ACS 2020–2024 5-year estimates, on the 2024 district lines (update, Oct 29). Off: 2019–2023, whose district tables put Georgia's districts on the pre-2024 map (GA-06 64% white, 9% Black)." },
     ],
   },
   {

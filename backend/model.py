@@ -131,10 +131,21 @@ def district_turnout(rows: list[dict], votes_2024: bool = True) -> np.ndarray:
                      for r in rows], dtype=float)
 
 
-def _population_shares(rows: list[dict], previous: bool = False) -> dict[str, np.ndarray]:
-    """`previous` reads a row's demo_previous values where it has them
-    (Louisiana before the Oct 29 fix; settings.la_enacted_demographics)."""
-    src = [(r.get("demo_previous") or r) if previous else r for r in rows]
+DemoKey = tuple[bool, bool]   # (settings.la_enacted_demographics, settings.acs_2020_2024)
+DEMO_KEYS: tuple[DemoKey, ...] = ((True, True), (False, True), (True, False), (False, False))
+
+
+def demo_key(settings: Settings) -> DemoKey:
+    return settings.la_enacted_demographics, settings.acs_2020_2024
+
+
+def _population_shares(rows: list[dict], demo: DemoKey = (True, True)) -> dict[str, np.ndarray]:
+    """Rows' own values, or where they have them: demo_previous when
+    Louisiana's enacted-map values are off (Louisiana before the Oct 29 fix),
+    else demo_acs2023 when the 2020-2024 ACS is off (2019-2023 values)."""
+    la_enacted, acs_2020_2024 = demo
+    src = [(None if la_enacted else r.get("demo_previous"))
+           or (None if acs_2020_2024 else r.get("demo_acs2023")) or r for r in rows]
     return {g: np.array([(x.get(f) or 0.0) for x in src], dtype=float) / 100.0
             for g, f in GROUP_TO_PCT.items()}
 
@@ -158,11 +169,11 @@ def _district_rows() -> tuple[dict, ...]:
 
 
 @lru_cache(maxsize=4)
-def _district_pop_and_weights(votes_2024: bool = True, la_enacted: bool = True,
+def _district_pop_and_weights(votes_2024: bool = True, demo: DemoKey = (True, True),
                               ) -> tuple[dict[str, np.ndarray], np.ndarray]:
     rows = list(_district_rows())
     w = district_turnout(rows, votes_2024)
-    return _population_shares(rows, previous=not la_enacted), w / w.sum()
+    return _population_shares(rows, demo), w / w.sum()
 
 
 def trend_vs_nation(rows) -> np.ndarray:
@@ -174,12 +185,12 @@ def trend_vs_nation(rows) -> np.ndarray:
 
 @lru_cache(maxsize=32)
 def trend_fit(frame: str, white_share: float | None, include_age: bool = True,
-              include_bg: bool = True, votes_2024: bool = True, la_enacted: bool = True) -> trend.TrendFit:
+              include_bg: bool = True, votes_2024: bool = True, demo: DemoKey = (True, True)) -> trend.TrendFit:
     """Vote-weighted regression of district trend on the frame's electorate
     shares (+ age) and the battleground indicator (trend.py)."""
     rows = list(_district_rows())
-    pop, w = _district_pop_and_weights(votes_2024, la_enacted)
-    shares = _rescale(pop, electorate_factors(white_share, votes_2024, la_enacted))
+    pop, w = _district_pop_and_weights(votes_2024, demo)
+    shares = _rescale(pop, electorate_factors(white_share, votes_2024, demo))
     bg = trend.battleground([r.get("state") or r["district"][:2] for r in rows])
     return trend.fit_trend(trend_vs_nation(rows), shares, w, bg, frame, include_age, include_bg)
 
@@ -191,20 +202,20 @@ def carried_trend(y: np.ndarray, shares: dict[str, np.ndarray], bg: np.ndarray,
         return y
     fit = trend_fit(frame, white_target(settings), settings.trend_include_age,
                     votes_2024=settings.district_weights_2024_votes,
-                    la_enacted=settings.la_enacted_demographics)
+                    demo=demo_key(settings))
     return trend.carried_trend(y, fit, shares, bg, settings.trend_remove_demographic,
                                settings.trend_remove_battleground)
 
 
 @lru_cache(maxsize=4)
-def _catalist_factors(votes_2024: bool = True, la_enacted: bool = True) -> dict[str, float]:
+def _catalist_factors(votes_2024: bool = True, demo: DemoKey = (True, True)) -> dict[str, float]:
     """Per-group turnout factors (iterative proportional fitting over House
     districts) such that the 2024-turnout-weighted national average of each
     rescaled share equals Catalist's 2022 electorate share. ACS shares are of
     total population (race, incl. children / non-citizens) or adults (age,
     edu), so without this e.g. Hispanic voters would be weighted at ~18%
     instead of ~8%."""
-    pop, w = _district_pop_and_weights(votes_2024, la_enacted)
+    pop, w = _district_pop_and_weights(votes_2024, demo)
     target = {}
     for groups in AXIS_GROUPS.values():
         axis_total = sum(CATALIST_ELECTORATE_SHARES[g] for g in groups)
@@ -247,15 +258,15 @@ def _solve_nonwhite_scalar(pop, w, factors, axis: str, white_share: float) -> fl
 
 @lru_cache(maxsize=16)
 def electorate_factors(white_share: float | None = None, votes_2024: bool = True,
-                       la_enacted: bool = True) -> dict[str, float]:
+                       demo: DemoKey = (True, True)) -> dict[str, float]:
     """Turnout factors per group. `white_share=None` gives the Catalist-2022
     fit; otherwise every non-white factor in the race and race×education axes
     is multiplied by a common scalar (one per axis) so the national white
     share hits `white_share`. Age factors are never changed."""
-    factors = dict(_catalist_factors(votes_2024, la_enacted))
+    factors = dict(_catalist_factors(votes_2024, demo))
     if white_share is None:
         return factors
-    pop, w = _district_pop_and_weights(votes_2024, la_enacted)
+    pop, w = _district_pop_and_weights(votes_2024, demo)
     for axis in ("race", "edu"):
         lam = _solve_nonwhite_scalar(pop, w, factors, axis, white_share)
         for g in AXIS_GROUPS[axis]:
@@ -274,18 +285,23 @@ def electorate_shares(pop: dict[str, np.ndarray], settings: Settings = DEFAULT_S
     `pop` comes from population_shares() for any geography (districts,
     states, counties) carrying the ACS pct_* fields."""
     return _rescale(pop, electorate_factors(white_target(settings), settings.district_weights_2024_votes,
-                                            settings.la_enacted_demographics))
+                                            demo_key(settings)))
 
 
-def population_shares(rows: list[dict]) -> dict[str, np.ndarray]:
-    return _population_shares(rows)
+def population_shares(rows: list[dict], settings: Settings = DEFAULT_SETTINGS) -> dict[str, np.ndarray]:
+    return _population_shares(rows, demo_key(settings))
+
+
+def population_variants(rows: list[dict]) -> dict[DemoKey, dict[str, np.ndarray]]:
+    """population_shares for every demo_key, for bundles built once at startup."""
+    return {k: _population_shares(rows, k) for k in DEMO_KEYS}
 
 
 @lru_cache(maxsize=16)
 def _national_shares(white_share: float | None, votes_2024: bool = True,
-                     la_enacted: bool = True) -> tuple[tuple[str, float], ...]:
-    pop, w = _district_pop_and_weights(votes_2024, la_enacted)
-    shares = _rescale(pop, electorate_factors(white_share, votes_2024, la_enacted))
+                     demo: DemoKey = (True, True)) -> tuple[tuple[str, float], ...]:
+    pop, w = _district_pop_and_weights(votes_2024, demo)
+    shares = _rescale(pop, electorate_factors(white_share, votes_2024, demo))
     return tuple((g, float(shares[g] @ w)) for g in GROUP_TO_PCT)
 
 
@@ -294,7 +310,7 @@ def national_shares(settings: Settings = DEFAULT_SETTINGS) -> dict[str, float]:
     model's national demographic shift is exactly Σ_g share_g × Δ_g with
     these, so the slider panel and the crosstab estimate use them too."""
     return dict(_national_shares(white_target(settings), settings.district_weights_2024_votes,
-                                 settings.la_enacted_demographics))
+                                 demo_key(settings)))
 
 
 def axis_weights(deltas: dict[str, float], shares: dict[str, float]) -> dict[str, float]:
@@ -336,7 +352,7 @@ class DataBundle:
     incumbency_sign: np.ndarray     # +1 D incumbent, −1 R incumbent, 0 none (× settings.house_incumbency)
     battleground: np.ndarray        # 1 if in a 2024 presidential battleground state
     pop: dict[str, np.ndarray]      # group -> per-district ACS population share (0..1)
-    pop_previous: dict[str, np.ndarray]  # same, with Louisiana's pre-Oct 29 values
+    pops: dict[DemoKey, dict[str, np.ndarray]]  # same, per demo_key (Louisiana / ACS vintage settings)
     turnout_w: np.ndarray           # 2024 votes, normalized to sum to 1
     turnout_w_2020_basis: np.ndarray  # same, with 2020 votes in the 12 states without 2024 precincts
 
@@ -344,7 +360,7 @@ class DataBundle:
         return self.turnout_w if settings.district_weights_2024_votes else self.turnout_w_2020_basis
 
     def demographics(self, settings: Settings = DEFAULT_SETTINGS) -> dict[str, np.ndarray]:
-        return self.pop if settings.la_enacted_demographics else self.pop_previous
+        return self.pops[demo_key(settings)]
 
     def war(self, settings: Settings) -> np.ndarray:
         return self.war_scaled if settings.core_retention_scaling else self.war_binary
@@ -393,7 +409,7 @@ def load_bundle(path: Path = DATA_PATH) -> DataBundle:
                       new_lines_binary=new_lines_binary, new_share=new_share,
                       rel_trend=rel_trend,
                       battleground=trend.battleground([r.get("state") or r["district"][:2] for r in rows]),
-                      pop=population_shares(rows), pop_previous=_population_shares(rows, previous=True),
+                      pop=population_shares(rows), pops=population_variants(rows),
                       turnout_w=turnout / turnout.sum(),
                       turnout_w_2020_basis=turnout_2020_basis / turnout_2020_basis.sum())
 

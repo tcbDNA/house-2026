@@ -88,10 +88,10 @@ class DefaultsRequest(BaseModel):
 def _terms(kind: str, settings: Settings = DEFAULT_SETTINGS, frame: str = "race"):
     """Item 4 error terms (group loadings and σs) for the House, Senate or governor rows."""
     if kind == "governor":
-        return error_terms(GOVERNOR_BUNDLE.pop, settings, frame)
+        return error_terms(GOVERNOR_BUNDLE.demographics(settings), settings, frame)
     if kind == "house":
         return error_terms(BUNDLE.demographics(settings), settings, frame)
-    return error_terms(SENATE_BUNDLE.pop, settings, frame)
+    return error_terms(SENATE_BUNDLE.demographics(settings), settings, frame)
 
 
 def _settings(overrides: dict) -> Settings:
@@ -340,12 +340,12 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
         target = seat["projection"]
     else:
         j = next(i for i, s in enumerate(sb.states) if s["state"] == st)
-        pop_j = {g: v[j:j + 1] for g, v in sb.all_pop.items()}
+        pop_j = {g: v[j:j + 1] for g, v in sb.all_demographics(settings).items()}
         demo_state = sum(demographic_shift(electorate_shares(pop_j, settings), sliders, settings)[0].values())[0]
         candidate_adj = 0.0
         target = ((sb.states[j].get("presidential_margin_2024") or 0.0) + req.trend_discount * resid[st]
                   + swing + float(demo_state))
-    terms = overlay.CountyTerms(counties, population_shares(counties), sliders, settings, req.frame, center)
+    terms = overlay.CountyTerms(counties, population_shares(counties, settings), sliders, settings, req.frame, center)
     r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
                                req.trend_discount, settings)
     for c, i, w, res, demo, proj in r["rows"]:
@@ -480,7 +480,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
     settings = _settings(req.settings)
     if settings.overlay_slice_projections:
         counties = [c for c in COUNTY_BUNDLE.counties if c["state"] == state]
-        terms = overlay.CountyTerms(counties, population_shares(counties), sliders, settings, req.frame)
+        terms = overlay.CountyTerms(counties, population_shares(counties, settings), sliders, settings, req.frame)
         r = overlay.district_slices(did, drow, slices, district_proj["uniform_swing"], terms,
                                     req.trend_discount, settings, req.frame)
         turnout, turnout_source = county.turnout_ratio(district=did)

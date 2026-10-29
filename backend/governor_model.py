@@ -40,7 +40,7 @@ import numpy as np
 
 import senate_model as senate
 from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
-from model import TOSSUP_THRESHOLD, population_shares
+from model import TOSSUP_THRESHOLD, population_shares, population_variants
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "governor_states.json"
 GOVERNORSHIPS = 50
@@ -69,6 +69,9 @@ class GovernorBundle:
     def pop(self) -> dict[str, np.ndarray]:
         return self.fund.pop
 
+    def demographics(self, settings: Settings = DEFAULT_SETTINGS) -> dict[str, np.ndarray]:
+        return self.fund.demographics(settings)
+
 
 def load_bundle(path: Path = DATA_PATH, senate_bundle: senate.SenateBundle | None = None) -> GovernorBundle:
     raw = json.loads(path.read_text())
@@ -81,7 +84,8 @@ def load_bundle(path: Path = DATA_PATH, senate_bundle: senate.SenateBundle | Non
         state_trend=np.array([r.get("state_trend") or 0.0 for r in races], dtype=float),
         battleground=senate.trend_mod.battleground([r["state"] for r in races]),
         pop=population_shares(races), all_trend=sb.all_trend, all_battleground=sb.all_battleground,
-        all_pop=sb.all_pop, all_votes_w=sb.all_votes_w)
+        all_pop=sb.all_pop, all_votes_w=sb.all_votes_w,
+        pops=population_variants(races), all_pops=sb.all_pops)
     pa = [r.get("poll_average") or {} for r in races]
     return GovernorBundle(
         fund=fund, races=races, not_up=raw["not_up"],

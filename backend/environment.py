@@ -49,7 +49,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, DESIGN_EFFECT, Settings
-from model import CATALIST_BASELINES, national_shares
+from model import CATALIST_BASELINES, DemoKey, demo_key, national_shares
 
 DATA = Path(__file__).resolve().parent / "data"
 CSV_PATH = DATA / "generic_ballot_crosstabs.csv"
@@ -75,11 +75,11 @@ def two_way(dem: float, rep: float) -> float:
     return 100.0 * (dem - rep) / (dem + rep)
 
 
-def _estimated_group_n(n: int, group: str, la_enacted: bool = True) -> float:
+def _estimated_group_n(n: int, group: str, demo: DemoKey = (True, True)) -> float:
     """Where a poll publishes only percentages: total n × the group's share of
     the electorate (the model's national shares at default settings, with
-    Louisiana's demographics as `la_enacted` picks)."""
-    base = DEFAULT_SETTINGS if la_enacted else replace(DEFAULT_SETTINGS, la_enacted_demographics=False)
+    the demographics `demo` picks: Louisiana's map and the ACS vintage)."""
+    base = replace(DEFAULT_SETTINGS, la_enacted_demographics=demo[0], acs_2020_2024=demo[1])
     return n * national_shares(base)[group]
 
 
@@ -89,7 +89,7 @@ def margin_se(margin: float, n: float) -> float:
     return 200.0 * math.sqrt(p * (1.0 - p) * DESIGN_EFFECT / n)
 
 
-def load_polls(path: Path = CSV_PATH, la_enacted: bool = True) -> dict[str, dict]:
+def load_polls(path: Path = CSV_PATH, demo: DemoKey = (True, True)) -> dict[str, dict]:
     """pollster -> {"n", "end", "population", "margins": {group: two-way margin},
     "group_n": {group: subgroup n}, "group_n_source": {group: source}}.
 
@@ -115,7 +115,7 @@ def load_polls(path: Path = CSV_PATH, la_enacted: bool = True) -> dict[str, dict
             elif r.get("moe") and top_moe:
                 p["group_n"][g], src = n * (top_moe / float(r["moe"])) ** 2, "moe"
             else:
-                p["group_n"][g], src = _estimated_group_n(n, g, la_enacted), "share"
+                p["group_n"][g], src = _estimated_group_n(n, g, demo), "share"
             p["group_n_source"][g] = src
     return polls
 
@@ -282,7 +282,7 @@ def estimate(polls: dict[str, dict], settings: Settings = DEFAULT_SETTINGS,
     matched, c, c_edu = {}, None, None
     shifts, edu_shifts = dict(current), dict(edu_current)
     if settings.pollster_matched_shifts:
-        polls_2024 = (load_polls(CSV_2024_PATH, settings.la_enacted_demographics)
+        polls_2024 = (load_polls(CSV_2024_PATH, demo_key(settings))
                       if polls_2024 is None else polls_2024)
         matched = matched_changes(polls, polls_2024, GROUPS + WHITE_EDU, settings, equal_weights)
         r = {g: matched[g]["r_avg"] for g in GROUPS if _matchable(g, matched[g])}
@@ -352,7 +352,7 @@ def estimate(polls: dict[str, dict], settings: Settings = DEFAULT_SETTINGS,
 @lru_cache(maxsize=32)
 def default_scenario(settings: Settings = DEFAULT_SETTINGS) -> dict:
     """Default wave, slider positions and national shares for `settings`."""
-    est = estimate(load_polls(la_enacted=settings.la_enacted_demographics), settings)
+    est = estimate(load_polls(demo=demo_key(settings)), settings)
     sliders = {**CATALIST_BASELINES, **est["sliders"]}
     wave = PRES_2024_POPVOTE + est["contributions"]["other"]
     ns = national_shares(settings)

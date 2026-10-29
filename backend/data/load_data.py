@@ -18,6 +18,10 @@ DEMOS_CSV = DATA_DIR / "demographics.csv"
 # (aggregate_dra.OFFICIAL_BAF). Written to the row as demo_previous so
 # settings.la_enacted_demographics=False reproduces earlier runs.
 DEMOS_PREVIOUS_CSV = DATA_DIR / "demographics_la_previous.csv"
+# Every district's demographics from the 2019-2023 ACS (demographics.csv as it
+# was before the Oct 29 switch to 2020-2024). Written to the row as
+# demo_acs2023 so settings.acs_2020_2024=False reproduces earlier runs.
+DEMOS_ACS2023_CSV = DATA_DIR / "demographics_acs2023.csv"
 OUT_JSON = DATA_DIR / "districts.json"
 
 NUMERIC_V18 = {
@@ -1368,6 +1372,8 @@ def main():
 
     with DEMOS_PREVIOUS_CSV.open() as f:
         demos_previous = {r["district"]: {k: to_num(r[k]) for k in NUMERIC_DEMOS} for r in csv.DictReader(f)}
+    with DEMOS_ACS2023_CSV.open() as f:
+        demos_acs2023 = {r["district"]: {k: to_num(r[k]) for k in NUMERIC_DEMOS} for r in csv.DictReader(f)}
 
     db_current, db_2024_lines = load_downballot()
     retention = load_core_retention()
@@ -1411,6 +1417,8 @@ def main():
                 row["demo_source"] = "MISSING"
             if d_id in demos_previous:
                 row["demo_previous"] = demos_previous[d_id]
+            if d_id in demos_acs2023:
+                row["demo_acs2023"] = demos_acs2023[d_id]
             # Apply manual incumbent overrides BEFORE WAR (since WAR is keyed on incumbent name)
             override = INCUMBENT_OVERRIDES.get(d_id)
             if override:

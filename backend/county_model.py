@@ -16,8 +16,8 @@ import numpy as np
 
 from config import DEFAULT_SETTINGS, DEFAULT_TREND_WEIGHT, Settings
 from model import (
-    ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demographic_shift, electorate_shares,
-    population_shares,
+    ALL_SLIDERS, CATALIST_BASELINES, TOSSUP_THRESHOLD, demo_key, demographic_shift, electorate_shares,
+    population_shares, population_variants,
 )
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "counties.json"
@@ -80,6 +80,7 @@ class CountyBundle:
     base_margin: np.ndarray
     rel_trend: np.ndarray
     pop: dict[str, np.ndarray]
+    pops: dict  # pop per model.demo_key (Louisiana / ACS vintage settings)
 
     @property
     def n(self) -> int:
@@ -94,7 +95,7 @@ def load_bundle(path: Path = DATA_PATH) -> CountyBundle:
     # No WAR / incumbency / challenger at county level.
     base_margin = margin_2024
     return CountyBundle(counties=rows, base_margin=base_margin, rel_trend=rel_trend,
-                        pop=population_shares(rows))
+                        pop=population_shares(rows), pops=population_variants(rows))
 
 
 def project(
@@ -117,7 +118,7 @@ def project(
 
     uniform_swing = environment - PRES_2024_POPVOTE
     turnout, turnout_source = turnout_ratio(state=state_filter)
-    shifts, weights = demographic_shift(electorate_shares(bundle.pop, settings), sliders, settings)
+    shifts, weights = demographic_shift(electorate_shares(bundle.pops[demo_key(settings)], settings), sliders, settings)
     demo_shift = sum(shifts.values())
 
     rel_trend_applied = bundle.rel_trend * trend_discount

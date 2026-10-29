@@ -15,7 +15,7 @@ CATALIST_2022_WHITE_SHARE = 0.7581
 
 # Default trend weight (multiplier on the carried 2020→2024 trend, after the
 # demographic part is removed). 0.5 is a judgment call: half the residual
-# trend persists. The 2025 NJ/VA governor check (county coefficient +0.02,
+# trend persists. The 2025 NJ/VA governor check (county coefficient +0.01,
 # robust SE 0.11; analysis/trend_weight_nj_va_2025.txt) is a limited test —
 # governor's races differ from federal ones — not the basis for the
 # default. 0, 1 and −0.5 remain scenario options. A scenario parameter, not
@@ -83,7 +83,8 @@ class Settings:
     # get governor_race_sigma_extra more race-level error, in quadrature.
     # Defaults from the 2018/2022 calibration with a single governor record at
     # full weight (analysis/governor_backtest.txt, user decision Oct 28):
-    # slope 0.677 (SE 0.057), incumbency 6.55 (SE 1.53), w 0.788 (SE 0.058);
+    # slope 0.677 (SE 0.057), incumbency 6.55 (SE 1.53), w 0.788 (SE 0.058)
+    # (on the 2019-2023 ACS; the 2020-2024 ACS gives 0.678, 6.53, 0.787);
     # race error from the blended projection's error (SD 4.20 -> extra 1.6)
     # and the model's alone (SD 9.79 -> 9.0). The free fit with half-weighted
     # single records (incumbency 9.3) was rejected: about 3 points came from
@@ -180,6 +181,16 @@ class Settings:
     # demo_previous), as before. They also enter the national electorate fit
     # and the trend regression, so every race moves slightly.
     la_enacted_demographics: bool = True
+
+    # Census ACS 2020-2024 5-year estimates (released Jan 29, 2026) for the
+    # district, state and county demographics, in place of 2019-2023
+    # (user decision, Oct 29). The 2019-2023 congressional-district tables
+    # are on 118th Congress lines, so Georgia's districts (redrawn for 2024)
+    # carried their old map's demographics; the 2020-2024 tables are on the
+    # 119th Congress (2024) lines. Redrawn states keep DRA's 2020 Census race
+    # and take education/age from the 2020-2024 tracts. Off: the 2019-2023
+    # values (each row's demo_acs2023), as before.
+    acs_2020_2024: bool = True
 
     # Item 2 — residualized trend (trend.py). Remove from the carried trend
     # the part explained by the active frame's demographic shares (+ age, +
