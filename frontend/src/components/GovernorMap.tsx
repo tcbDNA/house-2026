@@ -2,10 +2,13 @@ import { useEffect, useRef } from "react";
 import maplibregl, { Map as MLMap, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { bucketLabel, partyColorHex, type GovernorRace } from "../types";
+import { addSwingLayer, fetchPoints, setSwingArrows, shiftRowHtml, SWING_CAP, SWING_FILL, SwingLegend, SwingToggle } from "./SwingArrows";
 
 type Props = {
   races: GovernorRace[];
   onPickState?: (state: string) => void;
+  swing: boolean;          // "Shift from 2024" arrows instead of margin colors
+  onSwing: (on: boolean) => void;
 };
 
 const BASE_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
@@ -18,6 +21,16 @@ const PALETTE = {
   ind5: "#374151", ind4: "#525252", ind3: "#a3a3a3", ind2: "#d4d4d4",
   notUp: "#d6d6d6",
 };
+
+const PX_PER_PT = 2.5;    // swing-arrow length per point of shift
+
+// Shift from the 2024 presidential margin. None where the race isn't against
+// a Republican (Rhode Island: Foulkes vs independent Ken Block), whose margin
+// isn't comparable with Harris − Trump.
+function shiftFrom2024(s: GovernorRace): number | null {
+  return s.presidential_margin_2024 == null || s.opponent_party !== "(R)"
+    ? null : s.projection - s.presidential_margin_2024;
+}
 
 // Independent (caucus-with-D) candidates exist on the D side only in our data.
 // They show as grey instead of blue when projected to win.
@@ -50,7 +63,7 @@ function signed(n: number | null | undefined): string {
   return (r > 0 ? "+" : r < 0 ? "" : "+") + r.toFixed(1);
 }
 
-function buildPopupHtml(s: GovernorRace): string {
+function buildPopupHtml(s: GovernorRace, swing: boolean): string {
   const row = (label: string, value: number | null | undefined, isResult = false) => {
     if (value == null) return "";
     const v = signed(value);
@@ -97,6 +110,7 @@ function buildPopupHtml(s: GovernorRace): string {
     <div style="color:#666">weight on polls ${s.poll_weight.toFixed(2)} (+ scenario change)</div>` : ""}
     ${row("= projection", s.projection, true)}
     ${flipRow}
+    ${swing ? shiftRowHtml(shiftFrom2024(s), "not against a Republican: no shift shown") : ""}
     ${winRows ? `<div style="border-top:1px solid #ccc;padding-top:2px;margin-top:3px"><div style="color:#666">chance of winning</div>${winRows}</div>` : ""}
     ${flags ? `<div style="border-top:1px solid #ccc;padding-top:2px;margin-top:3px">${flags}</div>` : ""}
   </div>`;
@@ -109,7 +123,7 @@ function notUpPopupHtml(state: string, name: string): string {
   </div>`;
 }
 
-export function GovernorMap({ races, onPickState }: Props) {
+export function GovernorMap({ races, onPickState, swing, onSwing }: Props) {
   const onPickStateRef = useRef(onPickState);
   onPickStateRef.current = onPickState;
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -117,8 +131,11 @@ export function GovernorMap({ races, onPickState }: Props) {
   const popupRef = useRef<Popup | null>(null);
   const seatsRef = useRef<GovernorRace[]>(races);
   const isLoadedRef = useRef(false);
+  const swingViewRef = useRef(swing);
+  const pointsRef = useRef<Map<string, [number, number]> | null>(null);
 
   seatsRef.current = races;
+  swingViewRef.current = swing;
 
   function buildFillColorExpr(): any {
     const expr: any[] = ["match", ["get", "state"]];
@@ -133,6 +150,27 @@ export function GovernorMap({ races, onPickState }: Props) {
     const ids = seatsRef.current.filter((s) => s.flip).map((s) => s.state);
     if (ids.length === 0) return ["==", ["get", "state"], "__none__"];
     return ["in", ["get", "state"], ["literal", ids]];
+  }
+
+  // Margin colors and flip hatching, or (shift view) a plain fill under the
+  // arrows; states without a race keep the not-up grey.
+  function applyView() {
+    const map = mapRef.current;
+    if (!map || !isLoadedRef.current) return;
+    const on = swingViewRef.current;
+    map.setPaintProperty("state-fill", "fill-color", on ? buildSwingFillExpr() : buildFillColorExpr());
+    map.setFilter("state-flips", buildFlipFilter());
+    map.setLayoutProperty("state-flips", "visibility", on ? "none" : "visible");
+    const pts = pointsRef.current;
+    setSwingArrows(map, on && pts ? seatsRef.current.flatMap((s) => {
+      const p = pts.get(s.state), shift = shiftFrom2024(s);
+      return p && shift != null ? [{ point: p, shift }] : [];
+    }) : null);
+  }
+
+  function buildSwingFillExpr(): any {
+    const ids = seatsRef.current.map((s) => s.state);
+    return ids.length ? ["match", ["get", "state"], ids, SWING_FILL, PALETTE.notUp] : PALETTE.notUp;
   }
 
   function makeHashPattern(tile = 18): ImageData {
@@ -206,7 +244,9 @@ export function GovernorMap({ races, onPickState }: Props) {
         filter: ["==", ["get", "state"], ""],
       });
 
+      addSwingLayer(map, PX_PER_PT);
       isLoadedRef.current = true;
+      applyView();
       popupRef.current = new maplibregl.Popup({
         closeButton: false,
         closeOnClick: false,
@@ -223,7 +263,7 @@ export function GovernorMap({ races, onPickState }: Props) {
         if (popupRef.current) {
           popupRef.current
             .setLngLat(e.lngLat)
-            .setHTML(s ? buildPopupHtml(s) : notUpPopupHtml(state, name))
+            .setHTML(s ? buildPopupHtml(s, swingViewRef.current) : notUpPopupHtml(state, name))
             .addTo(map);
         }
       });
@@ -249,44 +289,55 @@ export function GovernorMap({ races, onPickState }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Label points load the first time the shift view opens.
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !isLoadedRef.current) return;
-    map.setPaintProperty("state-fill", "fill-color", buildFillColorExpr());
-    map.setFilter("state-flips", buildFlipFilter());
+    if (swing && !pointsRef.current) {
+      fetchPoints("/state_points.json")
+        .then((pts) => { pointsRef.current = pts; applyView(); })
+        .catch(console.error);
+    }
+    applyView();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [races]);
+  }, [races, swing]);
 
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden relative">
       <div ref={containerRef} className="w-full h-[500px]" />
-      <div className="absolute bottom-2 left-2 bg-white/95 rounded shadow px-2 py-1.5 text-[10px] leading-tight font-mono">
-        <div className="font-sans font-semibold text-[10px] mb-1">Projected D-R margin</div>
-        <div className="flex items-center gap-0">
-          {[PALETTE.rep5, PALETTE.rep4, PALETTE.rep3, PALETTE.rep2,
-            PALETTE.dem2, PALETTE.dem3, PALETTE.dem4, PALETTE.dem5].map((c, i) => (
-            <span key={i} className="inline-block w-5 h-3" style={{ background: c }} />
-          ))}
+      <div className="absolute top-2 left-2"><SwingToggle on={swing} onChange={onSwing} /></div>
+      {swing ? (
+        <SwingLegend pxPerPt={PX_PER_PT}
+                     capped={races.some((s) => Math.abs(shiftFrom2024(s) ?? 0) > SWING_CAP + 0.5)}
+                     notes={races.some((s) => s.presidential_margin_2024 != null && shiftFrom2024(s) == null)
+                       ? ["No arrow where the race isn't against a Republican (Rhode Island)."] : []} />
+      ) : (
+        <div className="absolute bottom-2 left-2 bg-white/95 rounded shadow px-2 py-1.5 text-[10px] leading-tight font-mono">
+          <div className="font-sans font-semibold text-[10px] mb-1">Projected D-R margin</div>
+          <div className="flex items-center gap-0">
+            {[PALETTE.rep5, PALETTE.rep4, PALETTE.rep3, PALETTE.rep2,
+              PALETTE.dem2, PALETTE.dem3, PALETTE.dem4, PALETTE.dem5].map((c, i) => (
+              <span key={i} className="inline-block w-5 h-3" style={{ background: c }} />
+            ))}
+          </div>
+          <div className="flex justify-between mt-0.5">
+            <span>R+15</span><span>tie</span><span>D+15</span>
+          </div>
+          <div className="font-sans mt-1.5 flex items-center gap-2 text-[10px]">
+            <span className="inline-block w-4 h-3 border border-slate-400"
+              style={{ background: PALETTE.notUp }} />
+            <span className="text-slate-700">no race in 2026</span>
+          </div>
+          <div className="font-sans mt-1 flex items-center gap-2 text-[10px]">
+            <span
+              className="inline-block w-4 h-3 border border-slate-400"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(45deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65) 1.5px, transparent 1.5px, transparent 4px)",
+              }}
+            />
+            <span className="text-slate-700">flipped governorship</span>
+          </div>
         </div>
-        <div className="flex justify-between mt-0.5">
-          <span>R+15</span><span>tie</span><span>D+15</span>
-        </div>
-        <div className="font-sans mt-1.5 flex items-center gap-2 text-[10px]">
-          <span className="inline-block w-4 h-3 border border-slate-400"
-            style={{ background: PALETTE.notUp }} />
-          <span className="text-slate-700">no race in 2026</span>
-        </div>
-        <div className="font-sans mt-1 flex items-center gap-2 text-[10px]">
-          <span
-            className="inline-block w-4 h-3 border border-slate-400"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(45deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65) 1.5px, transparent 1.5px, transparent 4px)",
-            }}
-          />
-          <span className="text-slate-700">flipped governorship</span>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

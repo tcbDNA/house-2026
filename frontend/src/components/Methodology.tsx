@@ -360,6 +360,19 @@ export function Methodology() {
         county-overlay vote-count display — not any projection, margin, or seat
         call.
       </p>
+      <p>
+        <b>Shift from 2024 maps.</b> Each map's "Shift from 2024" button swaps the
+        margin colors for arrows, as in the New York Times' shift maps: each arrow
+        starts inside its district, state or county, points left (blue) for a shift
+        toward Democrats or right (red) toward Republicans, and its length is the
+        projected 2026 margin minus the 2024 presidential margin (Harris − Trump),
+        the baseline every projection starts from. Shifts under 0.5 pts get no
+        arrow, and arrows stop at 40 pts (the hover shows the exact shift). Races
+        whose margin can't be compared with Harris − Trump get none: the
+        California top-two districts with two candidates of one party, and Rhode
+        Island's governor's race (Democrat against an independent). A display only:
+        no projection changes.
+      </p>
       <p className="text-[10px] text-slate-500 italic border-t pt-2 mt-2">
         Bucket thresholds: Tilt ≤3 pts · Lean 3-7 · Likely 7-13 · Safe &gt;13.
         Projections within ±3 pts are tilts, not predictions — model uncertainty is

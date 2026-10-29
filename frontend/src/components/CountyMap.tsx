@@ -3,6 +3,8 @@ import maplibregl, { Map as MLMap, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { fetchCounties, fetchCountyGeoJSON, fetchDistrict, fetchDistrictCounties, type CountyResponse } from "../api";
 import { bucketLabel, formatProjection, type SliderValues } from "../types";
+import { labelPoint } from "../labelPoint";
+import { addSwingLayer, setSwingArrows, shiftRowHtml, SWING_CAP, SWING_FILL, SwingLegend, SwingToggle } from "./SwingArrows";
 
 type DistrictExtras = { overlap_fraction: number; fully_contained: boolean };
 
@@ -19,6 +21,11 @@ type Props = {
    *  with partial counties (overlap < 99%) rendered at reduced opacity and
    *  labeled with their overlap fraction in the popup. */
   district?: string;
+  swing: boolean;          // "Shift from 2024" arrows instead of margin colors
+  onSwing: (on: boolean) => void;
+  /** Why the race's margin can't be compared with 2024's (no arrows), e.g. a
+   *  same-party House race or a governor's race against an independent. */
+  noShiftReason?: string | null;
 };
 
 const BASE_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
@@ -40,6 +47,8 @@ const PALETTE = {
   ind1: "#d9d9d9", ind2: "#bdbdbd", ind3: "#737373", ind4: "#525252", ind5: "#252525",
   empty: "#d6d6d6",
 };
+
+const PX_PER_PT = 3;      // swing-arrow length per point of shift
 
 function bucketColor(proj: number, indWinner = false): string {
   const a = Math.abs(proj);
@@ -70,7 +79,7 @@ function signed(n: number | null | undefined): string {
   return (r > 0 ? "+" : r < 0 ? "" : "+") + r.toFixed(1);
 }
 
-function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtras>): string {
+function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtras>, shiftRow = ""): string {
   const row = (label: string, value: number | null | undefined, bold = false) => {
     if (value == null) return "";
     const v = signed(value);
@@ -106,10 +115,12 @@ function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtra
       })()}
       <div style="color:#888">turnout ~${fmtN(c.estimated_turnout_2026)} (2024 was ${fmtN(c.total_2024 ?? 0)})</div>
     </div>
+    ${shiftRow}
   </div>`;
 }
 
-export function CountyMap({ state, environment, sliders, trendDiscount, indWinner, race = "senate", onClose, district }: Props) {
+export function CountyMap({ state, environment, sliders, trendDiscount, indWinner, race = "senate", onClose, district,
+                           swing, onSwing, noShiftReason }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MLMap | null>(null);
   const popupRef = useRef<Popup | null>(null);
@@ -124,6 +135,11 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
   // the latest counties when building the fill-color expression.
   const dataRef = useRef<CountyResponse | null>(null);
   dataRef.current = data;
+  const swingViewRef = useRef(swing);
+  swingViewRef.current = swing;
+  const noShiftRef = useRef(noShiftReason);
+  noShiftRef.current = noShiftReason;
+  const pointsRef = useRef<Map<string, [number, number]>>(new Map());
 
   // Fetch projection data on slider/env change. Branch to district endpoint
   // when in district mode so we only get counties touching that district.
@@ -163,7 +179,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
     if (!d?.counties.length) return PALETTE.empty;
     const expr: any[] = ["match", ["get", "fips"]];
     for (const c of d.counties) {
-      expr.push(c.fips, bucketColor(c.projection, indWinner));
+      expr.push(c.fips, swingViewRef.current ? SWING_FILL : bucketColor(c.projection, indWinner));
     }
     // In district mode, counties not in the district stay grey instead of fading
     // into the state baseline; in state mode this branch never fires because
@@ -213,6 +229,24 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
     return ["in", ["get", "fips"], ["literal", flipped]];
   }
 
+  // Margin colors and flip hatching, or (shift view) a plain fill under the
+  // arrows.
+  function applyView() {
+    const map = mapRef.current;
+    if (!map || !isLoadedRef.current || !map.getLayer("county-fill")) return;
+    const on = swingViewRef.current;
+    map.setPaintProperty("county-fill", "fill-color", buildFillColorExpr());
+    map.setPaintProperty("county-fill", "fill-opacity", buildFillOpacityExpr());
+    map.setFilter("county-flips", buildFlipFilter());
+    map.setLayoutProperty("county-flips", "visibility", on ? "none" : "visible");
+    map.setLayoutProperty("county-labels", "text-field", buildLabelExpr());
+    const d = dataRef.current;
+    setSwingArrows(map, on && d && !noShiftRef.current ? d.counties.flatMap((c) => {
+      const p = pointsRef.current.get(c.fips);
+      return p ? [{ point: p, shift: c.projection - c.margin_2024 }] : [];
+    }) : null);
+  }
+
   function makeHashPattern(tile = 18): ImageData {
     // Softer hatch than the Senate map: single diagonal stripe per tile,
     // thinner line, lower opacity. The layer's fill-opacity is also reduced.
@@ -246,6 +280,10 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
     map.on("load", async () => {
       try {
         const gj = await fetchCountyGeoJSON(state);
+        for (const f of gj.features) {
+          const p = labelPoint(f.geometry);
+          if (p) pointsRef.current.set((f.properties as any).fips, p);
+        }
         map.addSource("counties", { type: "geojson", data: gj, promoteId: "fips" });
         map.addLayer({
           id: "county-fill",
@@ -293,6 +331,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
             "text-halo-width": 1.2,
           },
         });
+        addSwingLayer(map, PX_PER_PT);
         // Fit to bounds — in district mode, fit only the in-district counties;
         // in state mode fit the whole state.
         const inDistrictFips = district && dataRef.current
@@ -316,7 +355,10 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
           const c = byFipsRef.current.get(fips);
           if (!c) return;
           if (!popupRef.current) popupRef.current = new maplibregl.Popup({ closeButton: false, closeOnClick: false });
-          popupRef.current.setLngLat(e.lngLat).setHTML(popupHtml(c)).addTo(map);
+          const why = noShiftRef.current;
+          const shiftRow = swingViewRef.current
+            ? shiftRowHtml(why ? null : c.projection - c.margin_2024, why ? `no shift shown: ${why}` : undefined) : "";
+          popupRef.current.setLngLat(e.lngLat).setHTML(popupHtml(c, shiftRow)).addTo(map);
         });
         map.on("mouseleave", "county-fill", () => {
           map.getCanvas().style.cursor = "";
@@ -324,11 +366,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
         });
         isLoadedRef.current = true;
         // Safety re-apply in case data arrived during load.
-        if (dataRef.current && map.getLayer("county-fill")) {
-          map.setPaintProperty("county-fill", "fill-color", buildFillColorExpr());
-          map.setFilter("county-flips", buildFlipFilter());
-          map.setLayoutProperty("county-labels", "text-field", buildLabelExpr());
-        }
+        if (dataRef.current) applyView();
       } catch (e: any) {
         setError(e.message);
       }
@@ -344,20 +382,9 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
   const showLabelsRef = useRef(showLabels);
   showLabelsRef.current = showLabels;
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !isLoadedRef.current || !data) return;
-    if (map.getLayer("county-fill")) {
-      map.setPaintProperty("county-fill", "fill-color", buildFillColorExpr());
-      map.setPaintProperty("county-fill", "fill-opacity", buildFillOpacityExpr());
-    }
-    if (map.getLayer("county-flips")) {
-      map.setFilter("county-flips", buildFlipFilter());
-    }
-    if (map.getLayer("county-labels")) {
-      map.setLayoutProperty("county-labels", "text-field", buildLabelExpr());
-    }
+    if (data) applyView();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, indWinner]);
+  }, [data, indWinner, swing, noShiftReason]);
 
   // Toggle label visibility without rebuilding the layer
   useEffect(() => {
@@ -463,48 +490,57 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
         <div className={`flex-1 min-h-[60vh] flex ${district && showDetails ? "flex-row" : ""}`}>
         <div className="relative flex-1 min-h-[60vh]">
           <div ref={containerRef} className="absolute inset-0" />
-          {/* Margin-label toggle */}
-          <button
-            onClick={() => setShowLabels((v) => !v)}
-            className={`absolute top-2 left-2 px-2 py-1 text-[11px] rounded shadow border ${
-              showLabels
-                ? "bg-slate-800 text-white border-slate-800"
-                : "bg-white/95 text-slate-700 border-slate-300 hover:bg-slate-50"
-            }`}
-          >
-            {showLabels ? "Hide margins" : "Show margins"}
-          </button>
-          {/* Legend: diverging 5-tier ramp keyed to winner vote share. */}
-          <div className="absolute bottom-2 left-2 bg-white/95 border rounded shadow px-2 py-1.5 text-[10px] pointer-events-none">
-            <div className="flex items-center gap-px">
-              {[PALETTE.rep5, PALETTE.rep4, PALETTE.rep3, PALETTE.rep2, PALETTE.rep1,
-                PALETTE.dem1, PALETTE.dem2, PALETTE.dem3, PALETTE.dem4, PALETTE.dem5]
-                .map((c, i) => (
-                  <span key={i} style={{ background: c }} className="inline-block w-5 h-3" />
-                ))}
-            </div>
-            <div className="flex justify-between mt-0.5 font-mono text-slate-600">
-              <span>R&gt;90</span>
-              <span className="text-red-700">·</span>
-              <span>R 50</span>
-              <span className="text-blue-700">·</span>
-              <span>D 50</span>
-              <span className="text-blue-700">·</span>
-              <span>D&gt;90</span>
-            </div>
-            <div className="text-slate-500 mt-0.5">
-              Bands: 50-60 · 60-70 · 70-80 · 80-90 · &gt;90 vote share
-            </div>
-            {indWinner && (
-              <div className="flex items-center gap-1 mt-1 pt-1 border-t text-slate-600">
-                {[PALETTE.ind1, PALETTE.ind2, PALETTE.ind3, PALETTE.ind4, PALETTE.ind5]
+          <div className="absolute top-2 left-2 flex items-start gap-2">
+            {/* Margin-label toggle */}
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2 py-1 text-[11px] rounded shadow border ${
+                showLabels
+                  ? "bg-slate-800 text-white border-slate-800"
+                  : "bg-white/95 text-slate-700 border-slate-300 hover:bg-slate-50"
+              }`}
+            >
+              {showLabels ? "Hide margins" : "Show margins"}
+            </button>
+            <SwingToggle on={swing} onChange={onSwing} />
+          </div>
+          {swing ? (
+            <SwingLegend pxPerPt={PX_PER_PT} towardD={indWinner ? "D/I" : "D"}
+                         capped={!noShiftReason && !!data?.counties.some((c) => Math.abs(c.projection - c.margin_2024) > SWING_CAP + 0.5)}
+                         notes={noShiftReason ? [`No arrows: ${noShiftReason}.`] : []} />
+          ) : (
+            /* Legend: diverging 5-tier ramp keyed to winner vote share. */
+            <div className="absolute bottom-2 left-2 bg-white/95 border rounded shadow px-2 py-1.5 text-[10px] pointer-events-none">
+              <div className="flex items-center gap-px">
+                {[PALETTE.rep5, PALETTE.rep4, PALETTE.rep3, PALETTE.rep2, PALETTE.rep1,
+                  PALETTE.dem1, PALETTE.dem2, PALETTE.dem3, PALETTE.dem4, PALETTE.dem5]
                   .map((c, i) => (
                     <span key={i} style={{ background: c }} className="inline-block w-5 h-3" />
                   ))}
-                <span className="ml-1 text-[9px]">Independent-winning counties</span>
               </div>
-            )}
-          </div>
+              <div className="flex justify-between mt-0.5 font-mono text-slate-600">
+                <span>R&gt;90</span>
+                <span className="text-red-700">·</span>
+                <span>R 50</span>
+                <span className="text-blue-700">·</span>
+                <span>D 50</span>
+                <span className="text-blue-700">·</span>
+                <span>D&gt;90</span>
+              </div>
+              <div className="text-slate-500 mt-0.5">
+                Bands: 50-60 · 60-70 · 70-80 · 80-90 · &gt;90 vote share
+              </div>
+              {indWinner && (
+                <div className="flex items-center gap-1 mt-1 pt-1 border-t text-slate-600">
+                  {[PALETTE.ind1, PALETTE.ind2, PALETTE.ind3, PALETTE.ind4, PALETTE.ind5]
+                    .map((c, i) => (
+                      <span key={i} style={{ background: c }} className="inline-block w-5 h-3" />
+                    ))}
+                  <span className="ml-1 text-[9px]">Independent-winning counties</span>
+                </div>
+              )}
+            </div>
+          )}
         </div>
         {district && showDetails && (
           <DistrictDetailPanel

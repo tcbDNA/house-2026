@@ -97,6 +97,8 @@ export default function App() {
   const [pickedState, setPickedState] = useState<string | null>(null);
   const [pickedGovState, setPickedGovState] = useState<string | null>(null);
   const [pickedDistrictCounties, setPickedDistrictCounties] = useState<string | null>(null);
+  // Maps' "Shift from 2024" arrow view, shared by every map.
+  const [swingView, setSwingView] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
@@ -242,6 +244,8 @@ export default function App() {
                   uniformSwing={houseResult.uniform_swing}
                   onPick={(id) => setPickedDistrictCounties(id)}
                   selected={pickedDistrictCounties}
+                  swing={swingView}
+                  onSwing={setSwingView}
                 />
               </div>
               <BucketTable
@@ -263,6 +267,8 @@ export default function App() {
                   seats={senateResult.seats}
                   uniformSwing={senateResult.uniform_swing}
                   onPickState={setPickedState}
+                  swing={swingView}
+                  onSwing={setSwingView}
                 />
               </div>
               <BucketTable seats={senateResult.seats} title="Competitive Senate seats by bucket" />
@@ -274,7 +280,8 @@ export default function App() {
             <>
               <GovernorSummaryView summary={governorResult.summary} />
               <div className="hidden md:block">
-                <GovernorMap races={governorResult.races} onPickState={setPickedGovState} />
+                <GovernorMap races={governorResult.races} onPickState={setPickedGovState}
+                             swing={swingView} onSwing={setSwingView} />
               </div>
               <GovernorTable races={governorResult.races} onPick={setPickedGovState} />
             </>
@@ -296,6 +303,10 @@ export default function App() {
           sliders={sliders}
           trendDiscount={trendDiscount}
           onClose={() => setPickedDistrictCounties(null)}
+          swing={swingView}
+          onSwing={setSwingView}
+          noShiftReason={houseResult?.districts.find((d) => d.district === pickedDistrictCounties)?.lockout
+            ? "both candidates are from the same party" : null}
         />
       )}
       {pickedGovState && (
@@ -306,6 +317,12 @@ export default function App() {
           trendDiscount={trendDiscount}
           race="governor"
           onClose={() => setPickedGovState(null)}
+          swing={swingView}
+          onSwing={setSwingView}
+          noShiftReason={(() => {
+            const r = governorResult?.races.find((g) => g.state === pickedGovState);
+            return r && r.opponent_party !== "(R)" ? "the race isn't against a Republican" : null;
+          })()}
         />
       )}
       {pickedState && (() => {
@@ -320,6 +337,8 @@ export default function App() {
             trendDiscount={trendDiscount}
             indWinner={indWinner}
             onClose={() => setPickedState(null)}
+            swing={swingView}
+            onSwing={setSwingView}
           />
         );
       })()}

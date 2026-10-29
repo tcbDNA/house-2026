@@ -3,12 +3,15 @@ import maplibregl, { Map as MLMap, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { bucketLabel, partyColorHex, partyTag, type District } from "../types";
 import { day } from "./OpenPrimaryField";
+import { addSwingLayer, fetchPoints, setSwingArrows, shiftRowHtml, SWING_CAP, SWING_FILL, SwingLegend, SwingToggle } from "./SwingArrows";
 
 type Props = {
   districts: District[];
   uniformSwing: number;   // env − HOUSE_2024_POPVOTE, in margin pts
   onPick?: (id: string) => void;
   selected?: string | null;
+  swing: boolean;          // "Shift from 2024" arrows instead of margin colors
+  onSwing: (on: boolean) => void;
 };
 
 const BASE_STYLE =
@@ -25,6 +28,8 @@ const PALETTE = {
   rep4: "#d33b3b",  // -15..-8
   rep5: "#8c1d1d",  // worse than -15
 };
+
+const PX_PER_PT = 1.5;    // swing-arrow length per point of shift
 
 // Buckets: tossup ≤3 | lean 3-7 | likely 7-13 | safe >13
 function bucketColor(proj: number): string {
@@ -44,7 +49,7 @@ function signed(n: number | null | undefined): string {
   return (r > 0 ? "+" : r < 0 ? "" : "+") + r.toFixed(1);
 }
 
-function buildPopupHtml(d: District, uniformSwing: number): string {
+function buildPopupHtml(d: District, uniformSwing: number, swing: boolean): string {
   const m24 = d.margin_2024 ?? 0;
   // Use the discounted value so the tooltip reflects the active trend_discount.
   const trend = d.rel_trend_applied ?? d.rel_trend ?? 0;
@@ -116,19 +121,23 @@ function buildPopupHtml(d: District, uniformSwing: number): string {
     ${row("+ demographic Δ", demo)}
     ${row("= projection", proj, true)}
     ${flipRow}
+    ${swing ? shiftRowHtml(d.lockout ? null : proj - m24, "same-party race: no shift shown") : ""}
   </div>`;
 }
 
-export function DistrictMap({ districts, uniformSwing, onPick, selected }: Props) {
+export function DistrictMap({ districts, uniformSwing, onPick, selected, swing, onSwing }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MLMap | null>(null);
   const popupRef = useRef<Popup | null>(null);
   const districtsRef = useRef<District[]>(districts);
   const swingRef = useRef<number>(uniformSwing);
   const isLoadedRef = useRef(false);
+  const swingViewRef = useRef(swing);
+  const pointsRef = useRef<Map<string, [number, number]> | null>(null);
 
   districtsRef.current = districts;
   swingRef.current = uniformSwing;
+  swingViewRef.current = swing;
 
   // Build the data-driven fill-color expression for setPaintProperty
   function buildFillColorExpr(): any {
@@ -145,6 +154,22 @@ export function DistrictMap({ districts, uniformSwing, onPick, selected }: Props
     const ids = districtsRef.current.filter((d) => d.flip).map((d) => d.district);
     if (ids.length === 0) return ["==", ["get", "district"], "__none__"];
     return ["in", ["get", "district"], ["literal", ids]];
+  }
+
+  // Margin colors and flip hatching, or (shift view) a plain fill under the
+  // arrows. Same-party (lockout) races get no arrow.
+  function applyView() {
+    const map = mapRef.current;
+    if (!map || !isLoadedRef.current) return;
+    const on = swingViewRef.current;
+    map.setPaintProperty("district-fill", "fill-color", on ? SWING_FILL : buildFillColorExpr());
+    map.setFilter("district-flips", buildFlipFilter());
+    map.setLayoutProperty("district-flips", "visibility", on ? "none" : "visible");
+    const pts = pointsRef.current;
+    setSwingArrows(map, on && pts ? districtsRef.current.flatMap((d) => {
+      const p = pts.get(d.district);
+      return p && !d.lockout ? [{ point: p, shift: d.projection - d.margin_2024 }] : [];
+    }) : null);
   }
 
   // Build a tile-sized canvas of diagonal hash lines for fill-pattern
@@ -238,7 +263,9 @@ export function DistrictMap({ districts, uniformSwing, onPick, selected }: Props
         filter: ["==", ["get", "district"], ""],
       });
 
+      addSwingLayer(map, PX_PER_PT);
       isLoadedRef.current = true;
+      applyView();
 
       // hover popup
       popupRef.current = new maplibregl.Popup({
@@ -255,7 +282,7 @@ export function DistrictMap({ districts, uniformSwing, onPick, selected }: Props
         map.getCanvas().style.cursor = "pointer";
         const d = districtsRef.current.find((dd) => dd.district === id);
         if (popupRef.current && d) {
-          popupRef.current.setLngLat(e.lngLat).setHTML(buildPopupHtml(d, swingRef.current)).addTo(map);
+          popupRef.current.setLngLat(e.lngLat).setHTML(buildPopupHtml(d, swingRef.current, swingViewRef.current)).addTo(map);
         }
       });
 
@@ -281,14 +308,17 @@ export function DistrictMap({ districts, uniformSwing, onPick, selected }: Props
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Update fill colors + flip overlay when projection results change
+  // Update fill colors, flip overlay and arrows when projection results or
+  // the view change. Label points load the first time the shift view opens.
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !isLoadedRef.current) return;
-    map.setPaintProperty("district-fill", "fill-color", buildFillColorExpr());
-    map.setFilter("district-flips", buildFlipFilter());
+    if (swing && !pointsRef.current) {
+      fetchPoints("/district_points.json")
+        .then((pts) => { pointsRef.current = pts; applyView(); })
+        .catch(console.error);
+    }
+    applyView();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [districts]);
+  }, [districts, swing]);
 
   // Update selected highlight
   useEffect(() => {
@@ -300,27 +330,34 @@ export function DistrictMap({ districts, uniformSwing, onPick, selected }: Props
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden relative">
       <div ref={containerRef} className="w-full h-[600px]" />
-      <div className="absolute bottom-2 left-2 bg-white/95 rounded shadow px-2 py-1.5 text-[10px] leading-tight font-mono">
-        <div className="font-sans font-semibold text-[10px] mb-1">Projected D-R margin</div>
-        <div className="flex items-center gap-0">
-          {Object.values(PALETTE).map((c, i) => (
-            <span key={i} className="inline-block w-5 h-3" style={{ background: c }} />
-          ))}
+      <div className="absolute top-2 left-2"><SwingToggle on={swing} onChange={onSwing} /></div>
+      {swing ? (
+        <SwingLegend pxPerPt={PX_PER_PT}
+                     capped={districts.some((d) => !d.lockout && Math.abs(d.projection - d.margin_2024) > SWING_CAP + 0.5)}
+                     notes={districts.some((d) => d.lockout) ? ["No arrow in same-party races (California top-two)."] : []} />
+      ) : (
+        <div className="absolute bottom-2 left-2 bg-white/95 rounded shadow px-2 py-1.5 text-[10px] leading-tight font-mono">
+          <div className="font-sans font-semibold text-[10px] mb-1">Projected D-R margin</div>
+          <div className="flex items-center gap-0">
+            {Object.values(PALETTE).map((c, i) => (
+              <span key={i} className="inline-block w-5 h-3" style={{ background: c }} />
+            ))}
+          </div>
+          <div className="flex justify-between mt-0.5">
+            <span>R+15</span><span>tie</span><span>D+15</span>
+          </div>
+          <div className="font-sans mt-1.5 flex items-center gap-1.5">
+            <span
+              className="inline-block w-5 h-3 border border-slate-400"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(45deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65) 1.5px, transparent 1.5px, transparent 4px)",
+              }}
+            />
+            <span className="text-[10px] text-slate-700">flipped seat</span>
+          </div>
         </div>
-        <div className="flex justify-between mt-0.5">
-          <span>R+15</span><span>tie</span><span>D+15</span>
-        </div>
-        <div className="font-sans mt-1.5 flex items-center gap-1.5">
-          <span
-            className="inline-block w-5 h-3 border border-slate-400"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(45deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65) 1.5px, transparent 1.5px, transparent 4px)",
-            }}
-          />
-          <span className="text-[10px] text-slate-700">flipped seat</span>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

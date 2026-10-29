@@ -321,6 +321,7 @@ export type District = {
   rel_trend_applied?: number | null;
   war_adj_discounted?: number | null;
   incumbency_adj?: number | null;
+  lockout?: "D" | "R" | null;   // same-party general (CA top-two): projection ±100
   war_year?: number | null;
   war_match_type?: string | null;
   challenger?: string | null;
