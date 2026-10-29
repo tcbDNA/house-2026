@@ -261,3 +261,11 @@ Every RCP feed, VoteHub's Senate and generic-ballot dumps and Poliwave's 35 race
 Not used:
 - **Tufts, generic ballot (Oct 23-27).** No release was found at first (Tufts' sites, VoteHub, web search). The user then linked the Tufts Public Opinion Lab PDF, which has House vote by race, so the poll now enters the environment estimate: see `../../SOURCES.md` and `../../polls_2026/tufts_tpol/`.
 - **CA-04 (Binder for Eric Jones).** A candidate-sponsored poll, and the House model uses no district polls (CA-04 is a Democrat-vs-Democrat race).
+
+### Third check, 2026-10-29 (MSU Michigan survey, from the user's link)
+
+| File | URL | Notes |
+|---|---|---|
+| `msu_ippsr_mi_2026_pre_election_report.pdf` | https://polisci.msu.edu/_assets/MI_2026_pre_election_report.pdf | MSU's 2026 Michigan Election Survey, pre-election wave (report dated Oct 29): MSU Department of Political Science with MSU's Office for Survey Research and Verasight, Oct 8-23, 1,383 likely voters, funded by MSU. Senate (MRP, initial response) El-Sayed 48.0, Rogers 41.8, other 3.4, undecided 6.8; governor Benson 48.5, James 38.7. A different survey from the IPPSR/YouGov poll (Oct 2-19) already in RCP's average. |
+
+RCP's Michigan feeds (8802, 9216; governor 8992, 9226) were downloaded again and list the same polls as the saved copies, so those are kept. The MSU poll is not in RCP's average, and it ends Oct 23, before the latest polls RCP averages (CNN 10/20-27, CBS News/Mitchell 10/26-27). So it is not newer, and Michigan stays on RCP's average (Rasmussen removed). The poll is recorded in `recent_polls_compiled.json` with `in_rcp_average: false`.
