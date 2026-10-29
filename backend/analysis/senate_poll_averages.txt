@@ -34,18 +34,16 @@ FL: RCP average; 5 poll(s); anti-R 43.20 / R 49.40 -> margin -6.20, blend margin
     - Univ. of North Florida 10/12 - 10/19
     - Univision/YouGov 10/2 - 10/15
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-IA: recomputed: newer polls than RCP's average; 10 poll(s); anti-R 45.60 / R 46.00 -> margin -0.40, blend margin -0.44 (RCP published -0.6)
-    newer than RCP's average (built 2026-10-25): Echelon Insights for NetChoice ending 2026-10-23 released 2026-10-27
-    - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 45/43)
-    - InsiderAdvantage, ending 2026-10-22 (head-to-head, 45/47)
-    - co/efficient (R-flagged), ending 2026-10-19 (head-to-head, 46/49)
-    - Trafalgar Group (R-flagged), ending 2026-10-15 (full ballot, 44/46)
-    - New River Strategies/GS Strategy Group for The Cook Political Report, ending 2026-10-13 (full ballot, 46/44)
-    - YouGov, ending 2026-10-12 (full ballot, 47/46)
-    - National Public Affairs, ending 2026-10-12 (head-to-head, 47/48)
-    - Marist, ending 2026-10-11 (full ballot, 48/45)
-    - Emerson College for Nexstar Media, ending 2026-10-06 (full ballot, 45/47)
-    - CNN/SSRS for CNN, ending 2026-10-05 (full ballot, 43/45)
+IA: RCP average; 9 poll(s); anti-R 45.56 / R 46.33 -> margin -0.78, blend margin -0.85 (RCP published -0.7)
+    - co/efficient 10/28 - 10/28
+    - InsiderAdvantage 10/21 - 10/22
+    - co/efficient 10/15 - 10/19
+    - Trafalgar Group 10/13 - 10/15
+    - Cook Political Report 10/9 - 10/13
+    - YouGov 10/6 - 10/12
+    - Marist 10/8 - 10/11
+    - Emerson 10/5 - 10/6
+    - CNN 9/29 - 10/5
 KS: RCP average; 7 poll(s); anti-R 46.14 / R 45.86 -> margin +0.29, blend margin +0.31 (RCP published +0.2)
     - CNN 10/20 - 10/26
     - InsiderAdvantage 10/13 - 10/14
@@ -67,8 +65,9 @@ ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed 
     - co/efficient 9/28 - 9/30
     - CBS News 9/23 - 10/1
     - MPRC 9/25 - 9/29
-SC: RCP average, Rasmussen removed; 4 poll(s); anti-R 44.50 / R 46.50 -> margin -2.00, blend margin -2.20 (RCP published -2.4)
+SC: RCP average, Rasmussen removed; 5 poll(s); anti-R 45.00 / R 47.40 -> margin -2.40, blend margin -2.60 (RCP published -2.7)
     - NY Times/Siena 10/19 - 10/26
+    - East Carolina U. 10/19 - 10/24
     - The Citadel 10/14 - 10/25
     - Trafalgar Group 10/16 - 10/18
     - InsiderAdvantage 9/28 - 9/29

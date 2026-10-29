@@ -271,3 +271,21 @@ Not used:
 RCP's Michigan feeds (8802, 9216; governor 8992, 9226) were downloaded again and list the same polls as the saved copies, so those are kept. The MSU poll is not in RCP's average, and it ends Oct 23, before the latest polls RCP averages (CNN 10/20-27, CBS News/Mitchell 10/26-27). So it is not newer, and Michigan stays on RCP's average (Rasmussen removed). The poll is recorded in `recent_polls_compiled.json` with `in_rcp_average: false`.
 
 User decision (Oct 29, after this check): count the MSU poll in RCP's Michigan average anyway (`COUNT_ADDED_TO_RCP` / `ADDED_TO_RCP` in `build_senate_poll_averages.py`). Michigan's average: 9 polls, El-Sayed 49.0, Rogers 45.3, two-party +3.56 -> +3.91.
+
+### Fourth check, 2026-10-29 18:20 UTC (user asked)
+
+Every RCP Senate feed, VoteHub's Senate, governor and generic-ballot dumps and Poliwave's 35 race pages were downloaded again.
+
+| File | URL | Notes |
+|---|---|---|
+| `rcp_ia_8930.json` | https://orig.realclearpolitics.com/poll/race/8930/polling_data.json | Built Oct 29 12:54 CT. co/efficient 10/28 (Hinson 48, Turek 46) added to the average: 9/29-10/28, Hinson 46.3, Turek 45.6. Echelon Insights 10/16-23 now listed, not averaged. |
+| `rcp_sc_9115.json` | https://orig.realclearpolitics.com/poll/race/9115/polling_data.json | East Carolina U. 10/19-24 (Graham 51, Andrews 47) added: 9/28-10/26, Graham 47.7, Andrews 45.0. |
+| `rcp_mn_8922.json`, `rcp_fl_8948.json` | same pattern | MN lists Victory Insights 10/21-22 (already compiled), not averaged; FL lastBuildDate only. Averages unchanged. |
+| `coefficient_ia_2026-10-29.html` | https://battlegrounds.coefficient.org/ia/ | co/efficient's Iowa page: fielded Oct 28, 1,020 LV, MOE 3.05; Senate Hinson 48, Turek 46; governor Sand 50, Lahn 45. No sponsor named. |
+| `ecu_sc_2026-10-29.html` | https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-finds-graham-leading-andrews-by-four-points | ECU Center for Survey Research release (Oct 29): Oct 19-24, 955 LV, Graham 51, Andrews 47. |
+| `grayhouse_ar_2026-10-29.html` | https://www.grayhouse.com/post/arkansas-senate-poll-october-2026-cotton | GrayHouse, Oct 27-28, 509 LV: Cotton 55, Shoffner 39 with leaners (51/37 first ballot). VoteHub lists the sponsor as America One Policies, partisan REP: a partisan-sponsored poll, not counted. Arkansas is averaged from VoteHub's earlier dump and Poliwave, which this poll is not in. |
+| `votehub_senate_all.json`, `poliwave_{fl,sc,tx}_sen.html`, `../mn/poliwave_mn_sen.html` | as above | Refreshed. VoteHub's new 2026 rows are all compiled already except GrayHouse AR (above) and Concord for Democrats for Education Reform in Ohio (DEM-sponsored, fielded Aug 29-31: not counted). |
+
+Effects:
+- **Iowa** is back on RCP's average: RCP's latest averaged poll (co/efficient, Oct 28) now ends after Echelon (Oct 23), the poll that made it stale. Echelon, listed by RCP but not averaged, drops out. Hinson +0.40 -> +0.78 (two-party -0.44 -> -0.85).
+- **South Carolina** stays on RCP's average, now with ECU: Graham +2.0 -> +2.4 (Rasmussen removed).

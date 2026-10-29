@@ -1262,9 +1262,27 @@
     "excluded_pollster": false,
     "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
     "note": "State oversample (n=403) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q26 p.15): Turek 45, Hinson 43, Laehn (L) 7, someone else 2, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
+   },
+   {
+    "pollster": "co/efficient",
+    "sponsor": null,
+    "partisan": "R",
+    "start": "2026-10-28",
+    "end": "2026-10-28",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 1020,
+    "anti_r": 46,
+    "r": 48,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "co/efficient battleground page (coefficient_ia_2026-10-29.html, https://battlegrounds.coefficient.org/ia/); RCP",
+    "note": "Fielded Oct 28, 1,020 likely general-election voters, MOE +/-3.05: Hinson 48, Turek 46, other 1, undecided 5. No sponsor named. Governor on the same poll: Sand 50, Lahn 45. RCP: 'co/efficient*', in its average (row Oct 29 12:54 CT)."
    }
   ],
-  "notes": "RCP two-way average (feed 8930, built Oct 25): 9/29-10/22, Hinson 46.1, Turek 45.5 (Hinson +0.6), 8 polls. RCP 3-way (feed 9215): Hinson 46.0, Turek 45.7, Laehn 3.5. No Rasmussen or ActiVote poll ended in October. Pre-Oct: Fox 9/24-28, Quantus 9/28-29, Rasmussen 9/28-30. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release."
+  "notes": "RCP two-way average (feed 8930, built Oct 25): 9/29-10/22, Hinson 46.1, Turek 45.5 (Hinson +0.6), 8 polls. RCP 3-way (feed 9215): Hinson 46.0, Turek 45.7, Laehn 3.5. No Rasmussen or ActiVote poll ended in October. Pre-Oct: Fox 9/24-28, Quantus 9/28-29, Rasmussen 9/28-30. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 29 fourth check: RCP added co/efficient (Oct 28, Hinson 48, Turek 46) to its average (feed built Oct 29 12:54 CT: 9/29-10/28, Hinson 46.3, Turek 45.6) and now lists Echelon Insights 10/16-23 unaveraged. No compiled poll ends after Oct 28, so Iowa is back on RCP's average."
  },
  "KS": {
   "polls": [
@@ -1720,6 +1738,24 @@
     "note": "UNVERIFIED. Poliwave lists the pollster as 'onpointpolitics[1]' with 'Source: Not recorded'. No release was found."
    },
    {
+    "pollster": "East Carolina University",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-19",
+    "end": "2026-10-24",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 955,
+    "anti_r": 47,
+    "r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "ECU Center for Survey Research release (ecu_sc_2026-10-29.html, https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-finds-graham-leading-andrews-by-four-points); RCP; Poliwave",
+    "note": "955 likely voters (registered-voter sample plus oversamples; MMS-to-web and landline IVR), credibility interval +/-3.7: Graham 51, Andrews 47, other 2. Nonpartisan university poll. RCP: 'East Carolina U.*', in its average (row Oct 29 12:16 CT)."
+   },
+   {
     "pollster": "Targoz Market Research",
     "sponsor": "South Carolina Policy Council",
     "partisan": null,
@@ -1774,7 +1810,7 @@
     "note": "1,009 registered voters (L2 voter file; phone and text-to-web), 890 likely voters (LV MOE +/-4). Q12 LV: Andrews 39, Graham 43, Whitener 1, Hackett 1, not sure 15 (RV: 40/35). With planned Ralph Norman write-ins reassigned (Q12 after Q16): Andrews 39, Graham 42, Norman 2, truly undecided 14. RCP lists 43/39."
    }
   ],
-  "notes": "RCP average (feed 9115, built Oct 18): 9/28-10/18, Graham Nordone 48.0, Andrews 45.3 (+2.7), 3 polls: Trafalgar, Rasmussen and InsiderAdvantage 9/28-29. Only Trafalgar is non-excluded and ended in October. VoteHub has only Trafalgar. Impact (D, 10/15-21) is missing from RCP. Targoz Market Research for the SC Policy Council (10/16-25, released Oct 26) is in VoteHub and Poliwave, not RCP (as of Oct 27). Oct 28 check: RCP (built Oct 28) now averages 9/28-10/26, Graham Nordone 47.0, Andrews 44.6, 5 polls: NYT/Siena 10/19-26 and The Citadel 10/14-25 added. Its latest poll ends after Targoz and Impact, so South Carolina uses RCP's average again (Rasmussen removed); Impact and Targoz, which RCP never added, drop out."
+  "notes": "RCP average (feed 9115, built Oct 18): 9/28-10/18, Graham Nordone 48.0, Andrews 45.3 (+2.7), 3 polls: Trafalgar, Rasmussen and InsiderAdvantage 9/28-29. Only Trafalgar is non-excluded and ended in October. VoteHub has only Trafalgar. Impact (D, 10/15-21) is missing from RCP. Targoz Market Research for the SC Policy Council (10/16-25, released Oct 26) is in VoteHub and Poliwave, not RCP (as of Oct 27). Oct 28 check: RCP (built Oct 28) now averages 9/28-10/26, Graham Nordone 47.0, Andrews 44.6, 5 polls: NYT/Siena 10/19-26 and The Citadel 10/14-25 added. Its latest poll ends after Targoz and Impact, so South Carolina uses RCP's average again (Rasmussen removed); Impact and Targoz, which RCP never added, drop out. Oct 29 fourth check: RCP added East Carolina University (Oct 19-24, Graham 51, Andrews 47) to its average (feed built Oct 28 11:16 CT, row Oct 29: 9/28-10/26, Graham 47.7, Andrews 45.0). South Carolina stays on RCP's average."
  },
  "MI": {
   "polls": [
