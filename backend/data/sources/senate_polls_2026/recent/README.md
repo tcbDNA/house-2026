@@ -299,3 +299,5 @@ Effects:
 | `votehub_senate_all.json` | https://polling.votehub.com/site/polls?poll_type=us-senator&limit=2000 | Refreshed; the only new 2026 row is this poll (no sponsor, no partisan flag). |
 
 RCP's Texas feed (built Oct 29 05:41 CT) is unchanged and lists only A2's June poll, so the saved copy is kept. The A2 poll is not in RCP's average and ends on Oct 27, the same day as the latest poll RCP averages (CNN 10/20-27), so it is not newer: Texas stays on RCP's average (Rasmussen removed). Recorded with `in_rcp_average: false`.
+
+User decision (Oct 29, after this check): count the A2 Insights poll in RCP's Texas average anyway (`ADDED_TO_RCP` in `build_senate_poll_averages.py`). Texas's average: 13 polls, Talarico 49.0, Paxton 46.6, two-party +2.44 -> +2.49; projection D+1.37 -> D+1.41.

@@ -213,8 +213,8 @@ export function Methodology() {
         poll with a partisan sponsor — a candidate, campaign, party, PAC or partisan
         group — even one RCP averaged; in
         Maine, Echelon's NetChoice poll, which RCP lists but hasn't yet averaged,
-        is counted ahead of RCP, and in Michigan, MSU's Oct 8–23 survey, which RCP
-        doesn't list, is counted too); where a newer poll came out after RCP last updated the
+        is counted ahead of RCP, and MSU's Michigan survey and A2 Insights' Texas poll,
+        which RCP doesn't list, are counted too); where a newer poll came out after RCP last updated the
         average, or RCP publishes none, the average is recomputed from the most
         recent poll by each pollster in the last three weeks, YouGov Blue counted
         apart from YouGov (as of Oct 29:

@@ -8,7 +8,7 @@ OH: RCP average, Rasmussen removed; 6 poll(s); anti-R 48.00 / R 44.67 -> margin 
     - Cook Political Report 10/9 - 10/13
     - co/efficient 10/5 - 10/6
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-TX: RCP average, Rasmussen removed; 12 poll(s); anti-R 48.92 / R 46.58 -> margin +2.33, blend margin +2.44 (RCP published +2.1)
+TX: RCP average, Rasmussen removed; plus A2 Insights ending Oct 27 (not listed by RCP, counted by user decision); 13 poll(s); anti-R 49.02 / R 46.63 -> margin +2.38, blend margin +2.49 (RCP published +2.1)
     - CNN 10/20 - 10/27
     - TSU/YouGov 10/21 - 10/25
     - Emerson 10/17 - 10/19
@@ -21,6 +21,7 @@ TX: RCP average, Rasmussen removed; 12 poll(s); anti-R 48.92 / R 46.58 -> margin
     - Cook Political Report 10/9 - 10/13
     - Quantus Insights 10/9 - 10/11
     - Marist 10/8 - 10/11
+    - A2 Insights ending Oct 27 (not listed by RCP, counted by user decision)
     left out: Cor Strategies (Heritage Action; not counted, user decision Oct 28); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor)
 AK: RCP average, Rasmussen removed; 4 poll(s); anti-R 50.00 / R 48.25 -> margin +1.75, blend margin +1.78 (RCP published +1.2)
     - Data for Progress 10/8 - 10/16

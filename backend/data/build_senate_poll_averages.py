@@ -82,11 +82,13 @@ YOUGOV_BLUE_OWN_POLLSTER = True
 # averaged set as published.
 COUNT_RCP_PENDING = True
 RCP_PENDING = {("ME", "Echelon Insights", "10/16 - 10/23")}
-# Polls RCP doesn't list at all, counted in its average anyway (user decision,
-# Oct 29: MSU's Michigan Election Survey, Oct 8-23). Keyed by (state, pollster
-# as compiled, fieldwork end). False: RCP's averaged set as published.
+# Polls RCP doesn't list at all, counted in its average anyway (user decisions,
+# Oct 29: MSU's Michigan Election Survey, Oct 8-23; A2 Insights' Texas poll,
+# Oct 23-27). Keyed by (state, pollster as compiled, fieldwork end). False:
+# RCP's averaged set as published.
 COUNT_ADDED_TO_RCP = True
-ADDED_TO_RCP = {("MI", "Michigan State Univ. (Political Science)/Verasight", date(2026, 10, 23))}
+ADDED_TO_RCP = {("MI", "Michigan State Univ. (Political Science)/Verasight", date(2026, 10, 23)),
+                ("TX", "A2 Insights", date(2026, 10, 27))}
 
 INDEPENDENT = {"NE", "MT", "ID", "SD"}
 THREE_WAY = {"MT"}
