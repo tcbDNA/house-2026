@@ -89,7 +89,9 @@ def _terms(kind: str, settings: Settings = DEFAULT_SETTINGS, frame: str = "race"
     """Item 4 error terms (group loadings and σs) for the House, Senate or governor rows."""
     if kind == "governor":
         return error_terms(GOVERNOR_BUNDLE.pop, settings, frame)
-    return error_terms((BUNDLE if kind == "house" else SENATE_BUNDLE).pop, settings, frame)
+    if kind == "house":
+        return error_terms(BUNDLE.demographics(settings), settings, frame)
+    return error_terms(SENATE_BUNDLE.pop, settings, frame)
 
 
 def _settings(overrides: dict) -> Settings:

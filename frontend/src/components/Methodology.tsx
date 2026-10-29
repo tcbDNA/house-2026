@@ -142,7 +142,12 @@ export function Methodology() {
       <p className="mb-2">
         <b>District demographics</b> are American Community Survey (ACS) 2023 5-year
         estimates from the U.S. Census Bureau, computed on current district boundaries
-        (post-redistricting where applicable). <b>Group voting baselines</b> (slider
+        (post-redistricting where applicable). (Correction, Oct 29: Louisiana's had been
+        built from a block file for a different plan, so LA-02 showed 70% white and
+        LA-06 58% Black. They now come from the Legislature's block file for the enacted
+        map, Act 2 of 2026: LA-06 is 65% white and 24% Black, and LA-02 30% white and 56%
+        Black. LA-06 moves from R+13.8 to R+17.3 and LA-02 from D+66.8 to D+71.2. Other
+        districts move by at most 0.11 and the totals are unchanged.) <b>Group voting baselines</b> (slider
         zero-points) use Catalist 2024 D-R margins per group, matching the 2024
         presidential baseline the rest of the model is built on: a slider at its
         2024 value adds no demographic shift. The defaults are 2024 plus the

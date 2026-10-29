@@ -34,6 +34,66 @@ REDRAWN_STATES = ["CA", "TX", "OH", "NC", "MO", "UT", "TN", "FL", "LA", "AL"]
 
 AT_LARGE = {"AK", "DE", "ND", "SD", "VT", "WY"}  # none redrawn, but kept for safety
 
+# States whose block assignment is an official file saved under sources/
+# instead of a local baf_{state}.csv. Louisiana: the Legislature's block
+# equivalency file for Act 2 of the 2026 R.S. (SB 121), the enacted map
+# (Oct 29). The earlier local baf_la.csv was a different plan (New Orleans in
+# District 6), so Louisiana's demographics didn't match its election results.
+OFFICIAL_BAF = {
+    "LA": DATA_DIR / "sources" / "la_congress_act2_2026" / "block_equivalency_act2_2026rs_congress.txt",
+}
+
+
+def read_official_baf(state: str) -> dict[str, int]:
+    """{GEOID20 -> district} from an OFFICIAL_BAF file (two whitespace-separated
+    columns, no header)."""
+    out = {}
+    for line in OFFICIAL_BAF[state].read_text().splitlines():
+        if line.strip():
+            geoid, district = line.split()
+            out[geoid] = int(district)
+    return out
+
+
+def fill_from_block_groups(baf: dict[str, int], block_ids) -> int:
+    """The Legislature's file uses its own blocks (2020 Census blocks split or
+    merged to follow later precinct changes), so some 2020 blocks are missing
+    from it. Give each missing block its block group's district when every
+    listed block in that block group is in one district; blocks in split block
+    groups stay unassigned. Returns the number of blocks filled."""
+    groups: dict[str, set[int]] = {}
+    for geoid, d in baf.items():
+        groups.setdefault(geoid[:12], set()).add(d)
+    filled = 0
+    for geoid in block_ids:
+        if geoid not in baf and len(groups.get(geoid[:12], ())) == 1:
+            baf[geoid] = next(iter(groups[geoid[:12]]))
+            filled += 1
+    return filled
+
+
+def merge_rows(path: Path, new_rows: list[dict], states: list[str]) -> list[dict]:
+    """Rows for `path` with the given states' rows replaced by `new_rows` and
+    every other state's existing rows kept, in the file's existing order."""
+    if not path.exists():
+        return new_rows
+    by_state: dict[str, list[dict]] = {}
+    for r in new_rows:
+        by_state.setdefault(r["district"].split("-")[0], []).append(r)
+    out, done = [], set()
+    with path.open(newline="") as f:
+        for r in csv.DictReader(f):
+            st = r["district"].split("-")[0]
+            if st not in states:
+                out.append(r)
+            elif st not in done:
+                out.extend(by_state.get(st, []))
+                done.add(st)
+    for st in states:
+        if st not in done:
+            out.extend(by_state.get(st, []))
+    return out
+
 
 def download_block_zip(state: str) -> Path:
     out = CACHE_DIR / f"block_{state}.zip"
@@ -48,7 +108,10 @@ def download_block_zip(state: str) -> Path:
 
 
 def load_baf(state: str) -> dict[str, int]:
-    """Return {GEOID20 -> district_num} from baf_{state}.csv."""
+    """Return {GEOID20 -> district_num} from baf_{state}.csv (or the state's
+    OFFICIAL_BAF file)."""
+    if state in OFFICIAL_BAF:
+        return read_official_baf(state)
     path = DATA_DIR / f"baf_{state.lower()}.csv"
     if not path.exists():
         raise FileNotFoundError(f"missing {path.name} (DRA Block Assignment File)")
@@ -108,6 +171,11 @@ def aggregate_state(state: str) -> list[dict]:
     zip_path = download_block_zip(state)
     with zipfile.ZipFile(zip_path) as z:
         csv_name = next(n for n in z.namelist() if n.endswith(".csv"))
+        if state in OFFICIAL_BAF:
+            with z.open(csv_name) as fbin:
+                ids = [r["GEOID"] for r in csv.DictReader(io.TextIOWrapper(fbin, encoding="utf-8"))]
+            n = fill_from_block_groups(baf, ids)
+            print(f"  filled {n:,} 2020 blocks from their block group", file=sys.stderr)
         with z.open(csv_name) as fbin:
             reader = csv.DictReader(io.TextIOWrapper(fbin, encoding="utf-8"))
             fields = [
@@ -183,6 +251,8 @@ def main():
             skipped.append(state)
 
     out_path = DATA_DIR / "demographics_dra.csv"
+    if len(sys.argv) > 1:   # some states only: keep the other states' rows
+        all_rows = merge_rows(out_path, all_rows, [s for s in targets if s not in skipped])
     cols = ["district", "pct_white_nh", "pct_black", "pct_hispanic", "pct_asian",
             "pct_other", "pct_college", "pct_under_30", "pct_65_plus",
             "median_age", "median_income", "total_population", "source"]

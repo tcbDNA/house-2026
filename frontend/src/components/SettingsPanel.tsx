@@ -20,6 +20,8 @@ const GROUPS: { title: string; toggles: Toggle[] }[] = [
     toggles: [
       { key: "district_weights_2024_votes", label: "2024 votes in all 435 districts",
         hint: "Weight districts by 2024 presidential votes everywhere (correction, Oct 27). Off: 2020 votes in AK AR CT ID ME MI ND NJ OK OR PA SD, the old weights." },
+      { key: "la_enacted_demographics", label: "Louisiana demographics on the enacted map",
+        hint: "Louisiana's district demographics from the Legislature's block file for the enacted map (correction, Oct 29). Off: the old values, built from a different plan (LA-06 58% Black, LA-02 70% white)." },
     ],
   },
   {

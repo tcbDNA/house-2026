@@ -33,6 +33,8 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
+from aggregate_dra import OFFICIAL_BAF, fill_from_block_groups, merge_rows, read_official_baf
+
 DATA_DIR = Path(__file__).resolve().parent
 CACHE = DATA_DIR / "cache"
 OUT = DATA_DIR / "demographics_acs_new_lines.csv"
@@ -157,6 +159,8 @@ def load_block_pops(state: str) -> dict[str, float]:
 
 
 def load_baf(state: str) -> dict[str, int]:
+    if state in OFFICIAL_BAF:
+        return read_official_baf(state)
     path = DATA_DIR / f"baf_{state.lower()}.csv"
     out = {}
     with path.open(newline="") as f:
@@ -183,6 +187,9 @@ def process_state(state: str, key: str) -> list[dict]:
     fips = STATE_USPS_TO_FIPS[state]
     baf = load_baf(state)
     block_pop = load_block_pops(state)
+    if state in OFFICIAL_BAF:
+        n = fill_from_block_groups(baf, block_pop)
+        print(f"  filled {n:,} 2020 blocks from their block group", file=sys.stderr)
     tracts = fetch_tracts(fips, key)
     print(f"  baf={len(baf):,} blocks  block_pop={len(block_pop):,}  tracts={len(tracts):,}",
           file=sys.stderr)
@@ -318,6 +325,8 @@ def main():
             "pct_nonwhite_college", "pct_nonwhite_non_college",
             "pct_under_30", "pct_30_44", "pct_45_64", "pct_65_plus",
             "median_age", "median_income", "total_population_acs", "source"]
+    if len(sys.argv) > 1:   # some states only: keep the other states' rows
+        all_rows = merge_rows(OUT, all_rows, targets)
     with OUT.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()

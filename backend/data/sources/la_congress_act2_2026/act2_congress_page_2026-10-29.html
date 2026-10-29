@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html>
+
+<head><title>
+	Louisiana | Redistricting
+</title><meta content="IE=EmulateIE11" http-equiv="X-UA-Compatible" /><meta charset="utf-8" /><meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
+<!--meta content="width=device-width, initial-scale=1.0" name="viewport"-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-----BOOSTRAP START---->
+<link rel="stylesheet" href="../bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+<!-----BOOSTRAP END---->
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+<link href="https://HOUSE.LOUISIANA.gov/H_Reps/favico.ico" rel="shortcut icon" /><link href="../REDIST_MASTERCSS.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<link href="../CSS3_RespMenu/cssmenu/styles.css" rel="stylesheet" />
+<script src="../CSS3_RespMenu/cssmenu/script.js"></script>
+<!--link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"-->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet" /><link rel="stylesheet" href="https://use.typekit.net/omf0rls.css" />
+
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	
+
+
+
+<script>
+
+jQuery(document).ready(function() {
+	function close_accordion_section() {
+		jQuery('.accordion .accordion-section-title').removeClass('active');
+		jQuery('.accordion .accordion-section-content').slideUp(600).removeClass('open');
+	}
+
+	jQuery('.accordion-section-title').click(function(e) {
+		// Grab current anchor value
+		var currentAttrValue = jQuery(this).attr('href');
+
+		if(jQuery(e.target).is('.active')) {
+			close_accordion_section();
+		}else {
+			close_accordion_section();
+
+			// Add active class to section title
+			jQuery(this).addClass('active');
+			// Open up the hidden content panel
+			jQuery('.accordion ' + currentAttrValue).slideDown(600).addClass('open'); 
+		}
+
+		e.preventDefault();
+	});
+});
+</script>
+
+
+<style type="text/css">
+.accordion, .accordion * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.accordion {
+	overflow: hidden;
+/*box-shadow:0px 1px 3px rgba(0,0,0,0.25);*/border-radius: 0px;
+/*background:#EBEBEB;*/padding-left: 10%;/*----- BAR WIDTH -----*/;
+	padding-right: 10%;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	overflow: hidden;
+	height: auto;
+}
+.accordion-section-title {
+	border-radius: 6px;
+	width: 100%;
+	padding: 10px;
+	display: inline-block;
+	border-bottom: 1px solid #1a1a1a;
+	background-color: rgba(65, 72, 82, 0.99);
+	transition: all linear 0.15s;
+	font-size: 1.2em;
+	text-shadow: 0px 0px 0px #1a1a1a;
+	color: #000;
+	padding-left: 2%;
+	padding-right: 20%;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	overflow: hidden;
+	height: auto;
+	border-bottom-style: none;
+}
+.accordion-section-title:hover {
+	background-color: rgba(182, 168, 133, 0.99);
+	text-decoration: none;
+}
+.accordion-section-content {
+	padding: 15px;
+	display: none;
+}
+.accordion-section-title1:hover {
+	background-color: rgba(65, 72, 82, 0.99);
+	text-decoration: none;
+}
+.accordion-section-content {
+	padding: 15px;
+	display: none;
+}
+</style>
+
+<style type="text/css">
+
+	.kmlfile {
+		color: #ffffff;
+	}
+
+</style>
+
+
+
+	
+</head>
+
+<body style="margin: 0; padding: 0">
+
+<!-------SECTION------>
+
+<div id="cssmenu">
+	<ul>
+		<li class="active"><a href="../default.aspx">
+		<i style="color:#0099ff" class="fas fa-home fa-lg" title="Home"></i>&nbsp;&nbsp;Redistricting Home</a></li>
+		
+	<li class="has-sub"><a href="../default_Meetings.aspx">Meetings</a>
+	
+	</li>
+
+	
+	<!--li class="has-sub"><a href="#">Documents</a>
+		<ul>
+			<li><a href="#"target="_blank">Timeline</a>
+			</li>
+			<li><a href="#"target="_blank">Profile</a>
+			</li>			
+			<li><a href="#"target="_blank">State Pop Parish/Precinct</a>
+			</li>
+			<li><a href="https://www.census.gov/census2000/states/la.html"target="_blank">LA Census Data</a>
+			</li>
+			<li><a href="https://senate.la.gov/Redistricting" target="_blank">LA Senate Redist</a>
+			</li>
+
+		</ul>
+		</li-->
+		
+<!--li class="has-sub"><a href="default_Maps.aspx">Maps 2011</a>
+		<ul>
+			<li><a href="#">House</a>
+			</li>
+			<li><a href="#">Congress</a>
+			</li>
+			<li><a href="#">BESE</a>
+			</li>
+			<li><a href="#">PSC</a>
+			</li>
+			<li><a href="#">5th Circuit</a>
+			</li>
+		</ul>
+</li-->
+
+<!--li class="has-sub"><a href="default_DOJ.aspx">DOJ Submission Docs</a>
+		<ul>
+			<li><a href="#">House</a>
+			</li>
+			<li><a href="#">Congress</a>
+			</li>
+			<li><a href="#">BESE</a>
+			</li>
+			<li><a href="#">PSC</a>
+			</li>
+			<li><a href="#">5th Circuit</a>
+			</li>
+		</ul>
+</li-->
+
+
+			
+<!--li class="has-sub"><a href="default_FAQs.aspx">FAQ'S</a>
+		
+		<ul>
+			<li><a href="https://www.census.gov/en.html" target="_blank">U.S. Census Home</a>
+			</li>
+			<li><a href="https://www.census.gov/search-results.html?q=louisiana&page=1&stateGeo=none&searchtype=web&cssp=SERP&_charset_=utf-8" target="_blank">U.S. Census Louisiana</a>
+			</li>			
+		</ul>
+		</li>
+		<li class="has-sub"><a href="#">Related Sites</a>
+		<ul>
+			<li><a href="https://house.louisiana.gov/" target="_blank">House</a>
+			</li>
+			<li><a href="http://senate.la.gov/" target="_blank">Senate</a>
+			</li>
+			<li><a href="https://www.legis.la.gov" target="_blank">Legislature</a>
+			</li>
+		</ul>
+		</li>
+		
+	</ul>
+</li-->
+
+		
+		
+<li class="has-sub"><a href="#">Census Data</a>
+		<ul>
+			<li><a href="https://www.census.gov/en.html">U.S. Census Home</a>
+			</li>
+			<li><a href="https://www.census.gov/search-results.html?searchType=web&cssp=SERP&q=Louisiana" target="_blank">U.S. Census Louisiana</a>
+			</li>			
+			<li><a href="https://www.louisiana.gov/demographics-and-geography/" target="_blank">LA State Census Data Center</a>
+			</li>
+
+		</ul>
+		
+		
+<li class="has-sub"><a href="#">Related Sites</a>
+		<ul>
+			<li><a href="../2001_Files/2000_Info.aspx" target="_blank">2000 Redistricting</a>
+			</li>
+			<!--li><a href="https://house.louisiana.gov/H_Redistricting2011/" target="_blank">2010 Redistricting</a>
+			</li-->			
+			<li><a href="https://house.louisiana.gov/" target="_blank">House</a>
+			</li>
+			<li><a href="https://senate.la.gov/" target="_blank">Senate</a>
+			</li>			
+			<li><a href="https://legis.la.gov/legis/home.aspx" target="_blank">Legislature</a>
+			</li>
+
+		</ul>
+		
+		
+<li class="has-sub"><a href="../default_contact.aspx">Contact</a>		
+		</li>		
+	
+
+
+   <!--li class='last'>
+   <a class="btn lightbox-212235849873162" style="margin-top: 16px">Subscribe Form</a></li-->
+</ul>
+</div>
+
+
+
+<!-------START SUB MENU->
+
+
+<div class="row1homeTopMenu clearfix" id="linksHCRS">
+
+<div class="section group">
+ 
+<div class="col spanSubMenu_4_of_4 matchheight">
+<a href="https://redist.legis.la.gov/">
+<img alt="Seal" title="Seal" src="Seal_RIBBON_LEGIS_2021_CONFIDENCE150.png" style="width: 100px; height: 100px" class="auto-style1"></a></div>
+ 
+<div class="col spanSubMenu_3_of_4 matchheight">
+<span><a href="default_Maps.aspx">Maps&nbsp;&nbsp;<i style="color:#b3a582" class="fas fa-map"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></div>
+	
+<div class="col spanSubMenu_2_of_4 matchheight"><br /><br />
+<span><a href="default_ShapeFiles.aspx">Shapefiles&nbsp;&nbsp;<i style="color:#b3a582" class="fas fa-vector-square"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></div>
+
+<div class="col spanSubMenu_1_of_4 matchheight">
+<span><a href="https://house.louisiana.gov/H_Redistricting2011/" target="_blank">Redistricting 2011&nbsp;&nbsp;<i style="color:#b3a582" class="fas fa-history"></i></a>&nbsp;&nbsp;
+</span></div>
+
+</div> 
+	
+</div--> 
+
+
+
+
+
+
+
+<div class="row1Reports_Grey clearfix">
+
+<div class="rowSCHED_Home1" id="links">
+
+<span class="fa-2x">Congress ACT 2 (SB121)&nbsp;&nbsp;<i style="color:#0099FF" class="fas fa-draw-polygon fa-lg"></i> </span>
+
+</div></div>
+
+<div class="row1Reports_White clearfix" id="links">
+
+<div>
+
+<div class="accordion">
+
+	<div class="accordion-section">
+		<a class="accordion-section-title" href="#accordion-dMAPS" style="color:white;">
+		STATEWIDE and SPLIT PARISH MAPS&nbsp;&nbsp;<i style="color:#0099FF" class="fas fa-chevron-down fa-lg"></i></a>		
+		<div id="accordion-dMAPS" class="accordion-section-content" style="">
+				
+			<a href="Act2Congress/District and Split Parish Maps/Map - Calcasieu.pdf" target="_blank">
+				Map - Calcasieu</a><br /><br />		 
+				
+		<a href="Act2Congress/District and Split Parish Maps/Map - EBR & WBR.pdf" target="_blank">
+				Map - EBR & WBR</a><br /><br />	
+				
+				<a href="Act2Congress/District and Split Parish Maps/Map - Iberville & Ascension.pdf" target="_blank">
+				Map - Iberville & Ascension</a><br /><br />		
+
+				<a href="Act2Congress/District and Split Parish Maps/Map - Jefferson, Orleans & St. Bernard.pdf" target="_blank">
+				Map - Jefferson, Orleans & St. Bernard</a><br /><br />		
+
+				<a href="Act2Congress/District and Split Parish Maps/Map - Lafourche.pdf" target="_blank">
+				Map - Lafourche</a><br /><br />	
+				<a href="Act2Congress/District and Split Parish Maps/Map - St. John & St. Charles.pdf" target="_blank">
+				Map - St. John & St. Charles</a><br /><br />	
+				
+				<a href="Act2Congress/District and Split Parish Maps/Map - St. Landry.pdf" target="_blank">
+				Map - St. Landry</a><br /><br />		
+
+				<a href="Act2Congress/District and Split Parish Maps/Map - Statewide.pdf" target="_blank">
+				Map - Statewide</a><br /><br />		
+
+				<a href="Act2Congress/District and Split Parish Maps/Map - Tangipahoa.pdf" target="_blank">
+				Map - Tangipahoa</a><br /><br />
+				<a href="Act2Congress/District and Split Parish Maps/Map - Terrebonne.pdf" target="_blank">
+				Map - Terrebonne</a><br /><br />	
+				
+		<hr>		
+		
+		<br> 
+								
+		</div>
+		</div>
+
+
+</div><!-----END------->
+
+
+<div class="accordion">
+
+<div class="accordion-section">
+<a class="accordion-section-title" href="#accordion-REPORTS" style="color:white;">
+REPORTS&nbsp;&nbsp;<i style="color:#0099FF" class="fas fa-chevron-down fa-lg"></i></a>		
+<div id="accordion-REPORTS" class="accordion-section-content" style="">
+		
+
+<!----LINKS GO BELOW THIS COMMENT------>
+
+<a href="Act2Congress/Reports/Report - Population and Party by Parish and Precinct.pdf" target="_blank">
+	Report - Population and Party by Parish and Precinct</a><br /><br />
+
+<a href="Act2Congress/Reports/Report - Population and Party by Parish.pdf" target="_blank">
+	Report - Population and Party by Parish</a><br /><br />
+
+<hr>		
+
+<br> 
+						
+</div>
+</div>
+</div><!-----END------>
+
+
+<div class="accordion">
+
+<div class="accordion-section">
+<a class="accordion-section-title" href="#accordion-SHAPEFILESKML" style="color:white;">
+SHAPEFILES&nbsp;&nbsp;<i style="color:#0099FF" class="fas fa-chevron-down fa-lg"></i></a>		
+<div id="accordion-SHAPEFILESKML" class="accordion-section-content" style="">
+		
+			 	
+		
+<!------TEXT FOR FILE---->
+	<span class="row_SmallFont2">To facilitate the public interest, it is suggested that interested parties use the provided District Shapefiles to import the plan into a <a style="color:#37c0fb" href="https://davesredistricting.org/maps#home" target="_blank">Dave's Redistricting Account</a> 
+		<br>
+You may find detailed instructions here: <a style="color:#37c0fb" href="https://medium.com/dra-2020/importing-maps-67b0085c1ab6" target="_blank">https://medium.com/dra-2020/importing-maps-67b0085c1ab6</a>
+   
+</span><br /><br />
+					 	
+	<a href="Act2Congress/Shapefile/Shapefile - Act_2_(2026_RS).zip" target="_blank">
+	Shapefile - Act_2_(2026_RS).zip</a><br /><br />  
+
+
+<hr>		
+
+<br> 
+						
+</div>
+</div>
+</div><!------END------->
+
+<div class="accordion">
+
+<div class="accordion-section">
+<a class="accordion-section-title" href="#accordion-bef" style="color:white;">
+BLOCK EQUIVALENCY FILE&nbsp;&nbsp;<i style="color:#0099FF" class="fas fa-chevron-down fa-lg"></i></a>		
+<div id="accordion-bef" class="accordion-section-content" style="">
+		
+			 	
+		
+<!------TEXT FOR FILE---->
+	<span class="row_SmallFont2">This District Block Equivalency file correlate to the GEOID20 field in the 2026 Block Shapefile. That Shapefile is based the 2020 Census Redistricting TIGER/Line Shapefiles for the State of Louisiana but has been modified and validated through the data verification program of the Louisiana Senate and the Louisiana House of Representatives to represent precinct changes submitted through January 27, 2026, to the Legislature of Louisiana by parish governing authorities pursuant to the provisions of R.S. 18:532 and 532.1. During this validation of changes to precincts by parish governing authorities, the original 2020 Census Blocks may be divided or merged to accommodate new geography in the corresponding parishes.
+<br><br>
+Therefore, this Block Equivalency file will not exactly match the 2020 Census blocks. To facilitate the public interest, these updated blocks and precincts are provided in the Shapefiles & Block Equivalency Files Based Upon 2020 Census Geography section of this website:
+<a style="color:#37c0fb" href="https://redist.legis.la.gov/default_ShapeFiles2020" target="_blank">https://redist.legis.la.gov/default_ShapeFiles2020</a> 
+		<br>
+   
+</span><br /><br />
+
+<a href="Act2Congress/Block Equivalency File/Block Equlivancy File - Act 2 (2026 RS - Congress).txt" target="_blank">
+	Block Equlivancy File - Act 2 (2026 RS - Congress)</a><br /><br />  
+
+
+
+
+<hr>		
+
+<br> 
+						
+</div>
+</div>
+</div><!------END------->
+
+</div>
+</div>
+
+
+
+
+
+
+
+<!-------SECTION------>
+
+<div class="footerBottom" id="footerBottom">
+
+	<div class="col-1-5">
+		<a href="https://redist.legis.la.gov/"><img src="/images/LouisianaStateSealWhite110px.png" title="Home" alt="Home" style="padding-top:0px; height:75px;width:75px;"></a>	</div>
+			
+	<br>
+	<div class="col-1-5">
+		<i class="fas fa-map-marker-alt fa-lg" style="color: #FFFFFF" title="Our Location"></i>&nbsp;&nbsp;&nbsp;BOX 44294 BATON ROUGE, LA 70804
+	</div>
+		
+	<div class="col-1-5">
+		<a href="https://www.facebook.com/Louisiana-House-of-Representatives-Redistricting-193299176157/" target="_blank"><i class="fa-brands fa-facebook-f fa-lg" style="color: #FFFFFF" title="House Redistricting Facebook"></i></a>
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		<a href="https://twitter.com/hredist2011/" target="_blank"><i class="fa-brands fa-x-twitter fa-lg" style="color: #FFFFFF" title="House Redistricting Twitter"></i></a>
+	</div>
+	
+			
+	<div class="col-1-5" id="links">
+		<a href="../default_Contact.aspx"><i class="fas fa-comment-dots fa-lg" style="color: #92d8e4" title="Contact Us"></i>&nbsp;&nbsp;&nbsp;YOUR FEEDBACK</a>
+	</div>
+	
+	<div class="col-1-5">
+		<a href="#"><i style="color: #FFFFFF" title="Go To Top"class="fas fa-chevron-up fa-2x"></i></a>
+	</div>
+	
+	<!--div class="col-1-5" id="links">
+	
+  <button type="button" class="btn btn-infoRedist btn-lg" data-toggle="modal" data-target="#myModal">Subscribe</button>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+   <iframe id="JotFormIFrame-212215167541145" title="Opt In Form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera" src="https://form.jotform.com/212215167541145" frameborder="0" style=" min-width: 100%; height:539px; border:none;" scrolling="no" > </iframe> <script type="text/javascript"> var ifr = document.getElementById("JotFormIFrame-212215167541145"); if (ifr) { var src = ifr.src; var iframeParams = []; if (window.location.href && window.location.href.indexOf("?") > -1) { iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&')); } if (src && src.indexOf("?") > -1) { iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&")); src = src.substr(0, src.indexOf("?")) } iframeParams.push("isIframeEmbed=1"); ifr.src = src + "?" + iframeParams.join('&'); } window.handleIFrameMessage = function(e) { if (typeof e.data === 'object') { return; } var args = e.data.split(":"); if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); } if (!iframe) { return; } switch (args[0]) { case "scrollIntoView": iframe.scrollIntoView(); break; case "setHeight": iframe.style.height = args[1] + "px"; break; case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break; case "reloadPage": window.location.reload(); break; case "loadScript": if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; } var src = args[1]; if (args.length > 3) { src = args[1] + ':' + args[2]; } var script = document.createElement('script'); script.src = src; script.type = 'text/javascript'; document.body.appendChild(script); break; case "exitFullscreen": if (window.document.exitFullscreen) window.document.exitFullscreen(); else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen(); else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen(); else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen(); else if (window.document.msExitFullscreen) window.document.msExitFullscreen(); break; } var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false; if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } }; window.isPermitted = function(originUrl, whitelisted_domains) { var url = document.createElement('a'); url.href = originUrl; var hostname = url.hostname; var result = false; if( typeof hostname !== 'undefined' ) { whitelisted_domains.forEach(function(element) { if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element ) { result = true; } }); return result; } } if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); } else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); } </script></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>      
+    </div>  
+	
+	
+	</div-->
+	
+	
+
+	
+</div>
+
+
+</body>
+
+
+
+<!-------SECTION------>
+
+<script src="../jquery-match-height-master/jquery.matchHeight.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+    $('.matchheight').matchHeight();
+});
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NNTK7C46X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NNTK7C46X1');
+</script>
+
+</html>

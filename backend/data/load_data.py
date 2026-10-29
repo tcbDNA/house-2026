@@ -12,6 +12,12 @@ from pathlib import Path
 DATA_DIR = Path(__file__).resolve().parent
 V18_CSV = DATA_DIR.parent.parent / "national_sensitivity_v20.csv"
 DEMOS_CSV = DATA_DIR / "demographics.csv"
+# Louisiana's demographics before the Oct 29 fix. They were built from a block
+# file for a different plan (New Orleans in District 6), so they didn't match
+# the district results; the fix uses the enacted map's official file
+# (aggregate_dra.OFFICIAL_BAF). Written to the row as demo_previous so
+# settings.la_enacted_demographics=False reproduces earlier runs.
+DEMOS_PREVIOUS_CSV = DATA_DIR / "demographics_la_previous.csv"
 OUT_JSON = DATA_DIR / "districts.json"
 
 NUMERIC_V18 = {
@@ -1360,6 +1366,9 @@ def main():
                     out[k] = to_num(v)
             demos[r["district"]] = out
 
+    with DEMOS_PREVIOUS_CSV.open() as f:
+        demos_previous = {r["district"]: {k: to_num(r[k]) for k in NUMERIC_DEMOS} for r in csv.DictReader(f)}
+
     db_current, db_2024_lines = load_downballot()
     retention = load_core_retention()
     state_results = load_state_results()
@@ -1400,6 +1409,8 @@ def main():
                 for k in NUMERIC_DEMOS:
                     row[k] = None
                 row["demo_source"] = "MISSING"
+            if d_id in demos_previous:
+                row["demo_previous"] = demos_previous[d_id]
             # Apply manual incumbent overrides BEFORE WAR (since WAR is keyed on incumbent name)
             override = INCUMBENT_OVERRIDES.get(d_id)
             if override:

@@ -57,7 +57,7 @@ def parse_args(argv: list[str]):
 
 def main():
     csv_path, settings = parse_args(sys.argv[1:])
-    polls = included_polls(load_polls(csv_path), settings)
+    polls = included_polls(load_polls(csv_path, settings.la_enacted_demographics), settings)
     est = estimate(polls, settings)
     eq = estimate(polls, settings, equal_weights=True)
     base = est["baselines"]
@@ -70,7 +70,7 @@ def main():
     print(f"{len(polls)} polls: " + ", ".join(
         f"{k} ({v['end']}, {v['population'].upper()}, n={v['n']})"
         for k, v in sorted(polls.items(), key=lambda kv: kv[1]['end'], reverse=True)))
-    polls_2024 = load_polls(CSV_2024_PATH)
+    polls_2024 = load_polls(CSV_2024_PATH, settings.la_enacted_demographics)
     for label, ps in (("2026", polls), ("2024", polls_2024)):
         for src, how in (("moe", "derived from published MOEs, n × (MOE_total/MOE_group)²"),
                          ("share", "estimated as total n × electorate share")):

@@ -171,6 +171,16 @@ class Settings:
     # states' 2020 votes, as before.
     district_weights_2024_votes: bool = True
 
+    # Louisiana's district demographics (race, race×education, age) from the
+    # enacted map: the Legislature's block equivalency file for Act 2 of the
+    # 2026 R.S. (data/sources/la_congress_act2_2026/). The earlier ones came
+    # from a block file for a different plan, so LA-02 (New Orleans, Harris
+    # +48) showed 70% white and LA-06 (Trump +30) 58% Black. A data
+    # correction (Oct 29). Off: the earlier Louisiana values (each row's
+    # demo_previous), as before. They also enter the national electorate fit
+    # and the trend regression, so every race moves slightly.
+    la_enacted_demographics: bool = True
+
     # Item 2 — residualized trend (trend.py). Remove from the carried trend
     # the part explained by the active frame's demographic shares (+ age, +
     # intercept) and/or the 2024 battleground-state part; trend_discount then

@@ -70,7 +70,7 @@ def district_residuals(settings: Settings, frame: str) -> dict[str, float]:
     """district -> carried (residual) trend, as the House model computes it."""
     import main
     b = main.BUNDLE
-    carried = model.carried_trend(b.rel_trend, model.electorate_shares(b.pop, settings),
+    carried = model.carried_trend(b.rel_trend, model.electorate_shares(b.demographics(settings), settings),
                                   b.battleground, settings, frame)
     return {r["district"]: float(v) for r, v in zip(b.districts, carried)}
 
