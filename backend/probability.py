@@ -466,14 +466,47 @@ def governor_sims(rows: list[dict], senate_rows: list[dict], senate_terms: Error
     return out
 
 
+def _three_way_winners(rows: list[dict], sims: np.ndarray, winner: np.ndarray, corr: float) -> None:
+    """Races against an independent with the Republican's polling share
+    (Rhode Island): replace each simulation's two-way winner in `winner` with
+    the three-way one and add `three_way` (each candidate's P(win)) to the row.
+    The D − independent margin is the simulated one; the Republican −
+    independent margin is its polling average plus an error of the same size,
+    correlated `corr` with the D − independent error. Draws come from their own
+    generator, so the other races' simulations are unchanged."""
+    rng = np.random.default_rng([GOV_SEED, 3])
+    for j, r in enumerate(rows):
+        pa = r.get("poll_average") or {}
+        if r.get("opponent_party") != "(I)" or pa.get("republican_share") is None or not r.get("r_nominee"):
+            continue
+        m_di = sims[:, j]
+        e1 = m_di - r["projection"]
+        s1 = float(e1.std())
+        mu_ri = pa["republican_share"] - pa["opponent_share"]
+        m_ri = mu_ri + corr * e1 + np.sqrt(1.0 - corr ** 2) * s1 * rng.standard_normal(m_di.shape[0])
+        r_win = (m_ri > 0) & (m_ri > m_di)
+        d_win = (m_di > 0) & ~r_win
+        winner[:, j] = np.where(d_win, r.get("anti_r_party") or "(D)", np.where(r_win, "(R)", "(I)"))
+        r["p_d"] = round(float(d_win.mean()), 3)
+        r["three_way"] = {
+            "candidates": [
+                {"name": r.get("anti_r_candidate"), "party": r.get("anti_r_party"), "p": r["p_d"]},
+                {"name": r.get("opponent"), "party": "(I)", "p": round(float((~d_win & ~r_win).mean()), 3)},
+                {"name": r.get("r_nominee"), "party": "(R)", "p": round(float(r_win.mean()), 3)}],
+            "republican_vs_opponent": round(float(mu_ri), 2), "corr": corr}
+
+
 def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate_terms: ErrorTerms | None,
                                    terms: ErrorTerms | None, extra: float, gap_factor: float = 0.0,
                                    extra_no_polls: float | None = None,
-                                   param_se: tuple[float, float, float] | None = None) -> dict:
+                                   param_se: tuple[float, float, float] | None = None,
+                                   three_way_corr: float | None = None) -> dict:
     """Mutate `result` (governor_model.project) in place: `p_d` per race
     (P(the anti-R candidate wins)) and the governorships after the election
     — races up plus the governorships not up, which keep their party.
-    Democrats hold a majority of governorships at 26 of 50."""
+    Democrats hold a majority of governorships at 26 of 50. With
+    `three_way_corr` set, races against an independent also count the
+    Republican (_three_way_winners)."""
     rows = result.get("races") or []
     if not rows:
         return result
@@ -485,10 +518,12 @@ def add_governor_win_probabilities(result: dict, senate_rows: list[dict], senate
     # positive, the opponent's (R, or an independent in Rhode Island) when not.
     pos = np.array([r.get("anti_r_party") or "(D)" for r in rows])
     neg = np.array([r.get("opponent_party") or "(R)" for r in rows])
+    winner = np.where(wins, pos[None, :], neg[None, :])
+    if three_way_corr is not None:
+        _three_way_winners(rows, sims, winner, three_way_corr)
     s = result.setdefault("summary", {})
     def total(party):
-        return (wins[:, pos == party].sum(axis=1) + (~wins[:, neg == party]).sum(axis=1)
-                + s.get(f"not_up_{party.strip('()').lower()}", 0))
+        return (winner == party).sum(axis=1) + s.get(f"not_up_{party.strip('()').lower()}", 0)
     total_d, total_i, total_r = total("(D)"), total("(I)"), total("(R)")
     s["governorships"] = {
         "d_median": int(np.median(total_d)), "d_p10": int(np.quantile(total_d, 0.10)),

@@ -27,6 +27,8 @@ Governor-specific:
   * Rhode Island (user decision Oct 28; INDEPENDENT_OPPONENT): the Democrat's
     main opponent is the independent, Ken Block; the margin is Foulkes − Block
     (raw, three-way), and Block's campaign poll is out as partisan-sponsored.
+    republican_share is the Republican's mean share in the same polls (for the
+    three-way win probabilities, probability.add_governor_win_probabilities).
 
 Inputs: sources/gov_polls_2026/ (README.md there): rcp_gov_<st>_<id>.json,
 gov_polls_compiled.json.
@@ -121,13 +123,14 @@ def poll_rows(race: dict, st: str) -> list[dict]:
         anti, rep = ((p["rcv_final_d"], p["rcv_final_r"]) if rcv else
                      (p["h2h_anti_r"], p["h2h_r"]) if h2h else (p["anti_r"], p["r"]))
         others = sum(o.get("pct") or 0 for o in (p.get("others") or [])) if not (rcv or h2h) else 0.0
+        republican = None
         if st in INDEPENDENT_OPPONENT:   # D vs the independent; the Republican counts as a third party
             ind = [o.get("pct") for o in (p.get("others") or []) if INDEPENDENT_OPPONENT[st] in (o.get("name") or "")]
             others = others - (ind[0] or 0) + (rep or 0) if ind else others
-            rep = ind[0] if ind else None
+            republican, rep = rep, (ind[0] if ind else None)
         out.append({"pollster": p["pollster"], "sponsor": p.get("sponsor"), "partisan": p.get("partisan"),
                     "end": d(p["end"]), "released": d(p.get("released")), "anti_r": anti, "r": rep,
-                    "others": others,
+                    "others": others, "republican": republican,
                     "question": "ranked-choice final round" if rcv else "head-to-head" if h2h else "full ballot",
                     "rcv": rcv, "source": p.get("source", "")})
     return out
@@ -162,6 +165,7 @@ def build() -> str:
             anti = sum(a["anti_r"] for a in kept) / len(kept)
             rep = sum(a["r"] for a in kept) / len(kept)
             third = sum(a["others"] for a in kept) / len(kept)
+            reps = []   # RCP's two-way feeds carry no Republican share for a race against an independent
             used = [f"{a['pollster']} {a['dates']}" for a in kept]
             method = "RCP average" + ("; removed: " + ", ".join(f"{a['pollster']} {a['dates']}" for a in removed)
                                       if removed else "")
@@ -187,6 +191,7 @@ def build() -> str:
             anti = sum(p["anti_r"] for p in kept) / len(kept)
             rep = sum(p["r"] for p in kept) / len(kept)
             third = sum(p["others"] for p in kept) / len(kept)
+            reps = [p["republican"] for p in kept if p.get("republican") is not None]
             used = [f"{label(p)}, ending {p['end']} ({p['question']}, {p['anti_r']:g}/{p['r']:g})" for p in kept]
             method = ("recomputed: newer polls than RCP's average" if newer else
                       "recomputed: RCP publishes no average")
@@ -200,6 +205,7 @@ def build() -> str:
                 if rcp and None not in rcp["published"] else ""
         margin = anti - rep
         three_way = st in INDEPENDENT_OPPONENT
+        republican = sum(reps) / len(reps) if three_way and reps and len(reps) == len(kept) else None
         blend = margin if three_way else 100 * margin / (anti + rep)
         n_eff = (len(kept) if use_rcp else
                  sum(1.0 if p["end"] >= WINDOW_START else OLD_POLL_WEIGHT for p in kept))
@@ -207,7 +213,9 @@ def build() -> str:
                      "blend_margin": round(blend, 2), "n_polls": len(kept), "n_eff": n_eff,
                      "three_way": "yes" if three_way else "no",
                      "opponent": INDEPENDENT_OPPONENT.get(st, ""),
-                     "third_party_share": round(third, 2), "rcv_final_polls": sum(1 for p in kept if p.get("rcv")),
+                     "third_party_share": round(third, 2),
+                     "republican_share": round(republican, 2) if republican is not None else "",
+                     "rcv_final_polls": sum(1 for p in kept if p.get("rcv")),
                      "margin_published": published, "method": method, "as_of": as_of,
                      "polls": "; ".join(used), "url": url, "local_file": local,
                      "newer_polls": "; ".join(f"{label(p)} ending {p['end']}, released {p['released'] or 'n/a'}"
@@ -215,6 +223,7 @@ def build() -> str:
         report.append(f"{st}: {method}; {len(kept)} poll(s) (n_eff {n_eff:g}); anti-R {anti:.2f} / "
                       f"{'R' if not three_way else INDEPENDENT_OPPONENT[st]} {rep:.2f} -> margin {margin:+.2f}, "
                       f"blend margin {blend:+.2f}, third parties {third:.1f}"
+                      + (f" (Republican {republican:.1f})" if republican is not None else "")
                       + (f" (RCP published {published:+.1f})" if published != "" else ""))
         for u in used:
             report.append(f"    - {u}")

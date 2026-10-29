@@ -130,6 +130,17 @@ class Settings:
     # effective polls (user decision, Oct 28: option (c)). 0 = every race.
     governor_gap_max_polls: float = 3.0
     governor_war_exclude_third_candidate: bool = True
+    # Three-way win probabilities where the Democrat's main opponent is an
+    # independent (Rhode Island: Foulkes (D), Block (I), Guckian (R); user
+    # request Oct 29). The simulated D − independent margin is unchanged; the
+    # Republican − independent margin is drawn around its polling average
+    # (mean shares in the same polls) with the same error size, correlated
+    # governor_three_way_corr with the D − independent error (0.5 = independent,
+    # equal-sized errors in each candidate's share), and each simulation's
+    # winner is the candidate with the most votes. False: P(D) is the Democrat
+    # against the independent only.
+    governor_three_way: bool = True
+    governor_three_way_corr: float = 0.5
 
     # Item 7 — county overlay (overlay.py). Project each county slice from its
     # own 2024 margin, demographic shift and residual trend (shrunk toward its

@@ -78,6 +78,8 @@ const GROUPS: { title: string; toggles: Toggle[] }[] = [
         hint: "Computed governor records from races where a third candidate won over 5% (e.g. OR 2022, Betsy Johnson) are left out." },
       { key: "governor_param_draws", label: "Slope and incumbency uncertainty",
         hint: "Each simulation draws one partisan slope and one incumbency bonus (the calibration's standard errors), shared by every governor race." },
+      { key: "governor_three_way", label: "Three-way odds in Rhode Island",
+        hint: "Each simulation also draws the Republican's margin over independent Ken Block around its polling average (same error size, correlation 0.5), and the candidate with the most votes wins. Off: Foulkes vs Block only." },
     ],
   },
   {

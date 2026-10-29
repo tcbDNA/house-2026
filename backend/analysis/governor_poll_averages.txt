@@ -139,7 +139,7 @@ PA: RCP average; 5 poll(s) (n_eff 5); anti-R 57.20 / R 33.40 -> margin +23.80, b
     - Quinnipiac 10/1 - 10/5
     - Susquehanna 9/22 - 9/30
     - NY Times/Siena 9/15 - 9/22
-RI: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 3 poll(s) (n_eff 2.5); anti-R 42.33 / Block 29.33 -> margin +13.00, blend margin +13.00, third parties 16.0
+RI: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 3 poll(s) (n_eff 2.5); anti-R 42.33 / Block 29.33 -> margin +13.00, blend margin +13.00, third parties 16.0 (Republican 14.7)
     - Emerson College, ending 2026-10-11 (full ballot, 44/35)
     - Embold Research for Salve Regina University Pell Center for International Relations and Public Policy, ending 2026-10-08 (full ballot, 39/28)
     - University of New Hampshire, ending 2026-09-21 (full ballot, 44/25)

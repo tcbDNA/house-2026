@@ -235,7 +235,8 @@ def governors_project(req: ProjectRequest):
                                           settings.governor_race_sigma_extra_no_polls,
                                           (settings.governor_slope_se, settings.governor_incumbency_se,
                                            settings.governor_slope_incumbency_corr)
-                                          if settings.governor_param_draws else None)
+                                          if settings.governor_param_draws else None,
+                                          settings.governor_three_way_corr if settings.governor_three_way else None)
 
 
 # ──────────────── County endpoints ────────────────

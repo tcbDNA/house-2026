@@ -114,7 +114,15 @@ export function GovernorTable({ races, onPick }: { races: GovernorRace[]; onPick
                 </td>
                 <td className="px-2 py-1 text-right font-mono">{r.poll_weight ? r.poll_weight.toFixed(2) : "—"}</td>
                 <td className={`px-2 py-1 text-right font-mono ${bucket(r)}`}>{formatProjection(r.projection)}</td>
-                <td className="px-2 py-1 text-right font-mono">{r.p_d != null ? `${(r.p_d * 100).toFixed(0)}%` : "—"}</td>
+                <td className="px-2 py-1 text-right font-mono">
+                  {r.p_d != null ? `${(r.p_d * 100).toFixed(0)}%` : "—"}
+                  {r.three_way && (
+                    <div className="text-[10px] text-slate-500 whitespace-nowrap" title="Three-way: each candidate's chance of winning">
+                      {r.three_way.candidates.slice(1).map((c) =>
+                        `${(c.name ?? "").split(" ").slice(-1)[0]} ${c.p < 0.005 ? "<1" : (c.p * 100).toFixed(0)}%`).join(" · ")}
+                    </div>
+                  )}
+                </td>
                 <td className="px-2 py-1 text-[10px]">
                   {r.flip && <div className="font-semibold">{r.flip === "to_D" ? "→ D" : r.flip === "to_R" ? "→ R" : "→ I"}</div>}
                   {r.model_poll_gap != null && (
@@ -136,8 +144,8 @@ export function GovernorTable({ races, onPick }: { races: GovernorRace[]; onPick
       </div>
       <div className="p-2 text-[10px] text-slate-400 border-t">
         Click a row (or a state on the map) for its county map. Proj = weight × (polls + scenario change) + (1 − weight) × model; polls older than Oct 5 count half for the
-        weight where a race has fewer than three recent polls. P(D) is the chance the Democrat wins (in Rhode Island,
-        against independent Ken Block). Hover a flag for details.
+        weight where a race has fewer than three recent polls. P(D) is the chance the Democrat wins (Rhode Island is
+        three-way: independent Ken Block's and Republican Aaron Guckian's chances are under it). Hover a flag for details.
       </div>
     </div>
   );

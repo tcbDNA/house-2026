@@ -248,6 +248,8 @@ def load_poll_averages() -> dict[str, dict]:
                            "n_polls": int(r["n_polls"]), "n_eff": float(r["n_eff"]),
                            "three_way": r["three_way"] == "yes", "opponent": r["opponent"] or None,
                            "third_party_share": _f(r["third_party_share"]),
+                           "anti_r_share": float(r["d"]), "opponent_share": float(r["r"]),
+                           "republican_share": _f(r.get("republican_share")),
                            "rcv_final_polls": int(r["rcv_final_polls"] or 0), "method": r["method"],
                            "as_of": r["as_of"], "polls": r["polls"], "url": r["url"], "local_file": r["local_file"]}
     return out

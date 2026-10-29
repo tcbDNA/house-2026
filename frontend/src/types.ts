@@ -508,6 +508,7 @@ export type GovernorRace = {
   model_projection: number | null;     // null on polls-only races (RI)
   poll_average: {
     margin: number; raw_margin: number; n_polls: number; third_party_share: number | null;
+    anti_r_share?: number; opponent_share?: number; republican_share?: number | null;
     rcv_final_polls?: number; method: string; as_of: string; polls: string; url: string; local_file: string;
   } | null;
   poll_weight: number;
@@ -519,6 +520,10 @@ export type GovernorRace = {
   flags: GovernorFlag[];
   note?: string | null;
   p_d?: number;
+  // Races against an independent (RI): each candidate's chance of winning,
+  // the Republican included (setting governor_three_way).
+  three_way?: { candidates: { name: string | null; party: string | null; p: number }[];
+                republican_vs_opponent: number; corr: number };
 };
 
 export type GovernorSummary = {

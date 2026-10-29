@@ -267,7 +267,9 @@ export function Methodology() {
         the slope and incumbency. Special cases are flagged: Alaska's ranked-choice
         final round, Georgia's runoff rule, Vermont's legislature rule, and Rhode
         Island, where independent Ken Block runs second and the race is modeled
-        Foulkes vs Block on polls alone.
+        Foulkes vs Block on polls alone; its win probabilities are three-way, with
+        Republican Aaron Guckian's margin over Block drawn around its polling
+        average (Foulkes 97.8%, Block 2.2%, Guckian under 0.1%).
       </p>
       <p className="mb-2">
         <b>Governor calibration.</b> A backtest reruns this structure on the 72

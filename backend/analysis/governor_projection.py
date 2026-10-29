@@ -37,6 +37,9 @@ def main_cli():
             flags.append(f"flip {x['flip']}")
         if x["opponent_party"] != "(R)":
             flags.append(f"vs {x['opponent']} {x['opponent_party']}")
+        if x.get("three_way"):
+            flags.append("three-way P(win): " + ", ".join(f"{c['name'].split()[-1]} {c['p']:.3f}"
+                                                         for c in x["three_way"]["candidates"]))
         print(f"{x['state']:3} {('%+7.1f' % mp) if mp is not None else '    n/a'} "
               f"{('%+7.1f (%g)' % (pa['margin'], pa['n_eff'])) if pa else '-':>15} {x['poll_weight']:5.2f} "
               f"{x['projection']:+7.1f} {x['p_d']:6.3f}  {', '.join(flags)}")

@@ -71,11 +71,15 @@ function buildPopupHtml(s: GovernorRace): string {
     : `<div style="margin-bottom:3px;color:#555">open seat</div>`;
   const cands: [string | null, string | null, boolean][] = [
     [s.anti_r_candidate, s.anti_r_party, true], [s.opponent, s.opponent_party, false]];
-  const winRows = s.p_d == null ? "" : cands.filter(([n]) => n).map(([n, party, pos]) => {
-    const p = pos ? s.p_d! : 1 - s.p_d!;
+  // Rhode Island: all three candidates (the Republican too), tiny chances as "<1%".
+  const odds: [string | null, string | null, number][] = s.three_way
+    ? s.three_way.candidates.map((c) => [c.name, c.party, c.p])
+    : cands.filter(([n]) => n).map(([n, party, pos]) => [n, party, pos ? s.p_d! : 1 - s.p_d!]);
+  const winRows = s.p_d == null ? "" : odds.map(([n, party, p]) => {
+    const pct = s.three_way && p < 0.005 ? "<1" : (p * 100).toFixed(0);
     return `<div style="display:flex;justify-content:space-between;gap:8px">
               <span style="color:${partyColorHex(party)}">${n} ${party}</span>
-              <span style="font-family:ui-monospace,monospace">${(p * 100).toFixed(0)}%</span>
+              <span style="font-family:ui-monospace,monospace">${pct}%</span>
             </div>`;
   }).join("");
   const flags = s.flags.map((f) =>
