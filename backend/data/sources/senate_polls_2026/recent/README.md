@@ -289,3 +289,13 @@ Every RCP Senate feed, VoteHub's Senate, governor and generic-ballot dumps and P
 Effects:
 - **Iowa** is back on RCP's average: RCP's latest averaged poll (co/efficient, Oct 28) now ends after Echelon (Oct 23), the poll that made it stale. Echelon, listed by RCP but not averaged, drops out. Hinson +0.40 -> +0.78 (two-party -0.44 -> -0.85).
 - **South Carolina** stays on RCP's average, now with ECU: Graham +2.0 -> +2.4 (Rasmussen removed).
+
+### Fifth check, 2026-10-29 (A2 Insights Texas, from the user's NYT poll list paste)
+
+| File | URL | Notes |
+|---|---|---|
+| `nyt_poll_list_user_paste_2026-10-29b.txt` | NYT poll list (pasted by the user) | Verbatim: Texas Senate, A2 Insights, Oct 23-27, Talarico 50, Paxton 47. |
+| `a2insights_tx_october_2026.pdf` | https://drive.google.com/file/d/1UACnmnM84Dd1hU0l6iqHNgXkyh5oCelO/view (downloaded via drive.google.com/uc?export=download&id=1UACnmnM84Dd1hU0l6iqHNgXkyh5oCelO; linked from VoteHub) | A2 Insights Texas Statewide Survey: Oct 23-27, 631 LV, online opt-in panel, MOE 4.9, "Sponsor: N/A". Talarico 50.2, Paxton 47.2, other 2.3, undecided 0.3. Senate question only. |
+| `votehub_senate_all.json` | https://polling.votehub.com/site/polls?poll_type=us-senator&limit=2000 | Refreshed; the only new 2026 row is this poll (no sponsor, no partisan flag). |
+
+RCP's Texas feed (built Oct 29 05:41 CT) is unchanged and lists only A2's June poll, so the saved copy is kept. The A2 poll is not in RCP's average and ends on Oct 27, the same day as the latest poll RCP averages (CNN 10/20-27), so it is not newer: Texas stays on RCP's average (Rasmussen removed). Recorded with `in_rcp_average: false`.
