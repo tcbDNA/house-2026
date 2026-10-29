@@ -160,7 +160,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
 
   function buildFillColorExpr(): any {
     const d = dataRef.current;
-    if (!d) return PALETTE.empty;
+    if (!d?.counties.length) return PALETTE.empty;
     const expr: any[] = ["match", ["get", "fips"]];
     for (const c of d.counties) {
       expr.push(c.fips, bucketColor(c.projection, indWinner));
@@ -189,7 +189,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
 
   function buildLabelExpr(): any {
     const d = dataRef.current;
-    if (!d) return "";
+    if (!d?.counties.length) return "";
     const expr: any[] = ["match", ["get", "fips"]];
     for (const c of d.counties) {
       const r = Math.round(c.projection);
