@@ -98,12 +98,17 @@ export default function App() {
   const [pickedGovState, setPickedGovState] = useState<string | null>(null);
   const [pickedDistrictCounties, setPickedDistrictCounties] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
+  // Latest settings change; an older /api/defaults response that arrives after
+  // a newer change is ignored.
+  const settingsSeq = useRef(0);
 
   const run = useCallback(async (currentTab: Tab, env: number, s: SliderValues, td: number) => {
     abortRef.current?.abort();
     const ac = new AbortController();
     abortRef.current = ac;
+    setLoading(true);
     try {
       if (currentTab === "house") {
         const r = await fetchProjection(env, s, td, ac.signal);
@@ -118,6 +123,8 @@ export default function App() {
       setError(null);
     } catch (e: any) {
       if (e.name !== "AbortError") setError(e.message);
+    } finally {
+      if (abortRef.current === ac) setLoading(false);
     }
   }, []);
 
@@ -133,15 +140,18 @@ export default function App() {
   // New settings change the default scenario (wave, slider positions, shares):
   // fetch it and reset the sliders to it.
   const onSettings = async (next: Record<string, unknown>) => {
+    const seq = ++settingsSeq.current;
+    setLoading(true);
     try {
       const d = await fetchDefaults(next);
+      if (seq !== settingsSeq.current) return;
       applyModelDefaults(d);
       setSettings(next);
       setEnvironment(frameDefaultEnv(frame));
       setSliders({ ...frameDefaults(frame) });
       setError(null);
     } catch (e: any) {
-      setError(e.message);
+      if (seq === settingsSeq.current) { setError(e.message); setLoading(false); }
     }
   };
 
@@ -189,6 +199,9 @@ export default function App() {
         {tabBtn("house", "House (435)")}
         {tabBtn("senate", "Senate (35 up)")}
         {tabBtn("governors", "Governors (36 up)")}
+        <span className={`ml-auto self-center text-xs text-slate-500 ${loading ? "animate-pulse" : "invisible"}`}>
+          Updating…
+        </span>
       </div>
 
       {error && (

@@ -1,3 +1,4 @@
+import { useEffect, useState, type ReactNode } from "react";
 import { MODEL_DEFAULTS } from "../types";
 
 // Model settings (backend config.Settings). Each model-v4 change sits behind
@@ -122,28 +123,20 @@ export function SettingsPanel({ settings, onSettings }: Props) {
         Changing a setting resets the sliders to that setting's defaults.
       </div>
 
-      <div>
-        <div className="flex items-baseline justify-between">
-          <span className="text-slate-600">2026 white share of the electorate</span>
-          <span className="font-mono">{(whiteShare * 100).toFixed(1)}%</span>
-        </div>
-        <input type="range" min={0.72} max={0.76} step={0.005} value={whiteShare}
-               disabled={value("white_share_enabled") === false}
-               onChange={(e) => set("white_share", Number(e.target.value))}
-               className="w-full" aria-label="2026 white share" />
+      <SettingSlider label="2026 white share of the electorate" ariaLabel="2026 white share"
+                     value={whiteShare} min={0.72} max={0.76} step={0.005}
+                     format={(v) => `${(v * 100).toFixed(1)}%`}
+                     disabled={value("white_share_enabled") === false}
+                     onCommit={(v) => set("white_share", v)}>
         <div className="flex justify-between text-[10px] text-slate-400">
           <span>72% (2024)</span><span>74% (default)</span><span>76% (2022)</span>
         </div>
-      </div>
+      </SettingSlider>
 
-      <div>
-        <div className="flex items-baseline justify-between">
-          <span className="text-slate-600">House incumbency bonus</span>
-          <span className="font-mono">±{incumbency.toFixed(1)}</span>
-        </div>
-        <input type="range" min={0} max={4} step={0.1} value={incumbency}
-               onChange={(e) => set("house_incumbency", Number(e.target.value))}
-               className="w-full" aria-label="House incumbency bonus" />
+      <SettingSlider label="House incumbency bonus" ariaLabel="House incumbency bonus"
+                     value={incumbency} min={0} max={4} step={0.1}
+                     format={(v) => `±${v.toFixed(1)}`}
+                     onCommit={(v) => set("house_incumbency", v)}>
         <div className="flex gap-1 mt-0.5">
           {[{ v: 1.7, l: "1.7 (Split Ticket 2020)" }, { v: 3.0, l: "3.0 (2024, default)" }].map((p) => (
             <button key={p.v} onClick={() => set("house_incumbency", p.v)}
@@ -154,7 +147,7 @@ export function SettingsPanel({ settings, onSettings }: Props) {
             </button>
           ))}
         </div>
-      </div>
+      </SettingSlider>
 
       <div>
         <div className="flex items-baseline justify-between">
@@ -191,6 +184,42 @@ export function SettingsPanel({ settings, onSettings }: Props) {
           ))}
         </div>
       ))}
+    </div>
+  );
+}
+
+// A slider for a numeric setting. A settings change refetches the default
+// scenario and reruns the model (seconds on the server), so the slider shows
+// the dragged value at once but applies it only on release (pointer up, key up
+// or blur), once, and keeps showing it until the new setting arrives.
+function SettingSlider({ label, ariaLabel, value, min, max, step, format, disabled, onCommit, children }: {
+  label: string; ariaLabel: string; value: number; min: number; max: number; step: number;
+  format: (v: number) => string; disabled?: boolean; onCommit: (v: number) => void; children?: ReactNode;
+}) {
+  const [draft, setDraft] = useState<number | null>(null);
+  const [pending, setPending] = useState(false);
+  useEffect(() => { setDraft(null); setPending(false); }, [value]);
+  const shown = draft ?? value;
+  const commit = () => {
+    if (draft == null || pending) return;
+    if (Math.abs(draft - value) < 1e-9) { setDraft(null); return; }
+    setPending(true);
+    onCommit(draft);
+  };
+  return (
+    <div>
+      <div className="flex items-baseline justify-between">
+        <span className="text-slate-600">{label}</span>
+        <span className="font-mono">
+          {pending && <span className="text-[10px] text-slate-400 mr-1">applying…</span>}
+          {format(shown)}
+        </span>
+      </div>
+      <input type="range" min={min} max={max} step={step} value={shown} disabled={disabled}
+             onChange={(e) => { setPending(false); setDraft(Number(e.target.value)); }}
+             onPointerUp={commit} onKeyUp={commit} onBlur={commit}
+             className="w-full" aria-label={ariaLabel} />
+      {children}
     </div>
   );
 }
