@@ -8,24 +8,24 @@ export function Methodology() {
           pres_margin_2024 + uniform_swing + trend_weight × residual_trend + WAR_blend + incumbency + challenger + demographic_shift
         </code>
         , where <b>pres_margin_2024</b> is the Harris-Trump margin (D-positive) in
-        that district / state. The national environment defaults to <b>D+9.7</b>,
+        that district / state. The national environment defaults to <b>D+9.9</b>,
         built from poll <b>race crosstabs</b> rather than toplines. <b>National
         level:</b> each group's generic-ballot margin (White, Black, Hispanic,
         Asian; two-way, so differing undecided rates don't distort it) is averaged
         across the latest national poll from each pollster that publishes a race
-        breakdown (fourteen polls ending Oct 1–27, 2026: NYT/Siena, CBS/YouGov,
+        breakdown (fifteen polls ending Oct 1–29, 2026: NYT/Siena, CBS/YouGov,
         Economist/YouGov, Echelon, Fox News, Pew, Cygnal, Emerson, Bedrock Research
-        for the Rainey Center, the Tufts Public Opinion Lab (fielded by YouGov), The Argument (fielded by Verasight), UMass Lowell (fielded by YouGov), Centerline Research & Strategy, and Marist, which reports race only as White vs
+        for the Rainey Center, the Tufts Public Opinion Lab (fielded by YouGov), The Argument (fielded by Verasight), UMass Lowell (fielded by YouGov), Centerline Research & Strategy, The Honest Poll, and Marist, which reports race only as White vs
         Non-white and so counts for the white groups only; ActiVote, Rasmussen and
         McLaughlin are excluded), weighted by √(subgroup sample size) — derived
         from the group margins of error where only those are published (Fox, Pew
         2024), else total n × the group's electorate share (Pew 2026, Cygnal, The Argument, UMass Lowell) or its
         published sample share (Marist, Bedrock, Centerline).
         Each group's shift from its Catalist 2024 margin,
-        weighted by its share of the electorate, sums to a +11.2-pt shift from the
+        weighted by its share of the electorate, sums to a +11.4-pt shift from the
         2024 result (R+1.5). Measured from Pew's 2024 validated-voter margins
-        instead, the shift is +9.7 (D+8.2) — an option in the settings. The same
-        polls' toplines average D+9.2.{" "}
+        instead, the shift is +9.9 (D+8.4) — an option in the settings. The same
+        polls' toplines average D+9.4.{" "}
         <b>Pattern across groups:</b> each pollster's 2026 crosstab is compared
         with its own final 2024 pre-election poll, net of the change in its
         topline, which cancels persistent crosstab bias and keeps 2024's polling
@@ -33,27 +33,27 @@ export function Methodology() {
         2024 topline), combined across pollsters with inverse-variance weights
         (both years' sampling error, design effect 1.5); if leaving out any one
         pollster moves a group's average by more than 1.5 pts, its weighted
-        median is used instead. Eight of the fourteen pollsters have a matched 2024 poll
+        median is used instead. Eight of the fifteen pollsters have a matched 2024 poll
         (Cygnal's is its 2024 generic congressional ballot, the same question as
         its 2026 poll; the others are presidential vote). Each group's shift is
         the national shift plus its r minus the share-weighted mean r, so the
-        national level is unchanged: white +9.4, Black +12.1 and Hispanic +21.6
+        national level is unchanged: white +9.4, Black +12.2 and Hispanic +21.6
         (Hispanic by weighted median);
         Asian keeps its poll-average shift (+20.6; NYT/Siena's 2024 poll had no
         Asian column), and "other" takes the national shift. In the race ×
         education frame the white college (+8.4, weighted median) and non-college
-        (+10.1) cells are
+        (+10.2) cells are
         matched the same way (NYT/Siena, CBS/YouGov, Pew) and the non-white cells
         take the non-white groups' average shift.
       </p>
       <p className="mb-2">
         By default each race slider sits at its group's Catalist 2024 margin plus
-        that shift (white R+5.9, Black D+82.9, Hispanic D+30.0, Asian D+42.0), so
-        each district swings by its own mix of groups (+10.8 nationally). The
+        that shift (white R+5.8, Black D+83.0, Hispanic D+30.1, Asian D+45.4), so
+        each district swings by its own mix of groups (+11.0 nationally). The
         <b>uniform wave</b> (R+1.1) holds the part every district shares: the 2024
         starting point (R+1.5) plus ~0.4 for "other" race voters, who have no
         slider — i.e. essentially no swing beyond what the demographics explain.
-        The panel's <b>Total</b> (wave + sliders) is the national margin, D+9.7. For the House, the <b>uniform swing</b> is
+        The panel's <b>Total</b> (wave + sliders) is the national margin, D+9.9. For the House, the <b>uniform swing</b> is
         calibrated so that, with the demographic sliders at their 2024 values, the
         2024-turnout-weighted average of all 435 district margins equals the
         uniform wave; the sliders then add on top. (Correction, Oct 27: in the
@@ -117,8 +117,8 @@ export function Methodology() {
         was a 68%-31% blowout that would inflate her personal-vote signal; Sullivan
         2014 vs Begich, D+18.8, is excluded as a judgment call — an outlier against
         his 2020 record, from twelve years ago — and Alaska is shown both ways: in
-        the model R+2.0 without it, D+3.7 with it; after the poll blend D+0.7 and
-        D+2.3); these are listed in code and trigger at blend time.{" "}
+        the model R+1.8 without it, D+3.9 with it; after the poll blend D+0.7 and
+        D+2.4); these are listed in code and trigger at blend time.{" "}
         <b>Manual WAR overrides</b> are applied in a small number of cases where the
         blended value would misrepresent expected 2026 performance. Currently:{" "}
         <i>Richard Ojeda (NC-09, D) = 0</i> — his only prior race is 2018 WV-03,
@@ -169,7 +169,7 @@ export function Methodology() {
         keeps the midterm logic (Catalist: 76% white in 2022, 72% in 2024) while
         allowing for demographic drift since 2022 and a more diverse early vote; the
         settings range is 72–76%, across which the national margin moves only from
-        D+9.8 to D+9.6. Turnout uncertainty also enters the simulation as the
+        D+10.0 to D+9.8. Turnout uncertainty also enters the simulation as the
         composition error term. Both the 2024 group margins and the 2022
         composition shares come from the same source —{" "}
         <a className="underline" href="https://catalist.us/whathappened2024/" target="_blank" rel="noreferrer">
@@ -180,9 +180,9 @@ export function Methodology() {
         their shifts are averaged rather than stacked, weighted by how far each
         axis was moved. The <b>race × education</b> frame starts from the matched
         shifts too: white college graduates at D+10.3 (+8.4 since 2024) and white
-        non-college voters at R+17.1 (+10.1), matched with NYT/Siena, CBS/YouGov and
+        non-college voters at R+17.1 (+10.2), matched with NYT/Siena, CBS/YouGov and
         Pew, averaging to the white race shift; the non-white cells get their 2024
-        margin plus the non-white groups' average shift (+16.4). The four cells
+        margin plus the non-white groups' average shift (+17.0). The four cells
         cover every voter, so in that frame the uniform wave is the 2024 level
         (R+1.5) and the national total stays the same. Age sliders stay at their
         2024 values.
@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (72.5% vs 70.9% by default; Osborn's race is nearly all of the
+        them does (73.0% vs 71.4% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -233,17 +233,17 @@ export function Methodology() {
         Mississippi, Nebraska and Arkansas, which RCP doesn't average).
         Louisiana, Idaho (whose only recent poll was commissioned by the Achilles
         campaign) and 11 safe races have no countable recent poll and use the model alone.
-        The blend takes Texas from the model's R+1.2 to Talarico D+1.5, Kansas from
-        R+4.6 to Hamilton D+0.5 (R+0.2 with w = 0.6), Nebraska from R+4.6 to Ricketts
-        +3.4 and Alaska from R+2.0 to D+0.7; P(D control) is 72.5% (62.3% on the
-        model alone; 71.7% / 73.3% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        The blend takes Texas from the model's R+1.0 to Talarico D+1.6, Kansas from
+        R+4.5 to Hamilton D+0.6 (R+0.1 with w = 0.6), Nebraska from R+4.5 to Ricketts
+        +3.4 and Alaska from R+1.8 to D+0.7; P(D control) is 73.0% (63.8% on the
+        model alone; 72.3% / 73.5% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
         polls, so 2/3 polls and 1/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
         Democratic nominee) has two recent polls without a partisan sponsor, Ricketts
-        +2.1; weighted 0.47 against the model's Ricketts +4.6, it projects Ricketts
-        +3.4 (Osborn 27%). As
+        +2.1; weighted 0.47 against the model's Ricketts +4.5, it projects Ricketts
+        +3.4 (Osborn 28%). As
         a cross-check, Economist/YouGov had Fischer +7 over
         Osborn in late October 2024 and Fischer won by 6.7; YouGov's 2026 poll has
         Osborn +1, an 8-point move — about the size of the national swing since
@@ -312,7 +312,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        23–30), with a 70.9% chance of a majority.
+        24–30), with a 71.1% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the
