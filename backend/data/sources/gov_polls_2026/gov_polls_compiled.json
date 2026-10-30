@@ -2826,7 +2826,7 @@
   ]
  },
  "KS": {
-  "notes": "RCP average (feed 9017, '2026 Kansas Governor - Masterson vs. Holscher', lastBuildDate Tue, 06 Oct 2026 15:19:06 -0500): 9/8 - 10/4, Masterson 49.5, Holscher 43.8 (Masterson +5.7), 4 polls: YouGov 9/24 - 10/4; NY Times/Siena 9/22 - 10/1; Emerson 9/15 - 9/16; co/efficient 9/8 - 9/10. Oct 29 check: RCP's feed (lastBuildDate Oct 7, CNN row added Oct 29) averages 9/8-10/26, Masterson 49.6, Holscher 44.0, 5 polls: CNN 10/20-26 added.",
+  "notes": "RCP average (feed 9017, '2026 Kansas Governor - Masterson vs. Holscher', lastBuildDate Tue, 06 Oct 2026 15:19:06 -0500): 9/8 - 10/4, Masterson 49.5, Holscher 43.8 (Masterson +5.7), 4 polls: YouGov 9/24 - 10/4; NY Times/Siena 9/22 - 10/1; Emerson 9/15 - 9/16; co/efficient 9/8 - 9/10. Oct 29 check: RCP's feed (lastBuildDate Oct 7, CNN row added Oct 29) averages 9/8-10/26, Masterson 49.6, Holscher 44.0, 5 polls: CNN 10/20-26 added. Oct 30: the Washington Post-Schar School poll (Oct 22-26, Holscher 51, Masterson 45) is not in RCP's governor feed, though RCP averages the same poll for the Senate; counted in RCP's average anyway (ADDED_TO_RCP in the build script; the user linked it Oct 30 and asked not to rely only on RCP).",
   "polls": [
    {
     "pollster": "co/efficient",
@@ -3064,6 +3064,33 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/cnn_ssrs_kansas_october_2026.pdf (GOVVOTEKS); rcp_gov_ks_9017.json",
     "note": "838 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.5). Two-candidate question: Holscher 45, Masterson 50, neither 4, other 1. RCP: 'CNN'."
+   },
+   {
+    "pollster": "Washington Post-Schar School",
+    "sponsor": "The Washington Post; George Mason University Schar School",
+    "partisan": null,
+    "start": "2026-10-22",
+    "end": "2026-10-26",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 801,
+    "d_candidate": "Cindy Holscher",
+    "r_candidate": "Ty Masterson",
+    "d": 51,
+    "r": 45,
+    "anti_r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 51,
+    "full_r": 45,
+    "others": [],
+    "undecided": 1,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/wapo_schar_kansas_topline_2026-10-30.pdf (Q5); ../senate_polls_2026/recent/wapo_schar_kansas_2026-10-30.html",
+    "note": "Washington Post-Schar School poll, telephone (74% live cell, 9% landline, 17% cell text-to-web), Oct 22-26, 801 likely voters from an L2 registered-voter sample (every registered voter assigned a probability of voting; LV n = RV n = 801), MOE +/-3.9; fieldwork by Braun Research; sponsored and funded by The Washington Post and George Mason University's Schar School. The topline notes 'significantly higher cooperation rates among registered Republicans than Democrats and additional signs of nonresponse error'. Governor Q5 (two candidates named): Holscher 51, Masterson 45, other 1, would not vote 2, no opinion 1. Not in RCP's governor feed (built Oct 7, CNN row Oct 29) as of Oct 30 12:34 UTC; RCP averages the same poll for the Senate."
    }
   ]
  },

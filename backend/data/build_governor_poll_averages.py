@@ -64,11 +64,14 @@ OLD_POLL_WEIGHT = 0.5
 # The margin is the raw D − independent margin (three-way, like the Senate's
 # Montana), on polls only.
 INDEPENDENT_OPPONENT = {"RI": "Block"}
-# Polls RCP doesn't list at all, counted in its average anyway (user decision,
-# Oct 29: MSU's Michigan Election Survey, Oct 8-23). Keyed by (state, pollster
-# as compiled, fieldwork end). False: RCP's averaged set as published.
+# Polls RCP doesn't list at all, counted in its average anyway (user decisions:
+# Oct 29, MSU's Michigan Election Survey, Oct 8-23; Oct 30, the Washington
+# Post-Schar School Kansas poll, Oct 22-26, which RCP averages for the Senate
+# but not yet for governor). Keyed by (state, pollster as compiled, fieldwork
+# end). False: RCP's averaged set as published.
 COUNT_ADDED_TO_RCP = True
-ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight", date(2026, 10, 23))}
+ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight", date(2026, 10, 23)),
+                ("KS", "Washington Post-Schar School", date(2026, 10, 26))}
 
 DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "gov_polls_2026"
