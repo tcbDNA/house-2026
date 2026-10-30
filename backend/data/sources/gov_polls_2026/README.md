@@ -208,3 +208,7 @@ No other new governor poll was found. Polls on Wikipedia not in RCP's averages w
 ### Washington Post-Schar School, Kansas (Oct 30, from the user's link)
 
 Files in `../senate_polls_2026/recent/` (`wapo_schar_kansas_2026-10-30.html`, `wapo_schar_kansas_topline_2026-10-30.pdf`; see that README). Oct 22-26, 801 LV; Q5 governor (two candidates named): Holscher 51, Masterson 45, other 1, would not vote 2, no opinion 1. RCP's governor feed (re-downloaded 12:34 UTC, unchanged) does not list it, though RCP averages the same poll for the Senate. Counted in RCP's Kansas governor average anyway (`ADDED_TO_RCP` in `build_governor_poll_averages.py`; the user linked the poll and asked not to rely only on RCP): Masterson +5.98 -> +3.90 two-party; projection R+5.4 -> R+3.8, P(Holscher) 0.177 -> 0.260; P(Democratic majority of governorships) 0.714 -> 0.720.
+
+### McLaughlin & Associates excluded (user decision, Oct 30)
+
+McLaughlin & Associates is now an excluded pollster, like ActiVote, Rasmussen, Wedgewood and Median Strategies (`EXCLUDED_POLLSTERS` in `build_governor_poll_averages.py` and `build_senate_poll_averages.py`). Its only poll here, California (Oct 17-20, for the California Post), was never averaged (California follows RCP's average, which doesn't include it); it is now marked `excluded_pollster: true`. No average changed.

@@ -1106,8 +1106,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": false,
-    "excluded_pollster": false,
-    "source": "votehub_governor_all.json"
+    "excluded_pollster": true,
+    "source": "votehub_governor_all.json",
+    "note": "McLaughlin & Associates is an excluded pollster (user decision, Oct 30): never averaged."
    },
    {
     "pollster": "Public Policy Institute of California",

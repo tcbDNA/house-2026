@@ -49,7 +49,7 @@ POLLS = SRC / "polls_backtest"
 TREND_WEIGHT = 0.5
 YEARS = (2018, 2022)
 PREV = {2018: 2016, 2022: 2020}
-EXCLUDED = ("rasmussen", "activote", "wedgewood", "median strategies")
+EXCLUDED = ("rasmussen", "activote", "wedgewood", "median strategies", "mclaughlin")
 
 
 def pres_by_year() -> tuple[dict, dict, dict]:
