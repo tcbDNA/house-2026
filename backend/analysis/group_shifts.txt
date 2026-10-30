@@ -1,29 +1,29 @@
 settings: white share 0.7400; 2024 baseline catalist; subgroup-n weights; pollster-matched shifts on
-12 polls: Tufts/YouGov (2026-10-27, LV, n=499), Economist/YouGov (2026-10-26, RV, n=1430), Cygnal (2026-10-24, LV, n=1500), CBS/YouGov (2026-10-23, LV, n=1749), The Argument/Verasight (2026-10-23, LV, n=1501), Marist (2026-10-20, LV, n=1289), Bedrock Research (2026-10-20, RV, n=1279), NYT/Siena (2026-10-19, LV, n=3494), Echelon Insights (2026-10-19, LV, n=1010), Fox News (2026-10-12, RV, n=1202), Pew Research Center (2026-10-04, RV, n=3917), Emerson College (2026-09-22, LV, n=1000)
+13 polls: Tufts/YouGov (2026-10-27, LV, n=499), Economist/YouGov (2026-10-26, RV, n=1430), Cygnal (2026-10-24, LV, n=1500), CBS/YouGov (2026-10-23, LV, n=1749), The Argument/Verasight (2026-10-23, LV, n=1501), Marist (2026-10-20, LV, n=1289), Bedrock Research (2026-10-20, RV, n=1279), NYT/Siena (2026-10-19, LV, n=3494), Echelon Insights (2026-10-19, LV, n=1010), Fox News (2026-10-12, RV, n=1202), Pew Research Center (2026-10-04, RV, n=3917), UMass Lowell/YouGov (2026-10-04, LV, n=1000), Emerson College (2026-09-22, LV, n=1000)
 2026 subgroup n derived from published MOEs, n × (MOE_total/MOE_group)²: Fox News black 104, hispanic 117, white_nh 835
-2026 subgroup n estimated as total n × electorate share: Pew Research Center asian 154, black 403, hispanic 337, white_college 1279, white_nh 2899, white_non_college 1620; Cygnal black 154, hispanic 129, white_nh 1110; The Argument/Verasight black 155, hispanic 129, white_nh 1111
+2026 subgroup n estimated as total n × electorate share: Pew Research Center asian 154, black 403, hispanic 337, white_college 1279, white_nh 2899, white_non_college 1620; Cygnal black 154, hispanic 129, white_nh 1110; The Argument/Verasight black 155, hispanic 129, white_nh 1111; UMass Lowell/YouGov black 103, hispanic 86, white_nh 740
 2024 subgroup n derived from published MOEs, n × (MOE_total/MOE_group)²: Pew Research Center asian 297, black 631, hispanic 559, white_college 1121, white_nh 2523, white_non_college 1512; Fox News black 111, hispanic 156, white_nh 816
 2024 subgroup n estimated as total n × electorate share: Cygnal black 155, hispanic 130, white_nh 1115
 
 Current method (S): 2026 poll average − 2024 baseline
 group      polls  share  avg margin    2024   shift
-white_nh      12  0.740       R+4.7  R+15.2  +10.56
-black         11  0.103      D+74.7  D+70.8   +3.90
-hispanic      11  0.086      D+30.8   D+8.5  +22.35
+white_nh      13  0.740       R+4.9  R+15.2  +10.30
+black         12  0.103      D+74.8  D+70.8   +3.95
+hispanic      12  0.086      D+31.9   D+8.5  +23.44
 asian          3  0.039      D+42.9  D+21.4  +21.53
-other          0  0.032           -   D+7.1  +11.34 (imputed: average shift)
-S = share-weighted shift since 2024: +11.34
+other          0  0.032           -   D+7.1  +11.25 (imputed: average shift)
+S = share-weighted shift since 2024: +11.25
 
 Pollster-matched pattern: r = (2026 group − 2024 group) − (2026 topline − 2024 topline),
 combined with inverse-variance weights (1/SE_r², SE_r from both years at deff 1.5); shift = S + (r_avg − c).
 If leaving out one pollster moves r_avg by more than 1.5 pts, the weighted median is used.
 group              old shift new shift   r_avg    SE    mean  median max LOO pooled n_eff  method
-white_nh              +10.56     +9.18   -2.47  1.69   -2.47   -3.01    0.51         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research, Tufts/YouGov, The Argument/Verasight]
-black                  +3.90    +14.63   +2.98  2.79   -0.23   +2.98    1.50          879  weighted median [FLAGGED]  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight]
-hispanic              +22.35    +21.31   +9.66  4.13   +7.01   +9.66    2.57          821  weighted median [FLAGGED]  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight]
+white_nh              +10.30     +9.09   -2.47  1.69   -2.47   -3.01    0.51         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research, Tufts/YouGov, The Argument/Verasight, UMass Lowell/YouGov]
+black                  +3.95    +14.54   +2.98  2.79   -0.23   +2.98    1.50          879  weighted median [FLAGGED]  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight, UMass Lowell/YouGov]
+hispanic              +23.44    +21.22   +9.66  4.13   +7.01   +9.66    2.57          821  weighted median [FLAGGED]  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight, UMass Lowell/YouGov]
 asian                 +21.53    +21.53  +11.83  9.74   +8.95  +11.83   15.92          124  weighted median [FLAGGED]  [kept current method]  [no 2024 pair: NYT/Siena]
-white_college         +17.11     +8.19   -4.47  3.30   -3.58   -4.47    2.09         1346  weighted median [FLAGGED]  [no 2024 pair: Marist, Tufts/YouGov]
-white_non_college      +4.54     +9.97   -2.69  2.91   -2.69   -3.32    1.26         1647  weighted mean  [no 2024 pair: Marist, Tufts/YouGov]
+white_college         +17.11     +8.09   -4.47  3.30   -3.58   -4.47    2.09         1346  weighted median [FLAGGED]  [no 2024 pair: Marist, Tufts/YouGov]
+white_non_college      +4.54     +9.88   -2.69  2.91   -2.69   -3.32    1.26         1647  weighted mean  [no 2024 pair: Marist, Tufts/YouGov]
 
 Per pollster: r (SE_r, n_eff) | r_avg with that pollster left out
   white_nh:
@@ -64,34 +64,34 @@ Per pollster: r (SE_r, n_eff) | r_avg with that pollster left out
     NYT/Siena              -3.3 ( 5.4,   473)  | -2.43 (+0.26)
     CBS/YouGov             +0.9 ( 6.0,   392)  | -3.78 (-1.10)
     Pew Research Center    -4.1 ( 4.2,   782)  | -1.42 (+1.26)
-other                 +11.34    +11.34       -            -  (keeps S)
+other                 +11.25    +11.25       -            -  (keeps S)
 c (race frame) = -0.31; c (race × edu, white cells) = -1.31
-race × edu non-white cells (current rule: 2024 + non-white race groups' average shift): nonwhite_college +17.48, nonwhite_non_college +17.48
+race × edu non-white cells (current rule: 2024 + non-white race groups' average shift): nonwhite_college +17.40, nonwhite_non_college +17.40
 
-Generic ballot = 2024 result R+1.5 + shift: D+9.8  (unrounded +9.84)
-  equal-weight-per-pollster version:   D+9.9
+Generic ballot = 2024 result R+1.5 + shift: D+9.8  (unrounded +9.75)
+  equal-weight-per-pollster version:   D+9.8
   same polls' topline average (two-way): D+9.2
 
 Default scenario (served by /api/defaults):
-  uniform wave -1.14 (2024 -1.5 + other +0.36); race sliders carry +10.98; total D+9.8 (+9.84)
-  race sliders: {'white_nh': -6.06, 'black': 85.43, 'hispanic': 29.77, 'asian': 42.91}
-  race x edu sliders: {'white_college': 10.09, 'white_non_college': -17.31, 'nonwhite_college': 54.3, 'nonwhite_non_college': 49.33}
+  uniform wave -1.14 (2024 -1.5 + other +0.36); race sliders carry +10.89; total D+9.8 (+9.75)
+  race sliders: {'white_nh': -6.15, 'black': 85.34, 'hispanic': 29.68, 'asian': 42.91}
+  race x edu sliders: {'white_college': 9.99, 'white_non_college': -17.4, 'nonwhite_college': 54.22, 'nonwhite_non_college': 49.25}
 === Pew validated baseline ===
 Current method (S): 2026 poll average − 2024 baseline
 group      polls  share  avg margin    2024   shift
-white_nh      12  0.740       R+4.7  R+12.2   +7.56
-black         11  0.103      D+74.7  D+69.4   +5.31
-hispanic      11  0.086      D+30.8   D+3.0  +27.78
+white_nh      13  0.740       R+4.9  R+12.2   +7.31
+black         12  0.103      D+74.8  D+69.4   +5.37
+hispanic      12  0.086      D+31.9   D+3.0  +28.87
 asian          3  0.039      D+42.9  D+17.5  +25.38
-other          0  0.032           -   D+7.1   +9.84 (imputed: average shift)
-S = share-weighted shift since 2024: +9.84
-Generic ballot = 2024 result R+1.5 + shift: D+8.3  (unrounded +8.34)
+other          0  0.032           -   D+7.1   +9.75 (imputed: average shift)
+S = share-weighted shift since 2024: +9.75
+Generic ballot = 2024 result R+1.5 + shift: D+8.3  (unrounded +8.25)
 === Square-root weights, no median rule (previous method) ===
 group              old shift new shift   r_avg    SE    mean  median max LOO pooled n_eff  method
-white_nh              +10.56     +9.78   -2.31  1.69   -2.31   -3.01    0.63         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research, Tufts/YouGov, The Argument/Verasight]
-black                  +3.90    +12.40   +0.31  2.79   +0.31   +2.98    2.29          879  weighted mean  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight]
-hispanic              +22.35    +18.88   +6.79  4.13   +6.79   +9.66    2.70          821  weighted mean  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight]
+white_nh              +10.30     +9.68   -2.31  1.69   -2.31   -3.01    0.63         5196  weighted mean  [no 2024 pair: Marist, Bedrock Research, Tufts/YouGov, The Argument/Verasight, UMass Lowell/YouGov]
+black                  +3.95    +12.30   +0.31  2.79   +0.31   +2.98    2.29          879  weighted mean  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight, UMass Lowell/YouGov]
+hispanic              +23.44    +18.79   +6.79  4.13   +6.79   +9.66    2.70          821  weighted mean  [no 2024 pair: Bedrock Research, Tufts/YouGov, The Argument/Verasight, UMass Lowell/YouGov]
 asian                 +21.53    +21.53   +5.79  9.74   +5.79  +11.83   12.77          124  weighted mean  [kept current method]  [no 2024 pair: NYT/Siena]
-white_college         +17.11     +9.40   -3.08  3.30   -3.08   -4.47    2.67         1346  weighted mean  [no 2024 pair: Marist, Tufts/YouGov]
-white_non_college      +4.54    +10.07   -2.41  2.91   -2.41   -3.32    1.33         1647  weighted mean  [no 2024 pair: Marist, Tufts/YouGov]
+white_college         +17.11     +9.31   -3.08  3.30   -3.08   -4.47    2.67         1346  weighted mean  [no 2024 pair: Marist, Tufts/YouGov]
+white_non_college      +4.54     +9.98   -2.41  2.91   -2.41   -3.32    1.33         1647  weighted mean  [no 2024 pair: Marist, Tufts/YouGov]
 
