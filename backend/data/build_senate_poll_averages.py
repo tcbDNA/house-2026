@@ -19,6 +19,11 @@ Rules (user decisions, Oct 2026):
     Insights' Maine poll; COUNT_RCP_PENDING = False turns it off), and so can
     a poll RCP doesn't list at all (ADDED_TO_RCP; user decision Oct 29 for
     MSU's Michigan survey; COUNT_ADDED_TO_RCP = False turns it off).
+  * Optionally (COUNT_RCP_LEFT_OUT; user decision Oct 30 to add the setting),
+    every poll RCP leaves out of an average it publishes: the latest poll by
+    each pollster not in RCP's averaged set, or a newer poll by one that is,
+    if it started on or after the start of RCP's averaging window and passes
+    the rules above. Pollsters are matched through FIRM_ALIASES.
   * If a newer poll has come out since RCP last updated the average, or RCP
     publishes no average, recompute it from the most recent poll by each
     pollster whose fieldwork ended in the last three weeks (on or after
@@ -90,6 +95,45 @@ RCP_PENDING = {("ME", "Echelon Insights", "10/16 - 10/23")}
 COUNT_ADDED_TO_RCP = True
 ADDED_TO_RCP = {("MI", "Michigan State Univ. (Political Science)/Verasight", date(2026, 10, 23)),
                 ("TX", "A2 Insights", date(2026, 10, 27))}
+
+# Count the polls RCP leaves out of the averages it publishes (setting added on
+# the user's request, Oct 30: "don't just rely on RCP -- they sometimes exclude
+# pollsters for no reason"). In a race on RCP's average, add the latest poll
+# by each pollster that isn't in RCP's averaged set, and replace a pollster's
+# averaged poll with its newer one, when the poll started on or after the
+# start of RCP's averaging window and passes the rules above (excluded
+# pollsters, partisan sponsors, NOT_COUNTED). False: RCP's averaged set as
+# published, plus RCP_PENDING and ADDED_TO_RCP.
+COUNT_RCP_LEFT_OUT = False
+# Pollster identity across RCP's and the compiled polls' names (first match
+# wins; a sponsor's name counts too). Anything else: the first word.
+FIRM_ALIASES = [
+    (r"siena|ny ?times|new york times|\bnyt\b", "siena"), (r"\bcnn\b|ssrs", "cnn"),
+    (r"\bfox\b|beacon research/shaw|shaw & co", "fox"), (r"cook political|new river", "cook"),
+    (r"tpor|slingshot|texas public opinion", "tpor"), (r"texas southern|\btsu\b", "tsu"),
+    (r"univision", "univision"), (r"bowling green|bgsu", "bgsu"),
+    (r"michigan st(?:ate|\.)?.*(?:dps|political science)", "msu-polisci"), (r"michigan st(?:ate|\.)?|ippsr", "msu-ippsr"),
+    (r"houston|hobby school", "uh"), (r"glengariff|detroit news", "glengariff"), (r"mitchell", "mitchell"),
+    (r"\bunh\b|university of new hampshire", "unh"), (r"st\.? anselm|saint anselm", "stanselm"),
+    (r"\bppic\b|public policy institute of california", "ppic"),
+    (r"berkeley igs|governmental studies|la times|los angeles times", "igs"), (r"citrin|politico", "citrin"),
+    (r"surveyusa", "surveyusa"), (r"suffolk", "suffolk"), (r"umass lowell|massachusetts lowell", "umasslowell"),
+    (r"amherst|university of massachusetts department", "umassamherst"),
+    (r"massinc|\bcwb\b|commonwealth beacon", "massinc"), (r"bravo|pennlive", "bravo"), (r"franklin|f&m", "fandm"),
+    (r"great ?blue|ct insider|wfsb|sacred heart", "greatblue"), (r"wesleyan", "wesleyan"),
+    (r"highground", "highground"), (r"arizona state|\basu\b|bsp research", "asu"), (r"fabrizio", "fabrizio"),
+    (r"embold|pell center", "embold"), (r"emerson", "emerson"), (r"mason-dixon|mason dixon", "masondixon"),
+    (r"insider ?advantage", "insideradvantage"), (r"co/efficient|coefficient", "coefficient"),
+    (r"public policy polling|\bppp\b", "ppp"), (r"data for progress", "dfp"), (r"alaska survey research", "asr"),
+    (r"national public affairs", "npa"), (r"global strategy group", "gsg"), (r"washington post", "wapo"),
+    (r"high point|\bhpu\b", "hpu"), (r"east carolina|\becu\b", "ecu"), (r"citadel", "citadel"),
+    (r"harper|carolina journal", "harper"), (r"north florida|\bunf\b", "unf"), (r"st\.? pete", "stpete"),
+    (r"marquette", "marquette"), (r"league of american workers|\blaw\b|wick", "wick"), (r"votehub", "votehub"),
+    (r"quinnipiac", "quinnipiac"), (r"marist", "marist"), (r"echelon", "echelon"), (r"trafalgar", "trafalgar"),
+    (r"quantus", "quantus"), (r"cygnal", "cygnal"), (r"\bcbs\b", "cbs"), (r"\belon\b", "elon"),
+    (r"morning consult", "morningconsult"), (r"albuquerque journal|research & polling", "rpi"),
+    (r"kob-tv|kob\b", "surveyusa"),
+]
 
 INDEPENDENT = {"NE", "MT", "ID", "SD"}
 THREE_WAY = {"MT"}
@@ -165,6 +209,80 @@ def rcp_end(dates: str, year: int = 2026) -> date:
     return date(year, int(m), int(dd))
 
 
+def rcp_start(dates: str, year: int = 2026) -> date:
+    """RCP's 'm/d - m/d' -> start date."""
+    m, dd = dates.split("-")[0].strip().split("/")
+    return date(year, int(m), int(dd))
+
+
+def firm_key(name: str, sponsor: str | None = None) -> str:
+    """One key per polling operation, matched across RCP's and the compiled names."""
+    s = html.unescape(f"{name} {sponsor or ''}").lower().replace("*", "")
+    for pat, key in FIRM_ALIASES:
+        if re.search(pat, s):
+            return key
+    # "<partner>/YouGov" is the partner's poll; plain "YouGov" is YouGov's own
+    return next((w for w in re.findall(r"[a-z0-9]+", s) if w not in ("a", "an", "the", "yougov")), "yougov")
+
+
+STATE_NAMES = {"AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California",
+               "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "FL": "Florida", "GA": "Georgia",
+               "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky",
+               "LA": "Louisiana", "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan",
+               "MN": "Minnesota", "MS": "Mississippi", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada",
+               "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York",
+               "NC": "North Carolina", "OH": "Ohio", "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania",
+               "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas",
+               "VT": "Vermont", "VA": "Virginia", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming"}
+
+
+def votehub_internal(path: Path) -> dict[str, list[tuple[str, date, str]]]:
+    """state -> (firm, end, why) for VoteHub rows that are campaign or party
+    internals, or carry a sponsor with a partisan flag. COUNT_RCP_LEFT_OUT
+    leaves these out even where the compiled poll records no sponsor."""
+    names = {v: k for k, v in STATE_NAMES.items()}
+    out = {}
+    for x in json.loads(path.read_text())["items"]:
+        st = names.get((x.get("subject") or "").replace("2026 ", "", 1))
+        sponsors = ", ".join((s.get("name") if isinstance(s, dict) else str(s)) for s in (x.get("sponsors") or []))
+        why = ("internal" if x.get("internal") else "") or (f"sponsor {sponsors}" if sponsors and x.get("partisan") else "")
+        if st and why and x.get("end_date"):
+            out.setdefault(st, []).append((firm_key(x["pollster"], sponsors), d(x["end_date"]),
+                                           f"VoteHub: {why}, {x.get('partisan') or 'no'} partisan flag"))
+    return out
+
+
+def rcp_left_out(st: str, rcp: dict, kept: list[dict], usable: list[dict], added: set,
+                 eligible=lambda p: True, internal=()) -> tuple[list[dict], list[dict]]:
+    """COUNT_RCP_LEFT_OUT: (averaged polls to replace, left-out polls to add).
+    A compiled poll is RCP's own averaged poll when the firm matches and the end
+    dates are within 2 days; it is left out when its firm has no averaged poll,
+    or only older ones."""
+    by_firm = {}
+    for a in kept:
+        by_firm.setdefault(firm_key(a["pollster"]), []).append(a)
+    best = {}
+    for p in usable:
+        if p.get("start") is None or p["start"] < rcp["window_start"] or not eligible(p):
+            continue
+        if (st, p["pollster"], p["end"]) in added:
+            continue
+        k = firm_key(p["pollster"], p.get("sponsor"))
+        if any(k == f and abs((p["end"] - e).days) <= 2 for f, e, _ in internal):
+            continue                      # a campaign / party internal per VoteHub
+        same = by_firm.get(k, [])
+        if any(abs((p["end"] - a["end"]).days) <= 2 for a in same):
+            continue                      # RCP averages this poll
+        if same and p["end"] <= max(a["end"] for a in same):
+            continue                      # older than the firm's averaged poll
+        if k not in best or p["end"] > best[k]["end"]:
+            best[k] = p
+    replace = [a for k in best for a in by_firm.get(k, [])]
+    add = [{**p, "dates": f"{p['start']:%-m/%-d} - {p['end']:%-m/%-d}", "pending": False, "label": label(p)}
+           for p in sorted(best.values(), key=lambda p: p["end"], reverse=True)]
+    return replace, add
+
+
 def load_rcp(st: str) -> dict | None:
     rel = RCP_FEEDS.get(st)
     if not rel:
@@ -188,6 +306,7 @@ def load_rcp(st: str) -> dict | None:
                  "pending": p["type"] != "poll_rcp_avg"}
                 for p in rows if p["type"] == "poll_rcp_avg" or (p["type"] == "poll" and pending(p))]
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0]),
+            "window_start": rcp_start(avg[0]["date"]),
             "averaged": averaged, "local_file": f"sources/senate_polls_2026/{rel}",
             "url": f"https://www.realclearpolling.com/polls/{mi['poll_contentful_fullpath']}/{mi['poll_contentful_slug']}"}
 
@@ -201,7 +320,7 @@ def compiled_polls() -> dict[str, list[dict]]:
             h2h = p.get("h2h_anti_r") is not None and p.get("h2h_r") is not None
             out[st].append({
                 "pollster": html.unescape(p["pollster"]), "sponsor": p.get("sponsor"), "partisan": p.get("partisan"),
-                "end": d(p["end"]), "released": d(p.get("released")),
+                "start": d(p.get("start")), "end": d(p["end"]), "released": d(p.get("released")),
                 "anti_r": p["h2h_anti_r"] if h2h else p["anti_r"], "r": p["h2h_r"] if h2h else p["r"],
                 "question": "head-to-head" if h2h else "full ballot", "source": p.get("source", "")})
     return out
@@ -225,7 +344,8 @@ def other_polls(st: str) -> list[dict]:
         r = [x["pct"] for x in p["answers"] if rep.lower() in x["choice"].lower()]
         if a and r:
             out.append({"pollster": p["pollster"], "sponsor": ", ".join(p.get("sponsors") or []) or None,
-                        "partisan": p.get("partisan"), "end": d(p["end_date"]), "released": d(p["created_at"]),
+                        "partisan": p.get("partisan"), "start": d(p.get("start_date")), "end": d(p["end_date"]),
+                        "released": d(p["created_at"]),
                         "anti_r": a[0], "r": r[0], "question": "full ballot", "source": "VoteHub"})
     pw = SRC / st.lower() / f"poliwave_{st.lower()}_sen.html"
     seen = set()
@@ -244,7 +364,8 @@ def other_polls(st: str) -> list[dict]:
                   (re.findall(r"[a-z]+", q["pollster"].lower())[0] == first
                    or (abs(q["anti_r"] - a[0]) <= 2 and abs(q["r"] - r[0]) <= 2)) for q in out)
         if not dup:
-            out.append({"pollster": m["pollster"], "sponsor": None, "partisan": None, "end": end, "released": None,
+            out.append({"pollster": m["pollster"], "sponsor": None, "partisan": None, "start": d(m["start"]),
+                        "end": end, "released": None,
                         "anti_r": a[0], "r": r[0], "question": "full ballot", "source": "Poliwave"})
     return out
 
@@ -259,6 +380,8 @@ def label(p: dict) -> str:
 
 
 def build():
+    global INTERNAL
+    INTERNAL = votehub_internal(SRC / "recent" / "votehub_senate_all.json") if COUNT_RCP_LEFT_OUT else {}
     comp = compiled_polls()
     rows, report = [], []
     report.append(f"Senate polling averages, built from sources retrieved {RETRIEVED}; "
@@ -288,13 +411,18 @@ def build():
                       "anti_r": p["anti_r"], "r": p["r"], "pending": False}
                      for p in usable if COUNT_ADDED_TO_RCP and (st, p["pollster"], p["end"]) in ADDED_TO_RCP]
             kept = kept + extra
+            replaced, left_out = (rcp_left_out(st, rcp, kept, usable, ADDED_TO_RCP if COUNT_ADDED_TO_RCP else set(),
+                                               internal=INTERNAL.get(st, ()))
+                                  if COUNT_RCP_LEFT_OUT else ([], []))
+            kept = [a for a in kept if a not in replaced] + left_out
             anti = sum(a["anti_r"] for a in kept) / len(kept)
             rep = sum(a["r"] for a in kept) / len(kept)
-            if not ras and not added and not ps and not extra:   # nothing changed: must reproduce RCP's published average
+            if not ras and not added and not ps and not extra and not left_out:   # nothing changed: must reproduce RCP's published average
                 assert abs(round(anti, 1) - rcp["published"][0]) < 0.051 and \
                        abs(round(rep, 1) - rcp["published"][1]) < 0.051, (st, anti, rep, rcp["published"])
-            used = [f"{a['pollster']} {a['dates']}" + (" (listed by RCP, counted ahead of RCP)" if a["pending"] else
-                                                       " (not listed by RCP, counted by user decision)" if a in extra else "")
+            used = [f"{a.get('label', a['pollster'])} {a['dates']}" + (" (listed by RCP, counted ahead of RCP)" if a["pending"] else
+                                                       " (not listed by RCP, counted by user decision)" if a in extra else
+                                                       f" (left out by RCP, counted; {a['question']}, {a['anti_r']:g}/{a['r']:g})" if a in left_out else "")
                     for a in kept]
             plus = "; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in added) + \
                 " (listed by RCP, not yet averaged)" if added else ""
@@ -302,6 +430,9 @@ def build():
                      if ps else "")
             plus += ("; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in extra) +
                      " (not listed by RCP, counted by user decision)" if extra else "")
+            if left_out:
+                plus += ("; plus polls RCP left out: " + ", ".join(f"{a['label']} {a['dates']}" for a in left_out) +
+                         ("; replacing " + ", ".join(f"{a['pollster']} {a['dates']}" for a in replaced) if replaced else ""))
             method = ("RCP average, Rasmussen removed" if ras else "RCP average") + minus + plus
             src = "RealClearPolling" + (", Rasmussen removed" if ras else "") + minus + plus
             as_of, url, local = rcp["built"].isoformat(), rcp["url"], rcp["local_file"]

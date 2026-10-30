@@ -47,7 +47,8 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 from build_senate_poll_averages import (
-    WINDOW_START, d, label, partisan_sponsor, pollster_key, rcp_end, same_poll,
+    WINDOW_START, d, label, partisan_sponsor, pollster_key, rcp_end, rcp_left_out, rcp_start, same_poll,
+    votehub_internal,
 )
 
 # Sparse polling (user decision, Oct 28): a race with fewer than
@@ -72,6 +73,12 @@ INDEPENDENT_OPPONENT = {"RI": "Block"}
 COUNT_ADDED_TO_RCP = True
 ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight", date(2026, 10, 23)),
                 ("KS", "Washington Post-Schar School", date(2026, 10, 26))}
+
+# Count the polls RCP leaves out of the averages it publishes (same rule as the
+# Senate's COUNT_RCP_LEFT_OUT; setting added on the user's request, Oct 30).
+# Alaska's RCP average is final-round, so only polls with a final round count
+# there. False: RCP's averaged set as published, plus ADDED_TO_RCP.
+COUNT_RCP_LEFT_OUT = False
 
 DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "gov_polls_2026"
@@ -115,7 +122,7 @@ def load_rcp(st: str, path: Path, d_name: str | None, r_name: str | None) -> dic
                  "end": rcp_end(p["date"]), "anti_r": shares(p)[0], "r": shares(p)[1], "others": shares(p)[2]}
                 for p in rows if p["type"] == "poll_rcp_avg"]
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0])[:2],
-            "averaged": averaged, "local_file": f"sources/gov_polls_2026/{path.name}",
+            "window_start": rcp_start(avg[0]["date"]), "averaged": averaged, "local_file": f"sources/gov_polls_2026/{path.name}",
             "url": f"https://www.realclearpolling.com/polls/{mi['poll_contentful_fullpath']}/{mi['poll_contentful_slug']}"}
 
 
@@ -137,7 +144,7 @@ def poll_rows(race: dict, st: str) -> list[dict]:
             others = others - (ind[0] or 0) + (rep or 0) if ind else others
             republican, rep = rep, (ind[0] if ind else None)
         out.append({"pollster": p["pollster"], "sponsor": p.get("sponsor"), "partisan": p.get("partisan"),
-                    "end": d(p["end"]), "released": d(p.get("released")), "anti_r": anti, "r": rep,
+                    "start": d(p.get("start")), "end": d(p["end"]), "released": d(p.get("released")), "anti_r": anti, "r": rep,
                     "others": others, "republican": republican,
                     "question": "ranked-choice final round" if rcv else "head-to-head" if h2h else "full ballot",
                     "rcv": rcv, "source": p.get("source", "")})
@@ -147,6 +154,7 @@ def poll_rows(race: dict, st: str) -> list[dict]:
 def build() -> str:
     comp = compiled()
     feeds = rcp_feeds()
+    internal = votehub_internal(SRC / "votehub_governor_all.json") if COUNT_RCP_LEFT_OUT else {}
     rows, report = [], []
     report.append(f"Governor polling averages; recompute window: polls ending on or after {WINDOW_START}.\n")
     for st in sorted(comp):
@@ -174,15 +182,25 @@ def build() -> str:
                       "anti_r": p["anti_r"], "r": p["r"], "others": p["others"]}
                      for p in usable if COUNT_ADDED_TO_RCP and (st, p["pollster"], p["end"]) in ADDED_TO_RCP]
             kept = kept + extra
+            replaced, left_out = (rcp_left_out(st, rcp, kept, usable, ADDED_TO_RCP if COUNT_ADDED_TO_RCP else set(),
+                                               eligible=(lambda p: p["rcv"]) if st == "AK" else (lambda p: True),
+                                               internal=internal.get(st, ()))
+                                  if COUNT_RCP_LEFT_OUT else ([], []))
+            kept = [a for a in kept if a not in replaced] + left_out
             anti = sum(a["anti_r"] for a in kept) / len(kept)
             rep = sum(a["r"] for a in kept) / len(kept)
             third = sum(a["others"] for a in kept) / len(kept)
             reps = []   # RCP's two-way feeds carry no Republican share for a race against an independent
-            used = [f"{a['pollster']} {a['dates']}" for a in kept]
+            used = [f"{a.get('label', a['pollster'])} {a['dates']}" +
+                    (f" (left out by RCP, counted; {a['question']}, {a['anti_r']:g}/{a['r']:g})" if a in left_out else "")
+                    for a in kept]
             method = "RCP average" + ("; removed: " + ", ".join(f"{a['pollster']} {a['dates']}" for a in removed)
                                       if removed else "") + \
                 ("; plus " + ", ".join(f"{a['pollster']} {a['dates']}" for a in extra) +
-                 " (not listed by RCP, counted by user decision)" if extra else "")
+                 " (not listed by RCP, counted by user decision)" if extra else "") + \
+                ("; plus polls RCP left out: " + ", ".join(f"{a['label']} {a['dates']}" for a in left_out) +
+                 ("; replacing " + ", ".join(f"{a['pollster']} {a['dates']}" for a in replaced) if replaced else "")
+                 if left_out else "")
             as_of, url, local = rcp["built"].isoformat(), rcp["url"], rcp["local_file"]
             published = round(rcp["published"][0] - rcp["published"][1], 1) \
                 if None not in rcp["published"] else ""
