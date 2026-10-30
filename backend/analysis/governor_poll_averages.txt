@@ -20,7 +20,7 @@ AZ: RCP average; plus polls RCP left out: GrayHouse 10/18 - 10/20, Equis Researc
     - GrayHouse 10/18 - 10/20 (left out by RCP, counted; full ballot, 51/45)
     - Equis Research 10/1 - 10/9 (left out by RCP, counted; full ballot, 49/43)
     - Wick 10/3 - 10/6 (left out by RCP, counted; full ballot, 49/43)
-    left out: GQR for Katie Hobbs (D-flagged), ending 2026-10-05 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Kreate Strategies (KStrat) for American Encore (R-flagged), ending 2026-10-27 (partisan sponsor)
+    left out: GQR for Katie Hobbs (D-flagged), ending 2026-10-05 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Kreate Strategies (KStrat) for American Encore (R-flagged), ending 2026-10-27 (partisan sponsor); Grayhouse (R-flagged), ending 2026-10-08 (campaign/party internal per VoteHub)
 CA: RCP average; plus polls RCP left out: M3 Strategies 10/21 - 10/23, IVC Media for Independent Voter Project 9/23 - 10/2; 7 poll(s) (n_eff 7); anti-R 56.43 / R 34.86 -> margin +21.57, blend margin +23.63, third parties 0.0 (RCP published +23.6)
     - PPIC 10/16 - 10/22
     - KGTV-TV/SurveyUSA 10/19 - 10/24
@@ -60,9 +60,9 @@ IA: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 -
     - Emerson 10/5 - 10/6
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 50/46)
     - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; full ballot, 50/45)
-ID: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 2 poll(s) (n_eff 1.5); anti-R 28.50 / R 43.00 -> margin -14.50, blend margin -20.28, third parties 6.5
-    - VoteNexus (D-flagged), ending 2026-10-22 (full ballot, 30/49)
+ID: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 0.5); anti-R 27.00 / R 37.00 -> margin -10.00, blend margin -15.62, third parties 13.0
     - Advanced Targeting Research, ending 2026-09-16 (full ballot, 27/37)
+    left out: VoteNexus for Knock Every Door PAC; Todd Achilles for Idaho (D-flagged), ending 2026-10-22 (partisan sponsor)
 IL: no RCP average and no poll ending on/after 2026-10-05 -> model only
 KS: RCP average; plus Washington Post-Schar School ending Oct 26 (not listed by RCP, counted by user decision); 6 poll(s) (n_eff 6); anti-R 45.17 / R 48.83 -> margin -3.67, blend margin -3.90, third parties 0.0 (RCP published -5.6)
     - CNN 10/20 - 10/26
@@ -71,7 +71,7 @@ KS: RCP average; plus Washington Post-Schar School ending Oct 26 (not listed by 
     - Emerson 9/15 - 9/16
     - co/efficient 9/8 - 9/10
     - Washington Post-Schar School ending Oct 26
-    left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
+    left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Global Strategy Group (D-flagged), ending 2026-10-22 (campaign/party internal per VoteHub)
 MA: RCP average; 5 poll(s) (n_eff 5); anti-R 56.20 / R 33.40 -> margin +22.80, blend margin +25.45, third parties 0.0 (RCP published +22.8)
     - Boston Globe/Suffolk 10/10 - 10/18
     - UMass Lowell 10/7 - 10/18
@@ -108,12 +108,11 @@ MN: recomputed: newer polls than RCP's average; 5 poll(s) (n_eff 5); anti-R 50.8
     - Mason-Dixon for StarTribune; KARE, ending 2026-10-07 (full ballot, 50/41)
     - Morning Consult, ending 2026-10-07 (full ballot, 48/39)
     left out: Victory Insights for Michele Tafoya (R), ending 2026-10-22 (partisan sponsor)
-NE: recomputed: RCP publishes no average; 4 poll(s) (n_eff 4); anti-R 42.50 / R 45.50 -> margin -3.00, blend margin -3.41, third parties 4.8
+NE: recomputed: RCP publishes no average; 3 poll(s) (n_eff 3); anti-R 41.33 / R 44.67 -> margin -3.33, blend margin -3.88, third parties 6.3
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 40/47)
     - National Public Affairs, ending 2026-10-18 (full ballot, 41/47)
     - Concord Public Opinion Partners (D-flagged), ending 2026-10-18 (full ballot, 43/40)
-    - Public Policy Polling (D-flagged), ending 2026-10-14 (full ballot, 46/48)
-    left out: Global Strategy Group for Lynne Walz (D-flagged), ending 2026-10-18 (partisan sponsor)
+    left out: Global Strategy Group for Lynne Walz (D-flagged), ending 2026-10-18 (partisan sponsor); Public Policy Polling (D-flagged), ending 2026-10-14 (campaign/party internal per VoteHub)
 NH: RCP average; removed: Rasmussen Reports 10/20 - 10/23; plus polls RCP left out: National Public Affairs 10/8 - 10/12, University of New Hampshire 9/17 - 9/21; 6 poll(s) (n_eff 6); anti-R 41.00 / R 50.00 -> margin -9.00, blend margin -9.89, third parties 0.8 (RCP published -8.8)
     - St. Anselm 10/19 - 10/20
     - UMass Lowell 10/2 - 10/19

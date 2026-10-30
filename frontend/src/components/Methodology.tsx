@@ -230,8 +230,9 @@ export function Methodology() {
         recent poll by each pollster in the last three weeks, YouGov Blue counted
         apart from YouGov (as of Oct 29:
         Georgia and Alabama, plus
-        Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
-        Louisiana and 11 safe races have no recent poll and use the model alone.
+        Mississippi, Nebraska and Arkansas, which RCP doesn't average).
+        Louisiana, Idaho (whose only recent poll was commissioned by the Achilles
+        campaign) and 11 safe races have no countable recent poll and use the model alone.
         The blend takes Texas from the model's R+1.1 to Talarico D+1.6, Kansas from
         R+4.7 to Hamilton D+0.4 (R+0.3 with w = 0.6), Nebraska from R+4.7 to Ricketts
         +3.5 and Alaska from R+2.1 to D+0.6; P(D control) is 72.4% (62.7% on the
@@ -311,7 +312,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        23–30), with a 70.8% chance of a majority.
+        23–30), with a 70.7% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

@@ -2285,7 +2285,7 @@
    },
    {
     "pollster": "VoteNexus",
-    "sponsor": null,
+    "sponsor": "Knock Every Door PAC; Todd Achilles for Idaho",
     "partisan": "D",
     "start": "2026-10-21",
     "end": "2026-10-22",
@@ -2307,7 +2307,8 @@
     "rcv_final_r": null,
     "in_rcp_average": null,
     "excluded_pollster": false,
-    "source": "votehub_governor_all.json"
+    "source": "votehub_governor_all.json",
+    "note": "Sponsor from Poliwave's Idaho Senate page (../senate_polls_2026/id/poliwave_id_sen.html): 'Text-to-web survey of 700 likely Idaho voters, October 21-22, 2026. Commissioned by Knock Every Door PAC and Todd Achilles for Idaho.' The same survey's Senate result is flagged internal by VoteHub. Partisan sponsor: not counted (Oct 30)."
    }
   ]
  },

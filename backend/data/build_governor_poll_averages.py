@@ -47,8 +47,8 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 from build_senate_poll_averages import (
-    WINDOW_START, d, label, partisan_sponsor, pollster_key, rcp_end, rcp_left_out, rcp_start, same_poll,
-    votehub_internal,
+    LEAVE_OUT_VOTEHUB_INTERNAL, WINDOW_START, d, is_internal, label, partisan_sponsor, pollster_key, rcp_end,
+    rcp_left_out, rcp_start, same_poll, votehub_internal,
 )
 
 # Sparse polling (user decision, Oct 28): a race with fewer than
@@ -165,16 +165,21 @@ def poll_rows(race: dict, st: str) -> list[dict]:
 def build() -> str:
     comp = compiled()
     feeds = rcp_feeds()
-    internal = votehub_internal(SRC / "votehub_governor_all.json") if COUNT_RCP_LEFT_OUT else {}
+    internal = (votehub_internal(SRC / "votehub_governor_all.json")
+                if COUNT_RCP_LEFT_OUT or LEAVE_OUT_VOTEHUB_INTERNAL else {})
     rows, report = [], []
     report.append(f"Governor polling averages; recompute window: polls ending on or after {WINDOW_START}.\n")
     for st in sorted(comp):
         race = comp[st]
         polls = poll_rows(race, st)
-        sponsored = [p for p in polls if partisan_sponsor(p)]
-        usable = [p for p in polls if not excluded(p["pollster"]) and not partisan_sponsor(p)
+        vh_internal = [p for p in polls if LEAVE_OUT_VOTEHUB_INTERNAL and is_internal(p, internal.get(st, ()))
+                       and not partisan_sponsor(p)]
+        sponsored = [p for p in polls if partisan_sponsor(p)] + vh_internal
+        usable = [p for p in polls if not excluded(p["pollster"]) and p not in sponsored
                   and p["anti_r"] is not None and p["r"] is not None]
-        dropped = [f"{label(p)}, ending {p['end']} (partisan sponsor)" for p in sponsored if p["end"] >= WINDOW_START]
+        dropped = [f"{label(p)}, ending {p['end']} (" + ("campaign/party internal per VoteHub" if p in vh_internal
+                                                         else "partisan sponsor") + ")"
+                   for p in sponsored if p["end"] >= WINDOW_START]
         rcp = (load_rcp(st, feeds[st], race.get("d_candidate"), race.get("r_candidate"))
                if st in feeds else None)
         rcv_polls = [p for p in usable if p["rcv"]]

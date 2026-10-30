@@ -79,6 +79,11 @@ NOT_COUNTED = {("TX", "Cor Strategies"): "Heritage Action; not counted, user dec
 # candidate, campaign, party, PAC or partisan group) are not counted, including
 # any RCP has averaged (user decision, Oct 28). False: counted like any other poll.
 LEAVE_OUT_PARTISAN_SPONSORS = True
+# Polls VoteHub marks as campaign or party internals (or with a partisan-flagged
+# sponsor) count as partisan-sponsored too, even where the compiled record
+# names no sponsor (Oct 30: the Idaho VoteNexus poll, commissioned by Knock
+# Every Door PAC and the Achilles campaign). False: the compiled sponsor only.
+LEAVE_OUT_VOTEHUB_INTERNAL = True
 # YouGov Blue counts as its own pollster rather than as YouGov (user decision,
 # Oct 28). False: one key for every YouGov poll.
 YOUGOV_BLUE_OWN_POLLSTER = True
@@ -261,6 +266,11 @@ def votehub_internal(path: Path) -> dict[str, list[tuple[str, date, str]]]:
     return out
 
 
+def is_internal(p: dict, internal) -> bool:
+    k = firm_key(p["pollster"], p.get("sponsor"))
+    return any(k == f and abs((p["end"] - e).days) <= 2 for f, e, _ in internal)
+
+
 def rcp_left_out(st: str, rcp: dict, kept: list[dict], usable: list[dict], added: set,
                  eligible=lambda p: True, internal=()) -> tuple[list[dict], list[dict]]:
     """COUNT_RCP_LEFT_OUT: (averaged polls to replace, left-out polls to add).
@@ -390,7 +400,8 @@ def label(p: dict) -> str:
 
 def build():
     global INTERNAL
-    INTERNAL = votehub_internal(SRC / "recent" / "votehub_senate_all.json") if COUNT_RCP_LEFT_OUT else {}
+    INTERNAL = (votehub_internal(SRC / "recent" / "votehub_senate_all.json")
+                if COUNT_RCP_LEFT_OUT or LEAVE_OUT_VOTEHUB_INTERNAL else {})
     comp = compiled_polls()
     rows, report = [], []
     report.append(f"Senate polling averages, built from sources retrieved {RETRIEVED}; "
@@ -398,12 +409,15 @@ def build():
     for st in RCP_FEEDS:
         polls = comp[st] if st in comp else other_polls(st)
         left_out = {**UNVERIFIED, **(NOT_COUNTED if LEAVE_OUT_NOT_COUNTED else {})}
+        internal = [p for p in polls if LEAVE_OUT_VOTEHUB_INTERNAL and is_internal(p, INTERNAL.get(st, ()))
+                    and not partisan_sponsor(p)]
         usable = [p for p in polls if not excluded(p["pollster"]) and (st, p["pollster"]) not in left_out
-                  and not partisan_sponsor(p)]
+                  and not partisan_sponsor(p) and p not in internal]
         dropped = [f"{p['pollster']} ({left_out[(st, p['pollster'])]})" for p in polls
                    if (st, p["pollster"]) in left_out]
-        sponsored = [p for p in polls if partisan_sponsor(p)]
-        dropped += [f"{label(p)}, ending {p['end']} (partisan sponsor)" for p in sponsored
+        sponsored = [p for p in polls if partisan_sponsor(p)] + internal
+        dropped += [f"{label(p)}, ending {p['end']} (" + ("campaign/party internal per VoteHub" if p in internal
+                                                          else "partisan sponsor") + ")" for p in sponsored
                     if p["end"] >= WINDOW_START and (st, p["pollster"]) not in left_out]
         rcp = load_rcp(st)
         newer = []

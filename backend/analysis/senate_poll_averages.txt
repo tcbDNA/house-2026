@@ -124,7 +124,7 @@ GA: recomputed: newer polls than RCP's average; 4 poll(s); anti-R 51.45 / R 41.9
 MT: RCP average; 2 poll(s); anti-R 29.00 / R 41.00 -> margin -12.00, blend margin -12.00 (RCP published -12.0)
     - Quantus Insights 10/15 - 10/18
     - Montana Free Press 8/27 - 9/7
-    left out: Concord Public Opinion Partners for Seth Bodnar campaign (D-flagged), ending 2026-10-08 (partisan sponsor); Concord Public Opinion Partners for Democrats for Education Reform (D-flagged), ending 2026-10-23 (partisan sponsor)
+    left out: Concord Public Opinion Partners for Seth Bodnar campaign (D-flagged), ending 2026-10-08 (partisan sponsor); Concord Public Opinion Partners for Democrats for Education Reform (D-flagged), ending 2026-10-23 (partisan sponsor); Peak Insights (R-flagged), ending 2026-10-12 (campaign/party internal per VoteHub)
 AL: recomputed: newer polls than RCP's average; 3 poll(s); anti-R 36.67 / R 51.33 -> margin -14.67, blend margin -16.67 (RCP published -21.0)
     newer than RCP's average (built 2026-10-21): Cygnal for Gray Television, Alabama Daily News ending 2026-10-17 released 2026-10-22; Chism Strategies (D) ending 2026-10-24 released n/a
     - Chism Strategies (D), ending 2026-10-24 (full ballot, 40/48)
@@ -147,6 +147,7 @@ SD: RCP average; 3 poll(s); anti-R 38.67 / R 54.33 -> margin -15.67, blend margi
     - Emerson 10/19 - 10/20
     - Quantus Insights 10/17 - 10/19
     - SDNW/Mason-Dixon 10/12 - 10/14
+    left out: Public Opinion Strategies (R), ending 2026-10-16 (campaign/party internal per VoteHub); Concord Public Opinion Partners (D), ending 2026-10-08 (campaign/party internal per VoteHub)
 MS: recomputed: RCP publishes no average; 1 poll(s); anti-R 40.00 / R 43.00 -> margin -3.00, blend margin -3.61
     - Change Research (D-flagged), ending 2026-10-22 (full ballot, 40/43)
 LA: no RCP average and no poll ending on/after 2026-10-05 -> model only
@@ -156,8 +157,7 @@ NE: recomputed: RCP publishes no average; 2 poll(s); anti-R 46.50 / R 48.50 -> m
     left out: Concord Public Opinion Partners for Education Reform Now Advocacy (D-flagged), ending 2026-10-18 (partisan sponsor); Impact Research for Dan Osborn (per VoteHub) (D-flagged), ending 2026-10-20 (partisan sponsor); GBAO for Working Class Majority PAC (D-flagged), ending 2026-10-22 (partisan sponsor)
 AR: recomputed: RCP publishes no average; 1 poll(s); anti-R 41.00 / R 50.00 -> margin -9.00, blend margin -9.89
     - Hendrix College for Talk Business & Politics, ending 2026-10-13 (full ballot, 41/50)
-ID: recomputed: RCP publishes no average; 1 poll(s); anti-R 43.00 / R 49.00 -> margin -6.00, blend margin -6.52
-    - VoteNexus (D), ending 2026-10-22 (full ballot, 43/49)
+ID: no RCP average and no poll ending on/after 2026-10-05 -> model only
 IL: no RCP average and no poll ending on/after 2026-10-05 -> model only
 KY: no RCP average and no poll ending on/after 2026-10-05 -> model only
 OK: no RCP average and no poll ending on/after 2026-10-05 -> model only
