@@ -1468,7 +1468,7 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
-    "note": "270toWin lists 1,114 RV, \u00b14.7."
+    "note": "270toWin lists 1,114 RV, ±4.7."
    },
    {
     "pollster": "Wedgewood Polls",
@@ -2116,6 +2116,24 @@
     "excluded_pollster": false,
     "source": "CBS Detroit article (cbsdetroit_mitchell_mi_2026-10-28.html); RCP; Poliwave",
     "note": "636 LV, online panels plus survey links texted to randomly selected registered voters; weighted to 2022 and 2024 results; MOE +/-3.9. El-Sayed 51, Rogers 44, undecided 3, third-party candidates 1% or less each. RCP: 'CBS News/Mitchell'."
+   },
+   {
+    "pollster": "Upswing Research",
+    "sponsor": "Demand Justice",
+    "partisan": "D",
+    "start": "2026-10-24",
+    "end": "2026-10-28",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 505,
+    "anti_r": 50,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "x_joshorton_2115882056081346742_fxtwitter.json, x_joshorton_2115883461076545615_fxtwitter.json (posts by Demand Justice's president); Poliwave",
+    "note": "'NEW SCOTUS MICHIGAN POLL for Demand Justice: [Upswing - Oct 24-28, N505, LV, MOE 4.4]'; Senate head-to-head El-Sayed 50, Rogers 45. Demand Justice is a progressive advocacy group (partisan sponsor): not counted. Not in RCP or VoteHub; Poliwave lists it as Upswing Research (D)."
    }
   ],
   "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (built Oct 28 17:42 CT, CNN row added Oct 29) averages 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls: CNN/SSRS 10/20-27 and CBS News/Mitchell 10/26-27 added; Mitchell's Oct 1 poll is now listed but not averaged. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) El-Sayed 48.0, Rogers 41.8; not in RCP's average, and it ends before the latest poll RCP averages (CNN and Mitchell, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."

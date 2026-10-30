@@ -301,3 +301,13 @@ Effects:
 RCP's Texas feed (built Oct 29 05:41 CT) is unchanged and lists only A2's June poll, so the saved copy is kept. The A2 poll is not in RCP's average and ends on Oct 27, the same day as the latest poll RCP averages (CNN 10/20-27), so it is not newer: Texas stays on RCP's average (Rasmussen removed). Recorded with `in_rcp_average: false`.
 
 User decision (Oct 29, after this check): count the A2 Insights poll in RCP's Texas average anyway (`ADDED_TO_RCP` in `build_senate_poll_averages.py`). Texas's average: 13 polls, Talarico 49.0, Paxton 46.6, two-party +2.44 -> +2.49; projection D+1.37 -> D+1.41.
+
+## Update, 2026-10-30 (manual poll check, user asked: "don't just rely on RCP")
+
+Retrieved **2026-10-30 12:04-12:20 UTC**. Every RCP Senate feed, VoteHub's Senate dump and Poliwave's 35 race pages were downloaded again and compared with the saved copies, and every race's Wikipedia page (its poll table lists polls from all sources) was parsed for polls ending Oct 15 or later and matched against the compiled polls. Pollster sites checked for releases since Oct 28: Emerson, Marist, Siena, Quinnipiac, Suffolk, co/efficient, Quantus, State Navigate, Cygnal, Data for Progress, Trafalgar, Fox News, Marquette, UNH. VoteHub had no new Senate rows (its saved copy is kept); no main RCP Senate feed changed its averaged polls. Saved: Poliwave `poliwave_{mi,tx,ia,nc}_sen.html` (pages with new rows; the others changed only in formatting) and the multi-candidate RCP feeds `rcp_ia_3way_9215.json`, `rcp_tx_3way_8985.json`, `rcp_nh_multi_9219.json`, `rcp_nc_3way_9217.json` (not used by the build).
+
+| File | URL | Notes |
+|---|---|---|
+| `x_joshorton_2115882056081346742_fxtwitter.json`, `x_joshorton_2115883461076545615_fxtwitter.json` | https://api.fxtwitter.com/2/status/2115882056081346742 (https://x.com/joshorton/status/2115882056081346742) and .../2115883461076545615 | Posts (Oct 29) by Josh Orton, president of Demand Justice: "NEW SCOTUS MICHIGAN POLL for Demand Justice: [Upswing - Oct 24-28, N505, LV, MOE 4.4]"; "Senate head-to-head: El-Sayed leads Rogers 50%-45%". Wikipedia cites the second post. |
+
+The only new Senate poll found is **Upswing Research for Demand Justice, Michigan** (Oct 24-28, 505 LV, El-Sayed 50, Rogers 45): a partisan sponsor (progressive advocacy group), so it is recorded but not counted. It is not in RCP or VoteHub; Poliwave lists it as "Upswing Research (D)". Other new rows on Poliwave: ActiVote TX Oct 22-28 (excluded pollster). Michigan stays on RCP's average (plus MSU/Verasight, user decision Oct 29). No average changed; `RETRIEVED` is now 2026-10-30, which moves only the as-of date of the recomputed averages (AL, GA, MS, NE, AR, ID).
