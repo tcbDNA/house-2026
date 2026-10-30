@@ -37,10 +37,9 @@ FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 -
     - Univision/YouGov 10/2 - 10/15
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 43/51)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-IA: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23, National Public Affairs 10/8 - 10/12, Suffolk University 10/1 - 10/4; 12 poll(s); anti-R 45.83 / R 46.00 -> margin -0.17, blend margin -0.18 (RCP published -0.7)
+IA: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23, National Public Affairs 10/8 - 10/12, Suffolk University 10/1 - 10/4; 11 poll(s); anti-R 45.82 / R 45.73 -> margin +0.09, blend margin +0.10 (RCP published -0.5)
     - co/efficient 10/28 - 10/28
     - InsiderAdvantage 10/21 - 10/22
-    - co/efficient 10/15 - 10/19
     - Trafalgar Group 10/13 - 10/15
     - Cook Political Report 10/9 - 10/13
     - YouGov 10/6 - 10/12
@@ -78,9 +77,9 @@ SC: RCP average, Rasmussen removed; 5 poll(s); anti-R 45.00 / R 47.40 -> margin 
     - Trafalgar Group 10/16 - 10/18
     - InsiderAdvantage 9/28 - 9/29
     left out: onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found)
-MI: RCP average, Rasmussen removed; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); 9 poll(s); anti-R 49.00 / R 45.31 -> margin +3.69, blend margin +3.91 (RCP published +3.2)
-    - CNN 10/20 - 10/27
+MI: RCP average, Rasmussen removed; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); 9 poll(s); anti-R 49.00 / R 45.31 -> margin +3.69, blend margin +3.91 (RCP published +3.5)
     - CBS News/Mitchell 10/26 - 10/27
+    - CNN 10/20 - 10/27
     - Detroit News/Glengariff 10/19 - 10/22
     - InsiderAdvantage 10/21 - 10/22
     - Marist 10/15 - 10/18

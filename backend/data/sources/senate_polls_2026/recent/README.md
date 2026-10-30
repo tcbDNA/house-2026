@@ -384,3 +384,12 @@ Effect: Florida's average (RCP's plus the polls it leaves out, 7 polls) R+7.0 ->
 | `rcp_tx_8867.json`, `rcp_tx_3way_8985.json` | https://orig.realclearpolitics.com/poll/race/8867/polling_data.json, .../8985/... | Re-downloaded 21:40 UTC. RCP added 'Quantus Insights*' 10/26-28 (49/48; 49/48/1 three-way) to both averages in place of Quantus's Oct 9-11 poll, and moved Cook Political Report (Oct 9-13) and Marist (Oct 8-11) out of its two-way average (still listed); two-way average 10/8-10/28, Talarico 48.8, Paxton 47.0. |
 
 Effect: Cook and Marist started inside RCP's window, so `COUNT_RCP_LEFT_OUT` keeps them; Texas's average (12 polls) D+2.36 -> D+2.26 two-party; projection D+1.35 -> D+1.28 (P(Talarico) 0.607 -> 0.600). Senate P(D control) 0.727 -> 0.726.
+
+### RCP refresh: Iowa and Michigan (Oct 30 evening)
+
+| File | Notes |
+|---|---|
+| `rcp_ia_8930.json` | Re-downloaded 21:40 UTC (built Oct 29 13:23 CT). RCP now averages only co/efficient's Oct 28 poll (48/46); its Oct 15-19 poll (49/46) is listed but no longer averaged. Average 9/29-10/28, Hinson 46.0, Turek 45.5. |
+| `rcp_mi_8802.json`, `rcp_mi_multi_9216.json` | Re-downloaded 21:40 UTC. Rasmussen Reports Oct 28-29 (49/44) replaces its Oct 12-14 poll in RCP's average (Rasmussen is removed from ours either way); RCP now lists "Michigan St./DPS" 10/8-23 (51/43) without averaging it: that is the MSU survey already counted by user decision (`ADDED_TO_RCP`), matched as the same poll, so it isn't counted twice. |
+
+Effect: Iowa's average (11 polls, one co/efficient poll instead of two) R+0.2 -> D+0.1 two-party; projection R+1.44 -> R+1.25 (P(Turek) 0.399 -> 0.412). Michigan unchanged (D+3.9, 9 polls). Senate P(D control) 0.726 -> 0.727.
