@@ -1464,6 +1464,24 @@
     "excluded_pollster": false,
     "source": "wapo_schar_kansas_topline_2026-10-30.pdf (Q2, Q3); wapo_schar_kansas_2026-10-30.html; rcp_ks_9106.json",
     "note": "Washington Post-Schar School poll, telephone (74% live cell, 9% landline, 17% cell text-to-web), Oct 22-26, 801 likely voters from an L2 registered-voter sample (every registered voter assigned a probability of voting; LV n = RV n = 801), MOE +/-3.9; fieldwork by Braun Research; sponsored and funded by The Washington Post and George Mason University's Schar School. The topline notes 'significantly higher cooperation rates among registered Republicans than Democrats and additional signs of nonresponse error'. Senate full ballot Q2: Hamilton 52, Marshall 43, Graham (L) 4, other <0.5, would not vote 1. Q3 summary combining initial and two-candidate preference: Hamilton 54, Marshall 44, other 1, would not vote 1. RCP: 'Washington Post' 10/22-26, 54/44 (two-way feed), 52/43/4 (three-way feed), both in the average."
+   },
+   {
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-28",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 800,
+    "anti_r": 49,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "emerson_kansas_october_2026.html; emerson_kansas_october_2026_full_results.xlsx; rcp_ks_9106.json",
+    "note": "Emerson College Polling, Oct 26-28, 800 Kansas likely voters (MMS text-to-web 443, IVR landline 141, plus online panel), credibility interval +/-3.5; weighted by gender, education, race, age, previous vote recall and region. Release Oct 30 (emerson_kansas_october_2026.html); full results emerson_kansas_october_2026_full_results.xlsx, sheet 'Topline Results'. Senate: Hamilton 48.7, Marshall 45.2, Graham (L) 2.9, undecided 3.2 (headline 49/45/3/3); combined with leaners 49.5/47.1/3.4. RCP: 'Emerson*' 10/26-28, 50/47 (the combined vote), in the average (row Oct 30 08:10 CT)."
    }
   ],
   "notes": "RCP two-way average (feed 9106, last built Oct 15): 9/8-10/14, Marshall 46.0, Hamilton 45.7 (Marshall +0.3), 6 polls. It has not been rebuilt since Oct 15, so RedBox (Oct 20-23) is missing. Pre-Oct: Emerson 9/15-16, GSG 9/13-16, Wedgewood 9/22-24. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (lastBuildDate still Oct 20, CNN row added Oct 29) averages 9/8-10/26, Hamilton 46.1, Marshall 45.9, 7 polls: CNN/SSRS 10/20-26 added."

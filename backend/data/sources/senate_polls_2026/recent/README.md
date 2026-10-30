@@ -329,3 +329,13 @@ Effect: Kansas stays on RCP's average, Hamilton +0.31 -> +2.62 two-party; projec
 ### Campaign and party internals (Oct 30)
 
 `LEAVE_OUT_VOTEHUB_INTERNAL` (on): a poll VoteHub marks as a campaign or party internal, or whose sponsor carries a partisan flag, counts as partisan-sponsored even when the compiled record names no sponsor. Found while checking the left-out polls: **Idaho**'s only recent poll, VoteNexus (Oct 21-22, 700 LV, Risch 49, Achilles 43), was "Commissioned by Knock Every Door PAC and Todd Achilles for Idaho" (`../id/poliwave_id_sen.html`; VoteHub: internal, DEM), so Idaho now uses the model alone (projection R+18.3 -> R+24.1, P(Achilles) 0.001 -> <0.001). No other counted Senate poll is affected.
+
+### Emerson, Kansas (Oct 30, from the user's link)
+
+| File | URL | Notes |
+|---|---|---|
+| `emerson_kansas_october_2026.html` | https://emersoncollegepolling.com/october-2026-kansas-poll-hamilton-maintains-edge-over-marshall/ | Release (Oct 30), retrieved 13:17 UTC: Oct 26-28, 800 Kansas likely voters, +/-3.5. Senate Hamilton 49, Marshall 45, Graham 3, undecided 3; with leaners 50/47. Governor Masterson 50, Holscher 46; with leaners 53/48. |
+| `emerson_kansas_october_2026_full_results.xlsx` | https://docs.google.com/spreadsheets/d/1Fsg1YqnPjM1kKMkAQIhpoBRW3J1vwCH0 (export ?format=xlsx) | 'Topline Results': Senate 48.7 / 45.2 / 2.9 / 3.2, combined vote 49.5 / 47.1 / 3.4; governor 46.3 / 50.0 / 3.7, combined 47.5 / 52.5. |
+| `rcp_ks_9106.json`, `rcp_ks_3way_9221.json` | https://orig.realclearpolitics.com/poll/race/9106/polling_data.json, .../9221/... | Re-downloaded 13:17 UTC (built Oct 30 07:32 CT): RCP added "Emerson*" 10/26-28 at 50/47 (the combined vote) in place of its 9/15-16 poll; two-way average 9/22-10/28, Hamilton 48.3, Marshall 45.7, 7 polls. |
+
+Effect: Kansas stays on RCP's average, Hamilton +2.62 -> +2.74 two-party; projection D+0.4 -> D+0.5 (P 0.53 -> 0.54). Senate P(D control) 0.724 -> 0.725.
