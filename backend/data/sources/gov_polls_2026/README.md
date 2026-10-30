@@ -249,3 +249,15 @@ Effect: Houston, Cook and Marist started inside RCP's window, so `COUNT_RCP_LEFT
 | `rcp_gov_ca_9014.json` | https://orig.realclearpolitics.com/poll/race/9014/polling_data.json | Re-downloaded 21:40 UTC: 'LA Times/Berkeley IGS' 10/19-25 (61/34) replaces IGS's Sep 15-20 poll in the average; window now 10/9-10/25, Becerra 58.2, Hilton 34.2. |
 
 Effect: with RCP's window starting Oct 9, IVC Media for the Independent Voter Project (Sep 23-Oct 2) no longer counts as a poll RCP left out. California's average (6 polls) D+23.6 -> D+25.7 two-party; projection D+23.6 -> D+25.2 (P(D) 1.000); P(Democratic majority of governorships) unchanged at 0.708.
+
+### RCP refresh: Connecticut, Massachusetts, Georgia, New York, Nevada (Oct 30 evening)
+
+| File | Notes |
+|---|---|
+| `rcp_gov_ct_9118.json` | Window now 10/6-10/12 (Lamont 55.0, Fazio 36.3): UNH and co/efficient (Sep 16-21) out of the average; Wesleyan/YouGov (Sep 22-Oct 7) no longer starts inside it, so it stops counting as a poll RCP left out. |
+| `rcp_gov_ma_8937.json` | Window now 10/6-10/18 (Healey 57.7, Minogue 32.3): CWB/MassINC and UNH (Sep 14-22) out. |
+| `rcp_gov_ny_8742.json` | Siena Oct 19-22 (54/40) now in RCP's average in place of its Sep 11-17 poll (we already counted it as a poll RCP left out); window 10/3-10/25, so Beacon Research for the Secure AI Project (Oct 1-6) no longer counts. |
+| `rcp_gov_ga_9028.json` | YouGov Sep 15-18 out of RCP's average (9/21-10/17); Echelon Insights Oct 16-23 listed but not averaged. Georgia already uses the recomputed average (newer polls than RCP's), so nothing changes. |
+| `rcp_gov_nv_8874.json` | RCP's average row (dated "12/31 - 12/31", 42.0/42.0) no longer contains any poll: Emerson (Sep 5-8) and Noble (Sep 22-26) are listed but not averaged. Both builds now treat an average with no polls as no RCP average (`load_rcp` returns None; the governor build would otherwise fail), so Nevada is recomputed from the compiled polls as before, with the same result. |
+
+Effect: Connecticut D+18.8 -> D+20.4 two-party (3 polls), projection D+19.0 -> D+20.3; Massachusetts D+25.4 -> D+28.1 (3 polls), D+28.7 -> D+30.9; New York D+15.8 -> D+13.5 (4 polls), D+14.8 -> D+12.9 (P(D) 0.999 -> 0.995); Georgia and Nevada unchanged. P(Democratic majority of governorships) 0.708 -> 0.707.

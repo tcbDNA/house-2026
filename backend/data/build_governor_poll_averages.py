@@ -135,6 +135,8 @@ def load_rcp(st: str, path: Path, d_name: str | None, r_name: str | None) -> dic
     averaged = [{"pollster": p["pollster"].replace("*", "").strip(), "dates": p["date"],
                  "end": rcp_end(p["date"]), "anti_r": shares(p)[0], "r": shares(p)[1], "others": shares(p)[2]}
                 for p in rows if p["type"] == "poll_rcp_avg"]
+    if not averaged:   # an average row with no polls left in it (e.g. Nevada governor, Oct 30): no RCP average
+        return None
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0])[:2],
             "window_start": rcp_start(avg[0]["date"]), "averaged": averaged, "local_file": f"sources/gov_polls_2026/{path.name}",
             "url": f"https://www.realclearpolling.com/polls/{mi['poll_contentful_fullpath']}/{mi['poll_contentful_slug']}"}

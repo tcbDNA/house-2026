@@ -71,3 +71,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 50-insideradvantage-florida-governor,9.89,236,240,225,261,0.982,53,52,0.727,"InsiderAdvantage Florida governor (Oct 28-29, 1,200 LV; Donalds 49, Jolly 45), in RCP's average"
 51-quantus-texas-governor,9.89,236,240,225,261,0.982,53,52,0.727,"Quantus Insights Texas governor (Oct 26-28; Abbott 52, Hinojosa 46 with leaners), in RCP's average; RCP moved Cook, Marist, ReconMR/Siena and UH (Oct 5-14) out of its average"
 52-berkeley-igs-california-governor,9.89,236,240,225,261,0.982,53,52,0.727,"UC Berkeley IGS / LA Times California governor (Oct 19-25, 1,477 LV; Becerra 61, Hilton 34), in RCP's average in place of IGS's September poll"
+53-rcp-refresh-governors,9.89,236,240,225,261,0.982,53,52,0.727,"RCP refresh: CT, MA, NY governor windows moved (September polls and early left-out polls out); Nevada's RCP average has no polls left (build treats it as no RCP average; numbers unchanged)"

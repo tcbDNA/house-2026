@@ -342,6 +342,8 @@ def load_rcp(st: str) -> dict | None:
                  "end": rcp_end(p["date"]), "anti_r": shares(p)[0], "r": shares(p)[1],
                  "pending": p["type"] != "poll_rcp_avg"}
                 for p in rows if p["type"] == "poll_rcp_avg" or (p["type"] == "poll" and pending(p))]
+    if not averaged:   # an average row with no polls left in it (e.g. Nevada governor, Oct 30): no RCP average
+        return None
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0]),
             "window_start": rcp_start(avg[0]["date"]),
             "averaged": averaged, "local_file": f"sources/senate_polls_2026/{rel}",
