@@ -8,7 +8,9 @@ Rules (user decisions, Oct 2026):
   * Heritage Action's Cor Strategies poll in Texas is not counted (user
     decision Oct 28; NOT_COUNTED, LEAVE_OUT_NOT_COUNTED = False counts it).
   * Polls with a partisan sponsor are not counted, including any RCP has
-    averaged (user decision Oct 28; LEAVE_OUT_PARTISAN_SPONSORS).
+    averaged (user decision Oct 28; LEAVE_OUT_PARTISAN_SPONSORS). Sponsors
+    that name no party but lean partisan count too (user decision Oct 30;
+    PARTISAN_LEANING_SPONSORS, LEAVE_OUT_PARTISAN_LEANING_SPONSORS).
   * Recomputed averages take one poll per pollster; polls sponsored by others
     are the pollster's, but YouGov Blue counts separately from YouGov (user
     decision Oct 28; YOUGOV_BLUE_OWN_POLLSTER).
@@ -79,6 +81,17 @@ NOT_COUNTED = {("TX", "Cor Strategies"): "Heritage Action; not counted, user dec
 # candidate, campaign, party, PAC or partisan group) are not counted, including
 # any RCP has averaged (user decision, Oct 28). False: counted like any other poll.
 LEAVE_OUT_PARTISAN_SPONSORS = True
+# Sponsors with no partisan flag in the compiled records that lean partisan, so
+# their polls count as partisan-sponsored too, including any RCP has averaged
+# (user decision Oct 30: "if your inclination is that it is sponsored by a
+# partisan leaning group, don't add it"). Keyed by sponsor as compiled. False:
+# only flagged sponsors.
+LEAVE_OUT_PARTISAN_LEANING_SPONSORS = True
+PARTISAN_LEANING_SPONSORS = {
+    "Texas Public Opinion Research": "directed by Democratic strategist Luke Warford, former chief strategy "
+                                     "officer of the Texas Democratic Party (Texas Tribune, Jul 28; TPR, Oct 2024); "
+                                     "fielded by Slingshot Strategies, a Democratic firm",
+}
 # Polls VoteHub marks as campaign or party internals (or with a partisan-flagged
 # sponsor) count as partisan-sponsored too, even where the compiled record
 # names no sponsor (Oct 30: the Idaho VoteNexus poll, commissioned by Knock
@@ -206,15 +219,18 @@ def excluded(name: str) -> bool:
 
 
 def partisan_sponsor(p: dict) -> bool:
-    return LEAVE_OUT_PARTISAN_SPONSORS and bool(p.get("sponsor") and p.get("partisan"))
+    leaning = LEAVE_OUT_PARTISAN_LEANING_SPONSORS and p.get("sponsor") in PARTISAN_LEANING_SPONSORS
+    return LEAVE_OUT_PARTISAN_SPONSORS and bool(p.get("sponsor") and (p.get("partisan") or leaning))
 
 
 def same_poll(q: dict, a: dict) -> bool:
     """Compiled poll `q` is RCP row `a`: same end date, and the pollster's or
-    sponsor's first word is in RCP's name."""
+    sponsor's first word is in RCP's name, or both map to the same firm
+    (FIRM_ALIASES: RCP lists Slingshot's TPOR polls as "TPOR")."""
     words = set(re.findall(r"[a-z]+", a["pollster"].lower()))
     first = lambda s: next((w for w in re.findall(r"[a-z]+", (s or "").lower()) if w not in ("a", "an", "the")), None)
-    return q["end"] == a["end"] and (first(q["pollster"]) in words or first(q.get("sponsor")) in words)
+    return q["end"] == a["end"] and (first(q["pollster"]) in words or first(q.get("sponsor")) in words
+                                     or firm_key(q["pollster"], q.get("sponsor")) == firm_key(a["pollster"]))
 
 
 def rcp_end(dates: str, year: int = 2026) -> date:

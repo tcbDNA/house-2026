@@ -1,0 +1,137 @@
+← Early Vote Analysis
+Harris
+Dallas
+Bexar
+Travis
+Tarrant
+Collin
+Denton
+Fort Bend
+Hidalgo
+Williamson
+Montgomery
+Houston Area forecast
+Texas poll path
+Auto
+Light
+Dark
+Texas Poll Path 2026
+
+What has to happen across Texas to win, or for the polls to be right?
+
+Overview
+Map
+Counties
+Polls
+Senate: Talarico v Paxton
+Governor: Hinojosa v Abbott
+To win
+To match the polls
+The polls behind the number
+
+Every poll with interviews ending Oct 5 or later. The polling average is the plain average of each poll’s result counting the two main candidates only.
+
+Pollster	Ended	Sample	Dem	Rep	Dem, two-way
+CNN/SSRS	Oct 27	LV	49.0%	43.0%	53.3%
+254 Labs/YouGov Blue (political sponsor)	Oct 26	LV	51.0%	43.0%	54.3%
+Texas Southern University	Oct 25	LV	49.0%	47.0%	51.0%
+Univision/YouGov	Oct 21	RV	50.0%	45.0%	52.6%
+Rasmussen Reports	Oct 21	LV	45.0%	45.0%	50.0%
+ActiVote	Oct 21	LV	51.0%	49.0%	51.0%
+VoteHub/Verasight	Oct 20	RV	47.6%	45.2%	51.3%
+Emerson College	Oct 19	LV	49.0%	48.0%	50.5%
+Fox News	Oct 19	LV	49.0%	49.0%	50.0%
+TPOR (political sponsor)	Oct 18	not listed	51.0%	47.0%	52.0%
+Pollfinity (political sponsor)	Oct 18	RV	48.0%	43.0%	52.8%
+CBS News/YouGov	Oct 16	LV	51.0%	49.0%	51.0%
+InsiderAdvantage	Oct 14	not listed	48.0%	49.0%	49.5%
+UH Hobby School	Oct 14	LV	48.0%	46.0%	51.1%
+Cook Political Report	Oct 13	not listed	49.0%	44.0%	52.7%
+Quantus Insights	Oct 11	not listed	47.0%	47.0%	50.0%
+Marist	Oct 11	LV	47.0%	45.0%	51.1%
+Trafalgar Group	Oct 8	not listed	47.0%	44.0%	51.6%
+ReconMR/Siena	Oct 8	LV	48.0%	44.0%	52.2%
+YouGov	Oct 5	LV	50.0%	44.0%	53.2%
+UT/Texas Politics Project	Oct 5	LV	50.0%	47.0%	51.5%
+How this is built
+Starting point: the 2024 US Senate race (Allred v Cruz) for Senate and the 2022 Governor race (O’Rourke v Abbott) for Governor, county by county, from the Texas Secretary of State.
+Votes so far: county voter rosters for Harris, Dallas, Bexar, Travis, Tarrant, Collin, Denton, Fort Bend, Hidalgo, Williamson and Montgomery; the Secretary of State’s daily county counts for the other 243. Days a county did not report are filled from its own recent pace. Mail ballots are estimated from 2024 where the state shows almost none. Titus, Hale, Hardeman and Young had past-year counts corrected against official results.
+Expected total: votes so far times how much each county grew from this point to Election Day in 2024, in 2022, or halfway between (the default, which comes closest to the Harris County forecast).
+Who’s showing up: each county’s expected share of the state’s two-candidate vote against its share in the starting race. The turnout effects add up exactly to the “Turnout so far adds” figure.
+Voters changing sides: the move every county would need, all the same size, for the state to land on the poll. “Lopsided counties move less” spreads the same move so very one-sided counties change less. This is a requirement, not a prediction; the Rio Grande Valley and the suburbs have moved differently in past elections.
+Counties with very irregular state counts (Culberson, Kenedy, Throckmorton, Winkler) should be read loosely. Early voting ends Friday; after that this reads as what Election Day has to look like.
+SD
+
+Analysis and dashboards by Steven David.
+
+X @stevedavid
+·
+LinkedIn
+·
+stevenrdavid.com
+
+===== Governor =====
+
+← Early Vote Analysis
+Harris
+Dallas
+Bexar
+Travis
+Tarrant
+Collin
+Denton
+Fort Bend
+Hidalgo
+Williamson
+Montgomery
+Houston Area forecast
+Texas poll path
+Auto
+Light
+Dark
+Texas Poll Path 2026
+
+What has to happen across Texas to win, or for the polls to be right?
+
+Overview
+Map
+Counties
+Polls
+Senate: Talarico v Paxton
+Governor: Hinojosa v Abbott
+To win
+To match the polls
+The polls behind the number
+
+Every poll with interviews ending Oct 5 or later. The polling average is the plain average of each poll’s result counting the two main candidates only.
+
+Pollster	Ended	Sample	Dem	Rep	Dem, two-way
+CNN/SSRS	Oct 27	LV	46.0%	48.0%	48.9%
+254 Labs/YouGov Blue (political sponsor)	Oct 26	LV	49.0%	46.0%	51.6%
+Texas Southern University	Oct 25	LV	47.0%	50.0%	48.5%
+Univision/YouGov	Oct 21	RV	46.0%	48.0%	48.9%
+Emerson College	Oct 19	LV	45.0%	49.0%	47.9%
+Fox News	Oct 19	LV	47.0%	52.0%	47.5%
+TPOR (political sponsor)	Oct 18	LV	48.0%	51.0%	48.5%
+CBS News/YouGov	Oct 16	LV	48.0%	52.0%	48.0%
+UH Hobby School	Oct 15	LV	46.0%	49.0%	48.4%
+Marist	Oct 11	LV	45.0%	49.0%	47.9%
+ReconMR/Siena	Oct 8	LV	47.0%	48.0%	49.5%
+YouGov	Oct 5	LV	48.0%	47.0%	50.5%
+UT/Texas Politics Project	Oct 5	LV	49.0%	48.0%	50.5%
+How this is built
+Starting point: the 2024 US Senate race (Allred v Cruz) for Senate and the 2022 Governor race (O’Rourke v Abbott) for Governor, county by county, from the Texas Secretary of State.
+Votes so far: county voter rosters for Harris, Dallas, Bexar, Travis, Tarrant, Collin, Denton, Fort Bend, Hidalgo, Williamson and Montgomery; the Secretary of State’s daily county counts for the other 243. Days a county did not report are filled from its own recent pace. Mail ballots are estimated from 2024 where the state shows almost none. Titus, Hale, Hardeman and Young had past-year counts corrected against official results.
+Expected total: votes so far times how much each county grew from this point to Election Day in 2024, in 2022, or halfway between (the default, which comes closest to the Harris County forecast).
+Who’s showing up: each county’s expected share of the state’s two-candidate vote against its share in the starting race. The turnout effects add up exactly to the “Turnout so far adds” figure.
+Voters changing sides: the move every county would need, all the same size, for the state to land on the poll. “Lopsided counties move less” spreads the same move so very one-sided counties change less. This is a requirement, not a prediction; the Rio Grande Valley and the suburbs have moved differently in past elections.
+Counties with very irregular state counts (Culberson, Kenedy, Throckmorton, Winkler) should be read loosely. Early voting ends Friday; after that this reads as what Election Day has to look like.
+SD
+
+Analysis and dashboards by Steven David.
+
+X @stevedavid
+·
+LinkedIn
+·
+stevenrdavid.com

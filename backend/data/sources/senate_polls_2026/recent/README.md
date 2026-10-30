@@ -339,3 +339,15 @@ Effect: Kansas stays on RCP's average, Hamilton +0.31 -> +2.62 two-party; projec
 | `rcp_ks_9106.json`, `rcp_ks_3way_9221.json` | https://orig.realclearpolitics.com/poll/race/9106/polling_data.json, .../9221/... | Re-downloaded 13:17 UTC (built Oct 30 07:32 CT): RCP added "Emerson*" 10/26-28 at 50/47 (the combined vote) in place of its 9/15-16 poll; two-way average 9/22-10/28, Hamilton 48.3, Marshall 45.7, 7 polls. |
 
 Effect: Kansas stays on RCP's average, Hamilton +2.62 -> +2.74 two-party; projection D+0.4 -> D+0.5 (P 0.53 -> 0.54). Senate P(D control) 0.724 -> 0.725.
+
+### TPOR as a partisan-leaning sponsor (Oct 30, from the user's link to Steven David's Texas poll-path page)
+
+The page's poll table (`stevenrdavid_texas_poll_path_2026-10-30.html`, https://votes.stevenrdavid.com/texas/poll-path/, retrieved 15:20 UTC; rendered table in `stevenrdavid_texas_poll_path_polls_tab_2026-10-30.txt`) marks TPOR and Pollfinity "(political sponsor)". Both were in our Texas averages. TPOR names no outside sponsor, but Texas Public Opinion Research is run by a Democratic strategist, so it is now a partisan-leaning sponsor (user decision Oct 30: "if your inclination is that it is sponsored by a partisan leaning group, don't add it"; `PARTISAN_LEANING_SPONSORS`, setting `LEAVE_OUT_PARTISAN_LEANING_SPONSORS`), and its Oct 15-18 poll comes out of RCP's Texas averages.
+
+| File | URL | Notes |
+|---|---|---|
+| `texastribune_tpor_talarico_paxton_2026-07-28.html` | https://www.texastribune.org/2026/07/28/texas-senate-poll-james-talarico-ken-paxton-july-2026/ | "TPOR labels itself as a nonpartisan public opinion research group. It is directed by Democratic strategist Luke Warford." "Warford is also a founding partner of Agave Democratic Infrastructure Fund, a political action committee dedicated to building Democratic campaign infrastructure in Texas." |
+| `tpr_the_source_tpor_warford_2024-10-14.html` | https://www.tpr.org/podcast/the-source/2024-10-14/polling-checks-texas-voters-priorities | "Luke Warford is the director of Texas Public Opinion Research. Warford is a former statewide Democratic candidate in Texas and Chief Strategy Officer of the Texas Democratic Party before running for the Texas Railroad Commission in 2022." |
+| `tpor_october_poll_2026-10-23.html`, `tpor_about_2026-10-30.html` | https://texaspublicopinionresearch.substack.com/p/october-poll-in-texas-general-election ; https://texaspublicopinionresearch.substack.com/about | The release (Oct 15-18, 969 LV: Talarico 51, Paxton 47; Abbott 51, Hinojosa 48) and TPOR's "nonpartisan initiative" self-description; no funder named. VoteHub lists the poll as fielded by Slingshot Strategies (a Democratic consulting firm) for TPOR, with no partisan flag; Poliwave labels the sponsor (D). |
+
+Effect: RCP's Texas Senate average without TPOR, D+2.57 -> D+2.46 (13 polls); projection D+1.6 -> D+1.5. Governor average R+2.67 -> R+2.64 (11 polls). No other race has a TPOR poll.
