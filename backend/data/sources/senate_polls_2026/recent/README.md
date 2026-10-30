@@ -375,3 +375,12 @@ Retrieved **2026-10-30 21:40 UTC**. Every RCP Senate and governor feed saved in 
 | `rcp_fl_8948.json` | https://orig.realclearpolitics.com/poll/race/8948/polling_data.json | Re-downloaded 21:40 UTC: RCP added 'InsiderAdvantage' 10/28-29 at 49/43 to its average (row Oct 30 13:59 CT); average 10/2-10/29, Moody 49.3, Nixon 43.2. |
 
 Effect: Florida's average (RCP's plus the polls it leaves out, 7 polls) R+7.0 -> R+6.9 two-party; projection R+5.7 -> R+5.6 (P(Nixon) 0.148 -> 0.150). Senate P(D control) unchanged at 0.727.
+
+### Quantus Insights, Texas (Oct 26-28), in RCP's average
+
+| File | URL | Notes |
+|---|---|---|
+| `quantus_texas_2026-10-30.html` | https://quantusinsights.org/polling/f/texas-survey-paxton-up-one-abbott-ahead-by-five | Release (Oct 30), saved as rendered in headless Chrome at 22:05 UTC (the served HTML carries no text). Oct 26-28, 1,221 likely voters, no sponsor named. Senate Paxton 48.7, Talarico 47.6, Brown (L) 1.4, undecided 2.2; with undecideds pushed to lean, Paxton 49.4, Talarico 48.4. Governor Abbott 50.7, Hinojosa 45.8, Dixon 1.2; combined 51.6/46.3. |
+| `rcp_tx_8867.json`, `rcp_tx_3way_8985.json` | https://orig.realclearpolitics.com/poll/race/8867/polling_data.json, .../8985/... | Re-downloaded 21:40 UTC. RCP added 'Quantus Insights*' 10/26-28 (49/48; 49/48/1 three-way) to both averages in place of Quantus's Oct 9-11 poll, and moved Cook Political Report (Oct 9-13) and Marist (Oct 8-11) out of its two-way average (still listed); two-way average 10/8-10/28, Talarico 48.8, Paxton 47.0. |
+
+Effect: Cook and Marist started inside RCP's window, so `COUNT_RCP_LEFT_OUT` keeps them; Texas's average (12 polls) D+2.36 -> D+2.26 two-party; projection D+1.35 -> D+1.28 (P(Talarico) 0.607 -> 0.600). Senate P(D control) 0.727 -> 0.726.
