@@ -234,3 +234,9 @@ Retrieved 21:40 UTC with the Senate feeds (procedure and the VoteHub comparison 
 Release: `../senate_polls_2026/recent/insideradvantage_florida_2026-10-30.html` (1,200 LV, Oct 28-29, no sponsor named): governor Donalds 49, Jolly 45, other 2, undecided 4. `rcp_gov_fl_8881.json` re-downloaded 21:40 UTC: RCP added it to its average (row Oct 30 14:00 CT); average 10/2-10/29, Donalds 48.8, Jolly 44.0.
 
 Effect: Florida's average (7 polls) R+5.6 -> R+5.4 two-party; projection R+4.8 -> R+4.6 (P(Jolly) 0.202 -> 0.208); P(Democratic majority of governorships) 0.709 -> 0.710.
+
+### Quantus Insights, Texas (Oct 26-28), in RCP's average
+
+Release: `../senate_polls_2026/recent/quantus_texas_2026-10-30.html` (Oct 26-28, 1,221 LV, no sponsor named): governor Abbott 50.7, Hinojosa 45.8, Dixon (L) 1.2, undecided 2.3; pushed, 51.6/46.3. `rcp_gov_tx_8910.json` and `rcp_gov_tx_3way_9200.json` re-downloaded 21:40 UTC: RCP added it (52/46) and moved Cook Political Report (Oct 9-13), Marist (Oct 8-11), ReconMR/Siena (Oct 5-8) and University of Houston (Oct 10-14) out of its two-way average; average 10/8-10/28, Abbott 50.3, Hinojosa 46.6.
+
+Effect: Houston, Cook and Marist started inside RCP's window, so `COUNT_RCP_LEFT_OUT` keeps them; ReconMR/Siena started before it and drops out. Texas's average (10 polls) R+3.1 -> R+3.65 two-party; projection R+4.0 -> R+4.4 (P(Hinojosa) 0.217 -> 0.194); P(Democratic majority of governorships) 0.710 -> 0.708.
