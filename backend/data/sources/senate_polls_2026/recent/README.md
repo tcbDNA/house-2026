@@ -393,3 +393,11 @@ Effect: Cook and Marist started inside RCP's window, so `COUNT_RCP_LEFT_OUT` kee
 | `rcp_mi_8802.json`, `rcp_mi_multi_9216.json` | Re-downloaded 21:40 UTC. Rasmussen Reports Oct 28-29 (49/44) replaces its Oct 12-14 poll in RCP's average (Rasmussen is removed from ours either way); RCP now lists "Michigan St./DPS" 10/8-23 (51/43) without averaging it: that is the MSU survey already counted by user decision (`ADDED_TO_RCP`), matched as the same poll, so it isn't counted twice. |
 
 Effect: Iowa's average (11 polls, one co/efficient poll instead of two) R+0.2 -> D+0.1 two-party; projection R+1.44 -> R+1.25 (P(Turek) 0.399 -> 0.412). Michigan unchanged (D+3.9, 9 polls). Senate P(D control) 0.726 -> 0.727.
+
+### Quantus Insights excluded (user decision, Oct 30 evening)
+
+User: "remove quantus. R biased pollster". Quantus Insights joins the excluded pollsters (`EXCLUDED_POLLSTERS` in this build and the governor build): its polls come out of RCP's averages the way Rasmussen's do, and out of recomputed averages. The report now names the excluded polls it removes from an RCP average. Senate polls removed: Texas (Oct 26-28), Michigan (Oct 5-6), North Carolina (Oct 24-25), Georgia (Oct 15-17, recomputed average), Montana (Oct 15-18) and South Dakota (Oct 17-19).
+
+Effect (two-party blend margins): Texas D+2.26 -> D+2.57 (11 polls), projection D+1.28 -> D+1.49 (P(Talarico) 0.600 -> 0.616); Michigan D+3.9 -> D+4.3, D+5.6 -> D+5.9; North Carolina D+11.7 -> D+12.2; Georgia D+10.1 -> D+11.2; Montana (Bodnar - Alme) -12.0 -> -8.0, now Montana Free Press (Aug 27-Sep 7) alone, so 1/3 polls, 2/3 model: projection Alme +11.7 -> +10.1; South Dakota R+16.9 -> R+14.6 on two polls, projection R+16.9 -> R+19.2 (the model's R+28.5 gets more weight). Senate P(D control) 0.727 -> 0.734. House unchanged (no Quantus poll in the national crosstabs).
+
+Also checked and not used (user decision Oct 30): Montana State University Billings, Montana Senate, Oct 5-21, 720 adults (Alme 30, Bankhead 26, Bodnar 21, Austin 3).

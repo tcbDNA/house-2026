@@ -271,3 +271,7 @@ Effect: Connecticut D+18.8 -> D+20.4 two-party (3 polls), projection D+19.0 -> D
 The Hart Research Associates poll for A More Affordable Nevada (Oct 20-25, 950 LV, Ford 49, Lombardo 45; VoteHub, no partisan flag) was Nevada's only counted October poll. Its sponsor is backed by the Democratic Governors Association, so it is now a partisan-leaning sponsor (`PARTISAN_LEANING_SPONSORS` in `build_senate_poll_averages.py`, shared by this build; user rule Oct 30: "if your inclination is that it is sponsored by a partisan leaning group, don't add it").
 
 Effect: Nevada rests on Noble Predictive Insights (Sep 22-26) and Emerson/KLAS (Sep 5-8), each at half weight: average D+1.6 -> D+0.1 two-party (n_eff 2 -> 1, poll weight 0.53 -> 0.26); projection R+1.4 -> R+3.4 (P(Ford) 0.442 -> 0.367). P(Democratic majority of governorships) 0.707 -> 0.699 (80% range 24-30 -> 23-30). The write-up now says Nevada leans Republican.
+
+### Quantus Insights excluded (user decision, Oct 30 evening)
+
+User: "remove quantus. R biased pollster". Governor polls removed: Texas (Oct 26-28, added earlier this evening), Georgia (Oct 15-17) and Arizona (Aug 14-17, in RCP's average); both compiled polls are now marked `excluded_pollster`. Effect: Texas R+3.65 -> R+3.4 two-party (9 polls), projection R+4.4 -> R+4.2 (P(Hinojosa) 0.194 -> 0.207); Georgia R+0.1 -> D+0.3 (4 polls), D+1.4 -> D+1.8 (P(D) 0.601 -> 0.621); Arizona D+8.7 -> D+9.0. P(Democratic majority of governorships) 0.699 -> 0.703.

@@ -3,8 +3,9 @@
 Rules (user decisions, Oct 2026):
   * Excluded pollsters: Rasmussen Reports and ActiVote (user decision),
     Wedgewood Polls, which admitted on Oct 20, 2026 that its polls were
-    fabricated (sources/excluded_pollsters/), and McLaughlin & Associates
-    (user decision, Oct 30).
+    fabricated (sources/excluded_pollsters/), McLaughlin & Associates
+    (user decision, Oct 30) and Quantus Insights (user decision, Oct 30:
+    "R biased pollster").
   * Heritage Action's Cor Strategies poll in Texas is not counted (user
     decision Oct 28; NOT_COUNTED, LEAVE_OUT_NOT_COUNTED = False counts it).
   * Polls with a partisan sponsor are not counted, including any RCP has
@@ -69,7 +70,7 @@ OUT = DATA / "senate_poll_averages.csv"
 # new ones as they come out rather than rolling the window forward.
 RETRIEVED = date(2026, 10, 30)
 WINDOW_START = date(2026, 10, 5)
-EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood", "mclaughlin")
+EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood", "mclaughlin", "quantus")
 # Polls that can't be traced to any release (no source recorded anywhere).
 UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
               "Poliwave only, 'Source: Not recorded'; no release found"}
@@ -451,7 +452,10 @@ def build():
         if rcp and not newer:
             ps = [a for a in rcp["averaged"] if any(same_poll(q, a) for q in sponsored)]
             kept = [a for a in rcp["averaged"] if not excluded(a["pollster"]) and a not in ps]
-            ras = any(excluded(a["pollster"]) for a in rcp["averaged"])
+            exc = [a for a in rcp["averaged"] if excluded(a["pollster"])]
+            ras = bool(exc)
+            exc_note = ("Rasmussen removed" if all("rasmussen" in a["pollster"].lower() for a in exc) else
+                        "excluded pollsters removed: " + ", ".join(f"{a['pollster']} {a['dates']}" for a in exc))
             added = [a for a in kept if a["pending"]]
             extra = [{"pollster": p["pollster"], "dates": f"ending {p['end']:%b %-d}", "end": p["end"],
                       "anti_r": p["anti_r"], "r": p["r"], "pending": False}
@@ -480,8 +484,8 @@ def build():
             if left_out:
                 plus += ("; plus polls RCP left out: " + ", ".join(f"{a['label']} {a['dates']}" for a in left_out) +
                          ("; replacing " + ", ".join(f"{a['pollster']} {a['dates']}" for a in replaced) if replaced else ""))
-            method = ("RCP average, Rasmussen removed" if ras else "RCP average") + minus + plus
-            src = "RealClearPolling" + (", Rasmussen removed" if ras else "") + minus + plus
+            method = (f"RCP average, {exc_note}" if ras else "RCP average") + minus + plus
+            src = "RealClearPolling" + (f", {exc_note}" if ras else "") + minus + plus
             as_of, url, local = rcp["built"].isoformat(), rcp["url"], rcp["local_file"]
             published = round(rcp["published"][0] - rcp["published"][1], 1)
             n = len(kept)
@@ -500,9 +504,9 @@ def build():
             method = ("recomputed: newer polls than RCP's average" if rcp
                       else "recomputed: RCP publishes no average")
             src = (f"Recomputed (RCP average predates newer polls): latest poll by each pollster ending "
-                   f"{WINDOW_START} or later, Rasmussen/ActiVote/Wedgewood removed" if rcp else
+                   f"{WINDOW_START} or later, excluded pollsters removed" if rcp else
                    f"RCP-style average (RCP publishes none): latest poll by each pollster ending "
-                   f"{WINDOW_START} or later, Rasmussen/ActiVote/Wedgewood removed")
+                   f"{WINDOW_START} or later, excluded pollsters removed")
             if any(p["end"] >= WINDOW_START for p in sponsored):
                 src += ", partisan-sponsored polls left out"
             as_of = RETRIEVED.isoformat()

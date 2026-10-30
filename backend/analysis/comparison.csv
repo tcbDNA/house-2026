@@ -73,3 +73,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 52-berkeley-igs-california-governor,9.89,236,240,225,261,0.982,53,52,0.727,"UC Berkeley IGS / LA Times California governor (Oct 19-25, 1,477 LV; Becerra 61, Hilton 34), in RCP's average in place of IGS's September poll"
 53-rcp-refresh-governors,9.89,236,240,225,261,0.982,53,52,0.727,"RCP refresh: CT, MA, NY governor windows moved (September polls and early left-out polls out); Nevada's RCP average has no polls left (build treats it as no RCP average; numbers unchanged)"
 54-nevada-dga-backed-sponsor,9.89,236,240,225,261,0.982,53,52,0.727,"Hart Research for A More Affordable Nevada (Oct 20-25; Ford 49, Lombardo 45) left out: the sponsor is backed by the Democratic Governors Association"
+55-quantus-excluded,9.89,236,240,225,261,0.982,53,52,0.734,Quantus Insights excluded from every average (user decision Oct 30: R-biased pollster)

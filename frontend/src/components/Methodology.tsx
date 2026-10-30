@@ -16,8 +16,8 @@ export function Methodology() {
         breakdown (fifteen polls ending Oct 1–29, 2026: NYT/Siena, CBS/YouGov,
         Economist/YouGov, Echelon, Fox News, Pew, Cygnal, Emerson, Bedrock Research
         for the Rainey Center, the Tufts Public Opinion Lab (fielded by YouGov), The Argument (fielded by Verasight), UMass Lowell (fielded by YouGov), Centerline Research & Strategy, The Honest Poll, and Marist, which reports race only as White vs
-        Non-white and so counts for the white groups only; ActiVote, Rasmussen and
-        McLaughlin are excluded), weighted by √(subgroup sample size) — derived
+        Non-white and so counts for the white groups only; ActiVote, Rasmussen,
+        McLaughlin and Quantus are excluded), weighted by √(subgroup sample size) — derived
         from the group margins of error where only those are published (Fox, Pew
         2024), else total n × the group's electorate share (Pew 2026, Cygnal, The Argument, UMass Lowell) or its
         published sample share (Marist, Bedrock, Centerline).
@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (72.7% vs 71.1% by default; Osborn's race is nearly all of the
+        them does (73.4% vs 71.7% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -215,8 +215,8 @@ export function Methodology() {
         the partisan baseline can't describe an independent with cross-party
         appeal; Nebraska, the fourth, blends polls and model like a two-party race.
         All four get 3 extra points of race-level error (in quadrature). The averages
-        start from RealClearPolling's with any Rasmussen poll removed (ActiVote is
-        never used, nor Wedgewood, which admitted its polls were fabricated, nor any
+        start from RealClearPolling's with any Rasmussen or Quantus poll removed (ActiVote is
+        never used, nor Wedgewood, which admitted its polls were fabricated, nor McLaughlin, nor any
         poll with a partisan sponsor — a candidate, campaign, party, PAC or partisan
         group — even one RCP averaged; in
         Maine, Echelon's NetChoice poll, which RCP lists but hasn't yet averaged,
@@ -233,14 +233,14 @@ export function Methodology() {
         Mississippi, Nebraska and Arkansas, which RCP doesn't average).
         Louisiana, Idaho (whose only recent poll was commissioned by the Achilles
         campaign) and 11 safe races have no countable recent poll and use the model alone.
-        The blend takes Texas from the model's R+1.0 to Talarico D+1.3, Kansas from
+        The blend takes Texas from the model's R+1.0 to Talarico D+1.5, Kansas from
         R+4.5 to Hamilton D+0.6 (R+0.1 with w = 0.6), Nebraska from R+4.5 to Ricketts
-        +3.4 and Alaska from R+1.8 to D+0.7; P(D control) is 72.7% (63.8% on the
-        model alone; 72.2% / 73.4% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        +3.4 and Alaska from R+1.8 to D+0.7; P(D control) is 73.4% (63.8% on the
+        model alone; 72.6% / 73.9% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
-        margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
-        polls, so 2/3 polls and 1/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
+        margin is Bodnar − Alme from RCP's three-way average without Quantus
+        (Alme +8.0, Montana Free Press alone, so 1/3 polls and 2/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
         Democratic nominee) has two recent polls without a partisan sponsor, Ricketts
         +2.1; weighted 0.47 against the model's Ricketts +4.5, it projects Ricketts
         +3.4 (Osborn 28%). As
@@ -312,7 +312,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        23–30), with a 69.9% chance of a majority.
+        24–30), with a 70.3% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

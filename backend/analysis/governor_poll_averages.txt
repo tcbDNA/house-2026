@@ -11,11 +11,10 @@ AL: recomputed: newer polls than RCP's average; 3 poll(s) (n_eff 3); anti-R 41.3
     - The Alabama Poll, ending 2026-10-16 (full ballot, 39/51)
 AR: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 1); anti-R 32.00 / R 51.00 -> margin -19.00, blend margin -22.89, third parties 11.0
     - Hendrix College for Talk Business & Politics, ending 2026-10-13 (full ballot, 32/51)
-AZ: RCP average; plus polls RCP left out: GrayHouse 10/18 - 10/20, Equis Research 10/1 - 10/9, Wick 10/3 - 10/6; 8 poll(s) (n_eff 8); anti-R 50.00 / R 42.00 -> margin +8.00, blend margin +8.70, third parties 0.2 (RCP published +9.2)
+AZ: RCP average; removed: Quantus Insights 8/14 - 8/17; plus polls RCP left out: GrayHouse 10/18 - 10/20, Equis Research 10/1 - 10/9, Wick 10/3 - 10/6; 7 poll(s) (n_eff 7); anti-R 50.14 / R 41.86 -> margin +8.29, blend margin +9.01, third parties 0.3 (RCP published +9.2)
     - Noble Predictive Insights 10/26 - 10/28
     - Highground Public Affairs 10/21 - 10/25
     - Arizona State 8/18 - 9/4
-    - Quantus Insights 8/14 - 8/17
     - Fabrizio/Anzalone 7/26 - 7/28
     - GrayHouse 10/18 - 10/20 (left out by RCP, counted; full ballot, 51/45)
     - Equis Research 10/1 - 10/9 (left out by RCP, counted; full ballot, 49/43)
@@ -42,10 +41,9 @@ FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 -
     - Univision/YouGov 10/2 - 10/15
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 44/50)
     left out: Change Research for Freedom Project USA (D-flagged), ending 2026-10-10 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-GA: recomputed: newer polls than RCP's average; 5 poll(s) (n_eff 5); anti-R 47.52 / R 47.64 -> margin -0.12, blend margin -0.13, third parties 0.0 (RCP published -1.0)
+GA: recomputed: newer polls than RCP's average; 4 poll(s) (n_eff 4); anti-R 47.75 / R 47.50 -> margin +0.25, blend margin +0.26, third parties 0.0 (RCP published -1.0)
     - State Navigate, ending 2026-10-27 (full ballot, 50/47)
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 49/48)
-    - Quantus Insights, ending 2026-10-17 (full ballot, 46.6/48.2)
     - University of Georgia SPIA for The Atlanta Journal-Constitution, ending 2026-10-15 (full ballot, 45/46)
     - InsiderAdvantage, ending 2026-10-13 (full ballot, 47/49)
 HI: no RCP average and no poll ending on/after 2026-10-05 -> model only
@@ -162,8 +160,7 @@ SD: recomputed: RCP publishes no average; 3 poll(s) (n_eff 3); anti-R 38.33 / R 
     - Concord Public Opinion Partners (D-flagged), ending 2026-10-08 (full ballot, 38/48)
 TN: recomputed: newer polls than RCP's average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 1); anti-R 32.00 / R 44.00 -> margin -12.00, blend margin -15.79, third parties 13.0 (RCP published -21.0)
     - Spry Strategies, ending 2026-10-16 (full ballot, 32/44)
-TX: RCP average; removed: TPOR 10/15 - 10/18; plus polls RCP left out: University of Houston Hobby School of Public Affairs 10/10 - 10/14, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist University 10/8 - 10/11; 10 poll(s) (n_eff 10); anti-R 46.20 / R 49.70 -> margin -3.50, blend margin -3.65, third parties 0.5 (RCP published -3.7)
-    - Quantus Insights 10/26 - 10/28
+TX: RCP average; removed: Quantus Insights 10/26 - 10/28, TPOR 10/15 - 10/18; plus polls RCP left out: University of Houston Hobby School of Public Affairs 10/10 - 10/14, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist University 10/8 - 10/11; 9 poll(s) (n_eff 9); anti-R 46.22 / R 49.44 -> margin -3.22, blend margin -3.37, third parties 0.6 (RCP published -3.7)
     - TSU/YouGov 10/21 - 10/25
     - CNN 10/20 - 10/27
     - Emerson 10/17 - 10/19

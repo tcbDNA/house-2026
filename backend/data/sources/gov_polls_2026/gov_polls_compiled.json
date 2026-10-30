@@ -2217,9 +2217,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "votehub_governor_all.json; rcp_gov_ga_9028.json; quantus_ga_two_weeks_out_2026-10.html",
-    "note": "Quantus release: 755 LV, Oct 15-17. Jackson 48.2, Bottoms 46.6, undecided 4.5; with leaners 49.0/47.5."
+    "note": "Quantus release: 755 LV, Oct 15-17. Jackson 48.2, Bottoms 46.6, undecided 4.5; with leaners 49.0/47.5. Quantus Insights is an excluded pollster (user decision Oct 30)."
    },
    {
     "pollster": "ActiVote",
@@ -8235,9 +8235,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "../senate_polls_2026/recent/quantus_texas_2026-10-30.html; rcp_gov_tx_8910.json; rcp_gov_tx_3way_9200.json",
-    "note": "Quantus Insights (Oct 30 release): Oct 26-28, 1,221 LV, no sponsor named. Governor: Abbott 50.7, Hinojosa 45.8, Dixon (L) 1.2, undecided 2.3; with undecideds pushed to lean, Abbott 51.6, Hinojosa 46.3. RCP: 'Quantus Insights*' 10/26-28, 52/46 (two-way feed) and 52/46/1 (three-way), both averaged."
+    "note": "Quantus Insights (Oct 30 release): Oct 26-28, 1,221 LV, no sponsor named. Governor: Abbott 50.7, Hinojosa 45.8, Dixon (L) 1.2, undecided 2.3; with undecideds pushed to lean, Abbott 51.6, Hinojosa 46.3. RCP: 'Quantus Insights*' 10/26-28, 52/46 (two-way feed) and 52/46/1 (three-way), both averaged. Quantus Insights is an excluded pollster (user decision Oct 30)."
    }
   ]
  },

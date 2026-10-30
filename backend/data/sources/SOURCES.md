@@ -142,6 +142,8 @@ Retrieved 2026-10-26, refreshed 2026-10-27 (new polls in TX, ME, MI, NC and SC; 
 
 ## Excluded pollsters (excluded_pollsters/)
 
+Quantus Insights is excluded from every average and crosstab dataset (user decision, 2026-10-30: "remove quantus. R biased pollster"), like Rasmussen Reports, ActiVote and McLaughlin & Associates. None of the national crosstab polls or the 2018-2024 backtest data include a Quantus poll.
+
 Retrieved 2026-10-26. Wedgewood Polls (Wedgewood Polling) is excluded from every average (user decision, 2026-10-26): on Oct 20, 2026 it said on X that its polls were fabricated, an "experimental project" to show how easily a fake pollster is picked up by aggregators, after FiftyPlusOne confronted it with evidence from its Mississippi Senate survey's raw data. `kmph_wedgewood_fake_polling_firm.html` (TNND via KMPH, Oct 21: https://kmph.com/news/nation-world/fake-polling-firm-tricked-media-claims-fabricated-surveys-were-for-social-experiment-democrats-republicans-abdul-el-sayed-mallory-mcmorrow-francesca-hong-james-talarico-ken-paxton-rrt) and `newsweek_wedgewood_fake_polling_firm.html` (Newsweek, Oct 21: https://www.newsweek.com/fake-polling-firm-duped-media-in-social-experiment-12599153). Its only poll inside the window was Mississippi's (Oct 12–14); its Iowa and Maine polls were listed by RCP but not averaged. No poll by Median Strategies (the other fake firm in these reports) is in any data used. ActiVote and Rasmussen Reports are excluded by user decision.
 
 ## Backtest: final RCP averages, 2022 and 2024 (polls_backtest/)

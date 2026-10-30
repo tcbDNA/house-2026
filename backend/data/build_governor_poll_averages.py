@@ -4,7 +4,7 @@ governor_poll_averages.csv.
 Same rules as the Senate (build_senate_poll_averages.py, whose helpers this
 reuses):
   * Excluded pollsters: Rasmussen Reports, ActiVote, Wedgewood Polls,
-    Median Strategies and McLaughlin & Associates (user decisions); polls with a partisan sponsor are not
+    Median Strategies, McLaughlin & Associates and Quantus Insights (user decisions); polls with a partisan sponsor are not
     counted, including any RCP has averaged.
   * Start from RealClearPolling's average with those removed (the remaining
     polls RCP averaged, re-averaged).
@@ -98,7 +98,7 @@ DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "gov_polls_2026"
 OUT = DATA / "governor_poll_averages.csv"
 RETRIEVED = None   # set from the compiled file's retrieval date
-EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood", "median strategies", "mclaughlin")
+EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood", "median strategies", "mclaughlin", "quantus")
 
 
 def excluded(name: str) -> bool:
