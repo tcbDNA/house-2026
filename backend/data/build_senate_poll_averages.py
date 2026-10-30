@@ -131,6 +131,8 @@ LEFT_OUT_PARTISAN_LEANING = {
     ("SC", "Impact Research", date(2026, 10, 21)): "no client named; the memo was posted by Fresh Start PAC",
     ("SC", "Targoz Market Research", date(2026, 10, 25)): "South Carolina Policy Council, a conservative think tank",
     ("FL", "MDW Communications", date(2026, 10, 10)): "MDW and EDGE Communications, political consultancies",
+    ("TX", "Pollfinity", date(2026, 10, 18)): "owned and self-funded by Lars Mapstead, a 2024 Libertarian presidential "
+                                              "candidate (user decision Oct 30)",
 }
 # Pollster identity across RCP's and the compiled polls' names (first match
 # wins; a sponsor's name counts too). Anything else: the first word.

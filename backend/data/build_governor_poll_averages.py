@@ -91,6 +91,8 @@ LEFT_OUT_PARTISAN_LEANING = {
     ("FL", "Fabrizio, Lee & Associates", date(2026, 10, 11)): "no client named; Fabrizio polls for Republican campaigns",
     ("CA", "Manhattan Institute", date(2026, 10, 1)): "a conservative think tank (its own poll)",
     ("WI", "YouGov", date(2026, 10, 9)): "City Forward Collective / CFC Action Fund, a school-choice group's electoral arm",
+    ("TX", "Pollfinity", date(2026, 10, 18)): "owned and self-funded by Lars Mapstead, a 2024 Libertarian presidential "
+                                              "candidate (user decision Oct 30)",
 }
 DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "gov_polls_2026"

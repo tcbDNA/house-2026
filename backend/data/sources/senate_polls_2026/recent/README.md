@@ -351,3 +351,14 @@ The page's poll table (`stevenrdavid_texas_poll_path_2026-10-30.html`, https://v
 | `tpor_october_poll_2026-10-23.html`, `tpor_about_2026-10-30.html` | https://texaspublicopinionresearch.substack.com/p/october-poll-in-texas-general-election ; https://texaspublicopinionresearch.substack.com/about | The release (Oct 15-18, 969 LV: Talarico 51, Paxton 47; Abbott 51, Hinojosa 48) and TPOR's "nonpartisan initiative" self-description; no funder named. VoteHub lists the poll as fielded by Slingshot Strategies (a Democratic consulting firm) for TPOR, with no partisan flag; Poliwave labels the sponsor (D). |
 
 Effect: RCP's Texas Senate average without TPOR, D+2.57 -> D+2.46 (13 polls); projection D+1.6 -> D+1.5. Governor average R+2.67 -> R+2.64 (11 polls). No other race has a TPOR poll.
+
+### Pollfinity left out as partisan-leaning (Oct 30, user decision)
+
+Also flagged "(political sponsor)" on Steven David's poll-path page. Pollfinity's Texas poll (Oct 15-18, 278 LV; Talarico 48, Paxton 43; Hinojosa 46, Abbott 45) names no sponsor, but its release says: "Pollfinity Research LLC is owned and self-funded by Lars Mapstead, a 2024 Libertarian presidential candidate who also funds ballot-access advocacy organizations." Asked whether to keep counting it, the user said "Leave it out", so it is in `LEFT_OUT_PARTISAN_LEANING` in both builds (it was counted only as a poll RCP leaves out).
+
+| File | URL | Notes |
+|---|---|---|
+| `pollfinity_tx_governor_senate_2026-10-22.html` | https://www.pollfinity.com/polls/tx-governor-senate-2026-oct | Release (Oct 22), retrieved 2026-10-30 15:25 UTC; "Funding" and "Ownership" paragraphs quoted above. |
+| `pollfinity_about_2026-10-30.html` | https://www.pollfinity.com/about | "Our work is entirely self-funded." |
+
+Effect: Texas Senate average D+2.46 -> D+2.25 (12 polls), projection D+1.5 -> D+1.35 (P 0.62 -> 0.61); Senate P(D control) 0.729 -> 0.727. Texas governor average R+2.64 -> R+3.0 (10 polls, RCP's own figure), projection R+3.8 -> R+4.0; P(D majority of governorships) 0.711 -> 0.709.
