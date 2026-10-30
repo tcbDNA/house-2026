@@ -420,7 +420,7 @@
   ]
  },
  "AZ": {
-  "notes": "RCP average (feed 8683, '2026 Arizona Governor - Biggs vs. Hobbs', lastBuildDate Tue, 27 Oct 2026 13:15:01 -0500): 7/26 - 10/25, Hobbs 49.6, Biggs 39.0 (Hobbs +10.6), 5 polls: Highground Public Affairs 10/21 - 10/25; Arizona State 8/18 - 9/4; Quantus Insights 8/14 - 8/17; Noble Predictive Insights 8/10 - 8/13; Fabrizio/Anzalone 7/26 - 7/28. Multi-candidate RCP average (feed 9225, '2026 Arizona Governor - Multi-Candidate', lastBuildDate Mon, 19 Oct 2026 14:35:55 -0500): 8/10 - 10/8, Hobbs 48.7, Biggs 34.3, Hourihan 2.0, Lombardo 1.3 (Hobbs +14.4), 3 polls: Highground Public Affairs 10/6 - 10/8; Arizona State 8/18 - 9/4; Noble Predictive Insights 8/10 - 8/13.",
+  "notes": "RCP average (feed 8683, '2026 Arizona Governor - Biggs vs. Hobbs', lastBuildDate Tue, 27 Oct 2026 13:15:01 -0500): 7/26 - 10/25, Hobbs 49.6, Biggs 39.0 (Hobbs +10.6), 5 polls: Highground Public Affairs 10/21 - 10/25; Arizona State 8/18 - 9/4; Quantus Insights 8/14 - 8/17; Noble Predictive Insights 8/10 - 8/13; Fabrizio/Anzalone 7/26 - 7/28. Multi-candidate RCP average (feed 9225, '2026 Arizona Governor - Multi-Candidate', lastBuildDate Mon, 19 Oct 2026 14:35:55 -0500): 8/10 - 10/8, Hobbs 48.7, Biggs 34.3, Hourihan 2.0, Lombardo 1.3 (Hobbs +14.4), 3 polls: Highground Public Affairs 10/6 - 10/8; Arizona State 8/18 - 9/4; Noble Predictive Insights 8/10 - 8/13. Oct 30 check: RCP's feed (row updated Oct 30 06:31 CT) averages 7/26-10/28, Hobbs 50.2, Biggs 41.0, 5 polls: Noble Predictive Insights 10/26-28 (51/45) replaces Noble's 8/10-13 poll.",
   "polls": [
    {
     "pollster": "BSP Research",
@@ -739,6 +739,44 @@
     "excluded_pollster": false,
     "source": "american_encore_kreate_az_2026-10-29.html (https://americanencore.org/blog/arizona-governor-survey-showing-our-work); votehub_governor_all.json (Oct 29)",
     "note": "Published by American Encore (Oct 28): fielded Oct 25-27, 900 likely voters, MOE +/-3.3, 'Conducted by KStrat'; published topline Hobbs +5.1 (VoteHub: Hobbs 48, Biggs 43, Hourihan 1, Lombardo 1); the sponsor's own turnout model gives Biggs +3.1. VoteHub flags it REP: partisan-sponsored, not counted. Not in RCP's feed."
+   },
+   {
+    "pollster": "Noble Predictive Insights",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-28",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 511,
+    "d_candidate": "Katie Hobbs",
+    "r_candidate": "Andy Biggs",
+    "d": 51,
+    "r": 45,
+    "anti_r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 51,
+    "full_r": 45,
+    "others": [
+     {
+      "name": "Teri Ann Hourihan",
+      "party": "No Labels",
+      "pct": 1
+     },
+     {
+      "name": "Risa Lombardo",
+      "party": "G",
+      "pct": 0
+     }
+    ],
+    "undecided": 3,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "noble_az_poll_of_record_2026-10-30.html; noble_az_por_2026_poll_report.xlsx (sheet Total); rcp_gov_az_8683.json",
+    "note": "Noble Predictive Insights' AZPOP poll of record, released Oct 30: 511 likely general-election voters, Oct 26-28, MOE +/-4.34. Workbook (weighted N 511): Hobbs 0.51, Biggs 0.45, Hourihan 0.01, Lombardo 0, another candidate 0, undecided 0.03. No sponsor named. RCP: 'Noble Predictive Insights*' 10/26-10/28, 511 LV, 51/45, in the average."
    }
   ]
  },
@@ -3701,7 +3739,7 @@
   ]
  },
  "MI": {
-  "notes": "RCP average (feed 8992, '2026 Michigan Governor - James vs. Benson', lastBuildDate Mon, 26 Oct 2026 15:18:19 -0500): 9/24 - 10/22, Benson 50.5, James 43.3 (Benson +7.2), 6 polls: Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; Mitchell Research 10/1 - 10/1; FOX News 9/24 - 9/28. Multi-candidate RCP average (feed 9226, '2026 Michigan Governor - Multi-Candidate', lastBuildDate Wed, 31 Dec 1969 18:00:00 -0600): 9/16 - 9/21, Benson 48.0, James 36.0, Hudson 2.0, Campbell 1.5, Brandenburg 0.0 (Benson +12.0), 2 polls: Cygnal/Beacon Research 9/18 - 9/21; Suffolk 9/16 - 9/20. Oct 29 check: RCP's feed (lastBuildDate Oct 27 13:14, CNN row added Oct 29) averages 9/24-10/27, Benson 50.9, James 43.0, 7 polls: CNN 10/20-27 added. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) Benson 48.5, James 38.7; not in RCP's average and it ends before RCP's latest averaged poll (CNN, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script).",
+  "notes": "RCP average (feed 8992, '2026 Michigan Governor - James vs. Benson', lastBuildDate Mon, 26 Oct 2026 15:18:19 -0500): 9/24 - 10/22, Benson 50.5, James 43.3 (Benson +7.2), 6 polls: Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; Mitchell Research 10/1 - 10/1; FOX News 9/24 - 9/28. Multi-candidate RCP average (feed 9226, '2026 Michigan Governor - Multi-Candidate', lastBuildDate Wed, 31 Dec 1969 18:00:00 -0600): 9/16 - 9/21, Benson 48.0, James 36.0, Hudson 2.0, Campbell 1.5, Brandenburg 0.0 (Benson +12.0), 2 polls: Cygnal/Beacon Research 9/18 - 9/21; Suffolk 9/16 - 9/20. Oct 29 check: RCP's feed (lastBuildDate Oct 27 13:14, CNN row added Oct 29) averages 9/24-10/27, Benson 50.9, James 43.0, 7 polls: CNN 10/20-27 added. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) Benson 48.5, James 38.7; not in RCP's average and it ends before RCP's latest averaged poll (CNN, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script). Oct 30 check: RCP's feed (CBS News/Mitchell row added Oct 29 16:44 CT) averages 9/24-10/27, Benson 50.9, James 43.0, 7 polls: CBS News/Mitchell 10/26-27 (49/44) replaces Mitchell Research 10/1.",
   "polls": [
    {
     "pollster": "Glengariff Group",
@@ -4060,7 +4098,7 @@
     "undecided": null,
     "rcv_final_d": null,
     "rcv_final_r": null,
-    "in_rcp_average": true,
+    "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_mi_8992.json"
    },
@@ -4313,6 +4351,33 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/cnn_ssrs_michigan_october_2026.pdf (GOVVOTEMI); rcp_gov_mi_8992.json",
     "note": "768 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.7). Two-candidate question: Benson 53, James 41, neither 3, other 2 (Aug 31-Sep 6: 50/41). RCP: 'CNN'."
+   },
+   {
+    "pollster": "Mitchell Research & Communications",
+    "sponsor": "CBS Detroit and other Michigan TV stations",
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-27",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 636,
+    "d_candidate": "Jocelyn Benson",
+    "r_candidate": "John James",
+    "d": 49,
+    "r": 44,
+    "anti_r": 49,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 49,
+    "full_r": 44,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "cbsdetroit_mitchell_mi_gov_2026-10-29.html; rcp_gov_mi_8992.json",
+    "note": "CBS Detroit (Oct 29, 5:10 PM EDT): Mitchell Research & Communications for CBS Detroit and other Michigan TV stations, Oct 26-27, 636 LV, online panels plus survey links texted to randomly selected registered voters, weighted by demographics and 2022 and 2024 results; MOE 3.9. Benson 49, James 44 (early October: 46/39). Same survey as the Senate entry. RCP: 'CBS News/Mitchell', in the average."
    }
   ]
  },

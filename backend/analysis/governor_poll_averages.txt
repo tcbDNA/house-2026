@@ -11,11 +11,11 @@ AL: recomputed: newer polls than RCP's average; 3 poll(s) (n_eff 3); anti-R 41.3
     - The Alabama Poll, ending 2026-10-16 (full ballot, 39/51)
 AR: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 1); anti-R 32.00 / R 51.00 -> margin -19.00, blend margin -22.89, third parties 11.0
     - Hendrix College for Talk Business & Politics, ending 2026-10-13 (full ballot, 32/51)
-AZ: RCP average; 5 poll(s) (n_eff 5); anti-R 49.60 / R 39.00 -> margin +10.60, blend margin +11.96, third parties 0.0 (RCP published +10.6)
+AZ: RCP average; 5 poll(s) (n_eff 5); anti-R 50.20 / R 41.00 -> margin +9.20, blend margin +10.09, third parties 0.0 (RCP published +9.2)
+    - Noble Predictive Insights 10/26 - 10/28
     - Highground Public Affairs 10/21 - 10/25
     - Arizona State 8/18 - 9/4
     - Quantus Insights 8/14 - 8/17
-    - Noble Predictive Insights 8/10 - 8/13
     - Fabrizio/Anzalone 7/26 - 7/28
     left out: GQR for Katie Hobbs (D-flagged), ending 2026-10-05 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Kreate Strategies (KStrat) for American Encore (R-flagged), ending 2026-10-27 (partisan sponsor)
 CA: RCP average; 5 poll(s) (n_eff 5); anti-R 57.60 / R 34.00 -> margin +23.60, blend margin +25.76, third parties 0.0 (RCP published +23.6)
@@ -80,13 +80,13 @@ ME: RCP average; 9 poll(s) (n_eff 9); anti-R 49.67 / R 39.67 -> margin +10.00, b
     - co/efficient 9/28 - 9/30
     - Fabrizio/Anzalone 9/20 - 9/22
     - UNH 9/17 - 9/21
-MI: RCP average; plus Michigan State University (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); 8 poll(s) (n_eff 8); anti-R 50.56 / R 42.46 -> margin +8.10, blend margin +8.71, third parties 0.0 (RCP published +7.9)
+MI: RCP average; plus Michigan State University (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); 8 poll(s) (n_eff 8); anti-R 50.94 / R 43.09 -> margin +7.85, blend margin +8.35, third parties 0.0 (RCP published +7.6)
+    - CBS News/Mitchell 10/26 - 10/27
     - CNN 10/20 - 10/27
     - Detroit News/Glengariff 10/19 - 10/22
     - Marist 10/15 - 10/18
     - Michigan State/YouGov 10/2 - 10/19
     - YouGov 9/28 - 10/5
-    - Mitchell Research 10/1 - 10/1
     - FOX News 9/24 - 9/28
     - Michigan State University (Political Science)/Verasight ending Oct 23
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
