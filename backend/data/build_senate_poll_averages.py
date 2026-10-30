@@ -91,6 +91,9 @@ PARTISAN_LEANING_SPONSORS = {
     "Texas Public Opinion Research": "directed by Democratic strategist Luke Warford, former chief strategy "
                                      "officer of the Texas Democratic Party (Texas Tribune, Jul 28; TPR, Oct 2024); "
                                      "fielded by Slingshot Strategies, a Democratic firm",
+    "A More Affordable Nevada": "\"a group backed by the Democratic Governors Association\" (DGA release, Sep 10, 2026; "
+                                "sources/gov_polls_2026/dga_a_more_affordable_nevada_2026-09-10.html); its Hart Research "
+                                "poll is in the governor averages only",
 }
 # Polls VoteHub marks as campaign or party internals (or with a partisan-flagged
 # sponsor) count as partisan-sponsored too, even where the compiled record

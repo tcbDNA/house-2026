@@ -261,3 +261,13 @@ Effect: with RCP's window starting Oct 9, IVC Media for the Independent Voter Pr
 | `rcp_gov_nv_8874.json` | RCP's average row (dated "12/31 - 12/31", 42.0/42.0) no longer contains any poll: Emerson (Sep 5-8) and Noble (Sep 22-26) are listed but not averaged. Both builds now treat an average with no polls as no RCP average (`load_rcp` returns None; the governor build would otherwise fail), so Nevada is recomputed from the compiled polls as before, with the same result. |
 
 Effect: Connecticut D+18.8 -> D+20.4 two-party (3 polls), projection D+19.0 -> D+20.3; Massachusetts D+25.4 -> D+28.1 (3 polls), D+28.7 -> D+30.9; New York D+15.8 -> D+13.5 (4 polls), D+14.8 -> D+12.9 (P(D) 0.999 -> 0.995); Georgia and Nevada unchanged. P(Democratic majority of governorships) 0.708 -> 0.707.
+
+### Hart Research for A More Affordable Nevada left out (partisan-leaning sponsor, Oct 30 evening)
+
+| File | URL | Notes |
+|---|---|---|
+| `dga_a_more_affordable_nevada_2026-09-10.html` | https://democraticgovernors.org/updates/new-polling-shows-aaron-ford-leading-joe-lombardo-in-nevada-gov-race/ | DGA release (Sep 10, 2026), retrieved 2026-10-30 22:35 UTC: "A More Affordable Nevada, a group backed by the Democratic Governors Association, released its first broadcast ad of the cycle" ("Paid for by the Democratic Governors Association"). |
+
+The Hart Research Associates poll for A More Affordable Nevada (Oct 20-25, 950 LV, Ford 49, Lombardo 45; VoteHub, no partisan flag) was Nevada's only counted October poll. Its sponsor is backed by the Democratic Governors Association, so it is now a partisan-leaning sponsor (`PARTISAN_LEANING_SPONSORS` in `build_senate_poll_averages.py`, shared by this build; user rule Oct 30: "if your inclination is that it is sponsored by a partisan leaning group, don't add it").
+
+Effect: Nevada rests on Noble Predictive Insights (Sep 22-26) and Emerson/KLAS (Sep 5-8), each at half weight: average D+1.6 -> D+0.1 two-party (n_eff 2 -> 1, poll weight 0.53 -> 0.26); projection R+1.4 -> R+3.4 (P(Ford) 0.442 -> 0.367). P(Democratic majority of governorships) 0.707 -> 0.699 (80% range 24-30 -> 23-30). The write-up now says Nevada leans Republican.
