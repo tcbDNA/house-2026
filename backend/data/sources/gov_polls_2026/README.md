@@ -224,3 +224,13 @@ McLaughlin & Associates is now an excluded pollster, like ActiVote, Rasmussen, W
 ### Emerson, Kansas (Oct 30, from the user's link)
 
 Files in `../senate_polls_2026/recent/` (`emerson_kansas_october_2026.html`, `emerson_kansas_october_2026_full_results.xlsx`). Oct 26-28, 800 LV; governor Holscher 46.3, Masterson 50.0, undecided 3.7 (with leaners 47.5/52.5). RCP's governor feed (`rcp_gov_ks_9017.json`, re-downloaded 13:17 UTC, built Oct 30 07:49 CT) now averages 9/8-10/28, Masterson 48.7, Holscher 45.5, 6 polls, with Emerson's Oct 26-28 poll (46/50) in place of its Sep 15-16 one and the Washington Post-Schar School poll (51/45), so the Post poll is no longer in `ADDED_TO_RCP`. Effect: Masterson +3.90 -> +3.36 two-party; projection R+3.7 -> R+3.3, P(Holscher) 0.261 -> 0.285; P(Democratic majority of governorships) 0.707 -> 0.709.
+
+## Update, 2026-10-30 evening (poll check, user asked)
+
+Retrieved 21:40 UTC with the Senate feeds (procedure and the VoteHub comparison in `../senate_polls_2026/recent/README.md`). New VoteHub governor rows not counted: Workbench Strategy FL Oct 18-22 for Angie Nixon (campaign internal), Concord SD Oct 22-26 for Democrats for Education Reform (partisan sponsor), ActiVote TX (excluded pollster).
+
+### InsiderAdvantage, Florida (Oct 28-29), in RCP's average
+
+Release: `../senate_polls_2026/recent/insideradvantage_florida_2026-10-30.html` (1,200 LV, Oct 28-29, no sponsor named): governor Donalds 49, Jolly 45, other 2, undecided 4. `rcp_gov_fl_8881.json` re-downloaded 21:40 UTC: RCP added it to its average (row Oct 30 14:00 CT); average 10/2-10/29, Donalds 48.8, Jolly 44.0.
+
+Effect: Florida's average (7 polls) R+5.6 -> R+5.4 two-party; projection R+4.8 -> R+4.6 (P(Jolly) 0.202 -> 0.208); P(Democratic majority of governorships) 0.709 -> 0.710.

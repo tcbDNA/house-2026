@@ -1943,6 +1943,38 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_fl_8881.json"
+   },
+   {
+    "pollster": "InsiderAdvantage",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-10-29",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 1200,
+    "d_candidate": "David Jolly",
+    "r_candidate": "Byron Donalds",
+    "d": 45,
+    "r": 49,
+    "anti_r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 45,
+    "full_r": 49,
+    "others": [
+     {
+      "name": "Other",
+      "pct": 2
+     }
+    ],
+    "undecided": 4,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/insideradvantage_florida_2026-10-30.html; rcp_gov_fl_8881.json",
+    "note": "InsiderAdvantage Florida survey (Oct 30): 1,200 LV, mixed mode text/panel, MOE 2.83%, Oct 28-29, no sponsor named. Governor: Donalds 49, Jolly 45, other 2, undecided 4. RCP: 'InsiderAdvantage' 10/28-29, 49/45, in the average (row Oct 30 14:00 CT)."
    }
   ]
  },

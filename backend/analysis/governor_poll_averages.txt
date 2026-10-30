@@ -37,9 +37,10 @@ CT: RCP average; plus polls RCP left out: Wesleyan University Survey Lab/YouGov 
     - UNH 9/17 - 9/21
     - co/efficient 9/16 - 9/17
     - Wesleyan University Survey Lab/YouGov for CT Mirror; The Connecticut Project 9/22 - 10/7 (left out by RCP, counted; full ballot, 57/34)
-FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 6 poll(s) (n_eff 6); anti-R 43.83 / R 49.00 -> margin -5.17, blend margin -5.57, third parties 0.2 (RCP published -5.0)
-    - NY Times/Siena 10/19 - 10/25
+FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s) (n_eff 7); anti-R 44.00 / R 49.00 -> margin -5.00, blend margin -5.38, third parties 0.1 (RCP published -4.8)
+    - InsiderAdvantage 10/28 - 10/29
     - St. Pete Polls 10/25 - 10/27
+    - NY Times/Siena 10/19 - 10/25
     - co/efficient 10/18 - 10/20
     - Univ. of North Florida 10/12 - 10/19
     - Univision/YouGov 10/2 - 10/15
