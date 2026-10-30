@@ -71,8 +71,9 @@ INDEPENDENT_OPPONENT = {"RI": "Block"}
 # but not yet for governor). Keyed by (state, pollster as compiled, fieldwork
 # end). False: RCP's averaged set as published.
 COUNT_ADDED_TO_RCP = True
-ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight", date(2026, 10, 23)),
-                ("KS", "Washington Post-Schar School", date(2026, 10, 26))}
+ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight", date(2026, 10, 23))}
+# (The Washington Post-Schar School Kansas poll was here until RCP added it to
+# its Kansas governor average on Oct 30.)
 
 # Count the polls RCP leaves out of the averages it publishes (same rule as the
 # Senate's COUNT_RCP_LEFT_OUT; setting added on the user's request, Oct 30).

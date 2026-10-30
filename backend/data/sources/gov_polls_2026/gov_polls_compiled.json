@@ -2828,7 +2828,7 @@
   ]
  },
  "KS": {
-  "notes": "RCP average (feed 9017, '2026 Kansas Governor - Masterson vs. Holscher', lastBuildDate Tue, 06 Oct 2026 15:19:06 -0500): 9/8 - 10/4, Masterson 49.5, Holscher 43.8 (Masterson +5.7), 4 polls: YouGov 9/24 - 10/4; NY Times/Siena 9/22 - 10/1; Emerson 9/15 - 9/16; co/efficient 9/8 - 9/10. Oct 29 check: RCP's feed (lastBuildDate Oct 7, CNN row added Oct 29) averages 9/8-10/26, Masterson 49.6, Holscher 44.0, 5 polls: CNN 10/20-26 added. Oct 30: the Washington Post-Schar School poll (Oct 22-26, Holscher 51, Masterson 45) is not in RCP's governor feed, though RCP averages the same poll for the Senate; counted in RCP's average anyway (ADDED_TO_RCP in the build script; the user linked it Oct 30 and asked not to rely only on RCP).",
+  "notes": "RCP average (feed 9017, '2026 Kansas Governor - Masterson vs. Holscher', lastBuildDate Tue, 06 Oct 2026 15:19:06 -0500): 9/8 - 10/4, Masterson 49.5, Holscher 43.8 (Masterson +5.7), 4 polls: YouGov 9/24 - 10/4; NY Times/Siena 9/22 - 10/1; Emerson 9/15 - 9/16; co/efficient 9/8 - 9/10. Oct 29 check: RCP's feed (lastBuildDate Oct 7, CNN row added Oct 29) averages 9/8-10/26, Masterson 49.6, Holscher 44.0, 5 polls: CNN 10/20-26 added. Oct 30: the Washington Post-Schar School poll (Oct 22-26, Holscher 51, Masterson 45) is not in RCP's governor feed, though RCP averages the same poll for the Senate; counted in RCP's average anyway (ADDED_TO_RCP in the build script; the user linked it Oct 30 and asked not to rely only on RCP). Oct 30 (second update): RCP's governor feed (built Oct 30 07:49 CT) now averages 9/8-10/28, Masterson 48.7, Holscher 45.5, 6 polls, with the Washington Post-Schar School poll and Emerson's Oct 26-28 poll; the Post poll is taken out of ADDED_TO_RCP.",
   "polls": [
    {
     "pollster": "co/efficient",
@@ -3089,10 +3089,37 @@
     "undecided": 1,
     "rcv_final_d": null,
     "rcv_final_r": null,
-    "in_rcp_average": false,
+    "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/wapo_schar_kansas_topline_2026-10-30.pdf (Q5); ../senate_polls_2026/recent/wapo_schar_kansas_2026-10-30.html",
-    "note": "Washington Post-Schar School poll, telephone (74% live cell, 9% landline, 17% cell text-to-web), Oct 22-26, 801 likely voters from an L2 registered-voter sample (every registered voter assigned a probability of voting; LV n = RV n = 801), MOE +/-3.9; fieldwork by Braun Research; sponsored and funded by The Washington Post and George Mason University's Schar School. The topline notes 'significantly higher cooperation rates among registered Republicans than Democrats and additional signs of nonresponse error'. Governor Q5 (two candidates named): Holscher 51, Masterson 45, other 1, would not vote 2, no opinion 1. Not in RCP's governor feed (built Oct 7, CNN row Oct 29) as of Oct 30 12:34 UTC; RCP averages the same poll for the Senate."
+    "note": "Washington Post-Schar School poll, telephone (74% live cell, 9% landline, 17% cell text-to-web), Oct 22-26, 801 likely voters from an L2 registered-voter sample (every registered voter assigned a probability of voting; LV n = RV n = 801), MOE +/-3.9; fieldwork by Braun Research; sponsored and funded by The Washington Post and George Mason University's Schar School. The topline notes 'significantly higher cooperation rates among registered Republicans than Democrats and additional signs of nonresponse error'. Governor Q5 (two candidates named): Holscher 51, Masterson 45, other 1, would not vote 2, no opinion 1. Not in RCP's governor feed (built Oct 7, CNN row Oct 29) as of Oct 30 12:34 UTC; RCP averages the same poll for the Senate. RCP added it to the governor average on Oct 30 (row 07:48 CT, 'Washington Post' 51/45), so it is no longer in ADDED_TO_RCP."
+   },
+   {
+    "pollster": "Emerson College",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-28",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 800,
+    "d_candidate": "Cindy Holscher",
+    "r_candidate": "Ty Masterson",
+    "d": 46,
+    "r": 50,
+    "anti_r": 46,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 46,
+    "full_r": 50,
+    "others": [],
+    "undecided": 4,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/emerson_kansas_october_2026.html; ../senate_polls_2026/recent/emerson_kansas_october_2026_full_results.xlsx; rcp_gov_ks_9017.json",
+    "note": "Emerson College Polling, Oct 26-28, 800 Kansas likely voters (MMS text-to-web 443, IVR landline 141, plus online panel), credibility interval +/-3.5; weighted by gender, education, race, age, previous vote recall and region. Release Oct 30 (emerson_kansas_october_2026.html); full results emerson_kansas_october_2026_full_results.xlsx, sheet 'Topline Results'. Governor: Holscher 46.3, Masterson 50.0, undecided 3.7; with leaners 47.5/52.5. RCP: 'Emerson' 10/26-28, 46/50, in the average (row Oct 30 08:11 CT)."
    }
   ]
  },

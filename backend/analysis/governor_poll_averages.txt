@@ -64,13 +64,13 @@ ID: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: w
     - Advanced Targeting Research, ending 2026-09-16 (full ballot, 27/37)
     left out: VoteNexus for Knock Every Door PAC; Todd Achilles for Idaho (D-flagged), ending 2026-10-22 (partisan sponsor)
 IL: no RCP average and no poll ending on/after 2026-10-05 -> model only
-KS: RCP average; plus Washington Post-Schar School ending Oct 26 (not listed by RCP, counted by user decision); 6 poll(s) (n_eff 6); anti-R 45.17 / R 48.83 -> margin -3.67, blend margin -3.90, third parties 0.0 (RCP published -5.6)
+KS: RCP average; 6 poll(s) (n_eff 6); anti-R 45.50 / R 48.67 -> margin -3.17, blend margin -3.36, third parties 0.0 (RCP published -3.2)
+    - Emerson 10/26 - 10/28
+    - Washington Post 10/22 - 10/26
     - CNN 10/20 - 10/26
     - YouGov 9/24 - 10/4
     - NY Times/Siena 9/22 - 10/1
-    - Emerson 9/15 - 9/16
     - co/efficient 9/8 - 9/10
-    - Washington Post-Schar School ending Oct 26
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Global Strategy Group (D-flagged), ending 2026-10-22 (campaign/party internal per VoteHub)
 MA: RCP average; 5 poll(s) (n_eff 5); anti-R 56.20 / R 33.40 -> margin +22.80, blend margin +25.45, third parties 0.0 (RCP published +22.8)
     - Boston Globe/Suffolk 10/10 - 10/18
