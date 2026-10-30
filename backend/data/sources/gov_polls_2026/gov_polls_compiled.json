@@ -1187,6 +1187,33 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_ca_9014.json"
+   },
+   {
+    "pollster": "UC Berkeley Institute of Governmental Studies",
+    "sponsor": "Los Angeles Times",
+    "partisan": null,
+    "start": "2026-10-19",
+    "end": "2026-10-25",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 1477,
+    "d_candidate": "Xavier Becerra",
+    "r_candidate": "Steve Hilton",
+    "d": 61,
+    "r": 34,
+    "anti_r": 61,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 61,
+    "full_r": 34,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "latimes_berkeley_igs_ca_2026-10-30.html; rcp_gov_ca_9014.json",
+    "note": "UC Berkeley Institute of Governmental Studies poll, co-sponsored by the Los Angeles Times (LA Times article Oct 30): online in English and Spanish, Oct 19-25; governor question from a weighted sample of 1,477 respondents who had already voted or were likely to vote, out of 2,787 registered voters; MOE 3 points. Becerra 61, Hilton 34 (September IGS: Becerra +25). RCP: 'LA Times/Berkeley IGS' 10/19-25, 61/34, in the average in place of IGS's Sep 15-20 poll."
    }
   ]
  },

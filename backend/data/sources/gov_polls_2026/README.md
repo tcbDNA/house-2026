@@ -240,3 +240,12 @@ Effect: Florida's average (7 polls) R+5.6 -> R+5.4 two-party; projection R+4.8 -
 Release: `../senate_polls_2026/recent/quantus_texas_2026-10-30.html` (Oct 26-28, 1,221 LV, no sponsor named): governor Abbott 50.7, Hinojosa 45.8, Dixon (L) 1.2, undecided 2.3; pushed, 51.6/46.3. `rcp_gov_tx_8910.json` and `rcp_gov_tx_3way_9200.json` re-downloaded 21:40 UTC: RCP added it (52/46) and moved Cook Political Report (Oct 9-13), Marist (Oct 8-11), ReconMR/Siena (Oct 5-8) and University of Houston (Oct 10-14) out of its two-way average; average 10/8-10/28, Abbott 50.3, Hinojosa 46.6.
 
 Effect: Houston, Cook and Marist started inside RCP's window, so `COUNT_RCP_LEFT_OUT` keeps them; ReconMR/Siena started before it and drops out. Texas's average (10 polls) R+3.1 -> R+3.65 two-party; projection R+4.0 -> R+4.4 (P(Hinojosa) 0.217 -> 0.194); P(Democratic majority of governorships) 0.710 -> 0.708.
+
+### UC Berkeley IGS / Los Angeles Times, California (Oct 19-25), in RCP's average
+
+| File | URL | Notes |
+|---|---|---|
+| `latimes_berkeley_igs_ca_2026-10-30.html` | https://www.latimes.com/california/story/2026-10-30/becerra-widens-lead-in-governors-race-as-voter-focus-shifts-to-trump-new-poll-shows | LA Times article (Oct 30), retrieved 22:00 UTC: poll by the UC Berkeley Institute of Governmental Studies, co-sponsored by the LA Times, online in English and Spanish Oct 19-25; 1,477 who had voted or were likely to vote, of 2,787 registered voters; MOE 3. Becerra 61, Hilton 34. |
+| `rcp_gov_ca_9014.json` | https://orig.realclearpolitics.com/poll/race/9014/polling_data.json | Re-downloaded 21:40 UTC: 'LA Times/Berkeley IGS' 10/19-25 (61/34) replaces IGS's Sep 15-20 poll in the average; window now 10/9-10/25, Becerra 58.2, Hilton 34.2. |
+
+Effect: with RCP's window starting Oct 9, IVC Media for the Independent Voter Project (Sep 23-Oct 2) no longer counts as a poll RCP left out. California's average (6 polls) D+23.6 -> D+25.7 two-party; projection D+23.6 -> D+25.2 (P(D) 1.000); P(Democratic majority of governorships) unchanged at 0.708.
