@@ -104,7 +104,16 @@ ADDED_TO_RCP = {("MI", "Michigan State Univ. (Political Science)/Verasight", dat
 # start of RCP's averaging window and passes the rules above (excluded
 # pollsters, partisan sponsors, NOT_COUNTED). False: RCP's averaged set as
 # published, plus RCP_PENDING and ADDED_TO_RCP.
-COUNT_RCP_LEFT_OUT = False
+COUNT_RCP_LEFT_OUT = True
+# Left-out polls not counted under COUNT_RCP_LEFT_OUT because the sponsor (or
+# the pollster itself) leans partisan or the client is likely partisan (user
+# decision Oct 30: "if your inclination is that it is sponsored by a partisan
+# leaning group, don't add it"). Keyed by (state, pollster as compiled, end).
+LEFT_OUT_PARTISAN_LEANING = {
+    ("SC", "Impact Research", date(2026, 10, 21)): "no client named; the memo was posted by Fresh Start PAC",
+    ("SC", "Targoz Market Research", date(2026, 10, 25)): "South Carolina Policy Council, a conservative think tank",
+    ("FL", "MDW Communications", date(2026, 10, 10)): "MDW and EDGE Communications, political consultancies",
+}
 # Pollster identity across RCP's and the compiled polls' names (first match
 # wins; a sponsor's name counts too). Anything else: the first word.
 FIRM_ALIASES = [
@@ -412,6 +421,7 @@ def build():
                      for p in usable if COUNT_ADDED_TO_RCP and (st, p["pollster"], p["end"]) in ADDED_TO_RCP]
             kept = kept + extra
             replaced, left_out = (rcp_left_out(st, rcp, kept, usable, ADDED_TO_RCP if COUNT_ADDED_TO_RCP else set(),
+                                               eligible=lambda p: (st, p["pollster"], p["end"]) not in LEFT_OUT_PARTISAN_LEANING,
                                                internal=INTERNAL.get(st, ()))
                                   if COUNT_RCP_LEFT_OUT else ([], []))
             kept = [a for a in kept if a not in replaced] + left_out

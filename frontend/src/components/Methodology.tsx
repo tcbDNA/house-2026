@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (72.4% vs 70.7% by default; Osborn's race is nearly all of the
+        them does (72.4% vs 70.8% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -221,17 +221,21 @@ export function Methodology() {
         group — even one RCP averaged; in
         Maine, Echelon's NetChoice poll, which RCP lists but hasn't yet averaged,
         is counted ahead of RCP, and MSU's Michigan survey and A2 Insights' Texas poll,
-        which RCP doesn't list, are counted too); where a newer poll came out after RCP last updated the
+        which RCP doesn't list, are counted too). Polls RCP leaves out of an average it
+        publishes are counted as well (since Oct 30): the latest poll by each pollster
+        RCP doesn't average, or a newer one by a pollster it does, if it started inside
+        RCP's averaging window — except campaign or party internals and polls whose
+        sponsor leans partisan. Where a newer poll came out after RCP last updated the
         average, or RCP publishes none, the average is recomputed from the most
         recent poll by each pollster in the last three weeks, YouGov Blue counted
         apart from YouGov (as of Oct 29:
         Georgia and Alabama, plus
         Mississippi, Nebraska, Arkansas and Idaho, which RCP doesn't average).
         Louisiana and 11 safe races have no recent poll and use the model alone.
-        The blend takes Texas from the model's R+1.1 to Talarico D+1.4, Kansas from
+        The blend takes Texas from the model's R+1.1 to Talarico D+1.6, Kansas from
         R+4.7 to Hamilton D+0.4 (R+0.3 with w = 0.6), Nebraska from R+4.7 to Ricketts
         +3.5 and Alaska from R+2.1 to D+0.6; P(D control) is 72.4% (62.7% on the
-        model alone; 71.5% / 73.1% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        model alone; 71.6% / 73.1% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average (Alme +12.0, two
@@ -307,7 +311,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        24–30), with a 72.1% chance of a majority.
+        23–30), with a 70.8% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

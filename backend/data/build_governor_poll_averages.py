@@ -78,8 +78,19 @@ ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight"
 # Senate's COUNT_RCP_LEFT_OUT; setting added on the user's request, Oct 30).
 # Alaska's RCP average is final-round, so only polls with a final round count
 # there. False: RCP's averaged set as published, plus ADDED_TO_RCP.
-COUNT_RCP_LEFT_OUT = False
+COUNT_RCP_LEFT_OUT = True
 
+# Left-out polls not counted under COUNT_RCP_LEFT_OUT because the sponsor (or
+# the pollster itself) leans partisan or the client is likely partisan (user
+# decision Oct 30: "if your inclination is that it is sponsored by a partisan
+# leaning group, don't add it"). Keyed by (state, pollster as compiled, end).
+LEFT_OUT_PARTISAN_LEANING = {
+    ("SC", "Targoz Market Research", date(2026, 10, 25)): "South Carolina Policy Council, a conservative think tank",
+    ("FL", "MDW Communications", date(2026, 10, 10)): "MDW and EDGE Communications, political consultancies",
+    ("FL", "Fabrizio, Lee & Associates", date(2026, 10, 11)): "no client named; Fabrizio polls for Republican campaigns",
+    ("CA", "Manhattan Institute", date(2026, 10, 1)): "a conservative think tank (its own poll)",
+    ("WI", "YouGov", date(2026, 10, 9)): "City Forward Collective / CFC Action Fund, a school-choice group's electoral arm",
+}
 DATA = Path(__file__).resolve().parent
 SRC = DATA / "sources" / "gov_polls_2026"
 OUT = DATA / "governor_poll_averages.csv"
@@ -183,7 +194,8 @@ def build() -> str:
                      for p in usable if COUNT_ADDED_TO_RCP and (st, p["pollster"], p["end"]) in ADDED_TO_RCP]
             kept = kept + extra
             replaced, left_out = (rcp_left_out(st, rcp, kept, usable, ADDED_TO_RCP if COUNT_ADDED_TO_RCP else set(),
-                                               eligible=(lambda p: p["rcv"]) if st == "AK" else (lambda p: True),
+                                               eligible=lambda p: (st, p["pollster"], p["end"]) not in LEFT_OUT_PARTISAN_LEANING
+                                               and (p["rcv"] or st != "AK"),
                                                internal=internal.get(st, ()))
                                   if COUNT_RCP_LEFT_OUT else ([], []))
             kept = [a for a in kept if a not in replaced] + left_out

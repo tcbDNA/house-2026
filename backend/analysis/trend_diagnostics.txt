@@ -12,9 +12,9 @@
 
 == Headline metrics (trend weight 0.5)
   raw trend (both parts kept)        {'national_margin': 9.78, 'house_d_seats': 238, 'house_median': 240, 'house_p10': 224, 'house_p90': 261, 'house_p_d_majority': 0.978, 'senate_d_seats': 53, 'senate_median': 52, 'senate_p_d_control': 0.755}
-  both parts removed                 {'national_margin': 9.78, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 224, 'house_p90': 259, 'house_p_d_majority': 0.977, 'senate_d_seats': 53, 'senate_median': 52, 'senate_p_d_control': 0.727}
+  both parts removed                 {'national_margin': 9.78, 'house_d_seats': 234, 'house_median': 239, 'house_p10': 224, 'house_p90': 259, 'house_p_d_majority': 0.977, 'senate_d_seats': 53, 'senate_median': 52, 'senate_p_d_control': 0.728}
   remove demographic part only (default) {'national_margin': 9.78, 'house_d_seats': 236, 'house_median': 240, 'house_p10': 225, 'house_p90': 260, 'house_p_d_majority': 0.979, 'senate_d_seats': 53, 'senate_median': 52, 'senate_p_d_control': 0.724}
-  remove battleground part only      {'national_margin': 9.78, 'house_d_seats': 236, 'house_median': 239, 'house_p10': 224, 'house_p90': 260, 'house_p_d_majority': 0.976, 'senate_d_seats': 53, 'senate_median': 52, 'senate_p_d_control': 0.752}
+  remove battleground part only      {'national_margin': 9.78, 'house_d_seats': 236, 'house_median': 239, 'house_p10': 224, 'house_p90': 260, 'house_p_d_majority': 0.976, 'senate_d_seats': 53, 'senate_median': 52, 'senate_p_d_control': 0.753}
   both removed, basis without age    {'national_margin': 9.78, 'house_d_seats': 235, 'house_median': 239, 'house_p10': 224, 'house_p90': 259, 'house_p_d_majority': 0.977, 'senate_d_seats': 53, 'senate_median': 52, 'senate_p_d_control': 0.731}
 
 == 15 districts whose projections change most (both parts removed − raw trend)
