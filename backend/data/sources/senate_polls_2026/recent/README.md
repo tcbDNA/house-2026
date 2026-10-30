@@ -362,3 +362,16 @@ Also flagged "(political sponsor)" on Steven David's poll-path page. Pollfinity'
 | `pollfinity_about_2026-10-30.html` | https://www.pollfinity.com/about | "Our work is entirely self-funded." |
 
 Effect: Texas Senate average D+2.46 -> D+2.25 (12 polls), projection D+1.5 -> D+1.35 (P 0.62 -> 0.61); Senate P(D control) 0.729 -> 0.727. Texas governor average R+2.64 -> R+3.0 (10 polls, RCP's own figure), projection R+3.8 -> R+4.0; P(D majority of governorships) 0.711 -> 0.709.
+
+## Update, 2026-10-30 evening (poll check, user asked)
+
+Retrieved **2026-10-30 21:40 UTC**. Every RCP Senate and governor feed saved in this folder and in `../../gov_polls_2026/` was downloaded again and compared row by row with the saved copy, and VoteHub's Senate, governor and generic-ballot polls (`https://polling.votehub.com/site/polls?poll_type=<type>&limit=3000`) were compared with the saved dumps. Only feeds whose averaged polls changed are saved again; each change is a separate commit below. New VoteHub Senate rows not counted: Workbench Strategy FL Oct 18-22 for Angie Nixon (campaign internal), Concord Public Opinion Partners SD Oct 22-26 for Democrats for Education Reform (partisan sponsor), ActiVote IL and TX (excluded pollster). Montana State University Billings (MT, Oct 5-21, 720 adults) is new but samples all adults, not voters: left for a user decision.
+
+### InsiderAdvantage, Florida (Oct 28-29), in RCP's average
+
+| File | URL | Notes |
+|---|---|---|
+| `insideradvantage_florida_2026-10-30.html` | https://insideradvantage.com/insideradvantage-florida-survey-donalds-49-jolly-45-moody-49-nixon-43/ | Release posted Oct 30 by Matt Towery, retrieved 21:55 UTC: 1,200 LV, mixed mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83%, conducted Oct 28-29; no sponsor named. Senate Moody 49, Nixon 43, other 2, undecided 6 (governor Donalds 49, Jolly 45). |
+| `rcp_fl_8948.json` | https://orig.realclearpolitics.com/poll/race/8948/polling_data.json | Re-downloaded 21:40 UTC: RCP added 'InsiderAdvantage' 10/28-29 at 49/43 to its average (row Oct 30 13:59 CT); average 10/2-10/29, Moody 49.3, Nixon 43.2. |
+
+Effect: Florida's average (RCP's plus the polls it leaves out, 7 polls) R+7.0 -> R+6.9 two-party; projection R+5.7 -> R+5.6 (P(Nixon) 0.148 -> 0.150). Senate P(D control) unchanged at 0.727.

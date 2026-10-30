@@ -1063,6 +1063,24 @@
     "excluded_pollster": false,
     "source": "RCP (feed 8948, row updated Oct 28 08:17 CT); NYT poll list (user paste, nyt_poll_list_user_paste_2026-10-28_st_pete_fl.txt)",
     "note": "Moody 49, Nixon 45, 916 LV, MOE 3.2 (RCP). The Florida Politics article RCP links (https://floridapolitics.com/archives/827487-final-st-pete-polls-byron-donalds-leads-david-jolly-48-to-46-as-long-as-republicans-show-up/) could not be retrieved: HTTP 403 browser block to curl and headless Chrome, 402 to WebFetch, no archive.ph copy, Wayback rate-limited. St. Pete Polls' own site lists no 2026 polls. Third-party and undecided shares not checked."
+   },
+   {
+    "pollster": "InsiderAdvantage",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-10-29",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 1200,
+    "anti_r": 43,
+    "r": 49,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "insideradvantage_florida_2026-10-30.html; rcp_fl_8948.json",
+    "note": "InsiderAdvantage Florida survey posted Oct 30 (insideradvantage_florida_2026-10-30.html): 1,200 likely voters, mixed mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83%, conducted Oct 28-29; no sponsor named. U.S. Senate: Moody 49, Nixon 43, other 2, undecided 6. RCP: 'InsiderAdvantage' 10/28-29, 49/43, in the average (row Oct 30 13:59 CT)."
    }
   ],
   "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate Oct 24, content through Oct 28) now averages 9/28-10/26, Moody 49.6, Nixon 42.4, 7 polls: NYT/Siena 10/19-26 added. Its latest poll ends after RedBox and Echelon, so Florida uses RCP's average again. A new ActiVote poll (Oct 17-27) is recorded only (excluded pollster). Oct 28 second check (13:48 UTC): RCP (built Oct 28 08:26 CT) added St. Pete Polls 10/25-27 (Moody 49, Nixon 45) in place of St. Pete's 10/5-7 poll: 9/28-10/27, Moody 49.9, Nixon 42.4, 7 polls. Oct 28 third check (17:29 UTC): RCP (built Oct 28 08:27 CT) dropped NBC 6/Mason-Dixon 9/28-10/1 and Stetson 10/1-10/9 from the average: 10/2-10/27, Moody 49.4, Nixon 43.2, 5 polls."
