@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (73.7% vs 72.2% by default; Osborn's race is nearly all of the
+        them does (73.9% vs 72.4% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -228,15 +228,15 @@ export function Methodology() {
         sponsor leans partisan. Where a newer poll came out after RCP last updated the
         average (one RCP already lists doesn't count as newer), or RCP publishes none, the average is recomputed from the most
         recent poll by each pollster in the last three weeks, YouGov Blue counted
-        apart from YouGov (as of Oct 29:
-        Georgia and Alabama, plus
+        apart from YouGov (as of Oct 31:
+        Texas, Georgia and Alabama, plus
         Mississippi, Nebraska and Arkansas, which RCP doesn't average).
         Louisiana, Idaho (whose only recent poll was commissioned by the Achilles
         campaign) and 11 safe races have no countable recent poll and use the model alone.
-        The blend takes Texas from the model's R+1.0 to Talarico D+1.6, Kansas from
+        The blend takes Texas from the model's R+1.0 to Talarico D+1.7, Kansas from
         R+4.5 to Hamilton D+0.6 (R+0.1 with w = 0.6), Nebraska from R+4.5 to Ricketts
-        +3.8 and Alaska from R+1.8 to D+0.7; P(D control) is 73.7% (63.8% on the
-        model alone; 72.7% / 74.3% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        +3.8 and Alaska from R+1.8 to D+0.7; P(D control) is 73.9% (63.8% on the
+        model alone; 72.8% / 74.3% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus

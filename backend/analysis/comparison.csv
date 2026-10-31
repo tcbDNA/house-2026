@@ -88,3 +88,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 67-nyt-siena-nebraska-governor,9.89,236,240,225,261,0.982,53,52,0.737,"NYT/Siena Nebraska governor Oct 23-29 (Pillen 53, Walz 40); no RCP average, recomputed"
 68-concord-governor-sponsor,9.89,236,240,225,261,0.982,53,52,0.737,"Concord Nebraska (Oct 15-18) and South Dakota (Oct 6-8) governor records: sponsor Education Reform Now Advocacy added from the release, so both are left out as partisan-sponsored"
 69-leaning-in-recomputes,9.89,236,240,225,261,0.982,53,52,0.737,Partisan-leaning leave-outs (LEFT_OUT_PARTISAN_LEANING) apply in recomputed averages too (no change to any average now)
+70-kstrat-texas-senate,9.89,236,240,225,261,0.982,53,52,0.739,"Kreate Strategies Texas Oct 27-30 (Talarico 48, Paxton 45), no sponsor; newer than RCP's average, so Texas is recomputed"

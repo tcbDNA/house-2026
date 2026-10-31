@@ -53,7 +53,7 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   NM     -2.23   -0.00  +0.00  -0.13    -2.10  poll blend (expected)
   MA     +1.76   +0.01  +0.02  -0.17    +1.91  poll blend (expected)
   AL     +1.51   +0.00  -0.09  -0.61    +2.20  FLAG · poll blend (expected)
-  TX     +1.40   -0.02  -0.35  -0.84    +2.61  FLAG · poll blend (expected)
+  TX     +1.51   -0.02  -0.35  -0.84    +2.72  FLAG · poll blend (expected)
   UT     -1.22   -0.35  -0.08  -0.78    +0.00  FLAG · no 2026 race
   MT     +0.98   -0.04  -0.00  -0.01    +1.03  poll blend (expected)
   CA     -0.89   +0.01  -0.31  -0.60    +0.00  FLAG · no 2026 race

@@ -465,3 +465,13 @@ South Carolina: "Project VOTE (PAC)" joins `PARTISAN_LEANING_SPONSORS` (not in R
 | `zetik_nyt_siena_ne_2026-10-31.html` | https://www.zetik.com/news/article/story_id-p008-228344 | Summary of the NYT story, retrieved 11:58 UTC: "The Oct. 23-29 poll surveyed 809 likely voters and carries a margin of error of plus or minus 4 percentage points." Used for the dates and n. |
 
 The NYT topline and crosstab pages the release links (https://www.nytimes.com/interactive/2026/10/31/polls/times-siena-ne-poll-toplines.html, `-crosstabs.html`) return a CAPTCHA page (HTTP 403) to curl, so third-party and undecided shares aren't recorded. Not yet on RCP (`rcp_ne_9035.json`, re-downloaded 11:49 UTC, unchanged since Oct 28) or VoteHub. Nebraska has no RCP average, so it's recomputed: R+2.11 -> R+3.55 two-party (3 polls).
+
+### Kreate Strategies (KStrat), Texas (Oct 27-30), from the user's NYT poll list paste (Oct 31)
+
+| File | URL | Notes |
+|---|---|---|
+| `nyt_poll_list_user_paste_2026-10-31_kstrat_tx.txt` | NYT poll list (pasted by the user) | Senate Talarico 48, Paxton 45, Brown 0; governor Abbott 49, Hinojosa 47, Dixon 1; Oct 27-30. |
+| `kstrat_texas_2026-10-30.html` | https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october | KStrat's release (Houston, Oct 30), saved as rendered in headless Chrome at 13:00 UTC (the served HTML is a 3 KB app shell): "conducted October 27–30, 2026, among 900 likely Texas voters using an online panel methodology", MOE ±3.3. Senate 48/45, 6% undecided; governor 49/47, 3% undecided. |
+| `../../gov_polls_2026/kstrat_az_release_2026-10-29.html` | https://kstrat.net/press/arizona-2026-governor-hobbs-leads-biggs-october | KStrat's Arizona release, for comparison: it ends "This survey was sponsored by American Encore." The Texas release has no sponsor line, so it's KStrat's own poll and counts (a partisan-sponsored KStrat poll, like Arizona's, does not). |
+
+Not in RCP (Texas feeds re-downloaded 12:53 UTC, unchanged since Oct 30 20:41 CT) or VoteHub. It ended after the latest poll in RCP's average (Quantus, Oct 28) and came out the day RCP last built it, so Texas is recomputed from each pollster's latest poll since Oct 5: D+2.71 -> D+2.86 two-party (15 polls). Pollfinity stays out (user decision Oct 30), now in recomputes too.

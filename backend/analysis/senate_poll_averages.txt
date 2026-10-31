@@ -9,19 +9,23 @@ OH: RCP average, Rasmussen removed; plus polls RCP left out: Echelon Insights fo
     - co/efficient 10/5 - 10/6
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 47/47)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-TX: RCP average, excluded pollsters removed: Quantus Insights 10/26 - 10/28, Rasmussen Reports 10/20 - 10/21; partisan-sponsored poll removed: TPOR 10/15 - 10/18; plus A2 Insights ending Oct 27 (not listed by RCP, counted by user decision); plus polls RCP left out: Data for Progress 10/23 - 10/26, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist 10/8 - 10/11; 12 poll(s); anti-R 49.02 / R 46.43 -> margin +2.58, blend margin +2.71 (RCP published +1.8)
-    - TSU/YouGov 10/21 - 10/25
-    - CNN 10/20 - 10/27
-    - Emerson 10/17 - 10/19
-    - FOX News 10/15 - 10/19
-    - Univision/YouGov 10/13 - 10/21
-    - InsiderAdvantage 10/13 - 10/14
-    - University of Houston 10/10 - 10/14
-    - CBS News 10/8 - 10/16
-    - A2 Insights ending Oct 27 (not listed by RCP, counted by user decision)
-    - Data for Progress 10/23 - 10/26 (left out by RCP, counted; full ballot, 49/45)
-    - New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13 (left out by RCP, counted; full ballot, 49/44)
-    - Marist 10/8 - 10/11 (left out by RCP, counted; full ballot, 47/45)
+TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.45 / R 45.76 -> margin +2.69, blend margin +2.86 (RCP published +1.8)
+    newer than RCP's average (built 2026-10-30): Kreate Strategies (KStrat) ending 2026-10-30 released 2026-10-30
+    - Kreate Strategies (KStrat), ending 2026-10-30 (full ballot, 48/45)
+    - CNN/SSRS for CNN, ending 2026-10-27 (full ballot, 49/43)
+    - A2 Insights, ending 2026-10-27 (full ballot, 50.2/47.2)
+    - Data for Progress, ending 2026-10-26 (full ballot, 49/45)
+    - Texas Southern University/YouGov, ending 2026-10-25 (full ballot, 49/47)
+    - VoteHub/Verasight for VoteHub, ending 2026-10-20 (full ballot, 47.6/45.2)
+    - Fox News (Beacon Research/Shaw & Co.) for Fox News, ending 2026-10-19 (full ballot, 49/49)
+    - Emerson College for Nexstar Media, ending 2026-10-19 (full ballot, 48/46)
+    - Univ. of Houston Hobby School, ending 2026-10-14 (full ballot, 48/46)
+    - InsiderAdvantage, ending 2026-10-14 (full ballot, 48/49)
+    - New River Strategies/GS Strategy Group for The Cook Political Report, ending 2026-10-13 (full ballot, 49/44)
+    - Marist, ending 2026-10-11 (full ballot, 47/45)
+    - ReconMR/Siena, ending 2026-10-08 (full ballot, 48/44)
+    - Trafalgar Group (R-flagged), ending 2026-10-08 (full ballot, 47/44)
+    - Univ. of Texas/Texas Politics Project (YouGov) for University of Texas, ending 2026-10-05 (full ballot, 50/47)
     left out: Cor Strategies (Heritage Action; not counted, user decision Oct 28); Pollfinity, ending 2026-10-18 (partisan-leaning: owned and self-funded by Lars Mapstead, a 2024 Libertarian presidential candidate (user decision Oct 30)); Slingshot Strategies (TPOR) for Texas Public Opinion Research, ending 2026-10-18 (partisan sponsor); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor)
 AK: RCP average, Rasmussen removed; 4 poll(s); anti-R 50.00 / R 48.25 -> margin +1.75, blend margin +1.78 (RCP published +1.2)
     - Alaska Survey Research 10/26 - 10/29
