@@ -221,21 +221,19 @@ Estimated 2026 vote counts use **each race's own Kalshi turnout market** (`backe
 
 A state's governor map (`/api/state/<st>/counties?race=governor`; `main._state_counties_overlay`, `overlay.state_counties`) shows each county's projected margin in the governor race. It changes only the map, never a projection.
 
-1. **Starting margin.** For an incumbent running again who has won a governor's race, the county's position relative to the state comes from that race: the state's 2024 presidential margin (its counties, 2024-vote weighted), plus the county's margin in the incumbent's last race, minus that race's statewide margin (setting `governor_county_incumbent_map`). Those races are 2022 for AZ, AR, CT, HI, IL, MD, MA, NE, NV, NY, PA and TX, and 2024 for NH and VT; the data is `backend/data/gov_county_results.csv`, with sources and checks in `sources/gov_county_results/`. Idaho (Little 2022, Bundy 17%) and Oregon (Kotek 2022, Johnson 8.6%) keep the presidential map, because a third candidate took over 5% (`governor_county_incumbent_map_skip_third`, the governor WAR records' rule). Open seats, and South Dakota, whose Rhoden has never won a governor's race, start from the county's 2024 presidential margin.
-2. **The county's own terms.**
-
-       county = starting margin + demographic shift + trend weight × shrunk residual trend
-
+1. **Starting point.** Each county starts from its log-odds of the two-party D share. For an incumbent running again who has won a governor's race, that share comes from the incumbent's last race, so the county's position relative to the state is the incumbent's own (setting `governor_county_incumbent_map`). Those races are 2022 for AZ, AR, CT, HI, IL, MD, MA, NE, NV, NY, PA and TX, and 2024 for NH and VT; the data is `backend/data/gov_county_results.csv`, with sources and checks in `sources/gov_county_results/`. Idaho (Little 2022, Bundy 17%) and Oregon (Kotek 2022, Johnson 8.6%) keep the presidential map, because a third candidate took over 5% (`governor_county_incumbent_map_skip_third`, the governor WAR records' rule). Open seats, and South Dakota, whose Rhoden has never won a governor's race, start from the county's 2024 presidential share.
+2. **Demographic and trend shifts, in log-odds.** Both are computed in points, as on the House and Senate maps:
    - The demographic shift is the scenario sliders applied to the county's own electorate shares.
-   - The residual trend is the county's 2020→2024 presidential shift that its demographics don't explain, shrunk toward the state's with weight = 2024 votes / (2024 votes + 25,000). Alaska's boroughs take the state's.
-   - The trend weight defaults to 0.5.
-3. **Reconciling step.** One constant is added to every county's log-odds of the two-party D share, with the county's third-party share held at its 2024 presidential share. It's chosen so the 2024-vote-weighted county margins equal the governor projection exactly (`governor_county_logodds_reconcile`).
+   - The residual trend is the county's 2020→2024 presidential shift that its demographics don't explain, shrunk toward the state's with weight = 2024 votes / (2024 votes + 25,000). Alaska's boroughs take the state's. The trend weight defaults to 0.5.
 
-   That constant does the work of every term that is the same in every county: the national swing, the candidate effect (the race's WAR effect and incumbency adjustment, from the governor model), and the gap the governor slope leaves. A lopsided county moves less than a close one, and no county can pass ±100. With a flat shift instead, Prince George's County, Maryland would be D+105; with the log-odds step it is D+94.
+   Each is then added as the log-odds shift it would be in an evenly split county: points / (50 × (1 − the county's third-party share)). A 50–50 county moves the full number of points, and a lopsided county moves fewer, as a uniform swing in log-odds implies.
+3. **Reconciling step.** One constant is added to every county's log-odds, chosen so the 2024-vote-weighted county margins equal the governor projection exactly. Each county's third-party share is held at its 2024 presidential share throughout. The constant does the work of every term that is the same in every county: the national swing, the candidate effect (the race's WAR effect and incumbency adjustment, from the governor model), and the gap the governor slope leaves. No county can pass ±100.
 
-   Off, the map is the same as the Senate county maps: the swing and candidate effect are added to every county, and one flat shift in points reconciles them.
+   At the defaults, California's map moves San Bernardino 5.6 points left of 2024 and San Francisco 2.6. Adding the shifts in points instead pushes the deep-blue counties further out before reconciling, which leaves the close, heavily Hispanic counties smaller shifts than the Bay Area's.
+
+   Settings: `governor_county_logodds_reconcile` and `governor_county_full_logodds`. With the second off, the county's own terms are added in points and only the reconciling step is in log-odds. With the first off, the map is built like the Senate county maps: the swing and candidate effect are added to every county in points, and one flat shift reconciles them.
 4. **What isn't modeled at the county level.**
-   - The governor partisan slope (0.68) isn't applied, because it was estimated across states. Counties keep the full spread of their starting map.
+   - The governor partisan slope (0.68) isn't applied, because it was estimated across states. Counties keep the full log-odds spread of their starting map.
    - Nothing candidate-specific is local, apart from an incumbent's own map.
    - There are no county win probabilities; "tossup" means within ±3.
 5. **Vote counts (display only).**
@@ -244,7 +242,7 @@ A state's governor map (`/api/state/<st>/counties?race=governor`; `main._state_c
    - D = turnout × (1 − other + margin) / 2, and R gets the rest (`governor_county_third_party_votes`; off: all turnout split between D and R).
 6. **Rhode Island** has no county map: Foulkes against the independent Block is modeled on polls only.
 
-The map's hover shows the starting race's own county margin first (for example "Scott 2024 margin", or "2024 margin" on the presidential map), then the trend, the demographic shift, and the rest (swing, candidates, reconcile).
+The map's hover shows the starting race's own county margin first (for example "Scott 2024 margin", or "2024 margin" on the presidential map). Then come what the trend and demographic steps did in points, and the rest (swing, candidates, reconcile).
 
 ## Caveats
 

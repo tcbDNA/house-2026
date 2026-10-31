@@ -371,11 +371,13 @@ export function Methodology() {
         governor's race takes each county's position relative to the state from
         that race (2022, or 2024 in New Hampshire and Vermont) instead of the
         2024 presidential map; Idaho and Oregon, where a third candidate took over
-        5% in 2022, open seats and South Dakota keep the presidential map. Each
-        county then gets its demographic shift and shrunk residual trend, and one
-        constant is added to every county's log-odds of the two-party Democratic
-        share (third parties at their 2024 share) so the counties add up exactly
-        to the governor projection; lopsided counties move less than close ones.
+        5% in 2022, open seats and South Dakota keep the presidential map. The
+        whole county calculation is in log-odds of the two-party Democratic share
+        (third parties at their 2024 share): the demographic shift and shrunk
+        residual trend are added as the log-odds shifts they would be in an evenly
+        split county, and one constant added to every county makes the counties
+        add up exactly to the governor projection, so lopsided counties move fewer
+        points than close ones at every step.
         The governor slope isn't applied to counties, and there are no county win
         probabilities. Vote counts set each county's 2024 third-party share aside
         before splitting the rest between the two candidates. Rhode Island has no
