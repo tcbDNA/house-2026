@@ -241,8 +241,8 @@ export function Methodology() {
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus
         (Alme +8.0, Montana Free Press alone, so 1/3 polls and 2/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
-        Democratic nominee) has two recent polls without a partisan sponsor, Ricketts
-        +2.1; weighted 0.47 against the model's Ricketts +4.5, it projects Ricketts
+        Democratic nominee) has three recent polls without a partisan sponsor, Ricketts
+        +3.55; weighted 0.7 against the model's Ricketts +4.5, it projects Ricketts
         +3.8 (Osborn 25%). As
         a cross-check, Economist/YouGov had Fischer +7 over
         Osborn in late October 2024 and Fischer won by 6.7; YouGov's 2026 poll has
