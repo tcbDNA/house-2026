@@ -3672,6 +3672,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/cnn_ssrs_maine_october_2026.pdf (GOVVOTEME); rcp_gov_me_9030.json",
     "note": "783 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.5). Two-candidate question (Bennett not offered): Pingree 53, Charles 39, neither 4, other 4 (Aug 31-Sep 6: 52/39). RCP: 'CNN'; not in RCP's three-way feed."
+   },
+   {
+    "pollster": "Data for Progress",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-27",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 652,
+    "d_candidate": "Hannah Pingree",
+    "r_candidate": "Bobby Charles",
+    "d": 49,
+    "r": 37,
+    "anti_r": 49,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 49,
+    "full_r": 37,
+    "others": [
+     {
+      "name": "Rick Bennett",
+      "party": "I",
+      "pct": 7
+     }
+    ],
+    "undecided": 6,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/dfp_maine_michigan_texas_2026-10-30.html; ../senate_polls_2026/recent/dfp_2026_me_ge_tabs.pdf; rcp_gov_me_3way_9101.json",
+    "note": "DFP's own survey (no client named), Oct 23-27, 652 LV (PDF p.1). Q4 governor: Pingree 49, Charles 37, Bennett (I) 7, not sure/refused 6; no two-way question. RCP lists it only in the three-way feed ('Data for Progress (D)' 10/23-10/26, row Oct 30 CT); its two-way feed (rcp_gov_me_9030.json) doesn't list it."
    }
   ]
  },
@@ -4520,6 +4553,49 @@
     "excluded_pollster": false,
     "source": "cbsdetroit_mitchell_mi_gov_2026-10-29.html; rcp_gov_mi_8992.json",
     "note": "CBS Detroit (Oct 29, 5:10 PM EDT): Mitchell Research & Communications for CBS Detroit and other Michigan TV stations, Oct 26-27, 636 LV, online panels plus survey links texted to randomly selected registered voters, weighted by demographics and 2022 and 2024 results; MOE 3.9. Benson 49, James 44 (early October: 46/39). Same survey as the Senate entry. RCP: 'CBS News/Mitchell', in the average."
+   },
+   {
+    "pollster": "Data for Progress",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-25",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 622,
+    "d_candidate": "Jocelyn Benson",
+    "r_candidate": "John James",
+    "d": 52,
+    "r": 43,
+    "anti_r": 52,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 52,
+    "full_r": 43,
+    "others": [
+     {
+      "name": "Anthony Hudson",
+      "party": "L",
+      "pct": 1
+     },
+     {
+      "name": "Donna Brandenburg",
+      "party": "UST",
+      "pct": 1
+     },
+     {
+      "name": "Douglas Campbell",
+      "party": "G",
+      "pct": 0
+     }
+    ],
+    "undecided": 3,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/dfp_maine_michigan_texas_2026-10-30.html; ../senate_polls_2026/recent/dfp_2026_mi_ge_tabs.pdf; rcp_gov_mi_8992.json; rcp_gov_mi_multi_9226.json",
+    "note": "DFP's own survey (no client named), Oct 23-25, 622 LV (PDF p.1). Q4 governor: Benson 52, James 43, Hudson (L) 1, Brandenburg (UST) 1, Campbell (G) <0.5, not sure/refused 3. RCP lists it as 'Data for Progress*' 10/23-10/26 (PDF: Oct 23-25), not averaged."
    }
   ]
  },
@@ -8265,6 +8341,38 @@
     "excluded_pollster": true,
     "source": "../senate_polls_2026/recent/quantus_texas_2026-10-30.html; rcp_gov_tx_8910.json; rcp_gov_tx_3way_9200.json",
     "note": "Quantus Insights (Oct 30 release): Oct 26-28, 1,221 LV, no sponsor named. Governor: Abbott 50.7, Hinojosa 45.8, Dixon (L) 1.2, undecided 2.3; with undecideds pushed to lean, Abbott 51.6, Hinojosa 46.3. RCP: 'Quantus Insights*' 10/26-28, 52/46 (two-way feed) and 52/46/1 (three-way), both averaged. Quantus Insights is an excluded pollster (user decision Oct 30)."
+   },
+   {
+    "pollster": "Data for Progress",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-26",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 712,
+    "d_candidate": "Gina Hinojosa",
+    "r_candidate": "Greg Abbott",
+    "d": 47,
+    "r": 48,
+    "anti_r": 47,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 47,
+    "full_r": 48,
+    "others": [
+     {
+      "name": "Pat Dixon (L)",
+      "pct": 2
+     }
+    ],
+    "undecided": 4,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/dfp_maine_michigan_texas_2026-10-30.html; ../senate_polls_2026/recent/dfp_2026_tx_ge_tabs.pdf; rcp_gov_tx_8910.json; rcp_gov_tx_3way_9200.json",
+    "note": "DFP's own survey (no client named), Oct 23-26, 712 LV (PDF p.1). Q4 governor: Abbott 48, Hinojosa 47, Dixon (L) 2, not sure 4. RCP lists it as 'Data for Progress (D)' 10/23-10/26, not averaged."
    }
   ]
  },

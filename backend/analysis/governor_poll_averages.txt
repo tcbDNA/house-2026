@@ -73,7 +73,7 @@ MA: RCP average; 3 poll(s) (n_eff 3); anti-R 57.67 / R 32.33 -> margin +25.33, b
     - WCVB-TV/Amherst 10/6 - 10/13
 MD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 0.5); anti-R 51.00 / R 24.00 -> margin +27.00, blend margin +36.00, third parties 6.0
     - University of Maryland Baltimore County Institute of Politics, ending 2026-09-27 (full ballot, 51/24)
-ME: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 10 poll(s) (n_eff 10); anti-R 49.80 / R 39.50 -> margin +10.30, blend margin +11.53, third parties 0.7 (RCP published +10.0)
+ME: RCP average; plus polls RCP left out: Data for Progress 10/23 - 10/27, Echelon Insights for NetChoice 10/16 - 10/23; 11 poll(s) (n_eff 11); anti-R 49.73 / R 39.27 -> margin +10.45, blend margin +11.75, third parties 1.3 (RCP published +10.0)
     - Marist 10/22 - 10/25
     - CNN 10/20 - 10/26
     - FOX News 10/16 - 10/20
@@ -83,8 +83,9 @@ ME: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 -
     - co/efficient 9/28 - 9/30
     - Fabrizio/Anzalone 9/20 - 9/22
     - UNH 9/17 - 9/21
+    - Data for Progress 10/23 - 10/27 (left out by RCP, counted; full ballot, 49/37)
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 51/38)
-MI: RCP average; plus Michigan State University (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); 8 poll(s) (n_eff 8); anti-R 50.94 / R 43.09 -> margin +7.85, blend margin +8.35, third parties 0.0 (RCP published +7.6)
+MI: RCP average; plus Michigan State University (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Data for Progress 10/23 - 10/25; 9 poll(s) (n_eff 9); anti-R 51.06 / R 43.08 -> margin +7.98, blend margin +8.47, third parties 0.2 (RCP published +7.6)
     - CBS News/Mitchell 10/26 - 10/27
     - CNN 10/20 - 10/27
     - Detroit News/Glengariff 10/19 - 10/22
@@ -93,6 +94,7 @@ MI: RCP average; plus Michigan State University (Political Science)/Verasight en
     - YouGov 9/28 - 10/5
     - FOX News 9/24 - 9/28
     - Michigan State University (Political Science)/Verasight ending Oct 23
+    - Data for Progress 10/23 - 10/25 (left out by RCP, counted; full ballot, 52/43)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
 MN: recomputed: newer polls than RCP's average; 5 poll(s) (n_eff 5); anti-R 50.80 / R 40.20 -> margin +10.60, blend margin +11.65, third parties 1.2 (RCP published +10.7)
     - State Navigate, ending 2026-10-28 (full ballot, 52/42)
@@ -160,13 +162,14 @@ SD: recomputed: RCP publishes no average; 3 poll(s) (n_eff 3); anti-R 38.33 / R 
     - Concord Public Opinion Partners (D-flagged), ending 2026-10-08 (full ballot, 38/48)
 TN: recomputed: newer polls than RCP's average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 1); anti-R 32.00 / R 44.00 -> margin -12.00, blend margin -15.79, third parties 13.0 (RCP published -21.0)
     - Spry Strategies, ending 2026-10-16 (full ballot, 32/44)
-TX: RCP average; removed: Quantus Insights 10/26 - 10/28, TPOR 10/15 - 10/18; plus polls RCP left out: University of Houston Hobby School of Public Affairs 10/10 - 10/14, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist University 10/8 - 10/11; 9 poll(s) (n_eff 9); anti-R 46.22 / R 49.44 -> margin -3.22, blend margin -3.37, third parties 0.6 (RCP published -3.7)
+TX: RCP average; removed: Quantus Insights 10/26 - 10/28, TPOR 10/15 - 10/18; plus polls RCP left out: Data for Progress 10/23 - 10/26, University of Houston Hobby School of Public Affairs 10/10 - 10/14, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist University 10/8 - 10/11; 10 poll(s) (n_eff 10); anti-R 46.30 / R 49.30 -> margin -3.00, blend margin -3.14, third parties 0.7 (RCP published -3.7)
     - TSU/YouGov 10/21 - 10/25
     - CNN 10/20 - 10/27
     - Emerson 10/17 - 10/19
     - FOX News 10/15 - 10/19
     - Univision/YouGov 10/13 - 10/21
     - CBS News 10/8 - 10/16
+    - Data for Progress 10/23 - 10/26 (left out by RCP, counted; full ballot, 47/48)
     - University of Houston Hobby School of Public Affairs 10/10 - 10/14 (left out by RCP, counted; full ballot, 46/49)
     - New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13 (left out by RCP, counted; full ballot, 46/48)
     - Marist University 10/8 - 10/11 (left out by RCP, counted; full ballot, 45/49)

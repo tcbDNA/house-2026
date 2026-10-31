@@ -283,3 +283,14 @@ Retrieved 11:29 UTC with the Senate feeds (procedure in `../senate_polls_2026/re
 ### Big Data Poll for the 1776 Law Center, Florida (Oct 26-30), in RCP's average: left out
 
 Release and sponsor sources: `../senate_polls_2026/recent/bigdatapoll_florida_2026-10-30.html` and `bigdatapoll_1776_law_center_tariffs_2026-02-20.html` (see the Senate README). `rcp_gov_fl_8881.json` re-downloaded 11:29 UTC: RCP added the poll (Donalds 47, Jolly 44) to its average. The served release has no governor numbers, so 47/44 is RCP's. Left out as partisan-leaning (`PARTISAN_LEANING_SPONSORS`, shared with the Senate build); Florida's average is unchanged (R+5.38 two-party).
+
+### Data for Progress, Maine (Oct 23-27), Michigan (Oct 23-25) and Texas (Oct 23-26), listed by RCP, not averaged
+
+Release and crosstabs: `../senate_polls_2026/recent/dfp_maine_michigan_texas_2026-10-30.html`, `dfp_2026_me_ge_tabs.pdf`, `dfp_2026_mi_ge_tabs.pdf`, `dfp_2026_tx_ge_tabs.pdf` (URLs in the Senate README). DFP's own surveys, no client named. Governor: Maine Pingree 49, Charles 37, Bennett (I) 7, not sure 6 (652 LV); Michigan Benson 52, James 43, Hudson (L) 1, Brandenburg 1, not sure 3 (622 LV); Texas Abbott 48, Hinojosa 47, Dixon (L) 2, not sure 4 (712 LV).
+
+| File | Notes |
+|---|---|
+| `rcp_gov_me_3way_9101.json` | Re-downloaded 11:29 UTC (built Oct 30 20:46 CT): lists "Data for Progress (D)" 10/23-10/26, not averaged. The two-way feed (`rcp_gov_me_9030.json`, built Oct 29) doesn't list it, since the poll asked only the three-way question. |
+| `rcp_gov_mi_8992.json`, `rcp_gov_mi_multi_9226.json`, `rcp_gov_tx_8910.json`, `rcp_gov_tx_3way_9200.json` | Re-downloaded 11:29 UTC: DFP listed (10/23-10/26), not averaged; nothing else in these averages changed. |
+
+All three count under `COUNT_RCP_LEFT_OUT` (full ballot). Because RCP lists Maine's poll in its three-way feed, `RCP_LISTED_NOT_NEWER` keeps it from throwing out RCP's two-way average. Maine D+11.53 -> D+11.75 two-party (11 polls), Michigan D+8.35 -> D+8.47 (9), Texas R+3.37 -> R+3.14 (10).
