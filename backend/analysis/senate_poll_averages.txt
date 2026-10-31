@@ -146,7 +146,8 @@ SD: RCP average, excluded pollsters removed: Quantus Insights 10/17 - 10/19; 2 p
 MS: recomputed: RCP publishes no average; 1 poll(s); anti-R 40.00 / R 43.00 -> margin -3.00, blend margin -3.61
     - Change Research (D-flagged), ending 2026-10-22 (full ballot, 40/43)
 LA: no RCP average and no poll ending on/after 2026-10-05 -> model only
-NE: recomputed: RCP publishes no average; 2 poll(s); anti-R 46.50 / R 48.50 -> margin -2.00, blend margin -2.11
+NE: recomputed: RCP publishes no average; 3 poll(s); anti-R 45.33 / R 48.67 -> margin -3.33, blend margin -3.55
+    - NYT/Siena for The New York Times, ending 2026-10-29 (full ballot, 43/49)
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 46/47)
     - National Public Affairs, ending 2026-10-18 (head-to-head, 47/50)
     left out: Concord Public Opinion Partners for Education Reform Now Advocacy (D-flagged), ending 2026-10-18 (partisan sponsor); Impact Research for Dan Osborn (per VoteHub) (D-flagged), ending 2026-10-20 (partisan sponsor); GBAO for Working Class Majority PAC (D-flagged), ending 2026-10-22 (partisan sponsor)

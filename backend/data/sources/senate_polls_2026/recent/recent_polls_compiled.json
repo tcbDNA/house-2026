@@ -3094,6 +3094,24 @@
     "excluded_pollster": false,
     "source": "NetChoice release page + Echelon memo (p.2) and topline PDF; NYT poll list (per user)",
     "note": "State oversample (n=407) of NetChoice's Antitrust & Tech Policy Survey, 3,644 LV nationwide, Oct 16-23, text-to-web and online. Full ballot with leaners, early voters merged (topline Q21 p.11): Ricketts 47, Osborn (non-partisan) 46, Richards (NWP) 2, Conboy (AFP) 1, someone else 1, unsure 3. No separate two-way question. Memo dated Oct 26; NetChoice published it Oct 27."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-29",
+    "released": "2026-10-31",
+    "population": "LV",
+    "n": 809,
+    "anti_r": 43,
+    "r": 49,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": null,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ne_2026-10-31.html (https://sri.siena.edu/2026/10/31/nytimes-siena-poll-of-likely-nebraska-voters/, toplines); zetik_nyt_siena_ne_2026-10-31.html (https://www.zetik.com/news/article/story_id-p008-228344, dates and n)",
+    "note": "Siena release (Oct 31): 'U.S. Senate: Pete Ricketts (R) 49% - Dan Osborn (I) 43%'; governor Pillen 53, Walz 40; U.S. House Republican 54, Democratic 35. Field dates and n from Zetik's summary of the NYT story: 'The Oct. 23-29 poll surveyed 809 likely voters and carries a margin of error of plus or minus 4 percentage points'. The NYT topline and crosstab pages (nytimes.com/interactive/2026/10/31/polls/times-siena-ne-poll-toplines.html) return a CAPTCHA page to automated downloads, so other candidates' and undecided shares aren't recorded. Not on RCP (feed 9035 last built Oct 28) or VoteHub as of 11:49 UTC."
    }
   ],
   "notes": "RCP has no Nebraska average (feed 9035 has no average row, built Oct 7; the page sets hideRcpAverageRow). in_rcp_average is null. Release details come from ../../ne_senate_2026/README.md (same day). Pre-Oct: co/efficient 9/28-30 (270toWin dates it 10/02). No Rasmussen or ActiVote poll. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 third check: RCP's feed was rebuilt (Oct 28 10:41 CT) and now lists Echelon 10/16-23, National Public Affairs 10/15-18 and 10/2-5, and Wedgewood 9/14-15 (excluded), still with no average; the first three are already compiled here. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script)."

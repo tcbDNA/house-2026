@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (73.9% vs 72.2% by default; Osborn's race is nearly all of the
+        them does (73.7% vs 72.2% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -235,15 +235,15 @@ export function Methodology() {
         campaign) and 11 safe races have no countable recent poll and use the model alone.
         The blend takes Texas from the model's R+1.0 to Talarico D+1.6, Kansas from
         R+4.5 to Hamilton D+0.6 (R+0.1 with w = 0.6), Nebraska from R+4.5 to Ricketts
-        +3.4 and Alaska from R+1.8 to D+0.7; P(D control) is 73.9% (63.8% on the
-        model alone; 73.0% / 74.5% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        +3.8 and Alaska from R+1.8 to D+0.7; P(D control) is 73.7% (63.8% on the
+        model alone; 72.7% / 74.3% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus
         (Alme +8.0, Montana Free Press alone, so 1/3 polls and 2/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
         Democratic nominee) has two recent polls without a partisan sponsor, Ricketts
         +2.1; weighted 0.47 against the model's Ricketts +4.5, it projects Ricketts
-        +3.4 (Osborn 28%). As
+        +3.8 (Osborn 25%). As
         a cross-check, Economist/YouGov had Fischer +7 over
         Osborn in late October 2024 and Fischer won by 6.7; YouGov's 2026 poll has
         Osborn +1, an 8-point move — about the size of the national swing since

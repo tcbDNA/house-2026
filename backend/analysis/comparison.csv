@@ -84,3 +84,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 63-dfp-me-mi-tx-governor,9.89,236,240,225,261,0.982,53,52,0.739,"Data for Progress Maine, Michigan and Texas governor polls (Oct 23-27): listed by RCP, not averaged; counted under COUNT_RCP_LEFT_OUT"
 64-surveyusa-minnesota-governor,9.89,236,240,225,261,0.982,53,52,0.739,"KSTP/SurveyUSA Minnesota governor Oct 24-28 (Klobuchar 51, Demuth 39), in RCP's average"
 65-noble-nevada-governor,9.89,236,240,225,261,0.982,53,52,0.739,"Noble Predictive Insights Nevada governor Oct 26-28 (Lombardo 47, Ford 47): no RCP average, recomputed"
+66-nyt-siena-nebraska-senate,9.89,236,240,225,261,0.982,53,52,0.737,"NYT/Siena Nebraska Oct 23-29 (Ricketts 49, Osborn 43); no RCP average, recomputed"

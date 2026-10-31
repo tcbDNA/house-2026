@@ -456,3 +456,12 @@ The sponsor is a legal advocacy group whose spokesman promotes the President's a
 | `perdidostreet_hart_davis_la_2026-10-30.html` | https://www.perdidostreet.news/p/new-poll-shows-toss-up-in-louisiana-senate-contest-as-turnout-in-early-vote-buoys-democrats-hopes-of (VoteHub's link) | "a poll released Friday by Democrat Jamie Davis' campaign": Hart Research Associates, Oct 28-29, 502 LV, Davis 45, Letlow 45. VoteHub: internal, DEM. |
 
 South Carolina: "Project VOTE (PAC)" joins `PARTISAN_LEANING_SPONSORS` (not in RCP; it would otherwise have counted as a poll RCP left out). Louisiana: a campaign poll (partisan sponsor); Louisiana still has no counted poll and uses the model only. No average changes.
+
+### NYT/Siena, Nebraska (Oct 23-29), released Oct 31 (user flagged it)
+
+| File | URL | Notes |
+|---|---|---|
+| `siena_nyt_ne_2026-10-31.html` | https://sri.siena.edu/2026/10/31/nytimes-siena-poll-of-likely-nebraska-voters/ | Siena release, retrieved 11:55 UTC: Senate Ricketts 49, Osborn 43; governor Pillen 53, Walz 40; U.S. House Republican 54, Democratic 35. |
+| `zetik_nyt_siena_ne_2026-10-31.html` | https://www.zetik.com/news/article/story_id-p008-228344 | Summary of the NYT story, retrieved 11:58 UTC: "The Oct. 23-29 poll surveyed 809 likely voters and carries a margin of error of plus or minus 4 percentage points." Used for the dates and n. |
+
+The NYT topline and crosstab pages the release links (https://www.nytimes.com/interactive/2026/10/31/polls/times-siena-ne-poll-toplines.html, `-crosstabs.html`) return a CAPTCHA page (HTTP 403) to curl, so third-party and undecided shares aren't recorded. Not yet on RCP (`rcp_ne_9035.json`, re-downloaded 11:49 UTC, unchanged since Oct 28) or VoteHub. Nebraska has no RCP average, so it's recomputed: R+2.11 -> R+3.55 two-party (3 polls).
