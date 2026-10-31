@@ -79,6 +79,7 @@ export type CountyResponse = {
     /** Governor maps: the margin the county's position starts from, and its label. */
     base_margin?: number;
     base_label?: string;
+    demo_since?: string;   // governor maps: the year the demographic shift is measured from ("2022": no trend term)
     /** Governor maps: estimated votes for other candidates (the county's 2024 third-party share). */
     estimated_other_votes?: number;
   }>;

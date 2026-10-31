@@ -357,8 +357,15 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
             inc_map = overlay.gov_county_results()[st]
             base_label = f"{inc_map['incumbent'].split()[-1]} {inc_map['year']} margin"
     full = logodds and settings.governor_county_full_logodds
+    trend_weight = req.trend_discount
+    if inc_map and inc_map["year"] == 2022 and settings.governor_county_match_start_year:
+        # a 2022 starting map: group shifts from 2022 House margins, no 2020→2024 trend
+        terms = overlay.CountyTerms(counties, population_shares(counties, settings), sliders, settings, req.frame,
+                                    center, baselines=overlay.catalist_house_2022())
+        trend_weight = 0.0
+        result["county_map_shift_from"] = "2022"
     r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
-                               req.trend_discount, settings,
+                               trend_weight, settings,
                                others=[overlay.third_party_share(c) for c in counties] if logodds else None,
                                base=base, full_logodds=full,
                                start_shares=(overlay.incumbent_shares(st, counties,
@@ -367,7 +374,7 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     effective = r.get("effective")   # full log-odds: each step's effect in points, for the hover
     for k, (c, i, w, res, demo, proj) in enumerate(r["rows"]):
         scale = 1.0
-        trend_pts = req.trend_discount * res
+        trend_pts = trend_weight * res
         if effective is not None:      # report what the demographic and trend steps did in points
             scale = effective[k][1] / demo if abs(demo) > 1e-9 else 0.0
             demo, trend_pts = effective[k][1], effective[k][2]
@@ -389,7 +396,8 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
         if race == "governor":   # the margin the county's position starts from (tooltip's first row)
             result["counties"][-1].update({"estimated_other_votes": est - d - rv,
                 "base_margin": round(inc_map["margins"][c["fips"]], 2) if inc_map else c.get("margin_2024"),
-                "base_label": base_label or "2024 margin"})
+                "base_label": base_label or "2024 margin",
+                "demo_since": result.get("county_map_shift_from", "2024")})
     result.update({"uniform_swing": swing, "candidate_adj": round(candidate_adj, 2),
                    "reconcile": r["reconcile"], "state_residual": round(resid[st], 2),
                    "target_projection": round(target, 2)})

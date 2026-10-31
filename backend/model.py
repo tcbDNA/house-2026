@@ -329,10 +329,17 @@ def axis_weights(deltas: dict[str, float], shares: dict[str, float]) -> dict[str
 
 
 def demographic_shift(pct: dict[str, np.ndarray], sliders: dict[str, float],
-                      settings: Settings = DEFAULT_SETTINGS):
-    """Returns ({axis: weighted per-row shift}, {axis: weight})."""
-    deltas = {k: sliders[k] - CATALIST_BASELINES[k] for k in ALL_SLIDERS}
-    weights = axis_weights(deltas, national_shares(settings))
+                      settings: Settings = DEFAULT_SETTINGS, baselines: dict[str, float] | None = None):
+    """Returns ({axis: weighted per-row shift}, {axis: weight}). baselines: the
+    group margins each slider's shift is measured from (default
+    CATALIST_BASELINES, 2024 president; the governor county maps pass 2022
+    House margins for a county map that starts from a 2022 race)."""
+    base = CATALIST_BASELINES if baselines is None else baselines
+    deltas = {k: sliders[k] - base[k] for k in ALL_SLIDERS}
+    # Which axes the scenario moves, and how much weight each gets, always
+    # comes from the sliders' distance from their 2024 values: an axis parked
+    # at 2024 stays inactive (weight 0) whichever year the shift is measured from.
+    weights = axis_weights({k: sliders[k] - CATALIST_BASELINES[k] for k in ALL_SLIDERS}, national_shares(settings))
     shifts = {axis: weights[axis] * sum(pct[k] * deltas[k] for k in keys)
               for axis, keys in AXIS_SLIDERS.items()}
     return shifts, weights

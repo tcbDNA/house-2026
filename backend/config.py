@@ -179,6 +179,17 @@ class Settings:
     # not only at the reconciling step. False: the county's own terms are
     # added in points and only the reconciling step is in log-odds. Overlay only.
     governor_county_full_logodds: bool = True
+    # A governor county map that starts from an incumbent's 2022 race measures
+    # the demographic shift from 2022: each group's 2026 margin minus its 2022
+    # House margin (Catalist "What Happened 2024", CD 2022 column;
+    # data/catalist_baselines.json), not its 2024 presidential margin, and
+    # drops the 2020→2024 residual trend, which that race already reflects
+    # (user request, Oct 31). Otherwise the 2024–26 swing back among Hispanic
+    # voters lands on counties that hadn't swung right yet in 2022. Maps that
+    # start from 2024 (presidential; Scott's and Ayotte's 2024 races) keep the
+    # 2024 baselines and the trend. False: 2024 baselines and the trend for
+    # every map. Overlay only.
+    governor_county_match_start_year: bool = True
     # Governor county maps: an incumbent running again who has won a
     # governor's race takes each county's position relative to the state
     # (county margin minus statewide margin) from that last race instead of

@@ -98,8 +98,8 @@ function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtra
     <div style="margin-bottom:3px"><b>${c.name}</b> · <span style="color:#777">${c.state}</span></div>
     ${partialBadge}
     ${row(c.base_label ?? "2024 margin", c.base_margin ?? c.margin_2024)}
-    ${row("+ rel. trend", c.rel_trend_applied)}
-    ${row("+ demographic Δ", c.demo_shift)}
+    ${c.demo_since === "2022" ? "" : row("+ rel. trend", c.rel_trend_applied)}
+    ${row(c.demo_since === "2022" ? "+ demographic Δ since 2022" : "+ demographic Δ", c.demo_shift)}
     ${row("+ swing, candidates, reconcile", c.projection - (c.base_margin ?? c.margin_2024) - (c.rel_trend_applied ?? 0) - (c.demo_shift ?? 0))}
     ${row("= projection", c.projection, true)}
     <div style="margin-top:4px;padding-top:3px;border-top:1px solid #ccc;font-size:10px">

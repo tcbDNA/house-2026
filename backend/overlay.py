@@ -54,9 +54,9 @@ class CountyTerms:
     scenario, indexed by FIPS."""
 
     def __init__(self, counties: list[dict], pop: dict[str, np.ndarray], sliders: dict,
-                 settings: Settings, frame: str, center: float = 0.0):
+                 settings: Settings, frame: str, center: float = 0.0, baselines: dict[str, float] | None = None):
         shares = model.electorate_shares(pop, settings)
-        shifts, _ = model.demographic_shift(shares, sliders, settings)
+        shifts, _ = model.demographic_shift(shares, sliders, settings, baselines)
         self.demo = sum(shifts.values())
         self.shifts = shifts
         y = np.array([c.get("rel_trend") or 0.0 for c in counties], dtype=float)
@@ -122,6 +122,15 @@ def incumbent_base(st: str, counties: list[dict], skip_third: bool = True) -> li
     w = sum(c.get("total_2024") or 0 for c in counties)
     pres = sum((c.get("margin_2024") or 0.0) * (c.get("total_2024") or 0) for c in counties) / w
     return [pres + g["margins"][c["fips"]] - g["state_margin"] for c in counties]
+
+
+@lru_cache(maxsize=1)
+def catalist_house_2022() -> dict[str, float]:
+    """Each slider group's 2022 House two-way margin, from Catalist's "What
+    Happened 2024" crosstabs (data/catalist_baselines.json, built by
+    data/build_catalist_baselines.py)."""
+    import json
+    return json.loads((Path(__file__).resolve().parent / "data" / "catalist_baselines.json").read_text())["house_2022"]
 
 
 def third_party_share(c: dict) -> float:
