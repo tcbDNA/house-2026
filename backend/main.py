@@ -287,13 +287,15 @@ def state_county_geojson(state: str):
                         headers={"Cache-Control": "public, max-age=86400"})
 
 
-def _vote_estimates(total_24: float, proj: float, ratio: float) -> tuple[int, int, int]:
+def _vote_estimates(total_24: float, proj: float, ratio: float, other: float = 0.0) -> tuple[int, int, int]:
     """Estimated 2026 turnout (ratio × 2024 votes, from that race's Kalshi
-    turnout market) and two-way D/R votes from a projected margin (clamped so
-    extreme scenarios can't give negative counts)."""
+    turnout market) and D/R votes from a projected total-vote margin (clamped
+    so extreme scenarios can't give negative counts). other: the share of
+    turnout set aside for other candidates first (0: all of it split D/R)."""
     est = int(round(total_24 * ratio))
-    d = int(round(est * max(0.0, min(1.0, (100 + proj) / 200.0))))
-    return est, d, est - d
+    pool = est * (1.0 - other)
+    d = int(round(max(0.0, min(pool, est * (1.0 - other + proj / 100.0) / 2.0))))
+    return est, d, int(round(pool)) - d
 
 
 def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, settings: Settings,
@@ -359,7 +361,9 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
                                others=[overlay.third_party_share(c) for c in counties] if logodds else None,
                                base=base)
     for c, i, w, res, demo, proj in r["rows"]:
-        est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj, turnout)
+        other = (overlay.third_party_share(c)
+                 if race == "governor" and settings.governor_county_third_party_votes else 0.0)
+        est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj, turnout, other)
         result["counties"].append({
             "fips": c["fips"], "state": st, "name": c["name"],
             "margin_2024": c.get("margin_2024"), "margin_2020": c.get("margin_2020"),
@@ -373,7 +377,7 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
             "is_tossup": abs(proj) <= 3.0,
         })
         if race == "governor":   # the margin the county's position starts from (tooltip's first row)
-            result["counties"][-1].update({
+            result["counties"][-1].update({"estimated_other_votes": est - d - rv,
                 "base_margin": round(inc_map["margins"][c["fips"]], 2) if inc_map else c.get("margin_2024"),
                 "base_label": base_label or "2024 margin"})
     result.update({"uniform_swing": swing, "candidate_adj": round(candidate_adj, 2),

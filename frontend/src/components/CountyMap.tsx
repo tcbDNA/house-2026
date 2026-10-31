@@ -105,13 +105,13 @@ function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtra
     <div style="margin-top:4px;padding-top:3px;border-top:1px solid #ccc;font-size:10px">
       <div style="color:#555;margin-bottom:1px">Estimated 2026 vote</div>
       ${(() => {
-        const total = (c.estimated_d_votes || 0) + (c.estimated_r_votes || 0);
-        const dPct = total > 0 ? (100 * (c.estimated_d_votes || 0) / total).toFixed(1) : "—";
-        const rPct = total > 0 ? (100 * (c.estimated_r_votes || 0) / total).toFixed(1) : "—";
+        const other = c.estimated_other_votes ?? 0;
+        const total = (c.estimated_d_votes || 0) + (c.estimated_r_votes || 0) + other;
+        const pct = (n: number) => (total > 0 ? (100 * n / total).toFixed(1) : "—");
         return `<div style="display:flex;justify-content:space-between;gap:8px;">
-          <span style="color:#1e40af">D ${fmtN(c.estimated_d_votes)} (${dPct}%)</span>
-          <span style="color:#9b1c1c">R ${fmtN(c.estimated_r_votes)} (${rPct}%)</span>
-        </div>`;
+          <span style="color:#1e40af">D ${fmtN(c.estimated_d_votes)} (${pct(c.estimated_d_votes || 0)}%)</span>
+          <span style="color:#9b1c1c">R ${fmtN(c.estimated_r_votes)} (${pct(c.estimated_r_votes || 0)}%)</span>
+        </div>${other > 0 ? `<div style="color:#666">other ${fmtN(other)} (${pct(other)}%)</div>` : ""}`;
       })()}
       <div style="color:#888">turnout ~${fmtN(c.estimated_turnout_2026)} (2024 was ${fmtN(c.total_2024 ?? 0)})</div>
     </div>

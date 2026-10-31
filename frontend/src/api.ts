@@ -79,6 +79,8 @@ export type CountyResponse = {
     /** Governor maps: the margin the county's position starts from, and its label. */
     base_margin?: number;
     base_label?: string;
+    /** Governor maps: estimated votes for other candidates (the county's 2024 third-party share). */
+    estimated_other_votes?: number;
   }>;
 };
 

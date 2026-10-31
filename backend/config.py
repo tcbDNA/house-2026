@@ -185,6 +185,12 @@ class Settings:
     # the governor WAR records use (governor_war_exclude_third_candidate).
     # False: use every incumbent's race. Overlay only.
     governor_county_incumbent_map_skip_third: bool = True
+    # Vote counts on the governor county maps: each county's 2024 third-party
+    # share of its estimated turnout goes to other candidates, and the rest is
+    # split between D and R by the projected margin (D = turnout × (1 − other
+    # + margin) / 2). Display only (user request, Oct 31). Off: all turnout
+    # split between D and R.
+    governor_county_third_party_votes: bool = True
 
     # District weights (model.district_turnout): each district's 2024
     # presidential votes, which set the national total, the electorate
