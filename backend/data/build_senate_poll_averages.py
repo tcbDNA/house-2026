@@ -144,10 +144,12 @@ RCP_LISTED_NOT_NEWER = True
 # pollsters, partisan sponsors, NOT_COUNTED). False: RCP's averaged set as
 # published, plus RCP_PENDING and ADDED_TO_RCP.
 COUNT_RCP_LEFT_OUT = True
-# Left-out polls not counted under COUNT_RCP_LEFT_OUT because the sponsor (or
-# the pollster itself) leans partisan or the client is likely partisan (user
-# decision Oct 30: "if your inclination is that it is sponsored by a partisan
-# leaning group, don't add it"). Keyed by (state, pollster as compiled, end).
+# Polls not counted because the sponsor (or the pollster itself) leans partisan
+# or the client is likely partisan (user decision Oct 30: "if your inclination
+# is that it is sponsored by a partisan leaning group, don't add it"), whether
+# as a poll RCP left out or in a recomputed average (the latter since Oct 31:
+# Pollfinity had slipped into Texas's recompute); LEAVE_OUT_PARTISAN_LEANING_SPONSORS
+# = False counts them in a recompute again. Keyed by (state, pollster as compiled, end).
 LEFT_OUT_PARTISAN_LEANING = {
     ("SC", "Impact Research", date(2026, 10, 21)): "no client named; the memo was posted by Fresh Start PAC",
     ("SC", "Targoz Market Research", date(2026, 10, 25)): "South Carolina Policy Council, a conservative think tank",
@@ -472,10 +474,14 @@ def build():
         left_out = {**UNVERIFIED, **(NOT_COUNTED if LEAVE_OUT_NOT_COUNTED else {})}
         internal = [p for p in polls if LEAVE_OUT_VOTEHUB_INTERNAL and is_internal(p, INTERNAL.get(st, ()))
                     and not partisan_sponsor(p)]
+        leaning = [p for p in polls if LEAVE_OUT_PARTISAN_LEANING_SPONSORS
+                   and (st, p["pollster"], p["end"]) in LEFT_OUT_PARTISAN_LEANING]
         usable = [p for p in polls if not excluded(p["pollster"]) and (st, p["pollster"]) not in left_out
-                  and not partisan_sponsor(p) and p not in internal]
+                  and not partisan_sponsor(p) and p not in internal and p not in leaning]
         dropped = [f"{p['pollster']} ({left_out[(st, p['pollster'])]})" for p in polls
                    if (st, p["pollster"]) in left_out]
+        dropped += [f"{label(p)}, ending {p['end']} (partisan-leaning: {LEFT_OUT_PARTISAN_LEANING[(st, p['pollster'], p['end'])]})"
+                    for p in leaning if p["end"] >= WINDOW_START]
         sponsored = [p for p in polls if partisan_sponsor(p)] + internal
         dropped += [f"{label(p)}, ending {p['end']} (" + ("campaign/party internal per VoteHub" if p in internal
                                                           else "partisan sponsor") + ")" for p in sponsored

@@ -49,7 +49,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 from build_senate_poll_averages import (
-    LEAVE_OUT_VOTEHUB_INTERNAL, WINDOW_START, d, is_internal, label, partisan_sponsor, pollster_key, rcp_end,
+    LEAVE_OUT_PARTISAN_LEANING_SPONSORS, LEAVE_OUT_VOTEHUB_INTERNAL, WINDOW_START, d, is_internal, label, partisan_sponsor, pollster_key, rcp_end,
     rcp_left_out, rcp_listed, rcp_rows_listed, rcp_start, same_poll, votehub_internal,
 )
 
@@ -83,10 +83,12 @@ ADDED_TO_RCP = {("MI", "Michigan State University (Political Science)/Verasight"
 # there. False: RCP's averaged set as published, plus ADDED_TO_RCP.
 COUNT_RCP_LEFT_OUT = True
 
-# Left-out polls not counted under COUNT_RCP_LEFT_OUT because the sponsor (or
-# the pollster itself) leans partisan or the client is likely partisan (user
-# decision Oct 30: "if your inclination is that it is sponsored by a partisan
-# leaning group, don't add it"). Keyed by (state, pollster as compiled, end).
+# Polls not counted because the sponsor (or the pollster itself) leans partisan
+# or the client is likely partisan (user decision Oct 30: "if your inclination
+# is that it is sponsored by a partisan leaning group, don't add it"), whether
+# as a poll RCP left out or in a recomputed average (the latter since Oct 31,
+# under the Senate build's LEAVE_OUT_PARTISAN_LEANING_SPONSORS). Keyed by
+# (state, pollster as compiled, end).
 LEFT_OUT_PARTISAN_LEANING = {
     ("SC", "Targoz Market Research", date(2026, 10, 25)): "South Carolina Policy Council, a conservative think tank",
     ("FL", "MDW Communications", date(2026, 10, 10)): "MDW and EDGE Communications, political consultancies",
@@ -183,11 +185,15 @@ def build() -> str:
         vh_internal = [p for p in polls if LEAVE_OUT_VOTEHUB_INTERNAL and is_internal(p, internal.get(st, ()))
                        and not partisan_sponsor(p)]
         sponsored = [p for p in polls if partisan_sponsor(p)] + vh_internal
-        usable = [p for p in polls if not excluded(p["pollster"]) and p not in sponsored
+        leaning = [p for p in polls if LEAVE_OUT_PARTISAN_LEANING_SPONSORS
+                   and (st, p["pollster"], p["end"]) in LEFT_OUT_PARTISAN_LEANING]   # in a recompute too
+        usable = [p for p in polls if not excluded(p["pollster"]) and p not in sponsored and p not in leaning
                   and p["anti_r"] is not None and p["r"] is not None]
         dropped = [f"{label(p)}, ending {p['end']} (" + ("campaign/party internal per VoteHub" if p in vh_internal
                                                          else "partisan sponsor") + ")"
                    for p in sponsored if p["end"] >= WINDOW_START]
+        dropped += [f"{label(p)}, ending {p['end']} (partisan-leaning: {LEFT_OUT_PARTISAN_LEANING[(st, p['pollster'], p['end'])]})"
+                    for p in leaning if p["end"] >= WINDOW_START]
         rcp = (load_rcp(st, feeds[st], race.get("d_candidate"), race.get("r_candidate"))
                if st in feeds else None)
         rcv_polls = [p for p in usable if p["rcv"]]

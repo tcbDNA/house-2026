@@ -40,7 +40,7 @@ FL: RCP average; removed: Big Data Poll 10/26 - 10/30; plus polls RCP left out: 
     - Univ. of North Florida 10/12 - 10/19
     - Univision/YouGov 10/2 - 10/15
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 44/50)
-    left out: Change Research for Freedom Project USA (D-flagged), ending 2026-10-10 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Big Data Poll for 1776 Law Center, ending 2026-10-30 (partisan sponsor)
+    left out: Change Research for Freedom Project USA (D-flagged), ending 2026-10-10 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Big Data Poll for 1776 Law Center, ending 2026-10-30 (partisan sponsor); MDW Communications for EDGE Communications, ending 2026-10-10 (partisan-leaning: MDW and EDGE Communications, political consultancies); Fabrizio, Lee & Associates, ending 2026-10-11 (partisan-leaning: no client named; Fabrizio polls for Republican campaigns)
 GA: recomputed: newer polls than RCP's average; 4 poll(s) (n_eff 4); anti-R 47.75 / R 47.50 -> margin +0.25, blend margin +0.26, third parties 0.0 (RCP published -1.0)
     - State Navigate, ending 2026-10-27 (full ballot, 50/47)
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 49/48)
@@ -156,6 +156,7 @@ SC: RCP average; 3 poll(s) (n_eff 3); anti-R 37.33 / R 48.67 -> margin -11.33, b
     - NY Times/Siena 10/19 - 10/26
     - The Citadel 10/14 - 10/25
     - Trafalgar Group 10/16 - 10/18
+    left out: Targoz Market Research for South Carolina Policy Council, ending 2026-10-25 (partisan-leaning: South Carolina Policy Council, a conservative think tank)
 SD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 2 poll(s) (n_eff 2); anti-R 38.50 / R 58.00 -> margin -19.50, blend margin -20.21, third parties 0.0
     - Emerson College for KELO-TV, ending 2026-10-20 (full ballot, 41/60)
     - Mason-Dixon for South Dakota News Watch; Chiesman Center for Democracy at the University of South Dakota, ending 2026-10-14 (full ballot, 36/56)
@@ -173,7 +174,7 @@ TX: RCP average; removed: Quantus Insights 10/26 - 10/28, TPOR 10/15 - 10/18; pl
     - University of Houston Hobby School of Public Affairs 10/10 - 10/14 (left out by RCP, counted; full ballot, 46/49)
     - New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13 (left out by RCP, counted; full ballot, 46/48)
     - Marist University 10/8 - 10/11 (left out by RCP, counted; full ballot, 45/49)
-    left out: GBAO Strategies for Gina Hinojosa (D-flagged), ending 2026-10-08 (partisan sponsor); Slingshot Strategies for Texas Public Opinion Research, ending 2026-10-18 (partisan sponsor); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor)
+    left out: GBAO Strategies for Gina Hinojosa (D-flagged), ending 2026-10-08 (partisan sponsor); Slingshot Strategies for Texas Public Opinion Research, ending 2026-10-18 (partisan sponsor); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor); Pollfinity, ending 2026-10-18 (partisan-leaning: owned and self-funded by Lars Mapstead, a 2024 Libertarian presidential candidate (user decision Oct 30))
 VT: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 3 poll(s) (n_eff 2); anti-R 43.13 / R 45.23 -> margin -2.10, blend margin -2.38, third parties 2.5
     - State Navigate, ending 2026-10-25 (full ballot, 46/49)
     - Braun Research for Vermont Public Radio, ending 2026-09-21 (full ballot, 34.4/43.7)
@@ -182,5 +183,5 @@ WI: RCP average; removed: LAW/Daily Signal 10/19 - 10/23; 3 poll(s) (n_eff 3); a
     - Marquette 10/14 - 10/22
     - TIPP 8/14 - 8/18
     - Platform Communications 8/12 - 8/13
-    left out: Wick Research for LAW (League of American Workers) (R-flagged), ending 2026-10-23 (partisan sponsor)
+    left out: Wick Research for LAW (League of American Workers) (R-flagged), ending 2026-10-23 (partisan sponsor); YouGov for City Forward Collective; CFC Action Fund, ending 2026-10-09 (partisan-leaning: City Forward Collective / CFC Action Fund, a school-choice group's electoral arm)
 WY: no RCP average and no poll ending on/after 2026-10-05 -> model only
