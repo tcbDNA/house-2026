@@ -171,7 +171,7 @@ The 36 governor races on Nov 3 (`backend/governor_model.py`, data built by `data
 - **Model–poll gap.** In these races the gap between model and polls does not predict the blend's error (gap factor 0, 95% interval 0–0.17), but nearly all of them had several polls, so the 0.5 × gap term is applied only where 2026 polling is sparse — a judgment, not an estimate.
 - **Northeast.** With single records at full weight, an indicator for the Northeast suggests governor races there ran about 3 points more Republican than the model predicted, but the estimate (−3.2, SE 3.2) is indistinguishable from zero and makes the fit worse by AIC, so it isn't used. The moderate-Republican pattern runs through particular candidates, which WAR captures.
 
-With these defaults (Oct 31): Democrats are projected to win 27 governorships (median 27, 80% range 24–30), P(Democratic majority of governorships) 0.706; Democratic pickups AK, GA, IA, OH, Republican pickup KS; Nevada is a tossup (R+2.3, P(D) 0.40). `backend/analysis/governor_projection.txt` has every race.
+With these defaults (Oct 31): Democrats are projected to win 27 governorships (median 27, 80% range 24–30), P(Democratic majority of governorships) 0.707; Democratic pickups AK, GA, IA, OH, Republican pickup KS; Nevada is a tossup (R+2.3, P(D) 0.40). `backend/analysis/governor_projection.txt` has every race.
 
 ## Win probabilities
 

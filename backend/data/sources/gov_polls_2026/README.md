@@ -311,3 +311,7 @@ Nevada's average takes Noble's newest poll in place of its Sep 22-26 poll; with 
 ### NYT/Siena, Nebraska (Oct 23-29), released Oct 31 (user flagged it)
 
 Release: `../senate_polls_2026/recent/siena_nyt_ne_2026-10-31.html` (https://sri.siena.edu/2026/10/31/nytimes-siena-poll-of-likely-nebraska-voters/): governor Pillen 53, Walz 40. Dates and n (Oct 23-29, 809 LV) from `../senate_polls_2026/recent/zetik_nyt_siena_ne_2026-10-31.html`; the NYT toplines block automated downloads, so Lindstrom's and Beard's shares aren't recorded. Not yet on RCP (feed 9136) or VoteHub. Nebraska has no RCP average: R+3.88 -> R+6.55 two-party (4 polls).
+
+### Concord for Education Reform Now Advocacy, Nebraska (Oct 15-18) and South Dakota (Oct 6-8): sponsor added, left out
+
+Found while adding NYT/Siena Nebraska: these two governor records (from VoteHub's governor rows, which list no sponsor) had no sponsor, so they were counted, while the Senate side already left the same surveys out. Concord's own memos, saved as `../ne_senate_2026/concord_2026-10-15_18_release.html` (https://concordpublicopinionpartners.org/polls/nebraska-ge-2026; the page carries both memos), end each with "Conducted by Concord Public Opinion Partners for Education Reform Now Advocacy". Nebraska: Walz 43, Pillen 40 (500 LV). South Dakota: Rhoden 48, Ahlers 38 (400 respondents, Oct 6-8). Both now carry the sponsor and are left out as partisan-sponsored. Nebraska R+6.55 -> R+9.70 two-party (3 polls); South Dakota R+17.56 -> R+20.21 (2 polls, sparse window).

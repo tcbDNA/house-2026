@@ -103,12 +103,11 @@ MN: RCP average; plus polls RCP left out: State Navigate 10/26 - 10/28; 5 poll(s
     - Daily Agenda/Morning Consult 10/2 - 10/7
     - State Navigate 10/26 - 10/28 (left out by RCP, counted; full ballot, 52/42)
     left out: Victory Insights for Michele Tafoya (R), ending 2026-10-22 (partisan sponsor)
-NE: recomputed: RCP publishes no average; 4 poll(s) (n_eff 4); anti-R 41.00 / R 46.75 -> margin -5.75, blend margin -6.55, third parties 4.8
+NE: recomputed: RCP publishes no average; 3 poll(s) (n_eff 3); anti-R 40.33 / R 49.00 -> margin -8.67, blend margin -9.70, third parties 6.3
     - The New York Times/Siena University, ending 2026-10-29 (full ballot, 40/53)
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 40/47)
     - National Public Affairs, ending 2026-10-18 (full ballot, 41/47)
-    - Concord Public Opinion Partners (D-flagged), ending 2026-10-18 (full ballot, 43/40)
-    left out: Global Strategy Group for Lynne Walz (D-flagged), ending 2026-10-18 (partisan sponsor); Public Policy Polling (D-flagged), ending 2026-10-14 (campaign/party internal per VoteHub)
+    left out: Concord Public Opinion Partners for Education Reform Now Advocacy (D-flagged), ending 2026-10-18 (partisan sponsor); Global Strategy Group for Lynne Walz (D-flagged), ending 2026-10-18 (partisan sponsor); Public Policy Polling (D-flagged), ending 2026-10-14 (campaign/party internal per VoteHub)
 NH: RCP average; removed: Rasmussen Reports 10/20 - 10/23; plus polls RCP left out: National Public Affairs 10/8 - 10/12, University of New Hampshire 9/17 - 9/21; 6 poll(s) (n_eff 6); anti-R 41.00 / R 50.00 -> margin -9.00, blend margin -9.89, third parties 0.8 (RCP published -8.8)
     - St. Anselm 10/19 - 10/20
     - UMass Lowell 10/2 - 10/19
@@ -157,10 +156,10 @@ SC: RCP average; 3 poll(s) (n_eff 3); anti-R 37.33 / R 48.67 -> margin -11.33, b
     - NY Times/Siena 10/19 - 10/26
     - The Citadel 10/14 - 10/25
     - Trafalgar Group 10/16 - 10/18
-SD: recomputed: RCP publishes no average; 3 poll(s) (n_eff 3); anti-R 38.33 / R 54.67 -> margin -16.33, blend margin -17.56, third parties 0.0
+SD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 2 poll(s) (n_eff 2); anti-R 38.50 / R 58.00 -> margin -19.50, blend margin -20.21, third parties 0.0
     - Emerson College for KELO-TV, ending 2026-10-20 (full ballot, 41/60)
     - Mason-Dixon for South Dakota News Watch; Chiesman Center for Democracy at the University of South Dakota, ending 2026-10-14 (full ballot, 36/56)
-    - Concord Public Opinion Partners (D-flagged), ending 2026-10-08 (full ballot, 38/48)
+    left out: Concord Public Opinion Partners for Education Reform Now Advocacy (D-flagged), ending 2026-10-08 (partisan sponsor)
 TN: recomputed: newer polls than RCP's average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 1); anti-R 32.00 / R 44.00 -> margin -12.00, blend margin -15.79, third parties 13.0 (RCP published -21.0)
     - Spry Strategies, ending 2026-10-16 (full ballot, 32/44)
 TX: RCP average; removed: Quantus Insights 10/26 - 10/28, TPOR 10/15 - 10/18; plus polls RCP left out: Data for Progress 10/23 - 10/26, University of Houston Hobby School of Public Affairs 10/10 - 10/14, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist University 10/8 - 10/11; 10 poll(s) (n_eff 10); anti-R 46.30 / R 49.30 -> margin -3.00, blend margin -3.14, third parties 0.7 (RCP published -3.7)

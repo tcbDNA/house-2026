@@ -5128,7 +5128,7 @@
    },
    {
     "pollster": "Concord Public Opinion Partners",
-    "sponsor": null,
+    "sponsor": "Education Reform Now Advocacy",
     "partisan": "D",
     "start": "2026-10-15",
     "end": "2026-10-18",
@@ -5150,7 +5150,8 @@
     "rcv_final_r": null,
     "in_rcp_average": null,
     "excluded_pollster": false,
-    "source": "votehub_governor_all.json"
+    "source": "votehub_governor_all.json; ../ne_senate_2026/concord_2026-10-15_18_release.html (https://concordpublicopinionpartners.org/polls/nebraska-ge-2026)",
+    "note": "Sponsor added Oct 31: Concord's Nebraska release (same survey as the Senate record: Walz 43, Pillen 40, someone else 9, undecided 8) says 'Conducted by Concord Public Opinion Partners for Education Reform Now Advocacy'; VoteHub's governor row lists no sponsor. Partisan sponsor: not counted, as in the Senate."
    },
    {
     "pollster": "Global Strategy Group",
@@ -7271,7 +7272,7 @@
   "polls": [
    {
     "pollster": "Concord Public Opinion Partners",
-    "sponsor": null,
+    "sponsor": "Education Reform Now Advocacy",
     "partisan": "D",
     "start": "2026-10-06",
     "end": "2026-10-08",
@@ -7293,7 +7294,8 @@
     "rcv_final_r": null,
     "in_rcp_average": null,
     "excluded_pollster": false,
-    "source": "votehub_governor_all.json"
+    "source": "votehub_governor_all.json; ../ne_senate_2026/concord_2026-10-15_18_release.html (https://concordpublicopinionpartners.org/polls/nebraska-ge-2026; the page also carries the South Dakota memo)",
+    "note": "Sponsor added Oct 31: Concord's South Dakota memo (Oct 8; 10/06-10/08, 400 respondents; Rhoden 48, Ahlers 38, someone else 4, undecided 10) says 'Conducted by Concord Public Opinion Partners for Education Reform Now Advocacy'; VoteHub's governor row lists no sponsor (its Senate row is marked internal, so the Senate build already leaves it out). Partisan sponsor: not counted."
    },
    {
     "pollster": "Mason-Dixon",
