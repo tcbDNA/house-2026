@@ -1,0 +1,31 @@
+{
+ "source": "sources/catalist/Catalist_What_Happened_2024_Public_National_Crosstabs_2025_05_19.xlsx",
+ "pres_2024": {
+  "white_nh": -15.24,
+  "black": 70.8,
+  "hispanic": 8.46,
+  "asian": 21.38,
+  "white_college": 1.9,
+  "white_non_college": -27.28,
+  "under_30": 10.52,
+  "age_30_44": 4.7,
+  "age_45_64": -8.64,
+  "age_65_plus": -4.02,
+  "nonwhite_college": 36.822,
+  "nonwhite_non_college": 31.846
+ },
+ "house_2022": {
+  "white_nh": -15.76,
+  "black": 76.22,
+  "hispanic": 21.64,
+  "asian": 24.8,
+  "white_college": -2.2,
+  "white_non_college": -26.5,
+  "under_30": 29.62,
+  "age_30_44": 14.26,
+  "age_45_64": -9.24,
+  "age_65_plus": -12.16,
+  "nonwhite_college": 43.6975,
+  "nonwhite_non_college": 41.7756
+ }
+}

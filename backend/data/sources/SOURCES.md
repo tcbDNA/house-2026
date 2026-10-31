@@ -164,6 +164,10 @@ Retrieved 2026-10-27; files and URLs in `ct_planning_regions/README.md`. The Cen
 
 County results of the 16 running incumbents' last governor races (2022, or 2024 for NH and VT), for the governor county maps (setting `governor_county_incumbent_map`). MIT Election Lab precinct returns (CT MA MD NE OR PA), the Arkansas results system by county, Idaho's official county canvass, and Dave's Redistricting precincts (AZ HI IL NV NY TX NH VT), each checked against the official statewide result. URLs and checks: `gov_county_results/README.md`.
 
+## Catalist "What Happened 2024" national crosstabs (catalist/) — data in `catalist_baselines.json`
+
+Catalist's public national crosstabs spreadsheet: composition and two-way Democratic share by group, for president (2012–2024) and the House (2012–2024). Its 2024 presidential margins reproduce the model's group baselines (`model.CATALIST_BASELINES`) to 0.01. Its 2022 House margins are the baselines for governor county maps that start from a 2022 race (setting `governor_county_match_start_year`). URL and notes: `catalist/README.md`.
+
 ## 2026 turnout: Kalshi markets (turnout_2026/) — data in `turnout_2026.csv`
 
 Retrieved 2026-10-26 from Kalshi's public API (markets last updated 2026-10-26T15:17Z); files and URLs in `turnout_2026/README.md`. "Midterm Voter Turnout" (series KXMIDTERMVOTETURN): for each 2026 Senate, governor and House race, contracts on whether the total vote count will be above X. `build_turnout_2026.py` derives each race's market-implied median total and its ratio to the 2024 presidential vote; the county overlay's estimated 2026 vote counts use each race's own ratio (state: Senate, else governor, else House markets; district: its House market), with the 70-race average (79.3%) as the fallback. Display only.
