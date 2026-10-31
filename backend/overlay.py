@@ -209,9 +209,12 @@ def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_r
                    settings: Settings, others: list[float] | None = None,
                    base: list[float] | None = None) -> dict:
     """others (each county's 2024 third-party share): reconcile on the log-odds
-    scale (the governor maps' governor_county_logodds_reconcile); otherwise one
-    flat shift in points. base: each county's starting margin in place of its
-    2024 presidential margin (governor_county_incumbent_map)."""
+    scale (the governor maps' governor_county_logodds_reconcile): the uniform
+    swing and candidate terms are flat shifts too, so they become part of the
+    one log-odds constant, which takes each county's own terms (starting
+    margin, demographic shift, trend) to the target. Otherwise one flat shift
+    in points. base: each county's starting margin in place of its 2024
+    presidential margin (governor_county_incumbent_map)."""
     first = []
     for k, c in enumerate(counties):
         i = terms.index[c["fips"]]
@@ -227,7 +230,8 @@ def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_r
     projs, weights = [f[5] for f in first], [f[0].get("total_2024") or 0.0 for f in first]
     rec = _reconcile(projs, weights, target)
     if others is not None:
-        delta, final = _reconcile_logodds(projs, weights, others, target)
+        own = [p - senate_swing - candidate_adj for p in projs]   # the county-specific terms only
+        delta, final = _reconcile_logodds(own, weights, others, target)
         return {"rows": [(c, i, w, resid, demo, float(p)) for (c, i, w, resid, demo, _), p in zip(first, final)],
                 "reconcile": round(rec, 2), "reconcile_logodds": round(delta, 4)}
     return {"rows": [(c, i, w, resid, demo, proj + rec) for c, i, w, resid, demo, proj in first],
