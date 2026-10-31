@@ -217,6 +217,35 @@ This changes only the overlay, never a district, state or seat projection.
 
 Estimated 2026 vote counts use **each race's own Kalshi turnout market** (`backend/data/turnout_2026.csv`, built by `build_turnout_2026.py` from the saved KXMIDTERMVOTETURN markets: each race's median total vote, where the bid/ask mid of "total vote above X" crosses 50%, divided by its 2024 presidential vote; for House races in the 12 estimated-slice states, the raked slices' 2024 total). A state's counties use its Senate market, else its governor market, else its House markets combined; a district's slices use its House market, else the state's. Examples: Georgia 85% of 2024, Texas 94%, Mississippi 66%; across all 70 Senate and governor markets the vote-weighted average is 79.3% (the fallback), the 431 House markets 72.5% (≈ 111.5M House votes, between 2022's 107.9M and 2018's). **This is a tunable parameter and affects only the county-overlay vote-count display — not any projection, margin, or seat call.** Projected D share is clamped to [0, 1] so extreme scenarios can't produce negative vote counts.
 
+## Governor county maps
+
+A state's governor map (`/api/state/<st>/counties?race=governor`; `main._state_counties_overlay`, `overlay.state_counties`) shows each county's projected margin in the governor race. It changes only the map, never a projection.
+
+1. **Starting margin.** For an incumbent running again who has won a governor's race, the county's position relative to the state comes from that race: the state's 2024 presidential margin (its counties, 2024-vote weighted), plus the county's margin in the incumbent's last race, minus that race's statewide margin (setting `governor_county_incumbent_map`). Those races are 2022 for AZ, AR, CT, HI, IL, MD, MA, NE, NV, NY, PA and TX, and 2024 for NH and VT; the data is `backend/data/gov_county_results.csv`, with sources and checks in `sources/gov_county_results/`. Idaho (Little 2022, Bundy 17%) and Oregon (Kotek 2022, Johnson 8.6%) keep the presidential map, because a third candidate took over 5% (`governor_county_incumbent_map_skip_third`, the governor WAR records' rule). Open seats, and South Dakota, whose Rhoden has never won a governor's race, start from the county's 2024 presidential margin.
+2. **The county's own terms.**
+
+       county = starting margin + demographic shift + trend weight × shrunk residual trend
+
+   - The demographic shift is the scenario sliders applied to the county's own electorate shares.
+   - The residual trend is the county's 2020→2024 presidential shift that its demographics don't explain, shrunk toward the state's with weight = 2024 votes / (2024 votes + 25,000). Alaska's boroughs take the state's.
+   - The trend weight defaults to 0.5.
+3. **Reconciling step.** One constant is added to every county's log-odds of the two-party D share, with the county's third-party share held at its 2024 presidential share. It's chosen so the 2024-vote-weighted county margins equal the governor projection exactly (`governor_county_logodds_reconcile`).
+
+   That constant does the work of every term that is the same in every county: the national swing, the candidate effect (the race's WAR effect and incumbency adjustment, from the governor model), and the gap the governor slope leaves. A lopsided county moves less than a close one, and no county can pass ±100. With a flat shift instead, Prince George's County, Maryland would be D+105; with the log-odds step it is D+94.
+
+   Off, the map is the same as the Senate county maps: the swing and candidate effect are added to every county, and one flat shift in points reconciles them.
+4. **What isn't modeled at the county level.**
+   - The governor partisan slope (0.68) isn't applied, because it was estimated across states. Counties keep the full spread of their starting map.
+   - Nothing candidate-specific is local, apart from an incumbent's own map.
+   - There are no county win probabilities; "tossup" means within ±3.
+5. **Vote counts (display only).**
+   - Turnout is the county's 2024 total × the state's Kalshi turnout ratio: its Senate market, else its governor market.
+   - Other candidates get the county's 2024 third-party share of that turnout.
+   - D = turnout × (1 − other + margin) / 2, and R gets the rest (`governor_county_third_party_votes`; off: all turnout split between D and R).
+6. **Rhode Island** has no county map: Foulkes against the independent Block is modeled on polls only.
+
+The map's hover shows the starting race's own county margin first (for example "Scott 2024 margin", or "2024 margin" on the presidential map), then the trend, the demographic shift, and the rest (swing, candidates, reconcile).
+
 ## Caveats
 
 - Bucket thresholds: **Tilt ≤ 3 pts · Lean 3–7 · Likely 7–13 · Safe > 13**.
