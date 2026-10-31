@@ -45,7 +45,7 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   RI     -4.08   +0.21  +0.04  +0.08    -4.42  poll blend (expected)
   NH     -4.04   -0.00  +0.00  +0.02    -4.06  poll blend (expected)
   MI     -3.85   +0.00  -0.00  -0.11    -3.74  poll blend (expected)
-  ME     -3.75   +0.49  -0.00  -0.01    -4.22  poll blend (expected)
+  ME     -3.56   +0.49  -0.00  -0.01    -4.03  poll blend (expected)
   IA     +3.27   -0.00  +0.00  +0.13    +3.14  poll blend (expected)
   AR     +2.62   -0.00  +0.00  -0.30    +2.91  poll blend (expected)
   AK     +2.50   +0.09  -0.07  +0.00    +2.49  poll blend (expected)
@@ -53,8 +53,8 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   NM     -2.23   -0.00  +0.00  -0.13    -2.10  poll blend (expected)
   MA     +1.76   +0.01  +0.02  -0.17    +1.91  poll blend (expected)
   AL     +1.51   +0.00  -0.09  -0.61    +2.20  FLAG · poll blend (expected)
+  TX     +1.40   -0.02  -0.35  -0.84    +2.61  FLAG · poll blend (expected)
   NE     +1.33   +0.00  +0.02  +0.21    +1.10  poll blend (expected)
-  TX     +1.30   -0.02  -0.35  -0.84    +2.51  FLAG · poll blend (expected)
   UT     -1.22   -0.35  -0.08  -0.78    +0.00  FLAG · no 2026 race
   MT     +0.98   -0.04  -0.00  -0.01    +1.03  poll blend (expected)
   CA     -0.89   +0.01  -0.31  -0.60    +0.00  FLAG · no 2026 race

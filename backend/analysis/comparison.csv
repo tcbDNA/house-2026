@@ -75,3 +75,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 54-nevada-dga-backed-sponsor,9.89,236,240,225,261,0.982,53,52,0.727,"Hart Research for A More Affordable Nevada (Oct 20-25; Ford 49, Lombardo 45) left out: the sponsor is backed by the Democratic Governors Association"
 55-quantus-excluded,9.89,236,240,225,261,0.982,53,52,0.734,Quantus Insights excluded from every average (user decision Oct 30: R-biased pollster)
 56-rcp-listed-not-newer,9.89,236,240,225,261,0.982,53,52,0.734,RCP_LISTED_NOT_NEWER: a poll RCP's feed already lists is not 'newer than RCP's average' (no change to any average)
+57-dfp-me-mi-tx-senate,9.89,236,240,225,261,0.982,53,52,0.737,"Data for Progress Maine (Oct 23-27), Michigan (Oct 23-25) and Texas (Oct 23-26) Senate polls: listed by RCP, not averaged; counted under COUNT_RCP_LEFT_OUT"

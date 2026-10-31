@@ -401,3 +401,19 @@ User: "remove quantus. R biased pollster". Quantus Insights joins the excluded p
 Effect (two-party blend margins): Texas D+2.26 -> D+2.57 (11 polls), projection D+1.28 -> D+1.49 (P(Talarico) 0.600 -> 0.616); Michigan D+3.9 -> D+4.3, D+5.6 -> D+5.9; North Carolina D+11.7 -> D+12.2; Georgia D+10.1 -> D+11.2; Montana (Bodnar - Alme) -12.0 -> -8.0, now Montana Free Press (Aug 27-Sep 7) alone, so 1/3 polls, 2/3 model: projection Alme +11.7 -> +10.1; South Dakota R+16.9 -> R+14.6 on two polls, projection R+16.9 -> R+19.2 (the model's R+28.5 gets more weight). Senate P(D control) 0.727 -> 0.734. House unchanged (no Quantus poll in the national crosstabs).
 
 Also checked and not used (user decision Oct 30): Montana State University Billings, Montana Senate, Oct 5-21, 720 adults (Alme 30, Bankhead 26, Bodnar 21, Austin 3).
+
+## Update, 2026-10-31 morning (poll check, user asked)
+
+Retrieved **2026-10-31 11:29 UTC**, same procedure as Oct 30 evening: every saved RCP Senate and governor feed downloaded again and compared row by row, and VoteHub's Senate, governor and generic-ballot polls compared with the saved dumps. Releases were then downloaded for every new poll to check its sponsor. `RETRIEVED` in `build_senate_poll_averages.py` is now Oct 31.
+
+New VoteHub Senate rows not counted: ActiVote IL and TX (excluded pollster), Quantus Insights TX (excluded pollster), Montana State University Billings MT (user decision Oct 30), Workbench Strategy FL for Angie Nixon and Concord SD for Democrats for Education Reform (already left out Oct 30), Upswing MI for Demand Justice (already compiled, partisan sponsor). Kansas (Washington Post-Schar School, Emerson) was already compiled.
+
+### Data for Progress, Maine (Oct 23-27), Michigan (Oct 23-25) and Texas (Oct 23-26), listed by RCP, not averaged
+
+| File | URL | Notes |
+|---|---|---|
+| `dfp_maine_michigan_texas_2026-10-30.html` | https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas | Release (Oct 30), retrieved 11:45 UTC: "Data for Progress surveyed likely voters from October 23-27 in Maine, Michigan, and Texas". No client named. |
+| `dfp_2026_me_ge_tabs.pdf`, `dfp_2026_mi_ge_tabs.pdf`, `dfp_2026_tx_ge_tabs.pdf` | https://www.filesforprogress.org/datasets/2026/10/dfp_2026_me_ge_tabs.pdf (and `_mi_`, `_tx_`) | Crosstabs. Maine Oct 23-27, 652 LV: Jackson 50, Collins 45. Michigan Oct 23-25, 622 LV: El-Sayed 50, Rogers 46, Christensen (L) 1. Texas Oct 23-26, 712 LV: Talarico 49, Paxton 45, Brown (L) 2. |
+| `rcp_me_9100.json`, `rcp_mi_8802.json`, `rcp_mi_multi_9216.json`, `rcp_tx_8867.json`, `rcp_tx_3way_8985.json` | | Re-downloaded 11:29 UTC (built Oct 30 20:41-21:33 CT). RCP lists all three as 10/23-10/26 ("Data for Progress (D)" in Maine and Texas) and averages none; nothing else in these averages changed. |
+
+DFP is a progressive pollster polling on its own account, so the polls count (partisan pollsters with no sponsor count). All three started inside RCP's windows, so `COUNT_RCP_LEFT_OUT` adds them. Maine's PDF end date (Oct 27) is a day after RCP's average's latest poll; under the new `RCP_LISTED_NOT_NEWER` setting a poll RCP already lists doesn't trigger a recompute. Maine D+1.99 -> D+2.26 two-party (12 polls), Michigan D+4.27 -> D+4.26 (9), Texas D+2.57 -> D+2.71 (12).

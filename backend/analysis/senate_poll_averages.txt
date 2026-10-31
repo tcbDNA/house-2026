@@ -1,4 +1,4 @@
-Senate polling averages, built from sources retrieved 2026-10-30; recompute window: polls ending on or after 2026-10-05.
+Senate polling averages, built from sources retrieved 2026-10-31; recompute window: polls ending on or after 2026-10-05.
 
 OH: RCP average, Rasmussen removed; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s); anti-R 47.86 / R 45.00 -> margin +2.86, blend margin +3.08 (RCP published +2.6)
     - Suffolk University 10/21 - 10/26
@@ -9,7 +9,7 @@ OH: RCP average, Rasmussen removed; plus polls RCP left out: Echelon Insights fo
     - co/efficient 10/5 - 10/6
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 47/47)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-TX: RCP average, excluded pollsters removed: Quantus Insights 10/26 - 10/28, Rasmussen Reports 10/20 - 10/21; partisan-sponsored poll removed: TPOR 10/15 - 10/18; plus A2 Insights ending Oct 27 (not listed by RCP, counted by user decision); plus polls RCP left out: New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist 10/8 - 10/11; 11 poll(s); anti-R 49.02 / R 46.56 -> margin +2.45, blend margin +2.57 (RCP published +1.8)
+TX: RCP average, excluded pollsters removed: Quantus Insights 10/26 - 10/28, Rasmussen Reports 10/20 - 10/21; partisan-sponsored poll removed: TPOR 10/15 - 10/18; plus A2 Insights ending Oct 27 (not listed by RCP, counted by user decision); plus polls RCP left out: Data for Progress 10/23 - 10/26, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist 10/8 - 10/11; 12 poll(s); anti-R 49.02 / R 46.43 -> margin +2.58, blend margin +2.71 (RCP published +1.8)
     - TSU/YouGov 10/21 - 10/25
     - CNN 10/20 - 10/27
     - Emerson 10/17 - 10/19
@@ -19,6 +19,7 @@ TX: RCP average, excluded pollsters removed: Quantus Insights 10/26 - 10/28, Ras
     - University of Houston 10/10 - 10/14
     - CBS News 10/8 - 10/16
     - A2 Insights ending Oct 27 (not listed by RCP, counted by user decision)
+    - Data for Progress 10/23 - 10/26 (left out by RCP, counted; full ballot, 49/45)
     - New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13 (left out by RCP, counted; full ballot, 49/44)
     - Marist 10/8 - 10/11 (left out by RCP, counted; full ballot, 47/45)
     left out: Cor Strategies (Heritage Action; not counted, user decision Oct 28); Slingshot Strategies (TPOR) for Texas Public Opinion Research, ending 2026-10-18 (partisan sponsor); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor)
@@ -57,9 +58,9 @@ KS: RCP average; 7 poll(s); anti-R 48.29 / R 45.71 -> margin +2.57, blend margin
     - YouGov 9/24 - 10/4
     - NY Times/Siena 9/22 - 10/1
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed by RCP, not yet averaged); 11 poll(s); anti-R 48.91 / R 47.00 -> margin +1.91, blend margin +1.99 (RCP published +1.4)
-    - CNN 10/20 - 10/26
+ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed by RCP, not yet averaged); plus polls RCP left out: Data for Progress 10/23 - 10/27; 12 poll(s); anti-R 49.00 / R 46.83 -> margin +2.17, blend margin +2.26 (RCP published +1.4)
     - Marist 10/22 - 10/25
+    - CNN 10/20 - 10/26
     - Trafalgar Group 10/21 - 10/23
     - Echelon Insights 10/16 - 10/23 (listed by RCP, counted ahead of RCP)
     - FOX News 10/16 - 10/20
@@ -69,6 +70,7 @@ ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed 
     - co/efficient 9/28 - 9/30
     - CBS News 9/23 - 10/1
     - MPRC 9/25 - 9/29
+    - Data for Progress 10/23 - 10/27 (left out by RCP, counted; full ballot, 50/45)
 SC: RCP average, Rasmussen removed; 5 poll(s); anti-R 45.00 / R 47.40 -> margin -2.40, blend margin -2.60 (RCP published -2.7)
     - NY Times/Siena 10/19 - 10/26
     - East Carolina U. 10/19 - 10/24
@@ -76,7 +78,7 @@ SC: RCP average, Rasmussen removed; 5 poll(s); anti-R 45.00 / R 47.40 -> margin 
     - Trafalgar Group 10/16 - 10/18
     - InsiderAdvantage 9/28 - 9/29
     left out: onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found)
-MI: RCP average, excluded pollsters removed: Rasmussen Reports 10/28 - 10/29, Quantus Insights 10/5 - 10/6; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); 8 poll(s); anti-R 49.12 / R 45.10 -> margin +4.02, blend margin +4.27 (RCP published +3.5)
+MI: RCP average, excluded pollsters removed: Rasmussen Reports 10/28 - 10/29, Quantus Insights 10/5 - 10/6; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Data for Progress 10/23 - 10/25; 9 poll(s); anti-R 49.22 / R 45.20 -> margin +4.02, blend margin +4.26 (RCP published +3.5)
     - CBS News/Mitchell 10/26 - 10/27
     - CNN 10/20 - 10/27
     - Detroit News/Glengariff 10/19 - 10/22
@@ -85,6 +87,7 @@ MI: RCP average, excluded pollsters removed: Rasmussen Reports 10/28 - 10/29, Qu
     - Michigan State/YouGov 10/2 - 10/19
     - YouGov 9/28 - 10/5
     - Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision)
+    - Data for Progress 10/23 - 10/25 (left out by RCP, counted; full ballot, 50/46)
     left out: The Tyson Group for Alliance for a Better Future (R-flagged), ending 2026-10-08 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Upswing Research for Demand Justice (D-flagged), ending 2026-10-28 (partisan sponsor)
 NC: RCP average, excluded pollsters removed: Quantus Insights 10/24 - 10/25; partisan-sponsored poll removed: Carolina Forward/Change Res. 10/1 - 10/7; plus polls RCP left out: SurveyUSA for WRAL-TV/WSOC-TV 10/7 - 10/11; replacing WRAL-TV/SurveyUSA 10/1 - 10/7; 7 poll(s); anti-R 51.29 / R 40.14 -> margin +11.14, blend margin +12.19 (RCP published +10.7)
     - Carolina Journal/Harper 10/18 - 10/20

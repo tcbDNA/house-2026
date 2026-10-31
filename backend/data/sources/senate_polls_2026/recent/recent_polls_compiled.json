@@ -696,6 +696,24 @@
     "excluded_pollster": false,
     "source": "quantus_texas_2026-10-30.html; rcp_tx_8867.json; rcp_tx_3way_8985.json",
     "note": "Quantus Insights, 'Texas Survey: Paxton Up One, Abbott Ahead by Five' (Oct 30; page saved as rendered in headless Chrome, the served HTML has no text): Oct 26-28, 1,221 likely voters, no sponsor named. Senate: Paxton 48.7, Talarico 47.6, Brown (L) 1.4, undecided 2.2; with the 27 undecided pushed to lean, combined ballot Paxton 49.4, Talarico 48.4. Governor: Abbott 50.7, Hinojosa 45.8, Dixon 1.2, undecided 2.3; combined 51.6/46.3. RCP: 'Quantus Insights*' 10/26-28, 49/48 in the two-way feed and 49/48/1 in the three-way feed, both averaged (rows Oct 30 07:37 and 07:43 CT)."
+   },
+   {
+    "pollster": "Data for Progress",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-26",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 712,
+    "anti_r": 49,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "dfp_maine_michigan_texas_2026-10-30.html (https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas); dfp_2026_tx_ge_tabs.pdf (https://www.filesforprogress.org/datasets/2026/10/dfp_2026_tx_ge_tabs.pdf); rcp_tx_8867.json; rcp_tx_3way_8985.json",
+    "note": "DFP's own survey (no client named), Oct 23-26, 712 likely voters, SMS and web panel, MOE +/-4 (PDF p.1). Q2 Senate: Talarico 49, Paxton 45, Brown (L) 2, not sure 4. Governor (Q4): Abbott 48, Hinojosa 47, Dixon (L) 2. RCP lists it as 'Data for Progress (D)' 10/23-10/26, not averaged (row Oct 30 20:40 CT)."
    }
   ],
   "notes": "RCP two-way average (feed 8867, built Oct 27 08:17): 10/8-10/21, Talarico 48.5, Paxton 46.7 (+1.8), 11 polls, including Rasmussen and Univision/YouGov (added Oct 27). Earlier (built Oct 24): Talarico 48.4, Paxton 46.9 (+1.5), 10 polls. RCP 3-way (feed 8985): Talarico 48.0, Paxton 46.3, Brown 2.8. Not in RCP's two-way average: VoteHub/Verasight, Pollfinity, Trafalgar, ReconMR/Siena, YouGov, UT/TPP. Pre-Oct polls excluded: NYT/Siena 9/21-30, Fox 9/24-28, UMass Lowell 9/18-28, Guidant 9/20-28, Rasmussen 9/28-29 (270toWin dates some of these by release date in October). Oct 28 third check: YouGov Blue for 254 Labs (Oct 21-26, released Oct 28; 1,000 RV weighted to likely-voter targets) Talarico 51, Paxton 43, from 254 Labs' release (user's NYT poll list paste). Not in RCP, VoteHub or Poliwave yet. It ended after the latest poll in RCP's average (10/21) and came out after RCP's last update (Oct 27), so Texas is now recomputed. Oct 28 user decision: the Cor Strategies / Heritage Action poll is not counted (NOT_COUNTED in the build script). Oct 28 user decision: YouGov Blue counts as its own pollster (YOUGOV_BLUE_OWN_POLLSTER), so Univision/YouGov (10/13-21) stays in the recomputed average as YouGov's latest poll. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: VoteHub now lists the 254 Labs poll with a Democratic partisan flag, so under the partisan-sponsor rule (named sponsor + partisan flag) it is not counted; with no newer poll left, Texas goes back to RCP's average. Oct 29 check: RCP's feed (built Oct 29 05:41 CT) averages 10/8-10/27, Talarico 48.6, Paxton 46.5, 13 polls including Rasmussen: CNN/SSRS 10/20-27 and TSU/YouGov 10/21-25 added. Texas stays on RCP's average (Rasmussen removed). Oct 29 (user's NYT paste): A2 Insights (Oct 23-27, released Oct 29) Talarico 50.2, Paxton 47.2, no sponsor; not in RCP's average, and it ends on the same day as RCP's latest averaged poll (CNN 10/20-27), so it is not newer and Texas stays on RCP's average. User decision (Oct 29): the A2 Insights poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."
@@ -1750,6 +1768,24 @@
     "excluded_pollster": false,
     "source": "CNN/SSRS topline PDF (cnn_ssrs_maine_october_2026.pdf, SENVOTEME); RCP",
     "note": "783 registered voters interviewed online and by telephone; likely-voter results weight every respondent by predicted probability of voting (MOE +/-4.5). Jackson 49, Collins 45, neither 4, other 2 (Aug 31-Sep 6: 48/45). Governor (GOVVOTEME): Pingree 53, Charles 39 (Bennett not offered)."
+   },
+   {
+    "pollster": "Data for Progress",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-27",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 652,
+    "anti_r": 50,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "dfp_maine_michigan_texas_2026-10-30.html (https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas); dfp_2026_me_ge_tabs.pdf (https://www.filesforprogress.org/datasets/2026/10/dfp_2026_me_ge_tabs.pdf); rcp_me_9100.json",
+    "note": "DFP's own survey (no client named), Oct 23-27, 652 likely voters, SMS, live caller and web panel, MOE +/-4 (PDF p.1). Q2 Senate: Jackson 50, Collins 45, not sure/refused 4. Governor (Q4): Pingree 49, Charles 37, Bennett (I) 7. RCP lists it as 'Data for Progress (D)' 10/23-10/26, not averaged (row Oct 30 20:44 CT)."
    }
   ],
   "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27. Oct 29 check: RCP's feed (lastBuildDate Oct 27 05:41, CNN row added Oct 29) averages 9/23-10/26, Jackson 48.7, Collins 47.3, 11 polls: CNN/SSRS 10/20-26 added. Echelon Insights 10/16-23 is still listed but not averaged (still counted ahead of RCP: RCP_PENDING)."
@@ -2206,6 +2242,24 @@
     "excluded_pollster": false,
     "source": "x_joshorton_2115882056081346742_fxtwitter.json, x_joshorton_2115883461076545615_fxtwitter.json (posts by Demand Justice's president); Poliwave",
     "note": "'NEW SCOTUS MICHIGAN POLL for Demand Justice: [Upswing - Oct 24-28, N505, LV, MOE 4.4]'; Senate head-to-head El-Sayed 50, Rogers 45. Demand Justice is a progressive advocacy group (partisan sponsor): not counted. Not in RCP or VoteHub; Poliwave lists it as Upswing Research (D)."
+   },
+   {
+    "pollster": "Data for Progress",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-25",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 622,
+    "anti_r": 50,
+    "r": 46,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "dfp_maine_michigan_texas_2026-10-30.html (https://www.dataforprogress.org/blog/2026/10/30/democratic-senate-candidates-lead-in-maine-michigan-and-texas); dfp_2026_mi_ge_tabs.pdf (https://www.filesforprogress.org/datasets/2026/10/dfp_2026_mi_ge_tabs.pdf); rcp_mi_8802.json; rcp_mi_multi_9216.json",
+    "note": "DFP's own survey (no client named), Oct 23-25, 622 likely voters, SMS, live caller and web panel, MOE +/-4 (PDF p.1). Q2 Senate: El-Sayed 50, Rogers 46, Christensen (L) 1, other third-party candidates 1% or less. Governor (Q4): Benson 52, James 43, Hudson (L) 1. RCP lists it as 'Data for Progress*' 10/23-10/26 (PDF: Oct 23-25), not averaged (row Oct 30 20:50 CT)."
    }
   ],
   "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (built Oct 28 17:42 CT, CNN row added Oct 29) averages 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls: CNN/SSRS 10/20-27 and CBS News/Mitchell 10/26-27 added; Mitchell's Oct 1 poll is now listed but not averaged. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) El-Sayed 48.0, Rogers 41.8; not in RCP's average, and it ends before the latest poll RCP averages (CNN and Mitchell, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."
