@@ -35,9 +35,9 @@ Rules (user decisions, Oct 2026):
     averages do), else its full ballot.
     "Newer" = fieldwork ended after the latest poll in RCP's average and
     released on or after RCP's last update (lastBuildDate); with no known
-    release date, the fieldwork test alone. A poll RCP's feed already lists
-    is not newer: RCP has seen it (RCP_LISTED_NOT_NEWER; it counts, if at
-    all, as a poll RCP left out).
+    release date, the fieldwork test alone. A poll any of RCP's feeds for the
+    race already lists is not newer: RCP has seen it (RCP_LISTED_NOT_NEWER;
+    it counts, if at all, as a poll RCP left out).
   * No RCP average and no poll in the window -> no row (the race uses the
     model only).
   * blend_margin = two-party margin, 100 x (anti-R - R) / (anti-R + R); for the
@@ -126,11 +126,13 @@ RCP_PENDING = {("ME", "Echelon Insights", "10/16 - 10/23")}
 COUNT_ADDED_TO_RCP = True
 ADDED_TO_RCP = {("MI", "Michigan State Univ. (Political Science)/Verasight", date(2026, 10, 23)),
                 ("TX", "A2 Insights", date(2026, 10, 27))}
-# A poll RCP's feed already lists (same firm, end within 2 days) is not
-# "newer than RCP's average", even when its own release gives a later end
-# date than RCP's row: RCP has seen it and left it out, so it counts, if at
-# all, under COUNT_RCP_LEFT_OUT (Oct 31: Data for Progress's Maine poll, Oct
-# 23-27, which RCP lists as 10/23-10/26). False: the date test alone.
+# A poll RCP already lists (same firm, end within 2 days) in any of its saved
+# feeds for the race (two-way, three-way, multi-candidate, ranked-choice
+# round) is not "newer than RCP's average", even when its own release gives a
+# later end date than RCP's row: RCP has seen it and left it out, so it
+# counts, if at all, under COUNT_RCP_LEFT_OUT (Oct 31: Data for Progress's
+# Maine polls, Oct 23-27, which RCP lists as 10/23-10/26, the governor poll
+# only in its three-way feed). False: the date test alone.
 RCP_LISTED_NOT_NEWER = True
 
 # Count the polls RCP leaves out of the averages it publishes (setting added on
@@ -339,8 +341,21 @@ def rcp_left_out(st: str, rcp: dict, kept: list[dict], usable: list[dict], added
     return replace, add
 
 
+def rcp_rows_listed(paths) -> list[tuple[str, date]]:
+    """(firm, end) for every poll row, averaged or not, in these RCP feeds."""
+    out = []
+    for path in paths:
+        for p in json.loads(path.read_text()).get("poll") or []:
+            if p["type"] in ("poll", "poll_rcp_avg"):
+                try:
+                    out.append((firm_key(p["pollster"]), rcp_end(p["date"])))
+                except ValueError:   # a placeholder row with no dates
+                    pass
+    return out
+
+
 def rcp_listed(p: dict, rcp: dict) -> bool:
-    """RCP_LISTED_NOT_NEWER: the poll is one of RCP's feed rows (averaged or not)."""
+    """RCP_LISTED_NOT_NEWER: the poll is a row in one of RCP's feeds for the race (averaged or not)."""
     k = firm_key(p["pollster"], p.get("sponsor"))
     return RCP_LISTED_NOT_NEWER and any(k == f and abs((p["end"] - e).days) <= 2 for f, e in rcp["listed"])
 
@@ -372,7 +387,7 @@ def load_rcp(st: str) -> dict | None:
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0]),
             "window_start": rcp_start(avg[0]["date"]),
             "averaged": averaged, "local_file": f"sources/senate_polls_2026/{rel}",
-            "listed": [(firm_key(p["pollster"]), rcp_end(p["date"])) for p in rows if p["type"] in ("poll", "poll_rcp_avg")],
+            "listed": rcp_rows_listed([SRC / rel] + sorted((SRC / "recent").glob(f"rcp_{st.lower()}_*.json"))),
             "url": f"https://www.realclearpolling.com/polls/{mi['poll_contentful_fullpath']}/{mi['poll_contentful_slug']}"}
 
 

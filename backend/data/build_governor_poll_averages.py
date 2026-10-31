@@ -13,7 +13,8 @@ reuses):
     fieldwork ended on or after WINDOW_START (the Senate's), head-to-head
     question where released. "Newer" = fieldwork ended after the latest poll
     in RCP's average and released on or after RCP's lastBuildDate, and not
-    already listed in RCP's feed (the Senate's RCP_LISTED_NOT_NEWER).
+    already listed in one of RCP's feeds for the race (the Senate's
+    RCP_LISTED_NOT_NEWER).
   * blend_margin = two-party margin (anti-R − R), as in the Senate.
 Governor-specific:
   * Alaska (ranked-choice): the model's margin is the final-round
@@ -48,8 +49,8 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 from build_senate_poll_averages import (
-    LEAVE_OUT_VOTEHUB_INTERNAL, WINDOW_START, d, firm_key, is_internal, label, partisan_sponsor, pollster_key, rcp_end,
-    rcp_left_out, rcp_listed, rcp_start, same_poll, votehub_internal,
+    LEAVE_OUT_VOTEHUB_INTERNAL, WINDOW_START, d, is_internal, label, partisan_sponsor, pollster_key, rcp_end,
+    rcp_left_out, rcp_listed, rcp_rows_listed, rcp_start, same_poll, votehub_internal,
 )
 
 # Sparse polling (user decision, Oct 28): a race with fewer than
@@ -140,7 +141,7 @@ def load_rcp(st: str, path: Path, d_name: str | None, r_name: str | None) -> dic
         return None
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0])[:2],
             "window_start": rcp_start(avg[0]["date"]), "averaged": averaged, "local_file": f"sources/gov_polls_2026/{path.name}",
-            "listed": [(firm_key(p["pollster"]), rcp_end(p["date"])) for p in rows if p["type"] in ("poll", "poll_rcp_avg")],
+            "listed": rcp_rows_listed([path] + sorted(SRC.glob(f"rcp_gov_{st.lower()}_*.json"))),
             "url": f"https://www.realclearpolling.com/polls/{mi['poll_contentful_fullpath']}/{mi['poll_contentful_slug']}"}
 
 

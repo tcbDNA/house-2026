@@ -80,3 +80,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 59-surveyusa-minnesota-senate,9.89,236,240,225,261,0.982,53,52,0.739,"KSTP/SurveyUSA Minnesota Oct 24-28 (Flanagan 48, Tafoya 41) replaces its Oct 8-12 poll in RCP's average"
 60-bigdatapoll-1776-law-center,9.89,236,240,225,261,0.982,53,52,0.739,"Big Data Poll Florida Oct 26-30 for the 1776 Law Center (in RCP's Senate and governor averages): left out, partisan-leaning sponsor"
 61-sponsored-sc-la-left-out,9.89,236,240,225,261,0.982,53,52,0.739,"Patinkin SC for Project VOTE (PAC) and Hart LA for the Davis campaign: recorded, not counted"
+62-rcp-listed-all-feeds,9.89,236,240,225,261,0.982,53,52,0.739,RCP_LISTED_NOT_NEWER checks every saved RCP feed for the race (no change to any average)
