@@ -97,10 +97,10 @@ function popupHtml(c: CountyResponse["counties"][number] & Partial<DistrictExtra
   return `<div style="font:11px ui-sans-serif,system-ui;line-height:1.35;min-width:200px">
     <div style="margin-bottom:3px"><b>${c.name}</b> · <span style="color:#777">${c.state}</span></div>
     ${partialBadge}
-    ${row("2024 margin", c.margin_2024)}
+    ${row(c.base_label ?? "2024 margin", c.base_margin ?? c.margin_2024)}
     ${row("+ rel. trend", c.rel_trend_applied)}
     ${row("+ demographic Δ", c.demo_shift)}
-    ${row("+ swing, candidates, reconcile", c.projection - c.margin_2024 - (c.rel_trend_applied ?? 0) - (c.demo_shift ?? 0))}
+    ${row("+ swing, candidates, reconcile", c.projection - (c.base_margin ?? c.margin_2024) - (c.rel_trend_applied ?? 0) - (c.demo_shift ?? 0))}
     ${row("= projection", c.projection, true)}
     <div style="margin-top:4px;padding-top:3px;border-top:1px solid #ccc;font-size:10px">
       <div style="color:#555;margin-bottom:1px">Estimated 2026 vote</div>
@@ -423,6 +423,9 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
         <div className="p-4 border-b flex justify-between items-start">
           <div>
             <h2 className="text-xl font-bold">{district ? `${district} · County overlay` : `${state} · County projections${race === "governor" ? " (governor)" : ""}`}</h2>
+            {!district && race === "governor" && data?.county_map_base && (
+              <div className="text-xs text-slate-500 mt-0.5">County positions from {data.county_map_base}</div>
+            )}
             {district && districtDetail && (
               <div className="text-xs mt-0.5">
                 <span className={districtDetail.party === "(D)" ? "text-blue-700" : districtDetail.party === "(R)" ? "text-red-700" : "text-slate-600"}>

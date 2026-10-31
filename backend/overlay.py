@@ -34,6 +34,7 @@ and the district / state inputs disagree upstream (analysis/overlay_check.py).
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 
 import numpy as np
 
@@ -73,6 +74,45 @@ def district_residuals(settings: Settings, frame: str) -> dict[str, float]:
     carried = model.carried_trend(b.rel_trend, model.electorate_shares(b.demographics(settings), settings),
                                   b.battleground, settings, frame)
     return {r["district"]: float(v) for r, v in zip(b.districts, carried)}
+
+
+@lru_cache(maxsize=1)
+def gov_county_results() -> dict[str, dict]:
+    """state -> {"year", "incumbent", "margins": fips -> margin, "state_margin"}
+    for each running incumbent's last governor race (data/gov_county_results.csv,
+    built by data/build_gov_county_results.py)."""
+    import csv
+    path = Path(__file__).resolve().parent / "data" / "gov_county_results.csv"
+    out: dict[str, dict] = {}
+    if not path.exists():
+        return out
+    tot = {}
+    for r in csv.DictReader(path.open()):
+        s = out.setdefault(r["state"], {"year": int(r["year"]), "incumbent": r["incumbent"], "margins": {},
+                                        "third_candidate": r["third_candidate"],
+                                        "third_candidate_pct": float(r["third_candidate_pct"] or 0)})
+        s["margins"][r["fips"]] = float(r["margin"])
+        t = tot.setdefault(r["state"], [0.0, 0.0, 0.0])
+        t[0] += float(r["dem"]); t[1] += float(r["rep"]); t[2] += float(r["total"])
+    for st, (d, r, t) in tot.items():
+        out[st]["state_margin"] = 100.0 * (d - r) / t
+    return out
+
+
+def incumbent_base(st: str, counties: list[dict], skip_third: bool = True) -> list[float] | None:
+    """Each county's starting margin from the incumbent's last governor race:
+    the state's 2024 presidential margin (its counties, 2024-vote weighted)
+    plus the county's margin in that race minus the race's statewide margin.
+    None where the race's county results don't cover every county, or (skip_third)
+    where a third candidate won over 5% in it."""
+    g = gov_county_results().get(st)
+    if g is None or any(c["fips"] not in g["margins"] for c in counties):
+        return None
+    if skip_third and g["third_candidate_pct"] > 5.0:
+        return None
+    w = sum(c.get("total_2024") or 0 for c in counties)
+    pres = sum((c.get("margin_2024") or 0.0) * (c.get("total_2024") or 0) for c in counties) / w
+    return [pres + g["margins"][c["fips"]] - g["state_margin"] for c in counties]
 
 
 def third_party_share(c: dict) -> float:
@@ -166,12 +206,14 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
 
 def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_resid: float,
                    senate_swing: float, candidate_adj: float, target: float, trend_discount: float,
-                   settings: Settings, others: list[float] | None = None) -> dict:
+                   settings: Settings, others: list[float] | None = None,
+                   base: list[float] | None = None) -> dict:
     """others (each county's 2024 third-party share): reconcile on the log-odds
     scale (the governor maps' governor_county_logodds_reconcile); otherwise one
-    flat shift in points."""
+    flat shift in points. base: each county's starting margin in place of its
+    2024 presidential margin (governor_county_incumbent_map)."""
     first = []
-    for c in counties:
+    for k, c in enumerate(counties):
         i = terms.index[c["fips"]]
         if state in ESTIMATED_COUNTY_STATES:
             w, resid = 0.0, state_resid
@@ -179,7 +221,8 @@ def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_r
             w = float(shrink_weight(terms.votes[i], settings.overlay_shrink_k))
             resid = w * float(terms.resid[i]) + (1 - w) * state_resid
         demo = float(terms.demo[i])
-        proj = (c.get("margin_2024") or 0.0) + demo + trend_discount * resid + senate_swing + candidate_adj
+        start = base[k] if base is not None else (c.get("margin_2024") or 0.0)
+        proj = start + demo + trend_discount * resid + senate_swing + candidate_adj
         first.append((c, i, w, resid, demo, proj))
     projs, weights = [f[5] for f in first], [f[0].get("total_2024") or 0.0 for f in first]
     rec = _reconcile(projs, weights, target)

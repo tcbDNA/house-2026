@@ -56,6 +56,8 @@ export type CountyResponse = {
   turnout_ratio_2026: number;
   turnout_source?: string;
   unavailable_reason?: string;
+  /** Governor maps: where county positions come from (an incumbent's last race or the 2024 presidential map). */
+  county_map_base?: string;
   counties: Array<{
     fips: string;
     state: string;
@@ -74,6 +76,9 @@ export type CountyResponse = {
     edu_shift: number;
     age_shift: number;
     is_tossup: boolean;
+    /** Governor maps: the margin the county's position starts from, and its label. */
+    base_margin?: number;
+    base_label?: string;
   }>;
 };
 

@@ -1,0 +1,841 @@
+state,year,incumbent,fips,county,dem,rep,total,margin,source,third_candidate,third_candidate_pct
+AR,2022,Sarah Huckabee Sanders,05001,Arkansas County,1231,3197,4489,-43.8,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05003,Ashley County,1386,4012,5461,-48.09,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05005,Baxter County,3293,12098,15668,-56.2,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05007,Benton County,33000,55907,90897,-25.2,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05009,Boone County,2319,10127,12751,-61.23,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05011,Bradley County,846,1764,2636,-34.83,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05013,Calhoun County,324,1248,1589,-58.15,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05015,Carroll County,3158,5692,9040,-28.03,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05017,Chicot County,1782,1601,3406,5.31,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05019,Clark County,2589,3492,6167,-14.64,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05021,Clay County,798,3060,3944,-57.35,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05023,Cleburne County,1608,8252,10042,-66.16,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05025,Cleveland County,479,2305,2815,-64.87,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05027,Columbia County,1937,4066,6087,-34.98,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05029,Conway County,2176,4481,6764,-34.08,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05031,Craighead County,8980,18171,27712,-33.17,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05033,Crawford County,3778,13814,17959,-55.88,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05035,Crittenden County,5294,5295,10752,-0.01,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05037,Cross County,1174,3672,4935,-50.62,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05039,Dallas County,732,1331,2090,-28.66,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05041,Desha County,1464,1611,3110,-4.73,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05043,Drew County,1871,3380,5312,-28.41,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05045,Faulkner County,14131,25382,40335,-27.89,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05047,Franklin County,1213,4130,5443,-53.59,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05049,Fulton County,834,3045,3984,-55.5,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05051,Garland County,10493,22225,33340,-35.19,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05053,Grant County,1055,5112,6287,-64.53,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05055,Greene County,2330,8982,11562,-57.53,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05057,Hempstead County,1316,3311,4685,-42.58,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05059,Hot Spring County,2528,7230,9939,-47.31,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05061,Howard County,1000,2580,3642,-43.38,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05063,Independence County,2316,8077,10585,-54.43,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05065,Izard County,861,3636,4597,-60.37,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05067,Jackson County,1106,2860,4037,-43.45,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05069,Jefferson County,10466,6874,17497,20.53,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05071,Johnson County,1791,5071,7010,-46.79,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05073,Lafayette County,674,1286,1982,-30.88,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05075,Lawrence County,876,3655,4642,-59.87,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05077,Lee County,1012,983,2017,1.44,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05079,Lincoln County,730,2015,2777,-46.27,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05081,Little River County,835,2906,3815,-54.29,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05083,Logan County,1265,4854,6258,-57.35,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05085,Lonoke County,5287,16603,22370,-50.59,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05087,Madison County,1304,4403,5817,-53.27,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05089,Marion County,1119,4744,6002,-60.4,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05091,Miller County,2523,8571,11268,-53.67,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05093,Mississippi County,3092,5401,8693,-26.56,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05095,Monroe County,977,1233,2241,-11.42,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05097,Montgomery County,578,2471,3121,-60.65,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05099,Nevada County,780,1658,2464,-35.63,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05101,Newton County,557,2440,3080,-61.14,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05103,Ouachita County,2863,4065,7023,-17.12,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05105,Perry County,871,2873,3818,-52.44,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05107,Phillips County,2415,1892,4366,11.98,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05109,Pike County,552,3121,3724,-68.98,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05111,Poinsett County,1050,4386,5569,-59.9,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05113,Polk County,1123,5634,6907,-65.31,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05115,Pope County,4418,12928,17630,-48.27,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05117,Prairie County,459,2167,2668,-64.02,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05119,Pulaski County,75393,47027,124153,22.85,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05121,Randolph County,1026,4201,5357,-59.27,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05123,St. Francis County,2527,2477,5082,0.98,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05125,Saline County,12532,29872,43170,-40.17,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05127,Scott County,407,2498,2961,-70.62,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05129,Searcy County,492,2608,3170,-66.75,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05131,Sebastian County,10734,22939,34376,-35.5,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05133,Sevier County,784,2825,3663,-55.72,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05135,Sharp County,1056,4816,6047,-62.18,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05137,Stone County,1070,3936,5109,-56.1,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05139,Union County,3695,7826,11693,-35.33,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05141,Van Buren County,1335,4810,6273,-55.4,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05143,Washington County,34842,34361,70656,0.68,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05145,White County,4613,18010,23125,-57.93,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05147,Woodruff County,695,1347,2092,-31.17,ar_official,,0.0
+AR,2022,Sarah Huckabee Sanders,05149,Yell County,1022,4172,5289,-59.56,ar_official,,0.0
+AZ,2022,Katie Hobbs,04001,Apache County,17739,8870,26693,33.23,dra,,0.0
+AZ,2022,Katie Hobbs,04003,Cochise County,19137,27481,46805,-17.83,dra,,0.0
+AZ,2022,Katie Hobbs,04005,Coconino County,34389,20298,54856,25.69,dra,,0.0
+AZ,2022,Katie Hobbs,04007,Gila County,7674,14763,22499,-31.51,dra,,0.0
+AZ,2022,Katie Hobbs,04009,Graham County,3087,7760,10872,-42.98,dra,,0.0
+AZ,2022,Katie Hobbs,04011,Greenlee County,920,1526,2446,-24.78,dra,,0.0
+AZ,2022,Katie Hobbs,04012,La Paz County,1646,3847,5518,-39.89,dra,,0.0
+AZ,2022,Katie Hobbs,04013,Maricopa County,790352,752714,1548372,2.43,dra,,0.0
+AZ,2022,Katie Hobbs,04015,Mohave County,20369,61125,81745,-49.86,dra,,0.0
+AZ,2022,Katie Hobbs,04017,Navajo County,18058,22340,40508,-10.57,dra,,0.0
+AZ,2022,Katie Hobbs,04019,Pima County,241398,157034,399525,21.12,dra,,0.0
+AZ,2022,Katie Hobbs,04021,Pinal County,60019,83773,144247,-16.47,dra,,0.0
+AZ,2022,Katie Hobbs,04023,Santa Cruz County,8724,4371,13133,33.15,dra,,0.0
+AZ,2022,Katie Hobbs,04025,Yavapai County,44316,78832,123148,-28.03,dra,,0.0
+AZ,2022,Katie Hobbs,04027,Yuma County,20063,26040,46198,-12.94,dra,,0.0
+CT,2022,Ned Lamont,09110,Capitol Planning Region,203047,135877,342727,19.6,medsl,,0.0
+CT,2022,Ned Lamont,09120,Greater Bridgeport Planning Region,54625,35624,90924,20.9,medsl,,0.0
+CT,2022,Ned Lamont,09130,Lower Connecticut River Valley Planning Region,44447,35282,80623,11.37,medsl,,0.0
+CT,2022,Ned Lamont,09140,Naugatuck Valley Planning Region,70164,86069,157821,-10.08,medsl,,0.0
+CT,2022,Ned Lamont,09150,Northeastern Connecticut Planning Region,15552,19756,35750,-11.76,medsl,,0.0
+CT,2022,Ned Lamont,09160,Northwest Hills Planning Region,24168,26010,50733,-3.63,medsl,,0.0
+CT,2022,Ned Lamont,09170,South Central Connecticut Planning Region,112635,75498,189842,19.56,medsl,,0.0
+CT,2022,Ned Lamont,09180,Southeastern Connecticut Planning Region,54199,42729,98323,11.67,medsl,,0.0
+CT,2022,Ned Lamont,09190,Western Connecticut Planning Region,130280,89364,221067,18.51,medsl,,0.0
+HI,2022,Josh Green,15001,Hawaii County,42152,21870,64022,31.68,dra,,0.0
+HI,2022,Josh Green,15003,Honolulu County,170575,102968,273543,24.72,dra,,0.0
+HI,2022,Josh Green,15007,Kauai County,14296,9722,24018,19.04,dra,,0.0
+HI,2022,Josh Green,15009,Maui County,34002,17677,51679,31.59,dra,,0.0
+ID,2022,Brad Little,16001,Ada County,53693,105276,185229,-27.85,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16003,Adams County,239,1287,2020,-51.88,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16005,Bannock County,7006,14945,25501,-31.13,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16007,Bear Lake County,140,1412,2266,-56.13,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16009,Benewah County,397,2097,3454,-49.22,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16011,Bingham County,1277,8750,12384,-60.34,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16013,Blaine County,5149,4022,9720,11.59,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16015,Boise County,453,1932,3444,-42.94,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16017,Bonner County,3121,12136,20794,-43.35,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16019,Bonneville County,5310,24525,35487,-54.15,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16021,Boundary County,437,3084,5239,-50.52,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16023,Butte County,74,635,1009,-55.6,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16025,Camas County,61,337,517,-53.38,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16027,Canyon County,9236,34316,58329,-43.0,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16029,Caribou County,142,1495,2120,-63.82,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16031,Cassia County,371,4074,5802,-63.82,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16033,Clark County,12,145,208,-63.94,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16035,Clearwater County,368,2220,3121,-59.34,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16037,Custer County,232,1228,2036,-48.92,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16039,Elmore County,1023,4260,6630,-48.82,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16041,Franklin County,213,2744,4337,-58.36,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16043,Fremont County,347,3073,4262,-63.96,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16045,Gem County,599,4582,7631,-52.19,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16047,Gooding County,430,2458,4051,-50.06,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16049,Idaho County,638,4840,7470,-56.25,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16051,Jefferson County,580,6591,9089,-66.13,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16053,Jerome County,540,3161,4858,-53.95,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16055,Kootenai County,9299,38296,62296,-46.55,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16057,Latah County,5043,8256,14973,-21.46,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16059,Lemhi County,421,2465,3660,-55.85,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16061,Lewis County,123,1013,1361,-65.39,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16063,Lincoln County,152,841,1321,-52.16,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16065,Madison County,694,6037,8336,-64.1,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16067,Minidoka County,399,3222,4721,-59.8,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16069,Nez Perce County,2659,9252,13481,-48.91,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16071,Oneida County,70,1031,1627,-59.07,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16073,Owyhee County,300,1881,3290,-48.05,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16075,Payette County,723,4874,7609,-54.55,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16077,Power County,297,1411,1972,-56.49,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16079,Shoshone County,767,2614,4128,-44.74,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16081,Teton County,1989,2169,4692,-3.84,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16083,Twin Falls County,3428,13884,22993,-45.47,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16085,Valley County,1344,3211,5232,-35.68,id_official,Ammon Bundy,17.19
+ID,2022,Brad Little,16087,Washington County,364,2516,3924,-54.84,id_official,Ammon Bundy,17.19
+IL,2022,JB Pritzker,17001,Adams County,5033,19474,25032,-57.69,dra,,0.0
+IL,2022,JB Pritzker,17003,Alexander County,699,989,1709,-16.97,dra,,0.0
+IL,2022,JB Pritzker,17005,Bond County,1687,4611,6500,-44.98,dra,,0.0
+IL,2022,JB Pritzker,17007,Boone County,6803,10246,17678,-19.48,dra,,0.0
+IL,2022,JB Pritzker,17009,Brown County,305,1595,1930,-66.84,dra,,0.0
+IL,2022,JB Pritzker,17011,Bureau County,4636,7738,12781,-24.27,dra,,0.0
+IL,2022,JB Pritzker,17013,Calhoun County,588,1749,2406,-48.25,dra,,0.0
+IL,2022,JB Pritzker,17015,Carroll County,1868,3966,6027,-34.81,dra,,0.0
+IL,2022,JB Pritzker,17017,Cass County,1098,2782,3995,-42.15,dra,,0.0
+IL,2022,JB Pritzker,17019,Champaign County,40011,26061,68079,20.49,dra,,0.0
+IL,2022,JB Pritzker,17021,Christian County,3466,8635,12546,-41.2,dra,,0.0
+IL,2022,JB Pritzker,17023,Clark County,1217,5071,6400,-60.22,dra,,0.0
+IL,2022,JB Pritzker,17025,Clay County,782,4963,5832,-71.69,dra,,0.0
+IL,2022,JB Pritzker,17027,Clinton County,3114,11423,14900,-55.77,dra,,0.0
+IL,2022,JB Pritzker,17029,Coles County,5547,10622,16611,-30.55,dra,,0.0
+IL,2022,JB Pritzker,17031,Cook County,1065445,344902,1442785,49.94,dra,,0.0
+IL,2022,JB Pritzker,17033,Crawford County,1377,5439,7042,-57.68,dra,,0.0
+IL,2022,JB Pritzker,17035,Cumberland County,867,3830,4802,-61.7,dra,,0.0
+IL,2022,JB Pritzker,17037,DeKalb County,17047,16119,34488,2.69,dra,,0.0
+IL,2022,JB Pritzker,17039,De Witt County,1599,4352,6150,-44.76,dra,,0.0
+IL,2022,JB Pritzker,17041,Douglas County,1555,4778,6515,-49.47,dra,,0.0
+IL,2022,JB Pritzker,17043,DuPage County,190601,138667,340298,15.26,dra,,0.0
+IL,2022,JB Pritzker,17045,Edgar County,1367,4624,6161,-52.86,dra,,0.0
+IL,2022,JB Pritzker,17047,Edwards County,296,2488,2824,-77.62,dra,,0.0
+IL,2022,JB Pritzker,17049,Effingham County,2609,13072,15999,-65.4,dra,,0.0
+IL,2022,JB Pritzker,17051,Fayette County,1290,6627,8071,-66.13,dra,,0.0
+IL,2022,JB Pritzker,17053,Ford County,1230,3776,5173,-49.22,dra,,0.0
+IL,2022,JB Pritzker,17055,Franklin County,2952,10442,13745,-54.49,dra,,0.0
+IL,2022,JB Pritzker,17057,Fulton County,4924,7794,13178,-21.78,dra,,0.0
+IL,2022,JB Pritzker,17059,Gallatin County,445,1716,2232,-56.94,dra,,0.0
+IL,2022,JB Pritzker,17061,Greene County,951,3550,4591,-56.61,dra,,0.0
+IL,2022,JB Pritzker,17063,Grundy County,6966,11733,19409,-24.56,dra,,0.0
+IL,2022,JB Pritzker,17065,Hamilton County,577,2819,3458,-64.84,dra,,0.0
+IL,2022,JB Pritzker,17067,Hancock County,1438,5619,7248,-57.68,dra,,0.0
+IL,2022,JB Pritzker,17069,Hardin County,284,1339,1684,-62.65,dra,,0.0
+IL,2022,JB Pritzker,17071,Henderson County,883,1980,2960,-37.06,dra,,0.0
+IL,2022,JB Pritzker,17073,Henry County,6949,12155,19726,-26.39,dra,,0.0
+IL,2022,JB Pritzker,17075,Iroquois County,1948,8334,10538,-60.6,dra,,0.0
+IL,2022,JB Pritzker,17077,Jackson County,8303,8372,17136,-0.4,dra,,0.0
+IL,2022,JB Pritzker,17079,Jasper County,645,3943,4661,-70.76,dra,,0.0
+IL,2022,JB Pritzker,17081,Jefferson County,2821,10096,13212,-55.06,dra,,0.0
+IL,2022,JB Pritzker,17083,Jersey County,2172,6966,9412,-50.93,dra,,0.0
+IL,2022,JB Pritzker,17085,Jo Daviess County,3754,5486,9533,-18.17,dra,,0.0
+IL,2022,JB Pritzker,17087,Johnson County,868,3878,4841,-62.18,dra,,0.0
+IL,2022,JB Pritzker,17089,Kane County,84777,68064,157759,10.59,dra,,0.0
+IL,2022,JB Pritzker,17091,Kankakee County,13287,20842,35292,-21.41,dra,,0.0
+IL,2022,JB Pritzker,17093,Kendall County,22218,21457,45207,1.68,dra,,0.0
+IL,2022,JB Pritzker,17095,Knox County,7486,9597,17602,-11.99,dra,,0.0
+IL,2022,JB Pritzker,17097,Lake County,137912,83724,229033,23.66,dra,,0.0
+IL,2022,JB Pritzker,17099,LaSalle County,16558,21781,39662,-13.17,dra,,0.0
+IL,2022,JB Pritzker,17101,Lawrence County,909,4094,5113,-62.29,dra,,0.0
+IL,2022,JB Pritzker,17103,Lee County,4599,7220,12213,-21.46,dra,,0.0
+IL,2022,JB Pritzker,17105,Livingston County,3253,9315,12936,-46.86,dra,,0.0
+IL,2022,JB Pritzker,17107,Logan County,2724,6741,9732,-41.28,dra,,0.0
+IL,2022,JB Pritzker,17109,McDonough County,3269,5945,9467,-28.27,dra,,0.0
+IL,2022,JB Pritzker,17111,McHenry County,55134,56839,116373,-1.47,dra,,0.0
+IL,2022,JB Pritzker,17113,McLean County,31930,31125,64944,1.24,dra,,0.0
+IL,2022,JB Pritzker,17115,Macon County,13873,20764,35620,-19.35,dra,,0.0
+IL,2022,JB Pritzker,17117,Macoupin County,5575,12047,18140,-35.68,dra,,0.0
+IL,2022,JB Pritzker,17119,Madison County,39858,55210,98129,-15.64,dra,,0.0
+IL,2022,JB Pritzker,17121,Marion County,2859,9860,13011,-53.81,dra,,0.0
+IL,2022,JB Pritzker,17123,Marshall County,1463,3166,4749,-35.86,dra,,0.0
+IL,2022,JB Pritzker,17125,Mason County,1468,3361,5003,-37.84,dra,,0.0
+IL,2022,JB Pritzker,17127,Massac County,1047,3734,4884,-55.02,dra,,0.0
+IL,2022,JB Pritzker,17129,Menard County,1567,3548,5281,-37.51,dra,,0.0
+IL,2022,JB Pritzker,17131,Mercer County,2297,4238,6785,-28.61,dra,,0.0
+IL,2022,JB Pritzker,17133,Monroe County,4609,10656,15730,-38.44,dra,,0.0
+IL,2022,JB Pritzker,17135,Montgomery County,3030,7395,10763,-40.56,dra,,0.0
+IL,2022,JB Pritzker,17137,Morgan County,3459,7314,11042,-34.91,dra,,0.0
+IL,2022,JB Pritzker,17139,Moultrie County,1250,3919,5312,-50.24,dra,,0.0
+IL,2022,JB Pritzker,17141,Ogle County,6518,12400,19547,-30.09,dra,,0.0
+IL,2022,JB Pritzker,17143,Peoria County,29195,28164,59023,1.75,dra,,0.0
+IL,2022,JB Pritzker,17145,Perry County,1828,5804,7834,-50.75,dra,,0.0
+IL,2022,JB Pritzker,17147,Piatt County,2597,4785,7675,-28.51,dra,,0.0
+IL,2022,JB Pritzker,17149,Pike County,975,4968,5948,-67.13,dra,,0.0
+IL,2022,JB Pritzker,17151,Pope County,304,1361,1690,-62.54,dra,,0.0
+IL,2022,JB Pritzker,17153,Pulaski County,584,1404,2030,-40.39,dra,,0.0
+IL,2022,JB Pritzker,17155,Putnam County,1080,1622,2798,-19.37,dra,,0.0
+IL,2022,JB Pritzker,17157,Randolph County,2999,8092,11450,-44.48,dra,,0.0
+IL,2022,JB Pritzker,17159,Richland County,1188,4950,6315,-59.57,dra,,0.0
+IL,2022,JB Pritzker,17161,Rock Island County,25663,21130,48243,9.4,dra,,0.0
+IL,2022,JB Pritzker,17163,St. Clair County,45071,41154,88843,4.41,dra,,0.0
+IL,2022,JB Pritzker,17165,Saline County,1751,6241,8196,-54.78,dra,,0.0
+IL,2022,JB Pritzker,17167,Sangamon County,38161,39166,79483,-1.26,dra,,0.0
+IL,2022,JB Pritzker,17169,Schuyler County,817,2307,3228,-46.16,dra,,0.0
+IL,2022,JB Pritzker,17171,Scott County,378,1702,2116,-62.57,dra,,0.0
+IL,2022,JB Pritzker,17173,Shelby County,1890,7654,9784,-58.91,dra,,0.0
+IL,2022,JB Pritzker,17175,Stark County,593,1645,2327,-45.21,dra,,0.0
+IL,2022,JB Pritzker,17177,Stephenson County,6303,9897,16758,-21.45,dra,,0.0
+IL,2022,JB Pritzker,17179,Tazewell County,17424,32484,51475,-29.26,dra,,0.0
+IL,2022,JB Pritzker,17181,Union County,1839,4988,7027,-44.81,dra,,0.0
+IL,2022,JB Pritzker,17183,Vermilion County,6738,14674,22068,-35.96,dra,,0.0
+IL,2022,JB Pritzker,17185,Wabash County,730,3288,4076,-62.76,dra,,0.0
+IL,2022,JB Pritzker,17187,Warren County,2024,3764,5942,-29.28,dra,,0.0
+IL,2022,JB Pritzker,17189,Washington County,1182,4739,6083,-58.47,dra,,0.0
+IL,2022,JB Pritzker,17191,Wayne County,651,6140,6908,-79.46,dra,,0.0
+IL,2022,JB Pritzker,17193,White County,878,4766,5764,-67.45,dra,,0.0
+IL,2022,JB Pritzker,17195,Whiteside County,8335,11090,20074,-13.72,dra,,0.0
+IL,2022,JB Pritzker,17197,Will County,117475,108464,233141,3.87,dra,,0.0
+IL,2022,JB Pritzker,17199,Williamson County,6821,17723,25133,-43.38,dra,,0.0
+IL,2022,JB Pritzker,17201,Winnebago County,41987,43492,88155,-1.71,dra,,0.0
+IL,2022,JB Pritzker,17203,Woodford County,4341,12260,16994,-46.6,dra,,0.0
+MA,2022,Maura Healey,25001,Barnstable County,70163,46011,117842,20.5,medsl,,0.0
+MA,2022,Maura Healey,25003,Berkshire County,34898,13205,49030,44.24,medsl,,0.0
+MA,2022,Maura Healey,25005,Bristol County,98969,81033,183390,9.78,medsl,,0.0
+MA,2022,Maura Healey,25007,Dukes County,7185,2011,9343,55.38,medsl,,0.0
+MA,2022,Maura Healey,25009,Essex County,177760,104400,286816,25.58,medsl,,0.0
+MA,2022,Maura Healey,25011,Franklin County,22287,8788,31615,42.7,medsl,,0.0
+MA,2022,Maura Healey,25013,Hampden County,75523,60203,138239,11.08,medsl,,0.0
+MA,2022,Maura Healey,25015,Hampshire County,46679,17138,64838,45.56,medsl,,0.0
+MA,2022,Maura Healey,25017,Middlesex County,426054,169707,605766,42.32,medsl,,0.0
+MA,2022,Maura Healey,25019,Nantucket County,3262,1553,4903,34.86,medsl,,0.0
+MA,2022,Maura Healey,25021,Norfolk County,183795,96607,284985,30.59,medsl,,0.0
+MA,2022,Maura Healey,25023,Plymouth County,115810,95669,214794,9.38,medsl,,0.0
+MA,2022,Maura Healey,25025,Suffolk County,159232,38886,201428,59.75,medsl,,0.0
+MA,2022,Maura Healey,25027,Worcester County,162786,124132,292807,13.2,medsl,,0.0
+MD,2022,Wes Moore,24001,Allegany County,6796,14145,21697,-33.87,medsl,,0.0
+MD,2022,Wes Moore,24003,Anne Arundel County,123929,83823,216023,18.57,medsl,,0.0
+MD,2022,Wes Moore,24005,Baltimore County,172494,88971,272054,30.7,medsl,,0.0
+MD,2022,Wes Moore,24009,Calvert County,16757,19668,37577,-7.75,medsl,,0.0
+MD,2022,Wes Moore,24011,Caroline County,3447,6869,10729,-31.89,medsl,,0.0
+MD,2022,Wes Moore,24013,Carroll County,28117,40683,71887,-17.48,medsl,,0.0
+MD,2022,Wes Moore,24015,Cecil County,11992,19873,33067,-23.83,medsl,,0.0
+MD,2022,Wes Moore,24017,Charles County,37367,15830,54510,39.51,medsl,,0.0
+MD,2022,Wes Moore,24019,Dorchester County,4715,6377,11493,-14.46,medsl,,0.0
+MD,2022,Wes Moore,24021,Frederick County,56992,46040,106608,10.27,medsl,,0.0
+MD,2022,Wes Moore,24023,Garrett County,2507,8381,11305,-51.96,medsl,,0.0
+MD,2022,Wes Moore,24025,Harford County,45222,53962,103346,-8.46,medsl,,0.0
+MD,2022,Wes Moore,24027,Howard County,91031,34514,130291,43.38,medsl,,0.0
+MD,2022,Wes Moore,24029,Kent County,4394,3791,8463,7.13,medsl,,0.0
+MD,2022,Wes Moore,24031,Montgomery County,269072,64507,343371,59.58,medsl,,0.0
+MD,2022,Wes Moore,24033,Prince George's County,214971,20045,240908,80.91,medsl,,0.0
+MD,2022,Wes Moore,24035,Queen Anne's County,8913,13123,22899,-18.39,medsl,,0.0
+MD,2022,Wes Moore,24037,St. Mary's County,15057,21150,37703,-16.16,medsl,,0.0
+MD,2022,Wes Moore,24039,Somerset County,2491,4128,6829,-23.97,medsl,,0.0
+MD,2022,Wes Moore,24041,Talbot County,9116,7935,17646,6.69,medsl,,0.0
+MD,2022,Wes Moore,24043,Washington County,18727,28547,48853,-20.1,medsl,,0.0
+MD,2022,Wes Moore,24045,Wicomico County,13873,15362,30296,-4.91,medsl,,0.0
+MD,2022,Wes Moore,24047,Worcester County,9196,13967,23801,-20.05,medsl,,0.0
+MD,2022,Wes Moore,24510,Baltimore city,126768,12309,143867,79.56,medsl,,0.0
+NE,2022,Jim Pillen,31001,Adams County,2821,6973,10254,-40.49,medsl,,0.0
+NE,2022,Jim Pillen,31003,Antelope County,241,2026,2347,-76.05,medsl,,0.0
+NE,2022,Jim Pillen,31005,Arthur County,13,220,244,-84.84,medsl,,0.0
+NE,2022,Jim Pillen,31007,Banner County,29,316,365,-78.63,medsl,,0.0
+NE,2022,Jim Pillen,31009,Blaine County,23,169,204,-71.57,medsl,,0.0
+NE,2022,Jim Pillen,31011,Boone County,393,2026,2576,-63.39,medsl,,0.0
+NE,2022,Jim Pillen,31013,Box Butte County,761,2462,3345,-50.85,medsl,,0.0
+NE,2022,Jim Pillen,31015,Boyd County,99,739,878,-72.89,medsl,,0.0
+NE,2022,Jim Pillen,31017,Brown County,159,938,1154,-67.5,medsl,,0.0
+NE,2022,Jim Pillen,31019,Buffalo County,3946,11233,15897,-45.84,medsl,,0.0
+NE,2022,Jim Pillen,31021,Burt County,638,2030,2790,-49.89,medsl,,0.0
+NE,2022,Jim Pillen,31023,Butler County,585,2773,3492,-62.66,medsl,,0.0
+NE,2022,Jim Pillen,31025,Cass County,3317,7462,11336,-36.56,medsl,,0.0
+NE,2022,Jim Pillen,31027,Cedar County,466,3107,3738,-70.65,medsl,,0.0
+NE,2022,Jim Pillen,31029,Chase County,176,1296,1525,-73.44,medsl,,0.0
+NE,2022,Jim Pillen,31031,Cherry County,240,1984,2369,-73.62,medsl,,0.0
+NE,2022,Jim Pillen,31033,Cheyenne County,456,2688,3313,-67.37,medsl,,0.0
+NE,2022,Jim Pillen,31035,Clay County,405,2175,2714,-65.22,medsl,,0.0
+NE,2022,Jim Pillen,31037,Colfax County,445,1892,2413,-59.97,medsl,,0.0
+NE,2022,Jim Pillen,31039,Cuming County,509,2589,3194,-65.12,medsl,,0.0
+NE,2022,Jim Pillen,31041,Custer County,561,3562,4326,-69.37,medsl,,0.0
+NE,2022,Jim Pillen,31043,Dakota County,931,2525,3603,-44.24,medsl,,0.0
+NE,2022,Jim Pillen,31045,Dawes County,821,2158,3099,-43.14,medsl,,0.0
+NE,2022,Jim Pillen,31047,Dawson County,1035,4303,5618,-58.17,medsl,,0.0
+NE,2022,Jim Pillen,31049,Deuel County,76,612,731,-73.32,medsl,,0.0
+NE,2022,Jim Pillen,31051,Dixon County,406,1710,2209,-59.03,medsl,,0.0
+NE,2022,Jim Pillen,31053,Dodge County,3302,7682,11515,-38.04,medsl,,0.0
+NE,2022,Jim Pillen,31055,Douglas County,96628,87136,190746,4.98,medsl,,0.0
+NE,2022,Jim Pillen,31057,Dundy County,75,650,753,-76.36,medsl,,0.0
+NE,2022,Jim Pillen,31059,Fillmore County,491,1859,2428,-56.34,medsl,,0.0
+NE,2022,Jim Pillen,31061,Franklin County,159,976,1186,-68.89,medsl,,0.0
+NE,2022,Jim Pillen,31063,Frontier County,142,895,1077,-69.92,medsl,,0.0
+NE,2022,Jim Pillen,31065,Furnas County,241,1524,1859,-69.02,medsl,,0.0
+NE,2022,Jim Pillen,31067,Gage County,2357,5317,7991,-37.04,medsl,,0.0
+NE,2022,Jim Pillen,31069,Garden County,109,736,881,-71.17,medsl,,0.0
+NE,2022,Jim Pillen,31071,Garfield County,80,628,726,-75.48,medsl,,0.0
+NE,2022,Jim Pillen,31073,Gosper County,127,676,834,-65.83,medsl,,0.0
+NE,2022,Jim Pillen,31075,Grant County,18,253,279,-84.23,medsl,,0.0
+NE,2022,Jim Pillen,31077,Greeley County,194,766,1011,-56.58,medsl,,0.0
+NE,2022,Jim Pillen,31079,Hall County,4145,10223,15167,-40.07,medsl,,0.0
+NE,2022,Jim Pillen,31081,Hamilton County,757,3128,4068,-58.28,medsl,,0.0
+NE,2022,Jim Pillen,31083,Harlan County,234,1109,1417,-61.75,medsl,,0.0
+NE,2022,Jim Pillen,31085,Hayes County,23,341,387,-82.17,medsl,,0.0
+NE,2022,Jim Pillen,31087,Hitchcock County,120,844,1014,-71.4,medsl,,0.0
+NE,2022,Jim Pillen,31089,Holt County,431,3125,3750,-71.84,medsl,,0.0
+NE,2022,Jim Pillen,31091,Hooker County,62,300,373,-63.81,medsl,,0.0
+NE,2022,Jim Pillen,31093,Howard County,442,1853,2422,-58.26,medsl,,0.0
+NE,2022,Jim Pillen,31095,Jefferson County,634,1916,2665,-48.11,medsl,,0.0
+NE,2022,Jim Pillen,31097,Johnson County,467,1061,1615,-36.78,medsl,,0.0
+NE,2022,Jim Pillen,31099,Kearney County,448,1981,2536,-60.45,medsl,,0.0
+NE,2022,Jim Pillen,31101,Keith County,456,2337,2891,-65.06,medsl,,0.0
+NE,2022,Jim Pillen,31103,Keya Paha County,37,318,378,-74.34,medsl,,0.0
+NE,2022,Jim Pillen,31105,Kimball County,158,1115,1333,-71.79,medsl,,0.0
+NE,2022,Jim Pillen,31107,Knox County,586,2922,3648,-64.04,medsl,,0.0
+NE,2022,Jim Pillen,31109,Lancaster County,57424,52769,114001,4.08,medsl,,0.0
+NE,2022,Jim Pillen,31111,Lincoln County,2481,9029,12052,-54.33,medsl,,0.0
+NE,2022,Jim Pillen,31113,Logan County,22,290,324,-82.72,medsl,,0.0
+NE,2022,Jim Pillen,31115,Loup County,48,255,324,-63.89,medsl,,0.0
+NE,2022,Jim Pillen,31117,McPherson County,24,188,221,-74.21,medsl,,0.0
+NE,2022,Jim Pillen,31119,Madison County,2035,9108,11617,-60.88,medsl,,0.0
+NE,2022,Jim Pillen,31121,Merrick County,516,2629,3302,-63.99,medsl,,0.0
+NE,2022,Jim Pillen,31123,Morrill County,255,1543,1923,-66.98,medsl,,0.0
+NE,2022,Jim Pillen,31125,Nance County,260,923,1251,-53.0,medsl,,0.0
+NE,2022,Jim Pillen,31127,Nemaha County,571,1655,2335,-46.42,medsl,,0.0
+NE,2022,Jim Pillen,31129,Nuckolls County,234,1276,1558,-66.88,medsl,,0.0
+NE,2022,Jim Pillen,31131,Otoe County,1593,3920,5751,-40.46,medsl,,0.0
+NE,2022,Jim Pillen,31133,Pawnee County,224,817,1081,-54.86,medsl,,0.0
+NE,2022,Jim Pillen,31135,Perkins County,135,918,1098,-71.31,medsl,,0.0
+NE,2022,Jim Pillen,31137,Phelps County,509,3012,3675,-68.11,medsl,,0.0
+NE,2022,Jim Pillen,31139,Pierce County,288,2463,2851,-76.29,medsl,,0.0
+NE,2022,Jim Pillen,31141,Platte County,1695,9103,11106,-66.7,medsl,,0.0
+NE,2022,Jim Pillen,31143,Polk County,321,1658,2052,-65.16,medsl,,0.0
+NE,2022,Jim Pillen,31145,Red Willow County,608,3174,3986,-64.38,medsl,,0.0
+NE,2022,Jim Pillen,31147,Richardson County,766,1987,2918,-41.84,medsl,,0.0
+NE,2022,Jim Pillen,31149,Rock County,63,504,585,-75.38,medsl,,0.0
+NE,2022,Jim Pillen,31151,Saline County,1188,2388,3755,-31.96,medsl,,0.0
+NE,2022,Jim Pillen,31153,Sarpy County,26039,35821,64436,-15.18,medsl,,0.0
+NE,2022,Jim Pillen,31155,Saunders County,2316,6842,9606,-47.12,medsl,,0.0
+NE,2022,Jim Pillen,31157,Scotts Bluff County,2259,7125,9816,-49.57,medsl,,0.0
+NE,2022,Jim Pillen,31159,Seward County,1556,4921,6721,-50.07,medsl,,0.0
+NE,2022,Jim Pillen,31161,Sheridan County,226,1349,1678,-66.92,medsl,,0.0
+NE,2022,Jim Pillen,31163,Sherman County,246,896,1220,-53.28,medsl,,0.0
+NE,2022,Jim Pillen,31165,Sioux County,56,427,501,-74.05,medsl,,0.0
+NE,2022,Jim Pillen,31167,Stanton County,340,1967,2441,-66.65,medsl,,0.0
+NE,2022,Jim Pillen,31169,Thayer County,373,1707,2160,-61.76,medsl,,0.0
+NE,2022,Jim Pillen,31171,Thomas County,29,265,306,-77.12,medsl,,0.0
+NE,2022,Jim Pillen,31173,Thurston County,424,824,1290,-31.01,medsl,,0.0
+NE,2022,Jim Pillen,31175,Valley County,278,1414,1770,-64.18,medsl,,0.0
+NE,2022,Jim Pillen,31177,Washington County,2227,6244,8803,-45.63,medsl,,0.0
+NE,2022,Jim Pillen,31179,Wayne County,685,2215,3023,-50.61,medsl,,0.0
+NE,2022,Jim Pillen,31181,Webster County,207,1021,1283,-63.45,medsl,,0.0
+NE,2022,Jim Pillen,31183,Wheeler County,39,227,280,-67.14,medsl,,0.0
+NE,2022,Jim Pillen,31185,York County,971,3821,5011,-56.87,medsl,,0.0
+NH,2024,Kelly Ayotte,33001,Belknap County,14762,24732,40275,-24.75,dra,,0.0
+NH,2024,Kelly Ayotte,33003,Carroll County,14407,19104,34158,-13.75,dra,,0.0
+NH,2024,Kelly Ayotte,33005,Cheshire County,22107,21342,44504,1.72,dra,,0.0
+NH,2024,Kelly Ayotte,33007,Coos County,6349,10047,16849,-21.95,dra,,0.0
+NH,2024,Kelly Ayotte,33009,Grafton County,29212,24260,54773,9.04,dra,,0.0
+NH,2024,Kelly Ayotte,33011,Hillsborough County,100395,125883,231048,-11.03,dra,,0.0
+NH,2024,Kelly Ayotte,33013,Merrimack County,42070,47792,91788,-6.23,dra,,0.0
+NH,2024,Kelly Ayotte,33015,Rockingham County,82344,113667,199836,-15.67,dra,,0.0
+NH,2024,Kelly Ayotte,33017,Strafford County,37641,36040,75459,2.12,dra,,0.0
+NH,2024,Kelly Ayotte,33019,Sullivan County,10862,13255,24807,-9.65,dra,,0.0
+NV,2022,Joe Lombardo,32001,Churchill County,2223,7020,9865,-48.63,dra,,0.0
+NV,2022,Joe Lombardo,32003,Clark County,347397,308760,680355,5.68,dra,,0.0
+NV,2022,Joe Lombardo,32005,Douglas County,9014,19070,29154,-34.49,dra,,0.0
+NV,2022,Joe Lombardo,32007,Elko County,2923,12173,16183,-57.16,dra,,0.0
+NV,2022,Joe Lombardo,32009,Esmeralda County,64,338,453,-60.49,dra,,0.0
+NV,2022,Joe Lombardo,32011,Eureka County,61,681,782,-79.28,dra,,0.0
+NV,2022,Joe Lombardo,32013,Humboldt County,1201,4488,6109,-53.81,dra,,0.0
+NV,2022,Joe Lombardo,32015,Lander County,316,1678,2208,-61.68,dra,,0.0
+NV,2022,Joe Lombardo,32017,Lincoln County,264,1710,2160,-66.94,dra,,0.0
+NV,2022,Joe Lombardo,32019,Lyon County,5960,16338,23601,-43.97,dra,,0.0
+NV,2022,Joe Lombardo,32021,Mineral County,613,1138,1893,-27.73,dra,,0.0
+NV,2022,Joe Lombardo,32023,Nye County,5813,13824,20815,-38.49,dra,,0.0
+NV,2022,Joe Lombardo,32027,Pershing County,384,1286,1774,-50.85,dra,,0.0
+NV,2022,Joe Lombardo,32029,Storey County,678,1748,2562,-41.76,dra,,0.0
+NV,2022,Joe Lombardo,32031,Washoe County,94646,91862,194042,1.43,dra,,0.0
+NV,2022,Joe Lombardo,32033,White Pine County,612,2542,3450,-55.94,dra,,0.0
+NV,2022,Joe Lombardo,32510,Carson City,9822,12721,23665,-12.25,dra,,0.0
+NY,2022,Kathy Hochul,36001,Albany County,69035,47545,116965,18.37,dra,,0.0
+NY,2022,Kathy Hochul,36003,Allegany County,3868,11974,15888,-51.02,dra,,0.0
+NY,2022,Kathy Hochul,36005,Bronx County,155563,44948,200738,55.1,dra,,0.0
+NY,2022,Kathy Hochul,36007,Broome County,29799,38343,68230,-12.52,dra,,0.0
+NY,2022,Kathy Hochul,36009,Cattaraugus County,7795,18265,26091,-40.13,dra,,0.0
+NY,2022,Kathy Hochul,36011,Cayuga County,10175,16725,26949,-24.31,dra,,0.0
+NY,2022,Kathy Hochul,36013,Chautauqua County,15237,28268,43561,-29.91,dra,,0.0
+NY,2022,Kathy Hochul,36015,Chemung County,9474,18364,27910,-31.85,dra,,0.0
+NY,2022,Kathy Hochul,36017,Chenango County,4968,11871,16873,-40.91,dra,,0.0
+NY,2022,Kathy Hochul,36019,Clinton County,11894,15590,27524,-13.43,dra,,0.0
+NY,2022,Kathy Hochul,36021,Columbia County,16079,13605,29745,8.32,dra,,0.0
+NY,2022,Kathy Hochul,36023,Cortland County,6812,9294,16149,-15.37,dra,,0.0
+NY,2022,Kathy Hochul,36025,Delaware County,6489,12094,18606,-30.12,dra,,0.0
+NY,2022,Kathy Hochul,36027,Dutchess County,55519,59486,115150,-3.45,dra,,0.0
+NY,2022,Kathy Hochul,36029,Erie County,180626,160004,341309,6.04,dra,,0.0
+NY,2022,Kathy Hochul,36031,Essex County,6992,8522,15536,-9.85,dra,,0.0
+NY,2022,Kathy Hochul,36033,Franklin County,6003,9180,15197,-20.91,dra,,0.0
+NY,2022,Kathy Hochul,36035,Fulton County,5255,13591,18879,-44.15,dra,,0.0
+NY,2022,Kathy Hochul,36037,Genesee County,6274,16003,22312,-43.6,dra,,0.0
+NY,2022,Kathy Hochul,36039,Greene County,7651,12492,20165,-24.01,dra,,0.0
+NY,2022,Kathy Hochul,36041,Hamilton County,831,2051,2882,-42.33,dra,,0.0
+NY,2022,Kathy Hochul,36043,Herkimer County,5753,16529,22318,-48.28,dra,,0.0
+NY,2022,Kathy Hochul,36045,Jefferson County,9206,22529,31774,-41.93,dra,,0.0
+NY,2022,Kathy Hochul,36047,Kings County,402114,163430,566517,42.13,dra,,0.0
+NY,2022,Kathy Hochul,36049,Lewis County,2066,8574,10647,-61.13,dra,,0.0
+NY,2022,Kathy Hochul,36051,Livingston County,8136,16168,24350,-32.99,dra,,0.0
+NY,2022,Kathy Hochul,36053,Madison County,10192,15972,26265,-22.01,dra,,0.0
+NY,2022,Kathy Hochul,36055,Monroe County,148766,126643,275961,8.02,dra,,0.0
+NY,2022,Kathy Hochul,36057,Montgomery County,5028,10858,15924,-36.61,dra,,0.0
+NY,2022,Kathy Hochul,36059,Nassau County,232036,286147,518640,-10.43,dra,,0.0
+NY,2022,Kathy Hochul,36061,New York County,372150,80159,453312,64.41,dra,,0.0
+NY,2022,Kathy Hochul,36063,Niagara County,29669,46627,76424,-22.19,dra,,0.0
+NY,2022,Kathy Hochul,36065,Oneida County,25358,49991,75519,-32.62,dra,,0.0
+NY,2022,Kathy Hochul,36067,Onondaga County,91410,78239,169977,7.75,dra,,0.0
+NY,2022,Kathy Hochul,36069,Ontario County,20166,25979,46228,-12.57,dra,,0.0
+NY,2022,Kathy Hochul,36071,Orange County,54386,69558,124142,-12.22,dra,,0.0
+NY,2022,Kathy Hochul,36073,Orleans County,3292,10376,13688,-51.75,dra,,0.0
+NY,2022,Kathy Hochul,36075,Oswego County,13115,27094,40281,-34.7,dra,,0.0
+NY,2022,Kathy Hochul,36077,Otsego County,8795,13255,22102,-20.18,dra,,0.0
+NY,2022,Kathy Hochul,36079,Putnam County,16413,24898,41350,-20.52,dra,,0.0
+NY,2022,Kathy Hochul,36081,Queens County,277280,160279,438286,26.7,dra,,0.0
+NY,2022,Kathy Hochul,36083,Rensselaer County,28521,33749,62405,-8.38,dra,,0.0
+NY,2022,Kathy Hochul,36085,Richmond County,47135,93818,141133,-33.08,dra,,0.0
+NY,2022,Kathy Hochul,36087,Rockland County,47854,61018,109029,-12.07,dra,,0.0
+NY,2022,Kathy Hochul,36089,St. Lawrence County,11591,22687,34322,-32.33,dra,,0.0
+NY,2022,Kathy Hochul,36091,Saratoga County,48180,55829,104176,-7.34,dra,,0.0
+NY,2022,Kathy Hochul,36093,Schenectady County,27632,26772,54552,1.58,dra,,0.0
+NY,2022,Kathy Hochul,36095,Schoharie County,3923,8910,12860,-38.78,dra,,0.0
+NY,2022,Kathy Hochul,36097,Schuyler County,2661,5092,7778,-31.25,dra,,0.0
+NY,2022,Kathy Hochul,36099,Seneca County,4551,7002,11577,-21.17,dra,,0.0
+NY,2022,Kathy Hochul,36101,Steuben County,9666,24886,34608,-43.98,dra,,0.0
+NY,2022,Kathy Hochul,36103,Suffolk County,235736,330337,566491,-16.7,dra,,0.0
+NY,2022,Kathy Hochul,36105,Sullivan County,9759,15009,24787,-21.18,dra,,0.0
+NY,2022,Kathy Hochul,36107,Tioga County,6117,12871,19015,-35.52,dra,,0.0
+NY,2022,Kathy Hochul,36109,Tompkins County,25319,9630,35032,44.78,dra,,0.0
+NY,2022,Kathy Hochul,36111,Ulster County,44583,33347,78069,14.39,dra,,0.0
+NY,2022,Kathy Hochul,36113,Warren County,12374,15763,28186,-12.02,dra,,0.0
+NY,2022,Kathy Hochul,36115,Washington County,7945,14153,22127,-28.06,dra,,0.0
+NY,2022,Kathy Hochul,36117,Wayne County,10814,22823,33694,-35.64,dra,,0.0
+NY,2022,Kathy Hochul,36119,Westchester County,198202,130035,328519,20.75,dra,,0.0
+NY,2022,Kathy Hochul,36121,Wyoming County,3292,11978,15297,-56.78,dra,,0.0
+NY,2022,Kathy Hochul,36123,Yates County,2901,5362,8291,-29.68,dra,,0.0
+OR,2022,Tina Kotek,41001,Baker County,1483,6328,8751,-55.37,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41003,Benton County,27128,14658,45319,27.52,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41005,Clackamas County,92274,102111,214888,-4.58,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41007,Clatsop County,8011,7375,20161,3.15,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41009,Columbia County,8036,13420,27384,-19.66,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41011,Coos County,9437,18611,31429,-29.19,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41013,Crook County,2209,10362,14065,-57.97,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41015,Curry County,4143,7272,12679,-24.68,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41017,Deschutes County,46879,50513,109678,-3.31,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41019,Douglas County,12013,37245,54553,-46.25,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41021,Gilliam County,147,636,999,-48.95,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41023,Grant County,576,3145,4170,-61.61,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41025,Harney County,485,2973,3834,-64.89,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41027,Hood River County,6040,3633,10807,22.27,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41029,Jackson County,39611,56362,104385,-16.05,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41031,Jefferson County,2376,6251,9977,-38.84,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41033,Josephine County,11610,27578,42962,-37.17,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41035,Klamath County,5968,21962,30217,-52.93,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41037,Lake County,430,3282,4008,-71.16,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41039,Lane County,95847,72087,183669,12.94,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41041,Lincoln County,12947,10366,26270,9.82,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41043,Linn County,16959,38505,61495,-35.04,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41045,Malheur County,1656,6921,9187,-57.31,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41047,Marion County,51238,70741,134850,-14.46,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41049,Morrow County,607,3016,4089,-58.91,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41051,Multnomah County,265805,72158,366043,52.9,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41053,Polk County,15570,21898,41510,-15.24,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41055,Sherman County,122,795,1034,-65.09,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41057,Tillamook County,5266,6631,14611,-9.34,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41059,Umatilla County,5403,17672,25132,-48.82,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41061,Union County,2580,8695,12544,-48.75,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41063,Wallowa County,1116,3138,4597,-43.99,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41065,Wasco County,4077,5978,11407,-16.67,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41067,Washington County,140946,91068,255882,19.49,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41069,Wheeler County,140,576,830,-52.53,medsl,Betsy Johnson,8.63
+OR,2022,Tina Kotek,41071,Yamhill County,17899,26385,49428,-17.17,medsl,Betsy Johnson,8.63
+PA,2022,Josh Shapiro,42001,Adams County,18821,26819,46459,-17.22,medsl,,0.0
+PA,2022,Josh Shapiro,42003,Allegheny County,393386,169913,572813,39.01,medsl,,0.0
+PA,2022,Josh Shapiro,42005,Armstrong County,9523,18419,28457,-31.26,medsl,,0.0
+PA,2022,Josh Shapiro,42007,Beaver County,36917,34777,73262,2.92,medsl,,0.0
+PA,2022,Josh Shapiro,42009,Bedford County,4721,17198,22220,-56.15,medsl,,0.0
+PA,2022,Josh Shapiro,42011,Berks County,78757,72185,154818,4.24,medsl,,0.0
+PA,2022,Josh Shapiro,42013,Blair County,17716,31823,50334,-28.03,medsl,,0.0
+PA,2022,Josh Shapiro,42015,Bradford County,7389,15529,23479,-34.67,medsl,,0.0
+PA,2022,Josh Shapiro,42017,Bucks County,185339,122982,314041,19.86,medsl,,0.0
+PA,2022,Josh Shapiro,42019,Butler County,40065,51546,93461,-12.28,medsl,,0.0
+PA,2022,Josh Shapiro,42021,Cambria County,22885,32381,56281,-16.87,medsl,,0.0
+PA,2022,Josh Shapiro,42023,Cameron County,639,1200,1890,-29.68,medsl,,0.0
+PA,2022,Josh Shapiro,42025,Carbon County,10743,14943,26264,-15.99,medsl,,0.0
+PA,2022,Josh Shapiro,42027,Centre County,35653,25201,62017,16.85,medsl,,0.0
+PA,2022,Josh Shapiro,42029,Chester County,160796,92585,258025,26.44,medsl,,0.0
+PA,2022,Josh Shapiro,42031,Clarion County,5114,10019,15407,-31.84,medsl,,0.0
+PA,2022,Josh Shapiro,42033,Clearfield County,10326,20525,31411,-32.47,medsl,,0.0
+PA,2022,Josh Shapiro,42035,Clinton County,5293,8512,14073,-22.87,medsl,,0.0
+PA,2022,Josh Shapiro,42037,Columbia County,10148,13959,24703,-15.43,medsl,,0.0
+PA,2022,Josh Shapiro,42039,Crawford County,12609,19541,32829,-21.12,medsl,,0.0
+PA,2022,Josh Shapiro,42041,Cumberland County,61319,52280,116002,7.79,medsl,,0.0
+PA,2022,Josh Shapiro,42043,Dauphin County,68585,43580,114398,21.86,medsl,,0.0
+PA,2022,Josh Shapiro,42045,Delaware County,170162,76880,250855,37.19,medsl,,0.0
+PA,2022,Josh Shapiro,42047,Elk County,4843,8597,13678,-27.45,medsl,,0.0
+PA,2022,Josh Shapiro,42049,Erie County,63081,40433,105599,21.45,medsl,,0.0
+PA,2022,Josh Shapiro,42051,Fayette County,20120,26165,46877,-12.9,medsl,,0.0
+PA,2022,Josh Shapiro,42053,Forest County,825,1340,2192,-23.49,medsl,,0.0
+PA,2022,Josh Shapiro,42055,Franklin County,21612,42731,65350,-32.32,medsl,,0.0
+PA,2022,Josh Shapiro,42057,Fulton County,1128,5092,6287,-63.05,medsl,,0.0
+PA,2022,Josh Shapiro,42059,Greene County,5142,7706,13139,-19.51,medsl,,0.0
+PA,2022,Josh Shapiro,42061,Huntingdon County,5597,12579,18448,-37.85,medsl,,0.0
+PA,2022,Josh Shapiro,42063,Indiana County,13032,19179,32742,-18.77,medsl,,0.0
+PA,2022,Josh Shapiro,42065,Jefferson County,5038,12433,17820,-41.5,medsl,,0.0
+PA,2022,Josh Shapiro,42067,Juniata County,2761,6851,9768,-41.87,medsl,,0.0
+PA,2022,Josh Shapiro,42069,Lackawanna County,54442,32697,88843,24.48,medsl,,0.0
+PA,2022,Josh Shapiro,42071,Lancaster County,108233,112040,224268,-1.7,medsl,,0.0
+PA,2022,Josh Shapiro,42073,Lawrence County,15918,19471,36045,-9.86,medsl,,0.0
+PA,2022,Josh Shapiro,42075,Lebanon County,23646,31731,56466,-14.32,medsl,,0.0
+PA,2022,Josh Shapiro,42077,Lehigh County,79991,53468,136334,19.45,medsl,,0.0
+PA,2022,Josh Shapiro,42079,Luzerne County,57598,56326,116064,1.1,medsl,,0.0
+PA,2022,Josh Shapiro,42081,Lycoming County,15643,29755,46285,-30.49,medsl,,0.0
+PA,2022,Josh Shapiro,42083,McKean County,4392,10082,14712,-38.68,medsl,,0.0
+PA,2022,Josh Shapiro,42085,Mercer County,18282,26273,45331,-17.63,medsl,,0.0
+PA,2022,Josh Shapiro,42087,Mifflin County,5119,11460,16847,-37.64,medsl,,0.0
+PA,2022,Josh Shapiro,42089,Monroe County,32009,25604,58827,10.89,medsl,,0.0
+PA,2022,Josh Shapiro,42091,Montgomery County,285712,121289,413016,39.81,medsl,,0.0
+PA,2022,Josh Shapiro,42093,Montour County,3640,4037,7857,-5.05,medsl,,0.0
+PA,2022,Josh Shapiro,42095,Northampton County,72269,54928,129901,13.35,medsl,,0.0
+PA,2022,Josh Shapiro,42097,Northumberland County,12052,19094,32951,-21.37,medsl,,0.0
+PA,2022,Josh Shapiro,42099,Perry County,6912,12928,20240,-29.72,medsl,,0.0
+PA,2022,Josh Shapiro,42101,Philadelphia County,426885,65293,498260,72.57,medsl,,0.0
+PA,2022,Josh Shapiro,42103,Pike County,10339,14371,25133,-16.04,medsl,,0.0
+PA,2022,Josh Shapiro,42105,Potter County,1513,5235,7105,-52.39,medsl,,0.0
+PA,2022,Josh Shapiro,42107,Schuylkill County,21203,33008,55435,-21.3,medsl,,0.0
+PA,2022,Josh Shapiro,42109,Snyder County,4867,10215,15360,-34.82,medsl,,0.0
+PA,2022,Josh Shapiro,42111,Somerset County,9473,22559,32576,-40.17,medsl,,0.0
+PA,2022,Josh Shapiro,42113,Sullivan County,1024,1923,3023,-29.74,medsl,,0.0
+PA,2022,Josh Shapiro,42115,Susquehanna County,5768,11153,17316,-31.1,medsl,,0.0
+PA,2022,Josh Shapiro,42117,Tioga County,4494,11840,16658,-44.1,medsl,,0.0
+PA,2022,Josh Shapiro,42119,Union County,6898,8897,16113,-12.41,medsl,,0.0
+PA,2022,Josh Shapiro,42121,Venango County,7777,12741,20919,-23.73,medsl,,0.0
+PA,2022,Josh Shapiro,42123,Warren County,6032,9704,16064,-22.86,medsl,,0.0
+PA,2022,Josh Shapiro,42125,Washington County,45030,47052,93617,-2.16,medsl,,0.0
+PA,2022,Josh Shapiro,42127,Wayne County,8466,13868,22743,-23.75,medsl,,0.0
+PA,2022,Josh Shapiro,42129,Westmoreland County,77152,87804,167968,-6.34,medsl,,0.0
+PA,2022,Josh Shapiro,42131,Wyoming County,4519,6966,11777,-20.78,medsl,,0.0
+PA,2022,Josh Shapiro,42133,York County,83649,98622,186476,-8.03,medsl,,0.0
+TX,2022,Greg Abbott,48001,Anderson County,2545,11762,14448,-63.79,dra,,0.0
+TX,2022,Greg Abbott,48003,Andrews County,479,3302,3826,-73.78,dra,,0.0
+TX,2022,Greg Abbott,48005,Angelina County,5174,19142,24602,-56.78,dra,,0.0
+TX,2022,Greg Abbott,48007,Aransas County,1924,7581,9641,-58.68,dra,,0.0
+TX,2022,Greg Abbott,48009,Archer County,315,3498,3848,-82.72,dra,,0.0
+TX,2022,Greg Abbott,48011,Armstrong County,60,831,901,-85.57,dra,,0.0
+TX,2022,Greg Abbott,48013,Atascosa County,3708,8801,12706,-40.08,dra,,0.0
+TX,2022,Greg Abbott,48015,Austin County,1873,9209,11216,-65.41,dra,,0.0
+TX,2022,Greg Abbott,48017,Bailey County,213,1105,1333,-66.92,dra,,0.0
+TX,2022,Greg Abbott,48019,Bandera County,1816,8527,10484,-64.01,dra,,0.0
+TX,2022,Greg Abbott,48021,Bastrop County,12007,16707,29256,-16.07,dra,,0.0
+TX,2022,Greg Abbott,48023,Baylor County,105,1183,1307,-82.48,dra,,0.0
+TX,2022,Greg Abbott,48025,Bee County,1976,4347,6410,-36.99,dra,,0.0
+TX,2022,Greg Abbott,48027,Bell County,34785,51888,87994,-19.44,dra,,0.0
+TX,2022,Greg Abbott,48029,Bexar County,311023,221993,541071,16.45,dra,,0.0
+TX,2022,Greg Abbott,48031,Blanco County,1522,5142,6777,-53.42,dra,,0.0
+TX,2022,Greg Abbott,48033,Borden County,9,306,317,-93.69,dra,,0.0
+TX,2022,Greg Abbott,48035,Bosque County,1094,6272,7460,-69.41,dra,,0.0
+TX,2022,Greg Abbott,48037,Bowie County,6060,20206,26593,-53.19,dra,,0.0
+TX,2022,Greg Abbott,48039,Brazoria County,43364,64938,109994,-19.61,dra,,0.0
+TX,2022,Greg Abbott,48041,Brazos County,23103,35768,59991,-21.11,dra,,0.0
+TX,2022,Greg Abbott,48043,Brewster County,1678,2014,3763,-8.93,dra,,0.0
+TX,2022,Greg Abbott,48045,Briscoe County,49,539,592,-82.77,dra,,0.0
+TX,2022,Greg Abbott,48047,Brooks County,1204,785,2008,20.87,dra,,0.0
+TX,2022,Greg Abbott,48049,Brown County,1308,10853,12285,-77.7,dra,,0.0
+TX,2022,Greg Abbott,48051,Burleson County,1142,5506,6712,-65.02,dra,,0.0
+TX,2022,Greg Abbott,48053,Burnet County,4337,16505,21111,-57.64,dra,,0.0
+TX,2022,Greg Abbott,48055,Caldwell County,4790,6351,11365,-13.74,dra,,0.0
+TX,2022,Greg Abbott,48057,Calhoun County,1292,4228,5593,-52.49,dra,,0.0
+TX,2022,Greg Abbott,48059,Callahan County,444,4770,5266,-82.15,dra,,0.0
+TX,2022,Greg Abbott,48061,Cameron County,41667,34290,77127,9.56,dra,,0.0
+TX,2022,Greg Abbott,48063,Camp County,863,3082,3983,-55.71,dra,,0.0
+TX,2022,Greg Abbott,48065,Carson County,183,2177,2394,-83.29,dra,,0.0
+TX,2022,Greg Abbott,48067,Cass County,1460,8415,9969,-69.77,dra,,0.0
+TX,2022,Greg Abbott,48069,Castro County,239,1226,1493,-66.11,dra,,0.0
+TX,2022,Greg Abbott,48071,Chambers County,2549,12948,15710,-66.19,dra,,0.0
+TX,2022,Greg Abbott,48073,Cherokee County,2319,12020,14476,-67.01,dra,,0.0
+TX,2022,Greg Abbott,48075,Childress County,162,1562,1751,-79.95,dra,,0.0
+TX,2022,Greg Abbott,48077,Clay County,393,4052,4489,-81.51,dra,,0.0
+TX,2022,Greg Abbott,48079,Cochran County,95,506,616,-66.72,dra,,0.0
+TX,2022,Greg Abbott,48081,Coke County,114,1260,1389,-82.51,dra,,0.0
+TX,2022,Greg Abbott,48083,Coleman County,269,2942,3240,-82.5,dra,,0.0
+TX,2022,Greg Abbott,48085,Collin County,161737,198236,364976,-10.0,dra,,0.0
+TX,2022,Greg Abbott,48087,Collingsworth County,75,845,925,-83.24,dra,,0.0
+TX,2022,Greg Abbott,48089,Colorado County,1395,6084,7550,-62.11,dra,,0.0
+TX,2022,Greg Abbott,48091,Comal County,19195,54503,74763,-47.23,dra,,0.0
+TX,2022,Greg Abbott,48093,Comanche County,567,4203,4829,-75.3,dra,,0.0
+TX,2022,Greg Abbott,48095,Concho County,109,818,943,-75.19,dra,,0.0
+TX,2022,Greg Abbott,48097,Cooke County,2308,12815,15325,-68.56,dra,,0.0
+TX,2022,Greg Abbott,48099,Coryell County,4450,11652,16379,-43.97,dra,,0.0
+TX,2022,Greg Abbott,48101,Cottle County,54,453,514,-77.63,dra,,0.0
+TX,2022,Greg Abbott,48103,Crane County,150,983,1147,-72.62,dra,,0.0
+TX,2022,Greg Abbott,48105,Crockett County,276,964,1273,-54.05,dra,,0.0
+TX,2022,Greg Abbott,48107,Crosby County,255,990,1254,-58.61,dra,,0.0
+TX,2022,Greg Abbott,48109,Culberson County,328,391,735,-8.57,dra,,0.0
+TX,2022,Greg Abbott,48111,Dallam County,78,958,1050,-83.81,dra,,0.0
+TX,2022,Greg Abbott,48113,Dallas County,392634,224684,625905,26.83,dra,,0.0
+TX,2022,Greg Abbott,48115,Dawson County,402,2088,2516,-67.01,dra,,0.0
+TX,2022,Greg Abbott,48117,Deaf Smith County,635,2281,2947,-55.85,dra,,0.0
+TX,2022,Greg Abbott,48119,Delta County,295,1711,2027,-69.86,dra,,0.0
+TX,2022,Greg Abbott,48121,Denton County,136388,177015,317778,-12.78,dra,,0.0
+TX,2022,Greg Abbott,48123,DeWitt County,878,5151,6061,-70.5,dra,,0.0
+TX,2022,Greg Abbott,48125,Dickens County,98,684,791,-74.08,dra,,0.0
+TX,2022,Greg Abbott,48127,Dimmit County,1757,1080,2877,23.53,dra,,0.0
+TX,2022,Greg Abbott,48129,Donley County,97,1084,1192,-82.8,dra,,0.0
+TX,2022,Greg Abbott,48131,Duval County,2018,1600,3676,11.37,dra,,0.0
+TX,2022,Greg Abbott,48133,Eastland County,634,5468,6152,-78.58,dra,,0.0
+TX,2022,Greg Abbott,48135,Ector County,5950,19212,25449,-52.11,dra,,0.0
+TX,2022,Greg Abbott,48137,Edwards County,99,712,814,-75.31,dra,,0.0
+TX,2022,Greg Abbott,48139,Ellis County,21338,45564,67807,-35.73,dra,,0.0
+TX,2022,Greg Abbott,48141,El Paso County,105156,57573,165518,28.75,dra,,0.0
+TX,2022,Greg Abbott,48143,Erath County,1976,10956,13124,-68.42,dra,,0.0
+TX,2022,Greg Abbott,48145,Falls County,1168,3480,4703,-49.16,dra,,0.0
+TX,2022,Greg Abbott,48147,Fannin County,1820,9667,11627,-67.49,dra,,0.0
+TX,2022,Greg Abbott,48149,Fayette County,1748,8649,10505,-65.69,dra,,0.0
+TX,2022,Greg Abbott,48151,Fisher County,210,1172,1401,-68.67,dra,,0.0
+TX,2022,Greg Abbott,48153,Floyd County,201,1250,1468,-71.46,dra,,0.0
+TX,2022,Greg Abbott,48155,Foard County,69,452,529,-72.4,dra,,0.0
+TX,2022,Greg Abbott,48157,Fort Bend County,129116,117249,250204,4.74,dra,,0.0
+TX,2022,Greg Abbott,48159,Franklin County,512,3369,3917,-72.94,dra,,0.0
+TX,2022,Greg Abbott,48161,Freestone County,991,5600,6661,-69.19,dra,,0.0
+TX,2022,Greg Abbott,48163,Frio County,1791,1872,3722,-2.18,dra,,0.0
+TX,2022,Greg Abbott,48165,Gaines County,311,3761,4116,-83.82,dra,,0.0
+TX,2022,Greg Abbott,48167,Galveston County,40229,68822,110734,-25.82,dra,,0.0
+TX,2022,Greg Abbott,48169,Garza County,135,1056,1200,-76.75,dra,,0.0
+TX,2022,Greg Abbott,48171,Gillespie County,2421,10801,13389,-62.59,dra,,0.0
+TX,2022,Greg Abbott,48173,Glasscock County,27,542,572,-90.03,dra,,0.0
+TX,2022,Greg Abbott,48175,Goliad County,663,2664,3370,-59.38,dra,,0.0
+TX,2022,Greg Abbott,48177,Gonzales County,1129,4369,5566,-58.21,dra,,0.0
+TX,2022,Greg Abbott,48179,Gray County,478,5013,5559,-81.58,dra,,0.0
+TX,2022,Greg Abbott,48181,Grayson County,9581,34948,45049,-56.31,dra,,0.0
+TX,2022,Greg Abbott,48183,Gregg County,8662,24223,33223,-46.84,dra,,0.0
+TX,2022,Greg Abbott,48185,Grimes County,1732,7607,9432,-62.29,dra,,0.0
+TX,2022,Greg Abbott,48187,Guadalupe County,19356,36882,57242,-30.62,dra,,0.0
+TX,2022,Greg Abbott,48189,Hale County,1165,5094,6332,-62.05,dra,,0.0
+TX,2022,Greg Abbott,48191,Hall County,94,774,879,-77.36,dra,,0.0
+TX,2022,Greg Abbott,48193,Hamilton County,433,3006,3476,-74.02,dra,,0.0
+TX,2022,Greg Abbott,48195,Hansford County,91,1419,1522,-87.25,dra,,0.0
+TX,2022,Greg Abbott,48197,Hardeman County,114,866,985,-76.35,dra,,0.0
+TX,2022,Greg Abbott,48199,Hardin County,2029,17432,19608,-78.55,dra,,0.0
+TX,2022,Greg Abbott,48201,Harris County,595653,490261,1102418,9.56,dra,,0.0
+TX,2022,Greg Abbott,48203,Harrison County,4688,16472,21356,-55.18,dra,,0.0
+TX,2022,Greg Abbott,48205,Hartley County,96,1463,1574,-86.85,dra,,0.0
+TX,2022,Greg Abbott,48207,Haskell County,191,1465,1669,-76.33,dra,,0.0
+TX,2022,Greg Abbott,48209,Hays County,48970,39085,89727,11.02,dra,,0.0
+TX,2022,Greg Abbott,48211,Hemphill County,138,1198,1361,-77.88,dra,,0.0
+TX,2022,Greg Abbott,48213,Henderson County,4798,22909,28015,-64.65,dra,,0.0
+TX,2022,Greg Abbott,48215,Hidalgo County,82671,56783,141238,18.33,dra,,0.0
+TX,2022,Greg Abbott,48217,Hill County,1830,9418,11385,-66.65,dra,,0.0
+TX,2022,Greg Abbott,48219,Hockley County,786,4690,5534,-70.55,dra,,0.0
+TX,2022,Greg Abbott,48221,Hood County,4301,22596,27243,-67.15,dra,,0.0
+TX,2022,Greg Abbott,48223,Hopkins County,1999,10223,12351,-66.59,dra,,0.0
+TX,2022,Greg Abbott,48225,Houston County,1399,5726,7187,-60.21,dra,,0.0
+TX,2022,Greg Abbott,48227,Howard County,1077,5367,6570,-65.3,dra,,0.0
+TX,2022,Greg Abbott,48229,Hudspeth County,260,588,878,-37.36,dra,,0.0
+TX,2022,Greg Abbott,48231,Hunt County,6422,23744,30561,-56.68,dra,,0.0
+TX,2022,Greg Abbott,48233,Hutchinson County,540,5437,6065,-80.74,dra,,0.0
+TX,2022,Greg Abbott,48235,Irion County,70,618,695,-78.85,dra,,0.0
+TX,2022,Greg Abbott,48237,Jack County,227,2744,2993,-84.1,dra,,0.0
+TX,2022,Greg Abbott,48239,Jackson County,550,4013,4598,-75.32,dra,,0.0
+TX,2022,Greg Abbott,48241,Jasper County,1601,9701,11385,-71.15,dra,,0.0
+TX,2022,Greg Abbott,48243,Jeff Davis County,374,641,1051,-25.4,dra,,0.0
+TX,2022,Greg Abbott,48245,Jefferson County,26617,34952,62439,-13.35,dra,,0.0
+TX,2022,Greg Abbott,48247,Jim Hogg County,876,650,1542,14.66,dra,,0.0
+TX,2022,Greg Abbott,48249,Jim Wells County,4375,5063,9543,-7.21,dra,,0.0
+TX,2022,Greg Abbott,48251,Johnson County,12266,42954,55864,-54.93,dra,,0.0
+TX,2022,Greg Abbott,48253,Jones County,581,4349,4992,-75.48,dra,,0.0
+TX,2022,Greg Abbott,48255,Karnes County,776,3007,3818,-58.43,dra,,0.0
+TX,2022,Greg Abbott,48257,Kaufman County,14002,28285,42812,-33.36,dra,,0.0
+TX,2022,Greg Abbott,48259,Kendall County,4491,17684,22514,-58.6,dra,,0.0
+TX,2022,Greg Abbott,48261,Kenedy County,42,109,153,-43.79,dra,,0.0
+TX,2022,Greg Abbott,48263,Kent County,34,312,350,-79.43,dra,,0.0
+TX,2022,Greg Abbott,48265,Kerr County,4648,17524,22482,-57.27,dra,,0.0
+TX,2022,Greg Abbott,48267,Kimble County,188,1666,1876,-78.78,dra,,0.0
+TX,2022,Greg Abbott,48269,King County,3,100,103,-94.17,dra,,0.0
+TX,2022,Greg Abbott,48271,Kinney County,258,907,1191,-54.49,dra,,0.0
+TX,2022,Greg Abbott,48273,Kleberg County,3463,4074,7629,-8.01,dra,,0.0
+TX,2022,Greg Abbott,48275,Knox County,140,889,1040,-72.02,dra,,0.0
+TX,2022,Greg Abbott,48277,Lamar County,2665,12546,15368,-64.3,dra,,0.0
+TX,2022,Greg Abbott,48279,Lamb County,419,2628,3081,-71.7,dra,,0.0
+TX,2022,Greg Abbott,48281,Lampasas County,1502,6625,8257,-62.04,dra,,0.0
+TX,2022,Greg Abbott,48283,La Salle County,662,761,1437,-6.89,dra,,0.0
+TX,2022,Greg Abbott,48285,Lavaca County,759,7380,8214,-80.61,dra,,0.0
+TX,2022,Greg Abbott,48287,Lee County,1095,5108,6284,-63.86,dra,,0.0
+TX,2022,Greg Abbott,48289,Leon County,698,6082,6855,-78.54,dra,,0.0
+TX,2022,Greg Abbott,48291,Liberty County,3488,16079,19790,-63.62,dra,,0.0
+TX,2022,Greg Abbott,48293,Limestone County,1366,5390,6854,-58.71,dra,,0.0
+TX,2022,Greg Abbott,48295,Lipscomb County,69,894,977,-84.44,dra,,0.0
+TX,2022,Greg Abbott,48297,Live Oak County,545,3424,4001,-71.96,dra,,0.0
+TX,2022,Greg Abbott,48299,Llano County,1920,8977,11037,-63.94,dra,,0.0
+TX,2022,Greg Abbott,48301,Loving County,6,69,78,-80.77,dra,,0.0
+TX,2022,Greg Abbott,48303,Lubbock County,24497,58163,83768,-40.19,dra,,0.0
+TX,2022,Greg Abbott,48305,Lynn County,196,1502,1727,-75.62,dra,,0.0
+TX,2022,Greg Abbott,48307,McCulloch County,314,2221,2563,-74.4,dra,,0.0
+TX,2022,Greg Abbott,48309,McLennan County,23765,47875,72590,-33.21,dra,,0.0
+TX,2022,Greg Abbott,48311,McMullen County,28,343,372,-84.68,dra,,0.0
+TX,2022,Greg Abbott,48313,Madison County,595,3272,3907,-68.52,dra,,0.0
+TX,2022,Greg Abbott,48315,Marion County,700,2557,3302,-56.24,dra,,0.0
+TX,2022,Greg Abbott,48317,Martin County,149,1341,1508,-79.05,dra,,0.0
+TX,2022,Greg Abbott,48319,Mason County,339,1702,2061,-66.13,dra,,0.0
+TX,2022,Greg Abbott,48321,Matagorda County,2273,7350,9724,-52.21,dra,,0.0
+TX,2022,Greg Abbott,48323,Maverick County,5555,3860,9581,17.69,dra,,0.0
+TX,2022,Greg Abbott,48325,Medina County,4591,12601,17366,-46.12,dra,,0.0
+TX,2022,Greg Abbott,48327,Menard County,110,659,775,-70.84,dra,,0.0
+TX,2022,Greg Abbott,48329,Midland County,7154,32389,40069,-62.98,dra,,0.0
+TX,2022,Greg Abbott,48331,Milam County,1559,6717,8358,-61.71,dra,,0.0
+TX,2022,Greg Abbott,48333,Mills County,198,1894,2121,-79.96,dra,,0.0
+TX,2022,Greg Abbott,48335,Mitchell County,185,1576,1781,-78.1,dra,,0.0
+TX,2022,Greg Abbott,48337,Montague County,765,7004,7857,-79.41,dra,,0.0
+TX,2022,Greg Abbott,48339,Montgomery County,52654,152694,208009,-48.09,dra,,0.0
+TX,2022,Greg Abbott,48341,Moore County,479,3081,3603,-72.22,dra,,0.0
+TX,2022,Greg Abbott,48343,Morris County,921,3041,3998,-53.03,dra,,0.0
+TX,2022,Greg Abbott,48345,Motley County,18,482,505,-91.88,dra,,0.0
+TX,2022,Greg Abbott,48347,Nacogdoches County,5480,13248,18956,-40.98,dra,,0.0
+TX,2022,Greg Abbott,48349,Navarro County,3157,10829,14142,-54.25,dra,,0.0
+TX,2022,Greg Abbott,48351,Newton County,689,3660,4373,-67.94,dra,,0.0
+TX,2022,Greg Abbott,48353,Nolan County,647,3093,3803,-64.32,dra,,0.0
+TX,2022,Greg Abbott,48355,Nueces County,40474,47567,89305,-7.94,dra,,0.0
+TX,2022,Greg Abbott,48357,Ochiltree County,135,1975,2127,-86.51,dra,,0.0
+TX,2022,Greg Abbott,48359,Oldham County,50,710,770,-85.71,dra,,0.0
+TX,2022,Greg Abbott,48361,Orange County,3722,21153,25113,-69.41,dra,,0.0
+TX,2022,Greg Abbott,48363,Palo Pinto County,1486,7896,9491,-67.54,dra,,0.0
+TX,2022,Greg Abbott,48365,Panola County,1213,7039,8311,-70.1,dra,,0.0
+TX,2022,Greg Abbott,48367,Parker County,10123,52523,63468,-66.81,dra,,0.0
+TX,2022,Greg Abbott,48369,Parmer County,202,1546,1768,-76.02,dra,,0.0
+TX,2022,Greg Abbott,48371,Pecos County,1043,2548,3685,-40.84,dra,,0.0
+TX,2022,Greg Abbott,48373,Polk County,3229,13377,16776,-60.49,dra,,0.0
+TX,2022,Greg Abbott,48375,Potter County,5361,16082,21806,-49.17,dra,,0.0
+TX,2022,Greg Abbott,48377,Presidio County,1133,561,1724,33.18,dra,,0.0
+TX,2022,Greg Abbott,48379,Rains County,596,4339,4987,-75.06,dra,,0.0
+TX,2022,Greg Abbott,48381,Randall County,8228,39243,48032,-64.57,dra,,0.0
+TX,2022,Greg Abbott,48383,Reagan County,90,616,716,-73.46,dra,,0.0
+TX,2022,Greg Abbott,48385,Real County,218,1337,1566,-71.46,dra,,0.0
+TX,2022,Greg Abbott,48387,Red River County,764,3482,4274,-63.59,dra,,0.0
+TX,2022,Greg Abbott,48389,Reeves County,801,1341,2177,-24.8,dra,,0.0
+TX,2022,Greg Abbott,48391,Refugio County,639,1658,2317,-43.98,dra,,0.0
+TX,2022,Greg Abbott,48393,Roberts County,7,430,444,-95.27,dra,,0.0
+TX,2022,Greg Abbott,48395,Robertson County,1293,4643,6017,-55.68,dra,,0.0
+TX,2022,Greg Abbott,48397,Rockwall County,12132,30211,42871,-42.17,dra,,0.0
+TX,2022,Greg Abbott,48399,Runnels County,277,2924,3234,-81.85,dra,,0.0
+TX,2022,Greg Abbott,48401,Rusk County,2694,12751,15621,-64.38,dra,,0.0
+TX,2022,Greg Abbott,48403,Sabine County,385,3755,4166,-80.89,dra,,0.0
+TX,2022,Greg Abbott,48405,San Augustine County,546,2288,2865,-60.8,dra,,0.0
+TX,2022,Greg Abbott,48407,San Jacinto County,1540,7882,9552,-66.39,dra,,0.0
+TX,2022,Greg Abbott,48409,San Patricio County,5643,12028,17901,-35.67,dra,,0.0
+TX,2022,Greg Abbott,48411,San Saba County,200,1947,2165,-80.69,dra,,0.0
+TX,2022,Greg Abbott,48413,Schleicher County,159,834,1008,-66.96,dra,,0.0
+TX,2022,Greg Abbott,48415,Scurry County,480,3607,4128,-75.75,dra,,0.0
+TX,2022,Greg Abbott,48417,Shackelford County,81,1148,1239,-86.12,dra,,0.0
+TX,2022,Greg Abbott,48419,Shelby County,1045,5846,6932,-69.26,dra,,0.0
+TX,2022,Greg Abbott,48421,Sherman County,35,665,708,-88.98,dra,,0.0
+TX,2022,Greg Abbott,48423,Smith County,18763,56608,76251,-49.63,dra,,0.0
+TX,2022,Greg Abbott,48425,Somervell County,553,3430,4038,-71.25,dra,,0.0
+TX,2022,Greg Abbott,48427,Starr County,6455,4460,11125,17.93,dra,,0.0
+TX,2022,Greg Abbott,48429,Stephens County,217,2511,2746,-83.54,dra,,0.0
+TX,2022,Greg Abbott,48431,Sterling County,20,423,448,-89.96,dra,,0.0
+TX,2022,Greg Abbott,48433,Stonewall County,70,492,565,-74.69,dra,,0.0
+TX,2022,Greg Abbott,48435,Sutton County,178,970,1162,-68.16,dra,,0.0
+TX,2022,Greg Abbott,48437,Swisher County,238,1399,1665,-69.73,dra,,0.0
+TX,2022,Greg Abbott,48439,Tarrant County,279423,303600,591368,-4.09,dra,,0.0
+TX,2022,Greg Abbott,48441,Taylor County,8878,29974,39411,-53.53,dra,,0.0
+TX,2022,Greg Abbott,48443,Terrell County,94,326,426,-54.46,dra,,0.0
+TX,2022,Greg Abbott,48445,Terry County,377,2167,2590,-69.11,dra,,0.0
+TX,2022,Greg Abbott,48447,Throckmorton County,51,612,667,-84.11,dra,,0.0
+TX,2022,Greg Abbott,48449,Titus County,1535,5701,7324,-56.88,dra,,0.0
+TX,2022,Greg Abbott,48451,Tom Green County,7516,23873,31858,-51.34,dra,,0.0
+TX,2022,Greg Abbott,48453,Travis County,335810,119577,462597,46.74,dra,,0.0
+TX,2022,Greg Abbott,48455,Trinity County,825,4465,5341,-68.15,dra,,0.0
+TX,2022,Greg Abbott,48457,Tyler County,816,6343,7242,-76.32,dra,,0.0
+TX,2022,Greg Abbott,48459,Upshur County,1856,12270,14273,-72.96,dra,,0.0
+TX,2022,Greg Abbott,48461,Upton County,123,907,1056,-74.24,dra,,0.0
+TX,2022,Greg Abbott,48463,Uvalde County,3048,4779,7951,-21.77,dra,,0.0
+TX,2022,Greg Abbott,48465,Val Verde County,3814,5530,9503,-18.06,dra,,0.0
+TX,2022,Greg Abbott,48467,Van Zandt County,2414,17698,20570,-74.3,dra,,0.0
+TX,2022,Greg Abbott,48469,Victoria County,6452,18519,25298,-47.7,dra,,0.0
+TX,2022,Greg Abbott,48471,Walker County,4861,12309,17394,-42.82,dra,,0.0
+TX,2022,Greg Abbott,48473,Waller County,5100,11381,16714,-37.58,dra,,0.0
+TX,2022,Greg Abbott,48475,Ward County,418,2065,2518,-65.41,dra,,0.0
+TX,2022,Greg Abbott,48477,Washington County,2824,10965,13974,-58.26,dra,,0.0
+TX,2022,Greg Abbott,48479,Webb County,27156,16409,44733,24.02,dra,,0.0
+TX,2022,Greg Abbott,48481,Wharton County,2697,9354,12157,-54.76,dra,,0.0
+TX,2022,Greg Abbott,48483,Wheeler County,103,1569,1686,-86.95,dra,,0.0
+TX,2022,Greg Abbott,48485,Wichita County,7824,23328,31631,-49.02,dra,,0.0
+TX,2022,Greg Abbott,48487,Wilbarger County,517,2606,3152,-66.28,dra,,0.0
+TX,2022,Greg Abbott,48489,Willacy County,2137,1656,3839,12.53,dra,,0.0
+TX,2022,Greg Abbott,48491,Williamson County,110242,111488,225672,-0.55,dra,,0.0
+TX,2022,Greg Abbott,48493,Wilson County,4317,14952,19470,-54.62,dra,,0.0
+TX,2022,Greg Abbott,48495,Winkler County,177,1130,1321,-72.14,dra,,0.0
+TX,2022,Greg Abbott,48497,Wise County,3538,21979,25821,-71.42,dra,,0.0
+TX,2022,Greg Abbott,48499,Wood County,2331,15678,18173,-73.44,dra,,0.0
+TX,2022,Greg Abbott,48501,Yoakum County,190,1427,1637,-75.57,dra,,0.0
+TX,2022,Greg Abbott,48503,Young County,630,5498,6194,-78.59,dra,,0.0
+TX,2022,Greg Abbott,48505,Zapata County,1585,1817,3444,-6.74,dra,,0.0
+TX,2022,Greg Abbott,48507,Zavala County,1642,780,2450,35.18,dra,,0.0
+VT,2024,Phil Scott,50001,Addison County,5375,16171,22276,-48.46,dra,,0.0
+VT,2024,Phil Scott,50003,Bennington County,4292,14007,20223,-48.04,dra,,0.0
+VT,2024,Phil Scott,50005,Caledonia County,2642,12951,16407,-62.83,dra,,0.0
+VT,2024,Phil Scott,50007,Chittenden County,26237,65873,95224,-41.62,dra,,0.0
+VT,2024,Phil Scott,50009,Essex County,375,2773,3368,-71.2,dra,,0.0
+VT,2024,Phil Scott,50011,Franklin County,3280,21960,26522,-70.43,dra,,0.0
+VT,2024,Phil Scott,50013,Grand Isle County,744,4050,4954,-66.73,dra,,0.0
+VT,2024,Phil Scott,50015,Lamoille County,2565,11491,14653,-60.92,dra,,0.0
+VT,2024,Phil Scott,50017,Orange County,3309,13344,17481,-57.41,dra,,0.0
+VT,2024,Phil Scott,50019,Orleans County,1852,11966,14530,-69.61,dra,,0.0
+VT,2024,Phil Scott,50021,Rutland County,4992,26849,33628,-65.0,dra,,0.0
+VT,2024,Phil Scott,50023,Washington County,8377,24817,34757,-47.3,dra,,0.0
+VT,2024,Phil Scott,50025,Windham County,7731,15715,25139,-31.76,dra,,0.0
+VT,2024,Phil Scott,50027,Windsor County,7446,24472,33679,-50.55,dra,,0.0

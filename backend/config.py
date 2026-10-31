@@ -170,6 +170,21 @@ class Settings:
     # request, Oct 31). Off: one flat shift in points, as on the Senate county
     # maps. Overlay only.
     governor_county_logodds_reconcile: bool = True
+    # Governor county maps: an incumbent running again who has won a
+    # governor's race takes each county's position relative to the state
+    # (county margin minus statewide margin) from that last race instead of
+    # from the 2024 presidential map (data/gov_county_results.csv; 16 races,
+    # 2022 or 2024); the demographic, trend and reconciling steps are the
+    # same. Open seats, and South Dakota's Rhoden, who has never won a
+    # governor's race, keep the presidential map (user request, Oct 31).
+    # Overlay only.
+    governor_county_incumbent_map: bool = True
+    # ...except where a third candidate won over 5% in that race, whose D − R
+    # county margins that candidate distorted (Bundy 17% in Idaho 2022,
+    # Johnson 8.6% in Oregon 2022): those keep the presidential map, the rule
+    # the governor WAR records use (governor_war_exclude_third_candidate).
+    # False: use every incumbent's race. Overlay only.
+    governor_county_incumbent_map_skip_third: bool = True
 
     # District weights (model.district_turnout): each district's 2024
     # presidential votes, which set the national total, the electorate
