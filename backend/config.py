@@ -170,6 +170,15 @@ class Settings:
     # request, Oct 31). Off: one flat shift in points, as on the Senate county
     # maps. Overlay only.
     governor_county_logodds_reconcile: bool = True
+    # With the log-odds reconciling step, do the whole county calculation in
+    # log-odds (user decision, Oct 31): each county starts from its log-odds of
+    # the two-party D share (2024 presidential, or the incumbent's own race),
+    # the demographic and trend shifts become log-odds shifts the size they
+    # would be in an evenly split county, and the one constant follows. A
+    # lopsided county then moves fewer points than a close one at every step,
+    # not only at the reconciling step. False: the county's own terms are
+    # added in points and only the reconciling step is in log-odds. Overlay only.
+    governor_county_full_logodds: bool = True
     # Governor county maps: an incumbent running again who has won a
     # governor's race takes each county's position relative to the state
     # (county margin minus statewide margin) from that last race instead of

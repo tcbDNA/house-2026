@@ -356,24 +356,34 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
         if base is not None:
             inc_map = overlay.gov_county_results()[st]
             base_label = f"{inc_map['incumbent'].split()[-1]} {inc_map['year']} margin"
+    full = logodds and settings.governor_county_full_logodds
     r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
                                req.trend_discount, settings,
                                others=[overlay.third_party_share(c) for c in counties] if logodds else None,
-                               base=base)
-    for c, i, w, res, demo, proj in r["rows"]:
+                               base=base, full_logodds=full,
+                               start_shares=(overlay.incumbent_shares(st, counties,
+                                                                      settings.governor_county_incumbent_map_skip_third)
+                                             if full and inc_map else None))
+    effective = r.get("effective")   # full log-odds: each step's effect in points, for the hover
+    for k, (c, i, w, res, demo, proj) in enumerate(r["rows"]):
+        scale = 1.0
+        trend_pts = req.trend_discount * res
+        if effective is not None:      # report what the demographic and trend steps did in points
+            scale = effective[k][1] / demo if abs(demo) > 1e-9 else 0.0
+            demo, trend_pts = effective[k][1], effective[k][2]
         other = (overlay.third_party_share(c)
                  if race == "governor" and settings.governor_county_third_party_votes else 0.0)
         est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj, turnout, other)
         result["counties"].append({
             "fips": c["fips"], "state": st, "name": c["name"],
             "margin_2024": c.get("margin_2024"), "margin_2020": c.get("margin_2020"),
-            "rel_trend": round(res, 2), "rel_trend_applied": round(req.trend_discount * res, 2),
+            "rel_trend": round(res, 2), "rel_trend_applied": round(trend_pts, 2),
             "residual_weight": round(w, 3), "total_2024": c.get("total_2024") or 0,
             "estimated_turnout_2026": est, "estimated_d_votes": d, "estimated_r_votes": rv,
             "projection": round(proj, 2), "demo_shift": round(demo, 2),
-            "race_shift": round(float(terms.shifts["race"][i]), 2),
-            "edu_shift": round(float(terms.shifts["edu"][i]), 2),
-            "age_shift": round(float(terms.shifts["age"][i]), 2),
+            "race_shift": round(float(terms.shifts["race"][i]) * scale, 2),
+            "edu_shift": round(float(terms.shifts["edu"][i]) * scale, 2),
+            "age_shift": round(float(terms.shifts["age"][i]) * scale, 2),
             "is_tossup": abs(proj) <= 3.0,
         })
         if race == "governor":   # the margin the county's position starts from (tooltip's first row)

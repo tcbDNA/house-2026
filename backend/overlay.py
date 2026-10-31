@@ -92,11 +92,20 @@ def gov_county_results() -> dict[str, dict]:
                                         "third_candidate": r["third_candidate"],
                                         "third_candidate_pct": float(r["third_candidate_pct"] or 0)})
         s["margins"][r["fips"]] = float(r["margin"])
+        s.setdefault("shares", {})[r["fips"]] = float(r["dem"]) / max(1.0, float(r["dem"]) + float(r["rep"]))
         t = tot.setdefault(r["state"], [0.0, 0.0, 0.0])
         t[0] += float(r["dem"]); t[1] += float(r["rep"]); t[2] += float(r["total"])
     for st, (d, r, t) in tot.items():
         out[st]["state_margin"] = 100.0 * (d - r) / t
     return out
+
+
+def incumbent_shares(st: str, counties: list[dict], skip_third: bool = True) -> list[float] | None:
+    """Each county's two-party D share in the incumbent's last governor race
+    (the full log-odds governor maps start from these); None as incumbent_base."""
+    if incumbent_base(st, counties, skip_third) is None:
+        return None
+    return [gov_county_results()[st]["shares"][c["fips"]] for c in counties]
 
 
 def incumbent_base(st: str, counties: list[dict], skip_third: bool = True) -> list[float] | None:
@@ -129,6 +138,32 @@ def _reconcile(projs: list[float], weights: list[float], target: float) -> float
     return target - float(np.array(projs) @ w / w.sum()) if w.sum() > 0 else 0.0
 
 
+def _margin_from_logit(logit: np.ndarray, o: np.ndarray) -> np.ndarray:
+    """Total-vote margin (points) from the log-odds of the two-party D share,
+    with third-party share o."""
+    return 100.0 * (2 / (1 + np.exp(-logit)) - 1) * (1 - o)
+
+
+def _logit(p) -> np.ndarray:
+    p = np.clip(np.array(p, dtype=float), 1e-9, 1 - 1e-9)
+    return np.log(p / (1 - p))
+
+
+def _solve_logit_constant(logit: np.ndarray, o: np.ndarray, w: np.ndarray, target: float) -> float:
+    """δ such that the w-weighted margins of logit + δ equal target (bisection;
+    the weighted margin rises with δ)."""
+    if w.sum() <= 0:
+        return 0.0
+    lo, hi = -30.0, 30.0
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if float(_margin_from_logit(logit + mid, o) @ w / w.sum()) < target:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
 def _reconcile_logodds(projs: list[float], weights: list[float], others: list[float],
                        target: float) -> tuple[float, np.ndarray]:
     """(δ, margins): one constant δ added to every county's log-odds of the
@@ -139,7 +174,7 @@ def _reconcile_logodds(projs: list[float], weights: list[float], others: list[fl
     m = np.array(projs, dtype=float) / 100.0
     p = np.clip((1 - o + m) / (2 * (1 - o)), 1e-9, 1 - 1e-9)
     logit = np.log(p / (1 - p))
-    margins = lambda delta: 100.0 * (2 / (1 + np.exp(-(logit + delta))) - 1) * (1 - o)
+    margins = lambda delta: _margin_from_logit(logit + delta, o)
     if w.sum() <= 0:
         return 0.0, margins(0.0)
     lo, hi = -30.0, 30.0
@@ -207,14 +242,23 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
 def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_resid: float,
                    senate_swing: float, candidate_adj: float, target: float, trend_discount: float,
                    settings: Settings, others: list[float] | None = None,
-                   base: list[float] | None = None) -> dict:
+                   base: list[float] | None = None, full_logodds: bool = False,
+                   start_shares: list[float] | None = None) -> dict:
     """others (each county's 2024 third-party share): reconcile on the log-odds
     scale (the governor maps' governor_county_logodds_reconcile): the uniform
     swing and candidate terms are flat shifts too, so they become part of the
     one log-odds constant, which takes each county's own terms (starting
     margin, demographic shift, trend) to the target. Otherwise one flat shift
     in points. base: each county's starting margin in place of its 2024
-    presidential margin (governor_county_incumbent_map)."""
+    presidential margin (governor_county_incumbent_map).
+    full_logodds (with others; governor_county_full_logodds): the whole county
+    calculation is in log-odds. Each county starts from its log-odds of the
+    two-party D share (start_shares, else its 2024 presidential share); the
+    demographic and trend shifts, computed in points, become log-odds shifts
+    the size they would be in an evenly split county (points / (50 × (1 −
+    third-party share))), so a lopsided county moves fewer points than a close
+    one; one log-odds constant then matches the target. Returns each step's
+    effect in points as "effective": (start, demographic, trend) per county."""
     first = []
     for k, c in enumerate(counties):
         i = terms.index[c["fips"]]
@@ -229,6 +273,20 @@ def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_r
         first.append((c, i, w, resid, demo, proj))
     projs, weights = [f[5] for f in first], [f[0].get("total_2024") or 0.0 for f in first]
     rec = _reconcile(projs, weights, target)
+    if others is not None and full_logodds:
+        o = np.clip(np.array(others, dtype=float), 0.0, 0.95)
+        if start_shares is None:
+            start_shares = [(c.get("dem_2024") or 0) / max(1, (c.get("dem_2024") or 0) + (c.get("rep_2024") or 0))
+                            for c in counties]
+        l0 = _logit(start_shares)
+        l_demo = l0 + np.array([f[4] for f in first]) / (50.0 * (1 - o))
+        l_own = l_demo + np.array([trend_discount * f[3] for f in first]) / (50.0 * (1 - o))
+        delta = _solve_logit_constant(l_own, o, np.array(weights, dtype=float), target)
+        m0, m1, m2 = _margin_from_logit(l0, o), _margin_from_logit(l_demo, o), _margin_from_logit(l_own, o)
+        final = _margin_from_logit(l_own + delta, o)
+        return {"rows": [(c, i, w, resid, demo, float(p)) for (c, i, w, resid, demo, _), p in zip(first, final)],
+                "effective": [(float(a), float(b - a), float(d - b)) for a, b, d in zip(m0, m1, m2)],
+                "reconcile": round(rec, 2), "reconcile_logodds": round(delta, 4)}
     if others is not None:
         own = [p - senate_swing - candidate_adj for p in projs]   # the county-specific terms only
         delta, final = _reconcile_logodds(own, weights, others, target)
