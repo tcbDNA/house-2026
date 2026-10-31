@@ -346,8 +346,10 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
         target = ((sb.states[j].get("presidential_margin_2024") or 0.0) + req.trend_discount * resid[st]
                   + swing + float(demo_state))
     terms = overlay.CountyTerms(counties, population_shares(counties, settings), sliders, settings, req.frame, center)
+    logodds = race == "governor" and settings.governor_county_logodds_reconcile
     r = overlay.state_counties(st, counties, terms, resid[st], swing, candidate_adj, target,
-                               req.trend_discount, settings)
+                               req.trend_discount, settings,
+                               others=[overlay.third_party_share(c) for c in counties] if logodds else None)
     for c, i, w, res, demo, proj in r["rows"]:
         est, d, rv = _vote_estimates(c.get("total_2024") or 0, proj, turnout)
         result["counties"].append({
@@ -365,6 +367,8 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     result.update({"uniform_swing": swing, "candidate_adj": round(candidate_adj, 2),
                    "reconcile": r["reconcile"], "state_residual": round(resid[st], 2),
                    "target_projection": round(target, 2)})
+    if "reconcile_logodds" in r:
+        result["reconcile_logodds"] = r["reconcile_logodds"]
     return result
 
 

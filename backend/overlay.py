@@ -75,9 +75,42 @@ def district_residuals(settings: Settings, frame: str) -> dict[str, float]:
     return {r["district"]: float(v) for r, v in zip(b.districts, carried)}
 
 
+def third_party_share(c: dict) -> float:
+    """A county's 2024 third-party share of the presidential vote (0 to 1);
+    0 where the source's D + R exceeds its total (Fulton County, IL)."""
+    tot = c.get("total_2024") or 0
+    if not tot or c.get("dem_2024") is None or c.get("rep_2024") is None:
+        return 0.0
+    return max(0.0, 1.0 - (c["dem_2024"] + c["rep_2024"]) / tot)
+
+
 def _reconcile(projs: list[float], weights: list[float], target: float) -> float:
     w = np.array(weights, dtype=float)
     return target - float(np.array(projs) @ w / w.sum()) if w.sum() > 0 else 0.0
+
+
+def _reconcile_logodds(projs: list[float], weights: list[float], others: list[float],
+                       target: float) -> tuple[float, np.ndarray]:
+    """(δ, margins): one constant δ added to every county's log-odds of the
+    two-party D share, with each county's third-party share held fixed, so
+    the weighted margins match the target. Margins are total-vote points."""
+    w = np.array(weights, dtype=float)
+    o = np.clip(np.array(others, dtype=float), 0.0, 0.95)
+    m = np.array(projs, dtype=float) / 100.0
+    p = np.clip((1 - o + m) / (2 * (1 - o)), 1e-9, 1 - 1e-9)
+    logit = np.log(p / (1 - p))
+    margins = lambda delta: 100.0 * (2 / (1 + np.exp(-(logit + delta))) - 1) * (1 - o)
+    if w.sum() <= 0:
+        return 0.0, margins(0.0)
+    lo, hi = -30.0, 30.0
+    for _ in range(200):                     # weighted margin rises with δ: bisect
+        mid = (lo + hi) / 2
+        if float(margins(mid) @ w / w.sum()) < target:
+            lo = mid
+        else:
+            hi = mid
+    delta = (lo + hi) / 2
+    return delta, margins(delta)
 
 
 def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: float, terms: CountyTerms,
@@ -133,7 +166,10 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
 
 def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_resid: float,
                    senate_swing: float, candidate_adj: float, target: float, trend_discount: float,
-                   settings: Settings) -> dict:
+                   settings: Settings, others: list[float] | None = None) -> dict:
+    """others (each county's 2024 third-party share): reconcile on the log-odds
+    scale (the governor maps' governor_county_logodds_reconcile); otherwise one
+    flat shift in points."""
     first = []
     for c in counties:
         i = terms.index[c["fips"]]
@@ -145,6 +181,11 @@ def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_r
         demo = float(terms.demo[i])
         proj = (c.get("margin_2024") or 0.0) + demo + trend_discount * resid + senate_swing + candidate_adj
         first.append((c, i, w, resid, demo, proj))
-    rec = _reconcile([f[5] for f in first], [f[0].get("total_2024") or 0.0 for f in first], target)
+    projs, weights = [f[5] for f in first], [f[0].get("total_2024") or 0.0 for f in first]
+    rec = _reconcile(projs, weights, target)
+    if others is not None:
+        delta, final = _reconcile_logodds(projs, weights, others, target)
+        return {"rows": [(c, i, w, resid, demo, float(p)) for (c, i, w, resid, demo, _), p in zip(first, final)],
+                "reconcile": round(rec, 2), "reconcile_logodds": round(delta, 4)}
     return {"rows": [(c, i, w, resid, demo, proj + rec) for c, i, w, resid, demo, proj in first],
             "reconcile": round(rec, 2)}

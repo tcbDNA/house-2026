@@ -162,6 +162,14 @@ class Settings:
     # whose borough results are estimated and keep the district's. Off:
     # every slice there takes the district's residual. Overlay only.
     overlay_estimated_slice_trends: bool = True
+    # Governor county maps (main._state_counties_overlay, race="governor"):
+    # the reconciling step adds one constant to every county's log-odds of the
+    # two-party D share (each county's third-party share held at its 2024
+    # share), chosen so the counties still match the governor projection on
+    # 2024 votes, so lopsided counties move less than close ones (user
+    # request, Oct 31). Off: one flat shift in points, as on the Senate county
+    # maps. Overlay only.
+    governor_county_logodds_reconcile: bool = True
 
     # District weights (model.district_turnout): each district's 2024
     # presidential votes, which set the national total, the electorate

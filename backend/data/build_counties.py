@@ -67,6 +67,10 @@ def main():
             "rel_trend": county_trend,   # named to match model.py expectations
             "total_2024": int(p["total_2024"]),
             "total_2020": int(p["total_2020"]),
+            # 2024 D and R votes, for the third-party share the governor county
+            # maps use (log-odds reconciling and vote counts).
+            "dem_2024": int(p["harris_2024"]),
+            "rep_2024": int(p["trump_2024"]),
         }
         for k in NUMERIC_DEMOS:
             row[k] = to_num(d.get(k))
