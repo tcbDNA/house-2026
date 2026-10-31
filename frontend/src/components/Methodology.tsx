@@ -377,7 +377,9 @@ export function Methodology() {
         residual trend are added as the log-odds shifts they would be in an evenly
         split county, and one constant added to every county makes the counties
         add up exactly to the governor projection, so lopsided counties move fewer
-        points than close ones at every step.
+        points than close ones at every step. A map that starts from a 2022 race
+        measures each group's shift from its 2022 House margin (Catalist) rather
+        than its 2024 one, and has no trend term.
         The governor slope isn't applied to counties, and there are no county win
         probabilities. Vote counts set each county's 2024 third-party share aside
         before splitting the rest between the two candidates. Rhode Island has no
