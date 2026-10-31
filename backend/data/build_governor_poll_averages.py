@@ -12,7 +12,8 @@ reuses):
     publishes none, recompute from the most recent poll by each pollster whose
     fieldwork ended on or after WINDOW_START (the Senate's), head-to-head
     question where released. "Newer" = fieldwork ended after the latest poll
-    in RCP's average and released on or after RCP's lastBuildDate.
+    in RCP's average and released on or after RCP's lastBuildDate, and not
+    already listed in RCP's feed (the Senate's RCP_LISTED_NOT_NEWER).
   * blend_margin = two-party margin (anti-R − R), as in the Senate.
 Governor-specific:
   * Alaska (ranked-choice): the model's margin is the final-round
@@ -47,8 +48,8 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 from build_senate_poll_averages import (
-    LEAVE_OUT_VOTEHUB_INTERNAL, WINDOW_START, d, is_internal, label, partisan_sponsor, pollster_key, rcp_end,
-    rcp_left_out, rcp_start, same_poll, votehub_internal,
+    LEAVE_OUT_VOTEHUB_INTERNAL, WINDOW_START, d, firm_key, is_internal, label, partisan_sponsor, pollster_key, rcp_end,
+    rcp_left_out, rcp_listed, rcp_start, same_poll, votehub_internal,
 )
 
 # Sparse polling (user decision, Oct 28): a race with fewer than
@@ -139,6 +140,7 @@ def load_rcp(st: str, path: Path, d_name: str | None, r_name: str | None) -> dic
         return None
     return {"built": parsedate_to_datetime(mi["lastBuildDate"]).date(), "published": shares(avg[0])[:2],
             "window_start": rcp_start(avg[0]["date"]), "averaged": averaged, "local_file": f"sources/gov_polls_2026/{path.name}",
+            "listed": [(firm_key(p["pollster"]), rcp_end(p["date"])) for p in rows if p["type"] in ("poll", "poll_rcp_avg")],
             "url": f"https://www.realclearpolling.com/polls/{mi['poll_contentful_fullpath']}/{mi['poll_contentful_slug']}"}
 
 
@@ -192,7 +194,7 @@ def build() -> str:
         if rcp:
             latest = max(a["end"] for a in rcp["averaged"])
             newer = [p for p in usable if p["end"] > latest
-                     and (p["released"] is None or p["released"] >= rcp["built"])]
+                     and (p["released"] is None or p["released"] >= rcp["built"]) and not rcp_listed(p, rcp)]
         use_rcp = rcp and not newer
         if use_rcp:
             ps = [a for a in rcp["averaged"] if any(same_poll(q, a) for q in sponsored)]

@@ -226,7 +226,7 @@ export function Methodology() {
         RCP doesn't average, or a newer one by a pollster it does, if it started inside
         RCP's averaging window — except campaign or party internals and polls whose
         sponsor leans partisan. Where a newer poll came out after RCP last updated the
-        average, or RCP publishes none, the average is recomputed from the most
+        average (one RCP already lists doesn't count as newer), or RCP publishes none, the average is recomputed from the most
         recent poll by each pollster in the last three weeks, YouGov Blue counted
         apart from YouGov (as of Oct 29:
         Georgia and Alabama, plus
