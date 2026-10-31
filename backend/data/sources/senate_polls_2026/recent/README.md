@@ -446,3 +446,13 @@ Minnesota D+6.22 -> D+7.08 two-party (5 polls after Rasmussen is removed). Victo
 | `rcp_fl_8948.json`; `../../gov_polls_2026/rcp_gov_fl_8881.json` | | Re-downloaded 11:29 UTC (built Oct 30 18:27 and 17:56 CT). RCP averages it in both races (Senate 52/45, governor 47/44). |
 
 The sponsor is a legal advocacy group whose spokesman promotes the President's agenda, so under the user's Oct 30 rule ("if your inclination is that it is sponsored by a partisan leaning group, don't add it") "1776 Law Center" joins `PARTISAN_LEANING_SPONSORS` and the poll comes out of RCP's averages. Florida's Senate and governor averages are unchanged (R+6.93 and R+5.38 two-party).
+
+### Two sponsored polls recorded and left out: Patinkin for Project VOTE (South Carolina), Hart for the Davis campaign (Louisiana)
+
+| File | URL | Notes |
+|---|---|---|
+| `patinkin_project_vote_sc_release_2026-10-30.pdf` | https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf (VoteHub's link) | "A poll of likely midterm voters commissioned by a new PAC, called Project VOTE": Andrews 48, Graham 43, Hackett 3, Whitener 3, someone else 2. The release calls Graham's messaging "MAGA aligned" and Andrews' "aligned with the beliefs" of swing voters. |
+| `patinkin_project_vote_sc_toplines_2026-10-30.pdf` | http://prospect-pdx-slje.squarespace.com/s/PRSSCStatewidePollToplines103026.pdf (linked from the release) | Oct 27-29, n=500, MoE +/-4.4. |
+| `perdidostreet_hart_davis_la_2026-10-30.html` | https://www.perdidostreet.news/p/new-poll-shows-toss-up-in-louisiana-senate-contest-as-turnout-in-early-vote-buoys-democrats-hopes-of (VoteHub's link) | "a poll released Friday by Democrat Jamie Davis' campaign": Hart Research Associates, Oct 28-29, 502 LV, Davis 45, Letlow 45. VoteHub: internal, DEM. |
+
+South Carolina: "Project VOTE (PAC)" joins `PARTISAN_LEANING_SPONSORS` (not in RCP; it would otherwise have counted as a poll RCP left out). Louisiana: a campaign poll (partisan sponsor); Louisiana still has no counted poll and uses the model only. No average changes.

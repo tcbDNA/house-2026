@@ -101,6 +101,9 @@ PARTISAN_LEANING_SPONSORS = {
                        "group's Feb 2026 Big Data Poll release quotes its civil rights and criminal defense head, "
                        "Robert Barnes, making the case for President Trump's tariffs and \"the president's industrial "
                        "policy priorities\" (sources/senate_polls_2026/recent/bigdatapoll_1776_law_center_tariffs_2026-02-20.html)",
+    "Project VOTE (PAC)": "a new PAC that commissioned Patinkin Research Strategies (a Democratic firm) for its South "
+                          "Carolina poll; its release casts Annie Andrews' message as aligned with swing voters and "
+                          "Darline Graham's as \"MAGA aligned\" (patinkin_project_vote_sc_release_2026-10-30.pdf)",
 }
 # Polls VoteHub marks as campaign or party internals (or with a partisan-flagged
 # sponsor) count as partisan-sponsored too, even where the compiled record

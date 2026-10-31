@@ -1970,6 +1970,24 @@
     "excluded_pollster": false,
     "source": "The Citadel Poll release (Oct 27), report PDF (Q12 p.4) and methodology statement; RCP",
     "note": "1,009 registered voters (L2 voter file; phone and text-to-web), 890 likely voters (LV MOE +/-4). Q12 LV: Andrews 39, Graham 43, Whitener 1, Hackett 1, not sure 15 (RV: 40/35). With planned Ralph Norman write-ins reassigned (Q12 after Q16): Andrews 39, Graham 42, Norman 2, truly undecided 14. RCP lists 43/39."
+   },
+   {
+    "pollster": "Patinkin Research Strategies",
+    "sponsor": "Project VOTE (PAC)",
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-29",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 500,
+    "anti_r": 48,
+    "r": 43,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "patinkin_project_vote_sc_release_2026-10-30.pdf (https://static1.squarespace.com/static/54512d3ce4b07de69d8320c7/t/6ae4f0f24aec54388059c463/1793388786248/PRS%2BProjectVOTE.SCSW+Poll+Release.103026.pdf, linked from VoteHub); patinkin_project_vote_sc_toplines_2026-10-30.pdf (http://prospect-pdx-slje.squarespace.com/s/PRSSCStatewidePollToplines103026.pdf, linked from the release)",
+    "note": "'A poll of likely midterm voters commissioned by a new PAC, called Project VOTE - Voice Of The Electorate': Andrews 48, Graham 43, Hackett (Constitution) 3, Whitener (L) 3, someone else 2. Toplines: Oct 27-29, n=500, MoE +/-4.4. VoteHub: sponsor 'Project V.O.T.E. (PAC)', no partisan flag. Not in RCP. Left out: partisan-leaning sponsor (PARTISAN_LEANING_SPONSORS)."
    }
   ],
   "notes": "RCP average (feed 9115, built Oct 18): 9/28-10/18, Graham Nordone 48.0, Andrews 45.3 (+2.7), 3 polls: Trafalgar, Rasmussen and InsiderAdvantage 9/28-29. Only Trafalgar is non-excluded and ended in October. VoteHub has only Trafalgar. Impact (D, 10/15-21) is missing from RCP. Targoz Market Research for the SC Policy Council (10/16-25, released Oct 26) is in VoteHub and Poliwave, not RCP (as of Oct 27). Oct 28 check: RCP (built Oct 28) now averages 9/28-10/26, Graham Nordone 47.0, Andrews 44.6, 5 polls: NYT/Siena 10/19-26 and The Citadel 10/14-25 added. Its latest poll ends after Targoz and Impact, so South Carolina uses RCP's average again (Rasmussen removed); Impact and Targoz, which RCP never added, drop out. Oct 29 fourth check: RCP added East Carolina University (Oct 19-24, Graham 51, Andrews 47) to its average (feed built Oct 28 11:16 CT, row Oct 29: 9/28-10/26, Graham 47.7, Andrews 45.0). South Carolina stays on RCP's average."
@@ -2818,7 +2836,26 @@
   "notes": "RCP two-way average (feed 8922, built Oct 22): 10/2-10/21, Flanagan 46.6, Tafoya 43.2 (+3.4), 5 polls, including Rasmussen 10/20-21. The newest non-excluded poll ended Oct 15. Pre-Oct: Big Data 9/29-30, InsiderAdvantage 9/28-29. Oct 28 check: RCP (built Oct 28) now averages 10/2-10/26, Flanagan 47.8, Tafoya 42.7, 6 polls: NYT/Siena 10/19-26 added. Oct 28 third check: Victory Insights for Michele Tafoya (R), Oct 21-22, Flanagan 48, Tafoya 44, recorded from the user's NYT poll list paste only; not in RCP, VoteHub or Poliwave. It ended before NYT/Siena 10/19-26, so Minnesota stays on RCP's average. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: Victory Insights' release (found in the governor poll sources) gives Flanagan 47.8, Tafoya 44.4, 1,194 LV; still not counted (partisan sponsor; ends before NYT/Siena)."
  },
  "LA": {
-  "polls": [],
+  "polls": [
+   {
+    "pollster": "Hart Research Associates",
+    "sponsor": "Jamie Davis campaign",
+    "partisan": "D",
+    "start": "2026-10-28",
+    "end": "2026-10-29",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 502,
+    "anti_r": 45,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": null,
+    "excluded_pollster": false,
+    "source": "perdidostreet_hart_davis_la_2026-10-30.html (https://www.perdidostreet.news/p/new-poll-shows-toss-up-in-louisiana-senate-contest-as-turnout-in-early-vote-buoys-democrats-hopes-of, linked from VoteHub)",
+    "note": "Perdido Street (Oct 30): 'a poll released Friday by Democrat Jamie Davis' campaign. The poll from Hart Research Associates ... surveyed 502 likely voters statewide on Oct. 28 and Oct. 29 ... Davis and Letlow tied at 45%'. VoteHub: sponsor Jamie Davis, internal, DEM. Campaign poll: not counted."
+   }
+  ],
   "notes": "No general-election poll with fieldwork ending on or after Oct 1 in VoteHub, Poliwave or RCP. The RCP Letlow vs. Davis feed (9041) has no polls (built Jul 7). The 270toWin page has primary tables only. Latest polls: Hart Research (D, Davis campaign) 9/17-19, 500 LV, Letlow 48, Davis 44 (VoteHub); PPP (D) 7/21-22."
  },
  "GA": {

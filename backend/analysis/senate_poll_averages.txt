@@ -77,7 +77,7 @@ SC: RCP average, Rasmussen removed; 5 poll(s); anti-R 45.00 / R 47.40 -> margin 
     - The Citadel 10/14 - 10/25
     - Trafalgar Group 10/16 - 10/18
     - InsiderAdvantage 9/28 - 9/29
-    left out: onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found)
+    left out: onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found); Patinkin Research Strategies for Project VOTE (PAC), ending 2026-10-29 (partisan sponsor)
 MI: RCP average, excluded pollsters removed: Rasmussen Reports 10/28 - 10/29, Quantus Insights 10/5 - 10/6; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Data for Progress 10/23 - 10/25; 9 poll(s); anti-R 49.22 / R 45.20 -> margin +4.02, blend margin +4.26 (RCP published +3.5)
     - CBS News/Mitchell 10/26 - 10/27
     - CNN 10/20 - 10/27
