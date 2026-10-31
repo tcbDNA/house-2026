@@ -298,3 +298,12 @@ All three count under `COUNT_RCP_LEFT_OUT` (full ballot). Because RCP lists Main
 ### SurveyUSA for KSTP, Minnesota (Oct 24-28), in RCP's average
 
 Article: `../senate_polls_2026/recent/kstp_surveyusa_mn_2026-10-30.html` (URL in the Senate README): Klobuchar 51, Demuth 39, 8% undecided. `rcp_gov_mn_8915.json` re-downloaded 11:29 UTC (built Oct 30 17:46 CT): field dates and n (10/24-10/28, 714 LV) from RCP's row; RCP averages it (51/39) in place of SurveyUSA's Oct 8-12 poll, and its average now runs to Oct 28 (Klobuchar 51.3, Demuth 39.3). State Navigate (Oct 26-28) no longer ends after RCP's latest poll, so Minnesota goes back to RCP's average plus State Navigate as a poll RCP left out: D+11.65 -> D+12.72 two-party (5 polls).
+
+### Noble Predictive Insights, Nevada (Oct 26-28), listed by RCP; Nevada has no RCP average
+
+| File | URL | Notes |
+|---|---|---|
+| `noble_nv_poll_of_record_2026-10-30.html` | https://www.noblepredictiveinsights.com/post/nevada-poll-of-record-lombardo-ford-deadlocked-at-47 | NPI's Nevada poll of record (Oct 30), retrieved 11:45 UTC: Oct 26-28, 487 likely voters, text-to-online, MOE +/-4.44, no client named. Lombardo 47, Ford 47, Danielle Ford (no party) 1, another candidate 1, undecided 4. |
+| `rcp_gov_nv_8874.json` | | Re-downloaded 11:29 UTC (built Oct 30 17:38 CT): lists the poll, but RCP's Nevada average still has no polls in it, so the build recomputes. |
+
+Nevada's average takes Noble's newest poll in place of its Sep 22-26 poll; with fewer than three counted polls since Oct 5 the window still reaches back to Sep 1 (Emerson, Sep 5-8, at half weight). R+0.12 -> D+1.22 two-party (n_eff 1.5); projection R+3.4 -> R+2.3, P(Ford) 0.367 -> 0.403, back inside the ±3 tossup range.

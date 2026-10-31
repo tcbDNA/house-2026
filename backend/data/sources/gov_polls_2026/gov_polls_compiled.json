@@ -5431,6 +5431,42 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json"
+   },
+   {
+    "pollster": "Noble Predictive Insights",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-28",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 487,
+    "d_candidate": "Aaron Ford",
+    "r_candidate": "Joe Lombardo",
+    "d": 47,
+    "r": 47,
+    "anti_r": 47,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 47,
+    "full_r": 47,
+    "others": [
+     {
+      "name": "Danielle Ford (no party)",
+      "pct": 1
+     },
+     {
+      "name": "Another candidate",
+      "pct": 1
+     }
+    ],
+    "undecided": 4,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "noble_nv_poll_of_record_2026-10-30.html (https://www.noblepredictiveinsights.com/post/nevada-poll-of-record-lombardo-ford-deadlocked-at-47); rcp_gov_nv_8874.json; VoteHub",
+    "note": "NPI's Nevada Public Opinion Pulse poll of record (Oct 30): Oct 26-28, 487 likely voters, text-to-online, MOE +/-4.44, no client named. Lombardo 47, Ford 47, Danielle Ford (no party affiliation) 1, another candidate 1, undecided 4. RCP lists it ('Noble Predictive Insights*' 10/26-10/28) but its Nevada average has no polls in it."
    }
   ]
  },
