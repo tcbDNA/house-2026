@@ -163,17 +163,18 @@ SD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: w
     left out: Concord Public Opinion Partners for Education Reform Now Advocacy (D-flagged), ending 2026-10-08 (partisan sponsor)
 TN: recomputed: newer polls than RCP's average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 1); anti-R 32.00 / R 44.00 -> margin -12.00, blend margin -15.79, third parties 13.0 (RCP published -21.0)
     - Spry Strategies, ending 2026-10-16 (full ballot, 32/44)
-TX: RCP average; removed: Quantus Insights 10/26 - 10/28, TPOR 10/15 - 10/18; plus polls RCP left out: Data for Progress 10/23 - 10/26, University of Houston Hobby School of Public Affairs 10/10 - 10/14, New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13, Marist University 10/8 - 10/11; 10 poll(s) (n_eff 10); anti-R 46.30 / R 49.30 -> margin -3.00, blend margin -3.14, third parties 0.7 (RCP published -3.7)
-    - TSU/YouGov 10/21 - 10/25
-    - CNN 10/20 - 10/27
-    - Emerson 10/17 - 10/19
-    - FOX News 10/15 - 10/19
-    - Univision/YouGov 10/13 - 10/21
-    - CBS News 10/8 - 10/16
-    - Data for Progress 10/23 - 10/26 (left out by RCP, counted; full ballot, 47/48)
-    - University of Houston Hobby School of Public Affairs 10/10 - 10/14 (left out by RCP, counted; full ballot, 46/49)
-    - New River Strategies/GS Strategy Group for The Cook Political Report 10/9 - 10/13 (left out by RCP, counted; full ballot, 46/48)
-    - Marist University 10/8 - 10/11 (left out by RCP, counted; full ballot, 45/49)
+TX: recomputed: newer polls than RCP's average; 11 poll(s) (n_eff 11); anti-R 46.31 / R 48.88 -> margin -2.57, blend margin -2.70, third parties 1.1 (RCP published -3.7)
+    - Kreate Strategies (KStrat), ending 2026-10-30 (full ballot, 47/49)
+    - CNN/SSRS, ending 2026-10-27 (full ballot, 46/48)
+    - Data for Progress, ending 2026-10-26 (full ballot, 47/48)
+    - Texas Southern University/YouGov, ending 2026-10-25 (full ballot, 47/50)
+    - VoteHub/Verasight, ending 2026-10-20 (full ballot, 46.4/47.7)
+    - Beacon Research/Shaw & Co. Research for Fox News, ending 2026-10-19 (full ballot, 47/52)
+    - Emerson College for Nexstar Media, ending 2026-10-19 (full ballot, 45/49)
+    - University of Houston Hobby School of Public Affairs, ending 2026-10-14 (full ballot, 46/49)
+    - New River Strategies/GS Strategy Group for The Cook Political Report, ending 2026-10-13 (full ballot, 46/48)
+    - Marist University, ending 2026-10-11 (full ballot, 45/49)
+    - ReconMR/Siena University, ending 2026-10-08 (full ballot, 47/48)
     left out: GBAO Strategies for Gina Hinojosa (D-flagged), ending 2026-10-08 (partisan sponsor); Slingshot Strategies for Texas Public Opinion Research, ending 2026-10-18 (partisan sponsor); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor); Pollfinity, ending 2026-10-18 (partisan-leaning: owned and self-funded by Lars Mapstead, a 2024 Libertarian presidential candidate (user decision Oct 30))
 VT: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 3 poll(s) (n_eff 2); anti-R 43.13 / R 45.23 -> margin -2.10, blend margin -2.38, third parties 2.5
     - State Navigate, ending 2026-10-25 (full ballot, 46/49)
