@@ -24,10 +24,10 @@ TX: RCP average, excluded pollsters removed: Quantus Insights 10/26 - 10/28, Ras
     - Marist 10/8 - 10/11 (left out by RCP, counted; full ballot, 47/45)
     left out: Cor Strategies (Heritage Action; not counted, user decision Oct 28); Slingshot Strategies (TPOR) for Texas Public Opinion Research, ending 2026-10-18 (partisan sponsor); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor)
 AK: RCP average, Rasmussen removed; 4 poll(s); anti-R 50.00 / R 48.25 -> margin +1.75, blend margin +1.78 (RCP published +1.2)
-    - Data for Progress 10/8 - 10/16
+    - Alaska Survey Research 10/26 - 10/29
     - PPP 10/14 - 10/15
+    - Data for Progress 10/8 - 10/16
     - InsiderAdvantage 10/9 - 10/10
-    - Alaska Survey Research 10/1 - 10/3
 FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s); anti-R 43.14 / R 49.57 -> margin -6.43, blend margin -6.93 (RCP published -6.1)
     - InsiderAdvantage 10/28 - 10/29
     - St. Pete Polls 10/25 - 10/27

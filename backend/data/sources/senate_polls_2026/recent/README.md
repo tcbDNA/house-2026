@@ -417,3 +417,12 @@ New VoteHub Senate rows not counted: ActiVote IL and TX (excluded pollster), Qua
 | `rcp_me_9100.json`, `rcp_mi_8802.json`, `rcp_mi_multi_9216.json`, `rcp_tx_8867.json`, `rcp_tx_3way_8985.json` | | Re-downloaded 11:29 UTC (built Oct 30 20:41-21:33 CT). RCP lists all three as 10/23-10/26 ("Data for Progress (D)" in Maine and Texas) and averages none; nothing else in these averages changed. |
 
 DFP is a progressive pollster polling on its own account, so the polls count (partisan pollsters with no sponsor count). All three started inside RCP's windows, so `COUNT_RCP_LEFT_OUT` adds them. Maine's PDF end date (Oct 27) is a day after RCP's average's latest poll; under the new `RCP_LISTED_NOT_NEWER` setting a poll RCP already lists doesn't trigger a recompute. Maine D+1.99 -> D+2.26 two-party (12 polls), Michigan D+4.27 -> D+4.26 (9), Texas D+2.57 -> D+2.71 (12).
+
+### Alaska Survey Research, Alaska (Oct 26-29), in RCP's average
+
+| File | URL | Notes |
+|---|---|---|
+| `x_The_Real_ASR_2116291676176331181_fxtwitter.json`, `x_The_Real_ASR_2116291678898384958_fxtwitter.json`, `x_The_Real_ASR_2116291680966209892_fxtwitter.json` | https://x.com/The_Real_ASR/status/2116291676176331181 (thread posts 1-3; JSON from https://api.fxtwitter.com/The_Real_ASR/status/<id>) | ASR's own posts (Oct 30, 22:10 UTC), retrieved 12:20 UTC. Oct 26-29, 1,326 likely voters, MOE +/-3.0; no client named. Round 1: Peltola 47.7, Sullivan 45.9, Daniel J. Sullivan Jr 3.4, Heikes 3.0; final round 50.8/49.2. Only ASR's posts are saved, not the replies. |
+| `rcp_ak_8754.json`, `rcp_ak_rcv1_9171.json` | | Re-downloaded 11:29 UTC (built Oct 30 21:56 CT). RCP averages the new poll (51/49) in place of ASR's Oct 1-3 poll (also 51/49); the average stays Peltola 49.4, Sullivan 48.2 (window now 10/8-10/29). |
+
+Alaska's average is unchanged (D+1.78 two-party, 4 polls after Rasmussen is removed).

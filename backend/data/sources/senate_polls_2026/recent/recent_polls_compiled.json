@@ -827,6 +827,24 @@
     "excluded_pollster": true,
     "source": "RCP",
     "note": "First round 44/42 (Heikes 4, J. Sullivan 3). Final round 47/48 is in the RCP average; RCP added it to the two-way average on Oct 26."
+   },
+   {
+    "pollster": "Alaska Survey Research",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-29",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 1326,
+    "anti_r": 47.7,
+    "r": 45.9,
+    "h2h_anti_r": 50.8,
+    "h2h_r": 49.2,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "x_The_Real_ASR_2116291676176331181_fxtwitter.json, x_The_Real_ASR_2116291678898384958_fxtwitter.json, x_The_Real_ASR_2116291680966209892_fxtwitter.json (ASR's thread, https://x.com/The_Real_ASR/status/2116291676176331181, posts 1-3); rcp_ak_8754.json; rcp_ak_rcv1_9171.json",
+    "note": "ASR's own thread (Oct 30, 22:10 UTC): 'Alaska Survey Research, October 26-29, 2026, N=1,326 likely AK voters, MOE +/-3.0%'; responses submitted 8pm Oct 26 to 8pm Oct 29; no client named. anti_r/r = round 1: Peltola 47.7, Sullivan 45.9, Daniel J. Sullivan Jr 3.4, Heikes 3.0. Round 2: 48.2/47.1/4.6. h2h = final round 50.8/49.2. RCP: 'Alaska Survey Research**' 10/26-10/29, 51/49 averaged in place of ASR's Oct 1-3 poll (also 51/49), so RCP's average is unchanged at 49.4/48.2 (window now 10/8-10/29); round 1 48/46/3/3 in the RCV feed."
    }
   ],
   "notes": "RCP two-way (final-round) average (feed 8754, built Oct 26): 9/28-10/16, Peltola 49.0, Sullivan 48.2 (+0.8), 6 polls: PPP, Rasmussen, DFP, InsiderAdvantage, ASR and Quantus 9/28-30. No AK poll with fieldwork ending after Oct 16 was found. Pre-Oct: Quantus 9/28-30 (737/758 LV). Oct 28 check: RCP (built Oct 27 18:30 CT) dropped Quantus 9/28-30: 10/1-10/16, Peltola 49.4, Sullivan 48.2, 5 polls. No new Alaska poll."
