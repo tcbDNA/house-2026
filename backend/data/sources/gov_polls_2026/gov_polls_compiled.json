@@ -5263,6 +5263,33 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_ne_9136.json; ../senate_polls_2026/recent/NetChoice-October-2026-Antitrust-Tech-Survey-Topline.pdf",
     "note": "NetChoice topline Q20 (p.11): Pillen 47, Walz 40, Beard 7, Lindstrom 4, unsure 2. RCP lists n=3644. RCP n=3644."
+   },
+   {
+    "pollster": "The New York Times/Siena University",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-29",
+    "released": "2026-10-31",
+    "population": "LV",
+    "n": 809,
+    "d_candidate": "Lynne Walz",
+    "r_candidate": "Jim Pillen",
+    "d": 40,
+    "r": 53,
+    "anti_r": 40,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 40,
+    "full_r": 53,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": null,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/siena_nyt_ne_2026-10-31.html (https://sri.siena.edu/2026/10/31/nytimes-siena-poll-of-likely-nebraska-voters/); ../senate_polls_2026/recent/zetik_nyt_siena_ne_2026-10-31.html (dates and n)",
+    "note": "Siena release (Oct 31): 'Governor: Jim Pillen (R) 53% - Lynne Walz (D) 40%'. Oct 23-29, 809 LV (Zetik's summary of the NYT story). The NYT toplines block automated downloads, so Lindstrom's and Beard's shares aren't recorded. Not yet on RCP (feed 9136) or VoteHub."
    }
   ]
  },

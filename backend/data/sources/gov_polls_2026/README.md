@@ -307,3 +307,7 @@ Article: `../senate_polls_2026/recent/kstp_surveyusa_mn_2026-10-30.html` (URL in
 | `rcp_gov_nv_8874.json` | | Re-downloaded 11:29 UTC (built Oct 30 17:38 CT): lists the poll, but RCP's Nevada average still has no polls in it, so the build recomputes. |
 
 Nevada's average takes Noble's newest poll in place of its Sep 22-26 poll; with fewer than three counted polls since Oct 5 the window still reaches back to Sep 1 (Emerson, Sep 5-8, at half weight). R+0.12 -> D+1.22 two-party (n_eff 1.5); projection R+3.4 -> R+2.3, P(Ford) 0.367 -> 0.403, back inside the ±3 tossup range.
+
+### NYT/Siena, Nebraska (Oct 23-29), released Oct 31 (user flagged it)
+
+Release: `../senate_polls_2026/recent/siena_nyt_ne_2026-10-31.html` (https://sri.siena.edu/2026/10/31/nytimes-siena-poll-of-likely-nebraska-voters/): governor Pillen 53, Walz 40. Dates and n (Oct 23-29, 809 LV) from `../senate_polls_2026/recent/zetik_nyt_siena_ne_2026-10-31.html`; the NYT toplines block automated downloads, so Lindstrom's and Beard's shares aren't recorded. Not yet on RCP (feed 9136) or VoteHub. Nebraska has no RCP average: R+3.88 -> R+6.55 two-party (4 polls).
