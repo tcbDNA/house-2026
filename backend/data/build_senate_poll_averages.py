@@ -97,6 +97,10 @@ PARTISAN_LEANING_SPONSORS = {
     "A More Affordable Nevada": "\"a group backed by the Democratic Governors Association\" (DGA release, Sep 10, 2026; "
                                 "sources/gov_polls_2026/dga_a_more_affordable_nevada_2026-09-10.html); its Hart Research "
                                 "poll is in the governor averages only",
+    "1776 Law Center": "Big Data Poll's Florida poll (Oct 26-30) was conducted \"for the 1776 Law Center\"; the "
+                       "group's Feb 2026 Big Data Poll release quotes its civil rights and criminal defense head, "
+                       "Robert Barnes, making the case for President Trump's tariffs and \"the president's industrial "
+                       "policy priorities\" (sources/senate_polls_2026/recent/bigdatapoll_1776_law_center_tariffs_2026-02-20.html)",
 }
 # Polls VoteHub marks as campaign or party internals (or with a partisan-flagged
 # sponsor) count as partisan-sponsored too, even where the compiled record

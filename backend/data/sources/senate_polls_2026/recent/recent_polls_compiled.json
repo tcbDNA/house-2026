@@ -1135,6 +1135,24 @@
     "excluded_pollster": false,
     "source": "insideradvantage_florida_2026-10-30.html; rcp_fl_8948.json",
     "note": "InsiderAdvantage Florida survey posted Oct 30 (insideradvantage_florida_2026-10-30.html): 1,200 likely voters, mixed mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83%, conducted Oct 28-29; no sponsor named. U.S. Senate: Moody 49, Nixon 43, other 2, undecided 6. RCP: 'InsiderAdvantage' 10/28-29, 49/43, in the average (row Oct 30 13:59 CT)."
+   },
+   {
+    "pollster": "Big Data Poll",
+    "sponsor": "1776 Law Center",
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 1129,
+    "anti_r": 41.7,
+    "r": 47.9,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "bigdatapoll_florida_2026-10-30.html (https://www.bigdatapoll.com/blog/sunshine-state-poll-ashley-moody-leads-angie-craig-governors-race-tight/); bigdatapoll_florida_senate_chart_xVgfj.png (https://datawrapper.dwcdn.net/xVgfj/full.png, the release's Senate chart); bigdatapoll_1776_law_center_tariffs_2026-02-20.html (https://www.bigdatapoll.com/blog/voters-back-replacing-income-tax-with-trump-tariffs-on-foreign-goods/); rcp_fl_8948.json",
+    "note": "Release (Oct 30): 'BIG DATA POLL interviewed 1201 registered voters and 1129 likely voters in Florida for the 1776 Law Center and Public Polling Project from October 26 - 30', online and phone, +/-3.0. Its text names the Democrat as 'Angie Craig'; the chart's question names Angie Nixon. LV Senate without leaners Moody 47.9, Nixon 41.7, Gillespie (NPA) 3.0; with leaners 51.6/44.7/3.3. RCP averages it as 52/45. Left out: the 1776 Law Center leans partisan (PARTISAN_LEANING_SPONSORS)."
    }
   ],
   "notes": "RCP two-way average (feed 8948, built Oct 21): 9/28-10/20, Moody 49.5, Nixon 42.2 (Moody +7.3), 6 polls. RCP has not added RedBox (Oct 20-23) and never listed MDW or JMI/Targoz. Pre-Oct: Change Research 9/25-27, InsiderAdvantage 9/20-21. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate Oct 24, content through Oct 28) now averages 9/28-10/26, Moody 49.6, Nixon 42.4, 7 polls: NYT/Siena 10/19-26 added. Its latest poll ends after RedBox and Echelon, so Florida uses RCP's average again. A new ActiVote poll (Oct 17-27) is recorded only (excluded pollster). Oct 28 second check (13:48 UTC): RCP (built Oct 28 08:26 CT) added St. Pete Polls 10/25-27 (Moody 49, Nixon 45) in place of St. Pete's 10/5-7 poll: 9/28-10/27, Moody 49.9, Nixon 42.4, 7 polls. Oct 28 third check (17:29 UTC): RCP (built Oct 28 08:27 CT) dropped NBC 6/Mason-Dixon 9/28-10/1 and Stetson 10/1-10/9 from the average: 10/2-10/27, Moody 49.4, Nixon 43.2, 5 polls."

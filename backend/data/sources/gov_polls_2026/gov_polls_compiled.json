@@ -2002,6 +2002,33 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/insideradvantage_florida_2026-10-30.html; rcp_gov_fl_8881.json",
     "note": "InsiderAdvantage Florida survey (Oct 30): 1,200 LV, mixed mode text/panel, MOE 2.83%, Oct 28-29, no sponsor named. Governor: Donalds 49, Jolly 45, other 2, undecided 4. RCP: 'InsiderAdvantage' 10/28-29, 49/45, in the average (row Oct 30 14:00 CT)."
+   },
+   {
+    "pollster": "Big Data Poll",
+    "sponsor": "1776 Law Center",
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 1129,
+    "d_candidate": "David Jolly",
+    "r_candidate": "Byron Donalds",
+    "d": 44,
+    "r": 47,
+    "anti_r": 44,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 44,
+    "full_r": 47,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/bigdatapoll_florida_2026-10-30.html (https://www.bigdatapoll.com/blog/sunshine-state-poll-ashley-moody-leads-angie-craig-governors-race-tight/); rcp_gov_fl_8881.json",
+    "note": "Same Big Data Poll survey as the Senate record (for the 1776 Law Center and Public Polling Project, Oct 26-30, 1,129 LV). The served release has no governor numbers (its text says Donalds holds 'a slight edge'); 47/44 is RCP's row (averaged, Oct 30). Left out: the 1776 Law Center leans partisan (PARTISAN_LEANING_SPONSORS)."
    }
   ]
  },

@@ -435,3 +435,14 @@ Alaska's average is unchanged (D+1.78 two-party, 4 polls after Rasmussen is remo
 | `rcp_mn_8922.json`, `rcp_mn_multi_9220.json` | | Re-downloaded 11:29 UTC (two-way built Oct 30 17:52 CT). Field dates and n from RCP's rows: 10/24-10/28, 714 LV; multi-candidate Whiting 2, Simonetti 2. RCP averages it in place of SurveyUSA's Oct 8-12 poll (45/42). |
 
 Minnesota D+6.22 -> D+7.08 two-party (5 polls after Rasmussen is removed). Victory Insights (Oct 21-22, for Michele Tafoya) stays out as partisan-sponsored.
+
+### Big Data Poll for the 1776 Law Center, Florida (Oct 26-30), in RCP's averages: left out (partisan-leaning sponsor)
+
+| File | URL | Notes |
+|---|---|---|
+| `bigdatapoll_florida_2026-10-30.html` | https://www.bigdatapoll.com/blog/sunshine-state-poll-ashley-moody-leads-angie-craig-governors-race-tight/ | Release (Oct 30), retrieved 11:45 UTC: "BIG DATA POLL interviewed 1201 registered voters and 1129 likely voters in Florida for the 1776 Law Center and Public Polling Project from October 26 – 30, 2026". (Its text calls the Democrat "Angie Craig"; the chart names Angie Nixon.) |
+| `bigdatapoll_florida_senate_chart_xVgfj.png` | https://datawrapper.dwcdn.net/xVgfj/full.png | The release's Senate chart: LV without leaners Moody 47.9, Nixon 41.7, Gillespie (NPA) 3.0; with leaners 51.6/44.7/3.3. The served page has no governor chart; governor numbers (47/44) are RCP's. |
+| `bigdatapoll_1776_law_center_tariffs_2026-02-20.html` | https://www.bigdatapoll.com/blog/voters-back-replacing-income-tax-with-trump-tariffs-on-foreign-goods/ | Big Data Poll release (Feb 20, 2026) of a survey "for 1776 Law Center", quoting Robert Barnes, "the civil rights and criminal defense head of 1776 Law Center": "The only way to enforce President Trump's tariffs is to have Congressional approval…", "boost the president's industrial policy priorities". |
+| `rcp_fl_8948.json`; `../../gov_polls_2026/rcp_gov_fl_8881.json` | | Re-downloaded 11:29 UTC (built Oct 30 18:27 and 17:56 CT). RCP averages it in both races (Senate 52/45, governor 47/44). |
+
+The sponsor is a legal advocacy group whose spokesman promotes the President's agenda, so under the user's Oct 30 rule ("if your inclination is that it is sponsored by a partisan leaning group, don't add it") "1776 Law Center" joins `PARTISAN_LEANING_SPONSORS` and the poll comes out of RCP's averages. Florida's Senate and governor averages are unchanged (R+6.93 and R+5.38 two-party).

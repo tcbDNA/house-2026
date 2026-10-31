@@ -78,3 +78,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 57-dfp-me-mi-tx-senate,9.89,236,240,225,261,0.982,53,52,0.737,"Data for Progress Maine (Oct 23-27), Michigan (Oct 23-25) and Texas (Oct 23-26) Senate polls: listed by RCP, not averaged; counted under COUNT_RCP_LEFT_OUT"
 58-asr-alaska-senate,9.89,236,240,225,261,0.982,53,52,0.737,Alaska Survey Research Oct 26-29 (final round 50.8/49.2) replaces its Oct 1-3 poll in RCP's Alaska average (51/49 both)
 59-surveyusa-minnesota-senate,9.89,236,240,225,261,0.982,53,52,0.739,"KSTP/SurveyUSA Minnesota Oct 24-28 (Flanagan 48, Tafoya 41) replaces its Oct 8-12 poll in RCP's average"
+60-bigdatapoll-1776-law-center,9.89,236,240,225,261,0.982,53,52,0.739,"Big Data Poll Florida Oct 26-30 for the 1776 Law Center (in RCP's Senate and governor averages): left out, partisan-leaning sponsor"

@@ -32,7 +32,7 @@ CT: RCP average; 3 poll(s) (n_eff 3); anti-R 55.00 / R 36.33 -> margin +18.67, b
     - Emerson 10/10 - 10/12
     - Quinnipiac 10/8 - 10/12
     - WFSB-TV/CT Insider 10/6 - 10/12
-FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s) (n_eff 7); anti-R 44.00 / R 49.00 -> margin -5.00, blend margin -5.38, third parties 0.1 (RCP published -4.8)
+FL: RCP average; removed: Big Data Poll 10/26 - 10/30; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s) (n_eff 7); anti-R 44.00 / R 49.00 -> margin -5.00, blend margin -5.38, third parties 0.1 (RCP published -4.6)
     - InsiderAdvantage 10/28 - 10/29
     - St. Pete Polls 10/25 - 10/27
     - NY Times/Siena 10/19 - 10/25
@@ -40,7 +40,7 @@ FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 -
     - Univ. of North Florida 10/12 - 10/19
     - Univision/YouGov 10/2 - 10/15
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 44/50)
-    left out: Change Research for Freedom Project USA (D-flagged), ending 2026-10-10 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
+    left out: Change Research for Freedom Project USA (D-flagged), ending 2026-10-10 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Big Data Poll for 1776 Law Center, ending 2026-10-30 (partisan sponsor)
 GA: recomputed: newer polls than RCP's average; 4 poll(s) (n_eff 4); anti-R 47.75 / R 47.50 -> margin +0.25, blend margin +0.26, third parties 0.0 (RCP published -1.0)
     - State Navigate, ending 2026-10-27 (full ballot, 50/47)
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 49/48)

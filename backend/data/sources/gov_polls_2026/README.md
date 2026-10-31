@@ -275,3 +275,11 @@ Effect: Nevada rests on Noble Predictive Insights (Sep 22-26) and Emerson/KLAS (
 ### Quantus Insights excluded (user decision, Oct 30 evening)
 
 User: "remove quantus. R biased pollster". Governor polls removed: Texas (Oct 26-28, added earlier this evening), Georgia (Oct 15-17) and Arizona (Aug 14-17, in RCP's average); both compiled polls are now marked `excluded_pollster`. Effect: Texas R+3.65 -> R+3.4 two-party (9 polls), projection R+4.4 -> R+4.2 (P(Hinojosa) 0.194 -> 0.207); Georgia R+0.1 -> D+0.3 (4 polls), D+1.4 -> D+1.8 (P(D) 0.601 -> 0.621); Arizona D+8.7 -> D+9.0. P(Democratic majority of governorships) 0.699 -> 0.703.
+
+## Update, 2026-10-31 morning (poll check, user asked)
+
+Retrieved 11:29 UTC with the Senate feeds (procedure in `../senate_polls_2026/recent/README.md`).
+
+### Big Data Poll for the 1776 Law Center, Florida (Oct 26-30), in RCP's average: left out
+
+Release and sponsor sources: `../senate_polls_2026/recent/bigdatapoll_florida_2026-10-30.html` and `bigdatapoll_1776_law_center_tariffs_2026-02-20.html` (see the Senate README). `rcp_gov_fl_8881.json` re-downloaded 11:29 UTC: RCP added the poll (Donalds 47, Jolly 44) to its average. The served release has no governor numbers, so 47/44 is RCP's. Left out as partisan-leaning (`PARTISAN_LEANING_SPONSORS`, shared with the Senate build); Florida's average is unchanged (R+5.38 two-party).

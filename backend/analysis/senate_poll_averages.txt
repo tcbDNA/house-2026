@@ -28,7 +28,7 @@ AK: RCP average, Rasmussen removed; 4 poll(s); anti-R 50.00 / R 48.25 -> margin 
     - PPP 10/14 - 10/15
     - Data for Progress 10/8 - 10/16
     - InsiderAdvantage 10/9 - 10/10
-FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s); anti-R 43.14 / R 49.57 -> margin -6.43, blend margin -6.93 (RCP published -6.1)
+FL: RCP average; partisan-sponsored poll removed: Big Data Poll 10/26 - 10/30; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s); anti-R 43.14 / R 49.57 -> margin -6.43, blend margin -6.93 (RCP published -6.3)
     - InsiderAdvantage 10/28 - 10/29
     - St. Pete Polls 10/25 - 10/27
     - NY Times/Siena 10/19 - 10/26
@@ -36,7 +36,7 @@ FL: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 -
     - Univ. of North Florida 10/12 - 10/19
     - Univision/YouGov 10/2 - 10/15
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 43/51)
-    left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
+    left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Big Data Poll for 1776 Law Center, ending 2026-10-30 (partisan sponsor)
 IA: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23, National Public Affairs 10/8 - 10/12, Suffolk University 10/1 - 10/4; 11 poll(s); anti-R 45.82 / R 45.73 -> margin +0.09, blend margin +0.10 (RCP published -0.5)
     - co/efficient 10/28 - 10/28
     - InsiderAdvantage 10/21 - 10/22
