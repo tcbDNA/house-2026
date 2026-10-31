@@ -4862,6 +4862,33 @@
     "excluded_pollster": false,
     "source": "statenavigate_mn_statewide_poll_october_2026.html; statenavigate_mn_klobuchar_crossover_appeal_2026-10-29.html; ../senate_polls_2026/recent/nyt_poll_list_user_paste_2026-10-29.txt",
     "note": "State Navigate interactive and article (Oct 29): 806 LV (919 unweighted responses), Oct 26-28, MOE 3.5; with leaners Klobuchar 52, Demuth 42, Young (Green) 3, don't know 3. No sponsor named. No Senate question (governor and attorney general only). Not in RCP or VoteHub yet."
+   },
+   {
+    "pollster": "SurveyUSA",
+    "sponsor": "KSTP-TV",
+    "partisan": null,
+    "start": "2026-10-24",
+    "end": "2026-10-28",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 714,
+    "d_candidate": "Amy Klobuchar",
+    "r_candidate": "Lisa Demuth",
+    "d": 51,
+    "r": 39,
+    "anti_r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 51,
+    "full_r": 39,
+    "others": [],
+    "undecided": 8,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/kstp_surveyusa_mn_2026-10-30.html (https://kstp.com/kstp-news/top-news/kstp-surveyusa-minnesota-statewide-races-inch-left-in-final-poll-before-election-day/); rcp_gov_mn_8915.json",
+    "note": "KSTP's article (final KSTP/SurveyUSA poll): Klobuchar 51, Demuth 39, 8% undecided, +/-4.2 (other candidates not given). Field dates and n (Oct 24-28, 714 LV) from RCP's row. RCP averages it (51/39) in place of SurveyUSA's Oct 8-12 poll."
    }
   ]
  },

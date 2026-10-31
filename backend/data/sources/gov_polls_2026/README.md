@@ -294,3 +294,7 @@ Release and crosstabs: `../senate_polls_2026/recent/dfp_maine_michigan_texas_202
 | `rcp_gov_mi_8992.json`, `rcp_gov_mi_multi_9226.json`, `rcp_gov_tx_8910.json`, `rcp_gov_tx_3way_9200.json` | Re-downloaded 11:29 UTC: DFP listed (10/23-10/26), not averaged; nothing else in these averages changed. |
 
 All three count under `COUNT_RCP_LEFT_OUT` (full ballot). Because RCP lists Maine's poll in its three-way feed, `RCP_LISTED_NOT_NEWER` keeps it from throwing out RCP's two-way average. Maine D+11.53 -> D+11.75 two-party (11 polls), Michigan D+8.35 -> D+8.47 (9), Texas R+3.37 -> R+3.14 (10).
+
+### SurveyUSA for KSTP, Minnesota (Oct 24-28), in RCP's average
+
+Article: `../senate_polls_2026/recent/kstp_surveyusa_mn_2026-10-30.html` (URL in the Senate README): Klobuchar 51, Demuth 39, 8% undecided. `rcp_gov_mn_8915.json` re-downloaded 11:29 UTC (built Oct 30 17:46 CT): field dates and n (10/24-10/28, 714 LV) from RCP's row; RCP averages it (51/39) in place of SurveyUSA's Oct 8-12 poll, and its average now runs to Oct 28 (Klobuchar 51.3, Demuth 39.3). State Navigate (Oct 26-28) no longer ends after RCP's latest poll, so Minnesota goes back to RCP's average plus State Navigate as a poll RCP left out: D+11.65 -> D+12.72 two-party (5 polls).
