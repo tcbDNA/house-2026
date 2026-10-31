@@ -8,7 +8,7 @@ SD     -28.5   -13.5    -14.6     -15.0    -13.9   2  [independent] RealClearPol
 NM     +22.7   +16.5    +18.2      +6.2     +4.5   2  RealClearPolling; KOB-TV/SurveyUSA 9/25 - 9/30; Albuquerque Journal 8/21 - 8/28
 MA     +28.7   +26.6    +31.4      +2.1     -2.7   5  RealClearPolling; Boston Globe/Suffolk 10/10 - 10/18; UMass Lowell 10/7 - 10/18; WCVB-TV/Amherst 10/5 - 10/12; UNH 9/17 - 9/21; CWB/MassINC 9/14 - 9/22
 MS      -8.0    -3.0     -3.6      -5.0     -4.4   1  RCP-style average (RCP publishes none): latest poll by each pollster ending 2026-10-05 or later, excluded pollsters removed; Change Research (D-flagged), ending 2026-10-22 (full ballot, 40/43)
-MN     +14.8    +5.6     +6.2      +9.2     +8.5   5  RealClearPolling, Rasmussen removed; NY Times/Siena 10/19 - 10/26; Trafalgar Group 10/13 - 10/15; KSTP/SurveyUSA 10/8 - 10/12; Star Tribune/Mason-Dixon 10/5 - 10/7; Daily Agenda/Morning Consult 10/2 - 10/7
+MN     +14.8    +6.4     +7.1      +8.3     +7.7   5  RealClearPolling, Rasmussen removed; KSTP/SurveyUSA 10/24 - 10/28; NY Times/Siena 10/19 - 10/26; Trafalgar Group 10/13 - 10/15; Star Tribune/Mason-Dixon 10/5 - 10/7; Daily Agenda/Morning Consult 10/2 - 10/7
 AL     -19.8   -14.7    -16.7      -5.2     -3.2   3  Recomputed (RCP average predates newer polls): latest poll by each pollster ending 2026-10-05 or later, excluded pollsters removed; Chism Strategies (D), ending 2026-10-24 (full ballot, 40/48); Cygnal for Gray Television, Alabama Daily News, ending 2026-10-17 (full ballot, 35/50); The Alabama Poll, ending 2026-10-16 (full ballot, 35/56)
 GA     +17.1   +10.3    +11.2      +6.8     +5.9   3  Recomputed (RCP average predates newer polls): latest poll by each pollster ending 2026-10-05 or later, excluded pollsters removed; Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 55/40); Univ. of Georgia SPIA for The Atlanta Journal-Constitution, ending 2026-10-15 (full ballot, 48/40); Trafalgar Group (R-flagged), ending 2026-10-09 (full ballot, 51/43)
 NH     +12.9    +6.6     +7.1      +6.3     +5.8   7  RealClearPolling, Rasmussen removed; plus polls RCP left out: National Public Affairs 10/8 - 10/12; St. Anselm 10/19 - 10/20; UMass Lowell 10/2 - 10/19; YouGov 9/28 - 10/5; Trafalgar Group 9/26 - 9/27; NY Times/Siena 9/15 - 9/22; UNH 9/17 - 9/21; National Public Affairs 10/8 - 10/12 (left out by RCP, counted; head-to-head, 50/45)
@@ -28,5 +28,5 @@ OH      +2.6    +2.9     +3.1      -0.2     -0.4   7  RealClearPolling, Rasmusse
 Races differing by more than 5 pts: raw AR, RI, SD, NM, MS, MN, AL, GA, NH, KS, MI, ME; two-party AR, RI, SD, MN, GA, NH, KS, MI, ME
 Across the 19 two-party races, the slope of the polling average on the
 model projection is 0.65 on raw margins and 0.74 on two-party margins
-(mean |model| 12.4; mean |poll| raw 8.1, two-party 9.1).
-Mean model − poll (two-party): -0.05; RMS difference 5.58.
+(mean |model| 12.4; mean |poll| raw 8.1, two-party 9.2).
+Mean model − poll (two-party): -0.09; RMS difference 5.51.

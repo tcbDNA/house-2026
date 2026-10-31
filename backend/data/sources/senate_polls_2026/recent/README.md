@@ -426,3 +426,12 @@ DFP is a progressive pollster polling on its own account, so the polls count (pa
 | `rcp_ak_8754.json`, `rcp_ak_rcv1_9171.json` | | Re-downloaded 11:29 UTC (built Oct 30 21:56 CT). RCP averages the new poll (51/49) in place of ASR's Oct 1-3 poll (also 51/49); the average stays Peltola 49.4, Sullivan 48.2 (window now 10/8-10/29). |
 
 Alaska's average is unchanged (D+1.78 two-party, 4 polls after Rasmussen is removed).
+
+### SurveyUSA for KSTP, Minnesota (Oct 24-28), in RCP's average
+
+| File | URL | Notes |
+|---|---|---|
+| `kstp_surveyusa_mn_2026-10-30.html` | https://kstp.com/kstp-news/top-news/kstp-surveyusa-minnesota-statewide-races-inch-left-in-final-poll-before-election-day/ | KSTP's article, retrieved 11:45 UTC: final KSTP/SurveyUSA poll before Election Day. Senate Flanagan 48, Tafoya 41, 7% undecided (+/-4.2); governor Klobuchar 51, Demuth 39, 8% undecided. No field dates or sample size in the article. |
+| `rcp_mn_8922.json`, `rcp_mn_multi_9220.json` | | Re-downloaded 11:29 UTC (two-way built Oct 30 17:52 CT). Field dates and n from RCP's rows: 10/24-10/28, 714 LV; multi-candidate Whiting 2, Simonetti 2. RCP averages it in place of SurveyUSA's Oct 8-12 poll (45/42). |
+
+Minnesota D+6.22 -> D+7.08 two-party (5 polls after Rasmussen is removed). Victory Insights (Oct 21-22, for Michele Tafoya) stays out as partisan-sponsored.

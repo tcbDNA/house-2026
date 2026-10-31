@@ -106,10 +106,10 @@ NH: RCP average, Rasmussen removed; plus polls RCP left out: National Public Aff
     - NY Times/Siena 9/15 - 9/22
     - UNH 9/17 - 9/21
     - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; head-to-head, 50/45)
-MN: RCP average, Rasmussen removed; 5 poll(s); anti-R 47.80 / R 42.20 -> margin +5.60, blend margin +6.22 (RCP published +5.1)
+MN: RCP average, Rasmussen removed; 5 poll(s); anti-R 48.40 / R 42.00 -> margin +6.40, blend margin +7.08 (RCP published +5.8)
+    - KSTP/SurveyUSA 10/24 - 10/28
     - NY Times/Siena 10/19 - 10/26
     - Trafalgar Group 10/13 - 10/15
-    - KSTP/SurveyUSA 10/8 - 10/12
     - Star Tribune/Mason-Dixon 10/5 - 10/7
     - Daily Agenda/Morning Consult 10/2 - 10/7
     left out: Victory Insights for Michele Tafoya (R), ending 2026-10-22 (partisan sponsor)

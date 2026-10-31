@@ -2777,6 +2777,24 @@
     "in_rcp_average": false,
     "excluded_pollster": false,
     "source": "Victory Insights release (PollReport_MN-GE-26_10-28-26.pdf, 'Commissioned by Michele Tafoya', Oct 21-22, 1,194 LV, text-to-web; p.6 Senate ballot Flanagan 47.8, Tafoya 44.4); VoteHub (partisan flag REP); NYT poll list (per user)"
+   },
+   {
+    "pollster": "SurveyUSA",
+    "sponsor": "KSTP-TV",
+    "partisan": null,
+    "start": "2026-10-24",
+    "end": "2026-10-28",
+    "released": "2026-10-30",
+    "population": "LV",
+    "n": 714,
+    "anti_r": 48,
+    "r": 41,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "kstp_surveyusa_mn_2026-10-30.html (https://kstp.com/kstp-news/top-news/kstp-surveyusa-minnesota-statewide-races-inch-left-in-final-poll-before-election-day/); rcp_mn_8922.json; rcp_mn_multi_9220.json",
+    "note": "KSTP's article (final KSTP/SurveyUSA poll before Election Day): Flanagan 48, Tafoya 41, 7% undecided, +/-4.2; governor Klobuchar 51, Demuth 39, 8% undecided. The article gives no field dates or n: those (Oct 24-28, 714 LV) are from RCP's rows. RCP's multi-candidate feed: Whiting 2, Simonetti 2. RCP averages it in place of SurveyUSA's Oct 8-12 poll (45/42)."
    }
   ],
   "notes": "RCP two-way average (feed 8922, built Oct 22): 10/2-10/21, Flanagan 46.6, Tafoya 43.2 (+3.4), 5 polls, including Rasmussen 10/20-21. The newest non-excluded poll ended Oct 15. Pre-Oct: Big Data 9/29-30, InsiderAdvantage 9/28-29. Oct 28 check: RCP (built Oct 28) now averages 10/2-10/26, Flanagan 47.8, Tafoya 42.7, 6 polls: NYT/Siena 10/19-26 added. Oct 28 third check: Victory Insights for Michele Tafoya (R), Oct 21-22, Flanagan 48, Tafoya 44, recorded from the user's NYT poll list paste only; not in RCP, VoteHub or Poliwave. It ended before NYT/Siena 10/19-26, so Minnesota stays on RCP's average. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: Victory Insights' release (found in the governor poll sources) gives Flanagan 47.8, Tafoya 44.4, 1,194 LV; still not counted (partisan sponsor; ends before NYT/Siena)."
