@@ -104,3 +104,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 83-yougov-maine,10.13,236,241,226,262,0.986,53,52,0.754,"YouGov Maine, Oct 26-29 (1,503 LV): Senate Jackson 52-47, governor Pingree 53-45"
 yougov-ks,10.13,236,241,226,262,0.986,53,52,0.763,"YouGov Kansas, Oct 26-29"
 yougov-ia,10.13,236,241,226,262,0.986,53,52,0.761,"YouGov Iowa, Oct 26-29"
+yougov-nc,10.13,236,241,226,262,0.986,53,52,0.761,"YouGov North Carolina, Oct 26-29"

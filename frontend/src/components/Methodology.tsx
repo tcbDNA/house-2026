@@ -236,7 +236,7 @@ export function Methodology() {
         The blend takes Texas from the model's R+0.8 to Talarico D+1.8, Kansas from
         R+4.2 to Hamilton D+1.4, Nebraska from R+4.2 to Ricketts
         +3.8 and Alaska from R+1.6 to D+0.8; P(D control) is 76.1% (66.5% on the
-        model alone; 75.0% / 76.7% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        model alone; 75.0% / 76.6% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus

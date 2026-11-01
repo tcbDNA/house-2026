@@ -523,3 +523,11 @@ Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
 | `yougov_ttw_ia_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ia_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:56 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls). Oct 26-29, 2,020 LV, voter-list sample contacted by text, interviewed online. Senate Turek 50, Hinson 49; governor Sand 53, Lahn 46 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
 
 Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
+
+### YouGov, North Carolina (Oct 26-29), Nov 1 check
+
+| File | URL | Notes |
+|---|---|---|
+| `yougov_ttw_nc_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_nc_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:57 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls). Oct 26-29, 2,130 LV, voter-list sample contacted by text, interviewed online. Senate Cooper 55, Whatley 44 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
+
+Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
