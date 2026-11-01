@@ -484,10 +484,10 @@ Not in RCP (Texas feeds re-downloaded 12:53 UTC, unchanged since Oct 30 20:41 CT
 
 Not in RCP (`rcp_fl_8948.json` lists only Stetson's Oct 1-9 wave) and newer than RCP's latest averaged poll, so it counts as a poll RCP left out.
 
-### The Political Matrix/The Listener Group, Florida (Oct 26-28), Nov 1 check
+### The Political Matrix/The Listener Group, Florida (Oct 26-28): removed
 
 | File | URL | Notes |
 |---|---|---|
 | `palafox_political_matrix_listener_group_fl_2026-10.html` | https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/ | Release, retrieved Nov 1 15:45 UTC (found through VoteHub and Poliwave): 500 likely voters, Oct 26-28, conducted by Political Matrix and The Listener Group, divisions of Palafox Media Network (Palm Coast). Senate Moody 41.8, Nixon 35.8, undecided 22.4; governor Donalds 40.3, Jolly 38.8, undecided 20.9. No sponsor named. |
 
-Not in RCP; counts as a poll RCP left out (a partisan-leaning firm's own poll, with no sponsor).
+Removed by user decision, Nov 1: not counted in the Senate or governor average. The release is kept for the record (Wikipedia's Florida poll tables label the pollster "Listener Group/Political Matrix News (R)"). Don't add it back.

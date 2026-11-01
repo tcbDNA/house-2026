@@ -324,6 +324,6 @@ Release: `../senate_polls_2026/recent/kstrat_texas_2026-10-30.html` (https://kst
 
 Release: `../senate_polls_2026/recent/stetson_cpor_fall_2026_wave3_october.pdf` (https://www.stetson.edu/artsci/cpor/media/cpor-fall-2026-report-wave-3-october.pdf, retrieved Nov 1 15:40 UTC): Donalds 51, Jolly 45, other 1, undecided 2, among modeled likely voters (861 registered voters, online panel, Oct 26-30). No sponsor. Not in RCP's governor feed (`rcp_gov_fl_8881.json`).
 
-### The Political Matrix/The Listener Group, Florida (Oct 26-28), Nov 1 check
+### The Political Matrix/The Listener Group, Florida (Oct 26-28): removed
 
-Release: `../senate_polls_2026/recent/palafox_political_matrix_listener_group_fl_2026-10.html` (https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/, retrieved Nov 1 15:45 UTC): 500 likely voters, Oct 26-28; Donalds 40.3, Jolly 38.8, undecided 20.9. Palafox Media Network's own poll, no sponsor named. Not in RCP's governor feed.
+Release: `../senate_polls_2026/recent/palafox_political_matrix_listener_group_fl_2026-10.html` (https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/, retrieved Nov 1 15:45 UTC): 500 likely voters, Oct 26-28; Donalds 40.3, Jolly 38.8, undecided 20.9. Palafox Media Network's own poll, no sponsor named. Removed by user decision, Nov 1: not counted in the Senate or governor average. The release is kept for the record (Wikipedia's Florida poll tables label the pollster "Listener Group/Political Matrix News (R)"). Don't add it back.

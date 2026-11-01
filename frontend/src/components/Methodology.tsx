@@ -236,7 +236,7 @@ export function Methodology() {
         The blend takes Texas from the model's R+0.8 to Talarico D+1.8, Kansas from
         R+4.2 to Hamilton D+0.6 (R+0.0 with w = 0.6), Nebraska from R+4.2 to Ricketts
         +3.8 and Alaska from R+1.6 to D+0.8; P(D control) is 75.0% (66.5% on the
-        model alone; 74.3% / 75.3% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        model alone; 74.3% / 75.4% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus
@@ -312,7 +312,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        24–30), with a 71.5% chance of a majority.
+        24–30), with a 71.3% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the
