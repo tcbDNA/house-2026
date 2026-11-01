@@ -100,8 +100,9 @@ MN: RCP average; plus polls RCP left out: State Navigate 10/26 - 10/28; 5 poll(s
     - Daily Agenda/Morning Consult 10/2 - 10/7
     - State Navigate 10/26 - 10/28 (left out by RCP, counted; full ballot, 52/42)
     left out: Victory Insights for Michele Tafoya (R), ending 2026-10-22 (partisan sponsor)
-NE: recomputed: RCP publishes no average; 3 poll(s) (n_eff 3); anti-R 40.33 / R 49.00 -> margin -8.67, blend margin -9.70, third parties 6.3
+NE: recomputed: RCP publishes no average; 4 poll(s) (n_eff 4); anti-R 42.00 / R 49.25 -> margin -7.25, blend margin -7.95, third parties 5.0
     - The New York Times/Siena University, ending 2026-10-29 (full ballot, 40/53)
+    - YouGov, ending 2026-10-29 (full ballot, 47/50)
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 40/47)
     - National Public Affairs, ending 2026-10-18 (full ballot, 41/47)
     left out: Concord Public Opinion Partners for Education Reform Now Advocacy (D-flagged), ending 2026-10-18 (partisan sponsor); Global Strategy Group for Lynne Walz (D-flagged), ending 2026-10-18 (partisan sponsor); Public Policy Polling (D-flagged), ending 2026-10-14 (campaign/party internal per VoteHub)

@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (76.1% vs 74.6% by default; Osborn's race is nearly all of the
+        them does (76.4% vs 74.6% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -235,15 +235,15 @@ export function Methodology() {
         campaign) and 11 safe races have no countable recent poll and use the model alone.
         The blend takes Texas from the model's R+0.8 to Talarico D+1.8, Kansas from
         R+4.2 to Hamilton D+1.4, Nebraska from R+4.2 to Ricketts
-        +3.8 and Alaska from R+1.6 to D+0.8; P(D control) is 76.1% (66.5% on the
-        model alone; 75.0% / 76.6% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        +3.1 and Alaska from R+1.6 to D+0.8; P(D control) is 76.4% (66.5% on the
+        model alone; 75.3% / 77.0% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus
         (Alme +8.0, Montana Free Press alone, so 1/3 polls and 2/3 model). <b>Nebraska</b> (Osborn vs Ricketts, no
         Democratic nominee) has three recent polls without a partisan sponsor, Ricketts
         +3.55; weighted 0.7 against the model's Ricketts +4.2, it projects Ricketts
-        +3.8 (Osborn 26%). As
+        +3.1 (Osborn 30%). As
         a cross-check, Economist/YouGov had Fischer +7 over
         Osborn in late October 2024 and Fischer won by 6.7; YouGov's 2026 poll has
         Osborn +1, an 8-point move — about the size of the national swing since
