@@ -13,13 +13,13 @@ OH: recomputed: newer polls than RCP's average; 10 poll(s); anti-R 48.11 / R 44.
     - co/efficient (R-flagged), ending 2026-10-06 (head-to-head, 45/46)
     - CNN/SSRS for CNN, ending 2026-10-05 (full ballot, 49/43)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.45 / R 45.76 -> margin +2.69, blend margin +2.86 (RCP published +1.4)
-    newer than RCP's average (built 2026-10-30): Kreate Strategies (KStrat) ending 2026-10-30 released 2026-10-30
+TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.59 / R 45.76 -> margin +2.83, blend margin +3.00 (RCP published +1.4)
+    newer than RCP's average (built 2026-10-30): Kreate Strategies (KStrat) ending 2026-10-30 released 2026-10-30; YouGov ending 2026-10-29 released 2026-11-01
     - Kreate Strategies (KStrat), ending 2026-10-30 (full ballot, 48/45)
+    - YouGov, ending 2026-10-29 (full ballot, 51/47)
     - CNN/SSRS for CNN, ending 2026-10-27 (full ballot, 49/43)
     - A2 Insights, ending 2026-10-27 (full ballot, 50.2/47.2)
     - Data for Progress, ending 2026-10-26 (full ballot, 49/45)
-    - Texas Southern University/YouGov, ending 2026-10-25 (full ballot, 49/47)
     - VoteHub/Verasight for VoteHub, ending 2026-10-20 (full ballot, 47.6/45.2)
     - Fox News (Beacon Research/Shaw & Co.) for Fox News, ending 2026-10-19 (full ballot, 49/49)
     - Emerson College for Nexstar Media, ending 2026-10-19 (full ballot, 48/46)

@@ -547,3 +547,11 @@ Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
 | `yougov_ttw_oh_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:56 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls). Oct 26-29, 2,090 LV, voter-list sample contacted by text, interviewed online. Senate Brown 50, Husted 48; governor Acton 52, Ramaswamy 46 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
 
 Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
+
+### YouGov, Texas (Oct 26-29), Nov 1 check
+
+| File | URL | Notes |
+|---|---|---|
+| `yougov_ttw_tx_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:57 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls). Oct 26-29, 2,141 LV, voter-list sample contacted by text, interviewed online. Senate Talarico 51, Paxton 47; governor Hinojosa 49, Abbott 50 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
+
+Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).

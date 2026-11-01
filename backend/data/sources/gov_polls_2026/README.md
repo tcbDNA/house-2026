@@ -351,3 +351,7 @@ Release: `../senate_polls_2026/recent/yougov_ttw_ne_20261026_lv.pdf` (https://d3
 ### YouGov, Ohio (Oct 26-29), Nov 1 check
 
 Release: `../senate_polls_2026/recent/yougov_ttw_oh_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf, posted Nov 1 15:56 UTC): 2,090 LV, Oct 26-29; Acton 52, Ramaswamy 46, someone else 1, not sure 0, would not vote 1. No sponsor named. Not in RCP's governor feed.
+
+### YouGov, Texas (Oct 26-29), Nov 1 check
+
+Release: `../senate_polls_2026/recent/yougov_ttw_tx_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20261026_lv.pdf, posted Nov 1 15:57 UTC): 2,141 LV, Oct 26-29; Hinojosa 49, Abbott 50, someone else 1, not sure 0, would not vote 1. No sponsor named. Not in RCP's governor feed.
