@@ -483,3 +483,11 @@ Not in RCP (Texas feeds re-downloaded 12:53 UTC, unchanged since Oct 30 20:41 CT
 | `stetson_cpor_fall_2026_wave3_october.pdf` | https://www.stetson.edu/artsci/cpor/media/cpor-fall-2026-report-wave-3-october.pdf | Report dated Oct 30, retrieved Nov 1 15:40 UTC (found through VoteHub and Poliwave): 1,000 Florida adults, Qualtrics online panel, Oct 26-30; results among modeled likely voters from 861 registered voters (already-voted respondents report their votes). Senate Moody 49, Nixon 45; governor Donalds 51, Jolly 45. No sponsor. |
 
 Not in RCP (`rcp_fl_8948.json` lists only Stetson's Oct 1-9 wave) and newer than RCP's latest averaged poll, so it counts as a poll RCP left out.
+
+### The Political Matrix/The Listener Group, Florida (Oct 26-28), Nov 1 check
+
+| File | URL | Notes |
+|---|---|---|
+| `palafox_political_matrix_listener_group_fl_2026-10.html` | https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/ | Release, retrieved Nov 1 15:45 UTC (found through VoteHub and Poliwave): 500 likely voters, Oct 26-28, conducted by Political Matrix and The Listener Group, divisions of Palafox Media Network (Palm Coast). Senate Moody 41.8, Nixon 35.8, undecided 22.4; governor Donalds 40.3, Jolly 38.8, undecided 20.9. No sponsor named. |
+
+Not in RCP; counts as a poll RCP left out (a partisan-leaning firm's own poll, with no sponsor).

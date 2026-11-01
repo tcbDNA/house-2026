@@ -97,3 +97,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 76-governor-county-match-start-year,9.89,236,240,225,261,0.982,53,52,0.739,"Governor county maps: 2022 starting maps measure group shifts from Catalist 2022 House margins, no 2020-24 trend (overlay only)"
 77-nov1-poll-feed-refresh,9.89,236,240,225,261,0.982,53,52,0.743,"Nov 1 poll check: refreshed RCP feeds (ME, TX, NE, MI multi Senate; MI, ME 3-way, MI multi, NE governor; MA Senate), VoteHub dumps and Poliwave race pages"
 78-stetson-florida,9.89,236,240,225,261,0.982,53,52,0.744,"Stetson University (CPOR) Florida, Oct 26-30: Senate Moody 49-45, governor Donalds 51-45; not in RCP"
+79-political-matrix-florida,9.89,236,240,225,261,0.982,53,52,0.743,"The Political Matrix/The Listener Group Florida, Oct 26-28: Senate Moody 41.8-35.8, governor Donalds 40.3-38.8; not in RCP"

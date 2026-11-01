@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (74.4% vs 72.9% by default; Osborn's race is nearly all of the
+        them does (74.3% vs 72.9% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -235,8 +235,8 @@ export function Methodology() {
         campaign) and 11 safe races have no countable recent poll and use the model alone.
         The blend takes Texas from the model's R+1.0 to Talarico D+1.7, Kansas from
         R+4.5 to Hamilton D+0.6 (R+0.1 with w = 0.6), Nebraska from R+4.5 to Ricketts
-        +3.8 and Alaska from R+1.8 to D+0.7; P(D control) is 74.4% (63.8% on the
-        model alone; 73.3% / 74.9% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        +3.8 and Alaska from R+1.8 to D+0.7; P(D control) is 74.3% (63.8% on the
+        model alone; 73.3% / 74.8% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus
@@ -312,7 +312,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        24–30), with a 70.8% chance of a majority.
+        24–30), with a 71.0% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the
