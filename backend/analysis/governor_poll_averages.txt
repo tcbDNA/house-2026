@@ -48,14 +48,15 @@ GA: recomputed: newer polls than RCP's average; 4 poll(s) (n_eff 4); anti-R 47.7
     - University of Georgia SPIA for The Atlanta Journal-Constitution, ending 2026-10-15 (full ballot, 45/46)
     - InsiderAdvantage, ending 2026-10-13 (full ballot, 47/49)
 HI: no RCP average and no poll ending on/after 2026-10-05 -> model only
-IA: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23, National Public Affairs 10/8 - 10/12; 7 poll(s) (n_eff 7); anti-R 50.57 / R 44.71 -> margin +5.86, blend margin +6.15, third parties 0.0 (RCP published +6.4)
-    - co/efficient 10/28 - 10/28
-    - Cook Political Report 10/9 - 10/13
-    - YouGov 10/6 - 10/12
-    - Marist 10/8 - 10/11
-    - Emerson 10/5 - 10/6
-    - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 50/46)
-    - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; full ballot, 50/45)
+IA: recomputed: newer polls than RCP's average; 8 poll(s) (n_eff 8); anti-R 51.12 / R 44.66 -> margin +6.46, blend margin +6.75, third parties 0.0 (RCP published +6.4)
+    - YouGov, ending 2026-10-29 (full ballot, 53/46)
+    - co/efficient (R-flagged), ending 2026-10-28 (full ballot, 50/45)
+    - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 50/46)
+    - New River for The Cook Political Report, ending 2026-10-13 (full ballot, 54/43)
+    - National Public Affairs, ending 2026-10-12 (full ballot, 50/45)
+    - Marist University, ending 2026-10-11 (full ballot, 52/45)
+    - Emerson College for Nexstar Media, ending 2026-10-06 (full ballot, 49/45.3)
+    - CNN/SSRS, ending 2026-10-05 (full ballot, 51/42)
 ID: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 0.5); anti-R 27.00 / R 37.00 -> margin -10.00, blend margin -15.62, third parties 13.0
     - Advanced Targeting Research, ending 2026-09-16 (full ballot, 27/37)
     left out: VoteNexus for Knock Every Door PAC; Todd Achilles for Idaho (D-flagged), ending 2026-10-22 (partisan sponsor)

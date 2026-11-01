@@ -339,3 +339,7 @@ Release: `../senate_polls_2026/recent/yougov_ttw_me_20261026_lv.pdf` (https://d3
 ### YouGov, Kansas (Oct 26-29), Nov 1 check
 
 Release: `../senate_polls_2026/recent/yougov_ttw_ks_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf, posted Nov 1 15:58 UTC): 2,092 LV, Oct 26-29; Holscher 49, Masterson 50, someone else 0, not sure 0, would not vote 0. No sponsor named. Not in RCP's governor feed.
+
+### YouGov, Iowa (Oct 26-29), Nov 1 check
+
+Release: `../senate_polls_2026/recent/yougov_ttw_ia_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ia_20261026_lv.pdf, posted Nov 1 15:56 UTC): 2,020 LV, Oct 26-29; Sand 53, Lahn 46, someone else 0, not sure 0, would not vote 0. No sponsor named. Not in RCP's governor feed.
