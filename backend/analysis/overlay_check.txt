@@ -67,7 +67,6 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   ND     +0.38   +0.04  +0.02  +0.32    +0.00  no 2026 race
   IL     -0.37   +0.02  -0.03  -0.36    +0.00  
   KY     -0.37   -0.04  -0.01  -0.31    +0.00  
-  OH     -0.32   -0.06  -0.03  -0.36    +0.13  poll blend (expected)
   CO     -0.30   -0.00  +0.02  -0.30    +0.00  
   IN     -0.29   -0.05  -0.00  -0.24    +0.00  no 2026 race
   NC     -0.27   +0.00  -0.12  -0.37    +0.22  poll blend (expected)
@@ -81,6 +80,7 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   NJ     -0.12   +0.02  +0.03  -0.17    +0.00  
   WI     -0.11   -0.00  -0.01  -0.10    +0.00  no 2026 race
   NY     -0.10   +0.06  +0.04  -0.20    +0.00  no 2026 race
+  OH     -0.09   -0.06  -0.03  -0.36    +0.36  poll blend (expected)
   WA     -0.09   +0.00  +0.01  -0.11    +0.00  no 2026 race
   NV     +0.08   -0.00  +0.01  +0.07    +0.00  no 2026 race
   HI     -0.07   +0.01  +0.03  -0.11    +0.00  no 2026 race

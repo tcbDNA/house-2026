@@ -539,3 +539,11 @@ Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
 | `yougov_ttw_ne_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ne_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:58 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls). Oct 26-29, 1,979 LV, voter-list sample contacted by text, interviewed online. Senate Osborn (independent) 49, Ricketts 49; governor Walz 47, Pillen 50 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
 
 Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
+
+### YouGov, Ohio (Oct 26-29), Nov 1 check
+
+| File | URL | Notes |
+|---|---|---|
+| `yougov_ttw_oh_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:56 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls). Oct 26-29, 2,090 LV, voter-list sample contacted by text, interviewed online. Senate Brown 50, Husted 48; governor Acton 52, Ramaswamy 46 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
+
+Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).

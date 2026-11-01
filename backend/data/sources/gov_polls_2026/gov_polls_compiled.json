@@ -6735,6 +6735,39 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_oh_8720.json"
+   },
+   {
+    "pollster": "YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-29",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 2090,
+    "d_candidate": "Amy Acton",
+    "r_candidate": "Vivek Ramaswamy",
+    "d": 52,
+    "r": 46,
+    "anti_r": 52,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 52,
+    "full_r": 46,
+    "others": [
+     {
+      "name": "Someone else",
+      "party": null,
+      "pct": 1
+     }
+    ],
+    "undecided": 0,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/yougov_ttw_oh_20261026_lv.pdf (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf)",
+    "note": "YouGov likely-voter poll (yougov_ttw_oh_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf, retrieved Nov 1 17:10 UTC; file posted Nov 1 15:56 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls): Oct 26-29, 2,090 LV, a stratified random sample from the state voter list contacted by text and interviewed online; raked weights; likely-voter model (past vote, demographics, stated likelihood); MOE 2.8. Already-voted respondents report their vote; leaners included. Governor: Acton 52, Ramaswamy 46, someone else 1, not sure 0, would not vote 1. Names no sponsor, like the series' earlier waves. Not in RCP's governor feed (feeds re-downloaded Nov 1 17:10 UTC)."
    }
   ]
  },
