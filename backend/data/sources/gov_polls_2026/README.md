@@ -319,3 +319,7 @@ Found while adding NYT/Siena Nebraska: these two governor records (from VoteHub'
 ### Kreate Strategies (KStrat), Texas (Oct 27-30), from the user's NYT poll list paste (Oct 31)
 
 Release: `../senate_polls_2026/recent/kstrat_texas_2026-10-30.html` (https://kstrat.net/press/texas-2026-senate-governor-talarico-leads-paxton-october): Oct 27-30, 900 LV, online panel; Abbott 49, Hinojosa 47, 3% undecided (Dixon 1 per the NYT list, `../senate_polls_2026/recent/nyt_poll_list_user_paste_2026-10-31_kstrat_tx.txt`). No sponsor line; KStrat's Arizona release (`kstrat_az_release_2026-10-29.html`) names American Encore, so a missing line means KStrat's own poll. Not in RCP (`rcp_gov_tx_8910.json`/`rcp_gov_tx_3way_9200.json` unchanged at 12:53 UTC) or VoteHub. It ended after RCP's latest averaged poll, so Texas is recomputed: R+3.14 -> R+2.70 two-party (11 polls; Pollfinity out).
+
+### Stetson University (CPOR), Florida (Oct 26-30), Nov 1 check
+
+Release: `../senate_polls_2026/recent/stetson_cpor_fall_2026_wave3_october.pdf` (https://www.stetson.edu/artsci/cpor/media/cpor-fall-2026-report-wave-3-october.pdf, retrieved Nov 1 15:40 UTC): Donalds 51, Jolly 45, other 1, undecided 2, among modeled likely voters (861 registered voters, online panel, Oct 26-30). No sponsor. Not in RCP's governor feed (`rcp_gov_fl_8881.json`).

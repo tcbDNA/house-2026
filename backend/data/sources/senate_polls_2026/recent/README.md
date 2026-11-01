@@ -475,3 +475,11 @@ The NYT topline and crosstab pages the release links (https://www.nytimes.com/in
 | `../../gov_polls_2026/kstrat_az_release_2026-10-29.html` | https://kstrat.net/press/arizona-2026-governor-hobbs-leads-biggs-october | KStrat's Arizona release, for comparison: it ends "This survey was sponsored by American Encore." The Texas release has no sponsor line, so it's KStrat's own poll and counts (a partisan-sponsored KStrat poll, like Arizona's, does not). |
 
 Not in RCP (Texas feeds re-downloaded 12:53 UTC, unchanged since Oct 30 20:41 CT) or VoteHub. It ended after the latest poll in RCP's average (Quantus, Oct 28) and came out the day RCP last built it, so Texas is recomputed from each pollster's latest poll since Oct 5: D+2.71 -> D+2.86 two-party (15 polls). Pollfinity stays out (user decision Oct 30), now in recomputes too.
+
+### Stetson University (CPOR), Florida (Oct 26-30), Nov 1 check
+
+| File | URL | Notes |
+|---|---|---|
+| `stetson_cpor_fall_2026_wave3_october.pdf` | https://www.stetson.edu/artsci/cpor/media/cpor-fall-2026-report-wave-3-october.pdf | Report dated Oct 30, retrieved Nov 1 15:40 UTC (found through VoteHub and Poliwave): 1,000 Florida adults, Qualtrics online panel, Oct 26-30; results among modeled likely voters from 861 registered voters (already-voted respondents report their votes). Senate Moody 49, Nixon 45; governor Donalds 51, Jolly 45. No sponsor. |
+
+Not in RCP (`rcp_fl_8948.json` lists only Stetson's Oct 1-9 wave) and newer than RCP's latest averaged poll, so it counts as a poll RCP left out.
