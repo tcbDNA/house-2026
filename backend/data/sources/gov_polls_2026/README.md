@@ -327,3 +327,7 @@ Release: `../senate_polls_2026/recent/stetson_cpor_fall_2026_wave3_october.pdf` 
 ### The Political Matrix/The Listener Group, Florida (Oct 26-28): removed
 
 Release: `../senate_polls_2026/recent/palafox_political_matrix_listener_group_fl_2026-10.html` (https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/, retrieved Nov 1 15:45 UTC): 500 likely voters, Oct 26-28; Donalds 40.3, Jolly 38.8, undecided 20.9. Palafox Media Network's own poll, no sponsor named. Removed by user decision, Nov 1: not counted in the Senate or governor average. The release is kept for the record (Wikipedia's Florida poll tables label the pollster "Listener Group/Political Matrix News (R)"). Don't add it back.
+
+### YouGov, Michigan (Oct 26-29), from the user's link, Nov 1
+
+Release: `../senate_polls_2026/recent/yougov_ttw_mi_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf, posted Nov 1 15:57 UTC): 2,093 LV, Oct 26-29; Benson 52, James 46, someone else 1. No sponsor named. Not in RCP's governor feed (`rcp_gov_mi_8992.json`, last built Oct 30); newer than YouGov's Sep 28-Oct 5 poll in RCP's average.

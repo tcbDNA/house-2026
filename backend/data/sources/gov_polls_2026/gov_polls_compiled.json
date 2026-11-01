@@ -4623,6 +4623,33 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/dfp_maine_michigan_texas_2026-10-30.html; ../senate_polls_2026/recent/dfp_2026_mi_ge_tabs.pdf; rcp_gov_mi_8992.json; rcp_gov_mi_multi_9226.json",
     "note": "DFP's own survey (no client named), Oct 23-25, 622 LV (PDF p.1). Q4 governor: Benson 52, James 43, Hudson (L) 1, Brandenburg (UST) 1, Campbell (G) <0.5, not sure/refused 3. RCP lists it as 'Data for Progress*' 10/23-10/26 (PDF: Oct 23-25), not averaged."
+   },
+   {
+    "pollster": "YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-29",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 2093,
+    "d_candidate": "Jocelyn Benson",
+    "r_candidate": "John James",
+    "d": 52,
+    "r": 46,
+    "anti_r": 52,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 52,
+    "full_r": 46,
+    "others": [],
+    "undecided": 0,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/yougov_ttw_mi_20261026_lv.pdf (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf)",
+    "note": "YouGov Michigan likely-voter poll (yougov_ttw_mi_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf, link from the user, retrieved Nov 1 17:03 UTC; file posted Nov 1 15:57 UTC): Oct 26-29, 2,093 LV, a stratified random sample from the Michigan voter list contacted by text and interviewed online; raked to gender, age, race, geography, imputed education, party score and 2024 vote; likely-voter model (past vote, demographics, stated likelihood); MOE 3.0. Already-voted respondents report their vote; leaners included. Governor: Benson 52, James 46, someone else 1, not sure 0, would not vote 0. Names no sponsor, like the series' earlier waves (ttw_ne_20260921, ttw_ia_20261006, ttw_me_20260902, and the Sep 22-Oct 4 Michigan wave in this list). Not in RCP's governor feed (rcp_gov_mi_8992.json re-downloaded Nov 1, last built Oct 30); newer than YouGov's Sep 28-Oct 5 poll in RCP's average."
    }
   ]
  },

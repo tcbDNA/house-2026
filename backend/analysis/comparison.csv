@@ -100,3 +100,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 79-political-matrix-florida,9.89,236,240,225,261,0.982,53,52,0.743,"The Political Matrix/The Listener Group Florida, Oct 26-28: Senate Moody 41.8-35.8, governor Donalds 40.3-38.8; not in RCP"
 80-big-data-poll-crosstab,10.13,236,241,226,262,0.986,53,52,0.75,"Big Data Poll national (Oct 27-30, RV 3,418): House vote by race added to the crosstab environment"
 81-remove-political-matrix-florida,10.13,236,241,226,262,0.986,53,52,0.75,Removed The Political Matrix/The Listener Group Florida poll (user decision)
+82-yougov-michigan,10.13,236,241,226,262,0.986,53,52,0.751,"YouGov Michigan, Oct 26-29 (2,093 LV): Senate El-Sayed 51-47, governor Benson 52-46; replaces YouGov's Sep 28-Oct 5 wave"

@@ -491,3 +491,11 @@ Not in RCP (`rcp_fl_8948.json` lists only Stetson's Oct 1-9 wave) and newer than
 | `palafox_political_matrix_listener_group_fl_2026-10.html` | https://palafoxproductions.com/new-florida-statewide-poll-for-november-election/ | Release, retrieved Nov 1 15:45 UTC (found through VoteHub and Poliwave): 500 likely voters, Oct 26-28, conducted by Political Matrix and The Listener Group, divisions of Palafox Media Network (Palm Coast). Senate Moody 41.8, Nixon 35.8, undecided 22.4; governor Donalds 40.3, Jolly 38.8, undecided 20.9. No sponsor named. |
 
 Removed by user decision, Nov 1: not counted in the Senate or governor average. The release is kept for the record (Wikipedia's Florida poll tables label the pollster "Listener Group/Political Matrix News (R)"). Don't add it back.
+
+### YouGov, Michigan (Oct 26-29), from the user's link, Nov 1
+
+| File | URL | Notes |
+|---|---|---|
+| `yougov_ttw_mi_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:57 UTC). Oct 26-29, 2,093 LV, voter-list sample contacted by text, interviewed online. Senate El-Sayed 51, Rogers 47; governor Benson 52, James 46 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves (`ttw_ne_20260921`, `ttw_ia_20261006`, `ttw_me_20260902`). |
+
+Not in RCP (Michigan feeds last built Oct 30); it's newer than YouGov's Sep 28-Oct 5 poll, which RCP averages, so it takes that poll's place.
