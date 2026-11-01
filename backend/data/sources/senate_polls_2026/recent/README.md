@@ -499,3 +499,11 @@ Removed by user decision, Nov 1: not counted in the Senate or governor average. 
 | `yougov_ttw_mi_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:57 UTC). Oct 26-29, 2,093 LV, voter-list sample contacted by text, interviewed online. Senate El-Sayed 51, Rogers 47; governor Benson 52, James 46 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves (`ttw_ne_20260921`, `ttw_ia_20261006`, `ttw_me_20260902`). |
 
 Not in RCP (Michigan feeds last built Oct 30); it's newer than YouGov's Sep 28-Oct 5 poll, which RCP averages, so it takes that poll's place.
+
+### YouGov, Maine (Oct 26-29), from the user's link, Nov 1
+
+| File | URL | Notes |
+|---|---|---|
+| `yougov_ttw_me_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:59 UTC). Oct 26-29, 1,503 LV, voter-list sample contacted by text, interviewed online. Senate Jackson 52, Collins 47; governor Pingree 53, Charles 45, someone else 2 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
+
+Not in RCP (Maine feeds unchanged on Nov 1; RCP lists YouGov's Sep 2-8 wave without averaging it), so it counts as a poll RCP left out.

@@ -3732,6 +3732,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/dfp_maine_michigan_texas_2026-10-30.html; ../senate_polls_2026/recent/dfp_2026_me_ge_tabs.pdf; rcp_gov_me_3way_9101.json",
     "note": "DFP's own survey (no client named), Oct 23-27, 652 LV (PDF p.1). Q4 governor: Pingree 49, Charles 37, Bennett (I) 7, not sure/refused 6; no two-way question. RCP lists it only in the three-way feed ('Data for Progress (D)' 10/23-10/26, row Oct 30 CT); its two-way feed (rcp_gov_me_9030.json) doesn't list it."
+   },
+   {
+    "pollster": "YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-10-29",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 1503,
+    "d_candidate": "Hannah Pingree",
+    "r_candidate": "Bobby Charles",
+    "d": 53,
+    "r": 45,
+    "anti_r": 53,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 53,
+    "full_r": 45,
+    "others": [
+     {
+      "name": "Someone else",
+      "party": null,
+      "pct": 2
+     }
+    ],
+    "undecided": 0,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/yougov_ttw_me_20261026_lv.pdf (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf)",
+    "note": "YouGov Maine likely-voter poll (yougov_ttw_me_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf, link from the user, retrieved Nov 1 17:06 UTC; file posted Nov 1 15:59 UTC): Oct 26-29, 1,503 LV, a stratified random sample from the Maine voter list contacted by text and interviewed online; raked to gender, age, geography, party registration, imputed education and 2024 vote; likely-voter model (past vote, demographics, stated likelihood); MOE 4. Already-voted respondents report their vote; leaners included. Governor: Pingree 53, Charles (\"Robert B. Charles\") 45, someone else 2, not sure 0, would not vote 0; independent Rick Bennett isn't named (he would fall under someone else). Names no sponsor, like the series' earlier waves (ttw_me_20260902, ttw_mi_20261026). Not in RCP's governor feeds (rcp_gov_me_9030.json, rcp_gov_me_3way_9101.json re-downloaded Nov 1, unchanged); RCP lists YouGov's Sep 2-8 wave but doesn't average it."
    }
   ]
  },

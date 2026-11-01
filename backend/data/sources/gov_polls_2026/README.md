@@ -331,3 +331,7 @@ Release: `../senate_polls_2026/recent/palafox_political_matrix_listener_group_fl
 ### YouGov, Michigan (Oct 26-29), from the user's link, Nov 1
 
 Release: `../senate_polls_2026/recent/yougov_ttw_mi_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf, posted Nov 1 15:57 UTC): 2,093 LV, Oct 26-29; Benson 52, James 46, someone else 1. No sponsor named. Not in RCP's governor feed (`rcp_gov_mi_8992.json`, last built Oct 30); newer than YouGov's Sep 28-Oct 5 poll in RCP's average.
+
+### YouGov, Maine (Oct 26-29), from the user's link, Nov 1
+
+Release: `../senate_polls_2026/recent/yougov_ttw_me_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf, posted Nov 1 15:59 UTC): 1,503 LV, Oct 26-29; Pingree 53, Charles 45, someone else 2 (independent Rick Bennett isn't named). No sponsor named. Not in RCP's governor feeds.
