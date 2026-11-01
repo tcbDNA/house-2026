@@ -54,14 +54,13 @@ IA: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 -
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 45/43)
     - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; head-to-head, 47/48)
     - Suffolk University 10/1 - 10/4 (left out by RCP, counted; full ballot, 48/44)
-KS: RCP average; 7 poll(s); anti-R 48.29 / R 45.71 -> margin +2.57, blend margin +2.74 (RCP published +2.6)
-    - Washington Post 10/22 - 10/26
-    - Emerson 10/26 - 10/28
-    - CNN 10/20 - 10/26
-    - InsiderAdvantage 10/13 - 10/14
-    - Trafalgar Group 9/29 - 10/1
-    - YouGov 9/24 - 10/4
-    - NY Times/Siena 9/22 - 10/1
+KS: recomputed: newer polls than RCP's average; 5 poll(s); anti-R 49.80 / R 46.20 -> margin +3.60, blend margin +3.75 (RCP published +2.6)
+    newer than RCP's average (built 2026-10-30): YouGov ending 2026-10-29 released 2026-11-01
+    - YouGov, ending 2026-10-29 (full ballot, 50/49)
+    - Emerson College, ending 2026-10-28 (full ballot, 49/45)
+    - CNN/SSRS for CNN, ending 2026-10-26 (full ballot, 49/45)
+    - Washington Post-Schar School for The Washington Post; George Mason University Schar School, ending 2026-10-26 (head-to-head, 54/44)
+    - InsiderAdvantage, ending 2026-10-14 (full ballot, 47/48)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
 ME: recomputed: newer polls than RCP's average; 10 poll(s); anti-R 49.50 / R 46.40 -> margin +3.10, blend margin +3.23 (RCP published +1.7)
     newer than RCP's average (built 2026-10-30): YouGov ending 2026-10-29 released 2026-11-01

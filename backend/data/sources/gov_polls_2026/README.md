@@ -335,3 +335,7 @@ Release: `../senate_polls_2026/recent/yougov_ttw_mi_20261026_lv.pdf` (https://d3
 ### YouGov, Maine (Oct 26-29), from the user's link, Nov 1
 
 Release: `../senate_polls_2026/recent/yougov_ttw_me_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf, posted Nov 1 15:59 UTC): 1,503 LV, Oct 26-29; Pingree 53, Charles 45, someone else 2 (independent Rick Bennett isn't named). No sponsor named. Not in RCP's governor feeds.
+
+### YouGov, Kansas (Oct 26-29), Nov 1 check
+
+Release: `../senate_polls_2026/recent/yougov_ttw_ks_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf, posted Nov 1 15:58 UTC): 2,092 LV, Oct 26-29; Holscher 49, Masterson 50, someone else 0, not sure 0, would not vote 0. No sponsor named. Not in RCP's governor feed.

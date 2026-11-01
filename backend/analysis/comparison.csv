@@ -102,3 +102,4 @@ baseline,8.32,235,236,223,253,0.97,51,51,0.634,current main (6cc5cb1) default sc
 81-remove-political-matrix-florida,10.13,236,241,226,262,0.986,53,52,0.75,Removed The Political Matrix/The Listener Group Florida poll (user decision)
 82-yougov-michigan,10.13,236,241,226,262,0.986,53,52,0.751,"YouGov Michigan, Oct 26-29 (2,093 LV): Senate El-Sayed 51-47, governor Benson 52-46; replaces YouGov's Sep 28-Oct 5 wave"
 83-yougov-maine,10.13,236,241,226,262,0.986,53,52,0.754,"YouGov Maine, Oct 26-29 (1,503 LV): Senate Jackson 52-47, governor Pingree 53-45"
+yougov-ks,10.13,236,241,226,262,0.986,53,52,0.763,"YouGov Kansas, Oct 26-29"

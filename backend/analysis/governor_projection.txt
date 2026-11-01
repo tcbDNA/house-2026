@@ -1,6 +1,6 @@
 Governors, settings overrides: none (defaults)
 Projected winners: D 21 + 6 not up = 27, R 15 + 8 = 23, I 0; D pickups ['AK', 'GA', 'IA', 'OH'], R pickups ['KS'], I pickups []
-Simulated D governorships: median 27, 80% range 24-30; P(D majority, 26+) 0.714, P(R majority) 0.172
+Simulated D governorships: median 27, 80% range 24-30; P(D majority, 26+) 0.727, P(R majority) 0.165
 
 st    model   polls (n_eff)     w    proj   P(D)  flags / opponent
 ID    -29.8     -15.6 (0.5)  0.13   -27.9  0.011  
@@ -16,8 +16,8 @@ AL     -7.5        -9.6 (3)  0.79    -9.1  0.054
 NH     -4.8        -9.9 (6)  0.79    -8.8  0.043  
 FL     -1.5        -5.5 (8)  0.79    -4.7  0.206  
 TX     -7.3       -2.7 (11)  0.79    -3.7  0.240  
-KS     -2.8        -3.4 (6)  0.79    -3.2  0.288  flip to_R
 NV     -4.5      +1.2 (1.5)  0.40    -2.2  0.408  
+KS     -2.8        -1.0 (4)  0.79    -1.4  0.398  flip to_R
 GA     +7.5        +0.3 (4)  0.79    +1.8  0.624  runoff, flip to_D
 OH     -0.4        +3.5 (9)  0.79    +2.6  0.678  flip to_D
 IA     -2.5        +6.2 (7)  0.79    +4.3  0.776  flip to_D

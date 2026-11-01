@@ -507,3 +507,11 @@ Not in RCP (Michigan feeds last built Oct 30); it's newer than YouGov's Sep 28-O
 | `yougov_ttw_me_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:59 UTC). Oct 26-29, 1,503 LV, voter-list sample contacted by text, interviewed online. Senate Jackson 52, Collins 47; governor Pingree 53, Charles 45, someone else 2 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
 
 Not in RCP (Maine feeds unchanged on Nov 1; RCP lists YouGov's Sep 2-8 wave without averaging it), so it counts as a poll RCP left out.
+
+### YouGov, Kansas (Oct 26-29), Nov 1 check
+
+| File | URL | Notes |
+|---|---|---|
+| `yougov_ttw_ks_20261026_lv.pdf` | https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf | YouGov toplines and crosstabs (file posted Nov 1 15:58 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls). Oct 26-29, 2,092 LV, voter-list sample contacted by text, interviewed online. Senate Hamilton 50, Marshall 49; governor Holscher 49, Masterson 50 (already-voted report their vote, leaners included). Names no sponsor, like the series' earlier waves. |
+
+Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
