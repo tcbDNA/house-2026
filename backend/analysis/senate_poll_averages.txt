@@ -9,7 +9,7 @@ OH: RCP average, Rasmussen removed; plus polls RCP left out: Echelon Insights fo
     - co/efficient 10/5 - 10/6
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 47/47)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.45 / R 45.76 -> margin +2.69, blend margin +2.86 (RCP published +1.8)
+TX: recomputed: newer polls than RCP's average; 15 poll(s); anti-R 48.45 / R 45.76 -> margin +2.69, blend margin +2.86 (RCP published +1.4)
     newer than RCP's average (built 2026-10-30): Kreate Strategies (KStrat) ending 2026-10-30 released 2026-10-30
     - Kreate Strategies (KStrat), ending 2026-10-30 (full ballot, 48/45)
     - CNN/SSRS for CNN, ending 2026-10-27 (full ballot, 49/43)
@@ -62,7 +62,7 @@ KS: RCP average; 7 poll(s); anti-R 48.29 / R 45.71 -> margin +2.57, blend margin
     - YouGov 9/24 - 10/4
     - NY Times/Siena 9/22 - 10/1
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed by RCP, not yet averaged); plus polls RCP left out: Data for Progress 10/23 - 10/27; 12 poll(s); anti-R 49.00 / R 46.83 -> margin +2.17, blend margin +2.26 (RCP published +1.4)
+ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed by RCP, not yet averaged); plus polls RCP left out: Data for Progress 10/23 - 10/27; 8 poll(s); anti-R 49.12 / R 46.38 -> margin +2.75, blend margin +2.88 (RCP published +1.7)
     - Marist 10/22 - 10/25
     - CNN 10/20 - 10/26
     - Trafalgar Group 10/21 - 10/23
@@ -70,10 +70,6 @@ ME: RCP average, Rasmussen removed; plus Echelon Insights 10/16 - 10/23 (listed 
     - FOX News 10/16 - 10/20
     - InsiderAdvantage 10/13 - 10/14
     - Suffolk University 10/8 - 10/11
-    - Washington Post 9/30 - 10/5
-    - co/efficient 9/28 - 9/30
-    - CBS News 9/23 - 10/1
-    - MPRC 9/25 - 9/29
     - Data for Progress 10/23 - 10/27 (left out by RCP, counted; full ballot, 50/45)
 SC: RCP average, Rasmussen removed; 5 poll(s); anti-R 45.00 / R 47.40 -> margin -2.40, blend margin -2.60 (RCP published -2.7)
     - NY Times/Siena 10/19 - 10/26
@@ -130,12 +126,10 @@ AL: recomputed: newer polls than RCP's average; 3 poll(s); anti-R 36.67 / R 51.3
     - Chism Strategies (D), ending 2026-10-24 (full ballot, 40/48)
     - Cygnal for Gray Television, Alabama Daily News, ending 2026-10-17 (full ballot, 35/50)
     - The Alabama Poll, ending 2026-10-16 (full ballot, 35/56)
-MA: RCP average; 5 poll(s); anti-R 55.60 / R 29.00 -> margin +26.60, blend margin +31.44 (RCP published +26.6)
+MA: RCP average; 3 poll(s); anti-R 57.00 / R 29.00 -> margin +28.00, blend margin +32.56 (RCP published +28.0)
     - Boston Globe/Suffolk 10/10 - 10/18
     - UMass Lowell 10/7 - 10/18
     - WCVB-TV/Amherst 10/5 - 10/12
-    - UNH 9/17 - 9/21
-    - CWB/MassINC 9/14 - 9/22
 NM: RCP average; 2 poll(s); anti-R 53.50 / R 37.00 -> margin +16.50, blend margin +18.23 (RCP published +16.5)
     - KOB-TV/SurveyUSA 9/25 - 9/30
     - Albuquerque Journal 8/21 - 8/28
@@ -146,7 +140,7 @@ RI: RCP average; 3 poll(s); anti-R 55.67 / R 30.00 -> margin +25.67, blend margi
 SD: RCP average, excluded pollsters removed: Quantus Insights 10/17 - 10/19; 2 poll(s); anti-R 39.50 / R 53.00 -> margin -13.50, blend margin -14.59 (RCP published -15.6)
     - Emerson 10/19 - 10/20
     - SDNW/Mason-Dixon 10/12 - 10/14
-    left out: Public Opinion Strategies (R), ending 2026-10-16 (campaign/party internal per VoteHub); Concord Public Opinion Partners (D), ending 2026-10-08 (campaign/party internal per VoteHub)
+    left out: Concord Public Opinion Partners, ending 2026-10-26 (campaign/party internal per VoteHub); Public Opinion Strategies (R), ending 2026-10-16 (campaign/party internal per VoteHub); Concord Public Opinion Partners (D), ending 2026-10-08 (campaign/party internal per VoteHub)
 MS: recomputed: RCP publishes no average; 1 poll(s); anti-R 40.00 / R 43.00 -> margin -3.00, blend margin -3.61
     - Change Research (D-flagged), ending 2026-10-22 (full ballot, 40/43)
 LA: no RCP average and no poll ending on/after 2026-10-05 -> model only

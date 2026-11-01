@@ -3414,7 +3414,7 @@
     "opponent_share": 43.08,
     "republican_share": null,
     "rcv_final_polls": 0,
-    "method": "RCP average; plus Michigan State University (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Data for Progress 10/23 - 10/25",
+    "method": "RCP average; removed: Rasmussen Reports 10/28 - 10/29; plus Michigan State University (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Data for Progress 10/23 - 10/25",
     "as_of": "2026-10-30",
     "polls": "CBS News/Mitchell 10/26 - 10/27; CNN 10/20 - 10/27; Detroit News/Glengariff 10/19 - 10/22; Marist 10/15 - 10/18; Michigan State/YouGov 10/2 - 10/19; YouGov 9/28 - 10/5; FOX News 9/24 - 9/28; Michigan State University (Political Science)/Verasight ending Oct 23; Data for Progress 10/23 - 10/25 (left out by RCP, counted; full ballot, 52/43)",
     "url": "https://www.realclearpolling.com/polls/governor/general/2026/michigan/benson-vs-james",
