@@ -362,7 +362,7 @@ export function Methodology() {
         market-implied median total vote divided by the 2024 presidential vote —
         the state's Senate market (else its governor market) for a state's
         counties, and the district's House market for its slices (e.g. Georgia
-        85%, Texas 94%, Mississippi 66% of 2024). It affects only the
+        80%, Texas 92%, Mississippi 74% of 2024, from markets as of Oct 29). It affects only the
         county-overlay vote-count display — not any projection, margin, or seat
         call.
       </p>
