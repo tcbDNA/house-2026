@@ -265,6 +265,24 @@
     "excluded_pollster": false,
     "source": "yougov_ttw_oh_20261026_lv.pdf",
     "note": "YouGov likely-voter poll (yougov_ttw_oh_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_oh_20261026_lv.pdf, retrieved Nov 1 17:10 UTC; file posted Nov 1 15:56 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls): Oct 26-29, 2,090 LV, a stratified random sample from the state voter list contacted by text and interviewed online; raked weights; likely-voter model (past vote, demographics, stated likelihood); MOE 2.8. Already-voted respondents report their vote; leaners included. U.S. Senate: Brown 50, Husted 48, someone else 2, not sure 1, would not vote 0. Names no sponsor, like the series' earlier waves. Not in RCP (feeds re-downloaded Nov 1 17:10 UTC)."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 717,
+    "anti_r": 49,
+    "r": 44,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
+    "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Brown 49, Husted 44."
    }
   ],
   "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate still Oct 25 10:05, content through Oct 27) now averages 9/22-10/26, Brown 48.1, Husted 44.8, 10 polls: Suffolk 10/21-26 added. Its latest poll ends after RedBox and Echelon, so Ohio uses RCP's average again (Rasmussen removed). Oct 29 check: RCP rebuilt its average (feed lastBuildDate Oct 28 05:56 CT): 10/5-10/26, Brown 47.9, Husted 45.3, 7 polls including Rasmussen; InsiderAdvantage 10/21-22 in, NYT/Siena 9/22-10/1, CNN 9/29-10/5 and Bowling Green 9/29-10/9 out."
@@ -768,6 +786,24 @@
     "excluded_pollster": false,
     "source": "yougov_ttw_tx_20261026_lv.pdf",
     "note": "YouGov likely-voter poll (yougov_ttw_tx_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20261026_lv.pdf, retrieved Nov 1 17:10 UTC; file posted Nov 1 15:57 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls): Oct 26-29, 2,141 LV, a stratified random sample from the state voter list contacted by text and interviewed online; raked weights; likely-voter model (past vote, demographics, stated likelihood); MOE 2.9. Already-voted respondents report their vote; leaners included. U.S. Senate: Talarico 51, Paxton 47, someone else 1, not sure 1, would not vote 1. Names no sponsor, like the series' earlier waves. Not in RCP (feeds re-downloaded Nov 1 17:10 UTC)."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 1215,
+    "anti_r": 50,
+    "r": 43,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
+    "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Talarico 50, Paxton 43."
    }
   ],
   "notes": "RCP two-way average (feed 8867, built Oct 27 08:17): 10/8-10/21, Talarico 48.5, Paxton 46.7 (+1.8), 11 polls, including Rasmussen and Univision/YouGov (added Oct 27). Earlier (built Oct 24): Talarico 48.4, Paxton 46.9 (+1.5), 10 polls. RCP 3-way (feed 8985): Talarico 48.0, Paxton 46.3, Brown 2.8. Not in RCP's two-way average: VoteHub/Verasight, Pollfinity, Trafalgar, ReconMR/Siena, YouGov, UT/TPP. Pre-Oct polls excluded: NYT/Siena 9/21-30, Fox 9/24-28, UMass Lowell 9/18-28, Guidant 9/20-28, Rasmussen 9/28-29 (270toWin dates some of these by release date in October). Oct 28 third check: YouGov Blue for 254 Labs (Oct 21-26, released Oct 28; 1,000 RV weighted to likely-voter targets) Talarico 51, Paxton 43, from 254 Labs' release (user's NYT poll list paste). Not in RCP, VoteHub or Poliwave yet. It ended after the latest poll in RCP's average (10/21) and came out after RCP's last update (Oct 27), so Texas is now recomputed. Oct 28 user decision: the Cor Strategies / Heritage Action poll is not counted (NOT_COUNTED in the build script). Oct 28 user decision: YouGov Blue counts as its own pollster (YOUGOV_BLUE_OWN_POLLSTER), so Univision/YouGov (10/13-21) stays in the recomputed average as YouGov's latest poll. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: VoteHub now lists the 254 Labs poll with a Democratic partisan flag, so under the partisan-sponsor rule (named sponsor + partisan flag) it is not counted; with no newer poll left, Texas goes back to RCP's average. Oct 29 check: RCP's feed (built Oct 29 05:41 CT) averages 10/8-10/27, Talarico 48.6, Paxton 46.5, 13 polls including Rasmussen: CNN/SSRS 10/20-27 and TSU/YouGov 10/21-25 added. Texas stays on RCP's average (Rasmussen removed). Oct 29 (user's NYT paste): A2 Insights (Oct 23-27, released Oct 29) Talarico 50.2, Paxton 47.2, no sponsor; not in RCP's average, and it ends on the same day as RCP's latest averaged poll (CNN 10/20-27), so it is not newer and Texas stays on RCP's average. User decision (Oct 29): the A2 Insights poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."
@@ -899,6 +935,24 @@
     "excluded_pollster": false,
     "source": "x_The_Real_ASR_2116291676176331181_fxtwitter.json, x_The_Real_ASR_2116291678898384958_fxtwitter.json, x_The_Real_ASR_2116291680966209892_fxtwitter.json (ASR's thread, https://x.com/The_Real_ASR/status/2116291676176331181, posts 1-3); rcp_ak_8754.json; rcp_ak_rcv1_9171.json",
     "note": "ASR's own thread (Oct 30, 22:10 UTC): 'Alaska Survey Research, October 26-29, 2026, N=1,326 likely AK voters, MOE +/-3.0%'; responses submitted 8pm Oct 26 to 8pm Oct 29; no client named. anti_r/r = round 1: Peltola 47.7, Sullivan 45.9, Daniel J. Sullivan Jr 3.4, Heikes 3.0. Round 2: 48.2/47.1/4.6. h2h = final round 50.8/49.2. RCP: 'Alaska Survey Research**' 10/26-10/29, 51/49 averaged in place of ASR's Oct 1-3 poll (also 51/49), so RCP's average is unchanged at 49.4/48.2 (window now 10/8-10/29); round 1 48/46/3/3 in the RCV feed."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-10-30",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 610,
+    "anti_r": 48,
+    "r": 46,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
+    "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Peltola 48, Sullivan 46."
    }
   ],
   "notes": "RCP two-way (final-round) average (feed 8754, built Oct 26): 9/28-10/16, Peltola 49.0, Sullivan 48.2 (+0.8), 6 polls: PPP, Rasmussen, DFP, InsiderAdvantage, ASR and Quantus 9/28-30. No AK poll with fieldwork ending after Oct 16 was found. Pre-Oct: Quantus 9/28-30 (737/758 LV). Oct 28 check: RCP (built Oct 27 18:30 CT) dropped Quantus 9/28-30: 10/1-10/16, Peltola 49.4, Sullivan 48.2, 5 polls. No new Alaska poll."
@@ -1478,6 +1532,24 @@
     "excluded_pollster": false,
     "source": "yougov_ttw_ia_20261026_lv.pdf",
     "note": "YouGov likely-voter poll (yougov_ttw_ia_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ia_20261026_lv.pdf, retrieved Nov 1 17:09 UTC; file posted Nov 1 15:56 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls): Oct 26-29, 2,020 LV, a stratified random sample from the state voter list contacted by text and interviewed online; raked weights; likely-voter model (past vote, demographics, stated likelihood); MOE 3.1. Already-voted respondents report their vote; leaners included. U.S. Senate: Turek 50, Hinson 49, someone else 1, not sure 0, would not vote 0. Names no sponsor, like the series' earlier waves. Not in RCP (feeds re-downloaded Nov 1 17:10 UTC)."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-26",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 705,
+    "anti_r": 48,
+    "r": 47,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
+    "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Turek 48, Hinson 47."
    }
   ],
   "notes": "RCP two-way average (feed 8930, built Oct 25): 9/29-10/22, Hinson 46.1, Turek 45.5 (Hinson +0.6), 8 polls. RCP 3-way (feed 9215): Hinson 46.0, Turek 45.7, Laehn 3.5. No Rasmussen or ActiVote poll ended in October. Pre-Oct: Fox 9/24-28, Quantus 9/28-29, Rasmussen 9/28-30. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 29 fourth check: RCP added co/efficient (Oct 28, Hinson 48, Turek 46) to its average (feed built Oct 29 12:54 CT: 9/29-10/28, Hinson 46.3, Turek 45.6) and now lists Echelon Insights 10/16-23 unaveraged. No compiled poll ends after Oct 28, so Iowa is back on RCP's average."
@@ -1680,6 +1752,24 @@
     "excluded_pollster": false,
     "source": "yougov_ttw_ks_20261026_lv.pdf",
     "note": "YouGov likely-voter poll (yougov_ttw_ks_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_ks_20261026_lv.pdf, retrieved Nov 1 17:08 UTC; file posted Nov 1 15:58 UTC; found by checking the series' file names after the user linked its Michigan and Maine polls): Oct 26-29, 2,092 LV, a stratified random sample from the state voter list contacted by text and interviewed online; raked weights; likely-voter model (past vote, demographics, stated likelihood); MOE 2.8. Already-voted respondents report their vote; leaners included. U.S. Senate: Hamilton 50, Marshall 49, someone else 1, not sure 0, would not vote 0. Names no sponsor, like the series' earlier waves. Not in RCP (feeds re-downloaded Nov 1 17:10 UTC)."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 736,
+    "anti_r": 49,
+    "r": 44,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
+    "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Hamilton 49, Marshall 44, David Graham (L) 4."
    }
   ],
   "notes": "RCP two-way average (feed 9106, last built Oct 15): 9/8-10/14, Marshall 46.0, Hamilton 45.7 (Marshall +0.3), 6 polls. It has not been rebuilt since Oct 15, so RedBox (Oct 20-23) is missing. Pre-Oct: Emerson 9/15-16, GSG 9/13-16, Wedgewood 9/22-24. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (lastBuildDate still Oct 20, CNN row added Oct 29) averages 9/8-10/26, Hamilton 46.1, Marshall 45.9, 7 polls: CNN/SSRS 10/20-26 added."
@@ -1948,6 +2038,24 @@
     "excluded_pollster": false,
     "source": "yougov_ttw_me_20261026_lv.pdf",
     "note": "YouGov Maine likely-voter poll (yougov_ttw_me_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_me_20261026_lv.pdf, link from the user, retrieved Nov 1 17:06 UTC; file posted Nov 1 15:59 UTC): Oct 26-29, 1,503 LV, a stratified random sample from the Maine voter list contacted by text and interviewed online; raked to gender, age, geography, party registration, imputed education and 2024 vote; likely-voter model (past vote, demographics, stated likelihood); MOE 4. Already-voted respondents report their vote; leaners included. U.S. Senate: Jackson 52, Collins 47, someone else 0, not sure 0, would not vote 0. Names no sponsor, like the series' earlier waves (ttw_me_20260902, ttw_mi_20261026). Not in RCP (feeds re-downloaded Nov 1, unchanged); RCP lists YouGov's Sep 2-8 wave but doesn't average it."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 714,
+    "anti_r": 51,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
+    "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Jackson 51, Collins 45."
    }
   ],
   "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27. Oct 29 check: RCP's feed (lastBuildDate Oct 27 05:41, CNN row added Oct 29) averages 9/23-10/26, Jackson 48.7, Collins 47.3, 11 polls: CNN/SSRS 10/20-26 added. Echelon Insights 10/16-23 is still listed but not averaged (still counted ahead of RCP: RCP_PENDING)."
@@ -2458,6 +2566,24 @@
     "excluded_pollster": false,
     "source": "yougov_ttw_mi_20261026_lv.pdf",
     "note": "YouGov Michigan likely-voter poll (yougov_ttw_mi_20261026_lv.pdf, https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_mi_20261026_lv.pdf, link from the user, retrieved Nov 1 17:03 UTC; file posted Nov 1 15:57 UTC): Oct 26-29, 2,093 LV, a stratified random sample from the Michigan voter list contacted by text and interviewed online; raked to gender, age, race, geography, imputed education, party score and 2024 vote; likely-voter model (past vote, demographics, stated likelihood); MOE 3.0. Already-voted respondents report their vote; leaners included. U.S. Senate: El-Sayed 51, Rogers 47, someone else 1, not sure 1, would not vote 1. Names no sponsor, like the series' earlier waves (ttw_ne_20260921, ttw_ia_20261006, ttw_me_20260902, and the Sep 22-Oct 4 Michigan wave in this list). Not in RCP (feed re-downloaded Nov 1, last built Oct 30); newer than YouGov's Sep 28-Oct 5 poll in RCP's average."
+   },
+   {
+    "pollster": "NYT/Siena",
+    "sponsor": "The New York Times",
+    "partisan": null,
+    "start": "2026-10-23",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 1011,
+    "anti_r": 53,
+    "r": 42,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
+    "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: El-Sayed 53, Rogers 42."
    }
   ],
   "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (built Oct 28 17:42 CT, CNN row added Oct 29) averages 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls: CNN/SSRS 10/20-27 and CBS News/Mitchell 10/26-27 added; Mitchell's Oct 1 poll is now listed but not averaged. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) El-Sayed 48.0, Rogers 41.8; not in RCP's average, and it ends before the latest poll RCP averages (CNN and Mitchell, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."

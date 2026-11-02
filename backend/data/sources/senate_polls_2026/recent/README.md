@@ -559,3 +559,11 @@ Not in RCP (feeds re-downloaded Nov 1 17:10 UTC).
 ### Nov 2 check: feeds refreshed
 
 Re-downloaded Nov 2, 11:40–11:55 UTC, from the URLs above: every saved RCP Senate feed (`recent/rcp_*.json` and `<st>/rcp_polling_data_*.json`; feeds RCP now serves with no polls were left as saved), VoteHub's Senate list (`votehub_senate_all.json`) and full poll dump (`../votehub_polls_api_C.json`, https://api.votehub.com/polls, last refreshed Oct 26), and Poliwave's Senate race pages (`recent/poliwave_<st>_sen.html`, `<st>/poliwave_<st>_sen.html`). RCP has now averaged the final YouGov (Oct 26-29), NYT/Siena (Oct 23-Nov 1), UNH (Oct 27-31), InsiderAdvantage (Oct 29-30), East Carolina (Oct 26-29), AtlasIntel (Oct 28-Nov 1) and Trafalgar (Oct 31-Nov 1) polls where it carries them, so Iowa, Kansas, Maine, North Carolina, Ohio and Texas return from recomputed averages to RCP's average plus the polls it leaves out. New polls RCP doesn't carry are added to `recent_polls_compiled.json` in their own sections below.
+
+### NYT/Siena final wave: AK, IA, KS, ME, MI, OH, TX (Oct 23-Nov 1), Nov 2 check
+
+| File | URL | Notes |
+|---|---|---|
+| `siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html` | https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/ | Siena release (posted Nov 1, retrieved Nov 2 11:48 UTC): Senate AK Peltola 48, Sullivan 46; IA Turek 48, Hinson 47; KS Hamilton 49, Marshall 44, Graham 4; ME Jackson 51, Collins 45; MI El-Sayed 53, Rogers 42; OH Brown 49, Husted 44; TX Talarico 50, Paxton 43. Governor AK Kreiss-Tomkins 54, Wilson 46 (ranked choice); IA Sand 51, Lahn 43; KS Holscher 48, Masterson 47; ME Pingree 49, Charles 37, Bennett 8; MI Benson 52, James 39; OH Acton 49, Ramaswamy 43; TX Hinojosa 48, Abbott 47. Margins of error by state; no n. |
+
+Dates and n from VoteHub (AK Oct 23-30, 610; IA Oct 26-Nov 1, 705; KS Oct 27-Nov 1, 736; ME Oct 27-Nov 1, 714; MI Oct 23-Nov 1, 1,011; OH Oct 26-Nov 1, 717; TX Oct 27-Nov 1, 1,215), matching RCP. The NYT toplines and crosstabs (nytimes.com/interactive/2026/11/01/polls/times-siena-<st>-poll-toplines.html) block automated downloads. RCP averages all fourteen.
