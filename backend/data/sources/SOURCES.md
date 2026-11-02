@@ -180,3 +180,7 @@ Retrieved 2026-11-01 from Kalshi's public API (markets last updated 2026-10-29T1
 ## Campaign finance, GA-01 (fec_2026/ga01_2026-11-02/) — not used by the model
 
 FEC API and docquery downloads (candidate totals through the pre-general report, Oct 14; reports; independent expenditures; 48-hour notices filed through Nov 1) for Jim Kingston (R) and Amanda Hollowell (D), retrieved 2026-11-02. URLs in the folder's README.md.
+
+## Georgia early vote, Georgia Votes (turnout_2026/ga_georgiavotes_2026-11-02/) — not used by the model
+
+Pages from georgiavotes.com (built from the Secretary of State's absentee and voter history files; updated 2026-11-02 09:18), retrieved 2026-11-02. URLs in the folder's README.md.
