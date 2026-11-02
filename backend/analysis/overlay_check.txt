@@ -76,7 +76,6 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   ID     +0.23   +0.00  +0.02  +0.20    +0.00  
   PA     -0.23   +0.00  -0.02  -0.21    +0.00  no 2026 race
   AZ     -0.21   -0.02  +0.02  -0.21    +0.00  no 2026 race
-  NC     +0.14   +0.00  -0.12  -0.37    +0.63  poll blend (expected)
   VT     -0.13   +0.00  -0.00  -0.13    +0.00  no 2026 race
   NJ     -0.12   +0.02  +0.03  -0.17    +0.00  
   WI     -0.11   -0.00  -0.01  -0.10    +0.00  no 2026 race
@@ -85,6 +84,7 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   NV     +0.08   -0.00  +0.01  +0.07    +0.00  no 2026 race
   HI     -0.07   +0.01  +0.04  -0.11    +0.00  no 2026 race
   CT     -0.04   -0.00  +0.01  -0.04    +0.00  no 2026 race
+  NC     -0.04   +0.00  -0.12  -0.37    +0.45  poll blend (expected)
   WV     +0.03   -0.06  -0.00  +0.09    +0.00  
   WY     -0.02   -0.00  +0.01  -0.02    +0.00  
   states flagged (|shift excluding override| > 0.5): AL, CA, DE, FL, GA, MD, MO, MS, TN, TX, UT

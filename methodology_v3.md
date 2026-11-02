@@ -128,7 +128,7 @@ Senate projections treat the state-level trend (state vs. national 2020→2024 s
 
 - 65 not-up seats are assumed to hold their current party.
 - Control: D needs **51**; a 50-50 split is **R control** via VP Vance's tiebreak (`p_r_control` counts it; `p_r_majority` is an outright 51+).
-- The four independent nominees — Osborn (NE), Bengs (SD), Achilles (ID) and Bodnar (MT) — are assumed to caucus with Democrats if they win, so the headline P(D control) counts them with Democrats. The Senate summary also reports P(D control) counting their wins for neither party, from the same simulations: 0.789 vs 0.774 by default. P(win): Osborn 0.29, Bodnar 0.061, Bengs 0.001, Achilles 0.000.
+- The four independent nominees — Osborn (NE), Bengs (SD), Achilles (ID) and Bodnar (MT) — are assumed to caucus with Democrats if they win, so the headline P(D control) counts them with Democrats. The Senate summary also reports P(D control) counting their wins for neither party, from the same simulations: 0.789 vs 0.773 by default. P(win): Osborn 0.29, Bodnar 0.061, Bengs 0.001, Achilles 0.000.
 - **Poll blend** (setting `senate_poll_blend`, on by default). Every Senate race with a polling average is projected as
 
       projection = w × (polling average + scenario change) + (1 − w) × model

@@ -681,3 +681,11 @@ RCP feeds for the three races (two-way and multi-candidate: `rcp_mi_8802.json`, 
 User: "exclude all trafalgar polls". Trafalgar Group joins the excluded pollsters (`EXCLUDED_POLLSTERS` in this build and the governor build): its polls come out of RCP's averages the way Rasmussen's and Quantus's do, and out of recomputed averages. Its 13 compiled Senate polls stay in `recent_polls_compiled.json`, marked `excluded_pollster`. Polls removed from averages: Ohio, Michigan, South Carolina and Texas (Oct 31-Nov 1), Maine (Oct 21-23), Iowa and Minnesota (Oct 13-15), North Carolina (Oct 8-10) and Georgia (Oct 7-9); Kansas (Sep 29-Oct 1) and Maine (Sep 29-Oct 1) were already outside the window.
 
 Effect (blend margins): Texas D+3.42 -> D+3.76 (10 polls), projection D+2.28 -> D+2.52 (P(D) 0.670 -> 0.686); Michigan D+4.93 -> D+5.31, D+6.53 -> D+6.79; Maine D+3.97 -> D+4.36, D+5.38 -> D+5.65; Iowa R+0.27 -> even, R+1.31 -> R+1.12 (P(D) 0.407 -> 0.421); Ohio D+2.84 -> D+2.93; North Carolina D+12.06 -> D+12.57; Minnesota D+6.27 -> D+6.79; Georgia D+11.19 -> D+12.57 (2 polls); South Carolina R+2.70 -> R+2.90 (3 polls), projection R+3.67 -> R+3.81. P(D control) 0.779 -> 0.789. House unchanged: no Trafalgar poll in the national crosstabs. The 2018-2024 backtests (`../../polls_backtest/`) still include Trafalgar; the fitted poll weights were not refit.
+
+### AtlasIntel, North Carolina (Oct 28-Nov 1), Nov 2 evening
+
+| File | URL | Notes |
+|---|---|---|
+| `atlasintel_nc_2026-11-01.pdf` | none found (user's download, Nov 2, of atlas-pollstergraph-us-nc-20261101-021b0bfc8bec.pdf) | 1,459 LV, Oct 28-Nov 1, MOE +/-3; Senate (p.14, all respondents) Cooper 56.4, Whatley 41.5, other 1.3; valid votes (p.15) 56.8/41.8. No sponsor. Not in RCP or VoteHub yet. |
+
+RCP's North Carolina feed (`rcp_nc_8753.json`) re-downloaded Nov 2 22:34 UTC: unchanged (average 9/29-10/29, Cooper 52.0, Whatley 41.2).

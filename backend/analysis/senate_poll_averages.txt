@@ -82,13 +82,13 @@ MI: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmu
     - Research Co. 10/30 - 11/1 (left out by RCP, counted; full ballot, 48/46)
     - Data for Progress 10/23 - 10/25 (left out by RCP, counted; full ballot, 50/46)
     left out: The Tyson Group for Alliance for a Better Future (R-flagged), ending 2026-10-08 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Upswing Research for Demand Justice (D-flagged), ending 2026-10-28 (partisan sponsor)
-NC: RCP average, excluded pollsters removed: Quantus Insights 10/24 - 10/25, Trafalgar Group 10/8 - 10/10; partisan-sponsored poll removed: Carolina Forward/Change Res. 10/1 - 10/7; plus polls RCP left out: SurveyUSA for WRAL-TV/WSOC-TV 10/7 - 10/11; replacing WRAL-TV/SurveyUSA 10/1 - 10/7; 6 poll(s); anti-R 53.00 / R 41.17 -> margin +11.83, blend margin +12.57 (RCP published +10.8)
-    - East Carolina U. 10/26 - 10/29
-    - YouGov 10/26 - 10/29
-    - Carolina Journal/Harper 10/18 - 10/20
-    - High Point University 10/1 - 10/20
-    - Elon University 9/29 - 10/8
-    - SurveyUSA for WRAL-TV/WSOC-TV 10/7 - 10/11 (left out by RCP, counted; full ballot, 54/40)
+NC: recomputed: newer polls than RCP's average; 5 poll(s); anti-R 53.68 / R 41.90 -> margin +11.78, blend margin +12.32 (RCP published +10.8)
+    newer than RCP's average (built 2026-11-01): AtlasIntel ending 2026-11-01 released 2026-11-02
+    - AtlasIntel, ending 2026-11-01 (full ballot, 56.4/41.5)
+    - YouGov, ending 2026-10-29 (full ballot, 55/44)
+    - East Carolina University, ending 2026-10-29 (full ballot, 54/45)
+    - Harper Polling for Carolina Journal, ending 2026-10-20 (full ballot, 49/39)
+    - SurveyUSA for WRAL-TV/WSOC-TV, ending 2026-10-11 (full ballot, 54/40)
     left out: Change Research for Carolina Forward (D-flagged), ending 2026-10-07 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
 NH: RCP average, Rasmussen removed; plus polls RCP left out: National Public Affairs 10/8 - 10/12; 5 poll(s); anti-R 50.60 / R 42.80 -> margin +7.80, blend margin +8.35 (RCP published +8.0)
     - UNH 10/27 - 10/31

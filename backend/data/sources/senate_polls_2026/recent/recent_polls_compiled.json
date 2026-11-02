@@ -3046,6 +3046,24 @@
     "excluded_pollster": false,
     "source": "ecu_poll_nc_2026-11-01.html",
     "note": "ECU Center for Survey Research release (ecu_poll_nc_2026-11-01.html, https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-cooper-leads-whatley-by-9-points-as-election-day-nears, dated Nov 1, retrieved Nov 2 11:47 UTC): Oct 26-29, 1,041 North Carolina registered voters who have voted or are likely to vote (MMS-to-web text 508 from the L2 file via ReconMR, landline IVR 236, Bovitz online panel 297); weighted by age, education, race/ethnicity, gender, region and party identification plus election modeling; credibility interval +/-3.5. Cooper 54, Whatley 45, other 1. Nonpartisan university poll. RCP averages it ('East Carolina U.*')."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1459,
+    "anti_r": 56.4,
+    "r": 41.5,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "atlasintel_nc_2026-11-01.pdf",
+    "note": "AtlasIntel report (atlasintel_nc_2026-11-01.pdf, 'AtlasIntel Poll: North Carolina, 10/28/2026 - 11/01/2026', Atlas Pollstergraph): file atlas-pollstergraph-us-nc-20261101-021b0bfc8bec.pdf downloaded by the user Nov 2 (5:33 pm ET) and provided from their Downloads folder; no public URL found (atlasintel.org's poll pages and cdn1.atlasintel.org don't serve it to scripts; not in VoteHub or RCP as of Nov 2 22:34 UTC). Sample profile (p.5): 1,459 North Carolina likely voters, Atlas Random Digital Recruitment, MOE +/-3. The vote-intention charts are images, read from the rendered pages. U.S. Senate (p.14, all respondents): Cooper 56.4, Whatley 41.5, other 1.3, don't know 0.4, would not vote 0.4; valid votes (p.15) Cooper 56.8, Whatley 41.8, other 1.3. Recorded: all respondents, as for AtlasIntel's Texas poll. Names no sponsor."
    }
   ],
   "notes": "RCP two-way average (feed 8753; lastBuildDate Oct 24 14:08, content updated Oct 26 17:06): 9/27-10/25, Cooper 50.8, Whatley 40.5 (+10.3), 8 polls, including Quantus 10/24-25. Earlier (built Oct 22): 9/27-10/20, Cooper 50.7, Whatley 40.1 (+10.6), 7 polls. RedBox (Oct 20-23, released Oct 25) is not in RCP's average. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: High Point University, Oct 1-20, Cooper 54, Whatley 40, recorded from the user's NYT poll list paste only; not in RCP, VoteHub or Poliwave. It ended before the latest poll in RCP's average (Quantus 10/24-25), so North Carolina stays on RCP's average. Oct 29 check: RCP added High Point University/YouGov (Oct 1-20) to its average on Oct 28: 9/27-10/25, Cooper 51.1, Whatley 40.4, 9 polls. HPU's release (Oct 28) gives 620 LV."
