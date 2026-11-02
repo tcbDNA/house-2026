@@ -116,3 +116,4 @@ nov2-insideradvantage,10.13,236,241,226,262,0.986,53,53,0.777,"Polls: InsiderAdv
 nov2-ecu,10.13,236,241,226,262,0.986,53,53,0.777,"Polls: East Carolina University, North Carolina Senate (Oct 26-29)"
 nov2-atlas,10.13,236,241,226,262,0.986,53,53,0.777,Polls: AtlasIntel Texas (Oct 28-Nov 1); match 'AtlasIntel' to RCP's 'Atlas Intel'
 nov2-trafalgar,10.13,236,241,226,262,0.986,53,53,0.777,Polls: Trafalgar Group Texas Senate (Oct 31-Nov 1)
+atlasintel-natl-crosstab,10.53,238,243,227,264,0.99,53,53,0.787,"Crosstab environment: AtlasIntel national (Oct 28-Nov 1), LV per RCP"
