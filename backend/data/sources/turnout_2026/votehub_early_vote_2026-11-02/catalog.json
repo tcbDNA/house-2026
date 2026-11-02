@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-11-02T21:36:15Z",
+  "services": {
+    "forecast": {
+      "base_url": "https://2026-forecast.votehub.com",
+      "race_path_template": "/v1/races/{forecast_race_id}",
+      "map_results_path_template": "/v1/map/results/{forecast_race_id}",
+      "last_updated_path": "/v1/sims/last-updated",
+      "probability_party_id": "R"
+    }
+  },
+  "elections": [
+    {
+      "id": "2026-general",
+      "enabled": true,
+      "states": [
+        {
+          "id": "AK",
+          "name": "Alaska",
+          "slug": "alaska",
+          "enabled": true,
+          "config": "/2026-general/alaska/config.json"
+        },
+        {
+          "id": "NC",
+          "name": "North Carolina",
+          "slug": "north-carolina",
+          "enabled": true,
+          "config": "/2026-general/north-carolina/config.json"
+        },
+        {
+          "id": "FL",
+          "name": "Florida",
+          "slug": "florida",
+          "enabled": true,
+          "config": "/2026-general/florida/config.json"
+        },
+        {
+          "id": "GA",
+          "name": "Georgia",
+          "slug": "georgia",
+          "enabled": true,
+          "config": "/2026-general/georgia/config.json"
+        },
+        {
+          "id": "TX",
+          "name": "Texas",
+          "slug": "texas",
+          "enabled": true,
+          "config": "/2026-general/texas/config.json"
+        },
+        {
+          "id": "KS",
+          "name": "Kansas",
+          "slug": "kansas",
+          "enabled": true,
+          "config": "/2026-general/kansas/config.json"
+        },
+        {
+          "id": "IA",
+          "name": "Iowa",
+          "slug": "iowa",
+          "enabled": true,
+          "config": "/2026-general/iowa/config.json"
+        },
+        {
+          "id": "NE",
+          "name": "Nebraska",
+          "slug": "nebraska",
+          "enabled": true,
+          "config": "/2026-general/nebraska/config.json"
+        },
+        {
+          "id": "MI",
+          "name": "Michigan",
+          "slug": "michigan",
+          "enabled": true,
+          "config": "/2026-general/michigan/config.json"
+        },
+        {
+          "id": "OH",
+          "name": "Ohio",
+          "slug": "ohio",
+          "enabled": true,
+          "config": "/2026-general/ohio/config.json"
+        },
+        {
+          "id": "WI",
+          "name": "Wisconsin",
+          "slug": "wisconsin",
+          "enabled": true,
+          "config": "/2026-general/wisconsin/config.json"
+        },
+        {
+          "id": "SC",
+          "name": "South Carolina",
+          "slug": "south-carolina",
+          "enabled": true,
+          "config": "/2026-general/south-carolina/config.json"
+        },
+        {
+          "id": "ME",
+          "name": "Maine",
+          "slug": "maine",
+          "enabled": true,
+          "config": "/2026-general/maine/config.json"
+        },
+        {
+          "id": "NH",
+          "name": "New Hampshire",
+          "slug": "new-hampshire",
+          "enabled": true,
+          "config": "/2026-general/new-hampshire/config.json"
+        },
+        {
+          "id": "NV",
+          "name": "Nevada",
+          "slug": "nevada",
+          "enabled": true,
+          "config": "/2026-general/nevada/config.json"
+        },
+        {
+          "id": "VA",
+          "name": "Virginia",
+          "slug": "virginia",
+          "enabled": true,
+          "config": "/2026-general/virginia/config.json"
+        }
+      ]
+    }
+  ]
+}

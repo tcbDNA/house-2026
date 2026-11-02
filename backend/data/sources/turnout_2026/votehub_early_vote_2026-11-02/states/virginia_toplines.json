@@ -1,0 +1,42 @@
+{
+  "updated_at": "2026-11-02T21:32:16Z",
+  "electorate_shift": {
+    "label": "FINAL ELECTORATE SHIFT",
+    "title": "ESTIMATED TURNOUT BOOST",
+    "footer": "Modeled 2024 vote among 2026 electorate includes people who both did and did not vote in 2024.",
+    "value": "D +3.1",
+    "color": "#2384B8",
+    "note": {
+      "title": "About electorate shift",
+      "body": "The 2024 result is the actual presidential election result. The modeled 2026 electorate reflects 2026 expected voters’ estimated 2024 presidential preferences, including those who did not actually vote in 2024. In Virginia, a change from a Harris +5.8 result to an electorate who would have voted Harris +8.9 if they came out represents a 3.1-point shift toward Democrats. This does not consider persuasion changes."
+    }
+  },
+  "electorate_2024": {
+    "label": "2024 ELECTORATE",
+    "descriptor": "ACTUAL RESULT",
+    "value": "Harris +5.8",
+    "color": "#2384B8"
+  },
+  "electorate_2026": {
+    "label": "2026 ELECTORATE",
+    "descriptor": "MODELED PREFERENCE",
+    "value": "Harris +8.9",
+    "color": "#2384B8"
+  },
+  "aggregate": {
+    "count": 1583703
+  },
+  "toplines": {
+    "early": {
+      "count": 1277640,
+      "final_count": 1276559
+    },
+    "mail_returns": {
+      "count": 306063,
+      "final_count": 305766
+    },
+    "remaining": {
+      "count": 1686774
+    }
+  }
+}

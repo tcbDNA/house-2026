@@ -186,3 +186,7 @@ FEC API and docquery downloads (candidate totals through the pre-general report,
 ## Georgia early vote, Georgia Votes (turnout_2026/ga_georgiavotes_2026-11-02/) — not used by the model
 
 Pages from georgiavotes.com (built from the Secretary of State's absentee and voter history files; updated 2026-11-02 09:18), retrieved 2026-11-02. URLs in the folder's README.md.
+
+## VoteHub early-vote tracker (turnout_2026/votehub_early_vote_2026-11-02/) — not used by the model
+
+The public JSON behind VoteHub's 2026 Early Vote Tracker (16 states; Wisconsin in full), retrieved 2026-11-02. URLs in the folder's README.md.

@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en-US" data-vh-theme-fallback>
+<head>
+	<meta charset="UTF-8" />
+	<script data-cfasync="false" data-no-optimize="1" id="votehub-theme-init">
+/* Runs before styles and product bundles; also usable by standalone builds. */
+(function (window, document) {
+  'use strict';
+  if (window.VoteHubTheme) return;
+
+  var root = document.documentElement;
+  var key = 'votehub-theme';
+  var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var listeners = [];
+  var preference;
+  var resolved;
+  var memoryOnly = false;
+
+  function valid(value) {
+    return value === 'light' || value === 'dark' || value === 'system';
+  }
+
+  function read(migrate) {
+    try {
+      var saved = window.localStorage.getItem(key);
+      if (valid(saved)) return saved;
+      // An invalid existing site value must not resurrect an old app preference.
+      if (migrate && saved === null) {
+        var settings = JSON.parse(window.localStorage.getItem('maplab-settings') || '{}');
+        if (settings && valid(settings.theme)) {
+          try { window.localStorage.setItem(key, settings.theme); } catch (_) {}
+          return settings.theme;
+        }
+      }
+    } catch (_) {}
+    return 'system';
+  }
+
+  function override() {
+    var value = root.getAttribute('data-theme-override');
+    if (value === 'light' || value === 'dark') return value;
+    return root.getAttribute('data-display') === 'tv' ? 'dark' : null;
+  }
+
+  function snapshot() {
+    return { preference: preference, resolved: resolved, override: override() };
+  }
+
+  function apply(notify) {
+    resolved = override() || (preference === 'system' ? (media && media.matches ? 'dark' : 'light') : preference);
+    root.setAttribute('data-theme', resolved);
+    root.setAttribute('data-theme-preference', preference);
+    root.setAttribute('data-vh-theme', 'enabled');
+    root.style.colorScheme = resolved;
+    if (!notify) return;
+    listeners.slice().forEach(function (listener) {
+      // One product cannot prevent the other subscribers from repainting.
+      try { listener(snapshot()); } catch (error) { if (window.console) window.console.error(error); }
+    });
+    window.dispatchEvent(new window.CustomEvent('votehub:themechange', { detail: snapshot() }));
+  }
+
+  preference = read(true);
+  apply(false);
+  window.VoteHubTheme = Object.freeze({
+    version: 1,
+    get: snapshot,
+    set: function (value) {
+      if (!valid(value)) throw new TypeError('Appearance must be light, dark, or system.');
+      preference = value;
+      try { window.localStorage.setItem(key, value); memoryOnly = false; } catch (_) { memoryOnly = true; }
+      apply(true);
+    },
+    subscribe: function (listener) {
+      if (typeof listener !== 'function') throw new TypeError('Theme subscriber must be a function.');
+      listeners.push(listener);
+      try { listener(snapshot()); } catch (error) { if (window.console) window.console.error(error); }
+      return function () { listeners = listeners.filter(function (item) { return item !== listener; }); };
+    }
+  });
+
+  function systemChanged() { if (preference === 'system') apply(true); }
+  if (media && media.addEventListener) media.addEventListener('change', systemChanged);
+  else if (media && media.addListener) media.addListener(systemChanged);
+  window.addEventListener('storage', function (event) {
+    if (event.key !== key && event.key !== null) return;
+    // sessionStorage events must not change the site preference.
+    try { if (event.storageArea && event.storageArea !== window.localStorage) return; } catch (_) {}
+    preference = read(false);
+    apply(true);
+  });
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      if (!memoryOnly) preference = read(false);
+      apply(true);
+    }
+  });
+})(window, document);
+</script>
+<script data-cfasync="false" data-no-optimize="1" id="votehub-embed-theme">
+/* Datawrapper embeds render their own dark variant when the embed URL carries
+   `dark=true`. Only that parameter is changed; chart id, version and every other
+   query value stay as authored. Runs in the head so parser-inserted iframes are
+   switched before their first load finishes. */
+(function () {
+  'use strict';
+  var theme = window.VoteHubTheme;
+  if (!theme || window.VoteHubEmbedTheme) return;
+  var HOSTS = /(^|\.)(dwcdn\.net|datawrapper\.de)$/i;
+
+  function themedSrc(src, dark) {
+    var url;
+    try { url = new URL(src, document.baseURI); } catch (error) { return null; }
+    if (!HOSTS.test(url.hostname)) return null;
+    var current = url.searchParams.get('dark');
+    // No parameter already means light, so a light page leaves untouched URLs alone.
+    if (dark ? current === 'true' : current === null || current === 'false') return null;
+    url.searchParams.set('dark', dark ? 'true' : 'false');
+    return url.href;
+  }
+
+  function apply(frame, dark) {
+    var src = frame.getAttribute('src');
+    if (!src) return;
+    var next = themedSrc(src, dark);
+    if (next) frame.setAttribute('src', next);
+  }
+
+  function applyAll(root, dark) {
+    if (!root || !root.querySelectorAll) return;
+    if (root.tagName === 'IFRAME') apply(root, dark);
+    var frames = root.querySelectorAll('iframe[src]');
+    for (var i = 0; i < frames.length; i++) apply(frames[i], dark);
+  }
+
+  function isDark() { return theme.get().resolved === 'dark'; }
+
+  if (window.MutationObserver) {
+    new window.MutationObserver(function (records) {
+      var dark = isDark();
+      for (var i = 0; i < records.length; i++) {
+        var record = records[i];
+        if (record.type === 'attributes') apply(record.target, dark);
+        for (var j = 0; j < record.addedNodes.length; j++) applyAll(record.addedNodes[j], dark);
+      }
+    }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+  }
+  theme.subscribe(function () { applyAll(document, isDark()); });
+
+  window.VoteHubEmbedTheme = Object.freeze({ themedSrc: themedSrc });
+})();
+</script>
+<style id="votehub-theme-critical">html[data-vh-theme="enabled"][data-theme="dark"]{background:#151519;color-scheme:dark}html[data-vh-theme="enabled"][data-theme="dark"] body{background:#151519;color:#f3f3f7}</style><script data-cfasync="false" data-no-optimize="1" id="votehub-article-images">
+/* Swap only opted-in article images, following VoteHub's resolved theme. */
+(function (window, document) {
+  'use strict';
+  var observed = new WeakSet();
+  var images = [];
+  function prepare(image) {
+    if (observed.has(image)) return;
+    observed.add(image);
+    image.setAttribute('data-vh-light-src', image.getAttribute('src') || '');
+    image.setAttribute('data-vh-light-srcset', image.getAttribute('srcset') || '');
+    image.setAttribute('data-vh-light-sizes', image.getAttribute('sizes') || '');
+    images.push(image);
+  }
+  function sync() {
+    document.querySelectorAll('img[data-vh-dark-src]').forEach(prepare);
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    images = images.filter(function (image) { return image.isConnected; });
+    images.forEach(function (image) {
+      var source = dark ? image.getAttribute('data-vh-dark-src') : image.getAttribute('data-vh-light-src');
+      if (dark) {
+        image.removeAttribute('srcset');
+        image.removeAttribute('sizes');
+      } else {
+        var srcset = image.getAttribute('data-vh-light-srcset');
+        var sizes = image.getAttribute('data-vh-light-sizes');
+        if (srcset) image.setAttribute('srcset', srcset); else image.removeAttribute('srcset');
+        if (sizes) image.setAttribute('sizes', sizes); else image.removeAttribute('sizes');
+      }
+      if (source && image.getAttribute('src') !== source) image.setAttribute('src', source);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sync);
+  else sync();
+  window.addEventListener('votehub:themechange', sync);
+  new MutationObserver(sync).observe(document.documentElement, { childList: true, subtree: true });
+})(window, document);
+</script>
+
+<!-- Author Meta Tags by Molongui Authorship, visit: https://wordpress.org/plugins/molongui-authorship/ -->
+<meta name="author" content="Zachary Donnini">
+<!-- /Molongui Authorship -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+                <script>(function () { try { var h = localStorage.getItem('votehub_subscription_hint'); if (h === '1') { document.documentElement.classList.add('votehub-has-subscription'); } else if (h === '0') { document.documentElement.classList.add('votehub-no-subscription'); } } catch (e) { } })();</script>
+        
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="robots" content="max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<link rel="canonical" href="https://votehub.com/2026-early-vote-methodology/">
+<meta name="description" content="VoteHub is launching our early vote tracker for the 2026 midterms, in partnership with L2. Here’s how and why we will be interpreting the ballot return data up…">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="VoteHub">
+<meta property="og:title" content="Decoding the Early Vote: What We Can, And Can’t, Learn From the Early Voting Window">
+<meta property="og:description" content="VoteHub is launching our early vote tracker for the 2026 midterms, in partnership with L2. Here’s how and why we will be interpreting the ballot return data up until November.">
+<meta property="og:url" content="https://votehub.com/2026-early-vote-methodology/">
+<meta property="og:image" content="https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-scaled.png">
+<meta property="og:image:width" content="2560">
+<meta property="og:image:height" content="1440">
+<meta property="article:published_time" content="2026-09-23T22:29:52+00:00">
+<meta property="article:modified_time" content="2026-09-23T22:45:15+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@austinjpark">
+<meta name="twitter:title" content="Decoding the Early Vote: What We Can, And Can’t, Learn From the Early Voting Window">
+<meta name="twitter:description" content="VoteHub is launching our early vote tracker for the 2026 midterms, in partnership with L2. Here’s how and why we will be interpreting the ballot return data up until November.">
+<meta name="twitter:image" content="https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-scaled.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://votehub.com/#/schema/WebSite","url":"https://votehub.com/","name":"VoteHub","description":"Analysis, Presidential Approval, and Election Results","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://votehub.com/search/{search_term_string}/"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","@id":"https://votehub.com/#/schema/Organization","name":"VoteHub","url":"https://votehub.com/","logo":{"@type":"ImageObject","url":"https://votehub.com/wp-content/uploads/2025/09/cropped-votehub-coin.png","contentUrl":"https://votehub.com/wp-content/uploads/2025/09/cropped-votehub-coin.png","width":512,"height":512,"contentSize":"24558"}}},{"@type":"WebPage","@id":"https://votehub.com/2026-early-vote-methodology/","url":"https://votehub.com/2026-early-vote-methodology/","name":"Decoding the Early Vote: What We Can, And Can’t, Learn From the Early Voting Window - VoteHub","description":"VoteHub is launching our early vote tracker for the 2026 midterms, in partnership with L2. Here’s how and why we will be interpreting the ballot return data up…","inLanguage":"en-US","isPartOf":{"@id":"https://votehub.com/#/schema/WebSite"},"breadcrumb":{"@type":"BreadcrumbList","@id":"https://votehub.com/#/schema/BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://votehub.com/","name":"VoteHub"},{"@type":"ListItem","position":2,"item":"https://votehub.com/category/analysis/","name":"Analysis"},{"@type":"ListItem","position":3,"name":"Decoding the Early Vote: What We Can, And Can’t, Learn From the Early Voting Window"}]},"potentialAction":{"@type":"ReadAction","target":"https://votehub.com/2026-early-vote-methodology/"},"datePublished":"2026-09-23T22:29:52+00:00","dateModified":"2026-09-23T22:45:15+00:00","author":{"@type":"Person","@id":"https://votehub.com/#/schema/Person/c9129e43e98205107a0aaf70b5628fe8","name":"Zachary Donnini","sameAs":"https://x.com/austinjpark"}}]}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 7.14ms meta | 0.32ms boot -->
+
+<title>Decoding the Early Vote: What We Can, And Can’t, Learn From the Early Voting Window - VoteHub</title>
+<link rel='dns-prefetch' href='//www.gstatic.com' />
+<link rel='dns-prefetch' href='//challenges.cloudflare.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//cdn.votehub.com' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel="alternate" type="application/rss+xml" title="VoteHub &raquo; Feed" href="https://votehub.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="VoteHub &raquo; Comments Feed" href="https://votehub.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="VoteHub &raquo; Decoding the Early Vote: What We Can, And Can’t, Learn From the Early Voting Window Comments Feed" href="https://votehub.com/2026-early-vote-methodology/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://votehub.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvotehub.com%2F2026-early-vote-methodology%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://votehub.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvotehub.com%2F2026-early-vote-methodology%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+ 
+<style id="wp-block-navigation-link-inline-css">
+.wp-block-navigation .wp-block-navigation-item__label{overflow-wrap:break-word}.wp-block-navigation .wp-block-navigation-item__description{display:none}.link-ui-tools{outline:1px solid #f0f0f0;padding:8px}.link-ui-block-inserter{padding-top:8px}.link-ui-block-inserter__back{margin-left:8px;text-transform:uppercase}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/navigation-link/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-navigation-css' href='https://votehub.com/wp-includes/blocks/navigation/style.min.css?ver=7.1.4' media='all' />
+<style id="fresh-blog-lite-navigation-style-inline-css">
+@media(min-width:576px)and (max-width:767.98px){.is-style-navigation-d-medium .wp-block-navigation__responsive-container-open:not(.always-shown){display:flex!important}.is-style-navigation-d-medium .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open){display:none!important}}@media(min-width:576px)and (max-width:991.98px){.is-style-navigation-d-large .wp-block-navigation__responsive-container-open:not(.always-shown){display:flex!important}.is-style-navigation-d-large .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open){display:none!important}}@media(min-width:576px)and (max-width:1199.98px){.is-style-navigation-d-xlarge .wp-block-navigation__responsive-container-open:not(.always-shown){display:flex!important}.is-style-navigation-d-xlarge .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open){display:none!important}}.wp-block-navigation__responsive-container:not(.hidden-by-default) .wp-block-navigation__container.is-style-navigation-basic{z-index:9999}.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__container.is-style-navigation-basic>.wp-block-navigation-item{height:50px}.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__container.is-style-navigation-basic .wp-block-navigation__submenu-container{border:1px solid var(--wp--preset--color--secondary-200)!important;border-radius:10px;box-shadow:0 3px 30px #00000014;padding:10px}.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__container.is-style-navigation-basic .wp-block-navigation__submenu-container .wp-block-navigation-item a:not(.wp-element-button){padding:.25em 1em!important}.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__container.is-style-navigation-basic .wp-block-navigation__submenu-container:not(.has-background){background-color:var(--wp--preset--color--base)!important}.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__container.is-style-navigation-basic .wp-block-navigation__submenu-container:not(.has-background) .wp-block-navigation-item a:not(.wp-element-button){border-bottom:1px solid var(--wp--preset--color--secondary-200)!important;padding:.5em 1em!important}.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__container.is-style-navigation-basic .wp-block-navigation__submenu-container:not(.has-background) .wp-block-navigation-item:last-child a:not(.wp-element-button){border-bottom:none!important}.wp-block-navigation__responsive-container:not(.hidden-by-default).is-menu-open .wp-block-navigation__container.is-style-navigation-basic{gap:var(--wp--preset--spacing--12)!important;padding-left:var(--wp--preset--spacing--20)!important;padding-right:var(--wp--preset--spacing--20)!important}.wp-block-navigation__responsive-container:not(.hidden-by-default).is-menu-open .wp-block-navigation__container.is-style-navigation-basic .wp-block-navigation__submenu-container{padding-top:var(--wp--preset--spacing--12)!important}.wp-block-navigation__responsive-container:not(.hidden-by-default).is-menu-open .wp-block-navigation__container.is-style-navigation-basic .wp-block-navigation__submenu-container .wp-block-navigation-item a:not(.wp-element-button){padding:.25em 1em!important}
+
+/*# sourceURL=https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/navigation.css */
+</style>
+<style id="wp-block-button-inline-css">
+.wp-block-button__link{align-content:center;box-sizing:border-box;cursor:pointer;display:inline-block;height:100%;text-align:center;word-break:break-word}.wp-block-button__link.aligncenter{text-align:center}.wp-block-button__link.alignright{text-align:right}:where(.wp-block-button__link){border-radius:9999px;box-shadow:none;padding:calc(.667em + 2px) calc(1.333em + 2px);text-decoration:none}.wp-block-button[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons>.wp-block-button.has-custom-width{max-width:none}.wp-block-buttons>.wp-block-button.has-custom-width .wp-block-button__link{width:100%}.wp-block-buttons>.wp-block-button.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons>.wp-block-button[class*=wp-block-button__width]{width:calc(var(--wp--block-button--width)*1% - var(--wp--style--block-gap, .5em)*(1 - var(--wp--block-button--width)/100))}.wp-block-buttons>.wp-block-button.wp-block-button__width-25{width:calc(25% - var(--wp--style--block-gap, .5em)*.75)}.wp-block-buttons>.wp-block-button.wp-block-button__width-50{width:calc(50% - var(--wp--style--block-gap, .5em)*.5)}.wp-block-buttons>.wp-block-button.wp-block-button__width-75{width:calc(75% - var(--wp--style--block-gap, .5em)*.25)}.wp-block-buttons>.wp-block-button.wp-block-button__width-100{flex-basis:100%;width:100%}.wp-block-buttons.is-vertical>.wp-block-button[class*=wp-block-button__width]{width:calc(var(--wp--block-button--width)*1%)}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-25{width:25%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-50{width:50%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-75{width:75%}.wp-block-button.is-style-squared,.wp-block-button__link.wp-block-button.is-style-squared{border-radius:0}.wp-block-button.no-border-radius,.wp-block-button__link.no-border-radius{border-radius:0!important}:root :where(.wp-block-button .wp-block-button__link.is-style-outline),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link){border:2px solid;padding:.667em 1.333em}:root :where(.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color)),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-text-color)){color:currentColor}:root :where(.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background)),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)){background-color:transparent;background-image:none}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/button/style.min.css */
+</style>
+<style id="fresh-blog-lite-button-style-inline-css">
+.is-style-button-size-1 a.wp-block-button__link{padding:var(--wp--preset--spacing--8) var(--wp--preset--spacing--14)!important}.is-style-button-hover a:hover{box-shadow:0 .5em .5em -.4em var(--wp--preset--color--warning);transform:translateY(-.1em);transition:all .2s ease-out}
+
+/*# sourceURL=https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/button.css */
+</style>
+<style id="wp-block-buttons-inline-css">
+.wp-block-buttons{box-sizing:border-box}.wp-block-buttons.is-vertical{flex-direction:column}.wp-block-buttons.is-vertical>.wp-block-button:last-child{margin-bottom:0}.wp-block-buttons>.wp-block-button{display:inline-block;margin:0}.wp-block-buttons.is-content-justification-left{justify-content:flex-start}.wp-block-buttons.is-content-justification-left.is-vertical{align-items:flex-start}.wp-block-buttons.is-content-justification-center{justify-content:center}.wp-block-buttons.is-content-justification-center.is-vertical{align-items:center}.wp-block-buttons.is-content-justification-right{justify-content:flex-end}.wp-block-buttons.is-content-justification-right.is-vertical{align-items:flex-end}.wp-block-buttons.is-content-justification-space-between{justify-content:space-between}.wp-block-buttons.aligncenter{text-align:center}.wp-block-buttons:not(.is-content-justification-space-between,.is-content-justification-right,.is-content-justification-left,.is-content-justification-center) .wp-block-button.aligncenter{margin-left:auto;margin-right:auto;width:100%}.wp-block-buttons[style*=text-decoration] .wp-block-button,.wp-block-buttons[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons .wp-block-button__link{width:100%}.wp-block-button.aligncenter{text-align:center}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/buttons/style.min.css */
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/group/style.min.css */
+</style>
+<style id="fresh-blog-lite-group-style-inline-css">
+.wp-block-group .opacity-0{opacity:0}.wp-block-group .opacity-10{opacity:.1}.wp-block-group .opacity-20{opacity:.2}.wp-block-group .opacity-30{opacity:.3}.wp-block-group .opacity-40{opacity:.4}.wp-block-group .opacity-50{opacity:.5}.wp-block-group .opacity-55{opacity:.55}.wp-block-group .opacity-60{opacity:.6}.wp-block-group .opacity-65{opacity:.65}.wp-block-group .opacity-70{opacity:.7}.wp-block-group .opacity-75{opacity:.75}.wp-block-group .opacity-80{opacity:.8}.wp-block-group .opacity-85{opacity:.85}.wp-block-group .opacity-90{opacity:.9}.wp-block-group .opacity-95{opacity:.95}.wp-block-group .opacity-100{opacity:1}.is-style-group-plain-links a:link,.is-style-group-plain-links a:visited{text-decoration:none!important}.is-style-group-plain-links a:hover{text-decoration:underline!important}@media(max-width:767.98px){.is-style-grid-media-text{grid-template-columns:100%!important}}@media(min-width:768px){.is-style-grid-media-text{align-items:center!important}}@media(max-width:575.98px){.is-style-row-wrap-sm-down{flex-wrap:wrap!important}.is-style-row-wrap-sm-down.row-child-100>*{width:100%!important}}@media(max-width:767.98px){.is-style-row-wrap-md-down{flex-wrap:wrap!important}.is-style-row-wrap-md-down.row-child-100>*{width:100%!important}}@media(max-width:991.98px){.is-style-row-wrap-lg-down{flex-wrap:wrap!important}.is-style-row-wrap-lg-down.row-child-100>*{width:100%!important}}
+
+/*# sourceURL=https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/group.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:rgba(90,90,90,.25);border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto rgba(90,90,90,.25);outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:rgba(90,90,90,.25);border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="fresh-blog-lite-image-style-inline-css">
+.is-style-image-shine{overflow:hidden;position:relative}.is-style-image-shine:before{background:linear-gradient(90deg,#fff0 0,#ffffff4d 50%,#fff0);content:"";height:100%;left:-75%;pointer-events:none;position:absolute;top:0;transform:skewX(-25deg);transition:all .5s ease;width:50%;z-index:1}.is-style-image-shine:hover:before{left:125%}.is-style-image-shine-2{overflow:hidden;position:relative}.is-style-image-shine-2:after{background:linear-gradient(90deg,#fff0,#fff6 50%,#fff0);content:"";height:100%;left:50%;opacity:0;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%);transition:width .4s ease-in-out,opacity .2s ease-in-out;width:0;z-index:1}.is-style-image-shine-2:hover:after{opacity:1;width:100%}
+
+/*# sourceURL=https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/image.css */
+</style>
+<style id="wp-block-search-inline-css">
+.wp-block-search__button{margin-left:10px;word-break:normal}.wp-block-search__button.has-icon{line-height:0}.wp-block-search__button svg{fill:currentColor;height:1.25em;min-height:24px;min-width:24px;vertical-align:text-bottom;width:1.25em}:where(.wp-block-search__button){border:1px solid #ccc;padding:6px 10px}.wp-block-search__inside-wrapper{display:flex;flex:auto;flex-wrap:nowrap;max-width:100%}.wp-block-search__label{width:100%}.wp-block-search.wp-block-search__button-only .wp-block-search__button{box-sizing:border-box;display:flex;flex-shrink:0;justify-content:center;margin-left:0;max-width:100%}.wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper{min-width:0!important;transition-property:width}.wp-block-search.wp-block-search__button-only .wp-block-search__input{flex-basis:100%;transition-duration:.3s}.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden,.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__inside-wrapper{overflow:hidden}.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__input{border-left-width:0!important;border-right-width:0!important;flex-basis:0;flex-grow:0;margin:0;min-width:0!important;padding-left:0!important;padding-right:0!important;width:0!important}:where(.wp-block-search__input){-webkit-appearance:initial;-moz-appearance:initial;appearance:none;border:1px solid #949494;flex-grow:1;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin-left:0;margin-right:0;min-width:3rem;padding:8px;text-decoration:unset!important;text-transform:inherit}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper){background-color:#fff;border:1px solid #949494;box-sizing:border-box;padding:4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input{border:none;border-radius:0;padding:0 4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input:focus{outline:none}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) :where(.wp-block-search__button){padding:4px 8px}.wp-block-search.aligncenter .wp-block-search__inside-wrapper{margin:auto}.wp-block[data-align=right] .wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper{float:right}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/search/style.min.css */
+</style>
+<link rel='stylesheet' id='votehub-firebase-login-button-styles-css' href='https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/css/login-button.css?ver=2.3.6' media='all' />
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/columns/style.min.css */
+</style>
+<style id="fresh-blog-lite-columns-style-inline-css">
+.is-style-columns-content.wp-block-columns:not(.is-not-stacked-on-mobile){flex-wrap:wrap!important}@media(min-width:576px)and (max-width:991.98px){.is-style-columns-content.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:content!important;flex-grow:1!important}}.is-style-columns-first-wide.wp-block-columns:not(.is-not-stacked-on-mobile){flex-wrap:wrap!important}@media(min-width:576px)and (max-width:991.98px){.is-style-columns-first-wide.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:content!important;flex-grow:1!important}.is-style-columns-first-wide.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:first-child{flex-basis:100%!important}}
+
+/*# sourceURL=https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/columns.css */
+</style>
+<style id="wp-block-post-terms-inline-css">
+.wp-block-post-terms{box-sizing:border-box}.wp-block-post-terms .wp-block-post-terms__separator{white-space:pre-wrap}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/post-terms/style.min.css */
+</style>
+<style id="wp-block-post-title-inline-css">
+.wp-block-post-title{box-sizing:border-box;word-break:break-word}.wp-block-post-title :where(a){display:inline-block;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/post-title/style.min.css */
+</style>
+<style id="wp-block-post-excerpt-inline-css">
+:where(.wp-block-post-excerpt){box-sizing:border-box;margin-bottom:var(--wp--style--block-gap);margin-top:var(--wp--style--block-gap)}.wp-block-post-excerpt__excerpt{margin-bottom:0;margin-top:0}.wp-block-post-excerpt__more-text{margin-bottom:0;margin-top:var(--wp--style--block-gap)}.wp-block-post-excerpt__more-link{display:inline-block}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/post-excerpt/style.min.css */
+</style>
+<style id="wp-block-post-date-inline-css">
+.wp-block-post-date{box-sizing:border-box}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/post-date/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="fresh-blog-lite-paragraph-style-inline-css">
+.is-style-paragraph-td-none a:link,.is-style-paragraph-td-none a:visited{text-decoration:none}.is-style-paragraph-td-none a:hover{text-decoration:underline}
+
+/*# sourceURL=https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/paragraph.css */
+</style>
+<style id="wp-block-post-author-name-inline-css">
+.wp-block-post-author-name{box-sizing:border-box}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/post-author-name/style.min.css */
+</style>
+<style id="wp-block-post-featured-image-inline-css">
+.wp-block-post-featured-image{margin-left:0;margin-right:0}.wp-block-post-featured-image a{display:block;height:100%}.wp-block-post-featured-image :where(img){box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom;width:100%}.wp-block-post-featured-image.alignfull img,.wp-block-post-featured-image.alignwide img{width:100%}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim{background-color:#000;inset:0;position:absolute}.wp-block-post-featured-image{position:relative}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-gradient{background-color:transparent}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-0{opacity:0}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-10{opacity:.1}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-20{opacity:.2}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-30{opacity:.3}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-40{opacity:.4}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-50{opacity:.5}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-60{opacity:.6}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-70{opacity:.7}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-80{opacity:.8}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-90{opacity:.9}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-100{opacity:1}.wp-block-post-featured-image:where(.alignleft,.alignright){width:100%}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/post-featured-image/style.min.css */
+</style>
+<style id="fresh-blog-lite-post-featured-image-style-inline-css">
+.is-style-image-shine{overflow:hidden;position:relative}.is-style-image-shine:before{background:linear-gradient(90deg,#fff0 0,#ffffff4d 50%,#fff0);content:"";height:100%;left:-75%;pointer-events:none;position:absolute;top:0;transform:skewX(-25deg);transition:all .5s ease;width:50%;z-index:1}.is-style-image-shine:hover:before{left:125%}.is-style-image-shine-2{overflow:hidden;position:relative}.is-style-image-shine-2:after{background:linear-gradient(90deg,#fff0,#fff6 50%,#fff0);content:"";height:100%;left:50%;opacity:0;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%);transition:width .4s ease-in-out,opacity .2s ease-in-out;width:0;z-index:1}.is-style-image-shine-2:hover:after{opacity:1;width:100%}
+
+/*# sourceURL=https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/post-featured-image.css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-embed-inline-css">
+.wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-group.is-layout-flex .wp-block-embed{flex:1 1 0%;min-width:0}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/embed/style.min.css */
+</style>
+<style id="wp-block-post-content-inline-css">
+.wp-block-post-content{display:flow-root}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/post-content/style.min.css */
+</style>
+<style id="wp-block-site-logo-inline-css">
+.wp-block-site-logo{box-sizing:border-box;line-height:0}.wp-block-site-logo a{display:inline-block;line-height:0}.wp-block-site-logo.is-default-size img{height:auto;width:120px}.wp-block-site-logo img{height:auto;max-width:100%}.wp-block-site-logo a,.wp-block-site-logo img{border-radius:inherit}.wp-block-site-logo.aligncenter{margin-left:auto;margin-right:auto;text-align:center}:root :where(.wp-block-site-logo.is-style-rounded){border-radius:9999px}
+/*# sourceURL=https://votehub.com/wp-includes/blocks/site-logo/style.min.css */
+</style>
+<link rel='stylesheet' id='wp-block-social-links-css' href='https://votehub.com/wp-includes/blocks/social-links/style.min.css?ver=7.1.4' media='all' />
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--aspect-ratio--4-35: 4/3.5;--wp--preset--aspect-ratio--3-35: 3/3.5;--wp--preset--aspect-ratio--19-9: 19/9;--wp--preset--aspect-ratio--21-9: 21/9;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #1a1a1a;--wp--preset--color--light: #eef0f7;--wp--preset--color--accent: #351c71;--wp--preset--color--secondary: #7c3aed;--wp--preset--color--secondary-950: #4a4a4a;--wp--preset--color--secondary-900: #4a4a4a;--wp--preset--color--secondary-800: #4a4a4a;--wp--preset--color--secondary-700: #4a4a4a;--wp--preset--color--secondary-600: #737373;--wp--preset--color--secondary-500: #737373;--wp--preset--color--secondary-400: #737373;--wp--preset--color--secondary-300: #737373;--wp--preset--color--secondary-200: #e5e5e5;--wp--preset--color--secondary-100: #e5e5e5;--wp--preset--color--secondary-50: #e5e5e5;--wp--preset--color--contrast: #1a1a1a;--wp--preset--color--base: #f8f9fc;--wp--preset--color--custom-hover: #7c3aed;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--black-fadeup: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));--wp--preset--font-size--small: clamp(1.375rem, 1.375rem + ((1vw - 0.2rem) * 0.169), 1.5rem);--wp--preset--font-size--medium: clamp(1.5rem, 1.5rem + ((1vw - 0.2rem) * 0.339), 1.75rem);--wp--preset--font-size--large: clamp(1.75rem, 1.75rem + ((1vw - 0.2rem) * 0.339), 2rem);--wp--preset--font-size--x-large: clamp(2rem, 2rem + ((1vw - 0.2rem) * 0.339), 2.25rem);--wp--preset--font-size--minuscule: 0.75rem;--wp--preset--font-size--minute: 0.875rem;--wp--preset--font-size--tiny: 1rem;--wp--preset--font-size--compact: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.169), 1.125rem);--wp--preset--font-size--diminutive: clamp(1.125rem, 1.125rem + ((1vw - 0.2rem) * 0.169), 1.25rem);--wp--preset--font-size--petite: clamp(1.25rem, 1.25rem + ((1vw - 0.2rem) * 0.169), 1.375rem);--wp--preset--font-size--xx-large: clamp(2.25rem, 2.25rem + ((1vw - 0.2rem) * 0.339), 2.5rem);--wp--preset--font-size--grand: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 0.339), 2.75rem);--wp--preset--font-size--immense: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 0.678), 3rem);--wp--preset--font-size--enormous: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.017), 3.25rem);--wp--preset--font-size--tremendous: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.356), 3.5rem);--wp--preset--font-size--massive: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.695), 3.75rem);--wp--preset--font-size--towering: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 2.034), 4rem);--wp--preset--font-size--colossal: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 2.373), 4.25rem);--wp--preset--font-size--monumental: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 2.712), 4.5rem);--wp--preset--font-size--vast: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 3.051), 4.75rem);--wp--preset--font-size--gigantic: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 5.085), 6.25rem);--wp--preset--font-family--primary: "Inter", sans-serif;--wp--preset--font-family--avenir-next: "Avenir Next";--wp--preset--font-family--tt-norms-pro: "TT Norms Pro";--wp--preset--spacing--20: clamp(1rem, .5175vw + .784rem, 1.25rem);--wp--preset--spacing--30: clamp(1rem, 1.8111vw + .245rem, 1.875rem);--wp--preset--spacing--40: clamp(1rem, 3.1048vw + -.2962rem, 2.5rem);--wp--preset--spacing--50: clamp(1rem, 4.3984vw + -.8336rem, 3.125rem);--wp--preset--spacing--60: clamp(1rem, 5.6921vw + -1.3765rem, 3.75rem);--wp--preset--spacing--70: clamp(1rem, 6.9858vw + -1.9122rem, 4.375rem);--wp--preset--spacing--80: clamp(1rem, 8.2794vw + -2.4567rem, 5rem);--wp--preset--spacing--2: 0.125rem;--wp--preset--spacing--4: 0.25rem;--wp--preset--spacing--6: 0.375rem;--wp--preset--spacing--8: 0.5rem;--wp--preset--spacing--10: 0.625rem;--wp--preset--spacing--12: 0.75rem;--wp--preset--spacing--14: 0.875rem;--wp--preset--spacing--16: 1rem;--wp--preset--spacing--18: clamp(1rem, .2587vw + .8921rem, 1.125rem);--wp--preset--spacing--22: clamp(1rem, .7762vw + .6764rem, 1.375rem);--wp--preset--spacing--24: clamp(1rem, 1.0349vw + .5679rem, 1.5rem);--wp--preset--spacing--26: clamp(1rem, 1.2937vw + .4607rem, 1.625rem);--wp--preset--spacing--28: clamp(1rem, 1.5524vw + .3519rem, 1.75rem);--wp--preset--spacing--32: clamp(1rem, 2.0699vw + .1358rem, 2rem);--wp--preset--spacing--34: clamp(1rem, 2.3286vw + .0293rem, 2.125rem);--wp--preset--spacing--36: clamp(1rem, 2.5873vw + -.0802rem, 2.25rem);--wp--preset--spacing--38: clamp(1rem, 2.8461vw + -.1864rem, 2.375rem);--wp--preset--spacing--42: clamp(1rem, 3.3635vw + -.4022rem, 2.625rem);--wp--preset--spacing--44: clamp(1rem, 3.6223vw + -.5123rem, 2.75rem);--wp--preset--spacing--46: clamp(1rem, 3.881vw + -.6179rem, 2.875rem);--wp--preset--spacing--48: clamp(1rem, 4.1397vw + -.7283rem, 3rem);--wp--preset--spacing--52: clamp(1rem, 4.6572vw + -.9444rem, 3.25rem);--wp--preset--spacing--54: clamp(1rem, 4.9159vw + -1.0493rem, 3.375rem);--wp--preset--spacing--56: clamp(1rem, 5.1746vw + -1.1604rem, 3.5rem);--wp--preset--spacing--58: clamp(1rem, 5.4334vw + -1.265rem, 3.625rem);--wp--preset--spacing--62: clamp(1rem, 5.9508vw + -1.4808rem, 3.875rem);--wp--preset--spacing--64: clamp(1rem, 6.2096vw + -1.5925rem, 4rem);--wp--preset--spacing--66: clamp(1rem, 6.4683vw + -1.6965rem, 4.125rem);--wp--preset--spacing--68: clamp(1rem, 6.727vw + -1.8085rem, 4.25rem);--wp--preset--spacing--72: clamp(1rem, 7.2445vw + -2.0246rem, 4.5rem);--wp--preset--spacing--74: clamp(1rem, 7.5032vw + -2.1279rem, 4.625rem);--wp--preset--spacing--76: clamp(1rem, 7.762vw + -2.2406rem, 4.75rem);--wp--preset--spacing--78: clamp(1rem, 8.0207vw + -2.3436rem, 4.875rem);--wp--preset--spacing--82: clamp(1rem, 8.5382vw + -2.5593rem, 5.125rem);--wp--preset--spacing--84: clamp(1rem, 8.7969vw + -2.6727rem, 5.25rem);--wp--preset--spacing--86: clamp(1rem, 9.0556vw + -2.7751rem, 5.375rem);--wp--preset--spacing--88: clamp(1rem, 9.3144vw + -2.8887rem, 5.5rem);--wp--preset--spacing--90: clamp(1rem, 9.5731vw + -2.9908rem, 5.625rem);--wp--preset--spacing--92: clamp(1rem, 9.8318vw + -3.1048rem, 5.75rem);--wp--preset--spacing--94: clamp(1rem, 10.0906vw + -3.2065rem, 5.875rem);--wp--preset--spacing--96: clamp(1rem, 10.3493vw + -3.3208rem, 6rem);--wp--preset--spacing--98: clamp(1rem, 10.608vw + -3.4222rem, 6.125rem);--wp--preset--spacing--100: clamp(1rem, 10.8668vw + -3.5369rem, 6.25rem);--wp--preset--spacing--102: clamp(1rem, 11.1255vw + -3.6379rem, 6.375rem);--wp--preset--spacing--104: clamp(1rem, 11.3842vw + -3.7529rem, 6.5rem);--wp--preset--spacing--106: clamp(1rem, 11.6429vw + -3.8537rem, 6.625rem);--wp--preset--spacing--108: clamp(1rem, 11.9017vw + -3.969rem, 6.75rem);--wp--preset--spacing--110: clamp(1rem, 12.1604vw + -4.0694rem, 6.875rem);--wp--preset--spacing--112: clamp(1rem, 12.4191vw + -4.185rem, 7rem);--wp--preset--spacing--114: clamp(1rem, 12.6779vw + -4.2851rem, 7.125rem);--wp--preset--spacing--116: clamp(1rem, 12.9366vw + -4.401rem, 7.25rem);--wp--preset--spacing--118: clamp(1rem, 13.1953vw + -4.5008rem, 7.375rem);--wp--preset--spacing--120: clamp(1rem, 13.4541vw + -4.6171rem, 7.5rem);--wp--preset--spacing--122: clamp(1rem, 13.7128vw + -4.7165rem, 7.625rem);--wp--preset--spacing--124: clamp(1rem, 13.9715vw + -4.8244rem, 7.75rem);--wp--preset--spacing--126: clamp(1rem, 14.2303vw + -4.9322rem, 7.875rem);--wp--preset--spacing--128: clamp(1rem, 14.489vw + -5.0401rem, 8rem);--wp--preset--spacing--130: clamp(1rem, 14.7477vw + -5.148rem, 8.125rem);--wp--preset--spacing--132: clamp(1rem, 15.0065vw + -5.2558rem, 8.25rem);--wp--preset--spacing--134: clamp(1rem, 15.2652vw + -5.3637rem, 8.375rem);--wp--preset--spacing--136: clamp(1rem, 15.5239vw + -5.4715rem, 8.5rem);--wp--preset--spacing--138: clamp(1rem, 15.7827vw + -5.5794rem, 8.625rem);--wp--preset--spacing--140: clamp(1rem, 16.0414vw + -5.6873rem, 8.75rem);--wp--preset--spacing--142: clamp(1rem, 16.3001vw + -5.7951rem, 8.875rem);--wp--preset--spacing--144: clamp(1rem, 16.5589vw + -5.903rem, 9rem);--wp--preset--spacing--146: clamp(1rem, 16.8176vw + -6.0108rem, 9.125rem);--wp--preset--spacing--148: clamp(1rem, 17.0763vw + -6.1187rem, 9.25rem);--wp--preset--spacing--150: clamp(1rem, 17.3351vw + -6.2266rem, 9.375rem);--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);--wp--preset--shadow--diminutive: 0 0 3px 0 rgba(0,0,0,0.1);--wp--preset--shadow--petite: 0 0 5px 0 rgba(0,0,0,0.1);--wp--preset--shadow--small: 0 0 10px 0 rgba(0,0,0,0.1);--wp--custom--global--border--radius: var(--wp--preset--spacing--12);--wp--custom--global--line-height--petite: 1.1;--wp--custom--global--line-height--small: 1.2;--wp--custom--global--line-height--medium: 1.3;--wp--custom--global--line-height--large: 1.4;--wp--custom--global--line-height--x-large: 1.5;--wp--custom--global--line-height--xx-large: 1.6;--wp--custom--global--line-height--grand: 1.7;}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 680px;--wp--style--global--wide-size: 1500px; }:where(body) { margin: 0; }.wp-site-blocks { padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom); }.has-global-padding { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding > .alignfull { margin-right: calc(var(--wp--style--root--padding-right) * -1); margin-left: calc(var(--wp--style--root--padding-left) * -1); }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) { padding-right: 0; padding-left: 0; }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) > .alignfull { margin-left: 0; margin-right: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 1.5rem; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 1.5rem; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 1.5rem;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 1.5rem;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 1.5rem;}:root :where(.is-layout-grid){gap: 1.5rem;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{background-color: var(--wp--preset--color--base);color: var(--wp--preset--color--contrast);font-family: var(--wp--preset--font-family--avenir-next);font-size: var(--wp--preset--font-size--compact);font-style: normal;font-weight: 400;line-height: var(--wp--custom--global--line-height--xx-large);--wp--style--root--padding-top: 0px;--wp--style--root--padding-right: var(--wp--preset--spacing--32);--wp--style--root--padding-bottom: 0px;--wp--style--root--padding-left: var(--wp--preset--spacing--32);}a:where(:not(.wp-element-button)){color: var(--wp--preset--color--primary);font-family: var(--wp--preset--font-family--avenir-next);text-decoration: none;}:root :where(a:where(:not(.wp-element-button))){text-underline-offset: 4px}:root :where(a:where(:not(.wp-element-button)):hover){color: var(--wp--preset--color--custom-hover);text-decoration: underline;}:root :where(a:where(:not(.wp-element-button)):hover){text-underline-offset: 4px}h1, h2, h3, h4, h5, h6{color: var(--wp--preset--color--contrast);font-family: var(--wp--preset--font-family--tt-norms-pro);font-style: normal;font-weight: 500;line-height: var(--wp--custom--global--line-height--xx-large);}h1{font-size: var(--wp--preset--font-size--xx-large);line-height: var(--wp--custom--global--line-height--small);}h2{font-size: var(--wp--preset--font-size--large);line-height: var(--wp--custom--global--line-height--medium);}h3{font-size: var(--wp--preset--font-size--medium);line-height: var(--wp--custom--global--line-height--medium);}h4{font-size: var(--wp--preset--font-size--small);line-height: var(--wp--custom--global--line-height--large);}h5{font-size: var(--wp--preset--font-size--diminutive);line-height: var(--wp--custom--global--line-height--x-large);}h6{font-size: var(--wp--preset--font-size--compact);}:root :where(.wp-element-button, .wp-block-button__link){background-color: var(--vh-dark-action-bg, var(--wp--preset--color--secondary));border-radius: .33rem;border-width: 0;color: var(--vh-dark-on-action, var(--wp--preset--color--base));font-family: var(--wp--preset--font-family--avenir-next);font-size: var(--wp--preset--font-size--minute);font-style: normal;font-weight: 500;letter-spacing: inherit;line-height: inherit;padding-top: var(--wp--preset--spacing--12);padding-right: var(--wp--preset--spacing--20);padding-bottom: var(--wp--preset--spacing--12);padding-left: var(--wp--preset--spacing--20);text-decoration: none;text-transform: none;}:root :where(.wp-element-button:hover, .wp-block-button__link:hover){background-color: var(--wp--preset--color--secondary);border-color: transparent;color: var(--wp--preset--color--secondary-50);}:root :where(.wp-element-button:focus, .wp-block-button__link:focus){outline-color: var(--wp--preset--color--primary);outline-offset: 2px;}:root :where(.wp-element-caption, .wp-block-audio figcaption, .wp-block-embed figcaption, .wp-block-gallery figcaption, .wp-block-image figcaption, .wp-block-table figcaption, .wp-block-video figcaption){color: var(--wp--preset--color--secondary-800);font-family: var(--wp--preset--font-family--avenir-next);font-size: 0.8rem;font-style: normal;font-weight: 275;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-light-color{color: var(--wp--preset--color--light) !important;}.has-accent-color{color: var(--wp--preset--color--accent) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-secondary-950-color{color: var(--wp--preset--color--secondary-950) !important;}.has-secondary-900-color{color: var(--wp--preset--color--secondary-900) !important;}.has-secondary-800-color{color: var(--wp--preset--color--secondary-800) !important;}.has-secondary-700-color{color: var(--wp--preset--color--secondary-700) !important;}.has-secondary-600-color{color: var(--wp--preset--color--secondary-600) !important;}.has-secondary-500-color{color: var(--wp--preset--color--secondary-500) !important;}.has-secondary-400-color{color: var(--wp--preset--color--secondary-400) !important;}.has-secondary-300-color{color: var(--wp--preset--color--secondary-300) !important;}.has-secondary-200-color{color: var(--wp--preset--color--secondary-200) !important;}.has-secondary-100-color{color: var(--wp--preset--color--secondary-100) !important;}.has-secondary-50-color{color: var(--wp--preset--color--secondary-50) !important;}.has-contrast-color{color: var(--wp--preset--color--contrast) !important;}.has-base-color{color: var(--wp--preset--color--base) !important;}.has-custom-hover-color{color: var(--wp--preset--color--custom-hover) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-light-background-color{background-color: var(--wp--preset--color--light) !important;}.has-accent-background-color{background-color: var(--wp--preset--color--accent) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-secondary-950-background-color{background-color: var(--wp--preset--color--secondary-950) !important;}.has-secondary-900-background-color{background-color: var(--wp--preset--color--secondary-900) !important;}.has-secondary-800-background-color{background-color: var(--wp--preset--color--secondary-800) !important;}.has-secondary-700-background-color{background-color: var(--wp--preset--color--secondary-700) !important;}.has-secondary-600-background-color{background-color: var(--wp--preset--color--secondary-600) !important;}.has-secondary-500-background-color{background-color: var(--wp--preset--color--secondary-500) !important;}.has-secondary-400-background-color{background-color: var(--wp--preset--color--secondary-400) !important;}.has-secondary-300-background-color{background-color: var(--wp--preset--color--secondary-300) !important;}.has-secondary-200-background-color{background-color: var(--wp--preset--color--secondary-200) !important;}.has-secondary-100-background-color{background-color: var(--wp--preset--color--secondary-100) !important;}.has-secondary-50-background-color{background-color: var(--wp--preset--color--secondary-50) !important;}.has-contrast-background-color{background-color: var(--wp--preset--color--contrast) !important;}.has-base-background-color{background-color: var(--wp--preset--color--base) !important;}.has-custom-hover-background-color{background-color: var(--wp--preset--color--custom-hover) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-light-border-color{border-color: var(--wp--preset--color--light) !important;}.has-accent-border-color{border-color: var(--wp--preset--color--accent) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-secondary-950-border-color{border-color: var(--wp--preset--color--secondary-950) !important;}.has-secondary-900-border-color{border-color: var(--wp--preset--color--secondary-900) !important;}.has-secondary-800-border-color{border-color: var(--wp--preset--color--secondary-800) !important;}.has-secondary-700-border-color{border-color: var(--wp--preset--color--secondary-700) !important;}.has-secondary-600-border-color{border-color: var(--wp--preset--color--secondary-600) !important;}.has-secondary-500-border-color{border-color: var(--wp--preset--color--secondary-500) !important;}.has-secondary-400-border-color{border-color: var(--wp--preset--color--secondary-400) !important;}.has-secondary-300-border-color{border-color: var(--wp--preset--color--secondary-300) !important;}.has-secondary-200-border-color{border-color: var(--wp--preset--color--secondary-200) !important;}.has-secondary-100-border-color{border-color: var(--wp--preset--color--secondary-100) !important;}.has-secondary-50-border-color{border-color: var(--wp--preset--color--secondary-50) !important;}.has-contrast-border-color{border-color: var(--wp--preset--color--contrast) !important;}.has-base-border-color{border-color: var(--wp--preset--color--base) !important;}.has-custom-hover-border-color{border-color: var(--wp--preset--color--custom-hover) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-black-fadeup-gradient-background{background: var(--wp--preset--gradient--black-fadeup) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-minuscule-font-size{font-size: var(--wp--preset--font-size--minuscule) !important;}.has-minute-font-size{font-size: var(--wp--preset--font-size--minute) !important;}.has-tiny-font-size{font-size: var(--wp--preset--font-size--tiny) !important;}.has-compact-font-size{font-size: var(--wp--preset--font-size--compact) !important;}.has-diminutive-font-size{font-size: var(--wp--preset--font-size--diminutive) !important;}.has-petite-font-size{font-size: var(--wp--preset--font-size--petite) !important;}.has-xx-large-font-size{font-size: var(--wp--preset--font-size--xx-large) !important;}.has-grand-font-size{font-size: var(--wp--preset--font-size--grand) !important;}.has-immense-font-size{font-size: var(--wp--preset--font-size--immense) !important;}.has-enormous-font-size{font-size: var(--wp--preset--font-size--enormous) !important;}.has-tremendous-font-size{font-size: var(--wp--preset--font-size--tremendous) !important;}.has-massive-font-size{font-size: var(--wp--preset--font-size--massive) !important;}.has-towering-font-size{font-size: var(--wp--preset--font-size--towering) !important;}.has-colossal-font-size{font-size: var(--wp--preset--font-size--colossal) !important;}.has-monumental-font-size{font-size: var(--wp--preset--font-size--monumental) !important;}.has-vast-font-size{font-size: var(--wp--preset--font-size--vast) !important;}.has-gigantic-font-size{font-size: var(--wp--preset--font-size--gigantic) !important;}.has-primary-font-family{font-family: var(--wp--preset--font-family--primary) !important;}.has-avenir-next-font-family{font-family: var(--wp--preset--font-family--avenir-next) !important;}.has-tt-norms-pro-font-family{font-family: var(--wp--preset--font-family--tt-norms-pro) !important;}
+@media (max-width: 780px) {
+    .desktop {
+        display: none !important;
+    }
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 250ms;
+}
+
+#wpadminbar { z-index: 100001 !important; }
+
+
+@media (min-width: 782px) {
+  body .wp-block-columns > .wp-block-column.sidebar-desktop,
+  body .wp-block-columns > .wp-block-column.custom-sidebar {
+    position: relative !important;
+    align-self: stretch !important;
+    height: auto !important;
+    max-height: none !important;
+    z-index: auto !important;
+  }
+
+  body .wp-block-columns > .wp-block-column.sidebar-desktop > .wp-block-group,
+  body .wp-block-columns > .wp-block-column.custom-sidebar > .wp-block-group {
+    position: sticky !important;
+    top: 130px !important;
+    height: fit-content !important;
+    max-height: none !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+  }
+
+  body.admin-bar .wp-block-columns > .wp-block-column.sidebar-desktop > .wp-block-group,
+  body.admin-bar .wp-block-columns > .wp-block-column.custom-sidebar > .wp-block-group {
+    top: 162px !important;
+  }
+
+  body .wp-block-columns > .wp-block-column.sidebar-desktop aside,
+  body .wp-block-columns > .wp-block-column.sidebar-desktop .is-position-sticky,
+  body .wp-block-columns > .wp-block-column.custom-sidebar aside,
+  body .wp-block-columns > .wp-block-column.custom-sidebar .is-position-sticky {
+    position: static !important;
+    top: auto !important;
+  }
+}
+/* STICKY SIDEBAR -- END */
+
+@media (min-width: 781px) {
+    .mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1300px) {
+    .sidebar-desktop {
+        display: none !important;
+    }
+	.main-container {
+			 flex-basis: 100% !important;
+	}
+}
+
+@media (min-width: 1301px) {
+    .sidebar-mobile {
+        display: none !important;
+    }
+}
+
+
+@media (max-width: 1110px) {
+    .desktop-head-image {
+        display: none !important;
+    }
+	.custom-sidebar-left {
+	display: none !important;
+	}
+}
+
+@media (min-width: 1111px) {
+    .mobile-head-image {
+        display: none !important;
+    }
+
+}
+
+/* Scroll Polls */
+.scroll-row {
+	padding-left: 1.3rem !important;
+  padding-right: 1.3rem !important;
+  overflow-x: auto;
+    gap: 1rem;	
+   height: 220px;
+	-ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-row > * {
+  flex: 0 0 auto;
+}
+.scroll-fade {
+  position: relative;
+  overflow: hidden;
+  overflow-y: hidden !important; 
+}
+
+.scroll-fade::before,
+.scroll-fade::after {
+  content: "";
+  position: absolute; 
+  top: 0;
+  bottom: 0;
+  width: 2rem;      
+  pointer-events: none; 
+  z-index: 2;     
+}
+
+.scroll-fade::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--wp--preset--color--base),
+    transparent
+  );
+}
+
+.scroll-fade::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--wp--preset--color--base),
+    transparent
+  );
+}
+
+/* Wordpress Colors */
+.wp-block-navigation__container:only-child a:hover, 
+.wp-block-page-list:only-child a:hover, 
+.wp-block-navigation__submenu-icon:hover {
+    text-decoration: none;
+    color: var(--wp--preset--color--custom-hover);
+}
+
+.vh-header-nav {
+    box-shadow: 0 14px 13px rgba(0, 0, 0, 0.04);
+}
+
+.custom-sidebar {
+	z-index: 1 !important;
+}
+
+/* Target the main card wrapper */
+.article-category-outer-group {
+    display: flex;              
+    flex-direction: column;      
+    height: 100%;               
+}
+
+/* Push author name to the bottom */
+.article-category-outer-group .author-name {
+    margin-top: auto;              
+}
+:root :where(.wp-block-post-title a:where(:not(.wp-element-button))) {
+    color: var(--wp--preset--color--contrast);
+    text-decoration: none !important;
+    transition: color .2s ease
+}
+
+/* hover state */
+:root :where(.wp-block-post-title a:where(:not(.wp-element-button))):hover {
+    color: var(--wp--preset--color--custom-hover);
+}
+.main-featured-post .wp-block-post {
+    height: 100%;
+}
+
+.main-featured-post {
+	height: 100%;
+}
+
+/* top level navigation items */
+#modal-1 .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+    color: var(--wp--preset--color--accent) !important;
+    text-transform: uppercase;
+    font-size: 1.2rem
+}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+    padding-top: 0.3rem !important;
+}
+
+#modal-1 .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:hover,
+.wp-block-navigation-submenu > .wp-block-navigation-item__content:hover {
+    color: var(--wp--preset--color--secondary) !important;
+}
+
+.wp-block-navigation__submenu-container {
+  border-radius: 16px;
+  overflow: hidden !important; /* keeps child backgrounds inside the rounded shape */
+}
+
+
+/* Make the left column stack vertically: main feature first, smaller posts below. */
+.vh-left-headbox {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stretch only the first query in the left column, which should be the main featured post. */
+.vh-left-headbox > .wp-block-query:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let the generated post item stretch. */
+.vh-left-headbox > .wp-block-query:first-child > .wp-block-post-template > li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+sup a,
+a sup {
+  text-decoration: none !important;
+}
+
+/* Make the Quick Links block use the available column height. */
+.vh-quick-links {
+  height: 100%;
+}
+
+/* Make the Query Loop inside Quick Links fill the group. */
+.vh-quick-links > .wp-block-query {
+  height: 100%;
+}
+
+/* Stack the Quick Link cards vertically and stretch them. */
+.vh-quick-links .wp-block-post-template {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make each generated Quick Link item take an equal share of the height. */
+.vh-quick-links .wp-block-post-template > li,
+.vh-quick-links .wp-block-post-template > .wp-block-post {
+  flex: 1 1 0;
+  display: flex;
+}
+
+/* Make each Cover fill its generated post item. */
+.vh-quick-links .wp-block-cover {
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 0 !important;
+  overflow: hidden;
+}
+
+/* Make the image fill the expanded Cover. */
+.vh-quick-links .wp-block-cover > .wp-block-cover__image-background,
+.vh-quick-links .wp-block-cover > .wp-block-cover__video-background {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center;
+  transform: scale(1.03);
+  filter:
+    blur(1.25px)
+    grayscale(0.35)
+    brightness(1.16)
+    contrast(0.68)
+    saturate(0.75);
+}
+
+/* Keep the overlay consistent on the larger cards. */
+.vh-quick-links .wp-block-cover > .wp-block-cover__background {
+  opacity: 0.64 !important;
+}
+
+/* Smooth zoom setup for Quick Link background images */
+.vh-quick-links .wp-block-cover > .wp-block-cover__image-background,
+.vh-quick-links .wp-block-cover > .wp-block-cover__video-background {
+  transition: transform 300ms ease, filter 300ms ease;
+}
+
+/* Zoom the image on hover, without resizing the card */
+.vh-quick-links .wp-block-cover:hover > .wp-block-cover__image-background,
+.vh-quick-links .wp-block-cover:hover > .wp-block-cover__video-background {
+  transform: scale(1.1);
+}
+:root :where(.wp-block-buttons-is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.wp-block-buttons-is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.wp-block-buttons-is-layout-flow) > *{margin-block-start: 0.625rem;margin-block-end: 0;}:root :where(.wp-block-buttons-is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.wp-block-buttons-is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.wp-block-buttons-is-layout-constrained) > *{margin-block-start: 0.625rem;margin-block-end: 0;}:root :where(.wp-block-buttons-is-layout-flex){gap: 0.625rem;}:root :where(.wp-block-buttons-is-layout-grid){gap: 0.625rem;}
+:root :where(.wp-block-heading a:where(:not(.wp-element-button))){color: var(--wp--preset--color--contrast);}
+:root :where(.wp-block-navigation){font-size: var(--wp--preset--font-size--tiny);}
+:root :where(.wp-block-navigation a:where(:not(.wp-element-button))){text-decoration: none;}
+:root :where(.wp-block-navigation a:where(:not(.wp-element-button)):hover){text-decoration: underline;}
+:root :where(.wp-block-post-content-is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.wp-block-post-content-is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.wp-block-post-content-is-layout-flow) > *{margin-block-start: 1.75rem;margin-block-end: 0;}:root :where(.wp-block-post-content-is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.wp-block-post-content-is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.wp-block-post-content-is-layout-constrained) > *{margin-block-start: 1.75rem;margin-block-end: 0;}:root :where(.wp-block-post-content-is-layout-flex){gap: 1.75rem;}:root :where(.wp-block-post-content-is-layout-grid){gap: 1.75rem;}
+:root :where(.wp-block-post-content a:where(:not(.wp-element-button))){text-decoration: underline;}
+:root :where(.wp-block-post-content a:where(:not(.wp-element-button)):hover){text-decoration: none;}
+:root :where(.wp-block-post-author-name){color: var(--wp--preset--color--secondary-800);font-size: var(--wp--preset--font-size--minute);}
+:root :where(.wp-block-post-author-name a:where(:not(.wp-element-button))){color: var(--wp--preset--color--secondary-800);text-decoration: none;}
+:root :where(.wp-block-post-author-name a:where(:not(.wp-element-button)):hover){text-decoration: underline;}
+:root :where(.wp-block-post-date){color: var(--wp--preset--color--secondary-800);font-size: var(--wp--preset--font-size--minute);}
+:root :where(.wp-block-post-date a:where(:not(.wp-element-button))){color: var(--wp--preset--color--secondary-800);text-decoration: none;}
+:root :where(.wp-block-post-date a:where(:not(.wp-element-button)):hover){text-decoration: underline;}
+:root :where(.wp-block-post-excerpt){color: var(--wp--preset--color--secondary-800);font-size: var(--wp--preset--font-size--tiny);}
+:root :where(.wp-block-post-terms){color: var(--wp--preset--color--secondary-800);font-size: var(--wp--preset--font-size--minute);}:root :where(.wp-block-post-terms a){white-space: nowrap;}
+:root :where(.wp-block-post-terms a:where(:not(.wp-element-button))){color: var(--wp--preset--color--secondary-800);text-decoration: none;}
+:root :where(.wp-block-post-terms a:where(:not(.wp-element-button)):hover){text-decoration: underline;}
+:root :where(.wp-block-post-title){color: var(--wp--preset--color--contrast);}
+:root :where(.wp-block-post-title a:where(:not(.wp-element-button))){color: var(--wp--preset--color--contrast);text-decoration: none;}
+:root :where(.wp-block-post-title a:where(:not(.wp-element-button)):hover){text-decoration: underline;}
+:root :where(.wp-block-search label){display:block; margin-bottom: var(--wp--preset--spacing--16);}:root :where(.wp-block-search .wp-block-search__input){border-radius:.33rem;padding-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);border-color:var(--wp--preset--color--secondary-300);}
+:root :where(.wp-block-social-links-is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.wp-block-social-links-is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.wp-block-social-links-is-layout-flow) > *{margin-block-start: 0.625rem;margin-block-end: 0;}:root :where(.wp-block-social-links-is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.wp-block-social-links-is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.wp-block-social-links-is-layout-constrained) > *{margin-block-start: 0.625rem;margin-block-end: 0;}:root :where(.wp-block-social-links-is-layout-flex){gap: 0.625rem;}:root :where(.wp-block-social-links-is-layout-grid){gap: 0.625rem;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<style id="block-style-variation-styles-inline-css">
+:root :where(.is-style-post-terms-2--8 a:where(:not(.wp-element-button))){border-radius: 9999px;border-color: currentColor;border-width: 1px;border-style: solid;line-height: var(--wp--custom--global--line-height--petite);margin-top: 2px;margin-bottom: 2px;padding-top: .5em;padding-right: .75em;padding-bottom: .5em;padding-left: .75em;text-decoration: none;}:root :where(.is-style-post-terms-2--8 a:where(:not(.wp-element-button))){display: inline-block;}:root :where(.is-style-post-terms-2--8 a:where(:not(.wp-element-button)):hover){border-color: color-mix(in srgb, currentColor 50%, transparent);}:root :where(.is-style-post-terms-2--8 a:where(:not(.wp-element-button)):hover){display: inline-block;}:root :where(.wp-block-post-terms.is-style-post-terms-2--8){display: block;}:root :where(.wp-block-post-terms.is-style-post-terms-2--8 span:not([class], [data-rich-text-placeholder])){display: inline-block; border: 1px solid currentColor; padding: .5em .75em; border-radius: 9999px; text-decoration: none;}:root :where(.wp-block-post-terms.is-style-post-terms-2--8 span:not([class], [data-rich-text-placeholder]):hover){border: 1px solid; border-color: color-mix(in srgb, currentColor 50%, transparent); text-decoration: none !important;}
+:root :where(p.is-style-text-summary--11){font-size: var(--wp--preset--font-size--tiny);line-height: var(--wp--custom--global--line-height--xx-large);}
+:root :where(.wp-block-social-links.is-style-social-links-1--12 .wp-block-social-link){background-color: transparent; border: 1px solid currentColor; color: currentColor;}
+:root :where(.wp-block-heading.is-style-text-label-2--13){font-size: var(--wp--preset--font-size--diminutive);line-height: var(--wp--custom--global--line-height--xx-large);}
+:root :where(p.is-style-text-note-2--14){font-size: var(--wp--preset--font-size--minuscule);line-height: var(--wp--custom--global--line-height--grand);}
+:root :where(p.is-style-text-note-2--15){font-size: var(--wp--preset--font-size--minuscule);line-height: var(--wp--custom--global--line-height--grand);}
+/*# sourceURL=block-style-variation-styles-inline-css */
+</style>
+<link rel='stylesheet' id='votehub-party-badges-css' href='https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/css/party-badges.css?ver=1.1.7' media='all' />
+<link rel='stylesheet' id='votehub-tokens-css' href='https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/css/tokens.css?ver=1.1.7' media='all' />
+<link rel='stylesheet' id='votehub-design-system-css' href='https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/css/styles.css?ver=1.1.7' media='all' />
+<link rel='stylesheet' id='votehub-wordpress-theme-css' href='https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/css/wordpress.css?ver=1.1.7' media='all' />
+<link rel='stylesheet' id='votehub-theme-controls-css' href='https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/css/theme-controls.css?ver=1.1.7' media='all' />
+<link rel='stylesheet' id='votehub-theme-fallback-css' href='https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/css/system-fallback.css?ver=1.1.7' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='fresh-blog-lite-editor-css' href='https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/editor.css?ver=0c6cf130ff9f76c44342' media='all' />
+<style id="core-block-supports-inline-css">
+.wp-container-core-navigation-is-layout-f56f613f{flex-wrap:nowrap;}.wp-container-core-group-is-layout-98c839f9{flex-wrap:nowrap;gap:var(--wp--preset--spacing--4);}.wp-container-core-group-is-layout-3da64819{flex-wrap:nowrap;gap:var(--wp--preset--spacing--8);justify-content:flex-end;}.wp-container-core-columns-is-layout-fcbeb85e{flex-wrap:nowrap;}.wp-container-core-group-is-layout-924b3e1f{flex-wrap:nowrap;justify-content:center;}.wp-container-core-group-is-layout-fab9cca8 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-fab9cca8 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-7{top:calc(0px + var(--wp-admin--admin-bar--position-offset, 0px));position:sticky;z-index:10;}.wp-elements-1 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--secondary);}.wp-elements-2 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--secondary-800);}.wp-container-core-group-is-layout-81cf29da{flex-wrap:nowrap;gap:var(--wp--preset--spacing--4);}.wp-container-core-group-is-layout-15d5598a{gap:var(--wp--preset--spacing--12);flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-bb004fa3 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-bb004fa3 > * + *{margin-block-start:var(--wp--preset--spacing--16);margin-block-end:0;}.wp-container-core-group-is-layout-ff20268e > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-ff20268e > * + *{margin-block-start:var(--wp--preset--spacing--52);margin-block-end:0;}.wp-container-core-group-is-layout-d347ad22{gap:var(--wp--preset--spacing--16);flex-direction:column;align-items:stretch;}.wp-container-core-columns-is-layout-66377f61{flex-wrap:nowrap;gap:0 var(--wp--preset--spacing--36);}.wp-container-core-group-is-layout-858b4c33 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-858b4c33 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-8e5e07a5 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-8e5e07a5 > * + *{margin-block-start:var(--wp--preset--spacing--4);margin-block-end:0;}.wp-elements-3 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--secondary-800);}.wp-container-core-group-is-layout-ee16b81b > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:500px;margin-left:0 !important;margin-right:auto !important;}.wp-container-core-group-is-layout-ee16b81b > .alignwide{max-width:500px;}.wp-container-core-group-is-layout-ee16b81b .alignfull{max-width:none;}.wp-container-core-social-links-is-layout-feb1e4d5{flex-wrap:nowrap;gap:0.625rem var(--wp--preset--spacing--12);}.wp-container-core-navigation-is-layout-de943c24{gap:var(--wp--preset--spacing--8);flex-direction:column;align-items:flex-start;}.wp-container-core-columns-is-layout-f56f613f{flex-wrap:nowrap;}.wp-elements-4 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--secondary-800);}.wp-elements-5 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--secondary-800);}.wp-container-core-group-is-layout-d4cc2152{flex-wrap:nowrap;gap:var(--wp--preset--spacing--8);justify-content:space-between;}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+<style id="wp-block-template-skip-link-inline-css">
+/*! This file is auto-generated */
+.skip-link.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;word-break:normal!important}.skip-link.screen-reader-text:focus{background-color:#eee;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
+/*# sourceURL=/wp-includes/css/wp-block-template-skip-link.min.css */
+</style>
+<style id="votehub-2026-midterms-forecast-embed-inline-css">
+.votehub-2026-forecast-embed {
+  --votehub-forecast-header-offset: 130px;
+  --votehub-forecast-admin-offset: 0px;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  scroll-margin-top: calc(var(--votehub-forecast-header-offset) + var(--votehub-forecast-admin-offset));
+}
+
+body.admin-bar .votehub-2026-forecast-embed {
+  --votehub-forecast-admin-offset: 32px;
+}
+
+.votehub-2026-forecast-embed #root {
+  min-height: inherit;
+}
+
+.votehub-2026-forecast-embed .forecast-anchor-section {
+  scroll-margin-top: calc(var(--votehub-forecast-header-offset) + var(--votehub-forecast-admin-offset) + 1rem + env(safe-area-inset-top, 0px));
+}
+
+.votehub-2026-forecast-embed .forecast-section-sidebar {
+  top: calc(var(--votehub-forecast-header-offset) + var(--votehub-forecast-admin-offset) + 1rem + env(safe-area-inset-top, 0px));
+}
+
+.votehub-2026-forecast-embed .forecast-back-link-shell {
+  top: calc(var(--votehub-forecast-header-offset) + var(--votehub-forecast-admin-offset) + 0.8rem + env(safe-area-inset-top, 0px));
+}
+
+.votehub-2026-forecast-embed .district-outlook-table-shell {
+  --district-outlook-sticky-top: calc(var(--votehub-forecast-header-offset) + var(--votehub-forecast-admin-offset) + 0.4rem);
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .votehub-2026-forecast-embed {
+    --votehub-forecast-admin-offset: 46px;
+  }
+}
+
+.wp-block-column:has(.votehub-forecast-carousel) {
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-block-column:has(.votehub-forecast-carousel) > .wp-block-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.votehub-forecast-carousel {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 440px;
+}
+
+.votehub-forecast-carousel #forecast-carousel-root {
+  height: 100%;
+  min-height: 380px;
+}
+
+.votehub-forecast-sidebar-map {
+  position: relative;
+  width: 268px;
+  max-width: 100%;
+  height: 268px;
+}
+
+.votehub-forecast-sidebar-map #forecast-sidebar-map-root {
+  width: 268px;
+  max-width: 100%;
+  height: 100%;
+}
+
+/* Lock the React component box from the head so it can't flash before the bundled CSS loads */
+.votehub-forecast-sidebar-map .fsw {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceURL=votehub-2026-midterms-forecast-embed-inline-css */
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://votehub.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.2.4.1' media='all' />
+<link rel='stylesheet' id='votehub-firebase-modal-css' href='https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/css/modal.css?ver=2.3.6' media='all' />
+<link rel='stylesheet' id='votehub-firebase-auth-modal-css' href='https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/css/auth-modal.css?ver=2.3.6' media='all' />
+<link rel='stylesheet' id='fresh-blog-lite-style-css' href='https://votehub.com/wp-content/themes/fresh-blog-lite/public/css/screen.css?ver=1fd12245d68118263db4' media='all' />
+<link rel='stylesheet' id='votehub-contact-forms-css' href='https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/css/contact-forms.css?ver=1.1.7' media='all' />
+<link rel='stylesheet' id='votehub-homepage-elements-skeletons-css' href='https://cdn.votehub.com/elements/2026-leadup/releases/50615f4593dc/skeletons.css' media='all' />
+<script id="jquery-core-js" src="https://votehub.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://votehub.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-M6PHHHTL" async></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["votehub.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-M6PHHHTL", {"googlesitekit_post_type":"post","googlesitekit_post_author":"Zachary Donnini","googlesitekit_post_date":"20260923"});
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }; 
+//# sourceURL=google_gtagjs-js-after
+</script>
+<link rel="https://api.w.org/" href="https://votehub.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://votehub.com/wp-json/wp/v2/posts/9418" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://votehub.com/xmlrpc.php?rsd" />
+<meta name="cdp-version" content="1.5.7" /><meta name="generator" content="Site Kit by Google 1.190.0" />            <style>
+                .molongui-disabled-link
+                {
+                    border-bottom: none !important;
+                    text-decoration: none !important;
+                    color: inherit !important;
+                    cursor: inherit !important;
+                }
+                .molongui-disabled-link:hover,
+                .molongui-disabled-link:hover span
+                {
+                    border-bottom: none !important;
+                    text-decoration: none !important;
+                    color: inherit !important;
+                    cursor: inherit !important;
+                }
+            </style>
+            <script id="wp-importmap" type="importmap">
+{"imports":{"@wordpress/interactivity":"https://votehub.com/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=6a43cba92ed701f32cd9"}}
+</script>
+<script id="votehub-homepage-elements-js-module" src="https://cdn.votehub.com/elements/2026-leadup/releases/50615f4593dc/loader.js" type="module"></script>
+<link rel="modulepreload" href="https://votehub.com/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=6a43cba92ed701f32cd9" id="@wordpress/interactivity-js-modulepreload" fetchpriority="low">
+
+<!-- Google AdSense meta tags added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense meta tags added by Site Kit -->
+
+<!-- Google AdSense snippet added by Site Kit -->
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7837325018490881&#038;host=ca-host-pub-2644536267352236"></script>
+
+<!-- End Google AdSense snippet added by Site Kit -->
+<style class="wp-fonts-local">
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:fallback;src:url('https://votehub.com/wp-content/themes/fresh-blog-lite/assets/fonts/inter/Inter-VariableFont.woff2') format('woff2');}
+@font-face{font-family:Inter;font-style:italic;font-weight:100 900;font-display:fallback;src:url('https://votehub.com/wp-content/themes/fresh-blog-lite/assets/fonts/inter/Inter-Italic-VariableFont.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:normal;font-weight:700;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-Bold-01.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:italic;font-weight:700;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-BoldItalic-02.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:normal;font-weight:600;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-DemiBold-03.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:italic;font-weight:600;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-DemiBoldItalic-04.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:normal;font-weight:900;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-Heavy-09.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:italic;font-weight:900;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-HeavyItalic-10.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:italic;font-weight:400;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-Italic-05.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:normal;font-weight:500;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-Medium-06.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:italic;font-weight:500;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-MediumItalic-07.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:normal;font-weight:400;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-Regular-08.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:normal;font-weight:275;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-UltraLight-11.woff2') format('woff2');}
+@font-face{font-family:"Avenir Next";font-style:italic;font-weight:275;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/AvenirNext-UltraLightItalic-12.woff2') format('woff2');}
+@font-face{font-family:"TT Norms Pro";font-style:normal;font-weight:500;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/TTNormsPro-Medium.woff2') format('woff2');}
+@font-face{font-family:"TT Norms Pro";font-style:italic;font-weight:600;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/TT_Norms_Pro_DemiBold_Italic.woff2') format('woff2');}
+@font-face{font-family:"TT Norms Pro";font-style:normal;font-weight:600;font-display:fallback;src:url('https://votehub.com/wp-content/uploads/fonts/TT_Norms_Pro_DemiBold.woff2') format('woff2');}
+</style>
+<link rel="icon" href="https://votehub.com/wp-content/uploads/2025/09/cropped-votehub-coin-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://votehub.com/wp-content/uploads/2025/09/cropped-votehub-coin-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://votehub.com/wp-content/uploads/2025/09/cropped-votehub-coin-180x180.png" />
+<meta name="msapplication-TileImage" content="https://votehub.com/wp-content/uploads/2025/09/cropped-votehub-coin-270x270.png" />
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-9418 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-fresh-blog-lite">
+
+<a class="skip-link screen-reader-text" id="wp-skip-link" href="#wp--skip-link--target">Skip to content</a><div class="wp-site-blocks">
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow wp-container-7 is-position-sticky"><header class="wp-block-template-part">
+<header class="wp-block-group is-layout-flow wp-container-core-group-is-layout-fab9cca8 wp-block-group-is-layout-flow">
+<div class="wp-block-group has-base-background-color has-background is-layout-flow wp-block-group-is-layout-flow" style="border-bottom-color:var(--wp--preset--color--secondary-200);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--12)">
+<div class="wp-block-columns is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-fcbeb85e wp-block-columns-is-layout-flex" style="padding-top:var(--wp--preset--spacing--4);padding-bottom:var(--wp--preset--spacing--4)">
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:30%">
+<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-98c839f9 wp-block-group-is-layout-flex" style="padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><nav style="font-style:normal;font-weight:500" class="is-responsive no-wrap mobile wp-block-navigation has-tt-norms-pro-font-family is-nowrap is-layout-flex wp-container-core-navigation-is-layout-f56f613f wp-block-navigation-is-layout-flex" aria-label="Header navigation" 
+		 data-wp-interactive="core/navigation" data-wp-context='{"overlayOpenedBy":{"click":false,"hover":false,"focus":false},"type":"overlay","roleAttribute":"","ariaLabel":"Menu"}'><button aria-haspopup="dialog" aria-label="Open menu" class="wp-block-navigation__responsive-container-open always-shown" 
+				data-wp-on--click="actions.openMenuOnClick"
+				data-wp-on--keydown="actions.handleMenuKeydown"
+			><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 5v1.5h14V5H5z"></path><path d="M5 12.8h14v-1.5H5v1.5z"></path><path d="M5 19h14v-1.5H5V19z"></path></svg></button>
+				<div class="wp-block-navigation__responsive-container hidden-by-default"  id="modal-2" 
+				data-wp-class--has-modal-open="state.isMenuOpen"
+				data-wp-class--is-menu-open="state.isMenuOpen"
+				data-wp-watch="callbacks.initMenu"
+				data-wp-on--keydown="actions.handleMenuKeydown"
+				data-wp-on--focusout="actions.handleMenuFocusout"
+				tabindex="-1"
+			>
+					<div class="wp-block-navigation__responsive-close" tabindex="-1">
+						<div class="wp-block-navigation__responsive-dialog" 
+				data-wp-bind--aria-modal="state.ariaModal"
+				data-wp-bind--aria-label="state.ariaLabel"
+				data-wp-bind--role="state.roleAttribute"
+			>
+							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" 
+				data-wp-on--click="actions.closeMenuOnClick"
+			><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+							<div class="wp-block-navigation__responsive-container-content" 
+				data-wp-watch="callbacks.focusFirstElement"
+			 id="modal-2-content">
+								<ul style="font-style:normal;font-weight:500" class="wp-block-navigation__container is-responsive no-wrap mobile wp-block-navigation has-tt-norms-pro-font-family"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/"><span class="wp-block-navigation-item__label">Home</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="/polls"><span class="wp-block-navigation-item__label">Polls</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Polls submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/polls"><span class="wp-block-navigation-item__label">Averages</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/polls/all-polls"><span class="wp-block-navigation-item__label">All Polls</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/polls/pollster-scorecards/"><span class="wp-block-navigation-item__label">Pollster Scorecards</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/category/analysis/"><span class="wp-block-navigation-item__label">Analysis</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="/2026-forecast"><span class="wp-block-navigation-item__label">2026 Forecast</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="2026 Forecast submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2026-forecast"><span class="wp-block-navigation-item__label">2026 Forecast</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2026-forecast-map"><span class="wp-block-navigation-item__label">2026 Forecast Map</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/2026-forecast-senate-scenario-builder/"><span class="wp-block-navigation-item__label">Senate Scenario Builder</span></a></li></ul></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="/category/projects/"><span class="wp-block-navigation-item__label">Projects</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Projects submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2024-map"><span class="wp-block-navigation-item__label">2024 Precinct Map</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/2026-campaign-tracker"><span class="wp-block-navigation-item__label">2026 Campaign Tracker</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/trump-score"><span class="wp-block-navigation-item__label">Trump Score</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/predict-2026"><span class="wp-block-navigation-item__label">Midterm Pick&#8217;em</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2026-early-vote-tracker"><span class="wp-block-navigation-item__label">Early Vote</span></a></li></ul>
+								
+							</div>
+						</div>
+					</div>
+				</div></nav>
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex" style="padding-right:var(--wp--preset--spacing--12)">
+<div class="wp-block-button desktop is-style-fill"><a class="wp-block-button__link has-text-color has-background has-link-color has-border-color wp-element-button" href="https://www.paypal.com/donate/?hosted_button_id=ZSZJA5XWG327S" style="border-color:var(--vh-dark-status-success, #2ab56f);border-width:2px;border-top-left-radius:12px;border-top-right-radius:12px;border-bottom-left-radius:12px;border-bottom-right-radius:12px;color:var(--vh-dark-status-success, #2ab56f);background-color:var(--vh-dark-surface-raised, #ffffff);padding-top:var(--wp--preset--spacing--8);padding-bottom:var(--wp--preset--spacing--8)" target="_blank" rel="noreferrer noopener nofollow">Tip Us</a></div>
+</div>
+
+
+<div class="vh-appearance vh-appearance-compact"><span class="vh-appearance__label" id="vh-appearance-1-label">Appearance</span></p>
+<div id="vh-appearance-1" data-vh-theme-control data-vh-theme-selector aria-labelledby="vh-appearance-1-label"></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%">
+<figure class="wp-block-image aligncenter size-large is-resized wp-header-image"><a href="/"><img decoding="async" src="https://votehub.com/wp-content/uploads/2025/03/votehub-logo.svg" alt="VoteHub home" style="width:auto;height:42px"/></a></figure>
+</div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:30%">
+<div class="wp-block-group is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-3da64819 wp-block-group-is-layout-flex" style="padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><form role="search" method="get" action="https://votehub.com/" style="margin-top:0;margin-bottom:0;margin-left:0;margin-right:0" class="wp-block-search__button-only wp-block-search__searchfield-hidden wp-block-search__icon-button alignright wp-block-search" 
+		 data-wp-interactive="core/search"
+		 data-wp-context='{"isSearchInputVisible":false,"inputId":"wp-block-search__input-3","ariaLabelExpanded":"Submit Search","ariaLabelCollapsed":"Expand search field"}'
+		 data-wp-class--wp-block-search__searchfield-hidden="!context.isSearchInputVisible"
+		 data-wp-on--keydown="actions.handleSearchKeydown"
+		 data-wp-on--focusout="actions.handleSearchFocusout"
+		><label class="wp-block-search__label screen-reader-text" for="wp-block-search__input-3" >Search</label><div class="wp-block-search__inside-wrapper" ><input aria-hidden="true" class="wp-block-search__input" data-wp-bind--aria-hidden="!context.isSearchInputVisible" data-wp-bind--tabindex="state.tabindex" id="wp-block-search__input-3" placeholder=""  value="" type="search" name="s" required  style="border-width: 0px;border-style: none"/><button  aria-expanded="false"  class="wp-block-search__button has-text-color has-primary-color has-background has-icon wp-element-button" data-wp-bind--aria-controls="state.ariaControls" data-wp-bind--aria-expanded="context.isSearchInputVisible" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--type="state.type" data-wp-on--click="actions.openSearchInput"   style="border-width: 0px;border-style: none;background-color: #ffffff00"><svg class="search-icon" viewBox="0 0 24 24" width="24" height="24">
+					<path d="M13 5c-3.3 0-6 2.7-6 6 0 1.4.5 2.7 1.3 3.7l-3.8 3.8 1.1 1.1 3.8-3.8c1 .8 2.3 1.3 3.7 1.3 3.3 0 6-2.7 6-6S16.3 5 13 5zm0 10.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"></path>
+				</svg></button></div></form>
+
+        <div class="wp-block-votehub-firebase-login-button">
+            <div id="votehub-login-button" class="votehub-login-button">
+  <!-- Loading state -->
+  <div class="votehub-login-button__loading" id="votehubLoginLoading">
+    <div class="votehub-login-button__loading-circle"></div>
+  </div>
+
+  <!-- Not authenticated state -->
+  <a href="/sign-in" class="votehub-login-button__signin-circle" id="votehubLoginSignIn" style="display: none;" aria-label="Sign In" data-votehub-auth-trigger>
+    <svg class="votehub-login-button__user-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 20V19C5 15.134 8.13401 12 12 12V12C15.866 12 19 15.134 19 19V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </a>
+
+  <!-- Authenticated state -->
+  <div class="votehub-login-button__authenticated" id="votehubLoginAuthenticated" style="display: none;">
+    <button class="votehub-login-button__avatar" id="votehubLoginAvatar" aria-label="User menu">
+      <span id="votehubLoginInitials">&#8212;</span>
+    </button>
+    <div class="votehub-login-button__dropdown" id="votehubLoginDropdown">
+      <div class="votehub-login-button__dropdown-header">
+        <div class="votehub-login-button__dropdown-name" id="votehubLoginUserName">&#8212;</div>
+        <div class="votehub-login-button__dropdown-email" id="votehubLoginUserEmail">&#8212;</div>
+      </div>
+      <div class="votehub-login-button__dropdown-separator"></div>
+      <a href="/user-settings" class="votehub-login-button__dropdown-item">
+        Dashboard
+      </a>
+      <div class="votehub-login-button__dropdown-separator"></div>
+      <button class="votehub-login-button__dropdown-item" id="votehubLoginSignOut">
+        <span>Log Out</span>
+        <svg class="votehub-login-button__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+        </div>
+        </div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-group vh-header-nav desktop has-base-background-color has-background is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-924b3e1f wp-block-group-is-layout-flex" style="border-top-style:none;border-top-width:0px;border-right-style:none;border-right-width:0px;border-bottom-color:var(--wp--preset--color--secondary-200);border-bottom-width:1px;border-left-style:none;border-left-width:0px;padding-top:var(--wp--preset--spacing--8);padding-bottom:var(--wp--preset--spacing--8)"><nav style="font-style:normal;font-weight:500" class="no-wrap wp-block-navigation has-tt-norms-pro-font-family is-nowrap is-layout-flex wp-container-core-navigation-is-layout-f56f613f wp-block-navigation-is-layout-flex" aria-label="Header navigation 2"><ul style="font-style:normal;font-weight:500" class="wp-block-navigation__container no-wrap wp-block-navigation has-tt-norms-pro-font-family"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/"><span class="wp-block-navigation-item__label">Home</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="/polls"><span class="wp-block-navigation-item__label">Polls</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Polls submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/polls"><span class="wp-block-navigation-item__label">Averages</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/polls/all-polls"><span class="wp-block-navigation-item__label">All Polls</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/polls/pollster-scorecards/"><span class="wp-block-navigation-item__label">Pollster Scorecards</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/category/analysis/"><span class="wp-block-navigation-item__label">Analysis</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="/2026-forecast"><span class="wp-block-navigation-item__label">2026 Forecast</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="2026 Forecast submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2026-forecast"><span class="wp-block-navigation-item__label">2026 Forecast</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2026-forecast-map"><span class="wp-block-navigation-item__label">2026 Forecast Map</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/2026-forecast-senate-scenario-builder/"><span class="wp-block-navigation-item__label">Senate Scenario Builder</span></a></li></ul></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="/category/projects/"><span class="wp-block-navigation-item__label">Projects</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Projects submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2024-map"><span class="wp-block-navigation-item__label">2024 Precinct Map</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/2026-campaign-tracker"><span class="wp-block-navigation-item__label">2026 Campaign Tracker</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/trump-score"><span class="wp-block-navigation-item__label">Trump Score</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/predict-2026"><span class="wp-block-navigation-item__label">Midterm Pick&#8217;em</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/2026-early-vote-tracker"><span class="wp-block-navigation-item__label">Early Vote</span></a></li></ul></nav></div>
+</header>
+
+
+<style data-wp-block-html="css">
+/* sticky group from the editor */
+.vh-header-group {
+    z-index: 99999;
+}
+
+/* override separate sticky nav so header controls everything */
+.vh-site-header .vh-header-nav {
+    position: static !important;
+    top: auto !important;
+}
+
+/* smooth padding changes on the inner group */
+.vh-site-header > .wp-block-group {
+    transition: padding 0.2s ease;
+}
+
+/* logo default size */
+.vh-site-header figure.wp-header-image img {
+    height: 42px;
+    width: auto;
+    transition: height 0.2s ease, transform 0.2s ease;
+}
+
+/* prevent load-time bounce while JS applies initial state */
+.vh-site-header.vh-header-initializing > .wp-block-group,
+.vh-site-header.vh-header-initializing figure.wp-header-image img {
+    transition: none !important;
+}
+
+/* scrolled state */
+.vh-site-header.vh-header-scrolled {
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+/* tighter padding when scrolled */
+.vh-site-header.vh-header-scrolled > .wp-block-group {
+    padding-top: var(--wp--preset--spacing--4) !important;
+    padding-bottom: var(--wp--preset--spacing--4) !important;
+}
+
+/* smaller logo when scrolled */
+.vh-site-header.vh-header-scrolled figure.wp-header-image img {
+    height: 28px !important;
+}
+</style>
+
+<script data-wp-block-html="js">
+document.addEventListener('DOMContentLoaded', function () {
+    var header = document.querySelector('header.wp-block-group');
+
+    if (!header) {
+        return;
+    }
+
+    header.classList.add('vh-site-header', 'vh-header-initializing');
+
+    var addAt = 70;
+    var removeAt = 30;
+
+    function updateHeader() {
+        var y = window.scrollY;
+
+        if (typeof y !== 'number') {
+            y = window.pageYOffset;
+            if (typeof y !== 'number') {
+                y = 0;
+            }
+        }
+
+        if (y > addAt) {
+            header.classList.add('vh-header-scrolled');
+        } else if (y < removeAt) {
+            header.classList.remove('vh-header-scrolled');
+        }
+    }
+
+    updateHeader();
+
+    requestAnimationFrame(function () {
+        header.classList.remove('vh-header-initializing');
+    });
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+});
+
+</script></header></div>
+
+
+
+<main id="wp--skip-link--target" class="wp-block-group has-global-padding is-layout-constrained wp-container-core-group-is-layout-858b4c33 wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0">
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-66377f61 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<section class="wp-block-group alignfull is-layout-flow wp-container-core-group-is-layout-ff20268e wp-block-group-is-layout-flow" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--52);padding-right:var(--wp--preset--spacing--52);padding-bottom:var(--wp--preset--spacing--52);padding-left:var(--wp--preset--spacing--52)">
+<div class="wp-block-group is-layout-flow wp-container-core-group-is-layout-bb004fa3 wp-block-group-is-layout-flow"><div style="font-style:normal;font-weight:500" class="taxonomy-category has-link-color is-style-default wp-elements-1 wp-block-post-terms has-text-color has-secondary-color has-tt-norms-pro-font-family has-text-align-left"><a href="https://votehub.com/category/analysis/" rel="tag">Analysis</a></div>
+
+<h1 class="has-text-align-left wp-block-post-title">Decoding the Early Vote: What We Can, And Can’t, Learn From the Early Voting Window</h1>
+
+<div class="wp-block-post-excerpt"><p class="wp-block-post-excerpt__excerpt">VoteHub is launching our early vote tracker for the 2026 midterms, in partnership with L2. Here's how and why we will be interpreting the ballot return data up until November. </p></div>
+
+
+<div class="wp-block-group is-vertical is-content-justification-left is-layout-flex wp-container-core-group-is-layout-15d5598a wp-block-group-is-layout-flex" style="margin-top:var(--wp--preset--spacing--12);margin-bottom:var(--wp--preset--spacing--12)"><div class="wp-block-post-date"><a href="https://votehub.com/2026-early-vote-methodology/"><time datetime="2026-09-23T18:29:52-04:00">September 23, 2026</time></a></div>
+
+
+<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-81cf29da wp-block-group-is-layout-flex">
+<p class="is-style-text-aware-1 has-secondary-800-color has-text-color has-link-color has-minute-font-size wp-elements-2 wp-block-paragraph">by</p>
+
+
+<div class="wp-block-post-author-name"><a href="#molongui-disabled-link" target="_self" class="wp-block-post-author-name__link">Zachary Donnini</a></div></div>
+</div>
+
+
+<figure style="padding-top:0;padding-bottom:0" class="alignwide is-style-image-comic is-style-default wp-block-post-featured-image"><img width="2560" height="1440" src="https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-scaled.png" class="has-border-color has-light-border-color wp-post-image" alt="" style="border-radius:12px;border-width:1px;aspect-ratio:16/9;width:100%;object-fit:cover;" decoding="async" fetchpriority="high" srcset="https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-scaled.png 2560w, https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-300x169.png 300w, https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-1024x576.png 1024w, https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-768x432.png 768w, https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-1536x864.png 1536w, https://votehub.com/wp-content/uploads/2026/09/donnini_decoding_early_vote-2048x1152.png 2048w" sizes="(max-width: 2560px) 100vw, 2560px" /></figure></div>
+
+
+<div class="entry-content alignfull wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow">
+<p class="wp-block-paragraph">Today, VoteHub launched its <a href="https://votehub.com/2026-early-vote-tracker">2026 midterm early vote tracker</a>, built in partnership with L2. The tracker follows mail ballot requests, absentee returns, and early in-person voting, while modeling the composition of the electorate by partisanship, race, 2024 vote, and estimated 2026 vote choice, with county-level aggregations and confidence intervals. VoteHub also collects some early vote data directly, but our partnership with L2 allows us to pair those returns with much richer voter-file modeling.</p>
+
+
+
+<p class="wp-block-paragraph">How do we figure out which voters are more likely to support a certain candidate? The most important indicator is party registration, which many states provide. Voters who are registered Democrats are more likely to vote for Democrats, while voters who are registered Republicans are more likely to vote for Republicans. In some states, voters are not registered with a party, but observing which party primaries they have participated in in the past can inform assumptions about which party they affiliate with. That is not quite as strong a signal, and it can be a mixed one for any individual voter, but it is still informative.</p>
+
+
+
+<p class="wp-block-paragraph">Many voters, however, are not registered with a major party or do not consistently participate in one party’s primary. In those cases, we can look at where a voter lives and model characteristics such as race. For example, an unaffiliated voter whom we model as Black and who lives in an overwhelmingly Harris-supporting precinct in southern Houston turning out to vote early in-person in the Texas U.S. Senate race would generally be a good sign for James Talarico, while a white voter from a strongly Trump-voting precinct in the Texas Panhandle would generally be a good sign for Ken Paxton. Either way, our uncertainty is much higher in a state without party registration, but it is still possible to draw meaningful conclusions about the types of voters who are turning out in states like Texas and Georgia.</p>
+
+
+
+<p class="wp-block-paragraph">Once we know which voters are turning out and which party they are more likely to support, there are two distinct but important reasons to track the early vote.</p>
+
+
+
+<h2 class="wp-block-heading">Understanding the Election Night Count</h2>
+
+
+
+<p class="wp-block-paragraph">It is incredibly important for VoteHub to track and understand the early vote because it informs our coverage on election night. Election night is not only about trying to forecast what the final result will be, but also understanding how we are likely to get there over the course of election night and the following days.</p>
+
+
+
+<p class="wp-block-paragraph">We view our work on Election Day as an important part of making American democracy more understandable by providing detailed election data and clear, nonpartisan analysis. Vote-counting mirages can be difficult to cover, and it can be even harder to explain why a candidate who is leading the reported vote may not ultimately win the race. That makes it important for us to understand, as accurately as possible, which votes are still outstanding and what those votes are likely to look like before election night begins.</p>
+
+
+
+<p class="wp-block-paragraph">For instance, in the Michigan U.S. Senate race, we are closely tracking the composition of early in-person and absentee ballots at the precinct level, because the order in which different vote methods are reported can shape the trajectory of the results. We are also looking at which voters remain so we can model what the Election Day vote might look like if that becomes important to understanding the count. In Arizona U.S. House races, we are closely tracking the early mail vote so we have a better sense of what kinds of ballots are likely to remain after Election Day; Arizona officials note that early ballots received on Election Day are generally tabulated in the days afterward.</p>
+
+
+
+<p class="wp-block-paragraph">The same idea applies in Alaska, where early in-person, absentee, and questioned ballots are counted on a different and slower schedule than in-person Election Day ballots. Many absentee and late early in-person votes are also added a week or more after most other races will be called. The vote method landscape is still very much in flux from state to state and cycle to cycle, so much of this work is about estimating and tracking what we should expect from each type of ballot once the counting begins.</p>
+
+
+
+<h2 class="wp-block-heading">What the Early Vote Can Tell Us About the Outcome</h2>
+
+
+
+<p class="wp-block-paragraph">The second reason is what many people are actually coming for: the early vote can help inform our view of which candidates are more likely to win. Republican and Democratic candidates will generally perform better if they can do two things: first, persuade more swing voters to support them; and second, enjoy a turnout advantage, with the voters who actually show up being more favorable to their party than the broader pool of registered voters. The more a candidate benefits from the second, the less they need to rely on the first.</p>
+
+
+
+<p class="wp-block-paragraph">This may be a particularly important early vote season. This cycle, Democrats may have an unusually favorable turnout advantage: they now have the higher-propensity coalition among the two major political parties, while also benefiting from some of the traditional advantages of being the out-party, including a potential enthusiasm gap and relatively depressed Republican turnout. This idea is supported by enthusiasm gaps in surveys and turnout patterns in the 2025 elections and subsequent special elections. A huge part of the public case that analysts are making for a strong Democratic year rests on the idea that the electorate that actually turns out in November could be more favorable to Democrats than registered voter generic-ballot averages suggest. So far this cycle, that adjustment has generally moved the numbers toward Democrats.</p>
+
+
+
+<p class="wp-block-paragraph">So, from a turnout perspective, we have set a fairly high bar for Democrats in our forecast. In many states, the early vote should give us some indication of whether they are meeting that bar, or perhaps even exceeding it. But we will have to be careful in how we interpret the data. Early vote analysis is difficult, and it is especially prone to overinterpretation.</p>
+
+
+
+<p class="wp-block-paragraph">First, it is important to understand that early vote analysis tells us who has voted, but it does not tell us how those voters actually voted. If we think James Talarico would be competitive in an electorate that looks like Trump +11, and the electorate instead begins to look more like Trump +8 because Democratic turnout is unusually strong, that would plainly be encouraging for Talarico. But turnout is only one part of the equation. If late-deciding voters shift sharply toward Ken Paxton in the final weeks, perhaps in response to campaign advertising or other developments, that could offset a turnout advantage.</p>
+
+
+
+<p class="wp-block-paragraph">Second, it is important to remember that many voters will still cast their ballots on Election Day, and that stronger early voting for a party than in a previous election can sometimes just mean they are cannibalizing voters who otherwise still would have voted on Election Day. Vote-method patterns remain very fluid from year to year, so it would be a mistake to assume that because a party’s early vote turnout is five points better than it was in 2024, its final turnout will also be five points better, or even certainly better at all. It is generally better for a party to bank as many votes as possible early, but the key is to acknowledge the uncertainty and look deeper into the composition of the electorate to understand who is actually turning out.</p>
+
+
+
+<p class="wp-block-paragraph">For example, an important component of our analysis involves stratifying the early vote by past turnout. Someone who voted in 2020, 2022 and 2024 is generally much more likely to vote again than someone who is registered but did not vote in any of those three elections. What is especially encouraging for a party is when it is not simply turning out its most reliable voters early who would most likely participate in the end, but also bringing out lower-propensity voters who might otherwise have been less certain to participate.</p>
+
+
+
+<p class="wp-block-paragraph">To illustrate why controlling turnout propensity matters, it is useful to look back at Arizona in 2024 and break down the state’s early mail returns on October 21st, which was 15 days before Election Day.</p>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-datawrapper wp-block-embed-datawrapper"><div class="wp-block-embed__wrapper">
+<iframe title="2024 Arizona Ballot Returns by Party and Vote History" aria-label="Stacked column chart" id="datawrapper-chart-0rgBh" src="https://datawrapper.dwcdn.net/0rgBh/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="459" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">Through October 21, Democrats were running roughly even with Republicans in Arizona’s mail-ballot returns. But low-propensity Democratic turnout was extremely weak, while Democrats were moving through their pool of high-propensity voters more quickly than Republicans. This was hardly unexpected, as Arizona Republicans had been voting later in recent elections, whether by mail or in person, including the 2020 presidential election and the 2022 midterm election.</p>
+
+
+
+<p class="wp-block-paragraph">As Republican ballot returns picked up, the party caught up among voters who had participated in all three of the 2020, 2022 and 2024 elections, while building a much larger advantage among lower-propensity voters. Harris was actually leading in Arizona when roughly half of the vote had been reported, but Republicans still had far more high-propensity voters who had not yet cast or returned their ballots. Many of those votes arrived in the closing days of the election and on Election Day, and Trump ultimately won the state comfortably. Democrat Ruben Gallego defeated Republican Kari Lake in the U.S. Senate race on the same ballot, a good example of a situation where a persuasion edge is enough to overcome poor turnout dynamics. But the asymmetric turnout did still help Lake overperform polling that correctly identified her struggles with swing voters.</p>
+
+
+
+<p class="wp-block-paragraph">Our early vote model does this at a more granular level, estimating a turnout propensity for each voter based on a variety of factors. The model recognizes that high-propensity voters who have not yet voted early are still relatively likely to turn out on Election Day, while it is more concerning for a party if it is quickly exhausting its pool of reliable voters without also seeing elevated turnout among lower-propensity voters.</p>
+
+
+
+<p class="wp-block-paragraph">However, it is still important to be careful, even when controlling for past turnout. Good early vote analysis hinges on waiting until a meaningful number of ballots have been cast. In a state like North Carolina, for instance, we can track mail returns for months, but mail ballots accounted for only about five percent of the vote in 2024. We will still display that data, and there may be interesting things to learn from it, just as there may be from the first week of early in-person voting in Virginia. But voting patterns can change considerably over the course of the early voting period, so anything we learn before mid-October will probably be fairly limited. Caution, and a willingness to embrace uncertainty, should be paramount when interpreting and discussing those early developments.</p>
+
+
+
+<p class="wp-block-paragraph">Sometimes, even the full pre-Election Day vote does not tell us very much. In states where a large share of voters still cast ballots on Election Day, such as Iowa, Michigan, and Ohio, the pre-Election Day electorate may be both too small and too skewed toward particular voting methods to give us at all a clear picture of the final electorate. The pre-election vote we do get in the Midwest is also extremely Democratic simply because it is disproportionately made up of mail ballots. By contrast, states like North Carolina, Texas, Georgia and Florida can be much more informative because a much larger share of the electorate votes before Election Day, often through in-person early voting as well as by mail. In 2026, for example, we expect between 68 to 72 percent of ballots in these four states to be cast before Election Day. The more of the electorate we can observe, and the more representative those voters are of the electorate that ultimately turns out, the more we can reasonably hope to learn.</p>
+
+
+<!--[googlesitekit-end-of-content]-->
+
+</div>
+
+
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"></div>
+</section>
+</div>
+
+
+
+<div class="wp-block-column custom-sidebar is-layout-flow wp-block-column-is-layout-flow" style="padding-top:var(--wp--preset--spacing--56);padding-bottom:var(--wp--preset--spacing--56);flex-basis:270px">
+<div class="wp-block-group desktop has-global-padding is-layout-constrained wp-block-group-is-layout-constrained"><aside class="wp-block-template-part">
+<div class="wp-block-group is-vertical is-content-justification-stretch is-layout-flex wp-container-core-group-is-layout-d347ad22 wp-block-group-is-layout-flex" style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0);padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--16);padding-left:0"><div data-votehub-element="pro-cta" data-variant="compact"><span class="vh-cdn-shell" aria-hidden="true"></span></div>
+
+<div data-votehub-element="average-card" data-average-key="trump_approval" data-title="Trump Approval"><a class="vh-average-card"><header class="vh-average-card__header"><h2>Trump Approval</h2></header><div class="vh-average-card__values" aria-hidden="true"><span class="vh-average-card__stat"><span class="vh-average-card__skeleton vh-average-card__skeleton--value"></span><span class="vh-average-card__skeleton vh-average-card__skeleton--label"></span></span><span class="vh-average-card__stat"><span class="vh-average-card__skeleton vh-average-card__skeleton--value"></span><span class="vh-average-card__skeleton vh-average-card__skeleton--label"></span></span></div></a></div>
+
+<div data-votehub-element="average-card" data-average-key="generic_ballot_2026" data-title="2026 Generic Ballot"><a class="vh-average-card"><header class="vh-average-card__header"><h2>2026 Generic Ballot</h2></header><div class="vh-average-card__values" aria-hidden="true"><span class="vh-average-card__stat"><span class="vh-average-card__skeleton vh-average-card__skeleton--value"></span><span class="vh-average-card__skeleton vh-average-card__skeleton--label"></span></span><span class="vh-average-card__stat"><span class="vh-average-card__skeleton vh-average-card__skeleton--value"></span><span class="vh-average-card__skeleton vh-average-card__skeleton--label"></span></span></div></a></div>
+
+<div data-votehub-element="power-index"><article class="vh-power-index" aria-label="American Power Index"><header class="vh-power-index__header"><strong>American Power Index</strong><small>Where does political power stand?</small></header><div class="vh-power-index__body"><div class="vh-power-index__topline"><span class="vh-power-index__skeleton vh-power-index__skeleton--value"></span><span class="vh-power-index__actions"><button type="button" aria-label="About KPOW" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6"></path><circle cx="12" cy="7.5" r=".75" fill="currentColor" stroke="none"></circle></svg></button></span></div><div class="vh-power-index__chart"><div class="vh-power-index__plot"><span class="vh-power-index__grid" aria-hidden="true"></span><span class="vh-power-index__skeleton vh-power-index__skeleton--chart"></span><span class="vh-power-index__axis" aria-hidden="true"><i>+10 R</i><i>+5 R</i><i>0</i><i>+5 D</i><i>+10 D</i></span></div><div class="vh-power-index__months" aria-hidden="true"></div></div></div><footer class="vh-power-index__footer"><a><span class="vh-power-index__footer-brand"><svg viewBox="0 0 772 226" fill="none" role="img" aria-label="Kalshi" class="vh-power-index__logo"><path d="M255.677 58.1911C210.683 58.1911 183.381 78.5114 181.206 113.922H228.062C229.924 100.374 238.611 93.2917 253.814 93.2917C269.018 93.2917 277.396 100.064 277.088 110.842C276.775 119.156 271.501 122.852 258.16 124.7L238.923 127.164C195.484 132.398 175.002 148.717 175.002 177.967C175.002 207.218 195.48 226 229.611 226C251.331 226 267.776 218.302 278.017 203.522V222.61H326.422V117.924C326.422 78.5114 302.532 58.1911 255.677 58.1911ZM245.44 192.437C231.478 192.437 223.72 186.281 223.72 174.887C223.72 164.109 230.545 158.875 249.473 156.105L258.16 154.873C265.845 153.8 272.17 152.274 277.396 150.131V166.267C277.396 181.663 264.368 192.437 245.44 192.437ZM343.488 3.38607H393.135V222.61H343.488V3.38607ZM105.23 105.628L179.66 222.61H115.118L54.3009 121.934V222.61H0V3.38607H54.3009V99.102L119.464 3.38607H177.489L105.23 105.628ZM716.145 26.1705C716.145 12.0062 728.557 0 744.073 0C759.588 0 772 12.0062 772 26.1705C772 40.3347 759.588 52.3409 744.073 52.3409C728.557 52.3409 716.145 40.6407 716.145 26.1705ZM544.868 172.423C544.868 208.446 518.494 225.996 474.743 225.996C430.991 225.996 403.997 206.908 402.447 172.113H448.369C450.232 185.351 456.435 192.743 474.434 192.743C489.95 192.743 497.395 186.587 497.395 177.347C497.395 168.107 488.396 163.489 465.747 160.107C422.616 154.257 405.242 141.631 405.242 109.304C405.242 75.1293 436.582 58.1911 471.643 58.1911C509.186 58.1911 536.493 71.4293 540.218 108.688H495.225C493.054 96.9877 486.225 91.1376 471.951 91.1376C458.61 91.1376 451.161 97.2937 451.161 105.608C451.161 114.844 458.61 118.23 480.638 121.31C523.148 127.16 544.868 137.934 544.868 172.423ZM719.249 61.5771H768.896V222.61H719.249V61.5771ZM702.183 115.77V222.61H652.536V124.39C652.536 107.146 645.399 98.2197 629.884 98.2197C614.368 98.2197 603.51 108.072 603.51 127.47V222.61H553.863V3.38607H603.51V85.5617C611.32 70.1734 627.761 58.1911 651.603 58.1911C681.393 58.1911 702.179 76.9734 702.179 115.766L702.183 115.77Z" style="fill:var(--vh-color-kalshi-brand, #00B67A)"></path></svg></span></a></footer></article></div>
+
+<div data-votehub-element="kalshi-market" data-event-ticker="CONTROLH-2026" data-title="2026 House Control" data-href="https://kalshi.com/events/CONTROLH-2026"><a class="vh-kalshi-market" target="_blank" rel="noopener noreferrer"><header class="vh-kalshi-market__header"><h2>2026 House Control</h2></header><div class="vh-kalshi-market__values" aria-busy="true"><span class="vh-kalshi-market__stat vh-kalshi-market__stat--yes"><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--value"></span><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--label"></span></span><span class="vh-kalshi-market__stat vh-kalshi-market__stat--no"><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--value"></span><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--label"></span></span></div><footer class="vh-kalshi-market__footer"><span class="vh-kalshi-market__footer-brand"><svg viewBox="0 0 772 226" fill="none" role="img" aria-label="Kalshi" class="vh-kalshi-market__logo"><path d="M255.677 58.1911C210.683 58.1911 183.381 78.5114 181.206 113.922H228.062C229.924 100.374 238.611 93.2917 253.814 93.2917C269.018 93.2917 277.396 100.064 277.088 110.842C276.775 119.156 271.501 122.852 258.16 124.7L238.923 127.164C195.484 132.398 175.002 148.717 175.002 177.967C175.002 207.218 195.48 226 229.611 226C251.331 226 267.776 218.302 278.017 203.522V222.61H326.422V117.924C326.422 78.5114 302.532 58.1911 255.677 58.1911ZM245.44 192.437C231.478 192.437 223.72 186.281 223.72 174.887C223.72 164.109 230.545 158.875 249.473 156.105L258.16 154.873C265.845 153.8 272.17 152.274 277.396 150.131V166.267C277.396 181.663 264.368 192.437 245.44 192.437ZM343.488 3.38607H393.135V222.61H343.488V3.38607ZM105.23 105.628L179.66 222.61H115.118L54.3009 121.934V222.61H0V3.38607H54.3009V99.102L119.464 3.38607H177.489L105.23 105.628ZM716.145 26.1705C716.145 12.0062 728.557 0 744.073 0C759.588 0 772 12.0062 772 26.1705C772 40.3347 759.588 52.3409 744.073 52.3409C728.557 52.3409 716.145 40.6407 716.145 26.1705ZM544.868 172.423C544.868 208.446 518.494 225.996 474.743 225.996C430.991 225.996 403.997 206.908 402.447 172.113H448.369C450.232 185.351 456.435 192.743 474.434 192.743C489.95 192.743 497.395 186.587 497.395 177.347C497.395 168.107 488.396 163.489 465.747 160.107C422.616 154.257 405.242 141.631 405.242 109.304C405.242 75.1293 436.582 58.1911 471.643 58.1911C509.186 58.1911 536.493 71.4293 540.218 108.688H495.225C493.054 96.9877 486.225 91.1376 471.951 91.1376C458.61 91.1376 451.161 97.2937 451.161 105.608C451.161 114.844 458.61 118.23 480.638 121.31C523.148 127.16 544.868 137.934 544.868 172.423ZM719.249 61.5771H768.896V222.61H719.249V61.5771ZM702.183 115.77V222.61H652.536V124.39C652.536 107.146 645.399 98.2197 629.884 98.2197C614.368 98.2197 603.51 108.072 603.51 127.47V222.61H553.863V3.38607H603.51V85.5617C611.32 70.1734 627.761 58.1911 651.603 58.1911C681.393 58.1911 702.179 76.9734 702.179 115.766L702.183 115.77Z" style="fill:var(--vh-color-kalshi-brand, #00B67A)"></path></svg></span></footer></a></div>
+
+<div data-votehub-element="kalshi-market" data-mode="forecast" data-series-ticker="KXTRUMPAPPROVALYEAR" data-ticker="KXTRUMPAPPROVALYEAR-26DEC31" data-title="Trump Approval: 2026 High" data-label="Forecasted High" data-href="https://kalshi.com/markets/kxtrumpapprovalyear/how-high-will-trumps-approval-get/kxtrumpapprovalyear-26dec31"><a class="vh-kalshi-market" target="_blank" rel="noopener noreferrer"><header class="vh-kalshi-market__header"><h2>Trump Approval&#58; 2026 High</h2></header><div class="vh-kalshi-market__values vh-kalshi-market__values--single" aria-busy="true"><span class="vh-kalshi-market__stat vh-kalshi-market__stat--forecast"><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--value"></span><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--label"></span></span></div><footer class="vh-kalshi-market__footer"><span class="vh-kalshi-market__footer-brand"><svg viewBox="0 0 772 226" fill="none" role="img" aria-label="Kalshi" class="vh-kalshi-market__logo"><path d="M255.677 58.1911C210.683 58.1911 183.381 78.5114 181.206 113.922H228.062C229.924 100.374 238.611 93.2917 253.814 93.2917C269.018 93.2917 277.396 100.064 277.088 110.842C276.775 119.156 271.501 122.852 258.16 124.7L238.923 127.164C195.484 132.398 175.002 148.717 175.002 177.967C175.002 207.218 195.48 226 229.611 226C251.331 226 267.776 218.302 278.017 203.522V222.61H326.422V117.924C326.422 78.5114 302.532 58.1911 255.677 58.1911ZM245.44 192.437C231.478 192.437 223.72 186.281 223.72 174.887C223.72 164.109 230.545 158.875 249.473 156.105L258.16 154.873C265.845 153.8 272.17 152.274 277.396 150.131V166.267C277.396 181.663 264.368 192.437 245.44 192.437ZM343.488 3.38607H393.135V222.61H343.488V3.38607ZM105.23 105.628L179.66 222.61H115.118L54.3009 121.934V222.61H0V3.38607H54.3009V99.102L119.464 3.38607H177.489L105.23 105.628ZM716.145 26.1705C716.145 12.0062 728.557 0 744.073 0C759.588 0 772 12.0062 772 26.1705C772 40.3347 759.588 52.3409 744.073 52.3409C728.557 52.3409 716.145 40.6407 716.145 26.1705ZM544.868 172.423C544.868 208.446 518.494 225.996 474.743 225.996C430.991 225.996 403.997 206.908 402.447 172.113H448.369C450.232 185.351 456.435 192.743 474.434 192.743C489.95 192.743 497.395 186.587 497.395 177.347C497.395 168.107 488.396 163.489 465.747 160.107C422.616 154.257 405.242 141.631 405.242 109.304C405.242 75.1293 436.582 58.1911 471.643 58.1911C509.186 58.1911 536.493 71.4293 540.218 108.688H495.225C493.054 96.9877 486.225 91.1376 471.951 91.1376C458.61 91.1376 451.161 97.2937 451.161 105.608C451.161 114.844 458.61 118.23 480.638 121.31C523.148 127.16 544.868 137.934 544.868 172.423ZM719.249 61.5771H768.896V222.61H719.249V61.5771ZM702.183 115.77V222.61H652.536V124.39C652.536 107.146 645.399 98.2197 629.884 98.2197C614.368 98.2197 603.51 108.072 603.51 127.47V222.61H553.863V3.38607H603.51V85.5617C611.32 70.1734 627.761 58.1911 651.603 58.1911C681.393 58.1911 702.179 76.9734 702.179 115.766L702.183 115.77Z" style="fill:var(--vh-color-kalshi-brand, #00B67A)"></path></svg></span></footer></a></div>
+
+<div data-votehub-element="kalshi-market" data-mode="forecast" data-series-ticker="KXTRUMPAPPROVALBELOW" data-ticker="KXTRUMPAPPROVALBELOW-26DEC31" data-title="Trump Approval: 2026 Low" data-label="Forecasted Low" data-value-color="#cc0000" data-href="https://kalshi.com/markets/kxtrumpapprovalbelow/how-low-will-trumps-approval-get-this-year/kxtrumpapprovalbelow-26dec31"><a class="vh-kalshi-market" target="_blank" rel="noopener noreferrer"><header class="vh-kalshi-market__header"><h2>Trump Approval&#58; 2026 Low</h2></header><div class="vh-kalshi-market__values vh-kalshi-market__values--single" aria-busy="true"><span class="vh-kalshi-market__stat vh-kalshi-market__stat--forecast"><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--value"></span><span class="vh-kalshi-market__skeleton vh-kalshi-market__skeleton--label"></span></span></div><footer class="vh-kalshi-market__footer"><span class="vh-kalshi-market__footer-brand"><svg viewBox="0 0 772 226" fill="none" role="img" aria-label="Kalshi" class="vh-kalshi-market__logo"><path d="M255.677 58.1911C210.683 58.1911 183.381 78.5114 181.206 113.922H228.062C229.924 100.374 238.611 93.2917 253.814 93.2917C269.018 93.2917 277.396 100.064 277.088 110.842C276.775 119.156 271.501 122.852 258.16 124.7L238.923 127.164C195.484 132.398 175.002 148.717 175.002 177.967C175.002 207.218 195.48 226 229.611 226C251.331 226 267.776 218.302 278.017 203.522V222.61H326.422V117.924C326.422 78.5114 302.532 58.1911 255.677 58.1911ZM245.44 192.437C231.478 192.437 223.72 186.281 223.72 174.887C223.72 164.109 230.545 158.875 249.473 156.105L258.16 154.873C265.845 153.8 272.17 152.274 277.396 150.131V166.267C277.396 181.663 264.368 192.437 245.44 192.437ZM343.488 3.38607H393.135V222.61H343.488V3.38607ZM105.23 105.628L179.66 222.61H115.118L54.3009 121.934V222.61H0V3.38607H54.3009V99.102L119.464 3.38607H177.489L105.23 105.628ZM716.145 26.1705C716.145 12.0062 728.557 0 744.073 0C759.588 0 772 12.0062 772 26.1705C772 40.3347 759.588 52.3409 744.073 52.3409C728.557 52.3409 716.145 40.6407 716.145 26.1705ZM544.868 172.423C544.868 208.446 518.494 225.996 474.743 225.996C430.991 225.996 403.997 206.908 402.447 172.113H448.369C450.232 185.351 456.435 192.743 474.434 192.743C489.95 192.743 497.395 186.587 497.395 177.347C497.395 168.107 488.396 163.489 465.747 160.107C422.616 154.257 405.242 141.631 405.242 109.304C405.242 75.1293 436.582 58.1911 471.643 58.1911C509.186 58.1911 536.493 71.4293 540.218 108.688H495.225C493.054 96.9877 486.225 91.1376 471.951 91.1376C458.61 91.1376 451.161 97.2937 451.161 105.608C451.161 114.844 458.61 118.23 480.638 121.31C523.148 127.16 544.868 137.934 544.868 172.423ZM719.249 61.5771H768.896V222.61H719.249V61.5771ZM702.183 115.77V222.61H652.536V124.39C652.536 107.146 645.399 98.2197 629.884 98.2197C614.368 98.2197 603.51 108.072 603.51 127.47V222.61H553.863V3.38607H603.51V85.5617C611.32 70.1734 627.761 58.1911 651.603 58.1911C681.393 58.1911 702.179 76.9734 702.179 115.766L702.183 115.77Z" style="fill:var(--vh-color-kalshi-brand, #00B67A)"></path></svg></span></footer></a></div></div>
+</aside></div>
+</div>
+</div>
+</main>
+
+
+<footer class="wp-block-template-part">
+<div class="wp-block-group is-style-default is-layout-flow wp-container-core-group-is-layout-fab9cca8 wp-block-group-is-layout-flow">
+<section class="wp-block-group is-style-default has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="border-top-color:var(--wp--preset--color--secondary-100);border-top-width:1px;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-f56f613f wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:80%">
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+<div class="wp-block-group is-layout-flow wp-container-core-group-is-layout-8e5e07a5 wp-block-group-is-layout-flow"><div class="wp-block-site-logo"><a href="https://votehub.com/" class="custom-logo-link" rel="home"><img width="144" height="144" src="https://votehub.com/wp-content/uploads/2025/03/votehub-logo.svg" class="custom-logo" alt="VoteHub" decoding="async" /></a></div></div>
+
+
+
+<div class="wp-block-group has-global-padding is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-ee16b81b wp-block-group-is-layout-constrained">
+<p class="is-style-text-aware-1 is-style-text-summary has-secondary-800-color has-text-color has-link-color wp-elements-3 is-style-text-summary--11 wp-block-paragraph">VoteHub is a political media organization that aims to provide top-notch, innovative coverage in three key areas: election reporting at a detailed level and in real time, public opinion survey aggregations, and analysis on election results and trends.<br><br>We are&nbsp;<strong>nonpartisan&nbsp;and&nbsp;independent.</strong></p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+<ul class="wp-block-social-links has-small-icon-size is-style-sm-aware-1 is-style-social-links-1 is-nowrap is-layout-flex wp-container-core-social-links-is-layout-feb1e4d5 wp-block-social-links-is-layout-flex is-style-social-links-1--12"><li class="wp-social-link wp-social-link-x wp-block-social-link"><a href="https://x.com/VoteHub" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M13.982 10.622 20.54 3h-1.554l-5.693 6.618L8.745 3H3.5l6.876 10.007L3.5 21h1.554l6.012-6.989L15.868 21h5.245l-7.131-10.378Zm-2.128 2.474-.697-.997-5.543-7.93H8l4.474 6.4.697.996 5.815 8.318h-2.387l-4.745-6.787Z" /></svg><span class="wp-block-social-link-label screen-reader-text">X</span></a></li>
+
+<li class="wp-social-link wp-social-link-threads wp-block-social-link"><a href="http://threads.com/@votehubus" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M16.3 11.3c-.1 0-.2-.1-.2-.1-.1-2.6-1.5-4-3.9-4-1.4 0-2.6.6-3.3 1.7l1.3.9c.5-.8 1.4-1 2-1 .8 0 1.4.2 1.7.7.3.3.5.8.5 1.3-.7-.1-1.4-.2-2.2-.1-2.2.1-3.7 1.4-3.6 3.2 0 .9.5 1.7 1.3 2.2.7.4 1.5.6 2.4.6 1.2-.1 2.1-.5 2.7-1.3.5-.6.8-1.4.9-2.4.6.3 1 .8 1.2 1.3.4.9.4 2.4-.8 3.6-1.1 1.1-2.3 1.5-4.3 1.5-2.1 0-3.8-.7-4.8-2S5.7 14.3 5.7 12c0-2.3.5-4.1 1.5-5.4 1.1-1.3 2.7-2 4.8-2 2.2 0 3.8.7 4.9 2 .5.7.9 1.5 1.2 2.5l1.5-.4c-.3-1.2-.8-2.2-1.5-3.1-1.3-1.7-3.3-2.6-6-2.6-2.6 0-4.7.9-6 2.6C4.9 7.2 4.3 9.3 4.3 12s.6 4.8 1.9 6.4c1.4 1.7 3.4 2.6 6 2.6 2.3 0 4-.6 5.3-2 1.8-1.8 1.7-4 1.1-5.4-.4-.9-1.2-1.7-2.3-2.3zm-4 3.8c-1 .1-2-.4-2-1.3 0-.7.5-1.5 2.1-1.6h.5c.6 0 1.1.1 1.6.2-.2 2.3-1.3 2.7-2.2 2.7z"/></svg><span class="wp-block-social-link-label screen-reader-text">Threads</span></a></li>
+
+<li class="wp-social-link wp-social-link-bluesky wp-block-social-link"><a href="https://bsky.app/profile/votehub.com" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M6.3,4.2c2.3,1.7,4.8,5.3,5.7,7.2.9-1.9,3.4-5.4,5.7-7.2,1.7-1.3,4.3-2.2,4.3.9s-.4,5.2-.6,5.9c-.7,2.6-3.3,3.2-5.6,2.8,4,.7,5.1,3,2.9,5.3-5,5.2-6.7-2.8-6.7-2.8,0,0-1.7,8-6.7,2.8-2.2-2.3-1.2-4.6,2.9-5.3-2.3.4-4.9-.3-5.6-2.8-.2-.7-.6-5.3-.6-5.9,0-3.1,2.7-2.1,4.3-.9h0Z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Bluesky</span></a></li>
+
+<li class="wp-social-link wp-social-link-facebook wp-block-social-link"><a href="https://www.facebook.com/VoteHubUS/" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Facebook</span></a></li></ul>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:20%">
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+<h4 class="wp-block-heading is-style-text-label-2 is-style-text-label-2--13">Quick Links</h4>
+
+
+<nav class="has-text-color has-secondary-800-color is-vertical is-style-link-aware-1 wp-block-navigation is-layout-flex wp-container-core-navigation-is-layout-de943c24 wp-block-navigation-is-layout-flex" aria-label="Footer navigation 2"><ul class="wp-block-navigation__container has-text-color has-secondary-800-color is-vertical is-style-link-aware-1 wp-block-navigation"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/opportunities/"><span class="wp-block-navigation-item__label">Jobs &amp; Internships</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/about"><span class="wp-block-navigation-item__label">About Us</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/cdn-cgi/l/email-protection#781b17160c191b0c380e170c1d100d1a561b1715"><span class="wp-block-navigation-item__label">Contact Us</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://www.paypal.com/donate/?hosted_button_id=ZSZJA5XWG327S" target="_blank"  ><span class="wp-block-navigation-item__label">Tip Us</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/privacy"><span class="wp-block-navigation-item__label">Privacy Policy</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://votehub.com/terms/"><span class="wp-block-navigation-item__label">Terms &amp; Conditions</span></a></li></ul></nav></div>
+</div>
+</div>
+
+
+
+<div class="wp-block-group alignwide is-style-group-plain-links is-layout-flow wp-container-core-group-is-layout-bb004fa3 wp-block-group-is-layout-flow">
+<div class="wp-block-group is-style-row-wrap-sm-down row-child-100 is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-d4cc2152 wp-block-group-is-layout-flex" style="border-top-color:var(--wp--preset--color--secondary-100);border-top-width:1px">
+<p class="is-style-text-aware-1 is-style-link-aware-1 is-style-text-note-2 has-secondary-800-color has-text-color has-link-color wp-elements-4 is-style-text-note-2--14 wp-block-paragraph">© 2026 <a href="https://votehub.com/">VoteHub</a> Corp. All rights reserved.</p>
+
+
+
+<p class="is-style-text-aware-1 is-style-link-aware-1 is-style-text-note-2 has-secondary-800-color has-text-color has-link-color wp-elements-5 is-style-text-note-2--15 wp-block-paragraph"></p>
+</div>
+</div>
+</section>
+</div>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1"></footer></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/fresh-blog-lite/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<!-- Freesoul Deactivate Plugins has disabled 0 plugins on this page. -->
+		<script data-wp-router-options="{&quot;loadOnClientNavigation&quot;:true}" fetchpriority="low" id="@wordpress/block-library/navigation/view-js-module" src="https://votehub.com/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=1bf28ded04f9f188bdcb" type="module"></script>
+<script data-wp-router-options="{&quot;loadOnClientNavigation&quot;:true}" fetchpriority="low" id="@wordpress/block-library/search/view-js-module" src="https://votehub.com/wp-includes/js/dist/script-modules/block-library/search/view.min.js?ver=38bd0e230eaffa354d2a" type="module"></script>
+<script id="firebase-app-js" src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js?ver=10.7.1"></script>
+<script id="firebase-auth-js" src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js?ver=10.7.1"></script>
+<script id="firebase-firestore-js" src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js?ver=10.7.1"></script>
+<script id="votehub-firebase-request-interceptor-js-extra">
+var voteHubConfig = {"firebase":{"apiKey":"AIzaSyC4NqZZp_AjDZa1TKVJ8bZQ1NWw1DYF55o","authDomain":"votehub-com.firebaseapp.com","projectId":"votehub-com","storageBucket":"votehub-com.firebasestorage.app","messagingSenderId":"105153001002","appId":"1:105153001002:web:234a552b3becf7b3b63553"},"tokenDomains":["elections1.votehub.com","geoserver.votehub.com"],"stripe":{"monthlyPriceId":"price_1ShbtcCtW38l0DlpP1hpdn6W","yearlyPriceId":"price_1ShbtcCtW38l0Dlpsjhq46yl","monthlyAmount":"9.99","yearlyAmount":"74.99","yearlyMonthlyEquivalent":"6.25"},"usersCollection":"users","checkoutEndpoint":"https://auth.votehub.com/checkout-session","manageEndpoint":"https://auth.votehub.com/manage-subscription","dataStoreRefreshEndpoint":"https://data.votehub.com/orders","homeUrl":"https://votehub.com/","proLogoUrl":"https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/images/votehub-logo-pro.svg","proLogoEnabled":""};
+//# sourceURL=votehub-firebase-request-interceptor-js-extra
+</script>
+<script id="votehub-firebase-request-interceptor-js" src="https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/js/dist/request-interceptor.js?ver=2.3.6"></script>
+<script id="votehub-firebase-core-js" src="https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/js/dist/core.js?ver=2.3.6"></script>
+<script id="votehub-firebase-login-button-js" src="https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/js/dist/login-button.js?ver=2.3.6"></script>
+<script id="votehub-map-theme-js" src="https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/js/map-theme.js?ver=1.1.7"></script>
+<script id="votehub-theme-controls-js" src="https://votehub.com/wp-content/plugins/votehub-design-system-wp/assets/js/theme.js?ver=1.1.7"></script>
+<script id="wp-hooks-js" src="https://votehub.com/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://votehub.com/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="swv-js" src="https://votehub.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.2.4.1"></script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/votehub.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script id="contact-form-7-js" src="https://votehub.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.2.4.1"></script>
+<script id="votehub-firebase-components-js" src="https://votehub.com/wp-content/plugins/votehub-firebase-wp/assets/js/dist/components.js?ver=2.3.6"></script>
+<script data-wp-strategy="async" id="cloudflare-turnstile-js" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+<script id="cloudflare-turnstile-js-after">
+document.addEventListener( 'wpcf7submit', e => turnstile.reset() );
+//# sourceURL=cloudflare-turnstile-js-after
+</script>
+<script id="molongui-authorship-byline-js-extra">
+var molongui_authorship_byline_params = {"byline_modifiers_enabled":"","byline_prefix":"","byline_suffix":"","byline_separator":",\u00a0","byline_last_separator":"\u00a0and\u00a0","byline_link_title":"View all posts by","byline_link_class":"","byline_dom_tree":"","byline_dom_prepend":"","byline_dom_append":"","byline_decoder":"v3","byline_data_url":"https://votehub.com/wp-json/molongui-authorship/v1/bylines","byline_rest_nonce":""};
+//# sourceURL=molongui-authorship-byline-js-extra
+</script>
+<script id="molongui-authorship-byline-js" src="https://votehub.com/wp-content/plugins/molongui-authorship/assets/js/byline.721e.min.js?ver=5.3.2"></script>
+<script id="googlesitekit-events-provider-contact-form-7-js" src="https://votehub.com/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-contact-form-7-3ac287af84a753cfbaa5.js" defer></script>
+<script id="googlesitekit-events-provider-content-events-js-before">
+window._googlesitekit = window._googlesitekit || {};
+window._googlesitekit.contentEvents = {"postID":9418,"isReadableSinglePost":true,"hasVimeoEmbed":false,"wordCount":1966,"estimatedReadTimeSeconds":496,"isLastPageOfMultiPagePost":true,"readTimeThresholdPercent":85,"minimumReadTimeSeconds":5};
+//# sourceURL=googlesitekit-events-provider-content-events-js-before
+</script>
+<script id="googlesitekit-events-provider-content-events-js" src="https://votehub.com/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-content-events-90bacb156ab34fa090db.js" defer></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://votehub.com/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://votehub.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5467eb41996896f',t:'MTc5MzY1NzY5NQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5467eb41996896f',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+<!--
+Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com
+
+Retrieved 4330 objects (1 MB) from Redis using PhpRedis (v6.3.0).
+-->
+
+
+<!-- Page cached by LiteSpeed Cache 7.9.2 on 2026-11-02 00:09:08 -->
+<!-- All data displayed on this site is the proprietary property of VoteHub. Any scraping, automated collection, or reproduction of our data without prior written permission is strictly prohibited. Unauthorized use may violate applicable law, and we reserve the right to pursue legal action in response. To obtain a license or request permission, please contact us directly. -->

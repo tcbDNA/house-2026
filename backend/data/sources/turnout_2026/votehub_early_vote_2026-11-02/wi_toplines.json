@@ -1,0 +1,42 @@
+{
+  "updated_at": "2026-11-02T19:11:56Z",
+  "electorate_shift": {
+    "label": "FINAL ELECTORATE SHIFT",
+    "title": "ESTIMATED TURNOUT BOOST",
+    "footer": "Modeled 2024 vote among 2026 electorate includes people who both did and did not vote in 2024.",
+    "value": "D +2.2",
+    "color": "#2384B8",
+    "note": {
+      "title": "About electorate shift",
+      "body": "The 2024 result is the actual presidential election result. The modeled 2026 electorate reflects 2026 expected voters’ estimated 2024 presidential preferences, including those who did not actually vote in 2024. In Wisconsin, a change from a Trump +0.9 result to an electorate who would have voted Harris +1.3 if they came out represents a 2.2-point shift toward Democrats. This does not consider persuasion changes."
+    }
+  },
+  "electorate_2024": {
+    "label": "2024 ELECTORATE",
+    "descriptor": "ACTUAL RESULT",
+    "value": "Trump +0.9",
+    "color": "#D9383E"
+  },
+  "electorate_2026": {
+    "label": "2026 ELECTORATE",
+    "descriptor": "MODELED PREFERENCE",
+    "value": "Harris +1.3",
+    "color": "#2384B8"
+  },
+  "aggregate": {
+    "count": 723782
+  },
+  "toplines": {
+    "early": {
+      "count": 429596,
+      "final_count": 503761
+    },
+    "mail_returns": {
+      "count": 294186,
+      "final_count": 348362
+    },
+    "remaining": {
+      "count": 1731300
+    }
+  }
+}

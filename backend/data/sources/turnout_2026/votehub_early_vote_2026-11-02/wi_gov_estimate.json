@@ -1,0 +1,125 @@
+{
+  "updated_at": "2026-11-02T19:11:56Z",
+  "aggregate": {
+    "covered_count": 723782,
+    "candidates": {
+      "G2026WI00_DCD": {
+        "share": {
+          "low": 52.2,
+          "high": 64
+        }
+      },
+      "G2026WI00_TTR": {
+        "share": {
+          "low": 36,
+          "high": 47.8
+        }
+      },
+      "G2026WI00_OTH": {
+        "share": {
+          "low": 0,
+          "high": 0
+        }
+      }
+    },
+    "margin": {
+      "candidate_id": "G2026WI00_DCD",
+      "interval": {
+        "low": 4.4,
+        "high": 27.9
+      }
+    }
+  },
+  "toplines": {
+    "early": {
+      "covered_count": 429596,
+      "candidates": {
+        "G2026WI00_DCD": {
+          "share": {
+            "low": 45.8,
+            "high": 57.9
+          }
+        },
+        "G2026WI00_TTR": {
+          "share": {
+            "low": 42.1,
+            "high": 54.2
+          }
+        },
+        "G2026WI00_OTH": {
+          "share": {
+            "low": 0,
+            "high": 0
+          }
+        }
+      },
+      "margin": {
+        "candidate_id": "G2026WI00_DCD",
+        "interval": {
+          "low": -8.5,
+          "high": 15.7
+        }
+      }
+    },
+    "mail_returns": {
+      "covered_count": 294186,
+      "candidates": {
+        "G2026WI00_DCD": {
+          "share": {
+            "low": 61.6,
+            "high": 72.8
+          }
+        },
+        "G2026WI00_TTR": {
+          "share": {
+            "low": 27.2,
+            "high": 38.4
+          }
+        },
+        "G2026WI00_OTH": {
+          "share": {
+            "low": 0,
+            "high": 0
+          }
+        }
+      },
+      "margin": {
+        "candidate_id": "G2026WI00_DCD",
+        "interval": {
+          "low": 23.1,
+          "high": 45.7
+        }
+      }
+    },
+    "remaining": {
+      "covered_count": 1731300,
+      "candidates": {
+        "G2026WI00_DCD": {
+          "share": {
+            "low": 40.3,
+            "high": 59.1
+          }
+        },
+        "G2026WI00_TTR": {
+          "share": {
+            "low": 40.9,
+            "high": 59.7
+          }
+        },
+        "G2026WI00_OTH": {
+          "share": {
+            "low": 0,
+            "high": 0
+          }
+        }
+      },
+      "margin": {
+        "candidate_id": "G2026WI00_DCD",
+        "interval": {
+          "low": -19.3,
+          "high": 18.3
+        }
+      }
+    }
+  }
+}
