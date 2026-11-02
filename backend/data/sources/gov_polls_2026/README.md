@@ -355,3 +355,7 @@ Release: `../senate_polls_2026/recent/yougov_ttw_oh_20261026_lv.pdf` (https://d3
 ### YouGov, Texas (Oct 26-29), Nov 1 check
 
 Release: `../senate_polls_2026/recent/yougov_ttw_tx_20261026_lv.pdf` (https://d3nkl3psvxxpe9.cloudfront.net/documents/ttw_tx_20261026_lv.pdf, posted Nov 1 15:57 UTC): 2,141 LV, Oct 26-29; Hinojosa 49, Abbott 50, someone else 1, not sure 0, would not vote 1. No sponsor named. Not in RCP's governor feed.
+
+### Nov 2 check: feeds refreshed
+
+Re-downloaded Nov 2, 11:40–11:55 UTC, from the URLs above: every saved RCP governor feed (`rcp_gov_*.json`; the HI, ID, OK and WY placeholder feeds still have no polls and were left as saved) except New Mexico's (`rcp_gov_nm_9029.json`: RCP's feed still has a broken average row dated 12/31 and no averaged polls, so the saved copy is kept) and VoteHub's governor list (`votehub_governor_all.json`). RCP's two-way averages now include the final YouGov, NYT/Siena, UNH, InsiderAdvantage and AtlasIntel polls where it carries them, so Iowa, Kansas, Ohio and Texas return from recomputed averages to RCP's average plus the polls it leaves out. Maine's two-way feed hasn't added them, but its three-way feed now lists YouGov's Oct 26-29 poll, so that poll is no longer newer than RCP and Maine also returns to RCP's two-way average, with YouGov counted as a poll RCP left out. New polls RCP doesn't average are added to `gov_polls_compiled.json` in their own sections below.

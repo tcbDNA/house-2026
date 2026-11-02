@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (76.7% vs 75.0% by default; Osborn's race is nearly all of the
+        them does (78.1% vs 76.5% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -233,10 +233,10 @@ export function Methodology() {
         Mississippi, Nebraska and Arkansas, which RCP doesn't average).
         Louisiana, Idaho (whose only recent poll was commissioned by the Achilles
         campaign) and 11 safe races have no countable recent poll and use the model alone.
-        The blend takes Texas from the model's R+0.8 to Talarico D+1.9, Kansas from
+        The blend takes Texas from the model's R+0.8 to Talarico D+2.2, Kansas from
         R+4.2 to Hamilton D+1.4, Nebraska from R+4.2 to Ricketts
-        +3.1 and Alaska from R+1.6 to D+0.8; P(D control) is 76.7% (66.5% on the
-        model alone; 75.6% / 77.4% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        +3.1 and Alaska from R+1.6 to D+0.8; P(D control) is 78.1% (66.5% on the
+        model alone; 76.7% / 78.8% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus
@@ -312,7 +312,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        24–30), with a 73.4% chance of a majority.
+        24–30), with a 74.2% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the
