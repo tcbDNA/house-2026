@@ -4,8 +4,9 @@ Rules (user decisions, Oct 2026):
   * Excluded pollsters: Rasmussen Reports and ActiVote (user decision),
     Wedgewood Polls, which admitted on Oct 20, 2026 that its polls were
     fabricated (sources/excluded_pollsters/), McLaughlin & Associates
-    (user decision, Oct 30) and Quantus Insights (user decision, Oct 30:
-    "R biased pollster").
+    (user decision, Oct 30), Quantus Insights (user decision, Oct 30:
+    "R biased pollster") and Trafalgar Group (user decision, Nov 2:
+    "exclude all trafalgar polls").
   * Heritage Action's Cor Strategies poll in Texas is not counted (user
     decision Oct 28; NOT_COUNTED, LEAVE_OUT_NOT_COUNTED = False counts it).
   * Polls with a partisan sponsor are not counted, including any RCP has
@@ -72,7 +73,7 @@ OUT = DATA / "senate_poll_averages.csv"
 # new ones as they come out rather than rolling the window forward.
 RETRIEVED = date(2026, 11, 2)
 WINDOW_START = date(2026, 10, 5)
-EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood", "mclaughlin", "quantus")
+EXCLUDED_POLLSTERS = ("rasmussen", "activote", "wedgewood", "mclaughlin", "quantus", "trafalgar")
 # Polls that can't be traced to any release (no source recorded anywhere).
 UNVERIFIED = {("SC", "onpointpolitics (unidentified)"):
               "Poliwave only, 'Source: Not recorded'; no release found"}

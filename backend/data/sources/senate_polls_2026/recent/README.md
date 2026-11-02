@@ -675,3 +675,9 @@ From VoteHub's lists re-downloaded Nov 2 ~17:20 UTC (`votehub_senate_all.json`, 
 | `trafalgar_oh_senate_2026-11-02.html` | https://www.thetrafalgargroup.org/news/oh-senate-gen-1102/ | Release page for the Ohio report |
 
 RCP feeds for the three races (two-way and multi-candidate: `rcp_mi_8802.json`, `rcp_mi_multi_9216.json`, `rcp_oh_8689.json`, `rcp_oh_multi_9218.json`, `rcp_sc_9115.json`, `rcp_sc_multi_9230.json`) re-downloaded Nov 2 21:36 UTC. Same check: VoteHub had nothing new; RCP's other new rows were Rasmussen (excluded) in Iowa and Stetson (already counted) in the Florida governor feed.
+
+### Trafalgar Group excluded (user decision, Nov 2 evening)
+
+User: "exclude all trafalgar polls". Trafalgar Group joins the excluded pollsters (`EXCLUDED_POLLSTERS` in this build and the governor build): its polls come out of RCP's averages the way Rasmussen's and Quantus's do, and out of recomputed averages. Its 13 compiled Senate polls stay in `recent_polls_compiled.json`, marked `excluded_pollster`. Polls removed from averages: Ohio, Michigan, South Carolina and Texas (Oct 31-Nov 1), Maine (Oct 21-23), Iowa and Minnesota (Oct 13-15), North Carolina (Oct 8-10) and Georgia (Oct 7-9); Kansas (Sep 29-Oct 1) and Maine (Sep 29-Oct 1) were already outside the window.
+
+Effect (blend margins): Texas D+3.42 -> D+3.76 (10 polls), projection D+2.28 -> D+2.52 (P(D) 0.670 -> 0.686); Michigan D+4.93 -> D+5.31, D+6.53 -> D+6.79; Maine D+3.97 -> D+4.36, D+5.38 -> D+5.65; Iowa R+0.27 -> even, R+1.31 -> R+1.12 (P(D) 0.407 -> 0.421); Ohio D+2.84 -> D+2.93; North Carolina D+12.06 -> D+12.57; Minnesota D+6.27 -> D+6.79; Georgia D+11.19 -> D+12.57 (2 polls); South Carolina R+2.70 -> R+2.90 (3 polls), projection R+3.67 -> R+3.81. P(D control) 0.779 -> 0.789. House unchanged: no Trafalgar poll in the national crosstabs. The 2018-2024 backtests (`../../polls_backtest/`) still include Trafalgar; the fitted poll weights were not refit.

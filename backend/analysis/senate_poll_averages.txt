@@ -1,7 +1,6 @@
 Senate polling averages, built from sources retrieved 2026-11-02; recompute window: polls ending on or after 2026-10-05.
 
-OH: RCP average, Rasmussen removed; plus polls RCP left out: Research Co. 10/30 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 9 poll(s); anti-R 48.22 / R 45.56 -> margin +2.67, blend margin +2.84 (RCP published +2.6)
-    - Trafalgar Group 10/31 - 11/1
+OH: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmussen Reports 10/12 - 10/14; plus polls RCP left out: Research Co. 10/30 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 8 poll(s); anti-R 48.38 / R 45.62 -> margin +2.75, blend margin +2.93 (RCP published +2.6)
     - NY Times/Siena 10/26 - 11/1
     - InsiderAdvantage 10/29 - 10/30
     - YouGov 10/26 - 10/29
@@ -11,8 +10,7 @@ OH: RCP average, Rasmussen removed; plus polls RCP left out: Research Co. 10/30 
     - Research Co. 10/30 - 11/1 (left out by RCP, counted; full ballot, 45/44)
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 47/47)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-TX: RCP average, excluded pollsters removed: Quantus Insights 10/26 - 10/28, Rasmussen Reports 10/20 - 10/21; plus A2 Insights ending Oct 27 (not listed by RCP, counted by user decision); plus polls RCP left out: Kreate Strategies (KStrat) 10/27 - 10/30, Data for Progress 10/23 - 10/26; 11 poll(s); anti-R 49.47 / R 46.20 -> margin +3.27, blend margin +3.42 (RCP published +2.5)
-    - Trafalgar Group 10/31 - 11/1
+TX: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Quantus Insights 10/26 - 10/28, Rasmussen Reports 10/20 - 10/21; plus A2 Insights ending Oct 27 (not listed by RCP, counted by user decision); plus polls RCP left out: Kreate Strategies (KStrat) 10/27 - 10/30, Data for Progress 10/23 - 10/26; 10 poll(s); anti-R 49.62 / R 46.02 -> margin +3.60, blend margin +3.76 (RCP published +2.5)
     - NY Times/Siena 10/27 - 11/1
     - Atlas Intel 10/28 - 11/1
     - YouGov 10/26 - 10/29
@@ -40,12 +38,11 @@ FL: RCP average; partisan-sponsored poll removed: Big Data Poll 10/26 - 10/30; p
     - Stetson University 10/26 - 10/30 (left out by RCP, counted; full ballot, 45/49)
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 43/51)
     left out: MDW Communications for EDGE Communications (co-author), ending 2026-10-10 (partisan-leaning: MDW and EDGE Communications, political consultancies); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Big Data Poll for 1776 Law Center, ending 2026-10-30 (partisan sponsor)
-IA: RCP average; plus polls RCP left out: GrayHouse 10/28 - 10/31, Echelon Insights for NetChoice 10/16 - 10/23; 8 poll(s); anti-R 46.25 / R 46.50 -> margin -0.25, blend margin -0.27 (RCP published -0.3)
+IA: RCP average, excluded pollsters removed: Trafalgar Group 10/13 - 10/15; plus polls RCP left out: GrayHouse 10/28 - 10/31, Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s); anti-R 46.57 / R 46.57 -> margin +0.00, blend margin +0.00 (RCP published -0.3)
     - NY Times/Siena 10/26 - 11/1
     - co/efficient 10/28 - 10/28
     - YouGov 10/26 - 10/29
     - InsiderAdvantage 10/21 - 10/22
-    - Trafalgar Group 10/13 - 10/15
     - Cook Political Report 10/9 - 10/13
     - GrayHouse 10/28 - 10/31 (left out by RCP, counted; full ballot, 46/48)
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 45/43)
@@ -57,26 +54,23 @@ KS: RCP average; 6 poll(s); anti-R 49.83 / R 46.17 -> margin +3.67, blend margin
     - CNN 10/20 - 10/26
     - InsiderAdvantage 10/13 - 10/14
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
-ME: RCP average; plus Echelon Insights 10/16 - 10/23 (listed by RCP, not yet averaged); plus polls RCP left out: Data for Progress 10/23 - 10/27; 11 poll(s); anti-R 50.00 / R 46.18 -> margin +3.82, blend margin +3.97 (RCP published +3.3)
+ME: RCP average, excluded pollsters removed: Trafalgar Group 10/21 - 10/23; plus Echelon Insights 10/16 - 10/23 (listed by RCP, not yet averaged); plus polls RCP left out: Data for Progress 10/23 - 10/27; 10 poll(s); anti-R 50.30 / R 46.10 -> margin +4.20, blend margin +4.36 (RCP published +3.3)
     - NY Times/Siena 10/27 - 11/1
     - UNH 10/27 - 10/31
     - YouGov 10/26 - 10/29
     - Marist 10/22 - 10/25
     - CNN 10/20 - 10/26
-    - Trafalgar Group 10/21 - 10/23
     - Echelon Insights 10/16 - 10/23 (listed by RCP, counted ahead of RCP)
     - FOX News 10/16 - 10/20
     - InsiderAdvantage 10/13 - 10/14
     - Suffolk University 10/8 - 10/11
     - Data for Progress 10/23 - 10/27 (left out by RCP, counted; full ballot, 50/45)
-SC: RCP average, Rasmussen removed; 4 poll(s); anti-R 45.00 / R 47.50 -> margin -2.50, blend margin -2.70 (RCP published -2.8)
-    - Trafalgar Group 10/31 - 11/1
+SC: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmussen Reports 10/5 - 10/8; 3 poll(s); anti-R 44.67 / R 47.33 -> margin -2.67, blend margin -2.90 (RCP published -2.8)
     - NY Times/Siena 10/19 - 10/26
     - East Carolina U. 10/19 - 10/24
     - The Citadel 10/14 - 10/25
     left out: onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found); Impact Research (D-flagged), ending 2026-10-21 (partisan-leaning: no client named; the memo was posted by Fresh Start PAC); Targoz Market Research for South Carolina Policy Council, ending 2026-10-25 (partisan-leaning: South Carolina Policy Council, a conservative think tank); Patinkin Research Strategies for Project VOTE (PAC), ending 2026-10-29 (partisan sponsor)
-MI: RCP average, Rasmussen removed; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Research Co. 10/30 - 11/1, Data for Progress 10/23 - 10/25; 11 poll(s); anti-R 49.55 / R 44.89 -> margin +4.65, blend margin +4.93 (RCP published +4.9)
-    - Trafalgar Group 10/31 - 11/1
+MI: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmussen Reports 10/28 - 10/29; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Research Co. 10/30 - 11/1, Data for Progress 10/23 - 10/25; 10 poll(s); anti-R 49.80 / R 44.78 -> margin +5.02, blend margin +5.31 (RCP published +4.9)
     - NY Times/Siena 10/23 - 11/1
     - YouGov 10/26 - 10/29
     - CBS News/Mitchell 10/26 - 10/27
@@ -88,12 +82,11 @@ MI: RCP average, Rasmussen removed; plus Michigan State Univ. (Political Science
     - Research Co. 10/30 - 11/1 (left out by RCP, counted; full ballot, 48/46)
     - Data for Progress 10/23 - 10/25 (left out by RCP, counted; full ballot, 50/46)
     left out: The Tyson Group for Alliance for a Better Future (R-flagged), ending 2026-10-08 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Upswing Research for Demand Justice (D-flagged), ending 2026-10-28 (partisan sponsor)
-NC: RCP average, excluded pollsters removed: Quantus Insights 10/24 - 10/25; partisan-sponsored poll removed: Carolina Forward/Change Res. 10/1 - 10/7; plus polls RCP left out: SurveyUSA for WRAL-TV/WSOC-TV 10/7 - 10/11; replacing WRAL-TV/SurveyUSA 10/1 - 10/7; 7 poll(s); anti-R 52.43 / R 41.14 -> margin +11.29, blend margin +12.06 (RCP published +10.8)
+NC: RCP average, excluded pollsters removed: Quantus Insights 10/24 - 10/25, Trafalgar Group 10/8 - 10/10; partisan-sponsored poll removed: Carolina Forward/Change Res. 10/1 - 10/7; plus polls RCP left out: SurveyUSA for WRAL-TV/WSOC-TV 10/7 - 10/11; replacing WRAL-TV/SurveyUSA 10/1 - 10/7; 6 poll(s); anti-R 53.00 / R 41.17 -> margin +11.83, blend margin +12.57 (RCP published +10.8)
     - East Carolina U. 10/26 - 10/29
     - YouGov 10/26 - 10/29
     - Carolina Journal/Harper 10/18 - 10/20
     - High Point University 10/1 - 10/20
-    - Trafalgar Group 10/8 - 10/10
     - Elon University 9/29 - 10/8
     - SurveyUSA for WRAL-TV/WSOC-TV 10/7 - 10/11 (left out by RCP, counted; full ballot, 54/40)
     left out: Change Research for Carolina Forward (D-flagged), ending 2026-10-07 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
@@ -103,21 +96,19 @@ NH: RCP average, Rasmussen removed; plus polls RCP left out: National Public Aff
     - UMass Lowell 10/2 - 10/19
     - YouGov 9/28 - 10/5
     - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; head-to-head, 50/45)
-MN: recomputed: newer polls than RCP's average; 7 poll(s); anti-R 48.43 / R 42.71 -> margin +5.71, blend margin +6.27 (RCP published +5.4)
+MN: recomputed: newer polls than RCP's average; 6 poll(s); anti-R 48.50 / R 42.33 -> margin +6.17, blend margin +6.79 (RCP published +5.4)
     newer than RCP's average (built 2026-10-30): Research Co. ending 2026-11-01 released 2026-11-01
     - Research Co., ending 2026-11-01 (full ballot, 48/43)
     - InsiderAdvantage, ending 2026-10-30 (full ballot, 49/46)
     - SurveyUSA for KSTP-TV, ending 2026-10-28 (full ballot, 48/41)
     - NYT/Siena for The New York Times, ending 2026-10-26 (full ballot, 54/40)
-    - Trafalgar Group (R-flagged), ending 2026-10-15 (full ballot, 48/45)
     - Morning Consult for The Daily Agenda, ending 2026-10-07 (full ballot, 45/41)
     - Mason-Dixon for Star Tribune, ending 2026-10-07 (full ballot, 47/43)
     left out: Victory Insights for Michele Tafoya (R), ending 2026-10-22 (partisan sponsor)
-GA: recomputed: newer polls than RCP's average; 3 poll(s); anti-R 51.33 / R 41.00 -> margin +10.33, blend margin +11.19 (RCP published +8.2)
+GA: recomputed: newer polls than RCP's average; 2 poll(s); anti-R 51.50 / R 40.00 -> margin +11.50, blend margin +12.57 (RCP published +8.2)
     newer than RCP's average (built 2026-10-21): Echelon Insights for NetChoice ending 2026-10-23 released 2026-10-27
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 55/40)
     - Univ. of Georgia SPIA for The Atlanta Journal-Constitution, ending 2026-10-15 (full ballot, 48/40)
-    - Trafalgar Group (R-flagged), ending 2026-10-09 (full ballot, 51/43)
 MT: RCP average, excluded pollsters removed: Quantus Insights 10/15 - 10/18; 1 poll(s); anti-R 30.00 / R 38.00 -> margin -8.00, blend margin -8.00 (RCP published -12.0)
     - Montana Free Press 8/27 - 9/7
     left out: Concord Public Opinion Partners for Seth Bodnar campaign (D-flagged), ending 2026-10-08 (partisan sponsor); Concord Public Opinion Partners for Democrats for Education Reform (D-flagged), ending 2026-10-23 (partisan sponsor); Peak Insights (R-flagged), ending 2026-10-12 (campaign/party internal per VoteHub)

@@ -7948,8 +7948,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
-    "source": "votehub_governor_all.json; rcp_gov_sc_9025.json"
+    "excluded_pollster": true,
+    "source": "votehub_governor_all.json; rcp_gov_sc_9025.json",
+    "note": "Trafalgar Group is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Targoz Market Research",
@@ -8074,9 +8075,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": false,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "../senate_polls_2026/recent/trafalgar_sc_2026-11-01.pdf",
-    "note": "Trafalgar Group report (trafalgar_sc_2026-11-01.pdf, https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf, uploaded Nov 2 17:55 UTC, linked from RCP's feeds (no release page found); retrieved Nov 2 21:40 UTC): Oct 31-Nov 1, 1,091 likely general-election voters, MOE 2.9; governor Wilson 54.1, Johnson 39.1, Addison 1.9, Hakim 0.2, undecided 4.7 (p.12 totals). Names no sponsor. RCP's governor feed (rcp_gov_sc_9025.json) does not list it yet (Nov 2 21:36 UTC)."
+    "note": "Trafalgar Group report (trafalgar_sc_2026-11-01.pdf, https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf, uploaded Nov 2 17:55 UTC, linked from RCP's feeds (no release page found); retrieved Nov 2 21:40 UTC): Oct 31-Nov 1, 1,091 likely general-election voters, MOE 2.9; governor Wilson 54.1, Johnson 39.1, Addison 1.9, Hakim 0.2, undecided 4.7 (p.12 totals). Names no sponsor. RCP's governor feed (rcp_gov_sc_9025.json) does not list it yet (Nov 2 21:36 UTC). Trafalgar Group is an excluded pollster (user decision Nov 2)."
    }
   ]
  },
