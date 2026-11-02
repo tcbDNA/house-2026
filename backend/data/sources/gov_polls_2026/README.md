@@ -389,3 +389,7 @@ AtlasIntel Texas (Oct 28-Nov 1) relabeled LV (Nov 2): RCP lists it as 1,678 LV; 
 ### University of Colorado APRL/YouGov, Colorado (Oct 9-20), Nov 2 afternoon check
 
 Report: `../senate_polls_2026/recent/cu_aprl_colorado_political_climate_2026-10-29.pdf` (https://www.colorado.edu/lab/aprl/media/84), 'Updated Initial Release, October 29, 2026': 800 residents, online (YouGov panel), Oct 9-20; likely-voter weight for the election questions (~700 respondents, credible interval +/-4.48). Governor Weiser 57, Marx 37; Senate Hickenlooper 57, Baisley 39. First Colorado governor poll since September in VoteHub or RCP that counts: Lake Research Partners' Sept 16-30 poll (Weiser 51, Marx 36) is for the Ballot Initiative Strategy Center, a progressive group, so it is left out.
+
+### Trafalgar Group, South Carolina final (Oct 31-Nov 1), Nov 2 evening check
+
+Source: `../senate_polls_2026/recent/trafalgar_sc_2026-11-01.pdf` (https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf): Wilson 54.1, Johnson 39.1, Addison 1.9, Hakim 0.2, undecided 4.7. No sponsor. Not yet in RCP's governor feed.

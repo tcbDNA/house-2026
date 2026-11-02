@@ -663,3 +663,15 @@ From VoteHub's lists re-downloaded Nov 2 ~17:20 UTC (`votehub_senate_all.json`, 
 - National Public Affairs, New Hampshire, Oct 25-29, 800 LV: Senate Pappas 51, Sununu 45, Laplante 2; governor Ayotte 52, Warmington 43, Villee 3. VoteHub lists the sponsor as God Family & Country PAC and flags it REP, so it is left out, as NPA's Oct 25-29 Nebraska poll was this morning.
 - Lake Research Partners, Colorado and Arizona, Sept 16-30, 600 RV: Colorado Senate Hickenlooper 52, Baisley 38; Colorado governor Weiser 51, Marx 36; Arizona governor Hobbs 56, Biggs 33. For the Ballot Initiative Strategy Center, a progressive group: partisan-leaning sponsor, not counted.
 - TIPP Insights national generic ballot, Oct 27-30 (Dem 52, Rep 42): already checked this morning and not used (see the I&I/TIPP note).
+
+### Trafalgar Group finals, Michigan, Ohio and South Carolina (Oct 31-Nov 1), Nov 2 evening check
+
+| File | URL | Notes |
+|---|---|---|
+| `trafalgar_mi_2026-11-01.pdf` | https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/MI-Gen-Sen-Poll-Report-1101.pdf | 1,087 LV, Oct 31-Nov 1, MOE 2.9; El-Sayed 47.1, Rogers 45.9. No sponsor. RCP averages it. |
+| `trafalgar_oh_2026-11-01.pdf` | https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/OH-Midterms-Report-1102.pdf | 1,092 LV, Oct 31-Nov 1, MOE 2.9; Brown 46.6, Husted 45.1. No sponsor. RCP averages it. |
+| `trafalgar_sc_2026-11-01.pdf` | https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf | 1,091 LV, Oct 31-Nov 1, MOE 2.9; Senate Graham 47.5, Andrews 45.5; governor Wilson 54.1, Johnson 39.1. No sponsor. RCP averages the Senate result. |
+| `trafalgar_mi_senate_2026-11-01.html` | https://www.thetrafalgargroup.org/news/mi-senate-gen-1101/ | Release page for the Michigan report |
+| `trafalgar_oh_senate_2026-11-02.html` | https://www.thetrafalgargroup.org/news/oh-senate-gen-1102/ | Release page for the Ohio report |
+
+RCP feeds for the three races (two-way and multi-candidate: `rcp_mi_8802.json`, `rcp_mi_multi_9216.json`, `rcp_oh_8689.json`, `rcp_oh_multi_9218.json`, `rcp_sc_9115.json`, `rcp_sc_multi_9230.json`) re-downloaded Nov 2 21:36 UTC. Same check: VoteHub had nothing new; RCP's other new rows were Rasmussen (excluded) in Iowa and Stetson (already counted) in the Florida governor feed.

@@ -160,10 +160,10 @@ RI: recomputed: RCP publishes no average; 3 poll(s) (n_eff 3); anti-R 46.00 / Bl
     - University of New Hampshire, ending 2026-10-31 (full ballot, 55/34)
     - Emerson College, ending 2026-10-11 (full ballot, 44/35)
     - Embold Research for Salve Regina University Pell Center for International Relations and Public Policy, ending 2026-10-08 (full ballot, 39/28)
-SC: RCP average; 3 poll(s) (n_eff 3); anti-R 37.33 / R 48.67 -> margin -11.33, blend margin -13.18, third parties 0.0 (RCP published -11.4)
-    - NY Times/Siena 10/19 - 10/26
-    - The Citadel 10/14 - 10/25
-    - Trafalgar Group 10/16 - 10/18
+SC: recomputed: newer polls than RCP's average; 3 poll(s) (n_eff 3); anti-R 38.03 / R 49.03 -> margin -11.00, blend margin -12.63, third parties 0.7 (RCP published -11.4)
+    - Trafalgar Group, ending 2026-11-01 (full ballot, 39.1/54.1)
+    - The New York Times/Siena University, ending 2026-10-26 (full ballot, 44/51)
+    - The Citadel School of Humanities and Social Sciences, ending 2026-10-25 (full ballot, 31/42)
     left out: Targoz Market Research for South Carolina Policy Council, ending 2026-10-25 (partisan-leaning: South Carolina Policy Council, a conservative think tank)
 SD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 2 poll(s) (n_eff 2); anti-R 38.50 / R 58.00 -> margin -19.50, blend margin -20.21, third parties 0.0
     - Emerson College for KELO-TV, ending 2026-10-20 (full ballot, 41/60)
