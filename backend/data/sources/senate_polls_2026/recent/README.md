@@ -631,3 +631,11 @@ No sponsor. RCP averages it (valid-vote shares 52/46 and 50/49). `FIRM_ALIASES` 
 Also not counted, from VoteHub's Nov 1-2 rows: Lincoln Park Strategies, Louisiana, Oct 29-31 (Letlow 47, Davis 47), for the Louisiana Democratic Party (VoteHub: sponsor, internal, DEM; its DocumentCloud file https://www.documentcloud.org/documents/28861757-la-sen-lincoln-park-strategies-oct-2026/ returned HTTP 403); GrayHouse, Arkansas, Oct 27-28 (Cotton 55, Shoffner 39), for America One Policies (VoteHub: sponsor, REP; the builder already leaves it out); ActiVote IL, OH and TX and Quantus Insights TX (excluded pollsters); Rasmussen Reports MI (excluded); Montana State University Billings (user decision). Siena's "ReconMR Texas Poll: Recontacting Voters" (https://sri.siena.edu/2026/11/01/reconmr-texas-poll-recontacting-voters/) is a set of recontact interviews, "not a poll", so nothing is recorded from it.
 
 AtlasIntel Texas (Oct 28-Nov 1) relabeled LV (Nov 2): RCP lists it as 1,678 LV; the report calls the sample Texas adults, post-stratified to match adults and likely voters. No effect on the averages.
+
+### InsiderAdvantage, Alaska final (Oct 31-Nov 1), Nov 2 afternoon check
+
+| File | URL | Notes |
+|---|---|---|
+| `insideradvantage_alaska_2026-11-02.html` | https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/ | Posted Nov 2: 1,200 LV, Oct 31-Nov 1, mixed-mode panel/text, MOE 2.83; first round Peltola 48, Sullivan 48; ranked-choice round 50/50. No sponsor. RCP averages it. |
+
+RCP feeds `rcp_ak_8754.json` (two-way: average 10/8-11/1, Peltola 49.2, Sullivan 48.2) and `rcp_ak_rcv1_9171.json` (first round) re-downloaded Nov 2 21:10 UTC; VoteHub lists `votehub_senate_all.json` and `../../gov_polls_2026/votehub_governor_all.json` re-downloaded at the same time. New Mexico governor's RCP feed still has the broken average row (12/31), so its saved copy is kept.

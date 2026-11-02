@@ -23,12 +23,12 @@ TX: RCP average, excluded pollsters removed: Quantus Insights 10/26 - 10/28, Ras
     - Kreate Strategies (KStrat) 10/27 - 10/30 (left out by RCP, counted; full ballot, 48/45)
     - Data for Progress 10/23 - 10/26 (left out by RCP, counted; full ballot, 49/45)
     left out: Cor Strategies (Heritage Action; not counted, user decision Oct 28); Pollfinity, ending 2026-10-18 (partisan-leaning: owned and self-funded by Lars Mapstead, a 2024 Libertarian presidential candidate (user decision Oct 30)); Slingshot Strategies (TPOR) for Texas Public Opinion Research, ending 2026-10-18 (partisan sponsor); YouGov Blue for 254 Labs (D-flagged), ending 2026-10-26 (partisan sponsor)
-AK: RCP average, Rasmussen removed; 5 poll(s); anti-R 49.60 / R 47.80 -> margin +1.80, blend margin +1.85 (RCP published +1.4)
-    - NY Times/Siena 10/23 - 10/30
+AK: RCP average, Rasmussen removed; 5 poll(s); anti-R 49.60 / R 48.20 -> margin +1.40, blend margin +1.43 (RCP published +1.0)
+    - InsiderAdvantage 10/31 - 11/1
     - Alaska Survey Research 10/26 - 10/29
+    - NY Times/Siena 10/23 - 10/30
     - PPP 10/14 - 10/15
     - Data for Progress 10/8 - 10/16
-    - InsiderAdvantage 10/9 - 10/10
 FL: RCP average; partisan-sponsored poll removed: Big Data Poll 10/26 - 10/30; plus polls RCP left out: Stetson University 10/26 - 10/30, Echelon Insights for NetChoice 10/16 - 10/23; 8 poll(s); anti-R 43.38 / R 49.50 -> margin -6.12, blend margin -6.59 (RCP published -6.3)
     - InsiderAdvantage 10/28 - 10/29
     - St. Pete Polls 10/25 - 10/27

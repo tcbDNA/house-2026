@@ -1025,6 +1025,24 @@
     "excluded_pollster": false,
     "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Peltola 48, Sullivan 46."
+   },
+   {
+    "pollster": "InsiderAdvantage",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1200,
+    "anti_r": 48,
+    "r": 48,
+    "h2h_anti_r": 50,
+    "h2h_r": 50,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "insideradvantage_alaska_2026-11-02.html",
+    "note": "InsiderAdvantage release (insideradvantage_alaska_2026-11-02.html, https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/, posted Nov 2, retrieved Nov 2 21:20 UTC): conducted Oct 31-Nov 1, 1,200 LV, mixed-mode panel/text, weighted for age, race, gender and political affiliation, MOE 2.83. First round Peltola 48, Sullivan 48 (RCP's first-round feed adds J. Sullivan 2, Heikes 1); ranked-choice round Peltola 50, Sullivan 50. anti_r/r = first round, h2h = final round, as for the other Alaska rows. Names no sponsor. RCP averages it (two-way feed 8754, refreshed Nov 2 21:10 UTC: Peltola 49.2, Sullivan 48.2, 10/8-11/1)."
    }
   ],
   "notes": "RCP two-way (final-round) average (feed 8754, built Oct 26): 9/28-10/16, Peltola 49.0, Sullivan 48.2 (+0.8), 6 polls: PPP, Rasmussen, DFP, InsiderAdvantage, ASR and Quantus 9/28-30. No AK poll with fieldwork ending after Oct 16 was found. Pre-Oct: Quantus 9/28-30 (737/758 LV). Oct 28 check: RCP (built Oct 27 18:30 CT) dropped Quantus 9/28-30: 10/1-10/16, Peltola 49.4, Sullivan 48.2, 5 polls. No new Alaska poll."
