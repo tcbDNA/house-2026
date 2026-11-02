@@ -397,3 +397,7 @@ Source: `../senate_polls_2026/recent/trafalgar_sc_2026-11-01.pdf` (https://www.t
 ### Trafalgar Group excluded (user decision, Nov 2 evening)
 
 User: "exclude all trafalgar polls". Governor polls removed: South Carolina (Oct 16-18, in RCP's average, and Oct 31-Nov 1); both compiled polls are now marked `excluded_pollster`. South Carolina goes back to RCP's average without Trafalgar: R+12.63 -> R+10.71 blend on 2 polls, so the poll weight falls from 0.79 to 0.53 and the projection moves from R+11.0 to R+7.9 (P(Johnson) 0.025 -> 0.164). Governors P(D majority) 0.762 -> 0.771.
+
+### AtlasIntel, Ohio (Oct 28-Nov 1), Nov 2 evening
+
+Source: `../senate_polls_2026/recent/atlasintel_oh_2026-11-01.pdf` (https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-oh-20261101-2d23817ee435.pdf) and `pollstergraph_oh_governor_2026-11-01.json` (https://pollstergraph.com/api/polls/exclusive-atlas-us-oh-20261101-governor): Acton 51.8, Ramaswamy 43.9, Kissick (L) 2.0, other 1.2 (all respondents, p.19). No outside sponsor (PollsterGraph is AtlasIntel's platform). Not in RCP's governor feeds yet (Nov 2 22:38 UTC).

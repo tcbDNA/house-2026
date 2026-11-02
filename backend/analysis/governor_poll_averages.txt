@@ -137,7 +137,7 @@ NY: recomputed: newer polls than RCP's average; 6 poll(s) (n_eff 6); anti-R 53.2
     - Quinnipiac University, ending 2026-10-19 (full ballot, 55/41)
     - Beacon Research for Secure AI Project, ending 2026-10-06 (full ballot, 53/31)
     - Emerson College for WPIX, ending 2026-10-05 (full ballot, 52.4/39.7)
-OH: RCP average; plus polls RCP left out: Research Co. 10/30 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 9 poll(s) (n_eff 9); anti-R 48.89 / R 44.78 -> margin +4.11, blend margin +4.39, third parties 0.6 (RCP published +4.7)
+OH: RCP average; plus polls RCP left out: Research Co. 10/30 - 11/1, AtlasIntel 10/28 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 10 poll(s) (n_eff 10); anti-R 49.18 / R 44.69 -> margin +4.49, blend margin +4.78, third parties 0.8 (RCP published +4.7)
     - NY Times/Siena 10/26 - 11/1
     - InsiderAdvantage 10/29 - 10/30
     - YouGov 10/26 - 10/29
@@ -146,6 +146,7 @@ OH: RCP average; plus polls RCP left out: Research Co. 10/30 - 11/1, Echelon Ins
     - Marist 10/15 - 10/18
     - Cook Political Report 10/9 - 10/13
     - Research Co. 10/30 - 11/1 (left out by RCP, counted; full ballot, 48/42)
+    - AtlasIntel 10/28 - 11/1 (left out by RCP, counted; full ballot, 51.8/43.9)
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 45/47)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
 OK: no RCP average and no poll ending on/after 2026-10-05 -> model only

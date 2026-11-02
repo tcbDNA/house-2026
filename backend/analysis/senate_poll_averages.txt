@@ -1,6 +1,6 @@
 Senate polling averages, built from sources retrieved 2026-11-02; recompute window: polls ending on or after 2026-10-05.
 
-OH: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmussen Reports 10/12 - 10/14; plus polls RCP left out: Research Co. 10/30 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 8 poll(s); anti-R 48.38 / R 45.62 -> margin +2.75, blend margin +2.93 (RCP published +2.6)
+OH: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmussen Reports 10/12 - 10/14; plus polls RCP left out: Research Co. 10/30 - 11/1, AtlasIntel 10/28 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 9 poll(s); anti-R 48.71 / R 45.43 -> margin +3.28, blend margin +3.48 (RCP published +2.6)
     - NY Times/Siena 10/26 - 11/1
     - InsiderAdvantage 10/29 - 10/30
     - YouGov 10/26 - 10/29
@@ -8,6 +8,7 @@ OH: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmu
     - FOX News 10/15 - 10/19
     - Marist 10/15 - 10/18
     - Research Co. 10/30 - 11/1 (left out by RCP, counted; full ballot, 45/44)
+    - AtlasIntel 10/28 - 11/1 (left out by RCP, counted; full ballot, 51.4/43.9)
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 47/47)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
 TX: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Quantus Insights 10/26 - 10/28, Rasmussen Reports 10/20 - 10/21; plus A2 Insights ending Oct 27 (not listed by RCP, counted by user decision); plus polls RCP left out: Kreate Strategies (KStrat) 10/27 - 10/30, Data for Progress 10/23 - 10/26; 10 poll(s); anti-R 49.62 / R 46.02 -> margin +3.60, blend margin +3.76 (RCP published +2.5)

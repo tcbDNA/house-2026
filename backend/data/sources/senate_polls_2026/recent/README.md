@@ -691,3 +691,10 @@ Effect (blend margins): Texas D+3.42 -> D+3.76 (10 polls), projection D+2.28 -> 
 RCP's North Carolina feed (`rcp_nc_8753.json`) re-downloaded Nov 2 22:34 UTC: unchanged (average 9/29-10/29, Cooper 52.0, Whatley 41.2).
 
 AtlasIntel North Carolina source corrected (Nov 2, 22:40 UTC): the report is public on PollsterGraph, AtlasIntel's own platform (user, Nov 2), as an exclusive released Nov 2 20:45 UTC; its record lists sponsor 'PollsterGraph', so no outside sponsor: https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-nc-20261101-021b0bfc8bec.pdf (identical to `atlasintel_nc_2026-11-01.pdf`), poll page https://pollstergraph.com/poll/exclusive-atlas-us-nc-20261101-senate, record `pollstergraph_nc_senate_2026-11-01.json` (https://pollstergraph.com/api/polls/exclusive-atlas-us-nc-20261101-senate). Values unchanged.
+
+### AtlasIntel, Ohio (Oct 28-Nov 1), Nov 2 evening
+
+| File | URL | Notes |
+|---|---|---|
+| `atlasintel_oh_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-oh-20261101-2d23817ee435.pdf | 1,801 LV, Oct 28-Nov 1, MOE +/-2; Senate (p.14, all respondents) Brown 51.4, Husted 43.9; governor (p.19) Acton 51.8, Ramaswamy 43.9, Kissick 2.0. On PollsterGraph, AtlasIntel's own platform; no outside sponsor. Not in RCP or VoteHub yet. |
+| `pollstergraph_oh_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-oh-20261101-senate | PollsterGraph's record (released Nov 2 20:59 UTC) |
