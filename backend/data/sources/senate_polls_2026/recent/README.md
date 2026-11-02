@@ -589,3 +589,12 @@ Record pages (titles and abstracts, dated Nov 1) saved; each release PDF (schola
 | `researchco_tables_midterms_2026-11-01.pdf` | https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf | Data tables, all voters and decided voters. Senate (all voters): MI El-Sayed 48, Rogers 46; MN Flanagan 48, Tafoya 43; OH Brown 45, Husted 44. Governor: MI Benson 53, James 41; MN Klobuchar 53, Demuth 40; NY Hochul 52, Blakeman 43; OH Acton 48, Ramaswamy 42; PA Shapiro 59, Garrity 34; WI Crowley 50, Tiffany 45. |
 
 Names no sponsor (Research Co. is a Canadian public-opinion firm). Not in RCP; VoteHub and Poliwave list it (Poliwave with the decided-voter numbers). Counted as polls RCP left out.
+
+### InsiderAdvantage, Minnesota and Ohio finals (Oct 29-30), Nov 2 check
+
+| File | URL | Notes |
+|---|---|---|
+| `insideradvantage_minnesota_2026-11-01.html` | https://insideradvantage.com/insideradvantage-final-minnesota-senate-survey-flanagan-49-tafoya-46/ | Posted Nov 1: 1,200 LV, Oct 29-30, mixed-mode text/panel; Flanagan 49, Tafoya 46, other 4, undecided 1. |
+| `insideradvantage_ohio_2026-11-01.html` | https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/ | Posted Nov 1: 1,200 LV, Oct 29-30; Senate Brown 49, Husted 47, other 3, undecided 1; governor Acton 49, Ramaswamy 46, other 3, undecided 2. |
+
+No sponsor named. RCP averages both.

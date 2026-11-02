@@ -371,3 +371,7 @@ Record pages: `../senate_polls_2026/recent/unh_survey_center_polls_101[1-6]_<st>
 ### Research Co., six states (Oct 30-Nov 1), Nov 2 check
 
 Release and tables: `../senate_polls_2026/recent/researchco_midterms_2026-11-01.html` (https://researchco.ca/2026/11/01/midterms-2026-one/), `../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf` (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf). All 450 voters per state: MI Benson 53, James 41; MN Klobuchar 53, Demuth 40; NY Hochul 52, Blakeman 43; OH Acton 48, Ramaswamy 42; PA Shapiro 59, Garrity 34; WI Crowley 50, Tiffany 45. No sponsor; not in RCP.
+
+### InsiderAdvantage, Ohio final (Oct 29-30), Nov 2 check
+
+Release: `../senate_polls_2026/recent/insideradvantage_ohio_2026-11-01.html` (https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/): 1,200 LV, Acton 49, Ramaswamy 46, other 3, undecided 2. RCP averages it.

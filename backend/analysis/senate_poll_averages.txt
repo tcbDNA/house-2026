@@ -101,9 +101,10 @@ NH: RCP average, Rasmussen removed; plus polls RCP left out: National Public Aff
     - UMass Lowell 10/2 - 10/19
     - YouGov 9/28 - 10/5
     - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; head-to-head, 50/45)
-MN: recomputed: newer polls than RCP's average; 6 poll(s); anti-R 48.33 / R 42.17 -> margin +6.17, blend margin +6.81 (RCP published +5.4)
+MN: recomputed: newer polls than RCP's average; 7 poll(s); anti-R 48.43 / R 42.71 -> margin +5.71, blend margin +6.27 (RCP published +5.4)
     newer than RCP's average (built 2026-10-30): Research Co. ending 2026-11-01 released 2026-11-01
     - Research Co., ending 2026-11-01 (full ballot, 48/43)
+    - InsiderAdvantage, ending 2026-10-30 (full ballot, 49/46)
     - SurveyUSA for KSTP-TV, ending 2026-10-28 (full ballot, 48/41)
     - NYT/Siena for The New York Times, ending 2026-10-26 (full ballot, 54/40)
     - Trafalgar Group (R-flagged), ending 2026-10-15 (full ballot, 48/45)
