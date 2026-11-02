@@ -689,3 +689,5 @@ Effect (blend margins): Texas D+3.42 -> D+3.76 (10 polls), projection D+2.28 -> 
 | `atlasintel_nc_2026-11-01.pdf` | none found (user's download, Nov 2, of atlas-pollstergraph-us-nc-20261101-021b0bfc8bec.pdf) | 1,459 LV, Oct 28-Nov 1, MOE +/-3; Senate (p.14, all respondents) Cooper 56.4, Whatley 41.5, other 1.3; valid votes (p.15) 56.8/41.8. No sponsor. Not in RCP or VoteHub yet. |
 
 RCP's North Carolina feed (`rcp_nc_8753.json`) re-downloaded Nov 2 22:34 UTC: unchanged (average 9/29-10/29, Cooper 52.0, Whatley 41.2).
+
+AtlasIntel North Carolina source corrected (Nov 2, 22:40 UTC): the report is public on PollsterGraph, AtlasIntel's own platform (user, Nov 2), as an exclusive released Nov 2 20:45 UTC; its record lists sponsor 'PollsterGraph', so no outside sponsor: https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-nc-20261101-021b0bfc8bec.pdf (identical to `atlasintel_nc_2026-11-01.pdf`), poll page https://pollstergraph.com/poll/exclusive-atlas-us-nc-20261101-senate, record `pollstergraph_nc_senate_2026-11-01.json` (https://pollstergraph.com/api/polls/exclusive-atlas-us-nc-20261101-senate). Values unchanged.
