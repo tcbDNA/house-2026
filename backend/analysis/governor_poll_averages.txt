@@ -34,8 +34,7 @@ CT: RCP average; 4 poll(s) (n_eff 4); anti-R 54.75 / R 37.50 -> margin +17.25, b
     - Emerson 10/10 - 10/12
     - Quinnipiac 10/8 - 10/12
     - WFSB-TV/CT Insider 10/6 - 10/12
-FL: RCP average; removed: Big Data Poll 10/26 - 10/30; plus polls RCP left out: Stetson University Center for Public Opinion Research 10/26 - 10/30, Echelon Insights for NetChoice 10/16 - 10/23; 8 poll(s) (n_eff 8); anti-R 44.12 / R 49.25 -> margin -5.12, blend margin -5.49, third parties 0.1 (RCP published -4.6)
-    - InsiderAdvantage 10/28 - 10/29
+FL: RCP average; removed: InsiderAdvantage 10/28 - 10/29, Big Data Poll 10/26 - 10/30; plus polls RCP left out: Stetson University Center for Public Opinion Research 10/26 - 10/30, Echelon Insights for NetChoice 10/16 - 10/23; 7 poll(s) (n_eff 7); anti-R 44.00 / R 49.29 -> margin -5.29, blend margin -5.67, third parties 0.1 (RCP published -4.6)
     - St. Pete Polls 10/25 - 10/27
     - NY Times/Siena 10/19 - 10/25
     - co/efficient 10/18 - 10/20
@@ -44,11 +43,10 @@ FL: RCP average; removed: Big Data Poll 10/26 - 10/30; plus polls RCP left out: 
     - Stetson University Center for Public Opinion Research 10/26 - 10/30 (left out by RCP, counted; full ballot, 45/51)
     - Echelon Insights for NetChoice 10/16 - 10/23 (left out by RCP, counted; full ballot, 44/50)
     left out: Change Research for Freedom Project USA (D-flagged), ending 2026-10-10 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Big Data Poll for 1776 Law Center, ending 2026-10-30 (partisan sponsor); MDW Communications for EDGE Communications, ending 2026-10-10 (partisan-leaning: MDW and EDGE Communications, political consultancies); Fabrizio, Lee & Associates, ending 2026-10-11 (partisan-leaning: no client named; Fabrizio polls for Republican campaigns)
-GA: recomputed: newer polls than RCP's average; 4 poll(s) (n_eff 4); anti-R 47.75 / R 47.50 -> margin +0.25, blend margin +0.26, third parties 0.0 (RCP published -1.0)
+GA: recomputed: newer polls than RCP's average; 3 poll(s) (n_eff 3); anti-R 48.00 / R 47.00 -> margin +1.00, blend margin +1.05, third parties 0.0 (RCP published -1.0)
     - State Navigate, ending 2026-10-27 (full ballot, 50/47)
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 49/48)
     - University of Georgia SPIA for The Atlanta Journal-Constitution, ending 2026-10-15 (full ballot, 45/46)
-    - InsiderAdvantage, ending 2026-10-13 (full ballot, 47/49)
 HI: no RCP average and no poll ending on/after 2026-10-05 -> model only
 IA: RCP average; plus polls RCP left out: Echelon Insights for NetChoice 10/16 - 10/23, National Public Affairs 10/8 - 10/12; 8 poll(s) (n_eff 8); anti-R 51.00 / R 44.75 -> margin +6.25, blend margin +6.53, third parties 0.0 (RCP published +6.8)
     - NY Times/Siena 10/26 - 11/1
@@ -137,9 +135,8 @@ NY: recomputed: newer polls than RCP's average; 6 poll(s) (n_eff 6); anti-R 53.2
     - Quinnipiac University, ending 2026-10-19 (full ballot, 55/41)
     - Beacon Research for Secure AI Project, ending 2026-10-06 (full ballot, 53/31)
     - Emerson College for WPIX, ending 2026-10-05 (full ballot, 52.4/39.7)
-OH: RCP average; plus polls RCP left out: Research Co. 10/30 - 11/1, AtlasIntel 10/28 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 10 poll(s) (n_eff 10); anti-R 49.18 / R 44.69 -> margin +4.49, blend margin +4.78, third parties 0.8 (RCP published +4.7)
+OH: RCP average; removed: InsiderAdvantage 10/29 - 10/30; plus polls RCP left out: Research Co. 10/30 - 11/1, AtlasIntel 10/28 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 9 poll(s) (n_eff 9); anti-R 49.20 / R 44.54 -> margin +4.66, blend margin +4.97, third parties 0.9 (RCP published +4.7)
     - NY Times/Siena 10/26 - 11/1
-    - InsiderAdvantage 10/29 - 10/30
     - YouGov 10/26 - 10/29
     - Suffolk University 10/21 - 10/26
     - FOX News 10/15 - 10/19

@@ -149,6 +149,8 @@ Retrieved 2026-10-26, refreshed 2026-10-27 (new polls in TX, ME, MI, NC and SC; 
 
 ## Excluded pollsters (excluded_pollsters/)
 
+InsiderAdvantage is excluded from every 2026 average and crosstab dataset (user decision, 2026-11-02: "remove insideradvantage polls, another R biased pollster"). Its 2026 Senate and governor polls stay in the compiled lists, marked `excluded_pollster`. No InsiderAdvantage poll is in the national crosstabs. Like Trafalgar's, its polls remain in the 2018-2024 backtest data, and the fitted poll weights were not refit.
+
 Trafalgar Group is excluded from every 2026 average and crosstab dataset (user decision, 2026-11-02: "exclude all trafalgar polls"). Its 2026 Senate and governor polls stay in the compiled lists, marked `excluded_pollster`. No Trafalgar poll is in the national crosstabs. The 2018-2024 backtest data (`polls_backtest/`) still include Trafalgar's polls as RCP averaged them; the poll weights fitted from those backtests (`senate_poll_weight` 0.7, `governor_poll_weight` 0.79 in `config.py`) were not refit.
 
 Quantus Insights is excluded from every average and crosstab dataset (user decision, 2026-10-30: "remove quantus. R biased pollster"), like Rasmussen Reports, ActiVote and McLaughlin & Associates. None of the national crosstab polls or the 2018-2024 backtest data include a Quantus poll.

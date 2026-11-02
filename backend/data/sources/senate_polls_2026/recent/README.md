@@ -705,3 +705,9 @@ AtlasIntel North Carolina source corrected (Nov 2, 22:40 UTC): the report is pub
 |---|---|---|
 | `atlasintel_mn_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-mn-20261101-7822600998b5.pdf | 2,133 LV, Oct 28-Nov 1, MOE +/-2; Senate (p.14, all respondents) Flanagan 48.1, Tafoya 45.7. On PollsterGraph, AtlasIntel's own platform; no outside sponsor. Not in RCP or VoteHub yet. |
 | `pollstergraph_mn_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-mn-20261101-senate | PollsterGraph's record (released Nov 2 21:14 UTC) |
+
+### InsiderAdvantage excluded (user decision, Nov 2 evening)
+
+User: "remove insideradvantage polls, another R biased pollster. my decision". InsiderAdvantage joins the excluded pollsters (`EXCLUDED_POLLSTERS` in this build and the governor build, matching "insideradvantage" and "insider advantage"): its polls come out of RCP's averages and recomputed averages. Its 13 compiled Senate polls stay in `recent_polls_compiled.json`, marked `excluded_pollster`. Its new Georgia poll (Oct 31-Nov 2, 2,500 respondents; Ossoff 53, Collins 46), listed by PollsterGraph, was not added.
+
+Effect (blend margins): Alaska D+1.43 -> D+1.80 (4 polls), projection D+0.64 -> D+0.89 (P(D) 0.548 -> 0.570); Kansas D+3.82 -> D+4.78 (5 polls), projection D+1.52 -> D+2.19 (P(D) 0.621 -> 0.676); Iowa even -> D+0.36, R+1.12 -> R+0.87 (P(D) 0.421 -> 0.439); Michigan D+5.31 -> D+5.77; Minnesota D+6.17 -> D+6.69; Maine D+4.36 -> D+4.61; Ohio D+3.48 -> D+3.66; Florida R+6.59 -> R+6.61. P(D control) 0.791 -> 0.808. House unchanged: no InsiderAdvantage poll in the national crosstabs. The 2018-2024 backtests still include InsiderAdvantage; the fitted poll weights were not refit.

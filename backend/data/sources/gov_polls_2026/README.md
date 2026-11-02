@@ -401,3 +401,7 @@ User: "exclude all trafalgar polls". Governor polls removed: South Carolina (Oct
 ### AtlasIntel, Ohio (Oct 28-Nov 1), Nov 2 evening
 
 Source: `../senate_polls_2026/recent/atlasintel_oh_2026-11-01.pdf` (https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-oh-20261101-2d23817ee435.pdf) and `pollstergraph_oh_governor_2026-11-01.json` (https://pollstergraph.com/api/polls/exclusive-atlas-us-oh-20261101-governor): Acton 51.8, Ramaswamy 43.9, Kissick (L) 2.0, other 1.2 (all respondents, p.19). No outside sponsor (PollsterGraph is AtlasIntel's platform). Not in RCP's governor feeds yet (Nov 2 22:38 UTC).
+
+### InsiderAdvantage excluded (user decision, Nov 2 evening)
+
+User: "remove insideradvantage polls, another R biased pollster. my decision". Governor polls removed: Georgia (Sep 22-23 and Oct 12-13), Ohio (Oct 29-30) and Florida (Oct 28-29); all four compiled polls are now marked `excluded_pollster`. Its new Georgia poll (Oct 31-Nov 2; Jackson 49, Bottoms 49), listed by PollsterGraph, was not added. Effect: Georgia D+0.26 -> D+1.05 blend (3 polls), projection D+1.8 -> D+2.5 (P(Bottoms) 0.628 -> 0.666); Ohio D+4.78 -> D+4.97; Florida R+5.49 -> R+5.67. Governors P(D majority) 0.773 -> 0.779.

@@ -2092,9 +2092,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "../senate_polls_2026/recent/insideradvantage_florida_2026-10-30.html; rcp_gov_fl_8881.json",
-    "note": "InsiderAdvantage Florida survey (Oct 30): 1,200 LV, mixed mode text/panel, MOE 2.83%, Oct 28-29, no sponsor named. Governor: Donalds 49, Jolly 45, other 2, undecided 4. RCP: 'InsiderAdvantage' 10/28-29, 49/45, in the average (row Oct 30 14:00 CT)."
+    "note": "InsiderAdvantage Florida survey (Oct 30): 1,200 LV, mixed mode text/panel, MOE 2.83%, Oct 28-29, no sponsor named. Governor: Donalds 49, Jolly 45, other 2, undecided 4. RCP: 'InsiderAdvantage' 10/28-29, 49/45, in the average (row Oct 30 14:00 CT). InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Big Data Poll",
@@ -2258,8 +2258,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": false,
-    "excluded_pollster": false,
-    "source": "votehub_governor_all.json; rcp_gov_ga_9028.json"
+    "excluded_pollster": true,
+    "source": "votehub_governor_all.json; rcp_gov_ga_9028.json",
+    "note": "InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Wedgewood Polls",
@@ -2310,9 +2311,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "votehub_governor_all.json; rcp_gov_ga_9028.json; insideradvantage_ga_jamesmagazine_2026-10-14.html",
-    "note": "James Magazine (Oct 14): 800 LV, Oct 12-13. Jackson 49, Bottoms 47, undecided 4."
+    "note": "James Magazine (Oct 14): 800 LV, Oct 12-13. Jackson 49, Bottoms 47, undecided 4. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "University of Georgia SPIA",
@@ -7257,9 +7258,9 @@
     "rcv_final_d": null,
     "rcv_final_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "../senate_polls_2026/recent/insideradvantage_ohio_2026-11-01.html (https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/)",
-    "note": "InsiderAdvantage release (insideradvantage_ohio_2026-11-01.html, https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/, posted Nov 1, retrieved Nov 2 11:47 UTC): conducted Oct 29-30, 1,200 LV, mixed-mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83. Names no sponsor. RCP averages it. Governor: Acton 49, Ramaswamy 46, other 3, undecided 2."
+    "note": "InsiderAdvantage release (insideradvantage_ohio_2026-11-01.html, https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/, posted Nov 1, retrieved Nov 2 11:47 UTC): conducted Oct 29-30, 1,200 LV, mixed-mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83. Names no sponsor. RCP averages it. Governor: Acton 49, Ramaswamy 46, other 3, undecided 2. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "AtlasIntel",

@@ -190,9 +190,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
-    "note": "RCP multi-candidate feed shows the same question: 47/44, Redpath 1, Levy 2."
+    "note": "RCP multi-candidate feed shows the same question: 47/44, Redpath 1, Levy 2. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "RedBox Research",
@@ -316,9 +316,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "insideradvantage_ohio_2026-11-01.html",
-    "note": "InsiderAdvantage release (insideradvantage_ohio_2026-11-01.html, https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/, posted Nov 1, retrieved Nov 2 11:47 UTC): conducted Oct 29-30, 1,200 LV, mixed-mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83. Names no sponsor. RCP averages it. U.S. Senate: Brown 49, Husted 47, other 3, undecided 1."
+    "note": "InsiderAdvantage release (insideradvantage_ohio_2026-11-01.html, https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/, posted Nov 1, retrieved Nov 2 11:47 UTC): conducted Oct 29-30, 1,200 LV, mixed-mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83. Names no sponsor. RCP averages it. U.S. Senate: Brown 49, Husted 47, other 3, undecided 1. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Trafalgar Group",
@@ -533,9 +533,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
-    "note": "RCP 3-way: 48/49, Brown 2."
+    "note": "RCP 3-way: 48/49, Brown 2. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Cor Strategies",
@@ -968,9 +968,9 @@
     "h2h_anti_r": 50,
     "h2h_r": 48,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
-    "note": "anti_r/r = first round (RCP RCV feed, 270toWin). h2h = final round, used in RCP average."
+    "note": "anti_r/r = first round (RCP RCV feed, 270toWin). h2h = final round, used in RCP average. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Data for Progress",
@@ -1076,9 +1076,9 @@
     "h2h_anti_r": 50,
     "h2h_r": 50,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "insideradvantage_alaska_2026-11-02.html",
-    "note": "InsiderAdvantage release (insideradvantage_alaska_2026-11-02.html, https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/, posted Nov 2, retrieved Nov 2 17:22 UTC): conducted Oct 31-Nov 1, 1,200 LV, mixed-mode panel/text, weighted for age, race, gender and political affiliation, MOE 2.83. First round Peltola 48, Sullivan 48 (RCP's first-round feed adds J. Sullivan 2, Heikes 1); ranked-choice round Peltola 50, Sullivan 50. anti_r/r = first round, h2h = final round, as for the other Alaska rows. Names no sponsor. RCP averages it (two-way feed 8754, refreshed Nov 2 17:20 UTC: Peltola 49.2, Sullivan 48.2, 10/8-11/1)."
+    "note": "InsiderAdvantage release (insideradvantage_alaska_2026-11-02.html, https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/, posted Nov 2, retrieved Nov 2 17:22 UTC): conducted Oct 31-Nov 1, 1,200 LV, mixed-mode panel/text, weighted for age, race, gender and political affiliation, MOE 2.83. First round Peltola 48, Sullivan 48 (RCP's first-round feed adds J. Sullivan 2, Heikes 1); ranked-choice round Peltola 50, Sullivan 50. anti_r/r = first round, h2h = final round, as for the other Alaska rows. Names no sponsor. RCP averages it (two-way feed 8754, refreshed Nov 2 17:20 UTC: Peltola 49.2, Sullivan 48.2, 10/8-11/1). InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    }
   ],
   "notes": "RCP two-way (final-round) average (feed 8754, built Oct 26): 9/28-10/16, Peltola 49.0, Sullivan 48.2 (+0.8), 6 polls: PPP, Rasmussen, DFP, InsiderAdvantage, ASR and Quantus 9/28-30. No AK poll with fieldwork ending after Oct 16 was found. Pre-Oct: Quantus 9/28-30 (737/758 LV). Oct 28 check: RCP (built Oct 27 18:30 CT) dropped Quantus 9/28-30: 10/1-10/16, Peltola 49.4, Sullivan 48.2, 5 polls. No new Alaska poll."
@@ -1366,9 +1366,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "insideradvantage_florida_2026-10-30.html; rcp_fl_8948.json",
-    "note": "InsiderAdvantage Florida survey posted Oct 30 (insideradvantage_florida_2026-10-30.html): 1,200 likely voters, mixed mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83%, conducted Oct 28-29; no sponsor named. U.S. Senate: Moody 49, Nixon 43, other 2, undecided 6. RCP: 'InsiderAdvantage' 10/28-29, 49/43, in the average (row Oct 30 13:59 CT)."
+    "note": "InsiderAdvantage Florida survey posted Oct 30 (insideradvantage_florida_2026-10-30.html): 1,200 likely voters, mixed mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83%, conducted Oct 28-29; no sponsor named. U.S. Senate: Moody 49, Nixon 43, other 2, undecided 6. RCP: 'InsiderAdvantage' 10/28-29, 49/43, in the average (row Oct 30 13:59 CT). InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Big Data Poll",
@@ -1601,9 +1601,9 @@
     "h2h_anti_r": 45,
     "h2h_r": 47,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
-    "note": "RCP lists two rows: 47/45 (Hinson/Turek, averaged) and 47/46 (from an X image; matches the 3-way 47/46, Laehn 3). VoteHub, Poliwave and 270toWin: 45/47."
+    "note": "RCP lists two rows: 47/45 (Hinson/Turek, averaged) and 47/46 (from an X image; matches the 3-way 47/46, Laehn 3). VoteHub, Poliwave and 270toWin: 45/47. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Echelon Insights",
@@ -1786,8 +1786,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": false,
-    "excluded_pollster": false,
-    "source": "VoteHub; RCP; Poliwave; 270toWin"
+    "excluded_pollster": true,
+    "source": "VoteHub; RCP; Poliwave; 270toWin",
+    "note": "InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "InsiderAdvantage",
@@ -1803,9 +1804,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "VoteHub; RCP; Poliwave; 270toWin",
-    "note": "RCP 3-way: 47/48, Graham 3."
+    "note": "RCP 3-way: 47/48, Graham 3. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "RedBox Research",
@@ -2057,8 +2058,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
-    "source": "VoteHub; RCP; Poliwave; 270toWin"
+    "excluded_pollster": true,
+    "source": "VoteHub; RCP; Poliwave; 270toWin",
+    "note": "InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Fox News (Beacon Research/Shaw & Co.)",
@@ -2532,8 +2534,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": false,
-    "excluded_pollster": false,
-    "source": "VoteHub; RCP; Poliwave; 270toWin"
+    "excluded_pollster": true,
+    "source": "VoteHub; RCP; Poliwave; 270toWin",
+    "note": "InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Rasmussen Reports",
@@ -2602,8 +2605,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
-    "source": "VoteHub; RCP; Poliwave; 270toWin"
+    "excluded_pollster": true,
+    "source": "VoteHub; RCP; Poliwave; 270toWin",
+    "note": "InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "Glengariff Group",
@@ -3424,9 +3428,9 @@
     "h2h_anti_r": null,
     "h2h_r": null,
     "in_rcp_average": true,
-    "excluded_pollster": false,
+    "excluded_pollster": true,
     "source": "insideradvantage_minnesota_2026-11-01.html",
-    "note": "InsiderAdvantage release (insideradvantage_minnesota_2026-11-01.html, https://insideradvantage.com/insideradvantage-final-minnesota-senate-survey-flanagan-49-tafoya-46/, posted Nov 1, retrieved Nov 2 11:47 UTC): conducted Oct 29-30, 1,200 LV, mixed-mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83. Names no sponsor. RCP averages it. U.S. Senate: Flanagan 49, Tafoya 46, other 4, undecided 1."
+    "note": "InsiderAdvantage release (insideradvantage_minnesota_2026-11-01.html, https://insideradvantage.com/insideradvantage-final-minnesota-senate-survey-flanagan-49-tafoya-46/, posted Nov 1, retrieved Nov 2 11:47 UTC): conducted Oct 29-30, 1,200 LV, mixed-mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83. Names no sponsor. RCP averages it. U.S. Senate: Flanagan 49, Tafoya 46, other 4, undecided 1. InsiderAdvantage is an excluded pollster (user decision Nov 2)."
    },
    {
     "pollster": "AtlasIntel",
