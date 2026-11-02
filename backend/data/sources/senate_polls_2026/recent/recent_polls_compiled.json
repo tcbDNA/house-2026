@@ -840,6 +840,24 @@
     "excluded_pollster": false,
     "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Talarico 50, Paxton 43."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "A",
+    "n": 1678,
+    "anti_r": 51.3,
+    "r": 45.4,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "atlasintel_texas_2026-11-01.html; atlasintel_texas_2026-11-01.pdf",
+    "note": "AtlasIntel poll page (atlasintel_texas_2026-11-01.html, https://www.atlasintel.org/poll/usa-texas-2026-11-01, dated Nov 1, retrieved Nov 2 11:47 UTC) and report (atlasintel_texas_2026-11-01.pdf, https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf): Oct 28-Nov 1, 1,678 Texas adults recruited online (Atlas Random Digital Recruitment), post-stratified by gender, age, education, income, region and past vote; MOE +/-2. The vote-intention charts (pp.14-15, 19-20) are images, read from the rendered pages. Names no sponsor. RCP averages it with its valid-vote shares (Senate 52/46, governor 50/49); recorded here: all respondents. U.S. Senate (p.14): Talarico 51.3, Paxton 45.4, other 1.5, don't know 1.1, would not vote 0.7."
    }
   ],
   "notes": "RCP two-way average (feed 8867, built Oct 27 08:17): 10/8-10/21, Talarico 48.5, Paxton 46.7 (+1.8), 11 polls, including Rasmussen and Univision/YouGov (added Oct 27). Earlier (built Oct 24): Talarico 48.4, Paxton 46.9 (+1.5), 10 polls. RCP 3-way (feed 8985): Talarico 48.0, Paxton 46.3, Brown 2.8. Not in RCP's two-way average: VoteHub/Verasight, Pollfinity, Trafalgar, ReconMR/Siena, YouGov, UT/TPP. Pre-Oct polls excluded: NYT/Siena 9/21-30, Fox 9/24-28, UMass Lowell 9/18-28, Guidant 9/20-28, Rasmussen 9/28-29 (270toWin dates some of these by release date in October). Oct 28 third check: YouGov Blue for 254 Labs (Oct 21-26, released Oct 28; 1,000 RV weighted to likely-voter targets) Talarico 51, Paxton 43, from 254 Labs' release (user's NYT poll list paste). Not in RCP, VoteHub or Poliwave yet. It ended after the latest poll in RCP's average (10/21) and came out after RCP's last update (Oct 27), so Texas is now recomputed. Oct 28 user decision: the Cor Strategies / Heritage Action poll is not counted (NOT_COUNTED in the build script). Oct 28 user decision: YouGov Blue counts as its own pollster (YOUGOV_BLUE_OWN_POLLSTER), so Univision/YouGov (10/13-21) stays in the recomputed average as YouGov's latest poll. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: VoteHub now lists the 254 Labs poll with a Democratic partisan flag, so under the partisan-sponsor rule (named sponsor + partisan flag) it is not counted; with no newer poll left, Texas goes back to RCP's average. Oct 29 check: RCP's feed (built Oct 29 05:41 CT) averages 10/8-10/27, Talarico 48.6, Paxton 46.5, 13 polls including Rasmussen: CNN/SSRS 10/20-27 and TSU/YouGov 10/21-25 added. Texas stays on RCP's average (Rasmussen removed). Oct 29 (user's NYT paste): A2 Insights (Oct 23-27, released Oct 29) Talarico 50.2, Paxton 47.2, no sponsor; not in RCP's average, and it ends on the same day as RCP's latest averaged poll (CNN 10/20-27), so it is not newer and Texas stays on RCP's average. User decision (Oct 29): the A2 Insights poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."

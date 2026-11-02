@@ -182,7 +182,7 @@ FIRM_ALIASES = [
     (r"harper|carolina journal", "harper"), (r"north florida|\bunf\b", "unf"), (r"st\.? pete", "stpete"),
     (r"marquette", "marquette"), (r"league of american workers|\blaw\b|wick", "wick"), (r"votehub", "votehub"),
     (r"quinnipiac", "quinnipiac"), (r"marist", "marist"), (r"echelon", "echelon"), (r"trafalgar", "trafalgar"),
-    (r"quantus", "quantus"), (r"cygnal", "cygnal"), (r"\bcbs\b", "cbs"), (r"\belon\b", "elon"),
+    (r"quantus", "quantus"), (r"cygnal", "cygnal"), (r"\bcbs\b", "cbs"), (r"\belon\b", "elon"), (r"atlas ?intel", "atlasintel"),
     (r"morning consult", "morningconsult"), (r"albuquerque journal|research & polling", "rpi"),
     (r"kob-tv|kob\b", "surveyusa"),
 ]
