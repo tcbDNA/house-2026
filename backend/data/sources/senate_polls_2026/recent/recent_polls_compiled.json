@@ -3427,6 +3427,24 @@
     "excluded_pollster": false,
     "source": "insideradvantage_minnesota_2026-11-01.html",
     "note": "InsiderAdvantage release (insideradvantage_minnesota_2026-11-01.html, https://insideradvantage.com/insideradvantage-final-minnesota-senate-survey-flanagan-49-tafoya-46/, posted Nov 1, retrieved Nov 2 11:47 UTC): conducted Oct 29-30, 1,200 LV, mixed-mode text/panel, weighted for age, race, gender and political affiliation, MOE 2.83. Names no sponsor. RCP averages it. U.S. Senate: Flanagan 49, Tafoya 46, other 4, undecided 1."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 2133,
+    "anti_r": 48.1,
+    "r": 45.7,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "atlasintel_mn_2026-11-01.pdf; pollstergraph_mn_senate_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_mn_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-mn-20261101-7822600998b5.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-mn-20261101-senate (record pollstergraph_mn_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-mn-20261101-senate, retrieved Nov 2 22:45 UTC), released Nov 2 21:14 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 2,133 Minnesota likely voters, Atlas Random Digital Recruitment, MOE +/-2, Oct 28-Nov 1. The vote-intention chart is an image, read from the rendered page; PollsterGraph's record has the same values. U.S. Senate (p.14, all respondents): Flanagan 48.1, Tafoya 45.7, other 2.5, don't know 1.1, would not vote 2.5; valid votes (p.15) Flanagan 49.9, Tafoya 47.4, other 2.6. Recorded: all respondents, as for AtlasIntel's other state polls. No governor question. Not in RCP (feed 8922 re-downloaded Nov 2 22:45 UTC) or VoteHub."
    }
   ],
   "notes": "RCP two-way average (feed 8922, built Oct 22): 10/2-10/21, Flanagan 46.6, Tafoya 43.2 (+3.4), 5 polls, including Rasmussen 10/20-21. The newest non-excluded poll ended Oct 15. Pre-Oct: Big Data 9/29-30, InsiderAdvantage 9/28-29. Oct 28 check: RCP (built Oct 28) now averages 10/2-10/26, Flanagan 47.8, Tafoya 42.7, 6 polls: NYT/Siena 10/19-26 added. Oct 28 third check: Victory Insights for Michele Tafoya (R), Oct 21-22, Flanagan 48, Tafoya 44, recorded from the user's NYT poll list paste only; not in RCP, VoteHub or Poliwave. It ended before NYT/Siena 10/19-26, so Minnesota stays on RCP's average. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 28 fourth check: Victory Insights' release (found in the governor poll sources) gives Flanagan 47.8, Tafoya 44.4, 1,194 LV; still not counted (partisan sponsor; ends before NYT/Siena)."

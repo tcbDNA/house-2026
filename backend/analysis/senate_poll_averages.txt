@@ -97,9 +97,10 @@ NH: RCP average, Rasmussen removed; plus polls RCP left out: National Public Aff
     - UMass Lowell 10/2 - 10/19
     - YouGov 9/28 - 10/5
     - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; head-to-head, 50/45)
-MN: recomputed: newer polls than RCP's average; 6 poll(s); anti-R 48.50 / R 42.33 -> margin +6.17, blend margin +6.79 (RCP published +5.4)
-    newer than RCP's average (built 2026-10-30): Research Co. ending 2026-11-01 released 2026-11-01
+MN: recomputed: newer polls than RCP's average; 7 poll(s); anti-R 48.44 / R 42.81 -> margin +5.63, blend margin +6.17 (RCP published +5.4)
+    newer than RCP's average (built 2026-10-30): Research Co. ending 2026-11-01 released 2026-11-01; AtlasIntel ending 2026-11-01 released 2026-11-02
     - Research Co., ending 2026-11-01 (full ballot, 48/43)
+    - AtlasIntel, ending 2026-11-01 (full ballot, 48.1/45.7)
     - InsiderAdvantage, ending 2026-10-30 (full ballot, 49/46)
     - SurveyUSA for KSTP-TV, ending 2026-10-28 (full ballot, 48/41)
     - NYT/Siena for The New York Times, ending 2026-10-26 (full ballot, 54/40)

@@ -698,3 +698,10 @@ AtlasIntel North Carolina source corrected (Nov 2, 22:40 UTC): the report is pub
 |---|---|---|
 | `atlasintel_oh_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-oh-20261101-2d23817ee435.pdf | 1,801 LV, Oct 28-Nov 1, MOE +/-2; Senate (p.14, all respondents) Brown 51.4, Husted 43.9; governor (p.19) Acton 51.8, Ramaswamy 43.9, Kissick 2.0. On PollsterGraph, AtlasIntel's own platform; no outside sponsor. Not in RCP or VoteHub yet. |
 | `pollstergraph_oh_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-oh-20261101-senate | PollsterGraph's record (released Nov 2 20:59 UTC) |
+
+### AtlasIntel, Minnesota (Oct 28-Nov 1), Nov 2 evening
+
+| File | URL | Notes |
+|---|---|---|
+| `atlasintel_mn_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-mn-20261101-7822600998b5.pdf | 2,133 LV, Oct 28-Nov 1, MOE +/-2; Senate (p.14, all respondents) Flanagan 48.1, Tafoya 45.7. On PollsterGraph, AtlasIntel's own platform; no outside sponsor. Not in RCP or VoteHub yet. |
+| `pollstergraph_mn_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-mn-20261101-senate | PollsterGraph's record (released Nov 2 21:14 UTC) |
