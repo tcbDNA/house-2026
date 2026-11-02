@@ -1,14 +1,14 @@
 Governors, settings overrides: none (defaults)
 Projected winners: D 21 + 6 not up = 27, R 15 + 8 = 23, I 0; D pickups ['AK', 'GA', 'IA', 'OH'], R pickups ['KS'], I pickups []
-Simulated D governorships: median 27, 80% range 24-30; P(D majority, 26+) 0.743, P(R majority) 0.150
+Simulated D governorships: median 27, 80% range 24-31; P(D majority, 26+) 0.752, P(R majority) 0.145
 
 st    model   polls (n_eff)     w    proj   P(D)  flags / opponent
 ID    -29.8     -15.6 (0.5)  0.13   -27.9  0.011  
 WY    -24.0               -  0.00   -24.0  0.013  
 AR    -24.1       -22.9 (1)  0.26   -23.8  0.003  
-VT    -41.4        -2.4 (2)  0.53   -20.9  0.155  legislature
 SD    -13.4       -20.2 (2)  0.53   -17.0  0.024  
 OK    -15.8               -  0.00   -15.8  0.067  
+VT    -41.4      -1.6 (2.5)  0.66   -15.2  0.232  legislature
 TN    -12.2       -15.8 (1)  0.26   -13.2  0.082  
 SC     -5.1       -13.2 (3)  0.79   -11.5  0.020  
 NE    -18.0        -8.0 (4)  0.79   -10.1  0.024  
@@ -26,10 +26,10 @@ WI     +6.9        +5.4 (3)  0.79    +5.7  0.839
 MI     +6.4        +9.3 (9)  0.79    +8.7  0.934  
 NM    +12.9        +7.3 (2)  0.53    +9.9  0.887  
 AZ    +17.9        +9.0 (7)  0.79   +10.9  0.984  
-ME    +11.9      +11.6 (13)  0.79   +11.7  0.978  
+ME    +11.9      +11.8 (13)  0.79   +11.9  0.980  
 MN    +13.8       +12.7 (5)  0.79   +12.9  0.987  
 NY    +10.8       +13.5 (4)  0.79   +13.0  0.995  
-RI      n/a     +13.0 (2.5)  1.00   +13.0  0.978  vs Ken Block (I), three-way P(win): Foulkes 0.978, Block 0.022, Guckian 0.000
+RI      n/a       +13.7 (3)  1.00   +13.7  0.983  vs Ken Block (I), three-way P(win): Foulkes 0.983, Block 0.017, Guckian 0.000
 CO    +15.6               -  0.00   +15.6  0.932  
 CT    +19.8       +18.7 (4)  0.79   +18.9  1.000  
 OR    +24.2      +2.2 (0.5)  0.13   +21.3  0.924  

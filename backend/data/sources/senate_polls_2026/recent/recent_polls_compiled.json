@@ -2056,6 +2056,24 @@
     "excluded_pollster": false,
     "source": "siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, toplines); votehub_senate_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. U.S. Senate: Jackson 51, Collins 45."
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 1654,
+    "anti_r": 54,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "unh_survey_center_polls_1013_me.html (https://scholars.unh.edu/survey_center_polls/1013/); votehub_senate_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1013_me.html, https://scholars.unh.edu/survey_center_polls/1013/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2012&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. U.S. Senate: Jackson 54, Collins 45."
    }
   ],
   "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27. Oct 29 check: RCP's feed (lastBuildDate Oct 27 05:41, CNN row added Oct 29) averages 9/23-10/26, Jackson 48.7, Collins 47.3, 11 polls: CNN/SSRS 10/20-26 added. Echelon Insights 10/16-23 is still listed but not averaged (still counted ahead of RCP: RCP_PENDING)."
@@ -2939,6 +2957,24 @@
     "excluded_pollster": true,
     "source": "RCP",
     "note": "Added to RCP on Oct 26. RCP multi shows the same question: Laplante 4, Harris 1."
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 2040,
+    "anti_r": 54,
+    "r": 42,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "unh_survey_center_polls_1011_nh.html (https://scholars.unh.edu/survey_center_polls/1011/); votehub_senate_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1011_nh.html, https://scholars.unh.edu/survey_center_polls/1011/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2010&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. U.S. Senate: Pappas 54, Sununu 42, Laplante 2."
    }
   ],
   "notes": "RCP two-way average (feed 8845): 9/15-10/23, Pappas 49.7, Sununu 43.0 (+6.7), 6 polls, including Rasmussen 10/20-23. Its lastBuildDate field (Oct 22) lags the Oct 26 Rasmussen addition. Without Rasmussen, only 2 non-excluded October polls are averaged. Pre-Oct: St. Anselm/AARP 9/28-29, Trafalgar 9/26-27. Oct 29 check: UMass Lowell/YouGov (Oct 2-19, released Oct 28) Pappas 48, Sununu 41, from the UMass Lowell release; not in RCP's Senate feed, VoteHub or Poliwave. It ends before the latest poll in RCP's average (Rasmussen 10/20-23), so New Hampshire stays on RCP's average. Oct 29 second check: RCP added UMass Lowell (10/2-19) to its average (feed lastBuildDate Oct 26 14:25 CT): 9/15-10/23, Pappas 49.4, Sununu 42.7, Rasmussen still in it."

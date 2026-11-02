@@ -567,3 +567,16 @@ Re-downloaded Nov 2, 11:40–11:55 UTC, from the URLs above: every saved RCP Sen
 | `siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html` | https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/ | Siena release (posted Nov 1, retrieved Nov 2 11:48 UTC): Senate AK Peltola 48, Sullivan 46; IA Turek 48, Hinson 47; KS Hamilton 49, Marshall 44, Graham 4; ME Jackson 51, Collins 45; MI El-Sayed 53, Rogers 42; OH Brown 49, Husted 44; TX Talarico 50, Paxton 43. Governor AK Kreiss-Tomkins 54, Wilson 46 (ranked choice); IA Sand 51, Lahn 43; KS Holscher 48, Masterson 47; ME Pingree 49, Charles 37, Bennett 8; MI Benson 52, James 39; OH Acton 49, Ramaswamy 43; TX Hinojosa 48, Abbott 47. Margins of error by state; no n. |
 
 Dates and n from VoteHub (AK Oct 23-30, 610; IA Oct 26-Nov 1, 705; KS Oct 27-Nov 1, 736; ME Oct 27-Nov 1, 714; MI Oct 23-Nov 1, 1,011; OH Oct 26-Nov 1, 717; TX Oct 27-Nov 1, 1,215), matching RCP. The NYT toplines and crosstabs (nytimes.com/interactive/2026/11/01/polls/times-siena-<st>-poll-toplines.html) block automated downloads. RCP averages all fourteen.
+
+### UNH Survey Center, six New England states (Oct 27-31), Nov 2 check
+
+Record pages (titles and abstracts, dated Nov 1) saved; each release PDF (scholars.unh.edu/cgi/viewcontent.cgi?article=2010-2015) is behind a Cloudflare browser check, so the numbers and n are VoteHub's (`votehub_senate_all.json`, `../../gov_polls_2026/votehub_governor_all.json`, added Nov 2), which match RCP's rows. The Massachusetts and Rhode Island Senate polls are in RCP's averages for those races (feeds 8899, 8954).
+
+| File | URL | Notes |
+|---|---|---|
+| `unh_survey_center_polls_1011_nh.html` | https://scholars.unh.edu/survey_center_polls/1011/ | NH, 2,040 LV; Senate Pappas 54, Sununu 42, Laplante 2; governor Warmington 48, Ayotte 48, Villee 2 |
+| `unh_survey_center_polls_1012_vt.html` | https://scholars.unh.edu/survey_center_polls/1012/ | VT, 1,172 LV; governor Janoo 51, Scott 43, Judd 4, Roy 1, Goodband 0 |
+| `unh_survey_center_polls_1013_me.html` | https://scholars.unh.edu/survey_center_polls/1013/ | ME, 1,654 LV; Senate Jackson 54, Collins 45; governor Pingree 51, Charles 40, Bennett 7 |
+| `unh_survey_center_polls_1014_ma.html` | https://scholars.unh.edu/survey_center_polls/1014/ | MA, 905 LV; governor Healey 55, Minogue 36, James 5 |
+| `unh_survey_center_polls_1015_ri.html` | https://scholars.unh.edu/survey_center_polls/1015/ | RI, 753 LV; governor Foulkes 55, Guckian 8, Block 34, Gotra 1, Reynolds 1 |
+| `unh_survey_center_polls_1016_ct.html` | https://scholars.unh.edu/survey_center_polls/1016/ | CT, 811 LV; governor Lamont 54, Fazio 41 |

@@ -363,3 +363,7 @@ Re-downloaded Nov 2, 11:40–11:55 UTC, from the URLs above: every saved RCP gov
 ### NYT/Siena final wave: AK, IA, KS, ME, MI, OH, TX (Oct 23-Nov 1), Nov 2 check
 
 Release: `../senate_polls_2026/recent/siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html` (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/): governor results as listed in the Senate README; Alaska's 54/46 is the ranked-choice result and the first-choice ballot (Kreiss-Tomkins 50, Wilson 31, Taylor 10, Bronson 9) is RCP's first-round feed. Dates and n from VoteHub.
+
+### UNH Survey Center, six New England states (Oct 27-31), Nov 2 check
+
+Record pages: `../senate_polls_2026/recent/unh_survey_center_polls_101[1-6]_<st>.html` (https://scholars.unh.edu/survey_center_polls/1011/ to /1016/). Numbers from VoteHub (release PDFs behind a Cloudflare check): NH Warmington 48, Ayotte 48, Villee 2; VT Janoo 51, Scott 43, Judd 4, Roy 1, Goodband 0; ME Pingree 51, Charles 40, Bennett 7; MA Healey 55, Minogue 36, James 5; RI Foulkes 55, Guckian 8, Block 34, Gotra 1, Reynolds 1; CT Lamont 54, Fazio 41. RCP averages CT, MA, ME (three-way feed) and NH; it lists RI and VT without averaging them.

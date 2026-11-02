@@ -1471,6 +1471,33 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_ct_9118.json",
     "note": "RCP n=1225."
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 811,
+    "d_candidate": "Ned Lamont",
+    "r_candidate": "Ryan Fazio",
+    "d": 54,
+    "r": 41,
+    "anti_r": 54,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 54,
+    "full_r": 41,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/unh_survey_center_polls_1016_ct.html (https://scholars.unh.edu/survey_center_polls/1016/); votehub_governor_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1016_ct.html, https://scholars.unh.edu/survey_center_polls/1016/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2015&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. Governor: Lamont 54, Fazio 41. RCP averages it."
    }
   ]
  },
@@ -3944,6 +3971,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/); votehub_governor_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. Governor: Pingree 49, Charles 37, Bennett 8. (Maine: in RCP's three-way average; RCP's two-way feed, which the governor average uses, doesn't list it.)"
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 1654,
+    "d_candidate": "Hannah Pingree",
+    "r_candidate": "Bobby Charles",
+    "d": 51,
+    "r": 40,
+    "anti_r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 51,
+    "full_r": 40,
+    "others": [
+     {
+      "name": "Rick Bennett",
+      "party": "I",
+      "pct": 7
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/unh_survey_center_polls_1013_me.html (https://scholars.unh.edu/survey_center_polls/1013/); votehub_governor_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1013_me.html, https://scholars.unh.edu/survey_center_polls/1013/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2012&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. Governor: Pingree 51, Charles 40, Bennett 7. RCP lists it but doesn't average it."
    }
   ]
  },
@@ -4149,6 +4209,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/umasslowell_yougov_nh_ma_2026-10-28.html; rcp_gov_ma_8937.json",
     "note": "850 LV, MOE +/-4.4: Healey 57, Minogue 29, James (I) 4, undecided 8, would not vote 2. RCP added it to its average on Oct 29. Not in VoteHub."
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 905,
+    "d_candidate": "Maura Healey",
+    "r_candidate": "Michael Minogue",
+    "d": 55,
+    "r": 36,
+    "anti_r": 55,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 55,
+    "full_r": 36,
+    "others": [
+     {
+      "name": "Andrea James",
+      "party": null,
+      "pct": 5
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/unh_survey_center_polls_1014_ma.html (https://scholars.unh.edu/survey_center_polls/1014/); votehub_governor_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1014_ma.html, https://scholars.unh.edu/survey_center_polls/1014/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2013&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. Governor: Healey 55, Minogue 36, James 5. RCP averages it."
    }
   ]
  },
@@ -6089,6 +6182,39 @@
     "excluded_pollster": true,
     "source": "rcp_gov_nh_8953.json",
     "note": "Not in VoteHub; from RCP ('Rasmussen Reports'); released = RCP row timestamp."
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 2040,
+    "d_candidate": "Cinde Warmington",
+    "r_candidate": "Kelly Ayotte",
+    "d": 48,
+    "r": 48,
+    "anti_r": 48,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 48,
+    "full_r": 48,
+    "others": [
+     {
+      "name": "Stephen Villee",
+      "party": null,
+      "pct": 2
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/unh_survey_center_polls_1011_nh.html (https://scholars.unh.edu/survey_center_polls/1011/); votehub_governor_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1011_nh.html, https://scholars.unh.edu/survey_center_polls/1011/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2010&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. Governor: Warmington 48, Ayotte 48, Villee 2. RCP averages it."
    }
   ]
  },
@@ -7493,6 +7619,49 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_ri_multi_9119.json; wpri_emerson_ri_2026-10_403.html",
     "note": "Numbers are RCP's (WPRI/Emerson, 800 LV). VoteHub lists Foulkes 48, Block 38, Guckian 12, which the roster wikitext in ../governors_2026/ labels 'with leaners'. The WPRI story returned HTTP 403."
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 753,
+    "d_candidate": "Helena Foulkes",
+    "r_candidate": "Aaron Guckian",
+    "d": 55,
+    "r": 8,
+    "anti_r": 55,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 55,
+    "full_r": 8,
+    "others": [
+     {
+      "name": "Ken Block",
+      "party": "I",
+      "pct": 34
+     },
+     {
+      "name": "Jasjit Gotra",
+      "party": "I",
+      "pct": 1
+     },
+     {
+      "name": "CD Reynolds",
+      "party": "I",
+      "pct": 1
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/unh_survey_center_polls_1015_ri.html (https://scholars.unh.edu/survey_center_polls/1015/); votehub_governor_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1015_ri.html, https://scholars.unh.edu/survey_center_polls/1015/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2014&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. Governor: Foulkes 55, Guckian 8, Block 34, Gotra 1, Reynolds 1. RCP lists it but doesn't average it."
    }
   ]
  },
@@ -9100,6 +9269,49 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; statenavigate_vt_final_poll_2026-10.html",
     "note": "State Navigate final poll article (Oct 27): 1,752 LV, Oct 23-25, Scott 49, Janoo 46, minor-party candidates 2 combined, undecided (or voted, don't remember) 3. No recalled-vote weighting."
+   },
+   {
+    "pollster": "University of New Hampshire",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-27",
+    "end": "2026-10-31",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 1172,
+    "d_candidate": "Amanda Janoo",
+    "r_candidate": "Phil Scott",
+    "d": 51,
+    "r": 43,
+    "anti_r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 51,
+    "full_r": 43,
+    "others": [
+     {
+      "name": "Brian Judd",
+      "party": null,
+      "pct": 4
+     },
+     {
+      "name": "Dean Roy",
+      "party": null,
+      "pct": 1
+     },
+     {
+      "name": "June Goodband",
+      "party": null,
+      "pct": 0
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/unh_survey_center_polls_1012_vt.html (https://scholars.unh.edu/survey_center_polls/1012/); votehub_governor_all.json; RCP",
+    "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1012_vt.html, https://scholars.unh.edu/survey_center_polls/1012/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2011&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. Governor: Janoo 51, Scott 43, Judd 4, Roy 1, Goodband 0. RCP lists it but doesn't average it."
    }
   ]
  },
