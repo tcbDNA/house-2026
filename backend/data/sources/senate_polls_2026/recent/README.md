@@ -613,3 +613,10 @@ No sponsor named. RCP averages both.
 | `atlasintel_texas_2026-11-01.pdf` | https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf | Report. Senate (p.14, all respondents): Talarico 51.3, Paxton 45.4, other 1.5, don't know 1.1, would not vote 0.7; governor (p.19): Hinojosa 49.2, Abbott 47.6, other 1.3, don't know 1.2, would not vote 0.7. Charts are images (read from rendered pages). |
 
 No sponsor. RCP averages it (valid-vote shares 52/46 and 50/49). `FIRM_ALIASES` now matches 'AtlasIntel' to RCP's 'Atlas Intel', so the poll isn't counted a second time as one RCP left out.
+
+### Trafalgar Group, Texas Senate (Oct 31-Nov 1), Nov 2 check
+
+| File | URL | Notes |
+|---|---|---|
+| `trafalgar_tx_senate_2026-11-01.html` | https://www.thetrafalgargroup.org/news/tx-senate-gen-1101/ | Post linking the report (date not shown; VoteHub added it Nov 2). |
+| `trafalgar_tx_2026-11-01.pdf` | https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/TX-Midterms-Report-1101.pdf | 1,089 LV, Oct 31-Nov 1, MOE 2.9; Paxton 48.1, Talarico 47.5, Brown 2.4. No sponsor. RCP averages it. |
