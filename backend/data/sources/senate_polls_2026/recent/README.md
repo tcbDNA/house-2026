@@ -580,3 +580,12 @@ Record pages (titles and abstracts, dated Nov 1) saved; each release PDF (schola
 | `unh_survey_center_polls_1014_ma.html` | https://scholars.unh.edu/survey_center_polls/1014/ | MA, 905 LV; governor Healey 55, Minogue 36, James 5 |
 | `unh_survey_center_polls_1015_ri.html` | https://scholars.unh.edu/survey_center_polls/1015/ | RI, 753 LV; governor Foulkes 55, Guckian 8, Block 34, Gotra 1, Reynolds 1 |
 | `unh_survey_center_polls_1016_ct.html` | https://scholars.unh.edu/survey_center_polls/1016/ | CT, 811 LV; governor Lamont 54, Fazio 41 |
+
+### Research Co., six states (Oct 30-Nov 1), Nov 2 check
+
+| File | URL | Notes |
+|---|---|---|
+| `researchco_midterms_2026-11-01.html` | https://researchco.ca/2026/11/01/midterms-2026-one/ | Release (Nov 1): online, Oct 30-Nov 1, 450 LV per state, weighted by age and gender; MOE +/-4.6. Quotes decided voters. |
+| `researchco_tables_midterms_2026-11-01.pdf` | https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf | Data tables, all voters and decided voters. Senate (all voters): MI El-Sayed 48, Rogers 46; MN Flanagan 48, Tafoya 43; OH Brown 45, Husted 44. Governor: MI Benson 53, James 41; MN Klobuchar 53, Demuth 40; NY Hochul 52, Blakeman 43; OH Acton 48, Ramaswamy 42; PA Shapiro 59, Garrity 34; WI Crowley 50, Tiffany 45. |
+
+Names no sponsor (Research Co. is a Canadian public-opinion firm). Not in RCP; VoteHub and Poliwave list it (Poliwave with the decided-voter numbers). Counted as polls RCP left out.

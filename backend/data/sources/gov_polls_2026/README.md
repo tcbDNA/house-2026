@@ -367,3 +367,7 @@ Release: `../senate_polls_2026/recent/siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.
 ### UNH Survey Center, six New England states (Oct 27-31), Nov 2 check
 
 Record pages: `../senate_polls_2026/recent/unh_survey_center_polls_101[1-6]_<st>.html` (https://scholars.unh.edu/survey_center_polls/1011/ to /1016/). Numbers from VoteHub (release PDFs behind a Cloudflare check): NH Warmington 48, Ayotte 48, Villee 2; VT Janoo 51, Scott 43, Judd 4, Roy 1, Goodband 0; ME Pingree 51, Charles 40, Bennett 7; MA Healey 55, Minogue 36, James 5; RI Foulkes 55, Guckian 8, Block 34, Gotra 1, Reynolds 1; CT Lamont 54, Fazio 41. RCP averages CT, MA, ME (three-way feed) and NH; it lists RI and VT without averaging them.
+
+### Research Co., six states (Oct 30-Nov 1), Nov 2 check
+
+Release and tables: `../senate_polls_2026/recent/researchco_midterms_2026-11-01.html` (https://researchco.ca/2026/11/01/midterms-2026-one/), `../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf` (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf). All 450 voters per state: MI Benson 53, James 41; MN Klobuchar 53, Demuth 40; NY Hochul 52, Blakeman 43; OH Acton 48, Ramaswamy 42; PA Shapiro 59, Garrity 34; WI Crowley 50, Tiffany 45. No sponsor; not in RCP.

@@ -4982,6 +4982,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/); votehub_governor_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. Governor: Benson 52, James 39."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-30",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Jocelyn Benson",
+    "r_candidate": "John James",
+    "d": 53,
+    "r": 41,
+    "anti_r": 53,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 53,
+    "full_r": 41,
+    "others": [
+     {
+      "name": "Some other candidate",
+      "party": null,
+      "pct": 1
+     }
+    ],
+    "undecided": 5,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-01.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-01.html (https://researchco.ca/2026/11/01/midterms-2026-one/, dated Nov 1, retrieved Nov 2 11:47 UTC) and data tables researchco_tables_midterms_2026-11-01.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf): online surveys Oct 30-Nov 1, 450 likely voters in each of MI, MN, NY, OH, PA and WI, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP. Governor: Benson 53, James 41, Some other candidate 1, undecided 5 (decided voters 56/43)."
    }
   ]
  },
@@ -5275,6 +5308,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/kstp_surveyusa_mn_2026-10-30.html (https://kstp.com/kstp-news/top-news/kstp-surveyusa-minnesota-statewide-races-inch-left-in-final-poll-before-election-day/); rcp_gov_mn_8915.json",
     "note": "KSTP's article (final KSTP/SurveyUSA poll): Klobuchar 51, Demuth 39, 8% undecided, +/-4.2 (other candidates not given). Field dates and n (Oct 24-28, 714 LV) from RCP's row. RCP averages it (51/39) in place of SurveyUSA's Oct 8-12 poll."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-30",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Amy Klobuchar",
+    "r_candidate": "Lisa Demuth",
+    "d": 53,
+    "r": 40,
+    "anti_r": 53,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 53,
+    "full_r": 40,
+    "others": [
+     {
+      "name": "Steven Young",
+      "party": "Green",
+      "pct": 1
+     }
+    ],
+    "undecided": 6,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-01.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-01.html (https://researchco.ca/2026/11/01/midterms-2026-one/, dated Nov 1, retrieved Nov 2 11:47 UTC) and data tables researchco_tables_midterms_2026-11-01.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf): online surveys Oct 30-Nov 1, 450 likely voters in each of MI, MN, NY, OH, PA and WI, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP. Governor: Klobuchar 53, Demuth 40, Steven Young 1, undecided 6 (decided voters 56/43)."
    }
   ]
  },
@@ -6512,6 +6578,33 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_ny_8742.json"
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-30",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Kathy Hochul",
+    "r_candidate": "Bruce Blakeman",
+    "d": 52,
+    "r": 43,
+    "anti_r": 52,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 52,
+    "full_r": 43,
+    "others": [],
+    "undecided": 5,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-01.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-01.html (https://researchco.ca/2026/11/01/midterms-2026-one/, dated Nov 1, retrieved Nov 2 11:47 UTC) and data tables researchco_tables_midterms_2026-11-01.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf): online surveys Oct 30-Nov 1, 450 likely voters in each of MI, MN, NY, OH, PA and WI, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP. Governor: Hochul 52, Blakeman 43, undecided 5 (decided voters 55/45)."
    }
   ]
  },
@@ -7073,6 +7166,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/); votehub_governor_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. Governor: Acton 49, Ramaswamy 43."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-30",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Amy Acton",
+    "r_candidate": "Vivek Ramaswamy",
+    "d": 48,
+    "r": 42,
+    "anti_r": 48,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 48,
+    "full_r": 42,
+    "others": [
+     {
+      "name": "Don Kissick",
+      "party": "L",
+      "pct": 1
+     }
+    ],
+    "undecided": 9,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-01.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-01.html (https://researchco.ca/2026/11/01/midterms-2026-one/, dated Nov 1, retrieved Nov 2 11:47 UTC) and data tables researchco_tables_midterms_2026-11-01.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf): online surveys Oct 30-Nov 1, 450 likely voters in each of MI, MN, NY, OH, PA and WI, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP. Governor: Acton 48, Ramaswamy 42, Don Kissick 1, undecided 9 (decided voters 53/46)."
    }
   ]
  },
@@ -7459,6 +7585,39 @@
     "in_rcp_average": false,
     "excluded_pollster": true,
     "source": "votehub_governor_all.json"
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-30",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Josh Shapiro",
+    "r_candidate": "Stacy Garrity",
+    "d": 59,
+    "r": 34,
+    "anti_r": 59,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 59,
+    "full_r": 34,
+    "others": [
+     {
+      "name": "Ken Krawchuck",
+      "party": "L",
+      "pct": 1
+     }
+    ],
+    "undecided": 6,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-01.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-01.html (https://researchco.ca/2026/11/01/midterms-2026-one/, dated Nov 1, retrieved Nov 2 11:47 UTC) and data tables researchco_tables_midterms_2026-11-01.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf): online surveys Oct 30-Nov 1, 450 likely voters in each of MI, MN, NY, OH, PA and WI, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP. Governor: Shapiro 59, Garrity 34, Ken Krawchuck 1, undecided 6 (decided voters 63/36)."
    }
   ]
  },
@@ -9448,6 +9607,33 @@
     "excluded_pollster": false,
     "source": "dailysignal_wi_2026-10-28.html; rcp_gov_wi_9105.json; cortes_wick_law_wi_2026-10-29.html (https://stevecortes.substack.com/p/breaking-news-wisconsin-heads-for); votehub_governor_all.json (Oct 29)",
     "note": "Daily Signal article (Oct 28): 'conducted by the League of American Workers', 1,213 LV, Oct 19-23; Crowley 47.7, Tiffany 44.6, undecided 7.7. No sponsor named: the Daily Signal reports the poll, and the group's founder, Steve Cortes, is quoted. RCP: 'LAW/Daily Signal**' 48/45, in its average. Not in VoteHub. Oct 29: Steve Cortes, the League of American Workers' president, calls it 'my newest poll for League of American Workers' conducted by Wick Research (1,213 LV; Crowley 47.7, Tiffany 44.7); VoteHub lists pollster Wick, sponsor League of American Workers, partisan REP. A named sponsor with a partisan flag, so it is not counted (user rule, Oct 28), though RCP averages it. Sponsor written as RCP abbreviates it ('LAW/Daily Signal') so the RCP row is matched."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-30",
+    "end": "2026-11-01",
+    "released": "2026-11-01",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "David Crowley",
+    "r_candidate": "Tom Tiffany",
+    "d": 50,
+    "r": 45,
+    "anti_r": 50,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 50,
+    "full_r": 45,
+    "others": [],
+    "undecided": 5,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-01.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-01.html (https://researchco.ca/2026/11/01/midterms-2026-one/, dated Nov 1, retrieved Nov 2 11:47 UTC) and data tables researchco_tables_midterms_2026-11-01.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf): online surveys Oct 30-Nov 1, 450 likely voters in each of MI, MN, NY, OH, PA and WI, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP. Governor: Crowley 50, Tiffany 45, undecided 5 (decided voters 53/47)."
    }
   ]
  },
