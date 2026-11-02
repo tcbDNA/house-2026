@@ -620,3 +620,12 @@ No sponsor. RCP averages it (valid-vote shares 52/46 and 50/49). `FIRM_ALIASES` 
 |---|---|---|
 | `trafalgar_tx_senate_2026-11-01.html` | https://www.thetrafalgargroup.org/news/tx-senate-gen-1101/ | Post linking the report (date not shown; VoteHub added it Nov 2). |
 | `trafalgar_tx_2026-11-01.pdf` | https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/TX-Midterms-Report-1101.pdf | 1,089 LV, Oct 31-Nov 1, MOE 2.9; Paxton 48.1, Talarico 47.5, Brown 2.4. No sponsor. RCP averages it. |
+
+### Nov 2 check: new polls not counted
+
+| File | URL | Notes |
+|---|---|---|
+| `concord_ohio_2026-10-24.html` | https://concordpublicopinionpartners.org/polls/ohio-ge-2026-oct | Concord Public Opinion Partners, Ohio, Oct 22-24, 469 LV (live calls and text-to-web): Brown 46, Husted 42, someone else 8, undecided 4; governor Acton 49, Ramaswamy 39, Kissick 5, undecided 6. The memo says "Conducted by Concord Public Opinion Partners for Education Reform Now Advocacy": partisan sponsor, not counted (as its Nebraska and South Dakota polls). VoteHub added it Nov 2. |
+| `../../ne_senate_2026/npa_2026-10-25_29_memo.pdf` | https://backend.natpublicaffairs.com/media/Nebraska_General_Election_Memo_103126.2.pdf | National Public Affairs, Nebraska, Oct 25-29, 800 LV, memo dated Nov 1: full ballot Ricketts 48, Osborn 45, three minor candidates 4, undecided 3; head-to-head 49-48. The memo names no sponsor, but VoteHub (added Nov 1) lists the sponsor as "God, Family & Country PAC (hybrid PAC)" and flags it REP, so under the Oct 30 rule (a sponsor that looks partisan-leaning is not counted) it is left out. NPA's Oct 2-5 and Oct 15-18 Nebraska rounds have no sponsor in their memos or in VoteHub and stay in the average. |
+
+Also not counted, from VoteHub's Nov 1-2 rows: Lincoln Park Strategies, Louisiana, Oct 29-31 (Letlow 47, Davis 47), for the Louisiana Democratic Party (VoteHub: sponsor, internal, DEM; its DocumentCloud file https://www.documentcloud.org/documents/28861757-la-sen-lincoln-park-strategies-oct-2026/ returned HTTP 403); GrayHouse, Arkansas, Oct 27-28 (Cotton 55, Shoffner 39), for America One Policies (VoteHub: sponsor, REP; the builder already leaves it out); ActiVote IL, OH and TX and Quantus Insights TX (excluded pollsters); Rasmussen Reports MI (excluded); Montana State University Billings (user decision). Siena's "ReconMR Texas Poll: Recontacting Voters" (https://sri.siena.edu/2026/11/01/reconmr-texas-poll-recontacting-voters/) is a set of recontact interviews, "not a poll", so nothing is recorded from it.

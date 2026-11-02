@@ -379,3 +379,7 @@ Release: `../senate_polls_2026/recent/insideradvantage_ohio_2026-11-01.html` (ht
 ### AtlasIntel, Texas (Oct 28-Nov 1), Nov 2 check
 
 Page and report: `../senate_polls_2026/recent/atlasintel_texas_2026-11-01.html` (https://www.atlasintel.org/poll/usa-texas-2026-11-01), `../senate_polls_2026/recent/atlasintel_texas_2026-11-01.pdf` (https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf): 1,678 adults; Hinojosa 49.2, Abbott 47.6 (all respondents). RCP averages it (50/49).
+
+### Nov 2 check: new polls not counted
+
+Concord Public Opinion Partners, Ohio, Oct 22-24 (Acton 49, Ramaswamy 39, Kissick 5, undecided 6), for Education Reform Now Advocacy: partisan sponsor, not counted (release `../senate_polls_2026/recent/concord_ohio_2026-10-24.html`, https://concordpublicopinionpartners.org/polls/ohio-ge-2026-oct).
