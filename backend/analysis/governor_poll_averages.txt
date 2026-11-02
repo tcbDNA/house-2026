@@ -27,7 +27,8 @@ CA: RCP average; plus polls RCP left out: M3 Strategies 10/21 - 10/23; 6 poll(s)
     - Emerson 10/18 - 10/20
     - Politico/Citrin 10/9 - 10/14
     - M3 Strategies 10/21 - 10/23 (left out by RCP, counted; full ballot, 59/36)
-CO: no RCP average and no poll ending on/after 2026-10-05 -> model only
+CO: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 1); anti-R 57.00 / R 37.00 -> margin +20.00, blend margin +21.28, third parties 0.0
+    - University of Colorado American Politics Research Lab/YouGov, ending 2026-10-20 (full ballot, 57/37)
 CT: RCP average; 4 poll(s) (n_eff 4); anti-R 54.75 / R 37.50 -> margin +17.25, blend margin +18.70, third parties 0.0 (RCP published +17.3)
     - UNH 10/27 - 10/31
     - Emerson 10/10 - 10/12

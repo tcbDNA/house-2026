@@ -648,3 +648,9 @@ RCP feeds `rcp_ak_8754.json` (two-way: average 10/8-11/1, Peltola 49.2, Sullivan
 | `grayhouse_nebraska_2026-11-02.html` | https://www.grayhouse.com/post/grayhouse-poll-ricketts-leads-in-nebraska-by-4 | Posted Nov 2: 534 LV, Oct 29-Nov 1, MOE 4.2; with leaners Ricketts 50, Osborn 46; initial ballot 48/44, three minor candidates 1 each, undecided 5. |
 
 Both say GrayHouse funded them as its own public polling (no sponsor); the toplines PDFs are script-driven downloads and weren't saved. GrayHouse's Arkansas poll (for America One Policies) stays out. RCP lists neither.
+
+### University of Colorado APRL/YouGov, Colorado (Oct 9-20), Nov 2 afternoon check
+
+| File | URL | Notes |
+|---|---|---|
+| `cu_aprl_colorado_political_climate_2026-10-29.pdf` | https://www.colorado.edu/lab/aprl/media/84 | Report dated Oct 29: 800 residents, YouGov online panel, Oct 9-20, likely-voter weight for election questions; Senate Hickenlooper 57, Baisley 39; governor Weiser 57, Marx 37. Recorded for the governor average (Colorado's Senate race isn't tracked). |

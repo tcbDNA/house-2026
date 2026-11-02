@@ -385,3 +385,7 @@ Page and report: `../senate_polls_2026/recent/atlasintel_texas_2026-11-01.html` 
 Concord Public Opinion Partners, Ohio, Oct 22-24 (Acton 49, Ramaswamy 39, Kissick 5, undecided 6), for Education Reform Now Advocacy: partisan sponsor, not counted (release `../senate_polls_2026/recent/concord_ohio_2026-10-24.html`, https://concordpublicopinionpartners.org/polls/ohio-ge-2026-oct).
 
 AtlasIntel Texas (Oct 28-Nov 1) relabeled LV (Nov 2): RCP lists it as 1,678 LV; the report calls the sample Texas adults, post-stratified to match adults and likely voters. No effect on the averages.
+
+### University of Colorado APRL/YouGov, Colorado (Oct 9-20), Nov 2 afternoon check
+
+Report: `../senate_polls_2026/recent/cu_aprl_colorado_political_climate_2026-10-29.pdf` (https://www.colorado.edu/lab/aprl/media/84), 'Updated Initial Release, October 29, 2026': 800 residents, online (YouGov panel), Oct 9-20; likely-voter weight for the election questions (~700 respondents, credible interval +/-4.48). Governor Weiser 57, Marx 37; Senate Hickenlooper 57, Baisley 39. First Colorado governor poll since September in VoteHub or RCP that counts: Lake Research Partners' Sept 16-30 poll (Weiser 51, Marx 36) is for the Ballot Initiative Strategy Center, a progressive group, so it is left out.

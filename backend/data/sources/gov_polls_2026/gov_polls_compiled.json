@@ -1256,8 +1256,36 @@
   ]
  },
  "CO": {
-  "notes": "No RCP average: RCP has no feed with the nominees; its race page is a placeholder (feed 8809, '2026 Colorado Governor - Open', lastBuildDate Fri, 15 May 2026 14:57:10 -0500). No poll with fieldwork ending on or after 2026-09-01 in VoteHub or RCP.",
-  "polls": []
+  "notes": "No RCP average: RCP has no feed with the nominees; its race page is a placeholder (feed 8809, '2026 Colorado Governor - Open', lastBuildDate Fri, 15 May 2026 14:57:10 -0500). No poll with fieldwork ending on or after 2026-09-01 in VoteHub or RCP. Nov 2 afternoon check: University of Colorado APRL/YouGov, Oct 9-20 (report Oct 29), Weiser 57, Marx 37, added; it is the only Colorado governor poll since September that counts (Lake Research Partners Sept 16-30 is for the Ballot Initiative Strategy Center).",
+  "polls": [
+   {
+    "pollster": "University of Colorado American Politics Research Lab/YouGov",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-09",
+    "end": "2026-10-20",
+    "released": "2026-10-29",
+    "population": "LV",
+    "n": 710,
+    "d_candidate": "Phil Weiser",
+    "r_candidate": "Victor Marx",
+    "d": 57,
+    "r": 37,
+    "anti_r": 57,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 57,
+    "full_r": 37,
+    "others": [],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": null,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/cu_aprl_colorado_political_climate_2026-10-29.pdf (https://www.colorado.edu/lab/aprl/media/84)",
+    "note": "University of Colorado Boulder American Politics Research Lab, 2026 Colorado Political Climate Survey report (cu_aprl_colorado_political_climate_2026-10-29.pdf, https://www.colorado.edu/lab/aprl/media/84, 'Updated Initial Release, October 29, 2026'; retrieved Nov 2 21:20 UTC; VoteHub added it Nov 2): 800 Colorado residents interviewed online Oct 9-20 by YouGov from its opt-in panel; the election questions use a likely-voter weight (about 700 respondents, credible interval +/-4.48). Governor: Weiser 57, Marx 37 (report text); the Senate result is Hickenlooper 57, Baisley 39 (Colorado's Senate race isn't in the Senate compiled list). University poll, no sponsor. RCP has no Colorado governor average."
+   }
+  ]
  },
  "CT": {
   "notes": "RCP average (feed 9118, '2026 Connecticut Governor - Fazio vs. Lamont', lastBuildDate Mon, 19 Oct 2026 12:12:41 -0500): 9/16 - 10/12, Lamont 53.6, Fazio 37.6 (Lamont +16.0), 5 polls: Emerson 10/10 - 10/12; Quinnipiac 10/8 - 10/12; WFSB-TV/CT Insider 10/6 - 10/12; UNH 9/17 - 9/21; co/efficient 9/16 - 9/17.",
