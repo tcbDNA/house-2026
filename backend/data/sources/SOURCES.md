@@ -176,3 +176,7 @@ Catalist's public national crosstabs spreadsheet: composition and two-way Democr
 ## 2026 turnout: Kalshi markets (turnout_2026/) — data in `turnout_2026.csv`
 
 Retrieved 2026-11-01 from Kalshi's public API (markets last updated 2026-10-29T16:37Z; first downloaded 2026-10-26); files and URLs in `turnout_2026/README.md`. "Midterm Voter Turnout" (series KXMIDTERMVOTETURN): for each 2026 Senate, governor and House race, contracts on whether the total vote count will be above X. `build_turnout_2026.py` derives each race's market-implied median total and its ratio to the 2024 presidential vote; the county overlay's estimated 2026 vote counts use each race's own ratio (state: Senate, else governor, else House markets; district: its House market), with the 70-race average (80.4%) as the fallback. Display only.
+
+## Campaign finance, GA-01 (fec_2026/ga01_2026-11-02/) — not used by the model
+
+FEC API and docquery downloads (candidate totals through the pre-general report, Oct 14; reports; independent expenditures; 48-hour notices filed through Nov 1) for Jim Kingston (R) and Amanda Hollowell (D), retrieved 2026-11-02. URLs in the folder's README.md.
