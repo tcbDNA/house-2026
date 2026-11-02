@@ -409,3 +409,7 @@ User: "remove insideradvantage polls, another R biased pollster. my decision". G
 ### Survey 160, Kansas, Ohio, Maine and Minnesota (Oct 27-Nov 1), Nov 2 evening
 
 Source: `../senate_polls_2026/recent/survey160_pre_election_2026-11-02.html` and the four crosstab PDFs there (see that README). Likely voters, first choice: KS Holscher 49, Masterson 47; OH Acton 50, Ramaswamy 44; ME Pingree 53, Charles 41; MN Klobuchar 53, Demuth 42. Paid for by Survey 160 itself; no outside sponsor.
+
+### Emerson College for Poll Vault, Ohio and Maine (Oct 31-Nov 1), Nov 2 evening
+
+Toplines from RCP's feeds (re-downloaded Nov 2 22:47 UTC): Ohio (`rcp_gov_oh_8720.json`, `rcp_gov_oh_3way_9228.json`) 930 LV, Acton 48, Ramaswamy 48, Kissick 3; Maine (`rcp_gov_me_3way_9101.json`) 600 LV, Pingree 50, Charles 41, Bennett 9. Poll Vault (Sean Trende's RealClearPolitics newsletter) is a media sponsor.

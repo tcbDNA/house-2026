@@ -373,6 +373,24 @@
     "excluded_pollster": false,
     "source": "survey160_oh_2026-11-01.pdf; survey160_pre_election_2026-11-02.html",
     "note": "Survey 160 release (https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states, posted Nov 2 19:23 UTC, saved as survey160_pre_election_2026-11-02.html; retrieved Nov 2 22:50 UTC) and crosstabs PDF (survey160_oh_2026-11-01.pdf, https://drive.google.com/file/d/1Q1hmzTR4Hli4U77dqAxxyF-XJSMc3l8D/view, titled 'Ohio Internal Survey, October 2026'): fielded Oct 27-Nov 1, registration-based sample, text plus IVR and AI-interviewer landline calls; 1,174 respondents, design effect 3.63, MOE +/-5.4. 'Paid for by Survey 160 as part of our ongoing methodological research initiatives': no outside sponsor ('Internal Survey' is the firm's own). Recorded: likely voters, first-choice ballot (the release's headline margins use all respondents with leaners). Not in RCP or VoteHub as of Nov 2 22:50 UTC. U.S. Senate, likely voters (n=1122 unweighted): Brown 49, Husted 45, someone else 3, undecided 3; with leaners 50/46."
+   },
+   {
+    "pollster": "Emerson College",
+    "sponsor": "Poll Vault",
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 930,
+    "anti_r": 46,
+    "r": 48,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "rcp_oh_8689.json; rcp_oh_multi_9218.json",
+    "note": "Emerson College poll for Poll Vault (Sean Trende's newsletter, published by RealClearPolitics: a media sponsor, not partisan), Oct 31-Nov 1. Toplines from RCP's public feeds (re-downloaded Nov 2 22:47 UTC; RCP links the row to https://pollvault.substack.com/): two-way feed 8689 'Poll Vault/Emerson*' 10/31-11/1, 930 LV, Brown 46, Husted 48 (averaged); multi-candidate feed 9218: Brown 46, Husted 48, Levy 2, Redpath 4. The Poll Vault write-ups are for paid subscribers and weren't opened; Emerson's own site doesn't list the poll (checked Nov 2 22:50 UTC). Not in VoteHub yet."
    }
   ],
   "notes": "RCP two-way average (feed 8689, built Oct 25): 9/22-10/22, Brown 48.2, Husted 44.9 (+3.3), 9 polls, including Rasmussen. Newer polls not in it: VoteHub/Verasight (10/1-10/20) and RedBox (10/20-23, released Oct 25). Pre-Oct polls not listed: InsiderAdvantage 9/28-29, YouGov 9/18-30, Big Data 9/25-27, Marist 9/24-27, Suffolk 9/23-27. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 28 check: RCP's feed (lastBuildDate still Oct 25 10:05, content through Oct 27) now averages 9/22-10/26, Brown 48.1, Husted 44.8, 10 polls: Suffolk 10/21-26 added. Its latest poll ends after RedBox and Echelon, so Ohio uses RCP's average again (Rasmussen removed). Oct 29 check: RCP rebuilt its average (feed lastBuildDate Oct 28 05:56 CT): 10/5-10/26, Brown 47.9, Husted 45.3, 7 polls including Rasmussen; InsiderAdvantage 10/21-22 in, NYT/Siena 9/22-10/1, CNN 9/29-10/5 and Bowling Green 9/29-10/9 out."
@@ -2276,6 +2294,24 @@
     "excluded_pollster": false,
     "source": "survey160_me_2026-11-01.pdf; survey160_pre_election_2026-11-02.html",
     "note": "Survey 160 release (https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states, posted Nov 2 19:23 UTC, saved as survey160_pre_election_2026-11-02.html; retrieved Nov 2 22:50 UTC) and crosstabs PDF (survey160_me_2026-11-01.pdf, https://drive.google.com/file/d/1F5cQTfip_ZpP4hs7iyMfNTHQ9dbc8iUe/view, titled 'Maine Internal Survey, October 2026'): fielded Oct 27-Nov 1, registration-based sample, text plus IVR and AI-interviewer landline calls; 1,342 respondents, design effect 2.30, MOE +/-4.1. 'Paid for by Survey 160 as part of our ongoing methodological research initiatives': no outside sponsor ('Internal Survey' is the firm's own). Recorded: likely voters, first-choice ballot (the release's headline margins use all respondents with leaners). Not in RCP or VoteHub as of Nov 2 22:50 UTC. U.S. Senate, likely voters (n=1322 unweighted): Jackson 50, Collins 46, someone else 1, undecided 3; with leaners 50/47."
+   },
+   {
+    "pollster": "Emerson College",
+    "sponsor": "Poll Vault",
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 600,
+    "anti_r": 49,
+    "r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "rcp_me_9100.json",
+    "note": "Emerson College poll for Poll Vault (Sean Trende's newsletter, published by RealClearPolitics: a media sponsor, not partisan), Oct 31-Nov 1. Toplines from RCP's public feeds (re-downloaded Nov 2 22:47 UTC; RCP links the row to https://pollvault.substack.com/): feed 9100 'Poll Vault/Emerson' 10/31-11/1, 600 LV, Jackson 49, Collins 51 (averaged). The Poll Vault write-ups are for paid subscribers and weren't opened; Emerson's own site doesn't list the poll (checked Nov 2 22:50 UTC). Not in VoteHub yet."
    }
   ],
   "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27. Oct 29 check: RCP's feed (lastBuildDate Oct 27 05:41, CNN row added Oct 29) averages 9/23-10/26, Jackson 48.7, Collins 47.3, 11 polls: CNN/SSRS 10/20-26 added. Echelon Insights 10/16-23 is still listed but not averaged (still counted ahead of RCP: RCP_PENDING)."
@@ -2860,6 +2896,24 @@
     "excluded_pollster": true,
     "source": "trafalgar_mi_2026-11-01.pdf; trafalgar_mi_senate_2026-11-01.html",
     "note": "Trafalgar Group report (trafalgar_mi_2026-11-01.pdf, https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/MI-Gen-Sen-Poll-Report-1101.pdf, uploaded Nov 2 18:16 UTC, linked from https://www.thetrafalgargroup.org/news/mi-senate-gen-1101/; retrieved Nov 2 21:40 UTC): Oct 31-Nov 1, 1,087 likely general-election voters, MOE 2.9; El-Sayed 47.1, Rogers 45.9, Christensen 1.5, Marsh 0.3, Long 0.3, undecided 4.8 (p.8 totals). Names no sponsor (partisan pollsters without a sponsor count). RCP averages it (rcp_mi_8802.json and rcp_mi_multi_9216.json, re-downloaded Nov 2 21:36 UTC). Trafalgar Group is an excluded pollster (user decision Nov 2)."
+   },
+   {
+    "pollster": "Emerson College",
+    "sponsor": "Poll Vault",
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 500,
+    "anti_r": 51,
+    "r": 45,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "rcp_mi_multi_9216.json",
+    "note": "Emerson College poll for Poll Vault (Sean Trende's newsletter, published by RealClearPolitics: a media sponsor, not partisan), Oct 31-Nov 1. Toplines from RCP's public feeds (re-downloaded Nov 2 22:47 UTC; RCP links the row to https://pollvault.substack.com/): multi-candidate feed 9216 'Poll Vault/Emerson' 10/31-11/1, 500 LV, El-Sayed 51, Rogers 45, Christiansen 3, Kristy 0, Marsh 0 (averaged there); not in the two-way feed 8802. The Poll Vault write-ups are for paid subscribers and weren't opened; Emerson's own site doesn't list the poll (checked Nov 2 22:50 UTC). Not in VoteHub yet."
    }
   ],
   "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (built Oct 28 17:42 CT, CNN row added Oct 29) averages 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls: CNN/SSRS 10/20-27 and CBS News/Mitchell 10/26-27 added; Mitchell's Oct 1 poll is now listed but not averaged. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) El-Sayed 48.0, Rogers 41.8; not in RCP's average, and it ends before the latest poll RCP averages (CNN and Mitchell, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."

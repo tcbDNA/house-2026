@@ -77,9 +77,10 @@ MA: RCP average; 4 poll(s) (n_eff 4); anti-R 57.00 / R 33.25 -> margin +23.75, b
     - WCVB-TV/Amherst 10/6 - 10/13
 MD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 0.5); anti-R 51.00 / R 24.00 -> margin +27.00, blend margin +36.00, third parties 6.0
     - University of Maryland Baltimore County Institute of Politics, ending 2026-09-27 (full ballot, 51/24)
-ME: recomputed: newer polls than RCP's average; 11 poll(s) (n_eff 11); anti-R 50.00 / R 39.45 -> margin +10.55, blend margin +11.79, third parties 6.3 (RCP published +10.0)
+ME: recomputed: newer polls than RCP's average; 12 poll(s) (n_eff 12); anti-R 50.00 / R 39.58 -> margin +10.42, blend margin +11.63, third parties 6.5 (RCP published +10.0)
     - The New York Times/Siena University, ending 2026-11-01 (full ballot, 49/37)
     - Survey 160, ending 2026-11-01 (full ballot, 53/41)
+    - Emerson College for Poll Vault, ending 2026-11-01 (full ballot, 50/41)
     - University of New Hampshire, ending 2026-10-31 (full ballot, 51/40)
     - YouGov, ending 2026-10-29 (full ballot, 53/45)
     - Data for Progress, ending 2026-10-27 (full ballot, 49/37)
@@ -135,7 +136,8 @@ NY: recomputed: newer polls than RCP's average; 6 poll(s) (n_eff 6); anti-R 53.2
     - Quinnipiac University, ending 2026-10-19 (full ballot, 55/41)
     - Beacon Research for Secure AI Project, ending 2026-10-06 (full ballot, 53/31)
     - Emerson College for WPIX, ending 2026-10-05 (full ballot, 52.4/39.7)
-OH: RCP average; removed: InsiderAdvantage 10/29 - 10/30; plus polls RCP left out: Research Co. 10/30 - 11/1, AtlasIntel 10/28 - 11/1, Survey 160 10/27 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 10 poll(s) (n_eff 10); anti-R 49.28 / R 44.49 -> margin +4.79, blend margin +5.11, third parties 1.2 (RCP published +4.7)
+OH: RCP average; removed: InsiderAdvantage 10/29 - 10/30; plus polls RCP left out: Research Co. 10/30 - 11/1, AtlasIntel 10/28 - 11/1, Survey 160 10/27 - 11/1, Echelon Insights for NetChoice 10/16 - 10/23; 11 poll(s) (n_eff 11); anti-R 49.16 / R 44.81 -> margin +4.35, blend margin +4.63, third parties 1.1 (RCP published +4.1)
+    - Poll Vault/Emerson 10/31 - 11/1
     - NY Times/Siena 10/26 - 11/1
     - YouGov 10/26 - 10/29
     - Suffolk University 10/21 - 10/26

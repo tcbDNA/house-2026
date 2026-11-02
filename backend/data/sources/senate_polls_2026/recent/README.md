@@ -723,3 +723,7 @@ Effect (blend margins): Alaska D+1.43 -> D+1.80 (4 polls), projection D+0.64 -> 
 | `survey160_mn_2026-11-01.pdf` | https://drive.google.com/file/d/1SDcAJr8rPDlkW4U45Bb017NKYyHDoZf3/view | LV: Senate Flanagan 52, Tafoya 43; governor Klobuchar 53, Demuth 42 (n=1,365 LV of 1,423; MOE +/-3.7) |
 
 Recorded: likely voters, first-choice ballot; the release's headline margins (e.g., Hamilton +7, Acton +8) use all respondents with leaners. Found via PollsterGraph's poll list (from Wikipedia). Not in RCP or VoteHub yet.
+
+### Emerson College for Poll Vault, Ohio, Maine and Michigan (Oct 31-Nov 1), Nov 2 evening
+
+Poll Vault is Sean Trende's newsletter, published by RealClearPolitics (https://pollvault.substack.com/about): a media sponsor, so the polls count. Its write-ups are for paid subscribers and weren't opened, and Emerson's site doesn't list these polls, so the toplines are RCP's (feeds re-downloaded Nov 2 22:47 UTC and saved): Ohio Senate (`rcp_oh_8689.json`, `rcp_oh_multi_9218.json`) 930 LV, Brown 46, Husted 48; Maine Senate (`rcp_me_9100.json`) 600 LV, Jackson 49, Collins 51; Michigan Senate (`rcp_mi_multi_9216.json`) 500 LV, El-Sayed 51, Rogers 45, Christiansen 3. RCP also now lists VoteHub/Verasight's Texas and Ohio polls (Oct 1-20), already counted.
