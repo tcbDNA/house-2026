@@ -639,3 +639,12 @@ AtlasIntel Texas (Oct 28-Nov 1) relabeled LV (Nov 2): RCP lists it as 1,678 LV; 
 | `insideradvantage_alaska_2026-11-02.html` | https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/ | Posted Nov 2: 1,200 LV, Oct 31-Nov 1, mixed-mode panel/text, MOE 2.83; first round Peltola 48, Sullivan 48; ranked-choice round 50/50. No sponsor. RCP averages it. |
 
 RCP feeds `rcp_ak_8754.json` (two-way: average 10/8-11/1, Peltola 49.2, Sullivan 48.2) and `rcp_ak_rcv1_9171.json` (first round) re-downloaded Nov 2 21:10 UTC; VoteHub lists `votehub_senate_all.json` and `../../gov_polls_2026/votehub_governor_all.json` re-downloaded at the same time. New Mexico governor's RCP feed still has the broken average row (12/31), so its saved copy is kept.
+
+### GrayHouse, Iowa and Nebraska finals, Nov 2 afternoon check
+
+| File | URL | Notes |
+|---|---|---|
+| `grayhouse_iowa_2026-11-02.html` | https://www.grayhouse.com/post/grayhouse-poll-hinson-leads-in-iowa-by-2 | Posted Nov 2: 601 LV, Oct 28-31, MOE 4.0; Hinson 48, Turek 46, Laehn 2, undecided 4 (initial ballot). |
+| `grayhouse_nebraska_2026-11-02.html` | https://www.grayhouse.com/post/grayhouse-poll-ricketts-leads-in-nebraska-by-4 | Posted Nov 2: 534 LV, Oct 29-Nov 1, MOE 4.2; with leaners Ricketts 50, Osborn 46; initial ballot 48/44, three minor candidates 1 each, undecided 5. |
+
+Both say GrayHouse funded them as its own public polling (no sponsor); the toplines PDFs are script-driven downloads and weren't saved. GrayHouse's Arkansas poll (for America One Policies) stays out. RCP lists neither.
