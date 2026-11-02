@@ -638,7 +638,7 @@ AtlasIntel Texas (Oct 28-Nov 1) relabeled LV (Nov 2): RCP lists it as 1,678 LV; 
 |---|---|---|
 | `insideradvantage_alaska_2026-11-02.html` | https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/ | Posted Nov 2: 1,200 LV, Oct 31-Nov 1, mixed-mode panel/text, MOE 2.83; first round Peltola 48, Sullivan 48; ranked-choice round 50/50. No sponsor. RCP averages it. |
 
-RCP feeds `rcp_ak_8754.json` (two-way: average 10/8-11/1, Peltola 49.2, Sullivan 48.2) and `rcp_ak_rcv1_9171.json` (first round) re-downloaded Nov 2 21:10 UTC; VoteHub lists `votehub_senate_all.json` and `../../gov_polls_2026/votehub_governor_all.json` re-downloaded at the same time. New Mexico governor's RCP feed still has the broken average row (12/31), so its saved copy is kept.
+RCP feeds `rcp_ak_8754.json` (two-way: average 10/8-11/1, Peltola 49.2, Sullivan 48.2) and `rcp_ak_rcv1_9171.json` (first round) re-downloaded Nov 2 17:20 UTC; VoteHub lists `votehub_senate_all.json` and `../../gov_polls_2026/votehub_governor_all.json` re-downloaded at the same time. New Mexico governor's RCP feed still has the broken average row (12/31), so its saved copy is kept.
 
 ### GrayHouse, Iowa and Nebraska finals, Nov 2 afternoon check
 
@@ -657,7 +657,7 @@ Both say GrayHouse funded them as its own public polling (no sponsor); the topli
 
 ### Nov 2 afternoon check: new polls not counted
 
-From VoteHub's lists re-downloaded Nov 2 ~21:10 UTC (`votehub_senate_all.json`, `../../gov_polls_2026/votehub_governor_all.json`):
+From VoteHub's lists re-downloaded Nov 2 ~17:20 UTC (`votehub_senate_all.json`, `../../gov_polls_2026/votehub_governor_all.json`):
 
 - RedBox Research, Florida, Oct 30-31, 2,898 LV: Senate Moody 47, Nixon 45, Gillespie 1; governor Donalds 47, Jolly 46, Jewett 1. Sponsor "A Fight Worth Having" (VoteHub flags the Senate row DEM): partisan sponsor, not counted.
 - National Public Affairs, New Hampshire, Oct 25-29, 800 LV: Senate Pappas 51, Sununu 45, Laplante 2; governor Ayotte 52, Warmington 43, Villee 3. VoteHub lists the sponsor as God Family & Country PAC and flags it REP, so it is left out, as NPA's Oct 25-29 Nebraska poll was this morning.
