@@ -654,3 +654,12 @@ Both say GrayHouse funded them as its own public polling (no sponsor); the topli
 | File | URL | Notes |
 |---|---|---|
 | `cu_aprl_colorado_political_climate_2026-10-29.pdf` | https://www.colorado.edu/lab/aprl/media/84 | Report dated Oct 29: 800 residents, YouGov online panel, Oct 9-20, likely-voter weight for election questions; Senate Hickenlooper 57, Baisley 39; governor Weiser 57, Marx 37. Recorded for the governor average (Colorado's Senate race isn't tracked). |
+
+### Nov 2 afternoon check: new polls not counted
+
+From VoteHub's lists re-downloaded Nov 2 ~21:10 UTC (`votehub_senate_all.json`, `../../gov_polls_2026/votehub_governor_all.json`):
+
+- RedBox Research, Florida, Oct 30-31, 2,898 LV: Senate Moody 47, Nixon 45, Gillespie 1; governor Donalds 47, Jolly 46, Jewett 1. Sponsor "A Fight Worth Having" (VoteHub flags the Senate row DEM): partisan sponsor, not counted.
+- National Public Affairs, New Hampshire, Oct 25-29, 800 LV: Senate Pappas 51, Sununu 45, Laplante 2; governor Ayotte 52, Warmington 43, Villee 3. VoteHub lists the sponsor as God Family & Country PAC and flags it REP, so it is left out, as NPA's Oct 25-29 Nebraska poll was this morning.
+- Lake Research Partners, Colorado and Arizona, Sept 16-30, 600 RV: Colorado Senate Hickenlooper 52, Baisley 38; Colorado governor Weiser 51, Marx 36; Arizona governor Hobbs 56, Biggs 33. For the Ballot Initiative Strategy Center, a progressive group: partisan-leaning sponsor, not counted.
+- TIPP Insights national generic ballot, Oct 27-30 (Dem 52, Rep 42): already checked this morning and not used (see the I&I/TIPP note).
