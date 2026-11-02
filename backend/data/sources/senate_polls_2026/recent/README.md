@@ -711,3 +711,15 @@ AtlasIntel North Carolina source corrected (Nov 2, 22:40 UTC): the report is pub
 User: "remove insideradvantage polls, another R biased pollster. my decision". InsiderAdvantage joins the excluded pollsters (`EXCLUDED_POLLSTERS` in this build and the governor build, matching "insideradvantage" and "insider advantage"): its polls come out of RCP's averages and recomputed averages. Its 13 compiled Senate polls stay in `recent_polls_compiled.json`, marked `excluded_pollster`. Its new Georgia poll (Oct 31-Nov 2, 2,500 respondents; Ossoff 53, Collins 46), listed by PollsterGraph, was not added.
 
 Effect (blend margins): Alaska D+1.43 -> D+1.80 (4 polls), projection D+0.64 -> D+0.89 (P(D) 0.548 -> 0.570); Kansas D+3.82 -> D+4.78 (5 polls), projection D+1.52 -> D+2.19 (P(D) 0.621 -> 0.676); Iowa even -> D+0.36, R+1.12 -> R+0.87 (P(D) 0.421 -> 0.439); Michigan D+5.31 -> D+5.77; Minnesota D+6.17 -> D+6.69; Maine D+4.36 -> D+4.61; Ohio D+3.48 -> D+3.66; Florida R+6.59 -> R+6.61. P(D control) 0.791 -> 0.808. House unchanged: no InsiderAdvantage poll in the national crosstabs. The 2018-2024 backtests still include InsiderAdvantage; the fitted poll weights were not refit.
+
+### Survey 160, Kansas, Ohio, Maine and Minnesota (Oct 27-Nov 1), Nov 2 evening
+
+| File | URL | Notes |
+|---|---|---|
+| `survey160_pre_election_2026-11-02.html` | https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states | Release (Nov 2): text plus landline IVR/AI calls, registration-based sample; 'paid for by Survey 160 as part of our ongoing methodological research initiatives' (no outside sponsor; the PDFs are titled 'Internal Survey', meaning the firm's own) |
+| `survey160_ks_2026-11-01.pdf` | https://drive.google.com/file/d/1dEY2-gfsk1F4k4mk2RWe9hhX3or6z7_q/view | LV: Senate Hamilton 50, Marshall 43; governor Holscher 49, Masterson 47 (n=1,267 LV of 1,353; MOE +/-3.6) |
+| `survey160_oh_2026-11-01.pdf` | https://drive.google.com/file/d/1Q1hmzTR4Hli4U77dqAxxyF-XJSMc3l8D/view | LV: Senate Brown 49, Husted 45; governor Acton 50, Ramaswamy 44 (n=1,122 LV of 1,174; MOE +/-5.4) |
+| `survey160_me_2026-11-01.pdf` | https://drive.google.com/file/d/1F5cQTfip_ZpP4hs7iyMfNTHQ9dbc8iUe/view | LV: Senate Jackson 50, Collins 46; governor Pingree 53, Charles 41 (n=1,322 LV of 1,342; MOE +/-4.1) |
+| `survey160_mn_2026-11-01.pdf` | https://drive.google.com/file/d/1SDcAJr8rPDlkW4U45Bb017NKYyHDoZf3/view | LV: Senate Flanagan 52, Tafoya 43; governor Klobuchar 53, Demuth 42 (n=1,365 LV of 1,423; MOE +/-3.7) |
+
+Recorded: likely voters, first-choice ballot; the release's headline margins (e.g., Hamilton +7, Acton +8) use all respondents with leaners. Found via PollsterGraph's poll list (from Wikipedia). Not in RCP or VoteHub yet.

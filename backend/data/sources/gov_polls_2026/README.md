@@ -405,3 +405,7 @@ Source: `../senate_polls_2026/recent/atlasintel_oh_2026-11-01.pdf` (https://poll
 ### InsiderAdvantage excluded (user decision, Nov 2 evening)
 
 User: "remove insideradvantage polls, another R biased pollster. my decision". Governor polls removed: Georgia (Sep 22-23 and Oct 12-13), Ohio (Oct 29-30) and Florida (Oct 28-29); all four compiled polls are now marked `excluded_pollster`. Its new Georgia poll (Oct 31-Nov 2; Jackson 49, Bottoms 49), listed by PollsterGraph, was not added. Effect: Georgia D+0.26 -> D+1.05 blend (3 polls), projection D+1.8 -> D+2.5 (P(Bottoms) 0.628 -> 0.666); Ohio D+4.78 -> D+4.97; Florida R+5.49 -> R+5.67. Governors P(D majority) 0.773 -> 0.779.
+
+### Survey 160, Kansas, Ohio, Maine and Minnesota (Oct 27-Nov 1), Nov 2 evening
+
+Source: `../senate_polls_2026/recent/survey160_pre_election_2026-11-02.html` and the four crosstab PDFs there (see that README). Likely voters, first choice: KS Holscher 49, Masterson 47; OH Acton 50, Ramaswamy 44; ME Pingree 53, Charles 41; MN Klobuchar 53, Demuth 42. Paid for by Survey 160 itself; no outside sponsor.
