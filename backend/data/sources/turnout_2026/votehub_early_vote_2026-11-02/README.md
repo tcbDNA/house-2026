@@ -14,3 +14,5 @@ https://votehub.com/2026-early-vote-methodology/, saved as `methodology.html`). 
 | `wi_gov_estimate.json` | https://cdn.votehub.com/early-vote-tracker/2026-general/wisconsin/races/G2026WI00/estimate.json |
 | `states/<slug>_toplines.json` | https://cdn.votehub.com/early-vote-tracker/2026-general/<slug>/toplines.json for all 16 states |
 | `methodology.html` | https://votehub.com/2026-early-vote-methodology/ |
+| `states/<slug>_components.json`, `states/<slug>_config.json` | https://cdn.votehub.com/early-vote-tracker/2026-general/<slug>/components.json and config.json for all 16 states (retrieved ~22:00 UTC) |
+| `final_electorate.json` | Derived: for each state, ballots cast plus VoteHub's expected remaining ballots, and each component's shares over both (modeled 2024 vote, race, party registration or primary history, age, voted in 2024) |

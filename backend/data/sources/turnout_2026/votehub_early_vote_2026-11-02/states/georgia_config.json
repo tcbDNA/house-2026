@@ -1,0 +1,1401 @@
+{
+  "schema_version": "1.2",
+  "upper_right_card": "forecast",
+  "election_id": "2026-general",
+  "state": {
+    "id": "GA",
+    "name": "Georgia",
+    "slug": "georgia"
+  },
+  "sources": {
+    "toplines": "/2026-general/georgia/toplines.json",
+    "components": "/2026-general/georgia/components.json"
+  },
+  "aggregate": {
+    "label": "Total Ballots Cast",
+    "icon": "CheckCircle",
+    "color": "#7C3AED",
+    "progress_percent": 69.5,
+    "progress_label": "of 2026 projected final",
+    "progress_title": "Percent of",
+    "modeled_title": "Modeled 2026 Vote",
+    "modeled_margin_label": "Estimated Margin",
+    "symbol_counted_label": "Ballots Cast",
+    "symbol_expected_label": "Ballots Remaining"
+  },
+  "toplines": [
+    {
+      "id": "early",
+      "label": "Early In-Person",
+      "icon": "Calendar",
+      "color": "#27AE60",
+      "progress_percent": 100,
+      "progress_label": "of 2026 projected final",
+      "progress_title": "Percent of",
+      "modeled_title": "Modeled 2026 Vote",
+      "modeled_margin_label": "Estimated Margin",
+      "symbol_counted_label": "Early In-Person",
+      "symbol_expected_label": "Remaining In-Person",
+      "display_order": 1
+    },
+    {
+      "id": "mail_returns",
+      "label": "Mail Returns",
+      "icon": "MailIn",
+      "color": "#F1C40F",
+      "progress_percent": 75.1,
+      "progress_label": "of 2026 projected final",
+      "progress_title": "Percent of",
+      "modeled_title": "Modeled 2026 Vote",
+      "modeled_margin_label": "Estimated Margin",
+      "symbol_counted_label": "Mail Returns",
+      "symbol_expected_label": "Remaining Returns",
+      "display_order": 2
+    },
+    {
+      "id": "remaining",
+      "label": "Remaining Ballots",
+      "icon": {
+        "svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M12 12C15.866 12 19 8.86599 19 5H5C5 8.86599 8.13401 12 12 12ZM12 12C15.866 12 19 15.134 19 19H5C5 15.134 8.13401 12 12 12Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M5 2L12 2L19 2\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M5 22H12L19 22\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>"
+      },
+      "color": "#E67E22",
+      "progress_percent": 30.5,
+      "progress_label": "of 2026 projected final",
+      "progress_title": "Percent of",
+      "modeled_title": "Modeled 2026 Vote",
+      "modeled_margin_label": "Estimated Margin",
+      "symbol_counted_label": "Ballots Remaining",
+      "symbol_expected_label": "Ballots Cast",
+      "display_order": 3
+    }
+  ],
+  "components": [
+    {
+      "id": "latent_vote_2024",
+      "label": "Modeled 2024 Presidential Vote",
+      "icon": "GraphUp",
+      "display_order": 1,
+      "groups": [
+        {
+          "id": "harris",
+          "label": "Harris",
+          "display_order": 1,
+          "color": "#287EAE"
+        },
+        {
+          "id": "trump",
+          "label": "Trump",
+          "display_order": 2,
+          "color": "#CC0000"
+        },
+        {
+          "id": "other",
+          "label": "Other",
+          "display_order": 3,
+          "color": "#828282"
+        }
+      ],
+      "topline_bases": [
+        "early",
+        "mail_returns",
+        "remaining"
+      ],
+      "map_tooltip": "breakdown"
+    },
+    {
+      "id": "modeled_party_primary_history",
+      "label": "Primary Voting History",
+      "icon": {
+        "svg": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M8.5 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H12\" stroke=\"currentColor\" stroke-linecap=\"round\"/><path d=\"M15.5 4H18C19.1046 4 20 4.89543 20 6V15\" stroke=\"currentColor\" stroke-linecap=\"round\"/><path d=\"M8 6.4V4.5C8 4.22386 8.22386 4 8.5 4C8.77614 4 9.00422 3.77604 9.05152 3.50398C9.19968 2.65171 9.77399 1 12 1C14.226 1 14.8003 2.65171 14.9485 3.50398C14.9958 3.77604 15.2239 4 15.5 4C15.7761 4 16 4.22386 16 4.5V6.4C16 6.73137 15.7314 7 15.4 7H8.6C8.26863 7 8 6.73137 8 6.4Z\" stroke=\"currentColor\" stroke-linecap=\"round\"/><path d=\"M15.5 20.5L17.5 22.5L22.5 17.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>"
+      },
+      "display_order": 2,
+      "groups": [
+        {
+          "id": "democratic",
+          "label": "Leans Democratic",
+          "display_order": 1,
+          "short_label": "Leans Dem.",
+          "color": "#026EB6"
+        },
+        {
+          "id": "republican",
+          "label": "Leans Republican",
+          "display_order": 2,
+          "short_label": "Leans Rep.",
+          "color": "#CC0000"
+        },
+        {
+          "id": "other",
+          "label": "Unclear",
+          "display_order": 3,
+          "color": "#777777"
+        }
+      ],
+      "topline_bases": [
+        "early",
+        "mail_returns",
+        "remaining"
+      ],
+      "map_tooltip": "breakdown"
+    },
+    {
+      "id": "modeled_race",
+      "label": "Race",
+      "icon": {
+        "svg": "<svg width=\"24\" height=\"24\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1 20V19C1 15.134 4.13401 12 8 12V12C11.866 12 15 15.134 15 19V20\" stroke=\"currentColor\" stroke-linecap=\"round\"/><path d=\"M13 14V14C13 11.2386 15.2386 9 18 9V9C20.7614 9 23 11.2386 23 14V14.5\" stroke=\"currentColor\" stroke-linecap=\"round\"/><path d=\"M8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M18 9C19.6569 9 21 7.65685 21 6C21 4.34315 19.6569 3 18 3C16.3431 3 15 4.34315 15 6C15 7.65685 16.3431 9 18 9Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><\/svg>"
+      },
+      "display_order": 3,
+      "groups": [
+        {
+          "id": "white",
+          "label": "White",
+          "display_order": 1,
+          "color": "#7308C7"
+        },
+        {
+          "id": "black",
+          "label": "Black",
+          "display_order": 2,
+          "color": "#2AB37C"
+        },
+        {
+          "id": "hispanic",
+          "label": "Hispanic",
+          "display_order": 3,
+          "color": "#D63333"
+        },
+        {
+          "id": "asian",
+          "label": "Asian",
+          "display_order": 4,
+          "color": "#287EAE"
+        },
+        {
+          "id": "other",
+          "label": "Other",
+          "display_order": 5,
+          "color": "#94A3B8"
+        }
+      ],
+      "topline_bases": [
+        "early",
+        "mail_returns",
+        "remaining"
+      ]
+    },
+    {
+      "id": "age",
+      "label": "Age",
+      "icon": "Calendar",
+      "display_order": 4,
+      "groups": [
+        {
+          "id": "age_18_29",
+          "label": "18-29",
+          "display_order": 1,
+          "color": "#C79708"
+        },
+        {
+          "id": "age_30_44",
+          "label": "30-44",
+          "display_order": 2,
+          "color": "#2AB37C"
+        },
+        {
+          "id": "age_45_64",
+          "label": "45-64",
+          "display_order": 3,
+          "color": "#287EAE"
+        },
+        {
+          "id": "age_65_plus",
+          "label": "65+",
+          "display_order": 4,
+          "color": "#7308C7"
+        }
+      ],
+      "topline_bases": [
+        "early",
+        "mail_returns",
+        "remaining"
+      ]
+    },
+    {
+      "id": "black_propensity",
+      "label": "Black Voter Turnout History",
+      "icon": "CheckCircle",
+      "display_order": 5,
+      "groups": [
+        {
+          "id": "of3_0",
+          "label": "0 of 3",
+          "display_order": 1,
+          "color": "#AEE2CD"
+        },
+        {
+          "id": "of3_1",
+          "label": "1 of 3",
+          "display_order": 2,
+          "color": "#6ECBA5"
+        },
+        {
+          "id": "of3_2",
+          "label": "2 of 3",
+          "display_order": 3,
+          "color": "#2AB37C"
+        },
+        {
+          "id": "of3_3",
+          "label": "3 of 3",
+          "display_order": 4,
+          "color": "#1B7450"
+        }
+      ],
+      "topline_bases": [
+        "early",
+        "mail_returns",
+        "remaining"
+      ]
+    },
+    {
+      "id": "white_propensity",
+      "label": "White Voter Turnout History",
+      "icon": "CheckCircle",
+      "display_order": 6,
+      "groups": [
+        {
+          "id": "of3_0",
+          "label": "0 of 3",
+          "display_order": 1,
+          "color": "#C9A1E9"
+        },
+        {
+          "id": "of3_1",
+          "label": "1 of 3",
+          "display_order": 2,
+          "color": "#9F57D8"
+        },
+        {
+          "id": "of3_2",
+          "label": "2 of 3",
+          "display_order": 3,
+          "color": "#7308C7"
+        },
+        {
+          "id": "of3_3",
+          "label": "3 of 3",
+          "display_order": 4,
+          "color": "#4A0581"
+        }
+      ],
+      "topline_bases": [
+        "early",
+        "mail_returns",
+        "remaining"
+      ]
+    },
+    {
+      "id": "voted_2024",
+      "label": "Voted in 2024",
+      "icon": "CheckCircle",
+      "display_order": 7,
+      "groups": [
+        {
+          "id": "voted",
+          "label": "Voted in 2024",
+          "display_order": 1,
+          "color": "#5B6B8C"
+        },
+        {
+          "id": "did_not_vote",
+          "label": "Did not vote in 2024",
+          "display_order": 2,
+          "color": "#BFBFBF"
+        }
+      ],
+      "topline_bases": [
+        "early",
+        "mail_returns",
+        "remaining"
+      ]
+    }
+  ],
+  "geographies": [
+    {
+      "id": "county",
+      "label": "County",
+      "sources": {
+        "toplines": "/2026-general/georgia/geographies/county/toplines.json",
+        "components": "/2026-general/georgia/geographies/county/components.json"
+      },
+      "geometry": {
+        "topology": "https://cdn.votehub.com/geometry/topos/baf/2026.1/state/GA.topojson",
+        "join_key": "vcu_fips"
+      }
+    }
+  ],
+  "modeled_races": [
+    {
+      "id": "S2026GA02",
+      "label": "Georgia U.S. Senate",
+      "candidates": [
+        {
+          "id": "S2026GA02_JOD",
+          "name": "Jon Ossoff",
+          "party": "D",
+          "color": "#287EAE",
+          "image": "https://cdn.votehub.com/campaign-tracker/candidates/S2026GA02_JOD.webp"
+        },
+        {
+          "id": "S2026GA02_MCR",
+          "name": "Mike Collins",
+          "party": "R",
+          "color": "#D63333",
+          "image": "https://cdn.votehub.com/campaign-tracker/candidates/S2026GA02_MCR.webp"
+        },
+        {
+          "id": "S2026GA02_OTH",
+          "name": "Other Candidates",
+          "party": "O",
+          "color": "#8A8A8A",
+          "image": "https://cdn.votehub.com/campaign-tracker/candidates/S2026GA02_OTH.webp"
+        }
+      ],
+      "sources": {
+        "estimate": "/2026-general/georgia/races/S2026GA02/estimate.json",
+        "forecast_race_id": "S2026GA02",
+        "geography_estimates": {
+          "county": "/2026-general/georgia/races/S2026GA02/geographies/county/estimates.json"
+        }
+      }
+    },
+    {
+      "id": "G2026GA00",
+      "label": "Georgia Governor",
+      "candidates": [
+        {
+          "id": "G2026GA00_KBD",
+          "name": "Keisha Lance Bottoms",
+          "party": "D",
+          "color": "#287EAE",
+          "image": "https://cdn.votehub.com/campaign-tracker/candidates/G2026GA00_KBD.webp"
+        },
+        {
+          "id": "G2026GA00_RJR",
+          "name": "Rick Jackson",
+          "party": "R",
+          "color": "#D63333",
+          "image": "https://cdn.votehub.com/campaign-tracker/candidates/G2026GA00_RJR.webp"
+        },
+        {
+          "id": "G2026GA00_OTH",
+          "name": "Other Candidates",
+          "party": "O",
+          "color": "#8A8A8A",
+          "image": "https://cdn.votehub.com/campaign-tracker/candidates/G2026GA00_OTH.webp"
+        }
+      ],
+      "sources": {
+        "estimate": "/2026-general/georgia/races/G2026GA00/estimate.json",
+        "forecast_race_id": "G2026GA00",
+        "geography_estimates": {
+          "county": "/2026-general/georgia/races/G2026GA00/geographies/county/estimates.json"
+        }
+      }
+    }
+  ],
+  "map": {
+    "default_view": "race_margin",
+    "views": [
+      {
+        "id": "race_margin",
+        "metric": {
+          "type": "race_margin",
+          "race_id": "S2026GA02",
+          "negative_candidate_id": "S2026GA02_MCR",
+          "positive_candidate_id": "S2026GA02_JOD"
+        },
+        "color_scale": {
+          "type": "diverging",
+          "domain": [
+            -50,
+            50
+          ],
+          "center": 0,
+          "palette": [
+            "#6B0000",
+            "#770606",
+            "#830B0B",
+            "#8F1111",
+            "#9B1717",
+            "#A71C1C",
+            "#B32222",
+            "#BE2828",
+            "#CA2D2D",
+            "#D63333",
+            "#D94343",
+            "#DC5353",
+            "#DF6363",
+            "#E27373",
+            "#E68383",
+            "#E99494",
+            "#ECA4A4",
+            "#EFB4B4",
+            "#F2C4C4",
+            "#F5D4D4",
+            "#CEEAFB",
+            "#B7E1F3",
+            "#A0D6ED",
+            "#8ACBE7",
+            "#74C0E1",
+            "#66B6DA",
+            "#58ABD2",
+            "#4BA0CA",
+            "#3D95C2",
+            "#308ABA",
+            "#287EAE",
+            "#2073A2",
+            "#186896",
+            "#105D8A",
+            "#08527E",
+            "#014772",
+            "#013D67",
+            "#01335C",
+            "#012951",
+            "#011F46"
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "g2026ga00_margin",
+        "metric": {
+          "type": "race_margin",
+          "race_id": "G2026GA00",
+          "negative_candidate_id": "G2026GA00_RJR",
+          "positive_candidate_id": "G2026GA00_KBD"
+        },
+        "color_scale": {
+          "type": "diverging",
+          "domain": [
+            -50,
+            50
+          ],
+          "center": 0,
+          "palette": [
+            "#6B0000",
+            "#770606",
+            "#830B0B",
+            "#8F1111",
+            "#9B1717",
+            "#A71C1C",
+            "#B32222",
+            "#BE2828",
+            "#CA2D2D",
+            "#D63333",
+            "#D94343",
+            "#DC5353",
+            "#DF6363",
+            "#E27373",
+            "#E68383",
+            "#E99494",
+            "#ECA4A4",
+            "#EFB4B4",
+            "#F2C4C4",
+            "#F5D4D4",
+            "#CEEAFB",
+            "#B7E1F3",
+            "#A0D6ED",
+            "#8ACBE7",
+            "#74C0E1",
+            "#66B6DA",
+            "#58ABD2",
+            "#4BA0CA",
+            "#3D95C2",
+            "#308ABA",
+            "#287EAE",
+            "#2073A2",
+            "#186896",
+            "#105D8A",
+            "#08527E",
+            "#014772",
+            "#013D67",
+            "#01335C",
+            "#012951",
+            "#011F46"
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "latent_vote_2024",
+        "metric": {
+          "type": "component_plurality",
+          "component_id": "latent_vote_2024"
+        },
+        "color_scale": {
+          "type": "plurality",
+          "domain": [
+            0,
+            50
+          ],
+          "series": [
+            {
+              "id": "harris",
+              "palette": [
+                "#CEEAFB",
+                "#B7E1F3",
+                "#A0D6ED",
+                "#8ACBE7",
+                "#74C0E1",
+                "#66B6DA",
+                "#58ABD2",
+                "#4BA0CA",
+                "#3D95C2",
+                "#308ABA",
+                "#287EAE",
+                "#2073A2",
+                "#186896",
+                "#105D8A",
+                "#08527E",
+                "#014772",
+                "#013D67",
+                "#01335C",
+                "#012951",
+                "#011F46"
+              ]
+            },
+            {
+              "id": "trump",
+              "palette": [
+                "#F5D4D4",
+                "#F2C4C4",
+                "#EFB4B4",
+                "#ECA4A4",
+                "#E99494",
+                "#E68383",
+                "#E27373",
+                "#DF6363",
+                "#DC5353",
+                "#D94343",
+                "#D63333",
+                "#CA2D2D",
+                "#BE2828",
+                "#B32222",
+                "#A71C1C",
+                "#9B1717",
+                "#8F1111",
+                "#830B0B",
+                "#770606",
+                "#6B0000"
+              ]
+            },
+            {
+              "id": "other",
+              "palette": [
+                "#E5E7EB",
+                "#4B5563"
+              ]
+            }
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "modeled_party_primary_history",
+        "metric": {
+          "type": "component_plurality",
+          "component_id": "modeled_party_primary_history"
+        },
+        "color_scale": {
+          "type": "plurality",
+          "domain": [
+            0,
+            100
+          ],
+          "series": [
+            {
+              "id": "democratic",
+              "palette": [
+                "#CEEAFB",
+                "#B7E1F3",
+                "#A0D6ED",
+                "#8ACBE7",
+                "#74C0E1",
+                "#66B6DA",
+                "#58ABD2",
+                "#4BA0CA",
+                "#3D95C2",
+                "#308ABA",
+                "#287EAE",
+                "#2073A2",
+                "#186896",
+                "#105D8A",
+                "#08527E",
+                "#014772",
+                "#013D67",
+                "#01335C",
+                "#012951",
+                "#011F46"
+              ]
+            },
+            {
+              "id": "republican",
+              "palette": [
+                "#F5D4D4",
+                "#F2C4C4",
+                "#EFB4B4",
+                "#ECA4A4",
+                "#E99494",
+                "#E68383",
+                "#E27373",
+                "#DF6363",
+                "#DC5353",
+                "#D94343",
+                "#D63333",
+                "#CA2D2D",
+                "#BE2828",
+                "#B32222",
+                "#A71C1C",
+                "#9B1717",
+                "#8F1111",
+                "#830B0B",
+                "#770606",
+                "#6B0000"
+              ]
+            },
+            {
+              "id": "other",
+              "palette": [
+                "#E5E7EB",
+                "#4B5563"
+              ]
+            }
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "modeled_race",
+        "metric": {
+          "type": "component_plurality",
+          "component_id": "modeled_race"
+        },
+        "color_scale": {
+          "type": "plurality",
+          "domain": [
+            0,
+            100
+          ],
+          "series": [
+            {
+              "id": "white",
+              "palette": [
+                "#EADCFD",
+                "#DEC6FA",
+                "#D1ABF5",
+                "#C48FF0",
+                "#B774E8",
+                "#AB5FE3",
+                "#9F4BDD",
+                "#9337D7",
+                "#8724D1",
+                "#7D16CC",
+                "#7308C7",
+                "#6900BF",
+                "#6100B4",
+                "#5900A9",
+                "#51009E",
+                "#490092",
+                "#420087",
+                "#3B007C",
+                "#350071",
+                "#2E0066"
+              ]
+            },
+            {
+              "id": "black",
+              "palette": [
+                "#EDFFF6",
+                "#DAFCEC",
+                "#C7F8E0",
+                "#B3F4D5",
+                "#A0EFCA",
+                "#8CE5BD",
+                "#78DBB0",
+                "#64D1A3",
+                "#51C796",
+                "#3DBD89",
+                "#2AB37C",
+                "#1FA970",
+                "#179F65",
+                "#13995D",
+                "#108A52",
+                "#0D7A46",
+                "#0B683B",
+                "#085530",
+                "#064125",
+                "#032D1A"
+              ]
+            },
+            {
+              "id": "hispanic",
+              "palette": [
+                "#F5D4D4",
+                "#F2C4C4",
+                "#EFB4B4",
+                "#ECA4A4",
+                "#E99494",
+                "#E68383",
+                "#E27373",
+                "#DF6363",
+                "#DC5353",
+                "#D94343",
+                "#D63333",
+                "#CA2D2D",
+                "#BE2828",
+                "#B32222",
+                "#A71C1C",
+                "#9B1717",
+                "#8F1111",
+                "#830B0B",
+                "#770606",
+                "#6B0000"
+              ]
+            },
+            {
+              "id": "asian",
+              "palette": [
+                "#CEEAFB",
+                "#B7E1F3",
+                "#A0D6ED",
+                "#8ACBE7",
+                "#74C0E1",
+                "#66B6DA",
+                "#58ABD2",
+                "#4BA0CA",
+                "#3D95C2",
+                "#308ABA",
+                "#287EAE",
+                "#2073A2",
+                "#186896",
+                "#105D8A",
+                "#08527E",
+                "#014772",
+                "#013D67",
+                "#01335C",
+                "#012951",
+                "#011F46"
+              ]
+            },
+            {
+              "id": "other",
+              "palette": [
+                "#EBEEF2",
+                "#E6EAEE",
+                "#E1E6EB",
+                "#DDE2E8",
+                "#D8DEE5",
+                "#D4DAE2",
+                "#CFD6DF",
+                "#CBD2DC",
+                "#C6CED9",
+                "#C2CAD6",
+                "#94A3B8",
+                "#8E9CB0",
+                "#8896A9",
+                "#828FA2",
+                "#7C899B",
+                "#778293",
+                "#717C8C",
+                "#6B7585",
+                "#656F7E",
+                "#606977"
+              ]
+            }
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "age",
+        "metric": {
+          "type": "component_plurality",
+          "component_id": "age"
+        },
+        "color_scale": {
+          "type": "plurality",
+          "domain": [
+            0,
+            100
+          ],
+          "series": [
+            {
+              "id": "age_18_29",
+              "palette": [
+                "#F4ECD2",
+                "#F1E7C7",
+                "#EFE2BC",
+                "#EDDEB2",
+                "#EAD9A7",
+                "#E8D59C",
+                "#E6D092",
+                "#E3CC87",
+                "#E1C77C",
+                "#DFC372",
+                "#C79708",
+                "#BF9107",
+                "#B78B07",
+                "#AF8507",
+                "#A77F06",
+                "#A07906",
+                "#987306",
+                "#906D05",
+                "#886705",
+                "#816205"
+              ]
+            },
+            {
+              "id": "age_30_44",
+              "palette": [
+                "#D8F1E7",
+                "#CEEDE1",
+                "#C5EADB",
+                "#BCE7D6",
+                "#B3E3D0",
+                "#A9E0CA",
+                "#A0DCC5",
+                "#97D9BF",
+                "#8ED6B9",
+                "#85D3B4",
+                "#2AB37C",
+                "#28AB77",
+                "#26A472",
+                "#249E6D",
+                "#239768",
+                "#219063",
+                "#20895E",
+                "#1E8259",
+                "#1C7B54",
+                "#1B7450"
+              ]
+            },
+            {
+              "id": "age_45_64",
+              "palette": [
+                "#D8E7F0",
+                "#CEE1EC",
+                "#C5DBE8",
+                "#BCD6E5",
+                "#B2D0E1",
+                "#A9CBDE",
+                "#A0C5DA",
+                "#96C0D7",
+                "#8DBAD3",
+                "#84B5D0",
+                "#287EAE",
+                "#2679A7",
+                "#2474A0",
+                "#236F99",
+                "#216A92",
+                "#20658C",
+                "#1E6085",
+                "#1D5B7E",
+                "#1B5677",
+                "#1A5171"
+              ]
+            },
+            {
+              "id": "age_65_plus",
+              "palette": [
+                "#E5D2F4",
+                "#DFC7F1",
+                "#D9BCEF",
+                "#D3B2ED",
+                "#CDA7EA",
+                "#C79CE8",
+                "#C192E6",
+                "#BB87E3",
+                "#B57CE1",
+                "#AF72DF",
+                "#7308C7",
+                "#6E07BF",
+                "#6907B7",
+                "#6507AF",
+                "#6006A7",
+                "#5C06A0",
+                "#570698",
+                "#530590",
+                "#4E0588",
+                "#4A0581"
+              ]
+            }
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "black_propensity",
+        "metric": {
+          "type": "component_plurality",
+          "component_id": "black_propensity"
+        },
+        "color_scale": {
+          "type": "plurality",
+          "domain": [
+            0,
+            100
+          ],
+          "series": [
+            {
+              "id": "of3_0",
+              "palette": [
+                "#F0F9F6",
+                "#ECF7F3",
+                "#E8F6F1",
+                "#E5F5EF",
+                "#E1F4ED",
+                "#DEF2EA",
+                "#DAF1E8",
+                "#D7F0E6",
+                "#D3EFE4",
+                "#D0EEE2",
+                "#AEE2CD",
+                "#A7D9C5",
+                "#A0D0BD",
+                "#99C7B5",
+                "#92BEAD",
+                "#8CB5A5",
+                "#85AC9D",
+                "#7EA395",
+                "#779A8D",
+                "#719285"
+              ]
+            },
+            {
+              "id": "of3_1",
+              "palette": [
+                "#E4F5EE",
+                "#DDF2EA",
+                "#D7F0E6",
+                "#D1EEE2",
+                "#CBECDE",
+                "#C4E9DA",
+                "#BEE7D6",
+                "#B8E5D2",
+                "#B2E3CE",
+                "#ACE1CB",
+                "#6ECBA5",
+                "#69C39E",
+                "#65BB98",
+                "#61B391",
+                "#5CAB8B",
+                "#58A384",
+                "#549B7E",
+                "#4F9377",
+                "#4B8B71",
+                "#47836B"
+              ]
+            },
+            {
+              "id": "of3_2",
+              "palette": [
+                "#D8F1E7",
+                "#CEEDE1",
+                "#C5EADB",
+                "#BCE7D6",
+                "#B3E3D0",
+                "#A9E0CA",
+                "#A0DCC5",
+                "#97D9BF",
+                "#8ED6B9",
+                "#85D3B4",
+                "#2AB37C",
+                "#28AB77",
+                "#26A472",
+                "#249E6D",
+                "#239768",
+                "#219063",
+                "#20895E",
+                "#1E8259",
+                "#1C7B54",
+                "#1B7450"
+              ]
+            },
+            {
+              "id": "of3_3",
+              "palette": [
+                "#D5E5DF",
+                "#CBDFD7",
+                "#C1D9CF",
+                "#B7D3C8",
+                "#ADCDC0",
+                "#A4C7B9",
+                "#9AC1B1",
+                "#90BBAA",
+                "#86B5A2",
+                "#7DAF9B",
+                "#1B7450",
+                "#196F4C",
+                "#186A49",
+                "#176646",
+                "#166143",
+                "#155D40",
+                "#14583D",
+                "#13543A",
+                "#124F37",
+                "#114B34"
+              ]
+            }
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "white_propensity",
+        "metric": {
+          "type": "component_plurality",
+          "component_id": "white_propensity"
+        },
+        "color_scale": {
+          "type": "plurality",
+          "domain": [
+            0,
+            100
+          ],
+          "series": [
+            {
+              "id": "of3_0",
+              "palette": [
+                "#F5EEFB",
+                "#F2E9FA",
+                "#F0E5F9",
+                "#EEE1F8",
+                "#EBDDF7",
+                "#E9D9F5",
+                "#E7D5F4",
+                "#E4D1F3",
+                "#E2CDF3",
+                "#E0C9F2",
+                "#C9A1E9",
+                "#C19ADF",
+                "#B994D6",
+                "#B18ECD",
+                "#A987C4",
+                "#A181BB",
+                "#997BB2",
+                "#9174A9",
+                "#896EA0",
+                "#826897"
+              ]
+            },
+            {
+              "id": "of3_1",
+              "palette": [
+                "#EDE0F7",
+                "#E8D8F5",
+                "#E4D1F3",
+                "#E0CAF2",
+                "#DCC3F0",
+                "#D8BBEE",
+                "#D4B4ED",
+                "#D0ADEB",
+                "#CCA6E9",
+                "#C89FE8",
+                "#9F57D8",
+                "#9853CF",
+                "#9250C7",
+                "#8C4CBE",
+                "#8649B6",
+                "#7F45AD",
+                "#7942A5",
+                "#733E9C",
+                "#6D3B94",
+                "#67388C"
+              ]
+            },
+            {
+              "id": "of3_2",
+              "palette": [
+                "#E5D2F4",
+                "#DFC7F1",
+                "#D9BCEF",
+                "#D3B2ED",
+                "#CDA7EA",
+                "#C79CE8",
+                "#C192E6",
+                "#BB87E3",
+                "#B57CE1",
+                "#AF72DF",
+                "#7308C7",
+                "#6E07BF",
+                "#6907B7",
+                "#6507AF",
+                "#6006A7",
+                "#5C06A0",
+                "#570698",
+                "#530590",
+                "#4E0588",
+                "#4A0581"
+              ]
+            },
+            {
+              "id": "of3_3",
+              "palette": [
+                "#DED2E8",
+                "#D6C7E2",
+                "#CEBCDD",
+                "#C6B1D7",
+                "#BEA6D2",
+                "#B69BCC",
+                "#AE90C7",
+                "#A685C1",
+                "#9E7ABC",
+                "#9770B7",
+                "#4A0581",
+                "#47047B",
+                "#440476",
+                "#410471",
+                "#3E046C",
+                "#3B0367",
+                "#380362",
+                "#35035D",
+                "#320358",
+                "#300353"
+              ]
+            }
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "voted_2024",
+        "metric": {
+          "type": "component_plurality",
+          "component_id": "voted_2024"
+        },
+        "color_scale": {
+          "type": "plurality",
+          "domain": [
+            0,
+            100
+          ],
+          "series": [
+            {
+              "id": "voted",
+              "palette": [
+                "#E1E4EA",
+                "#D9DDE4",
+                "#D2D7E0",
+                "#CBD0DB",
+                "#C4CAD6",
+                "#BDC3D1",
+                "#B6BDCC",
+                "#AFB6C7",
+                "#A8B0C2",
+                "#A1AABD",
+                "#5B6B8C",
+                "#576686",
+                "#536281",
+                "#505E7B",
+                "#4C5A76",
+                "#495570",
+                "#45516B",
+                "#424D65",
+                "#3E4960",
+                "#3B455B"
+              ]
+            },
+            {
+              "id": "did_not_vote",
+              "palette": [
+                "#F2F3F6",
+                "#EFF1F4",
+                "#ECEEF1",
+                "#E9EBEF",
+                "#E6E8ED",
+                "#E3E6EB",
+                "#E0E3E9",
+                "#DDE0E6",
+                "#DADDE4",
+                "#D7DBE2",
+                "#B5BBC8",
+                "#AEB4C1",
+                "#A7ADB9",
+                "#A0A6B2",
+                "#999FAA",
+                "#9398A3",
+                "#8C919B",
+                "#858A94",
+                "#7E838C",
+                "#787C85"
+              ]
+            }
+          ],
+          "tie_color": "#BFBFBF",
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "progress_aggregate",
+        "metric": {
+          "type": "topline_progress",
+          "topline_id": "aggregate"
+        },
+        "color_scale": {
+          "type": "sequential",
+          "domain": [
+            0,
+            100
+          ],
+          "palette": [
+            "#EADCFD",
+            "#DEC6FA",
+            "#D1ABF5",
+            "#C48FF0",
+            "#B774E8",
+            "#AB5FE3",
+            "#9F4BDD",
+            "#9337D7",
+            "#8724D1",
+            "#7D16CC",
+            "#7308C7",
+            "#6900BF",
+            "#6100B4",
+            "#5900A9",
+            "#51009E",
+            "#490092",
+            "#420087",
+            "#3B007C",
+            "#350071",
+            "#2E0066"
+          ],
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "progress_early",
+        "metric": {
+          "type": "topline_progress",
+          "topline_id": "early"
+        },
+        "color_scale": {
+          "type": "sequential",
+          "domain": [
+            0,
+            100
+          ],
+          "palette": [
+            "#EDFFF6",
+            "#DAFCEC",
+            "#C7F8E0",
+            "#B3F4D5",
+            "#A0EFCA",
+            "#8CE5BD",
+            "#78DBB0",
+            "#64D1A3",
+            "#51C796",
+            "#3DBD89",
+            "#2AB37C",
+            "#1FA970",
+            "#179F65",
+            "#13995D",
+            "#108A52",
+            "#0D7A46",
+            "#0B683B",
+            "#085530",
+            "#064125",
+            "#032D1A"
+          ],
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "progress_mail_returns",
+        "metric": {
+          "type": "topline_progress",
+          "topline_id": "mail_returns"
+        },
+        "color_scale": {
+          "type": "sequential",
+          "domain": [
+            0,
+            100
+          ],
+          "palette": [
+            "#FDF5DC",
+            "#FAEECA",
+            "#F5E3AD",
+            "#F2DA92",
+            "#F0D175",
+            "#EFCA5D",
+            "#EFC547",
+            "#EBB923",
+            "#DFAD16",
+            "#D1A111",
+            "#C79708",
+            "#BF8F00",
+            "#B48700",
+            "#A97F00",
+            "#9E7700",
+            "#926D00",
+            "#876500",
+            "#7C5D00",
+            "#715500",
+            "#664D00"
+          ],
+          "empty_color": "#828282"
+        }
+      },
+      {
+        "id": "progress_remaining",
+        "metric": {
+          "type": "topline_progress",
+          "topline_id": "remaining"
+        },
+        "color_scale": {
+          "type": "sequential",
+          "domain": [
+            0,
+            100
+          ],
+          "palette": [
+            "#FDEADC",
+            "#F5D7B5",
+            "#F0CA9B",
+            "#EABE82",
+            "#E5B36B",
+            "#E0A857",
+            "#DB9D43",
+            "#D69230",
+            "#D18724",
+            "#CC7D16",
+            "#C77308",
+            "#BF6900",
+            "#B46100",
+            "#A95900",
+            "#9E5100",
+            "#924900",
+            "#874200",
+            "#7C3B00",
+            "#713500",
+            "#663000"
+          ],
+          "empty_color": "#828282"
+        }
+      }
+    ],
+    "symbols": {
+      "show_counted": true,
+      "show_expected": true
+    }
+  }
+}

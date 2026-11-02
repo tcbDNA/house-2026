@@ -1,0 +1,309 @@
+{
+  "updated_at": "2026-11-02T21:34:53Z",
+  "components": {
+    "modeled_party_primary_history": {
+      "aggregate": {
+        "covered_count": 0,
+        "groups": {
+          "democratic": {
+            "count": 0,
+            "share": 0
+          },
+          "republican": {
+            "count": 0,
+            "share": 0
+          },
+          "other": {
+            "count": 0,
+            "share": 0
+          }
+        }
+      },
+      "toplines": {
+        "early": {
+          "covered_count": 0,
+          "groups": {
+            "democratic": {
+              "count": 0,
+              "share": 0
+            },
+            "republican": {
+              "count": 0,
+              "share": 0
+            },
+            "other": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "mail_returns": {
+          "covered_count": 0,
+          "groups": {
+            "democratic": {
+              "count": 0,
+              "share": 0
+            },
+            "republican": {
+              "count": 0,
+              "share": 0
+            },
+            "other": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "remaining": {
+          "covered_count": 938630,
+          "groups": {
+            "democratic": {
+              "count": 129646,
+              "share": 13.8
+            },
+            "republican": {
+              "count": 212834,
+              "share": 22.7
+            },
+            "other": {
+              "count": 596150,
+              "share": 63.5
+            }
+          }
+        }
+      }
+    },
+    "modeled_race": {
+      "aggregate": {
+        "covered_count": 0,
+        "groups": {
+          "white": {
+            "count": 0,
+            "share": 0
+          },
+          "black": {
+            "count": 0,
+            "share": 0
+          },
+          "hispanic": {
+            "count": 0,
+            "share": 0
+          },
+          "asian": {
+            "count": 0,
+            "share": 0
+          },
+          "other": {
+            "count": 0,
+            "share": 0
+          }
+        }
+      },
+      "toplines": {
+        "early": {
+          "covered_count": 0,
+          "groups": {
+            "white": {
+              "count": 0,
+              "share": 0
+            },
+            "black": {
+              "count": 0,
+              "share": 0
+            },
+            "hispanic": {
+              "count": 0,
+              "share": 0
+            },
+            "asian": {
+              "count": 0,
+              "share": 0
+            },
+            "other": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "mail_returns": {
+          "covered_count": 0,
+          "groups": {
+            "white": {
+              "count": 0,
+              "share": 0
+            },
+            "black": {
+              "count": 0,
+              "share": 0
+            },
+            "hispanic": {
+              "count": 0,
+              "share": 0
+            },
+            "asian": {
+              "count": 0,
+              "share": 0
+            },
+            "other": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "remaining": {
+          "covered_count": 938630,
+          "groups": {
+            "white": {
+              "count": 677891,
+              "share": 72.2
+            },
+            "black": {
+              "count": 215736,
+              "share": 23
+            },
+            "hispanic": {
+              "count": 27707,
+              "share": 3
+            },
+            "asian": {
+              "count": 7039,
+              "share": 0.7
+            },
+            "other": {
+              "count": 10257,
+              "share": 1.1
+            }
+          }
+        }
+      }
+    },
+    "voted_2024": {
+      "aggregate": {
+        "covered_count": 0,
+        "groups": {
+          "voted": {
+            "count": 0,
+            "share": 0
+          },
+          "did_not_vote": {
+            "count": 0,
+            "share": 0
+          }
+        }
+      },
+      "toplines": {
+        "early": {
+          "covered_count": 0,
+          "groups": {
+            "voted": {
+              "count": 0,
+              "share": 0
+            },
+            "did_not_vote": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "mail_returns": {
+          "covered_count": 0,
+          "groups": {
+            "voted": {
+              "count": 0,
+              "share": 0
+            },
+            "did_not_vote": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "remaining": {
+          "covered_count": 938630,
+          "groups": {
+            "voted": {
+              "count": 848482,
+              "share": 90.4
+            },
+            "did_not_vote": {
+              "count": 90148,
+              "share": 9.6
+            }
+          }
+        }
+      }
+    },
+    "latent_vote_2024": {
+      "aggregate": {
+        "covered_count": 0,
+        "groups": {
+          "harris": {
+            "count": 0,
+            "share": 0
+          },
+          "trump": {
+            "count": 0,
+            "share": 0
+          },
+          "other": {
+            "count": 0,
+            "share": 0
+          }
+        }
+      },
+      "toplines": {
+        "early": {
+          "covered_count": 0,
+          "groups": {
+            "harris": {
+              "count": 0,
+              "share": 0
+            },
+            "trump": {
+              "count": 0,
+              "share": 0
+            },
+            "other": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "mail_returns": {
+          "covered_count": 0,
+          "groups": {
+            "harris": {
+              "count": 0,
+              "share": 0
+            },
+            "trump": {
+              "count": 0,
+              "share": 0
+            },
+            "other": {
+              "count": 0,
+              "share": 0
+            }
+          }
+        },
+        "remaining": {
+          "covered_count": 938630,
+          "groups": {
+            "harris": {
+              "count": 401859,
+              "share": 42.8
+            },
+            "trump": {
+              "count": 523597,
+              "share": 55.8
+            },
+            "other": {
+              "count": 13174,
+              "share": 1.4
+            }
+          }
+        }
+      }
+    }
+  }
+}
