@@ -383,3 +383,5 @@ Page and report: `../senate_polls_2026/recent/atlasintel_texas_2026-11-01.html` 
 ### Nov 2 check: new polls not counted
 
 Concord Public Opinion Partners, Ohio, Oct 22-24 (Acton 49, Ramaswamy 39, Kissick 5, undecided 6), for Education Reform Now Advocacy: partisan sponsor, not counted (release `../senate_polls_2026/recent/concord_ohio_2026-10-24.html`, https://concordpublicopinionpartners.org/polls/ohio-ge-2026-oct).
+
+AtlasIntel Texas (Oct 28-Nov 1) relabeled LV (Nov 2): RCP lists it as 1,678 LV; the report calls the sample Texas adults, post-stratified to match adults and likely voters. No effect on the averages.

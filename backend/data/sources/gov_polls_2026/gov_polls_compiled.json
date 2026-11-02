@@ -9312,7 +9312,7 @@
     "start": "2026-10-28",
     "end": "2026-11-01",
     "released": "2026-11-01",
-    "population": "A",
+    "population": "LV",
     "n": 1678,
     "d_candidate": "Gina Hinojosa",
     "r_candidate": "Greg Abbott",
@@ -9336,7 +9336,7 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/atlasintel_texas_2026-11-01.html; ../senate_polls_2026/recent/atlasintel_texas_2026-11-01.pdf",
-    "note": "AtlasIntel poll page (atlasintel_texas_2026-11-01.html, https://www.atlasintel.org/poll/usa-texas-2026-11-01, dated Nov 1, retrieved Nov 2 11:47 UTC) and report (atlasintel_texas_2026-11-01.pdf, https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf): Oct 28-Nov 1, 1,678 Texas adults recruited online (Atlas Random Digital Recruitment), post-stratified by gender, age, education, income, region and past vote; MOE +/-2. The vote-intention charts (pp.14-15, 19-20) are images, read from the rendered pages. Names no sponsor. RCP averages it with its valid-vote shares (Senate 52/46, governor 50/49); recorded here: all respondents. Governor (p.19): Hinojosa 49.2, Abbott 47.6, other 1.3, don't know 1.2, would not vote 0.7."
+    "note": "AtlasIntel poll page (atlasintel_texas_2026-11-01.html, https://www.atlasintel.org/poll/usa-texas-2026-11-01, dated Nov 1, retrieved Nov 2 11:47 UTC) and report (atlasintel_texas_2026-11-01.pdf, https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf): Oct 28-Nov 1, 1,678 Texas adults recruited online (Atlas Random Digital Recruitment), post-stratified by gender, age, education, income, region and past vote; MOE +/-2. The vote-intention charts (pp.14-15, 19-20) are images, read from the rendered pages. Names no sponsor. RCP averages it with its valid-vote shares (Senate 52/46, governor 50/49); recorded here: all respondents. Governor (p.19): Hinojosa 49.2, Abbott 47.6, other 1.3, don't know 1.2, would not vote 0.7. Population: RCP lists 1,678 LV; the report's sample profile (p.5) says 'Texas adult population', post-stratified to match adults and likely voters (p.4); recorded as LV per RCP (user, Nov 2), the same treatment as AtlasIntel's national poll in the crosstab environment."
    }
   ]
  },
