@@ -598,3 +598,9 @@ Names no sponsor (Research Co. is a Canadian public-opinion firm). Not in RCP; V
 | `insideradvantage_ohio_2026-11-01.html` | https://insideradvantage.com/final-insideradvantage-ohio-survey-brown-49-husted-47-acton-49-ramaswamy-46/ | Posted Nov 1: 1,200 LV, Oct 29-30; Senate Brown 49, Husted 47, other 3, undecided 1; governor Acton 49, Ramaswamy 46, other 3, undecided 2. |
 
 No sponsor named. RCP averages both.
+
+### East Carolina University, North Carolina (Oct 26-29), Nov 2 check
+
+| File | URL | Notes |
+|---|---|---|
+| `ecu_poll_nc_2026-11-01.html` | https://surveyresearch-ecu.reportablenews.com/pr/ecu-poll-cooper-leads-whatley-by-9-points-as-election-day-nears | Release (Nov 1): 1,041 voters, Oct 26-29, text-to-web, IVR and online panel; Cooper 54, Whatley 45, other 1. RCP averages it. |
