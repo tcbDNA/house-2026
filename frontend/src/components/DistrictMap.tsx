@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import maplibregl, { Map as MLMap, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { bucketLabel, partyColorHex, partyTag, type District } from "../types";
+import { bucketLabel, houseWinChances, partyColorHex, partyTag, type District } from "../types";
 import { day } from "./OpenPrimaryField";
 import { addSwingLayer, fetchPoints, setSwingArrows, shiftRowHtml, SWING_CAP, SWING_FILL, SwingLegend, SwingToggle } from "./SwingArrows";
 
@@ -107,6 +107,17 @@ function buildPopupHtml(d: District, uniformSwing: number, swing: boolean): stri
   // Always show all rows — keep zeros visible so the projection arithmetic
   // is fully transparent regardless of whether candidate info exists.
   const challengerRowLabel = isOpen ? "+ nominee WAR" : "+ challenger";
+  const winRows = houseWinChances(d)
+    .map(({ name, party, p }) => `<div style="display:flex;justify-content:space-between;gap:8px">
+                <span style="color:${partyColorHex(party)}">${name}</span>
+                <span style="font-family:ui-monospace,monospace">${(p * 100).toFixed(0)}%</span>
+              </div>`)
+    .join("");
+  const winBlock = winRows
+    ? `<div style="border-top:1px solid #ccc;padding-top:2px;margin-top:3px">
+         <div style="color:#666">chance of winning</div>${winRows}
+       </div>`
+    : "";
 
   return `<div style="font:11px ui-sans-serif,system-ui;line-height:1.35;min-width:180px">
     <div style="margin-bottom:3px"><b>${d.district}</b> · <span style="color:${incColor}">${d.incumbent ?? ""}</span> <span style="color:#888">${partyTag(d.party, !!d.incumbency_adj)}</span></div>
@@ -121,6 +132,7 @@ function buildPopupHtml(d: District, uniformSwing: number, swing: boolean): stri
     ${row("+ demographic Δ", demo)}
     ${row("= projection", proj, true)}
     ${flipRow}
+    ${winBlock}
     ${swing ? shiftRowHtml(d.lockout ? null : proj - m24, "same-party race: no shift shown") : ""}
   </div>`;
 }

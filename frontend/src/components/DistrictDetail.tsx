@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { District } from "../types";
-import { formatProjection } from "../types";
+import { formatProjection, houseWinChances, partyColorHex } from "../types";
 import { fetchDistrict } from "../api";
 import { OpenPrimaryField } from "./OpenPrimaryField";
 
@@ -88,6 +88,19 @@ export function DistrictDetail({ district, onClose, onViewCounties }: Props) {
                 </div>
               </div>
             </div>
+            {houseWinChances(district).length > 0 && (
+              <div className="mt-2 text-sm">
+                <div className="text-slate-500 text-xs">Chance of winning</div>
+                <div className="flex flex-wrap gap-x-4 gap-y-0.5">
+                  {houseWinChances(district).map(({ name, party, p }) => (
+                    <span key={name}>
+                      <span style={{ color: partyColorHex(party) }}>{name}</span>{" "}
+                      <span className="font-mono font-semibold">{(p * 100).toFixed(0)}%</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="mt-2 text-xs text-slate-600">
               Demographic contribution (this scenario):{" "}
               <span className={`font-mono ${district.demo_shift > 0 ? "text-blue-700" : district.demo_shift < 0 ? "text-red-700" : "text-slate-500"}`}>

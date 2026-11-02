@@ -299,6 +299,38 @@ export function partyTag(
   return party.replace(/^\((.+)\)$/, "($1-Inc)");
 }
 
+/** House win probabilities by candidate. `p_d` is the chance the Democratic
+ *  side wins, so a Democrat gets p_d and whoever faces them (R or I) gets
+ *  1 − p_d. Open seats with one named nominee get a row for the other party's
+ *  nominee; Louisiana's all-party primaries (no nominees) are shown by party.
+ *  Same-party races (lockout) have no meaningful split and return []. */
+export function houseWinChances(d: District): { name: string; party: string; p: number }[] {
+  if (d.p_d == null || d.lockout) return [];
+  const pd = d.p_d;
+  const pFor = (party: string | null | undefined) => (party === "(D)" ? pd : 1 - pd);
+  if (d.open_primary) {
+    return [
+      { name: "Democrats", party: "(D)", p: pd },
+      { name: "Republicans", party: "(R)", p: 1 - pd },
+    ];
+  }
+  const isOpen = (d.incumbent ?? "").startsWith("(open");
+  const rows: { name: string; party: string; p: number }[] = [];
+  if (!isOpen && d.incumbent) rows.push({ name: d.incumbent, party: d.party, p: pFor(d.party) });
+  if (d.challenger) rows.push({ name: d.challenger, party: d.challenger_party ?? "", p: pFor(d.challenger_party) });
+  if (isOpen && rows.length === 1) {
+    const other = rows[0].party === "(D)" ? "(R)" : "(D)";
+    rows.push({ name: other === "(D)" ? "Democratic nominee" : "Republican nominee", party: other, p: pFor(other) });
+  }
+  if (rows.length === 0) {
+    return [
+      { name: "Democrats", party: "(D)", p: pd },
+      { name: "Republicans", party: "(R)", p: 1 - pd },
+    ];
+  }
+  return rows;
+}
+
 /** Bucket label for a projection margin (D-positive). Thresholds match the
  *  rest of the app: tilt ≤3 | lean 3-7 | likely 7-13 | safe >13. */
 export function bucketLabel(proj: number): string {
