@@ -454,6 +454,49 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/); votehub_governor_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. Governor: Kreiss-Tomkins 50, Wilson 31, Taylor 10, Bronson 9. The release gives the ranked-choice result, Kreiss-Tomkins 54, Wilson 46; the first-choice ballot (50/31/10/9) is RCP's first-round feed (rcp_gov_ak_rcv1_9016.json)."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 522,
+    "d_candidate": "Jonathan Kreiss-Tomkins",
+    "r_candidate": "Bernadette Wilson",
+    "d": 51.5,
+    "r": 34.0,
+    "anti_r": 51.5,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 51.5,
+    "full_r": 34.0,
+    "others": [
+     {
+      "name": "David Bronson",
+      "party": "R",
+      "pct": 9.4
+     },
+     {
+      "name": "Treg Taylor",
+      "party": "R",
+      "pct": 4.1
+     },
+     {
+      "name": "Other",
+      "party": null,
+      "pct": 1.0
+     }
+    ],
+    "undecided": null,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/atlasintel_ak_2026-11-01.pdf; pollstergraph_ak_governor_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_ak_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ak-20261101-1c572c4c74b5.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-ak-20261101-governor (record pollstergraph_ak_governor_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-ak-20261101-governor, retrieved Nov 3 01:50 UTC), released Nov 3 01:16 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 522 Alaska likely voters, Atlas Random Digital Recruitment, MOE +/-4, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): listed in the first-round feed, not averaged (rcp_gov_ak_rcv1_9016.json). Governor, first-choice ballot (p.17, valid votes only): Kreiss-Tomkins 51.5, Wilson 34.0, Bronson (R) 9.4, Taylor (R) 4.1, other 1.0. Recorded: valid votes; no ranked-choice final round reported."
    }
   ]
  },
@@ -3085,6 +3128,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html (https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/); votehub_governor_all.json (dates, n)",
     "note": "Siena release (siena_nyt_ak_ia_ks_me_mi_oh_tx_2026-11-01.html, https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/, posted Nov 1, retrieved Nov 2 11:48 UTC), final NYT/Siena wave in seven states. Field dates and n from VoteHub (votehub_senate_all.json / votehub_governor_all.json, added Nov 2) and RCP. The NYT topline and crosstab pages block automated downloads, so undecided and minor-candidate shares aren't recorded beyond the release. RCP averages it. Governor: Sand 51, Lahn 43."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1219,
+    "d_candidate": "Rob Sand",
+    "r_candidate": "Zach Lahn",
+    "d": 54.1,
+    "r": 44.0,
+    "anti_r": 54.1,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 54.1,
+    "full_r": 44.0,
+    "others": [
+     {
+      "name": "Other",
+      "party": null,
+      "pct": 1.9
+     }
+    ],
+    "undecided": 0.0,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/atlasintel_ia_2026-11-01.pdf; pollstergraph_ia_governor_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_ia_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ia-20261101-54fb1e7e7be6.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-ia-20261101-governor (record pollstergraph_ia_governor_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-ia-20261101-governor, retrieved Nov 3 01:50 UTC), released Nov 3 00:14 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 1,219 Iowa likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged (rcp_gov_ia_9032.json). Governor (p.19, all respondents): Sand 54.1, Lahn 44.0, other 1.9, don't know 0.0; valid votes (p.20) Sand 54.1, Lahn 44.0, other 1.9. Recorded: all respondents."
    }
   ]
  },
@@ -3468,6 +3544,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/survey160_ks_2026-11-01.pdf; ../senate_polls_2026/recent/survey160_pre_election_2026-11-02.html",
     "note": "Survey 160 release (https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states, posted Nov 2 19:23 UTC, saved as survey160_pre_election_2026-11-02.html; retrieved Nov 2 22:50 UTC) and crosstabs PDF (survey160_ks_2026-11-01.pdf, https://drive.google.com/file/d/1dEY2-gfsk1F4k4mk2RWe9hhX3or6z7_q/view, titled 'Kansas Internal Survey, October 2026'): fielded Oct 27-Nov 1, registration-based sample, text plus IVR and AI-interviewer landline calls; 1,353 respondents, design effect 1.78, MOE +/-3.6. 'Paid for by Survey 160 as part of our ongoing methodological research initiatives': no outside sponsor ('Internal Survey' is the firm's own). Recorded: likely voters, first-choice ballot (the release's headline margins use all respondents with leaners). Not in RCP or VoteHub as of Nov 2 22:50 UTC. Governor, likely voters (n=1267 unweighted): Cindy Holscher 49, Ty Masterson 47, someone else 2, undecided 2; with leaners 49/48."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 2038,
+    "d_candidate": "Cindy Holscher",
+    "r_candidate": "Ty Masterson",
+    "d": 49.9,
+    "r": 45.6,
+    "anti_r": 49.9,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 49.9,
+    "full_r": 45.6,
+    "others": [
+     {
+      "name": "Other",
+      "party": null,
+      "pct": 1.5
+     }
+    ],
+    "undecided": 0.6,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/atlasintel_ks_2026-11-01.pdf; pollstergraph_ks_governor_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_ks_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ks-20261101-f2ec3b8a393e.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-ks-20261101-governor (record pollstergraph_ks_governor_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-ks-20261101-governor, retrieved Nov 3 01:50 UTC), released Nov 3 00:14 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 2,038 Kansas likely voters, Atlas Random Digital Recruitment, MOE +/-2, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged (rcp_gov_ks_9017.json; RCP lists n=1,219). Governor (p.19, all respondents): Holscher 49.9, Masterson 45.6, would not vote 2.3, other 1.5, don't know 0.6; valid votes (p.20) Holscher 51.4, Masterson 47.0, other 1.6. Recorded: all respondents."
    }
   ]
  },
@@ -4132,6 +4241,44 @@
     "excluded_pollster": false,
     "source": "rcp_gov_me_3way_9101.json",
     "note": "Emerson College poll for Poll Vault (Sean Trende's newsletter, published by RealClearPolitics: a media sponsor, not partisan), Oct 31-Nov 1. Toplines from RCP's public feeds (re-downloaded Nov 2 22:47 UTC; RCP links the row to https://pollvault.substack.com/): three-way governor feed 9101 'Poll Vault/Emerson' 10/31-11/1, 600 LV, Pingree 50, Charles 41, Bennett 9 (averaged there); not in the two-way feed 9030. The Poll Vault write-ups are for paid subscribers and weren't opened; Emerson's own site doesn't list the poll (checked Nov 2 22:50 UTC). Not in VoteHub yet."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 967,
+    "d_candidate": "Hannah Pingree",
+    "r_candidate": "Bobby Charles",
+    "d": 49.5,
+    "r": 42.1,
+    "anti_r": 49.5,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 49.5,
+    "full_r": 42.1,
+    "others": [
+     {
+      "name": "Rick Bennett",
+      "party": "I",
+      "pct": 5.2
+     },
+     {
+      "name": "Other",
+      "party": null,
+      "pct": 0.1
+     }
+    ],
+    "undecided": 2.1,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/atlasintel_me_2026-11-01.pdf; pollstergraph_me_governor_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_me_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-me-20261101-2ebe52b9bd88.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-me-20261101-governor (record pollstergraph_me_governor_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-me-20261101-governor, retrieved Nov 3 01:50 UTC), released Nov 3 00:14 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 967 Maine likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged in the three-way feed only (rcp_gov_me_3way_9101.json; RCP lists n=1,219), not the two-way feed 9030. Governor (p.19, all respondents): Pingree 49.5, Charles 42.1, Bennett (I) 5.2, don't know 2.1, would not vote 0.9, other 0.1; valid votes (p.20) Pingree 51.0, Charles 43.4, Bennett 5.4, other 0.1. Recorded: all respondents."
    }
   ]
  },
@@ -5143,6 +5290,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-01.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-01.pdf",
     "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-01.html (https://researchco.ca/2026/11/01/midterms-2026-one/, dated Nov 1, retrieved Nov 2 11:47 UTC) and data tables researchco_tables_midterms_2026-11-01.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_01Nov2026.pdf): online surveys Oct 30-Nov 1, 450 likely voters in each of MI, MN, NY, OH, PA and WI, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP. Governor: Benson 53, James 41, Some other candidate 1, undecided 5 (decided voters 56/43)."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1316,
+    "d_candidate": "Jocelyn Benson",
+    "r_candidate": "John James",
+    "d": 53.2,
+    "r": 45.2,
+    "anti_r": 53.2,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 53.2,
+    "full_r": 45.2,
+    "others": [
+     {
+      "name": "Other",
+      "party": null,
+      "pct": 0.4
+     }
+    ],
+    "undecided": 1.1,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/atlasintel_mi_2026-11-01.pdf; pollstergraph_mi_governor_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_mi_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-mi-20261101-bc2438843230.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-mi-20261101-governor (record pollstergraph_mi_governor_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-mi-20261101-governor, retrieved Nov 3 01:50 UTC), released Nov 3 00:33 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 1,316 Michigan likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged (rcp_gov_mi_8992.json). Governor (p.15, all respondents): Benson 53.2, James 45.2, don't know 1.1, other 0.4, would not vote 0.1; valid votes (p.16) Benson 53.8, James 45.8, other 0.4. Recorded: all respondents."
    }
   ]
  },
@@ -6442,6 +6622,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/unh_survey_center_polls_1011_nh.html (https://scholars.unh.edu/survey_center_polls/1011/); votehub_governor_all.json; RCP",
     "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1011_nh.html, https://scholars.unh.edu/survey_center_polls/1011/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2010&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. Governor: Warmington 48, Ayotte 48, Villee 2. RCP averages it."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1057,
+    "d_candidate": "Cinde Warmington",
+    "r_candidate": "Kelly Ayotte",
+    "d": 43.8,
+    "r": 49.7,
+    "anti_r": 43.8,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 43.8,
+    "full_r": 49.7,
+    "others": [
+     {
+      "name": "Other",
+      "party": null,
+      "pct": 1.8
+     }
+    ],
+    "undecided": 4.1,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/atlasintel_nh_2026-11-01.pdf; pollstergraph_nh_governor_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_nh_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-nh-20261101-1a655a79ae60.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-nh-20261101-governor (record pollstergraph_nh_governor_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-nh-20261101-governor, retrieved Nov 3 01:50 UTC), released Nov 3 00:33 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 1,057 New Hampshire likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): not listed (rcp_gov_nh_8953.json). Governor (p.16, all respondents): Warmington 43.8, Ayotte 49.7, don't know 4.1, other 1.8, would not vote 0.6; valid votes (p.17) Ayotte 52.2, Warmington 45.9, other 1.9. Recorded: all respondents."
    }
   ]
  },

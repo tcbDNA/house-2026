@@ -1115,6 +1115,24 @@
     "excluded_pollster": true,
     "source": "insideradvantage_alaska_2026-11-02.html",
     "note": "InsiderAdvantage release (insideradvantage_alaska_2026-11-02.html, https://insideradvantage.com/insideradvantage-final-alaska-survey-race-tied-in-first-round-48-peltola-48-sullivan-tied-in-ranked-choice-round/, posted Nov 2, retrieved Nov 2 17:22 UTC): conducted Oct 31-Nov 1, 1,200 LV, mixed-mode panel/text, weighted for age, race, gender and political affiliation, MOE 2.83. First round Peltola 48, Sullivan 48 (RCP's first-round feed adds J. Sullivan 2, Heikes 1); ranked-choice round Peltola 50, Sullivan 50. anti_r/r = first round, h2h = final round, as for the other Alaska rows. Names no sponsor. RCP averages it (two-way feed 8754, refreshed Nov 2 17:20 UTC: Peltola 49.2, Sullivan 48.2, 10/8-11/1). InsiderAdvantage is an excluded pollster (user decision Nov 2)."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 522,
+    "anti_r": 50.1,
+    "r": 44.6,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "atlasintel_ak_2026-11-01.pdf; pollstergraph_ak_senate_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_ak_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ak-20261101-1c572c4c74b5.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-ak-20261101-senate (record pollstergraph_ak_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-ak-20261101-senate, retrieved Nov 3 01:50 UTC), released Nov 3 01:16 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 522 Alaska likely voters, Atlas Random Digital Recruitment, MOE +/-4, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): listed, not averaged (rcp_ak_8754.json, rcp_ak_rcv1_9171.json). U.S. Senate, first-choice ballot (p.14, valid votes only; the Alaska report doesn't give all-respondent or nonresponse shares): Peltola 50.1, Dan S. Sullivan 44.6, Heikes (R) 2.5, other 2.2, Dan J. Sullivan (R) 0.6. Recorded: valid votes. No ranked-choice final round reported, so h2h is empty."
    }
   ],
   "notes": "RCP two-way (final-round) average (feed 8754, built Oct 26): 9/28-10/16, Peltola 49.0, Sullivan 48.2 (+0.8), 6 polls: PPP, Rasmussen, DFP, InsiderAdvantage, ASR and Quantus 9/28-30. No AK poll with fieldwork ending after Oct 16 was found. Pre-Oct: Quantus 9/28-30 (737/758 LV). Oct 28 check: RCP (built Oct 27 18:30 CT) dropped Quantus 9/28-30: 10/1-10/16, Peltola 49.4, Sullivan 48.2, 5 polls. No new Alaska poll."
@@ -1730,6 +1748,24 @@
     "excluded_pollster": false,
     "source": "grayhouse_iowa_2026-11-02.html",
     "note": "GrayHouse release (grayhouse_iowa_2026-11-02.html, https://www.grayhouse.com/post/grayhouse-poll-hinson-leads-in-iowa-by-2, posted Nov 2, retrieved Nov 2 17:22 UTC). 'GrayHouse funded this poll as part of its public polling of the Iowa and Nebraska U.S. Senate races': no sponsor (VoteHub: partisan none, no sponsor). The toplines PDF is a script-driven download on the page and isn't saved. RCP does not list it (feeds re-downloaded Nov 2 17:20 UTC). 601 LV, Oct 28-31, MOE 4.0; SMS text-to-web 62%, live cell 30%, live landline 7%. Initial ballot (the only ballot reported): Hinson 48, Turek 46, Laehn 2, undecided 4."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1219,
+    "anti_r": 50.5,
+    "r": 46.4,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "atlasintel_ia_2026-11-01.pdf; pollstergraph_ia_senate_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_ia_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ia-20261101-54fb1e7e7be6.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-ia-20261101-senate (record pollstergraph_ia_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-ia-20261101-senate, retrieved Nov 3 01:50 UTC), released Nov 3 00:14 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 1,219 Iowa likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged (rcp_ia_8930.json). U.S. Senate (p.14, all respondents): Turek 50.5, Hinson 46.4, other 2.7, would not vote 0.3, don't know 0.2; valid votes (p.15) Turek 50.7, Hinson 46.6, other 2.7. Recorded: all respondents, as for AtlasIntel's other state polls."
    }
   ],
   "notes": "RCP two-way average (feed 8930, built Oct 25): 9/29-10/22, Hinson 46.1, Turek 45.5 (Hinson +0.6), 8 polls. RCP 3-way (feed 9215): Hinson 46.0, Turek 45.7, Laehn 3.5. No Rasmussen or ActiVote poll ended in October. Pre-Oct: Fox 9/24-28, Quantus 9/28-29, Rasmussen 9/28-30. Echelon Insights for NetChoice (Oct 16-23, state oversample) added Oct 27 from the NetChoice release. Oct 29 fourth check: RCP added co/efficient (Oct 28, Hinson 48, Turek 46) to its average (feed built Oct 29 12:54 CT: 9/29-10/28, Hinson 46.3, Turek 45.6) and now lists Echelon Insights 10/16-23 unaveraged. No compiled poll ends after Oct 28, so Iowa is back on RCP's average."
@@ -1969,6 +2005,24 @@
     "excluded_pollster": false,
     "source": "survey160_ks_2026-11-01.pdf; survey160_pre_election_2026-11-02.html",
     "note": "Survey 160 release (https://www.survey160.com/methodological-research-blog/survey-160-pre-election-surveys-in-four-states, posted Nov 2 19:23 UTC, saved as survey160_pre_election_2026-11-02.html; retrieved Nov 2 22:50 UTC) and crosstabs PDF (survey160_ks_2026-11-01.pdf, https://drive.google.com/file/d/1dEY2-gfsk1F4k4mk2RWe9hhX3or6z7_q/view, titled 'Kansas Internal Survey, October 2026'): fielded Oct 27-Nov 1, registration-based sample, text plus IVR and AI-interviewer landline calls; 1,353 respondents, design effect 1.78, MOE +/-3.6. 'Paid for by Survey 160 as part of our ongoing methodological research initiatives': no outside sponsor ('Internal Survey' is the firm's own). Recorded: likely voters, first-choice ballot (the release's headline margins use all respondents with leaners). Not in RCP or VoteHub as of Nov 2 22:50 UTC. U.S. Senate, likely voters (n=1267 unweighted): Hamilton 50, Marshall 43, someone else 4, undecided 4; with leaners 50/44."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 2038,
+    "anti_r": 51.9,
+    "r": 44.9,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "atlasintel_ks_2026-11-01.pdf; pollstergraph_ks_senate_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_ks_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ks-20261101-f2ec3b8a393e.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-ks-20261101-senate (record pollstergraph_ks_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-ks-20261101-senate, retrieved Nov 3 01:50 UTC), released Nov 3 00:14 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 2,038 Kansas likely voters, Atlas Random Digital Recruitment, MOE +/-2, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged (rcp_ks_9106.json; RCP lists n=1,219). U.S. Senate (p.14, all respondents): Hamilton 51.9, Marshall 44.9, other 1.6, would not vote 1.2, don't know 0.5; valid votes (p.15) Hamilton 52.7, Marshall 45.6, other 1.6. Recorded: all respondents, as for AtlasIntel's other state polls."
    }
   ],
   "notes": "RCP two-way average (feed 9106, last built Oct 15): 9/8-10/14, Marshall 46.0, Hamilton 45.7 (Marshall +0.3), 6 polls. It has not been rebuilt since Oct 15, so RedBox (Oct 20-23) is missing. Pre-Oct: Emerson 9/15-16, GSG 9/13-16, Wedgewood 9/22-24. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (lastBuildDate still Oct 20, CNN row added Oct 29) averages 9/8-10/26, Hamilton 46.1, Marshall 45.9, 7 polls: CNN/SSRS 10/20-26 added."
@@ -2312,6 +2366,24 @@
     "excluded_pollster": false,
     "source": "rcp_me_9100.json",
     "note": "Emerson College poll for Poll Vault (Sean Trende's newsletter, published by RealClearPolitics: a media sponsor, not partisan), Oct 31-Nov 1. Toplines from RCP's public feeds (re-downloaded Nov 2 22:47 UTC; RCP links the row to https://pollvault.substack.com/): feed 9100 'Poll Vault/Emerson' 10/31-11/1, 600 LV, Jackson 49, Collins 51 (averaged). The Poll Vault write-ups are for paid subscribers and weren't opened; Emerson's own site doesn't list the poll (checked Nov 2 22:50 UTC). Not in VoteHub yet."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 967,
+    "anti_r": 53.1,
+    "r": 44.0,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "atlasintel_me_2026-11-01.pdf; pollstergraph_me_senate_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_me_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-me-20261101-2ebe52b9bd88.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-me-20261101-senate (record pollstergraph_me_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-me-20261101-senate, retrieved Nov 3 01:50 UTC), released Nov 3 00:14 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 967 Maine likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): not listed (rcp_me_9100.json). U.S. Senate (p.14, all respondents): Jackson 53.1, Collins 44.0, would not vote 2.1, don't know 0.8; valid votes (p.15) Jackson 54.7, Collins 45.3. Recorded: all respondents, as for AtlasIntel's other state polls."
    }
   ],
   "notes": "RCP average (feed 9100, built Oct 27 05:39): 9/23-10/25, Jackson 48.7, Collins 47.5 (+1.2), 10 polls, including Rasmussen; Marist 10/22-25 (LV) replaced Marist 10/1-4 (RV). Echelon Insights 10/16-23 is listed but not averaged. Earlier (built Oct 24): 9/23-10/23, Jackson 48.9, Collins 47.5. Every October poll except Wedgewood and the older Trafalgar is in it. Pre-Oct: co/efficient 9/28-30, MPRC 9/25-29 (684), AARP/Fabrizio-Impact 9/20-22. Echelon/NetChoice entry completed from the NetChoice release on Oct 27. Oct 29 check: RCP's feed (lastBuildDate Oct 27 05:41, CNN row added Oct 29) averages 9/23-10/26, Jackson 48.7, Collins 47.3, 11 polls: CNN/SSRS 10/20-26 added. Echelon Insights 10/16-23 is still listed but not averaged (still counted ahead of RCP: RCP_PENDING)."
@@ -2914,6 +2986,24 @@
     "excluded_pollster": false,
     "source": "rcp_mi_multi_9216.json",
     "note": "Emerson College poll for Poll Vault (Sean Trende's newsletter, published by RealClearPolitics: a media sponsor, not partisan), Oct 31-Nov 1. Toplines from RCP's public feeds (re-downloaded Nov 2 22:47 UTC; RCP links the row to https://pollvault.substack.com/): multi-candidate feed 9216 'Poll Vault/Emerson' 10/31-11/1, 500 LV, El-Sayed 51, Rogers 45, Christiansen 3, Kristy 0, Marsh 0 (averaged there); not in the two-way feed 8802. The Poll Vault write-ups are for paid subscribers and weren't opened; Emerson's own site doesn't list the poll (checked Nov 2 22:50 UTC). Not in VoteHub yet."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1316,
+    "anti_r": 53.5,
+    "r": 46.4,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": true,
+    "excluded_pollster": false,
+    "source": "atlasintel_mi_2026-11-01.pdf; pollstergraph_mi_senate_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_mi_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-mi-20261101-bc2438843230.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-mi-20261101-senate (record pollstergraph_mi_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-mi-20261101-senate, retrieved Nov 3 01:50 UTC), released Nov 3 00:33 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 1,316 Michigan likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged (rcp_mi_8802.json). U.S. Senate (p.10, all respondents): El-Sayed 53.5, Rogers 46.4, don't know 0.1, other 0.0; valid votes (p.11) El-Sayed 53.5, Rogers 46.4, other 0.0. Recorded: all respondents, as for AtlasIntel's other state polls."
    }
   ],
   "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (built Oct 28 17:42 CT, CNN row added Oct 29) averages 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls: CNN/SSRS 10/20-27 and CBS News/Mitchell 10/26-27 added; Mitchell's Oct 1 poll is now listed but not averaged. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) El-Sayed 48.0, Rogers 41.8; not in RCP's average, and it ends before the latest poll RCP averages (CNN and Mitchell, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."
@@ -3323,6 +3413,24 @@
     "excluded_pollster": false,
     "source": "unh_survey_center_polls_1011_nh.html (https://scholars.unh.edu/survey_center_polls/1011/); votehub_senate_all.json; RCP",
     "note": "UNH Survey Center Granite State Poll, Oct 27-31 (record page unh_survey_center_polls_1011_nh.html, https://scholars.unh.edu/survey_center_polls/1011/, dated Nov 1, retrieved Nov 2 11:47 UTC). The release PDF (https://scholars.unh.edu/cgi/viewcontent.cgi?article=2010&context=survey_center_polls) is behind a Cloudflare browser check, so the numbers and n are VoteHub's, matching RCP's rows. U.S. Senate: Pappas 54, Sununu 42, Laplante 2."
+   },
+   {
+    "pollster": "AtlasIntel",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-28",
+    "end": "2026-11-01",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1057,
+    "anti_r": 52.3,
+    "r": 44.2,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "atlasintel_nh_2026-11-01.pdf; pollstergraph_nh_senate_2026-11-01.json",
+    "note": "AtlasIntel report (atlasintel_nh_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-nh-20261101-1a655a79ae60.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-nh-20261101-senate (record pollstergraph_nh_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-nh-20261101-senate, retrieved Nov 3 01:50 UTC), released Nov 3 00:33 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 1,057 New Hampshire likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): not listed (rcp_nh_8845.json). U.S. Senate (p.11, all respondents): Pappas 52.3, Sununu 44.2, would not vote 1.9, don't know 1.6; valid votes (p.12) Pappas 54.2, Sununu 45.8. Recorded: all respondents, as for AtlasIntel's other state polls."
    }
   ],
   "notes": "RCP two-way average (feed 8845): 9/15-10/23, Pappas 49.7, Sununu 43.0 (+6.7), 6 polls, including Rasmussen 10/20-23. Its lastBuildDate field (Oct 22) lags the Oct 26 Rasmussen addition. Without Rasmussen, only 2 non-excluded October polls are averaged. Pre-Oct: St. Anselm/AARP 9/28-29, Trafalgar 9/26-27. Oct 29 check: UMass Lowell/YouGov (Oct 2-19, released Oct 28) Pappas 48, Sununu 41, from the UMass Lowell release; not in RCP's Senate feed, VoteHub or Poliwave. It ends before the latest poll in RCP's average (Rasmussen 10/20-23), so New Hampshire stays on RCP's average. Oct 29 second check: RCP added UMass Lowell (10/2-19) to its average (feed lastBuildDate Oct 26 14:25 CT): 9/15-10/23, Pappas 49.4, Sununu 42.7, Rasmussen still in it."

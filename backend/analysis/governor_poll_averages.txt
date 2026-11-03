@@ -76,10 +76,11 @@ MA: RCP average; 4 poll(s) (n_eff 4); anti-R 57.00 / R 33.25 -> margin +23.75, b
     - WCVB-TV/Amherst 10/6 - 10/13
 MD: recomputed: RCP publishes no average (fewer than 3 polls since 2026-10-05: window from 2026-09-01, older polls count half); 1 poll(s) (n_eff 0.5); anti-R 51.00 / R 24.00 -> margin +27.00, blend margin +36.00, third parties 6.0
     - University of Maryland Baltimore County Institute of Politics, ending 2026-09-27 (full ballot, 51/24)
-ME: recomputed: newer polls than RCP's average; 12 poll(s) (n_eff 12); anti-R 50.00 / R 39.58 -> margin +10.42, blend margin +11.63, third parties 6.5 (RCP published +10.0)
+ME: recomputed: newer polls than RCP's average; 13 poll(s) (n_eff 13); anti-R 49.96 / R 39.78 -> margin +10.18, blend margin +11.35, third parties 6.4 (RCP published +10.0)
     - The New York Times/Siena University, ending 2026-11-01 (full ballot, 49/37)
     - Survey 160, ending 2026-11-01 (full ballot, 53/41)
     - Emerson College for Poll Vault, ending 2026-11-01 (full ballot, 50/41)
+    - AtlasIntel, ending 2026-11-01 (full ballot, 49.5/42.1)
     - University of New Hampshire, ending 2026-10-31 (full ballot, 51/40)
     - YouGov, ending 2026-10-29 (full ballot, 53/45)
     - Data for Progress, ending 2026-10-27 (full ballot, 49/37)
@@ -116,11 +117,12 @@ NE: recomputed: RCP publishes no average; 4 poll(s) (n_eff 4); anti-R 42.00 / R 
     - Echelon Insights for NetChoice, ending 2026-10-23 (full ballot, 40/47)
     - National Public Affairs, ending 2026-10-18 (full ballot, 41/47)
     left out: Concord Public Opinion Partners for Education Reform Now Advocacy (D-flagged), ending 2026-10-18 (partisan sponsor); Global Strategy Group for Lynne Walz (D-flagged), ending 2026-10-18 (partisan sponsor); Public Policy Polling (D-flagged), ending 2026-10-14 (campaign/party internal per VoteHub)
-NH: RCP average; removed: Rasmussen Reports 10/20 - 10/23; plus polls RCP left out: National Public Affairs 10/8 - 10/12; 4 poll(s) (n_eff 4); anti-R 42.50 / R 50.00 -> margin -7.50, blend margin -8.11, third parties 0.8 (RCP published -6.0)
-    - UNH 10/27 - 10/31
-    - St. Anselm 10/19 - 10/20
-    - UMass Lowell 10/2 - 10/19
-    - National Public Affairs 10/8 - 10/12 (left out by RCP, counted; full ballot, 38/54)
+NH: recomputed: newer polls than RCP's average; 5 poll(s) (n_eff 5); anti-R 42.76 / R 49.94 -> margin -7.18, blend margin -7.75, third parties 2.0 (RCP published -6.0)
+    - AtlasIntel, ending 2026-11-01 (full ballot, 43.8/49.7)
+    - University of New Hampshire, ending 2026-10-31 (full ballot, 48/48)
+    - Saint Anselm, ending 2026-10-20 (full ballot, 42/50)
+    - UMass Lowell/YouGov, ending 2026-10-19 (full ballot, 42/48)
+    - National Public Affairs, ending 2026-10-12 (full ballot, 38/54)
 NM: RCP average; 2 poll(s) (n_eff 2); anti-R 48.00 / R 41.50 -> margin +6.50, blend margin +7.26, third parties 0.0 (RCP published +6.5)
     - Albuquerque Journal 10/1 - 10/9
     - KOB-TV/SurveyUSA 9/25 - 9/30

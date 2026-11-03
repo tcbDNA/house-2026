@@ -731,3 +731,22 @@ Poll Vault is Sean Trende's newsletter, published by RealClearPolitics (https://
 ### Nov 2 late-evening check: refreshed RCP feeds, VoteHub lists and Poliwave pages
 
 Re-downloaded every saved RCP Senate and governor feed (Nov 3 01:35 UTC; New Mexico governor's feed 9029 still has its broken average row, so its saved copy is kept), VoteHub's Senate and governor lists (`votehub_senate_all.json`, `../../gov_polls_2026/votehub_governor_all.json`, 01:35 UTC) and full poll dump (`../votehub_polls_api_C.json`, https://api.votehub.com/polls, 01:45 UTC), and Poliwave's Senate race pages (01:42 UTC). RCP now averages AtlasIntel's Oct 28-Nov 1 polls in Iowa, Kansas, Michigan, Minnesota, North Carolina and Ohio and Poll Vault/Emerson's in Michigan and Texas (and Rasmussen's Oct 27-31 polls, excluded); it lists AtlasIntel's Alaska poll without averaging it. Poliwave now lists Research Co.'s Oct 31-Nov 2 polls in Colorado (Hickenlooper 57, Baisley 35) and Illinois (Stratton 53, Tracy 41) and CU Boulder/YouGov's Colorado poll (Oct 9-20, Hickenlooper 57, Baisley 39), so both races now have poll averages. Research Co.'s New Mexico Senate poll isn't in VoteHub's dump or on Poliwave's page yet, so New Mexico stays on RCP's average.
+
+### AtlasIntel, Alaska, Iowa, Kansas, Maine, Michigan and New Hampshire (Oct 28-Nov 1), Nov 2 late evening
+
+| File | URL | Notes |
+|---|---|---|
+| `atlasintel_ak_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ak-20261101-1c572c4c74b5.pdf | 522 LV, MOE +/-4; Senate Peltola 50.1, Sullivan 44.6; governor Kreiss-Tomkins 51.5, Wilson 34.0 (valid votes; the report gives no all-respondent shares) |
+| `atlasintel_ia_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ia-20261101-54fb1e7e7be6.pdf | 1,219 LV, MOE +/-3; Senate Turek 50.5, Hinson 46.4; governor Sand 54.1, Lahn 44.0 (all respondents) |
+| `atlasintel_ks_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-ks-20261101-f2ec3b8a393e.pdf | 2,038 LV, MOE +/-2; Senate Hamilton 51.9, Marshall 44.9; governor Holscher 49.9, Masterson 45.6 (all respondents) |
+| `atlasintel_me_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-me-20261101-2ebe52b9bd88.pdf | 967 LV, MOE +/-3; Senate Jackson 53.1, Collins 44.0; governor Pingree 49.5, Charles 42.1 (all respondents) |
+| `atlasintel_mi_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-mi-20261101-bc2438843230.pdf | 1,316 LV, MOE +/-3; Senate El-Sayed 53.5, Rogers 46.4; governor Benson 53.2, James 45.2 (all respondents) |
+| `atlasintel_nh_2026-11-01.pdf` | https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-nh-20261101-1a655a79ae60.pdf | 1,057 LV, MOE +/-3; Senate Pappas 52.3, Sununu 44.2; governor Warmington 43.8, Ayotte 49.7 (all respondents) |
+| `pollstergraph_ak_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-ak-20261101-senate | PollsterGraph's record (released Nov 3 01:16 UTC) |
+| `pollstergraph_ia_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-ia-20261101-senate | PollsterGraph's record (released Nov 3 00:14 UTC) |
+| `pollstergraph_ks_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-ks-20261101-senate | PollsterGraph's record (released Nov 3 00:14 UTC) |
+| `pollstergraph_me_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-me-20261101-senate | PollsterGraph's record (released Nov 3 00:14 UTC) |
+| `pollstergraph_mi_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-mi-20261101-senate | PollsterGraph's record (released Nov 3 00:33 UTC) |
+| `pollstergraph_nh_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-nh-20261101-senate | PollsterGraph's record (released Nov 3 00:33 UTC) |
+
+On PollsterGraph, AtlasIntel's own platform; no outside sponsor. RCP averages the Iowa, Kansas and Michigan Senate polls and lists Alaska's without averaging it; Maine's and New Hampshire's aren't in its feeds. The Alaska report also has an at-large House question (Hill 46.6, Begich 46.5, valid votes), not used: the House model takes no district polls.

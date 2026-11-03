@@ -417,3 +417,7 @@ Toplines from RCP's feeds (re-downloaded Nov 2 22:47 UTC): Ohio (`rcp_gov_oh_872
 ### Nov 2 late-evening check: refreshed RCP feeds and VoteHub list
 
 Re-downloaded every saved RCP governor feed (Nov 3 01:35 UTC; New Mexico's feed 9029 still has the broken average row, saved copy kept) and `votehub_governor_all.json`. RCP now averages AtlasIntel (Oct 28-Nov 1) in Iowa, Kansas, Maine (three-way), Michigan and Ohio, Poll Vault/Emerson in Michigan and Texas, and Rasmussen (excluded) in Iowa, Ohio and South Carolina; it no longer averages TPOR in Texas or Univision/YouGov in Florida.
+
+### AtlasIntel, Alaska, Iowa, Kansas, Maine, Michigan and New Hampshire (Oct 28-Nov 1), Nov 2 late evening
+
+Sources: `../senate_polls_2026/recent/atlasintel_<st>_2026-11-01.pdf` (see that README) and `pollstergraph_<st>_governor_2026-11-01.json` (https://pollstergraph.com/api/polls/exclusive-atlas-us-<st>-20261101-governor). All respondents except Alaska (valid votes only): AK Kreiss-Tomkins 51.5, Wilson 34.0; IA Sand 54.1, Lahn 44.0; KS Holscher 49.9, Masterson 45.6; ME Pingree 49.5, Charles 42.1; MI Benson 53.2, James 45.2; NH Warmington 43.8, Ayotte 49.7. RCP averages Iowa, Kansas and Michigan, Maine in its three-way feed only, and lists Alaska's first round without averaging it.
