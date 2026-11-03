@@ -421,3 +421,7 @@ Re-downloaded every saved RCP governor feed (Nov 3 01:35 UTC; New Mexico's feed 
 ### AtlasIntel, Alaska, Iowa, Kansas, Maine, Michigan and New Hampshire (Oct 28-Nov 1), Nov 2 late evening
 
 Sources: `../senate_polls_2026/recent/atlasintel_<st>_2026-11-01.pdf` (see that README) and `pollstergraph_<st>_governor_2026-11-01.json` (https://pollstergraph.com/api/polls/exclusive-atlas-us-<st>-20261101-governor). All respondents except Alaska (valid votes only): AK Kreiss-Tomkins 51.5, Wilson 34.0; IA Sand 54.1, Lahn 44.0; KS Holscher 49.9, Masterson 45.6; ME Pingree 49.5, Charles 42.1; MI Benson 53.2, James 45.2; NH Warmington 43.8, Ayotte 49.7. RCP averages Iowa, Kansas and Michigan, Maine in its three-way feed only, and lists Alaska's first round without averaging it.
+
+### Research Co., six states (Oct 31-Nov 2), Nov 2 late evening
+
+Source: `../senate_polls_2026/recent/researchco_midterms_2026-11-02.html` and `../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf` (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf). All 450 likely voters per state: CO Weiser 53, Marx 38; FL Jolly 44, Donalds 48; GA Bottoms 46, Jackson 45; IL Pritzker 57, Bailey 36; NM Haaland 51, Hull 44; TX Hinojosa 44, Abbott 46. No sponsor; not in RCP.

@@ -40,10 +40,10 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   SD     +8.82   -0.01  -0.00  -0.02    +8.85  poll blend (expected)
   KS     +6.41   -0.10  +0.03  -0.07    +6.55  poll blend (expected)
   MN     -6.02   -0.00  -0.01  -0.43    -5.58  poll blend (expected)
-  FL     -4.30   -0.05  -0.25  -0.76    -3.23  FLAG · poll blend (expected)
+  GA     -4.89   -0.01  -0.03  -0.76    -4.10  FLAG · poll blend (expected)
+  FL     -4.37   -0.05  -0.25  -0.76    -3.30  FLAG · poll blend (expected)
   NH     -3.64   -0.00  +0.00  +0.02    -3.66  poll blend (expected)
   IA     +3.25   -0.00  +0.00  +0.13    +3.12  poll blend (expected)
-  GA     -3.22   -0.01  -0.03  -0.76    -2.43  FLAG · poll blend (expected)
   MI     -3.06   +0.00  -0.00  -0.11    -2.95  poll blend (expected)
   CO     -2.85   -0.00  +0.02  -0.30    -2.56  poll blend (expected)
   IL     -2.74   +0.02  -0.03  -0.36    -2.37  poll blend (expected)
@@ -52,8 +52,8 @@ settings: shrink k = 25,000 votes; trend weight 0.5; frame race
   NM     -2.51   -0.00  +0.00  -0.13    -2.38  poll blend (expected)
   AR     +2.47   -0.00  +0.01  -0.30    +2.76  poll blend (expected)
   RI     -2.35   +0.21  +0.04  +0.08    -2.68  poll blend (expected)
-  TX     +1.76   -0.02  -0.35  -0.84    +2.97  FLAG · poll blend (expected)
   SC     +1.75   -0.00  -0.00  -0.37    +2.13  poll blend (expected)
+  TX     +1.66   -0.02  -0.35  -0.84    +2.87  FLAG · poll blend (expected)
   UT     -1.21   -0.35  -0.08  -0.78    +0.00  FLAG · no 2026 race
   AL     +1.07   +0.00  -0.08  -0.61    +1.76  FLAG · poll blend (expected)
   CA     -0.89   +0.01  -0.30  -0.60    +0.00  FLAG · no 2026 race

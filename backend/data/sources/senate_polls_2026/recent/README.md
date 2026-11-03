@@ -750,3 +750,13 @@ Re-downloaded every saved RCP Senate and governor feed (Nov 3 01:35 UTC; New Mex
 | `pollstergraph_nh_senate_2026-11-01.json` | https://pollstergraph.com/api/polls/exclusive-atlas-us-nh-20261101-senate | PollsterGraph's record (released Nov 3 00:33 UTC) |
 
 On PollsterGraph, AtlasIntel's own platform; no outside sponsor. RCP averages the Iowa, Kansas and Michigan Senate polls and lists Alaska's without averaging it; Maine's and New Hampshire's aren't in its feeds. The Alaska report also has an at-large House question (Hill 46.6, Begich 46.5, valid votes), not used: the House model takes no district polls.
+
+### Research Co., six states (Oct 31-Nov 2), Nov 2 late evening
+
+| File | URL | Notes |
+|---|---|---|
+| `researchco_midterms_2026-11-02.html` | https://researchco.ca/2026/11/02/midterms-2026-two/ | Release (Nov 2): online, 450 LV per state in CO, FL, GA, IL, NM, TX, weighted by age and gender; MOE +/-4.6; no sponsor |
+| `researchco_release_midterms_2026-11-02.pdf` | https://researchco.ca/wp-content/uploads/2026/11/Release_MidTerms_USA_02Nov2026.pdf | Press release |
+| `researchco_tables_midterms_2026-11-02.pdf` | https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf | Data tables, all voters and decided voters. Senate, all voters: FL Nixon 44, Moody 51; GA Ossoff 52, Collins 42; TX Talarico 49, Paxton 46; also CO Hickenlooper 57, Baisley 35 (p.1), IL Stratton 53, Tracy 41 (p.4), NM Lujan 56, Marker 37 (p.5) |
+
+Recorded: all voters, as for the Nov 1 release. The Colorado and Illinois Senate polls reach the averages through Poliwave's pages (refreshed this check), the way those races take polls. New Mexico's Senate race takes polls only from RCP's feed, VoteHub's dump and Poliwave, none of which has this poll yet, so it isn't counted. Not in RCP.

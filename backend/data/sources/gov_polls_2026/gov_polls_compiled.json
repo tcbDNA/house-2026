@@ -1327,6 +1327,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/cu_aprl_colorado_political_climate_2026-10-29.pdf (https://www.colorado.edu/lab/aprl/media/84)",
     "note": "University of Colorado Boulder American Politics Research Lab, 2026 Colorado Political Climate Survey report (cu_aprl_colorado_political_climate_2026-10-29.pdf, https://www.colorado.edu/lab/aprl/media/84, 'Updated Initial Release, October 29, 2026'; retrieved Nov 2 17:22 UTC; VoteHub added it Nov 2): 800 Colorado residents interviewed online Oct 9-20 by YouGov from its opt-in panel; the election questions use a likely-voter weight (about 700 respondents, credible interval +/-4.48). Governor: Weiser 57, Marx 37 (report text); the Senate result is Hickenlooper 57, Baisley 39 (Colorado's Senate race isn't in the Senate compiled list). University poll, no sponsor. RCP has no Colorado governor average."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-02",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Phil Weiser",
+    "r_candidate": "Victor Marx",
+    "d": 53,
+    "r": 38,
+    "anti_r": 53,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 53,
+    "full_r": 38,
+    "others": [
+     {
+      "name": "Some other candidate",
+      "party": null,
+      "pct": 2
+     }
+    ],
+    "undecided": 7,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-02.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-02.html (https://researchco.ca/2026/11/02/midterms-2026-two/, dated Nov 2, retrieved Nov 3 01:37 UTC), press release researchco_release_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Release_MidTerms_USA_02Nov2026.pdf) and data tables researchco_tables_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf): online surveys Oct 31-Nov 2, 450 likely voters in each of CO, FL, GA, IL, NM and TX, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP (feeds re-downloaded Nov 3 01:35 UTC). Governor (tables p.1): Weiser 53, Marx 38, some other candidate 2, undecided 7 (decided voters 57/41)."
    }
   ]
  },
@@ -2192,6 +2225,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/stetson_cpor_fall_2026_wave3_october.pdf (https://www.stetson.edu/artsci/cpor/media/cpor-fall-2026-report-wave-3-october.pdf); votehub_governor_all.json",
     "note": "Stetson University Center for Public Opinion Research, final pre-election wave (report dated Oct 30, stetson_cpor_fall_2026_wave3_october.pdf): 1,000 Florida adults on a Qualtrics online opt-in panel, fielded Oct 26-30; 861 registered voters, on whom all electoral results are based, among modeled likely voters; already-voted respondents (55% of weighted likely voters) report their votes, leaners allocated. Governor: Donalds 51, Jolly 45, other 1, undecided 2. Design-effect-adjusted precision +/-3.6 for likely voters. No sponsor (CPOR is Stetson's independent, non-partisan center). Not in RCP's governor feed (rcp_gov_fl_8881.json, checked Nov 1). VoteHub n=861 LV."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-02",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "David Jolly",
+    "r_candidate": "Byron Donalds",
+    "d": 44,
+    "r": 48,
+    "anti_r": 44,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 44,
+    "full_r": 48,
+    "others": [
+     {
+      "name": "Some other candidate",
+      "party": null,
+      "pct": 2
+     }
+    ],
+    "undecided": 6,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-02.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-02.html (https://researchco.ca/2026/11/02/midterms-2026-two/, dated Nov 2, retrieved Nov 3 01:37 UTC), press release researchco_release_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Release_MidTerms_USA_02Nov2026.pdf) and data tables researchco_tables_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf): online surveys Oct 31-Nov 2, 450 likely voters in each of CO, FL, GA, IL, NM and TX, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP (feeds re-downloaded Nov 3 01:35 UTC). Governor (tables p.2): Jolly 44, Donalds 48, some other candidate 2, undecided 6 (decided voters 47/51)."
    }
   ]
  },
@@ -2491,6 +2557,33 @@
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; statenavigate_ga_statewide_poll_october_2026.html",
     "note": "State Navigate: Bottoms 50, Jackson 47 with leaners; 2% undecided and another 2% already voted but do not remember or would not say. MOE 3.8."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-02",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Keisha Lance Bottoms",
+    "r_candidate": "Rick Jackson",
+    "d": 46,
+    "r": 45,
+    "anti_r": 46,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 46,
+    "full_r": 45,
+    "others": [],
+    "undecided": 9,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-02.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-02.html (https://researchco.ca/2026/11/02/midterms-2026-two/, dated Nov 2, retrieved Nov 3 01:37 UTC), press release researchco_release_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Release_MidTerms_USA_02Nov2026.pdf) and data tables researchco_tables_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf): online surveys Oct 31-Nov 2, 450 likely voters in each of CO, FL, GA, IL, NM and TX, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP (feeds re-downloaded Nov 3 01:35 UTC). Governor (tables p.3): Bottoms 46, Jackson 45, undecided 9 (decided voters 51/49)."
    }
   ]
  },
@@ -2623,6 +2716,39 @@
     "in_rcp_average": null,
     "excluded_pollster": true,
     "source": "votehub_governor_all.json"
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-02",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "JB Pritzker",
+    "r_candidate": "Darren Bailey",
+    "d": 57,
+    "r": 36,
+    "anti_r": 57,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 57,
+    "full_r": 36,
+    "others": [
+     {
+      "name": "Some other candidate",
+      "party": null,
+      "pct": 1
+     }
+    ],
+    "undecided": 6,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-02.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-02.html (https://researchco.ca/2026/11/02/midterms-2026-two/, dated Nov 2, retrieved Nov 3 01:37 UTC), press release researchco_release_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Release_MidTerms_USA_02Nov2026.pdf) and data tables researchco_tables_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf): online surveys Oct 31-Nov 2, 450 likely voters in each of CO, FL, GA, IL, NM and TX, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP (feeds re-downloaded Nov 3 01:35 UTC). Governor (tables p.4): Pritzker 57, Bailey 36, some other candidate 1, undecided 6 (decided voters 60/38)."
    }
   ]
  },
@@ -6713,6 +6839,33 @@
     "in_rcp_average": true,
     "excluded_pollster": false,
     "source": "votehub_governor_all.json; rcp_gov_nm_9029.json"
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-02",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Deb Haaland",
+    "r_candidate": "Gregg Hull",
+    "d": 51,
+    "r": 44,
+    "anti_r": 51,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 51,
+    "full_r": 44,
+    "others": [],
+    "undecided": 5,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-02.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-02.html (https://researchco.ca/2026/11/02/midterms-2026-two/, dated Nov 2, retrieved Nov 3 01:37 UTC), press release researchco_release_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Release_MidTerms_USA_02Nov2026.pdf) and data tables researchco_tables_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf): online surveys Oct 31-Nov 2, 450 likely voters in each of CO, FL, GA, IL, NM and TX, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP (feeds re-downloaded Nov 3 01:35 UTC). Governor (tables p.5): Haaland 51, Hull 44, undecided 5 (decided voters 54/46)."
    }
   ]
  },
@@ -9854,6 +10007,39 @@
     "excluded_pollster": false,
     "source": "../senate_polls_2026/recent/atlasintel_texas_2026-11-01.html; ../senate_polls_2026/recent/atlasintel_texas_2026-11-01.pdf",
     "note": "AtlasIntel poll page (atlasintel_texas_2026-11-01.html, https://www.atlasintel.org/poll/usa-texas-2026-11-01, dated Nov 1, retrieved Nov 2 11:47 UTC) and report (atlasintel_texas_2026-11-01.pdf, https://cdn1.atlasintel.org/2026_midterms__texas_110126_73e0a3a507f76a2e.pdf): Oct 28-Nov 1, 1,678 Texas adults recruited online (Atlas Random Digital Recruitment), post-stratified by gender, age, education, income, region and past vote; MOE +/-2. The vote-intention charts (pp.14-15, 19-20) are images, read from the rendered pages. Names no sponsor. RCP averages it with its valid-vote shares (Senate 52/46, governor 50/49); recorded here: all respondents. Governor (p.19): Hinojosa 49.2, Abbott 47.6, other 1.3, don't know 1.2, would not vote 0.7. Population: RCP lists 1,678 LV; the report's sample profile (p.5) says 'Texas adult population', post-stratified to match adults and likely voters (p.4); recorded as LV per RCP (user, Nov 2), the same treatment as AtlasIntel's national poll in the crosstab environment."
+   },
+   {
+    "pollster": "Research Co.",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-02",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 450,
+    "d_candidate": "Gina Hinojosa",
+    "r_candidate": "Greg Abbott",
+    "d": 44,
+    "r": 46,
+    "anti_r": 44,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "full_d": 44,
+    "full_r": 46,
+    "others": [
+     {
+      "name": "Pat Dixon",
+      "party": "L",
+      "pct": 2
+     }
+    ],
+    "undecided": 8,
+    "rcv_final_d": null,
+    "rcv_final_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "../senate_polls_2026/recent/researchco_midterms_2026-11-02.html; ../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf",
+    "note": "Research Co. (Vancouver), release researchco_midterms_2026-11-02.html (https://researchco.ca/2026/11/02/midterms-2026-two/, dated Nov 2, retrieved Nov 3 01:37 UTC), press release researchco_release_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Release_MidTerms_USA_02Nov2026.pdf) and data tables researchco_tables_midterms_2026-11-02.pdf (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf): online surveys Oct 31-Nov 2, 450 likely voters in each of CO, FL, GA, IL, NM and TX, weighted by age and gender (census); MOE +/-4.6. Already-voted respondents report their vote. Names no sponsor. Recorded: all 450 voters (the tables' first block); the release quotes decided voters. Not in RCP (feeds re-downloaded Nov 3 01:35 UTC). Governor (tables p.6): Hinojosa 44, Abbott 46, Pat Dixon (L) 2, undecided 8 (decided voters 48/50)."
    }
   ]
  },
