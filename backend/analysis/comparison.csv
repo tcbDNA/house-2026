@@ -135,3 +135,4 @@ nov2e-emerson_pv2,10.53,238,243,227,264,0.99,53,53,0.82,"Polls: Emerson College 
 nov2e-zogby_mi,10.53,238,243,227,264,0.99,53,53,0.819,"Polls: John Zogby Strategies, Michigan (Oct 31-Nov 2)"
 nov2e-resonance_sc,10.53,238,243,227,264,0.99,53,53,0.822,"Polls: Resonance Media Services, South Carolina (completed Oct 30)"
 nov2e-yougov-national,10.39,237,242,227,263,0.989,53,53,0.819,Crosstab environment: add YouGov's national pre-election study (Oct 27-30)
+nov2e-zogby-national,10.23,236,242,226,263,0.987,53,53,0.816,Crosstab environment: add John Zogby Strategies' national poll (Nov 1-2)
