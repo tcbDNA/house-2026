@@ -198,3 +198,7 @@ Pages from georgiavotes.com (built from the Secretary of State's absentee and vo
 ## VoteHub early-vote tracker (turnout_2026/votehub_early_vote_2026-11-02/) — not used by the model
 
 The public JSON behind VoteHub's 2026 Early Vote Tracker (16 states; Wisconsin in full), retrieved 2026-11-02. URLs in the folder's README.md.
+
+## Florida turnout by party, 2012–2024, MCI Maps (turnout_2026/fl_party_turnout_history_mcimaps_2026-11-03/) — not used by the model
+
+Matthew Isbell's (MCI Maps) table of turnout by party registration for the 2012–2022 general elections and his 2024 figures, retrieved 2026-11-03 for comparison with the Election Day tracker. Figures, caveats and URLs in the folder's README.md.
