@@ -198,7 +198,7 @@ export function Methodology() {
         Dan Osborn (NE), Brian Bengs (SD), Todd Achilles (ID) and Seth Bodnar (MT) —
         are assumed to caucus with Democrats if they win, so they count toward
         Democratic control; the Senate summary also shows P(D control) if none of
-        them does (82.0% vs 80.7% by default; Osborn's race is nearly all of the
+        them does (81.9% vs 80.6% by default; Osborn's race is nearly all of the
         difference). Appointed senators who haven't
         yet won an election (Moody FL, Husted OH, Graham SC) get no incumbency
         bonus, and a seat whose primary is still unresolved carries no incumbent
@@ -235,8 +235,8 @@ export function Methodology() {
         campaign) and 11 safe races have no countable recent poll and use the model alone.
         The blend takes Texas from the model's R+0.4 to Talarico D+2.5, Kansas from
         R+3.8 to Hamilton D+2.7, Nebraska from R+3.8 to Ricketts
-        +3.2 and Alaska from R+1.2 to D+1.4; P(D control) is 82.0% (70.1% on the
-        model alone; 80.4% / 83.0% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
+        +3.2 and Alaska from R+1.2 to D+1.4; P(D control) is 81.9% (70.1% on the
+        model alone; 80.3% / 82.9% with w = 0.6 / 0.8). <b>Montana</b> is a three-way
         race (Daines withdrew in March): Kurt Alme (R) vs Seth Bodnar (I), with
         Alani Bankhead (D) polling a distant third, plus a Libertarian; its polling
         margin is Bodnar − Alme from RCP's three-way average without Quantus
@@ -312,7 +312,7 @@ export function Methodology() {
         races, so its 0.5 × gap term is a judgment applied only where polling is
         sparse; a Northeast indicator didn't improve the fit. Result (Oct 30):
         Democrats are projected to win 27 governorships (median 27, 80% range
-        24–31), with a 80.1% chance of a majority.
+        24–31), with a 80.0% chance of a majority.
       </p>
       <p className="mb-2">
         <b>Win probabilities</b> come from 10,000 Monte Carlo simulations around the

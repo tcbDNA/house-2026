@@ -3058,6 +3058,24 @@
     "excluded_pollster": false,
     "source": "atlasintel_mi_2026-11-01.pdf; pollstergraph_mi_senate_2026-11-01.json",
     "note": "AtlasIntel report (atlasintel_mi_2026-11-01.pdf, https://pollstergraph.com/uploads/reports/atlas/atlas-pollstergraph-us-mi-20261101-bc2438843230.pdf), on PollsterGraph, AtlasIntel's own platform (user, Nov 2): poll page https://pollstergraph.com/poll/exclusive-atlas-us-mi-20261101-senate (record pollstergraph_mi_senate_2026-11-01.json, https://pollstergraph.com/api/polls/exclusive-atlas-us-mi-20261101-senate, retrieved Nov 3 01:50 UTC), released Nov 3 00:33 UTC as an exclusive; the record lists sponsor 'PollsterGraph', so no outside sponsor. Sample profile (p.5): 1,316 Michigan likely voters, Atlas Random Digital Recruitment, MOE +/-3, Oct 28-Nov 1. The vote-intention charts are images, read from the rendered pages; PollsterGraph's record has the same values. RCP (feeds re-downloaded Nov 3 01:35 UTC): averaged (rcp_mi_8802.json). U.S. Senate (p.10, all respondents): El-Sayed 53.5, Rogers 46.4, don't know 0.1, other 0.0; valid votes (p.11) El-Sayed 53.5, Rogers 46.4, other 0.0. Recorded: all respondents, as for AtlasIntel's other state polls."
+   },
+   {
+    "pollster": "John Zogby Strategies",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-31",
+    "end": "2026-11-02",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 1001,
+    "anti_r": 51.4,
+    "r": 48.6,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "zogby_mi_2026-11-02.html; zogby_mi_crosstabs_2026-11-02.pdf",
+    "note": "John Zogby Strategies release zogby_mi_2026-11-02.html (https://johnzogbystrategies.com/el-sayed-leads-rogers-51-49-new-john-zogby-strategies-eve-of-election-day-poll/, posted Nov 2 22:50 UTC, retrieved Nov 3 01:37 UTC) and crosstabs zogby_mi_crosstabs_2026-11-02.pdf (https://johnzogbystrategies.com/wp-content/uploads/2026/11/X-Media-Michigan-103126.pdf, 'John Zogby Strategies Interactive Poll of Michigan DECIDED Voters'): online, Oct 31-Nov 2, 1,001 likely voters or already voted, MOE +/-3.2. Names no sponsor (the crosstab file name starts 'X-Media'; neither page names a client). Only the decided two-way vote is published, so that is recorded. Not in RCP (feeds re-downloaded Nov 3 01:35 UTC) or VoteHub's governor list. U.S. Senate, two-way among 986 decided voters (crosstabs p.1, '12b. All Votes Senate 2 way DECIDED'): El-Sayed 51.4, Rogers 48.6; the release rounds to 51/49."
    }
   ],
   "notes": "RCP two-way average (feed 8802; lastBuildDate Oct 26 15:19, content updated Oct 27 08:06): 9/28-10/22, El-Sayed 48.1, Rogers 45.6 (+2.5), 8 polls, including Rasmussen; Detroit News/Glengariff 10/19-22 added, Trafalgar 9/28-30 and Fox 9/24-28 dropped. Earlier (Oct 26): 9/24-10/22, El-Sayed 47.9, Rogers 46.0 (+1.9), 9 polls. Not in it: RedBox, Tyson (R), Z to A (D), Wedgewood. Pre-Oct: Guidant 9/20-27 (270toWin dates it 10/07), Trafalgar 9/28-30. Oct 28 user decision: polls with a partisan sponsor are not counted, including any in RCP's average (LEAVE_OUT_PARTISAN_SPONSORS in the build script). Oct 29 check: RCP's feed (built Oct 28 17:42 CT, CNN row added Oct 29) averages 9/28-10/27, El-Sayed 48.8, Rogers 45.6, 9 polls: CNN/SSRS 10/20-27 and CBS News/Mitchell 10/26-27 added; Mitchell's Oct 1 poll is now listed but not averaged. Oct 29 check (user's link): MSU Political Science/Verasight (Oct 8-23, released Oct 29) El-Sayed 48.0, Rogers 41.8; not in RCP's average, and it ends before the latest poll RCP averages (CNN and Mitchell, ending Oct 27), so Michigan stays on RCP's average. User decision (Oct 29): the MSU poll is counted in RCP's average anyway (COUNT_ADDED_TO_RCP in the build script)."

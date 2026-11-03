@@ -82,18 +82,20 @@ SC: RCP average, excluded pollsters removed: Rasmussen Reports 10/27 - 10/31, Tr
     - East Carolina U. 10/19 - 10/24
     - The Citadel 10/14 - 10/25
     left out: onpointpolitics (unidentified) (Poliwave only, 'Source: Not recorded'; no release found); Impact Research (D-flagged), ending 2026-10-21 (partisan-leaning: no client named; the memo was posted by Fresh Start PAC); Targoz Market Research for South Carolina Policy Council, ending 2026-10-25 (partisan-leaning: South Carolina Policy Council, a conservative think tank); Patinkin Research Strategies for Project VOTE (PAC), ending 2026-10-29 (partisan sponsor)
-MI: RCP average, excluded pollsters removed: Trafalgar Group 10/31 - 11/1, Rasmussen Reports 10/28 - 10/29, InsiderAdvantage 10/21 - 10/22; plus Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Research Co. 10/30 - 11/1, Data for Progress 10/23 - 10/25; 11 poll(s); anti-R 50.55 / R 44.80 -> margin +5.75, blend margin +6.03 (RCP published +5.3)
-    - Poll Vault/Emerson 10/31 - 11/1
-    - Atlas Intel 10/28 - 11/1
-    - NY Times/Siena 10/23 - 11/1
-    - YouGov 10/26 - 10/29
-    - CBS News/Mitchell 10/26 - 10/27
-    - CNN 10/20 - 10/27
-    - Detroit News/Glengariff 10/19 - 10/22
-    - Marist 10/15 - 10/18
-    - Michigan State Univ. (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision)
-    - Research Co. 10/30 - 11/1 (left out by RCP, counted; full ballot, 48/46)
-    - Data for Progress 10/23 - 10/25 (left out by RCP, counted; full ballot, 50/46)
+MI: recomputed: newer polls than RCP's average; 12 poll(s); anti-R 50.61 / R 45.16 -> margin +5.45, blend margin +5.69 (RCP published +5.3)
+    newer than RCP's average (built 2026-11-02): John Zogby Strategies ending 2026-11-02 released 2026-11-02
+    - John Zogby Strategies, ending 2026-11-02 (full ballot, 51.4/48.6)
+    - NYT/Siena for The New York Times, ending 2026-11-01 (full ballot, 53/42)
+    - Research Co., ending 2026-11-01 (full ballot, 48/46)
+    - Emerson College for Poll Vault, ending 2026-11-01 (full ballot, 51/45)
+    - AtlasIntel, ending 2026-11-01 (full ballot, 53.5/46.4)
+    - YouGov, ending 2026-10-29 (full ballot, 51/47)
+    - CNN/SSRS for CNN, ending 2026-10-27 (full ballot, 49/42)
+    - Mitchell Research & Communications for CBS Detroit and other Michigan TV stations, ending 2026-10-27 (full ballot, 51/44)
+    - Data for Progress, ending 2026-10-25 (full ballot, 50/46)
+    - Michigan State Univ. (Political Science)/Verasight, ending 2026-10-23 (full ballot, 48/41.8)
+    - Glengariff Group for The Detroit News / WDIV-TV, ending 2026-10-22 (full ballot, 51.4/45.1)
+    - Marist, ending 2026-10-18 (full ballot, 50/48)
     left out: The Tyson Group for Alliance for a Better Future (R-flagged), ending 2026-10-08 (partisan sponsor); RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor); Upswing Research for Demand Justice (D-flagged), ending 2026-10-28 (partisan sponsor)
 NC: RCP average, excluded pollsters removed: Quantus Insights 10/24 - 10/25, Trafalgar Group 10/8 - 10/10; plus polls RCP left out: SurveyUSA for WRAL-TV/WSOC-TV 10/7 - 10/11; replacing WRAL-TV/SurveyUSA 10/1 - 10/7; 6 poll(s); anti-R 53.67 / R 41.67 -> margin +12.00, blend margin +12.59 (RCP published +11.0)
     - Atlas Intel 10/28 - 11/1

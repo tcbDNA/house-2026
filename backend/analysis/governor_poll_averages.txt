@@ -95,17 +95,19 @@ ME: recomputed: newer polls than RCP's average; 13 poll(s) (n_eff 13); anti-R 49
     - Beacon Research/Shaw & Co. Research for Fox News, ending 2026-10-20 (full ballot, 49/39)
     - Suffolk University, ending 2026-10-11 (full ballot, 49/38)
     - The Washington Post/George Mason University School of Policy and Government, ending 2026-10-05 (full ballot, 49/36)
-MI: RCP average; removed: Rasmussen Reports 10/28 - 10/29; plus Michigan State University (Political Science)/Verasight ending Oct 23 (not listed by RCP, counted by user decision); plus polls RCP left out: Research Co. 10/30 - 11/1, Data for Progress 10/23 - 10/25; 10 poll(s) (n_eff 10); anti-R 51.35 / R 42.87 -> margin +8.48, blend margin +9.00, third parties 0.3 (RCP published +8.0)
-    - Poll Vault/Emerson 10/31 - 11/1
-    - Atlas Intel 10/28 - 11/1
-    - NY Times/Siena 10/23 - 11/1
-    - YouGov 10/26 - 10/29
-    - CBS News/Mitchell 10/26 - 10/27
-    - CNN 10/20 - 10/27
-    - Detroit News/Glengariff 10/19 - 10/22
-    - Michigan State University (Political Science)/Verasight ending Oct 23
-    - Research Co. 10/30 - 11/1 (left out by RCP, counted; full ballot, 53/41)
-    - Data for Progress 10/23 - 10/25 (left out by RCP, counted; full ballot, 52/43)
+MI: recomputed: newer polls than RCP's average; 12 poll(s) (n_eff 12); anti-R 51.68 / R 43.19 -> margin +8.49, blend margin +8.95, third parties 0.6 (RCP published +8.0)
+    - John Zogby Strategies, ending 2026-11-02 (full ballot, 55.1/44.9)
+    - The New York Times/Siena University, ending 2026-11-01 (full ballot, 52/39)
+    - Research Co., ending 2026-11-01 (full ballot, 53/41)
+    - AtlasIntel, ending 2026-11-01 (full ballot, 53.2/45.2)
+    - Emerson College for Poll Vault, ending 2026-11-01 (full ballot, 50/46)
+    - YouGov, ending 2026-10-29 (full ballot, 52/46)
+    - CNN/SSRS, ending 2026-10-27 (full ballot, 53/41)
+    - Mitchell Research & Communications for CBS Detroit and other Michigan TV stations, ending 2026-10-27 (full ballot, 49/44)
+    - Data for Progress, ending 2026-10-25 (full ballot, 52/43)
+    - Michigan State University (Political Science)/Verasight, ending 2026-10-23 (full ballot, 48.5/38.7)
+    - Glengariff Group, Inc. for The Detroit News; WDIV-TV, ending 2026-10-22 (full ballot, 51.4/44.5)
+    - Marist University, ending 2026-10-18 (full ballot, 51/45)
     left out: RedBox Research for A Fight Worth Having (super PAC) (D-flagged), ending 2026-10-23 (partisan sponsor)
 MN: recomputed: newer polls than RCP's average; 7 poll(s) (n_eff 7); anti-R 51.86 / R 40.14 -> margin +11.71, blend margin +12.73, third parties 0.9 (RCP published +12.0)
     - Research Co., ending 2026-11-01 (full ballot, 53/40)

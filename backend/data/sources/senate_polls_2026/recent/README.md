@@ -764,3 +764,12 @@ Recorded: all voters, as for the Nov 1 release. The Colorado and Illinois Senate
 ### Emerson College for Poll Vault, Texas (Oct 31-Nov 1), Nov 2 late evening
 
 From RCP's feeds (re-downloaded Nov 3 01:35 UTC): Texas Senate (`rcp_tx_8867.json`) 500 LV, Talarico 50, Paxton 48, averaged by RCP. RCP's Michigan two-way feed (`rcp_mi_8802.json`) now also averages the Michigan Senate poll recorded earlier (El-Sayed 51, Rogers 45), so its record is marked as in RCP's average. Poll Vault (Sean Trende's RealClearPolitics newsletter) is a media sponsor.
+
+### John Zogby Strategies, Michigan (Oct 31-Nov 2), Nov 2 late evening
+
+| File | URL | Notes |
+|---|---|---|
+| `zogby_mi_2026-11-02.html` | https://johnzogbystrategies.com/el-sayed-leads-rogers-51-49-new-john-zogby-strategies-eve-of-election-day-poll/ | Release: online, 1,001 LV or already voted, MOE +/-3.2; El-Sayed 51, Rogers 49; no sponsor named |
+| `zogby_mi_crosstabs_2026-11-02.pdf` | https://johnzogbystrategies.com/wp-content/uploads/2026/11/X-Media-Michigan-103126.pdf | Decided two-way crosstabs: Senate El-Sayed 51.4, Rogers 48.6 (n=986, p.1); governor Benson 55.1, James 44.9 (n=967, p.2) |
+
+Only decided-voter two-way shares are published, so those are recorded. The release mentions a Zogby Ohio poll (Oct 21-22, Acton 52, Ramaswamy 44); no release for it was found on Zogby's site or in VoteHub, so it isn't recorded.

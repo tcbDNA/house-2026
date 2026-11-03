@@ -429,3 +429,7 @@ Source: `../senate_polls_2026/recent/researchco_midterms_2026-11-02.html` and `.
 ### Emerson College for Poll Vault, Texas and Michigan (Oct 31-Nov 1), Nov 2 late evening
 
 From RCP's feeds (re-downloaded Nov 3 01:35 UTC), both averaged by RCP: Texas (`rcp_gov_tx_8910.json`) 500 LV, Abbott 50, Hinojosa 49; Michigan (`rcp_gov_mi_8992.json`, `rcp_gov_mi_multi_9226.json`) 500 LV, Benson 50, James 46, Hudson 2, Brandenburg 2. Media sponsor (Poll Vault).
+
+### John Zogby Strategies, Michigan (Oct 31-Nov 2), Nov 2 late evening
+
+Source: `../senate_polls_2026/recent/zogby_mi_crosstabs_2026-11-02.pdf` (https://johnzogbystrategies.com/wp-content/uploads/2026/11/X-Media-Michigan-103126.pdf), p.2: governor two-way among 967 decided voters, Benson 55.1, James 44.9. No sponsor named; not in RCP.
