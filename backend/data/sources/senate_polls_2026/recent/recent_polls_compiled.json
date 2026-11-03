@@ -2622,6 +2622,24 @@
     "excluded_pollster": true,
     "source": "trafalgar_sc_2026-11-01.pdf",
     "note": "Trafalgar Group report (trafalgar_sc_2026-11-01.pdf, https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/SC-Midterms-Survey-Report-1101.pdf, uploaded Nov 2 17:55 UTC, linked from RCP's feeds (no release page found); retrieved Nov 2 21:40 UTC): Oct 31-Nov 1, 1,091 likely general-election voters, MOE 2.9; Graham 47.5, Andrews 45.5, Whitener 1.8, Hackett 1.0, undecided 4.2 (p.11 totals). Names no sponsor (partisan pollsters without a sponsor count). RCP averages it (rcp_sc_9115.json and rcp_sc_multi_9230.json, re-downloaded Nov 2 21:36 UTC). Trafalgar Group is an excluded pollster (user decision Nov 2)."
+   },
+   {
+    "pollster": "Resonance Media Services",
+    "sponsor": null,
+    "partisan": null,
+    "start": "2026-10-30",
+    "end": "2026-10-30",
+    "released": "2026-11-02",
+    "population": "LV",
+    "n": 600,
+    "anti_r": 46.2,
+    "r": 44.6,
+    "h2h_anti_r": null,
+    "h2h_r": null,
+    "in_rcp_average": false,
+    "excluded_pollster": false,
+    "source": "resonance_sc_2026-11-02.pdf; fitsnews_sc_final_polls_2026-11-02.html",
+    "note": "Resonance Media Services memo resonance_sc_2026-11-02.pdf (https://www.fitsnews.com/wp-content/uploads/securepdfs/2026/11/Resonance-final-SC-Poll-Memo-11-02-2026.pdf, dated Nov 2, 'Wilson Over 50 Percent; Senate Race Comes Down to Tuesday'; retrieved Nov 3 01:37 UTC), published with FITSNews's article fitsnews_sc_final_polls_2026-11-02.html (https://www.fitsnews.com/2026/11/02/s-c-succession-final-u-s-senate-polls-show-coin-flip/): live-caller survey of 600 likely voters from the voter registration list, completed Oct 30 (start date not given; VoteHub lists Oct 30-30), MOE +/-4.0, African American voters weighted to 22.5% of turnout. FITSNews describes it as the final survey of Rick Quinn, 'the veteran GOP pollster'; neither the memo nor the article names a client or sponsor, so it counts as a partisan pollster's own poll (VoteHub: partisan none, internal false). Not in RCP (feeds re-downloaded Nov 3 01:35 UTC). U.S. Senate: Andrews 46.2, Graham (Nordone) 44.6, other candidates 2.7, undecided 6.5."
    }
   ],
   "notes": "RCP average (feed 9115, built Oct 18): 9/28-10/18, Graham Nordone 48.0, Andrews 45.3 (+2.7), 3 polls: Trafalgar, Rasmussen and InsiderAdvantage 9/28-29. Only Trafalgar is non-excluded and ended in October. VoteHub has only Trafalgar. Impact (D, 10/15-21) is missing from RCP. Targoz Market Research for the SC Policy Council (10/16-25, released Oct 26) is in VoteHub and Poliwave, not RCP (as of Oct 27). Oct 28 check: RCP (built Oct 28) now averages 9/28-10/26, Graham Nordone 47.0, Andrews 44.6, 5 polls: NYT/Siena 10/19-26 and The Citadel 10/14-25 added. Its latest poll ends after Targoz and Impact, so South Carolina uses RCP's average again (Rasmussen removed); Impact and Targoz, which RCP never added, drop out. Oct 29 fourth check: RCP added East Carolina University (Oct 19-24, Graham 51, Andrews 47) to its average (feed built Oct 28 11:16 CT, row Oct 29: 9/28-10/26, Graham 47.7, Andrews 45.0). South Carolina stays on RCP's average."

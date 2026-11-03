@@ -773,3 +773,12 @@ From RCP's feeds (re-downloaded Nov 3 01:35 UTC): Texas Senate (`rcp_tx_8867.jso
 | `zogby_mi_crosstabs_2026-11-02.pdf` | https://johnzogbystrategies.com/wp-content/uploads/2026/11/X-Media-Michigan-103126.pdf | Decided two-way crosstabs: Senate El-Sayed 51.4, Rogers 48.6 (n=986, p.1); governor Benson 55.1, James 44.9 (n=967, p.2) |
 
 Only decided-voter two-way shares are published, so those are recorded. The release mentions a Zogby Ohio poll (Oct 21-22, Acton 52, Ramaswamy 44); no release for it was found on Zogby's site or in VoteHub, so it isn't recorded.
+
+### Resonance Media Services (Rick Quinn), South Carolina (completed Oct 30), Nov 2 late evening
+
+| File | URL | Notes |
+|---|---|---|
+| `resonance_sc_2026-11-02.pdf` | https://www.fitsnews.com/wp-content/uploads/securepdfs/2026/11/Resonance-final-SC-Poll-Memo-11-02-2026.pdf | Memo (Nov 2): 600 LV, live caller, voter-file sample, completed Oct 30, MOE +/-4.0; Senate Andrews 46.2, Graham 44.6; governor Wilson 50.6, Johnson 42.3 |
+| `fitsnews_sc_final_polls_2026-11-02.html` | https://www.fitsnews.com/2026/11/02/s-c-succession-final-u-s-senate-polls-show-coin-flip/ | FITSNews article on the memo: Rick Quinn, 'the veteran GOP pollster', releasing his final survey; no client named |
+
+Counted as a partisan pollster's own poll: no sponsor or client is named (VoteHub: not partisan, not internal). An earlier Resonance poll (Sep 29-Oct 3, 638 RV) isn't recorded; only the latest poll per pollster counts.

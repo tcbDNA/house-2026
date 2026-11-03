@@ -433,3 +433,7 @@ From RCP's feeds (re-downloaded Nov 3 01:35 UTC), both averaged by RCP: Texas (`
 ### John Zogby Strategies, Michigan (Oct 31-Nov 2), Nov 2 late evening
 
 Source: `../senate_polls_2026/recent/zogby_mi_crosstabs_2026-11-02.pdf` (https://johnzogbystrategies.com/wp-content/uploads/2026/11/X-Media-Michigan-103126.pdf), p.2: governor two-way among 967 decided voters, Benson 55.1, James 44.9. No sponsor named; not in RCP.
+
+### Resonance Media Services (Rick Quinn), South Carolina (completed Oct 30), Nov 2 late evening
+
+Source: `../senate_polls_2026/recent/resonance_sc_2026-11-02.pdf` (https://www.fitsnews.com/wp-content/uploads/securepdfs/2026/11/Resonance-final-SC-Poll-Memo-11-02-2026.pdf): 600 LV, live caller; Wilson 50.6, Johnson 42.3, other 1.2, undecided 5.9. GOP pollster's own survey; no sponsor named. Not in RCP.
