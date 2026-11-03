@@ -15,7 +15,7 @@
   both parts removed                 {'national_margin': 10.53, 'house_d_seats': 240, 'house_median': 242, 'house_p10': 227, 'house_p90': 264, 'house_p_d_majority': 0.988, 'senate_d_seats': 53, 'senate_median': 53, 'senate_p_d_control': 0.823}
   remove demographic part only (default) {'national_margin': 10.53, 'house_d_seats': 238, 'house_median': 243, 'house_p10': 227, 'house_p90': 264, 'house_p_d_majority': 0.99, 'senate_d_seats': 53, 'senate_median': 53, 'senate_p_d_control': 0.82}
   remove battleground part only      {'national_margin': 10.53, 'house_d_seats': 240, 'house_median': 243, 'house_p10': 227, 'house_p90': 264, 'house_p_d_majority': 0.987, 'senate_d_seats': 53, 'senate_median': 53, 'senate_p_d_control': 0.842}
-  both removed, basis without age    {'national_margin': 10.53, 'house_d_seats': 238, 'house_median': 242, 'house_p10': 227, 'house_p90': 263, 'house_p_d_majority': 0.988, 'senate_d_seats': 53, 'senate_median': 53, 'senate_p_d_control': 0.825}
+  both removed, basis without age    {'national_margin': 10.53, 'house_d_seats': 238, 'house_median': 242, 'house_p10': 227, 'house_p90': 263, 'house_p_d_majority': 0.988, 'senate_d_seats': 53, 'senate_median': 53, 'senate_p_d_control': 0.824}
 
 == 15 districts whose projections change most (both parts removed − raw trend)
   district  change     raw   resid Hisp % pop Hisp % electorate  BG

@@ -760,3 +760,7 @@ On PollsterGraph, AtlasIntel's own platform; no outside sponsor. RCP averages th
 | `researchco_tables_midterms_2026-11-02.pdf` | https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf | Data tables, all voters and decided voters. Senate, all voters: FL Nixon 44, Moody 51; GA Ossoff 52, Collins 42; TX Talarico 49, Paxton 46; also CO Hickenlooper 57, Baisley 35 (p.1), IL Stratton 53, Tracy 41 (p.4), NM Lujan 56, Marker 37 (p.5) |
 
 Recorded: all voters, as for the Nov 1 release. The Colorado and Illinois Senate polls reach the averages through Poliwave's pages (refreshed this check), the way those races take polls. New Mexico's Senate race takes polls only from RCP's feed, VoteHub's dump and Poliwave, none of which has this poll yet, so it isn't counted. Not in RCP.
+
+### Emerson College for Poll Vault, Texas (Oct 31-Nov 1), Nov 2 late evening
+
+From RCP's feeds (re-downloaded Nov 3 01:35 UTC): Texas Senate (`rcp_tx_8867.json`) 500 LV, Talarico 50, Paxton 48, averaged by RCP. RCP's Michigan two-way feed (`rcp_mi_8802.json`) now also averages the Michigan Senate poll recorded earlier (El-Sayed 51, Rogers 45), so its record is marked as in RCP's average. Poll Vault (Sean Trende's RealClearPolitics newsletter) is a media sponsor.

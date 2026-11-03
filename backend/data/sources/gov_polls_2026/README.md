@@ -425,3 +425,7 @@ Sources: `../senate_polls_2026/recent/atlasintel_<st>_2026-11-01.pdf` (see that 
 ### Research Co., six states (Oct 31-Nov 2), Nov 2 late evening
 
 Source: `../senate_polls_2026/recent/researchco_midterms_2026-11-02.html` and `../senate_polls_2026/recent/researchco_tables_midterms_2026-11-02.pdf` (https://researchco.ca/wp-content/uploads/2026/11/Tables_MidTerms_USA_02Nov2026.pdf). All 450 likely voters per state: CO Weiser 53, Marx 38; FL Jolly 44, Donalds 48; GA Bottoms 46, Jackson 45; IL Pritzker 57, Bailey 36; NM Haaland 51, Hull 44; TX Hinojosa 44, Abbott 46. No sponsor; not in RCP.
+
+### Emerson College for Poll Vault, Texas and Michigan (Oct 31-Nov 1), Nov 2 late evening
+
+From RCP's feeds (re-downloaded Nov 3 01:35 UTC), both averaged by RCP: Texas (`rcp_gov_tx_8910.json`) 500 LV, Abbott 50, Hinojosa 49; Michigan (`rcp_gov_mi_8992.json`, `rcp_gov_mi_multi_9226.json`) 500 LV, Benson 50, James 46, Hudson 2, Brandenburg 2. Media sponsor (Poll Vault).
