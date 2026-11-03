@@ -413,3 +413,7 @@ Source: `../senate_polls_2026/recent/survey160_pre_election_2026-11-02.html` and
 ### Emerson College for Poll Vault, Ohio and Maine (Oct 31-Nov 1), Nov 2 evening
 
 Toplines from RCP's feeds (re-downloaded Nov 2 22:47 UTC): Ohio (`rcp_gov_oh_8720.json`, `rcp_gov_oh_3way_9228.json`) 930 LV, Acton 48, Ramaswamy 48, Kissick 3; Maine (`rcp_gov_me_3way_9101.json`) 600 LV, Pingree 50, Charles 41, Bennett 9. Poll Vault (Sean Trende's RealClearPolitics newsletter) is a media sponsor.
+
+### Nov 2 late-evening check: refreshed RCP feeds and VoteHub list
+
+Re-downloaded every saved RCP governor feed (Nov 3 01:35 UTC; New Mexico's feed 9029 still has the broken average row, saved copy kept) and `votehub_governor_all.json`. RCP now averages AtlasIntel (Oct 28-Nov 1) in Iowa, Kansas, Maine (three-way), Michigan and Ohio, Poll Vault/Emerson in Michigan and Texas, and Rasmussen (excluded) in Iowa, Ohio and South Carolina; it no longer averages TPOR in Texas or Univision/YouGov in Florida.
