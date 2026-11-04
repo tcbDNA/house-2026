@@ -1,0 +1,819 @@
+<meta name="dash-one-writer">
+<style>
+  .ak { display: grid; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+  .ak-head { display: grid; gap: var(--cds-gap-sm); max-width: 78ch; }
+  .ak-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.15; margin: 0; text-wrap: balance; }
+  .ak-take { font-size: var(--cds-font-size-body); line-height: 1.55; margin: 0; }
+  .ak-status { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; margin: 0; }
+  .ak .ak-take b, .ak .ak-status b, .ak .ak-note b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .ak-tabs { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+  .ak-tab { font: inherit; font-size: var(--cds-font-size-body); padding: var(--cds-pad-xs) var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); color: var(--color-fg); cursor: pointer; }
+  .ak-tab[aria-pressed="true"] { background: var(--color-fg); border-color: var(--color-fg); color: var(--color-bg); }
+  .ak-tab:focus-visible, .ak-sort:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+  .ak-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: var(--cds-gap-md); }
+  .ak-tile, .ak-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: var(--cds-gap-sm); align-content: start; min-width: 0; container-type: inline-size; }
+  .ak-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+  .ak-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.15; margin: 0; font-variant-numeric: tabular-nums; }
+  .ak-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.45; margin: 0; }
+  .ak-card h2, .ak-section h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; text-wrap: balance; }
+  .ak-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; margin: 0; max-width: 85ch; }
+  .ak-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: var(--cds-gap-md); }
+  .ak-section { display: grid; gap: var(--cds-gap-md); }
+  .ak-chart { position: relative; min-width: 0; }
+  .ak-range { min-height: 150px; }
+  .ak-sankey { min-height: 400px; }
+  .ak-exhaust { min-height: 230px; }
+  .ak-xfer, .ak-depth, .ak-next { min-height: 150px; }
+  .ak svg { display: block; overflow: visible; }
+  .ak svg text { font-family: var(--font-anthropic-sans); }
+  .ak-t { fill: var(--color-fg); font-size: 12px; }
+  .ak-tm { fill: var(--color-fg-muted); font-size: 11px; }
+  .ak-tb { fill: var(--color-fg); font-size: 12px; font-weight: 600; }
+  .ak-halo { paint-order: stroke; stroke: var(--color-panel); stroke-width: 3px; stroke-linejoin: round; }
+  .ak-grid-line { stroke: var(--cds-chart-grid); stroke-width: 1; }
+  .ak-axis-line { stroke: var(--cds-chart-axis); stroke-width: 1; }
+  .ak-ref { stroke: var(--cds-chart-reference); stroke-width: 1; stroke-dasharray: 3 3; }
+  .ak-tip { position: absolute; z-index: 3; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); line-height: 1.45; white-space: nowrap; display: none; }
+  .ak-tip-head { color: var(--cds-text-secondary); }
+  .ak-sw { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; margin-right: 0.35rem; vertical-align: -1px; flex: none; }
+  .ak-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; padding: 0; list-style: none; }
+  .ak-legend li { display: inline-flex; align-items: center; font-variant-numeric: tabular-nums; }
+  .ak-sw-exh { background: var(--cds-chart-reference); }
+  .ak-sw-ov { background: var(--color-fg-muted); }
+  .ak-xrow { display: grid; gap: var(--cds-gap-xs); }
+  .ak-xrow + .ak-xrow { margin-top: var(--cds-gap-md); }
+  .ak-xhead { font-size: var(--cds-font-size-caption); margin: 0; font-variant-numeric: tabular-nums; }
+  .ak-table-wrap { max-height: 30rem; overflow: auto; }
+  .ak-table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .ak-table th { position: sticky; top: 0; z-index: 1; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); border-bottom: 1px solid var(--color-border-line); padding: var(--cds-pad-xs) var(--cds-pad-sm); vertical-align: bottom; }
+  .ak-table td { padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: middle; }
+  .ak-table .ak-num { text-align: right; }
+  .ak-sort { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
+  .ak-cellbar { display: inline-block; position: relative; width: 4.5rem; height: 0.55rem; margin-left: var(--cds-gap-xs); vertical-align: middle; background: var(--cds-chart-grid); border-radius: 2px; }
+  .ak-cellbar-mid { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--cds-chart-reference); }
+  .ak-cellbar-fill { position: absolute; top: 0; bottom: 0; border-radius: 2px; }
+  .ak-flag { display: inline-block; padding: 0 var(--cds-pad-xs); border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); color: var(--color-warn); }
+  .ak-method ul { margin: 0; padding-left: 1.2rem; display: grid; gap: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; max-width: 85ch; }
+  .ak-fail { display: flex; align-items: center; justify-content: center; gap: var(--cds-gap-xs); min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .ak-fail::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-bad); }
+  .ak [data-dash-source-state=empty] { color: transparent; }
+  .ak [data-dash-source-state=refreshing] { opacity: 0.5; transition: opacity var(--cds-dur-slow); }
+  @container (max-width: 560px) { .ak-wide { display: none; } }
+</style>
+
+<div class="ak">
+  <header class="ak-head" id="top">
+    <h1 class="ak-title">Alaska ranked-choice count</h1>
+    <p class="ak-take">In the <span data-draw="t-label" data-source="contests" class="dash-skeleton">—</span> race, <b data-draw="t-a" data-source="contests candidates" class="dash-skeleton">—</b> leads <b data-draw="t-b" data-source="contests candidates" class="dash-skeleton">—</b> by <b data-draw="t-cvr" data-source="contests" class="dash-skeleton">—</b> votes in the final round of the scanned ballots. Adding the first choices of the precincts counted by hand, the final-round margin is <b data-draw="t-comb" data-source="contests candidates" class="dash-skeleton">—</b>, if their later rankings split the way the scanned ballots did.
+      <span data-when="cross1" hidden>Those rankings aren't published yet: if they all went one way, the margin could run from <b data-draw="t-lo" data-source="contests candidates">—</b> to <b data-draw="t-hi" data-source="contests candidates">—</b>, a lead for either candidate.</span>
+      <span data-when="cross0" hidden>Those rankings aren't published yet, but even if they all went one way the margin would run from <b data-draw="t-lo" data-source="contests candidates">—</b> to <b data-draw="t-hi" data-source="contests candidates">—</b>.</span>
+    </p>
+    <p class="ak-status">Ballots counted by the Division of Elections' <span data-draw="s-time" data-source="status" class="dash-skeleton">—</span> report: <b data-draw="s-total" data-source="status" class="dash-skeleton">—</b>. Its cast vote record (CVR), posted <span data-draw="s-cvrtime" data-source="status" class="dash-skeleton">—</span>, holds <b data-draw="s-cvr" data-source="status" class="dash-skeleton">—</b> of them with every ranking. The other <b data-draw="s-miss" data-source="status" class="dash-skeleton">—</b> are <span data-draw="s-groups" data-source="coverage" class="dash-skeleton">—</span> ballots from <b data-draw="s-pcts" data-source="status" class="dash-skeleton">—</b> precincts counted by hand, with first choices only. Ballots the Division has not counted yet are in neither; it runs the official tabulation once all eligible ballots are counted.</p>
+  </header>
+
+  <div class="ak-tabs" role="group" aria-label="Race">
+    <button class="ak-tab" type="button" data-contest="senate" aria-pressed="true">U.S. Senate</button>
+    <button class="ak-tab" type="button" data-contest="house" aria-pressed="false">U.S. House</button>
+    <button class="ak-tab" type="button" data-contest="governor" aria-pressed="false">Governor</button>
+  </div>
+
+  <section class="ak-tiles" id="figures" aria-label="Headline figures">
+    <div class="ak-tile">
+      <p class="ak-label">Final round, scanned ballots</p>
+      <p class="ak-big dash-skeleton" data-draw="k1-big" data-source="contests candidates">—</p>
+      <p class="ak-sub" data-draw="k1-sub" data-source="contests candidates">—</p>
+    </div>
+    <div class="ak-tile">
+      <p class="ak-label">Final round, adding hand-counted precincts</p>
+      <p class="ak-big" data-draw="k2-big" data-source="contests candidates">—</p>
+      <p class="ak-sub" data-draw="k2-sub" data-source="contests candidates">—</p>
+    </div>
+    <div class="ak-tile">
+      <p class="ak-label">Round 1, all ballots counted so far</p>
+      <p class="ak-big" data-draw="k3-big" data-source="contests candidates">—</p>
+      <p class="ak-sub" data-when="maj1" hidden>A majority of first choices, which would end the count in round 1.</p>
+      <p class="ak-sub" data-when="maj0" hidden>Short of a majority of first choices, so the count goes to more rounds.</p>
+    </div>
+    <div class="ak-tile">
+      <p class="ak-label">Inactive by the final round</p>
+      <p class="ak-big" data-draw="k4-big" data-source="contests">—</p>
+      <p class="ak-sub"><span data-draw="k4-sub" data-source="contest_figures">—</span> scanned ballots that ranked someone are exhausted or overvoted.</p>
+    </div>
+  </section>
+
+  <div class="ak-card" id="margin">
+    <h2>Final-round margin</h2>
+    <p class="ak-note">The scanned ballots alone, then with the hand-counted precincts' first choices added. The shaded bar is every outcome their unpublished later rankings allow.</p>
+    <div class="ak-chart ak-range" data-draw="range" data-source="contests candidates"></div>
+  </div>
+
+  <div class="ak-card" id="flows">
+    <h2>How the ballots moved, round by round</h2>
+    <p class="ak-note">Each column is a round of the count on the scanned ballots. Bands carry each candidate's ballots to the next round; when a candidate is eliminated, their ballots split among the next choices still in the race, or become inactive. Hover a band or a bar for its count.</p>
+    <div class="ak-chart ak-sankey" data-draw="sankey" data-source="rounds transfers candidates"></div>
+  </div>
+
+  <div class="ak-grid">
+    <div class="ak-card" id="inactive">
+      <h2>Inactive ballots by round</h2>
+      <p class="ak-note">Share of scanned ballots that ranked someone. A ballot is exhausted when it has no ranking left for a candidate still in the race, or two skipped rankings in a row; it is overvoted when it gives two candidates the same rank. Blanks, ballots with no counted ranking at all, are left out: <b data-draw="blanks" data-source="contests">—</b>.</p>
+      <ul class="ak-legend"><li><span class="ak-sw ak-sw-exh"></span>Exhausted</li><li><span class="ak-sw ak-sw-ov"></span>Overvote</li></ul>
+      <div class="ak-chart ak-exhaust" data-draw="exhaust" data-source="inactive_by_round"></div>
+    </div>
+    <div class="ak-card" id="transfers">
+      <h2>Where eliminated candidates' ballots went</h2>
+      <p class="ak-note">Each eliminated candidate's ballots in the round they were eliminated, by where they counted next.</p>
+      <div class="ak-chart ak-xfer" data-draw="xfer" data-source="transfers rounds candidates"></div>
+    </div>
+  </div>
+
+  <div class="ak-grid">
+    <div class="ak-card" id="depth">
+      <h2>How many candidates voters ranked</h2>
+      <p class="ak-note">Scanned ballots by first choice and the number of candidates marked, a write-in included.</p>
+      <div class="ak-chart ak-depth" data-draw="depth" data-source="depth_share candidates"></div>
+    </div>
+    <div class="ak-card" id="next">
+      <h2>Next choice after the first</h2>
+      <p class="ak-note">Where each first choice's ballots would count if that candidate were eliminated first, as a share of the row.</p>
+      <div class="ak-chart ak-next" data-draw="next" data-source="next_share candidates"></div>
+    </div>
+  </div>
+
+  <div class="ak-card" id="districts">
+    <h2>By state house district</h2>
+    <p class="ak-note">Each district's scanned ballots, counted with the statewide eliminations. The leader's share is <b data-draw="hd-leader" data-source="contests candidates">—</b>'s share of the final round. Districts with many ballots not yet in the CVR are the ones with hand-counted precincts.</p>
+    <div class="ak-table-wrap">
+      <table class="ak-table" data-source="house_districts" data-row-key="contest_id,hd">
+        <thead><tr>
+          <th data-field="hd" aria-sort="ascending"><button class="ak-sort" type="button" data-table="hd" data-sort="hd">District</button></th>
+          <th data-field="ballots_cvr" class="ak-num"><button class="ak-sort" type="button" data-table="hd" data-sort="ballots_cvr">Scanned ballots</button></th>
+          <th data-field="not_in_cvr" class="ak-num"><button class="ak-sort" type="button" data-table="hd" data-sort="not_in_cvr">Not in the CVR yet</button></th>
+          <th data-field="round1_leader" class="ak-wide"><button class="ak-sort" type="button" data-table="hd" data-sort="round1_leader">Round-1 leader</button></th>
+          <th data-field="round1_leader_share" class="ak-num ak-wide"><button class="ak-sort" type="button" data-table="hd" data-sort="round1_leader_share">Their share</button></th>
+          <th data-field="share_a"><button class="ak-sort" type="button" data-table="hd" data-sort="share_a">Statewide leader's final share</button></th>
+          <th data-field="inactive_share" class="ak-num"><button class="ak-sort" type="button" data-table="hd" data-sort="inactive_share">Inactive</button></th>
+        </tr></thead>
+        <tbody data-draw="hd-rows" data-source="house_districts candidates"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="ak-section" id="legislature">
+    <h2>Legislative races</h2>
+    <p class="ak-note">Of <b data-draw="leg-races" data-source="leg_summary">—</b> legislative races on the ballot, <b data-draw="leg-multi" data-source="leg_summary">—</b> have three or more candidates. In <b data-draw="leg-past" data-source="leg_summary">—</b> of those the scanned ballots go past round 1, and in <b data-draw="leg-changed" data-source="leg_summary">—</b> the round-1 leader loses the lead. Counted with the law's rule that a round-1 majority ends the count; the hand-counted precincts are not in these numbers.</p>
+    <div class="ak-card">
+      <div class="ak-table-wrap">
+        <table class="ak-table" data-source="legislative" data-row-key="contest">
+          <thead><tr>
+            <th data-field="contest"><button class="ak-sort" type="button" data-table="leg" data-sort="contest">Race</button></th>
+            <th data-field="candidates" class="ak-num ak-wide"><button class="ak-sort" type="button" data-table="leg" data-sort="candidates">Candidates</button></th>
+            <th data-field="rounds" class="ak-num"><button class="ak-sort" type="button" data-table="leg" data-sort="rounds">Rounds</button></th>
+            <th data-field="round1_leader" class="ak-wide"><button class="ak-sort" type="button" data-table="leg" data-sort="round1_leader">Round-1 leader</button></th>
+            <th data-field="round1_leader_share" class="ak-num ak-wide"><button class="ak-sort" type="button" data-table="leg" data-sort="round1_leader_share">Share</button></th>
+            <th data-field="final_leader"><button class="ak-sort" type="button" data-table="leg" data-sort="final_leader">Final-round leader</button></th>
+            <th data-field="final_leader_share" class="ak-num"><button class="ak-sort" type="button" data-table="leg" data-sort="final_leader_share">Share</button></th>
+            <th data-field="final_margin" class="ak-num ak-wide"><button class="ak-sort" type="button" data-table="leg" data-sort="final_margin">Margin</button></th>
+            <th data-field="inactive_share" class="ak-num ak-wide"><button class="ak-sort" type="button" data-table="leg" data-sort="inactive_share">Inactive</button></th>
+            <th data-field="not_in_cvr" class="ak-num ak-wide"><button class="ak-sort" type="button" data-table="leg" data-sort="not_in_cvr">Not in the CVR yet</button></th>
+          </tr></thead>
+          <tbody data-draw="leg-rows" data-source="legislative"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="ak-section ak-method" id="method">
+    <h2>How this was counted</h2>
+    <p class="ak-note">The count follows Alaska law (AS 15.15.350) and the rules on the Division's results page:</p>
+    <ul>
+      <li>One candidate, the one with the fewest votes, is eliminated each round, until two remain or someone has a round-1 majority.</li>
+      <li>Write-ins are left unresolved: a write-in ranking is passed over, without counting as a skip.</li>
+      <li>A ballot becomes inactive when it reaches an overvote, or after two skipped rankings in a row.</li>
+      <li>A candidate ranked more than once counts only at the highest ranking (6 AAC 25.072).</li>
+      <li>The statewide pages show every round, even where the scanned ballots alone give someone a round-1 majority.</li>
+    </ul>
+    <p class="ak-note" data-when="valall" hidden>Run on the Division's final 2024 CVR, the same code matches every round of all <b data-draw="val-races" data-source="val_summary">—</b> of its official 2024 ranked-choice reports, in each candidate's votes and in the continuing, blank, exhausted and overvote counts.</p>
+    <p class="ak-note" data-when="valsome" hidden>Run on the Division's final 2024 CVR, the same code matches <b data-draw="val-match" data-source="val_summary">—</b> of <b data-draw="val-rounds" data-source="val_summary">—</b> rounds in its official 2024 ranked-choice reports.</p>
+    <div class="ak-card">
+      <table class="ak-table" data-source="validation_2024" data-row-key="contest">
+        <thead><tr>
+          <th data-field="contest">2024 race</th>
+          <th data-field="candidates" class="ak-num">Candidates</th>
+          <th data-field="rounds" class="ak-num">Rounds</th>
+          <th data-field="rounds_matching" class="ak-num">Rounds matching the official report</th>
+        </tr></thead>
+        <tbody data-draw="val-rows" data-source="validation_2024"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Shared helpers, derived figures and the race tabs.
+  window.AK = (() => {
+    const fmt = d3.format(','), p0 = d3.format('.0%'), p1 = d3.format('.1%'), p2 = d3.format('.2%');
+    const FAIL = ['error', 'connect', 'declined', 'missing'];
+    const AK = { fmt, p0, p1, p2, sort: { hd: { key: 'hd', dir: 1 }, leg: { key: 'contest', dir: 1 } } };
+    AK.contest = () => dash.params().contest || 'senate';
+    AK.rows = (id) => { const d = dash.data(id); return d.status === 'ok' && Array.isArray(d.data) ? d.data : []; };
+    AK.ok = (ids) => ids.every((id) => dash.data(id).status === 'ok' && Array.isArray(dash.data(id).data));
+    AK.failed = (ids) => ids.some((id) => FAIL.includes(dash.data(id).status));
+    AK.cands = () => { const c = AK.contest(); return new Map(AK.rows('candidates').filter((r) => r.contest_id === c).map((r) => [r.candidate, r])); };
+    AK.order = (cm) => [...cm.values()].sort((a, b) => Number(a.round1_order) - Number(b.round1_order)).map((r) => r.candidate);
+    AK.inactiveColor = (name) => (name === 'Overvote' ? 'var(--color-fg-muted)' : 'var(--cds-chart-reference)');
+    AK.color = (name, cm) => (cm.get(name) ? dash.colors[Number(cm.get(name).color_slot)] : AK.inactiveColor(name));
+    AK.person = (n) => {
+      if (!n || !n.includes(',')) return n || '';
+      const i = n.indexOf(','), last = n.slice(0, i).trim();
+      let first = n.slice(i + 1).trim(), suf = '';
+      for (const s of [' Jr.', ' Sr.']) if (first.endsWith(s)) { first = first.slice(0, -s.length); suf = s; }
+      return `${first} ${last}${suf}`;
+    };
+    AK.short = (name, cm) => (cm.get(name) ? cm.get(name).short : name);
+    AK.display = (name, cm) => (cm.get(name) ? cm.get(name).display : AK.person(name));
+    AK.row = (id = 'contests') => AK.rows(id).find((r) => r.contest_id === AK.contest());
+    AK.signed = (m, a, b, cm) => (m === 0 ? 'a tie' : `${AK.short(m > 0 ? a : b, cm)} +${fmt(Math.abs(m))}`);
+    AK.ready = (el, ids) => {
+      if (AK.ok(ids)) { el.classList.remove('dash-skeleton'); return true; }
+      if (AK.failed(ids)) {
+        el.classList.remove('dash-skeleton');
+        const f = document.createElement('div'); f.className = 'ak-fail'; f.textContent = 'Failed to load';
+        el.replaceChildren(f);
+      } else { el.replaceChildren(); el.classList.add('dash-skeleton'); }
+      return false;
+    };
+    AK.text = (name, ids, fn) => dash.draw(name, (el) => {
+      const v = AK.ok(ids) ? fn() : null;
+      el.classList.toggle('dash-skeleton', v == null && !AK.failed(ids));
+      el.textContent = v == null || v === '' ? '—' : v;
+    });
+    AK.measure = (svg, text, cls) => { const t = svg.append('text').attr('class', cls).text(text); const w = t.node().getComputedTextLength(); t.remove(); return w; };
+    AK.tip = (el) => {
+      const t = document.createElement('div'); t.className = 'ak-tip'; el.append(t);
+      return {
+        show(ev, head, lines) {
+          const h = document.createElement('div'); h.className = 'ak-tip-head'; h.textContent = head;
+          t.replaceChildren(h, ...lines.map((l) => {
+            const d = document.createElement('div');
+            if (l.color) { const s = document.createElement('span'); s.className = 'ak-sw'; s.style.background = l.color; d.append(s); }
+            d.append(document.createTextNode(l.text));
+            return d;
+          }));
+          t.style.display = 'block';
+          const r = el.getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top, w = t.offsetWidth, hh = t.offsetHeight;
+          let left = x + 14; if (left + w > r.width) left = Math.max(0, x - w - 14);
+          let top = y - hh - 10; if (top < 0) top = Math.min(y + 16, Math.max(0, r.height - hh));
+          t.style.left = `${left}px`; t.style.top = `${top}px`;
+        },
+        hide() { t.style.display = 'none'; },
+      };
+    };
+    return AK;
+  })();
+
+  dash.calc('inactive_by_round', {
+    inputs: ['rounds', 'contests'],
+    title: 'Inactive ballots by round',
+    description: 'Exhausted and overvoted ballots in each round, as a share of the scanned ballots that ranked someone (ballots minus blanks).',
+    fn: (rounds, contests) => {
+      const base = {};
+      for (const c of contests) base[c.contest_id] = Number(c.ballots_cvr) - Number(c.blanks);
+      const m = {};
+      for (const r of rounds) {
+        if (r.item_type === 'candidate') continue;
+        const k = `${r.contest_id}|${r.round}`;
+        if (!m[k]) m[k] = { contest_id: r.contest_id, round: Number(r.round), exhausted: 0, overvotes: 0 };
+        m[k][r.item_type] = Number(r.votes);
+      }
+      return Object.values(m).map((x) => {
+        const b = base[x.contest_id];
+        return { ...x, inactive: x.exhausted + x.overvotes, ranked_ballots: b, exhausted_share: x.exhausted / b, overvote_share: x.overvotes / b, inactive_share: (x.exhausted + x.overvotes) / b };
+      });
+    },
+  });
+
+  dash.calc('depth_share', {
+    inputs: ['ranking_depth'],
+    title: 'Candidates ranked, by first choice',
+    description: 'Each first choice’s ballots by the number of candidates marked, as a share of that first choice’s ballots.',
+    fn: (ranking_depth) => {
+      const tot = {};
+      for (const d of ranking_depth) { const k = `${d.contest_id}|${d.first_choice}`; tot[k] = (tot[k] || 0) + Number(d.ballots); }
+      return ranking_depth.map((d) => {
+        const t = tot[`${d.contest_id}|${d.first_choice}`];
+        return { contest_id: d.contest_id, first_choice: d.first_choice, ranked: Number(d.ranked), ballots: Number(d.ballots), first_choice_ballots: t, share: Number(d.ballots) / t };
+      });
+    },
+  });
+
+  dash.calc('next_share', {
+    inputs: ['next_choice'],
+    title: 'Next choice, by first choice',
+    description: 'Each first choice’s ballots by where they would count if that candidate were eliminated first, as a share of that first choice’s ballots.',
+    fn: (next_choice) => {
+      const tot = {};
+      for (const d of next_choice) { const k = `${d.contest_id}|${d.first_choice}`; tot[k] = (tot[k] || 0) + Number(d.ballots); }
+      return next_choice.map((d) => {
+        const t = tot[`${d.contest_id}|${d.first_choice}`];
+        return { contest_id: d.contest_id, first_choice: d.first_choice, next_choice: d.next_choice, next_type: d.next_type, ballots: Number(d.ballots), first_choice_ballots: t, share: Number(d.ballots) / t };
+      });
+    },
+  });
+
+  dash.calc('contest_figures', {
+    inputs: ['contests'],
+    title: 'Inactive ballots, final round',
+    description: 'Exhausted plus overvoted ballots in the final round, and the scanned ballots that ranked someone.',
+    fn: (contests) => contests.map((c) => ({ contest_id: c.contest_id, inactive_final: Number(c.exhausted_final) + Number(c.overvotes_final), ranked_ballots: Number(c.ballots_cvr) - Number(c.blanks) })),
+  });
+
+  dash.calc('leg_summary', {
+    inputs: ['legislative'],
+    title: 'Legislative races, counted',
+    description: 'Legislative races on the ballot, those with three or more candidates, how many of those go past round 1, and how many change leader.',
+    fn: (legislative) => {
+      const multi = legislative.filter((r) => Number(r.candidates) >= 3);
+      return [{ races: legislative.length, three_or_more: multi.length, went_past_round1: multi.filter((r) => Number(r.rounds) > 1).length, leader_changed: multi.filter((r) => r.leader_changed === '1').length }];
+    },
+  });
+
+  dash.calc('val_summary', {
+    inputs: ['validation_2024'],
+    title: '2024 check, totals',
+    description: 'Races and rounds compared with the official 2024 reports, and how many rounds match.',
+    fn: (validation_2024) => {
+      let rounds = 0, matching = 0;
+      for (const r of validation_2024) { rounds += Number(r.rounds); matching += Number(r.rounds_matching); }
+      return [{ races: validation_2024.length, rounds, rounds_matching: matching, all_match: rounds === matching ? 1 : 0 }];
+    },
+  });
+
+  (() => {
+    const KNOWN = ['senate', 'house', 'governor'];
+    const asked = location.hash.slice(1);
+    if (KNOWN.includes(asked)) dash.setParams({ contest: asked });
+    for (const b of document.querySelectorAll('.ak-tab[data-contest]')) {
+      b.addEventListener('click', () => { dash.setParams({ contest: b.dataset.contest }); dash.setLink(b.dataset.contest); });
+    }
+    for (const b of document.querySelectorAll('.ak-sort[data-table]')) {
+      b.addEventListener('click', () => {
+        const s = AK.sort[b.dataset.table];
+        s.dir = s.key === b.dataset.sort ? -s.dir : 1;
+        s.key = b.dataset.sort;
+        for (const o of document.querySelectorAll(`.ak-sort[data-table="${b.dataset.table}"]`)) {
+          const th = o.closest('th');
+          if (th) th.setAttribute('aria-sort', o === b ? (s.dir > 0 ? 'ascending' : 'descending') : 'none');
+        }
+        dash.draw(b.dataset.table === 'hd' ? 'hd-rows' : 'leg-rows');
+      });
+    }
+    dash.onData(() => {
+      const c = AK.contest();
+      for (const b of document.querySelectorAll('.ak-tab[data-contest]')) b.setAttribute('aria-pressed', String(b.dataset.contest === c));
+      const row = AK.row();
+      const v = AK.rows('val_summary')[0];
+      const when = {
+        maj1: row && row.combined_round1_majority === '1', maj0: row && row.combined_round1_majority === '0',
+        cross1: row && Number(row.bound_low) < 0 && Number(row.bound_high) > 0,
+        cross0: row && !(Number(row.bound_low) < 0 && Number(row.bound_high) > 0),
+        valall: v && v.all_match === 1, valsome: v && v.all_match === 0,
+      };
+      for (const e of document.querySelectorAll('[data-when]')) e.hidden = !when[e.dataset.when];
+    });
+  })();
+</script>
+
+<script>
+  // Words and figures in the header and tiles.
+  (() => {
+    const { fmt, p1, p2 } = AK;
+    const C = ['contests', 'candidates'];
+    const R = (f) => () => { const r = AK.row(); return r ? f(r, AK.cands()) : null; };
+    AK.text('t-label', ['contests'], R((r) => r.label));
+    AK.text('t-a', C, R((r, cm) => AK.display(r.finalist_a, cm)));
+    AK.text('t-b', C, R((r, cm) => AK.display(r.finalist_b, cm)));
+    AK.text('t-cvr', ['contests'], R((r) => fmt(Number(r.final_margin))));
+    AK.text('t-comb', C, R((r, cm) => AK.signed(Number(r.combined_margin), r.finalist_a, r.finalist_b, cm)));
+    AK.text('t-lo', C, R((r, cm) => AK.signed(Number(r.bound_low), r.finalist_a, r.finalist_b, cm)));
+    AK.text('t-hi', C, R((r, cm) => AK.signed(Number(r.bound_high), r.finalist_a, r.finalist_b, cm)));
+    AK.text('k1-big', C, R((r, cm) => `${AK.short(r.finalist_a, cm)} ${p2(Number(r.final_share_a))}`));
+    AK.text('k1-sub', C, R((r, cm) => `${AK.short(r.finalist_b, cm)} ${p2(Number(r.final_share_b))}, ${fmt(Number(r.final_margin))} votes behind`));
+    AK.text('k2-big', C, R((r, cm) => AK.signed(Number(r.combined_margin), r.finalist_a, r.finalist_b, cm)));
+    AK.text('k2-sub', C, R((r, cm) => `${AK.short(r.finalist_a, cm)} ${p2(Number(r.combined_share_a))}, ${AK.short(r.finalist_b, cm)} ${p2(Number(r.combined_share_b))}, if the added ballots' later rankings split like the scanned ones`));
+    AK.text('k3-big', C, R((r, cm) => `${AK.short(r.combined_round1_leader, cm)} ${p1(Number(r.combined_round1_leader_share))}`));
+    AK.text('k4-big', ['contests'], R((r) => p1(Number(r.inactive_share_final))));
+    AK.text('k4-sub', ['contest_figures'], () => { const f = AK.row('contest_figures'); return f ? `${fmt(f.inactive_final)} of ${fmt(f.ranked_ballots)}` : null; });
+    AK.text('blanks', ['contests'], R((r) => fmt(Number(r.blanks))));
+    AK.text('hd-leader', C, R((r, cm) => AK.short(r.finalist_a, cm)));
+    const tz = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Anchorage', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    const S = (f) => () => { const s = AK.rows('status')[0]; return s ? f(s) : null; };
+    AK.text('s-time', ['status'], S((s) => tz.format(new Date(s.summary_report_time))));
+    AK.text('s-cvrtime', ['status'], S((s) => tz.format(new Date(s.cvr_file_time))));
+    AK.text('s-total', ['status'], S((s) => fmt(Number(s.precinct_file_ballots))));
+    AK.text('s-cvr', ['status'], S((s) => fmt(Number(s.cvr_ballots))));
+    AK.text('s-miss', ['status'], S((s) => fmt(Number(s.not_in_cvr))));
+    AK.text('s-pcts', ['status'], S((s) => fmt(Number(s.precincts_not_in_cvr))));
+    AK.text('s-groups', ['coverage'], () => AK.rows('coverage').filter((r) => Number(r.not_in_cvr) > 0).map((r) => r.group).join(' and ') || null);
+    const L = (f) => () => { const s = AK.rows('leg_summary')[0]; return s ? f(s) : null; };
+    AK.text('leg-races', ['leg_summary'], L((s) => fmt(s.races)));
+    AK.text('leg-multi', ['leg_summary'], L((s) => fmt(s.three_or_more)));
+    AK.text('leg-past', ['leg_summary'], L((s) => fmt(s.went_past_round1)));
+    AK.text('leg-changed', ['leg_summary'], L((s) => fmt(s.leader_changed)));
+    const V = (f) => () => { const s = AK.rows('val_summary')[0]; return s ? f(s) : null; };
+    AK.text('val-races', ['val_summary'], V((s) => fmt(s.races)));
+    AK.text('val-match', ['val_summary'], V((s) => fmt(s.rounds_matching)));
+    AK.text('val-rounds', ['val_summary'], V((s) => fmt(s.rounds)));
+  })();
+</script>
+
+<script>
+  // Final-round margin: scanned ballots, with the hand-counted precincts, and the range their rankings allow.
+  dash.draw('range', (el) => {
+    if (!AK.ready(el, ['contests', 'candidates'])) return;
+    const r = AK.row(), W = el.clientWidth;
+    el.replaceChildren();
+    if (!r || !W) return;
+    const cm = AK.cands(), a = r.finalist_a, b = r.finalist_b;
+    const cvr = Number(r.final_margin), comb = Number(r.combined_margin), lo = Number(r.bound_low), hi = Number(r.bound_high);
+    const H = 150, svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Final-round margin');
+    const d0 = Math.min(lo, cvr, comb, 0), d1 = Math.max(hi, cvr, comb, 0), pad = (d1 - d0) * 0.06 || 1;
+    const x = d3.scaleLinear([d0 - pad, d1 + pad], [8, W - 8]);
+    const yAxis = 116, rows = [{ y: 22, label: 'Scanned ballots', v: cvr }, { y: 72, label: 'Adding hand-counted precincts', v: comb, range: [lo, hi] }];
+    svg.append('line').attr('class', 'ak-ref').attr('x1', x(0)).attr('x2', x(0)).attr('y1', 4).attr('y2', yAxis);
+    for (const row of rows) {
+      svg.append('text').attr('class', 'ak-tm ak-halo').attr('x', 8).attr('y', row.y).text(row.label);
+      const ty = row.y + 20;
+      svg.append('line').attr('class', 'ak-grid-line').attr('x1', 8).attr('x2', W - 8).attr('y1', ty).attr('y2', ty);
+      if (row.range) {
+        svg.append('rect').attr('x', x(row.range[0])).attr('y', ty - 7).attr('width', Math.max(2, x(row.range[1]) - x(row.range[0]))).attr('height', 14).attr('rx', 3)
+          .style('fill', 'var(--cds-chart-reference)').style('fill-opacity', 0.35);
+      }
+      const col = row.v >= 0 ? AK.color(a, cm) : AK.color(b, cm);
+      svg.append('circle').attr('cx', x(row.v)).attr('cy', ty).attr('r', 6).style('fill', col).style('stroke', 'var(--color-panel)').style('stroke-width', 2);
+      const lab = AK.signed(row.v, a, b, cm), lw = AK.measure(svg, lab, 'ak-tb');
+      const right = x(row.v) + 12 + lw <= W - 4;
+      svg.append('text').attr('class', 'ak-tb ak-halo').attr('x', right ? x(row.v) + 12 : x(row.v) - 12).attr('y', ty + 4).attr('text-anchor', right ? 'start' : 'end').text(lab);
+    }
+    const n = Math.max(2, Math.floor(W / 110));
+    svg.append('line').attr('class', 'ak-axis-line').attr('x1', 8).attr('x2', W - 8).attr('y1', yAxis).attr('y2', yAxis);
+    const ticks = x.ticks(n), tf = d3.format(',');
+    let lastEnd = -Infinity;
+    for (const t of ticks) {
+      const lab = t === 0 ? 'Tie' : tf(Math.abs(t)), w = AK.measure(svg, lab, 'ak-tm'), cx = x(t);
+      if (cx - w / 2 < lastEnd + 8 || cx - w / 2 < 0 || cx + w / 2 > W) continue;
+      svg.append('text').attr('class', 'ak-tm').attr('x', cx).attr('y', yAxis + 14).attr('text-anchor', 'middle').text(lab);
+      lastEnd = cx + w / 2;
+    }
+    svg.append('text').attr('class', 'ak-tm').attr('x', 8).attr('y', yAxis + 30).text(`← ${AK.short(b, cm)} ahead`);
+    svg.append('text').attr('class', 'ak-tm').attr('x', W - 8).attr('y', yAxis + 30).attr('text-anchor', 'end').text(`${AK.short(a, cm)} ahead →`);
+    svg.attr('viewBox', `0 0 ${W} ${yAxis + 36}`);
+  });
+</script>
+
+<script>
+  // Sankey of the rounds, drawn by hand: columns are rounds, bands are ballots carried or transferred.
+  dash.draw('sankey', (el) => {
+    if (!AK.ready(el, ['rounds', 'transfers', 'candidates'])) return;
+    const W = el.clientWidth;
+    el.replaceChildren();
+    if (!W) return;
+    const { fmt, p1, p2 } = AK, c = AK.contest(), cm = AK.cands();
+    const R = AK.rows('rounds').filter((r) => r.contest_id === c), T = AK.rows('transfers').filter((r) => r.contest_id === c);
+    if (!R.length) return;
+    const nR = d3.max(R, (r) => Number(r.round));
+    const order = [...AK.order(cm), 'Exhausted', 'Overvote'], rank = new Map(order.map((n, i) => [n, i]));
+    const cols = d3.range(1, nR + 1).map((k) => order.map((name) => {
+      const r = R.find((x) => Number(x.round) === k && x.item === name);
+      if (!r || (r.item_type !== 'candidate' && Number(r.votes) === 0)) return null;
+      return { k, name, v: Number(r.votes), type: r.item_type, elim: r.eliminated === '1', share: r.share_of_continuing === '' ? NaN : Number(r.share_of_continuing), out: 0, inn: 0 };
+    }).filter(Boolean));
+    const node = (k, name) => cols[k - 1].find((n) => n.name === name);
+    const links = [];
+    for (let k = 1; k < nR; k++) {
+      for (const n of cols[k - 1]) {
+        if (n.elim) {
+          for (const t of T.filter((t) => Number(t.round) === k && t.from === n.name)) {
+            const tg = node(k + 1, t.to);
+            if (tg && Number(t.votes) > 0) links.push({ k, s: n, t: tg, v: Number(t.votes), transfer: true, share: Number(t.share_of_from) });
+          }
+        } else if (n.v > 0) {
+          const tg = node(k + 1, n.name);
+          if (tg) links.push({ k, s: n, t: tg, v: n.v, transfer: false });
+        }
+      }
+    }
+    const H = 400, top = 26, bottom = 6, gap = 8, nodeW = 12;
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Ballots by round');
+    const narrow = W < 620;
+    const label = (n, last) => {
+      const nm = n.type === 'candidate' ? AK.short(n.name, cm) : n.name;
+      if (n.type !== 'candidate') return `${nm} ${fmt(n.v)}`;
+      return last ? (narrow ? `${nm} ${p1(n.share)}` : `${nm} ${fmt(n.v)} · ${p2(n.share)}`) : `${nm} ${fmt(n.v)}`;
+    };
+    const mR = Math.min(W * 0.42, d3.max(cols[nR - 1], (n) => AK.measure(svg, label(n, true), 'ak-t')) + 10);
+    const colX = (k) => (nR === 1 ? 0 : ((W - mR - nodeW) * (k - 1)) / (nR - 1));
+    const maxN = d3.max(cols, (col) => col.length), total = d3.max(cols, (col) => d3.sum(col, (n) => n.v));
+    const scale = (H - top - bottom - gap * (maxN - 1)) / total;
+    for (const col of cols) {
+      let y = top;
+      for (const n of col) { n.x = colX(n.k); n.y = y; n.h = n.v * scale; y += n.h + gap; }
+    }
+    // stack bands at each node in the order of the nodes they come from or go to
+    for (const n of cols.flat()) { n.o = n.y; n.i = n.y; }
+    for (const l of [...links].sort((a, b) => a.k - b.k || rank.get(a.s.name) - rank.get(b.s.name) || rank.get(a.t.name) - rank.get(b.t.name))) {
+      l.sy = l.s.o; l.s.o += l.v * scale;
+    }
+    for (const l of [...links].sort((a, b) => a.k - b.k || rank.get(a.t.name) - rank.get(b.t.name) || rank.get(a.s.name) - rank.get(b.s.name))) {
+      l.ty = l.t.i; l.t.i += l.v * scale;
+    }
+    const fillOf = (name) => AK.color(name, cm);
+    const tip = AK.tip(el);
+    const band = (l) => {
+      const x0 = l.s.x + nodeW, x1 = l.t.x, xm = (x0 + x1) / 2, h = l.v * scale;
+      return `M${x0},${l.sy}C${xm},${l.sy} ${xm},${l.ty} ${x1},${l.ty}L${x1},${l.ty + h}C${xm},${l.ty + h} ${xm},${l.sy + h} ${x0},${l.sy + h}Z`;
+    };
+    const roundName = (k) => (k === nR ? 'Final round' : `Round ${k}`);
+    svg.append('g').selectAll('path').data(links).join('path')
+      .attr('d', band)
+      .style('fill', (l) => fillOf(l.transfer ? l.t.name : l.s.name))
+      .style('fill-opacity', (l) => (l.transfer ? 0.55 : 0.2))
+      .style('cursor', 'default')
+      .on('pointermove', (ev, l) => {
+        if (l.transfer) {
+          tip.show(ev, `${roundName(l.k)} → ${roundName(l.k + 1)}`, [
+            { color: fillOf(l.s.name), text: `${AK.display(l.s.name, cm)}, eliminated` },
+            { color: fillOf(l.t.name), text: `to ${l.t.type === 'candidate' ? AK.display(l.t.name, cm) : l.t.name}: ${fmt(l.v)} (${p1(l.share)} of their ballots)` },
+          ]);
+        } else {
+          tip.show(ev, `${roundName(l.k)} → ${roundName(l.k + 1)}`, [{ color: fillOf(l.s.name), text: `${l.s.type === 'candidate' ? AK.display(l.s.name, cm) + ' keeps' : l.s.name + ', still inactive:'} ${fmt(l.v)}` }]);
+        }
+      })
+      .on('pointerleave', () => tip.hide());
+    svg.append('g').selectAll('rect').data(cols.flat()).join('rect')
+      .attr('x', (n) => n.x).attr('y', (n) => n.y).attr('width', nodeW).attr('height', (n) => Math.max(1, n.h)).attr('rx', 2)
+      .style('fill', (n) => fillOf(n.name))
+      .on('pointermove', (ev, n) => tip.show(ev, roundName(n.k), [{ color: fillOf(n.name), text: n.type === 'candidate'
+        ? `${AK.display(n.name, cm)}: ${fmt(n.v)} (${p2(n.share)} of continuing ballots)${n.elim ? ', eliminated' : ''}`
+        : `${n.name}: ${fmt(n.v)} ballots` }]))
+      .on('pointerleave', () => tip.hide());
+    for (let k = 1; k <= nR; k++) {
+      const x = k === 1 ? 0 : colX(k) + (k === nR ? 0 : nodeW / 2);
+      svg.append('text').attr('class', 'ak-tm').attr('x', x).attr('y', 12).attr('text-anchor', k === 1 ? 'start' : k === nR ? 'start' : 'middle').text(roundName(k));
+    }
+    const spacing = nR > 1 ? colX(2) - colX(1) - nodeW - 10 : W;
+    for (const n of cols.flat()) {
+      if (n.h < 13) continue;
+      const last = n.k === nR;
+      let text = label(n, last);
+      if (!last) {
+        const opts = [text, n.type === 'candidate' ? AK.short(n.name, cm) : n.name, fmt(n.v)];
+        text = opts.find((t) => AK.measure(svg, t, 'ak-t') <= spacing);
+        if (!text) continue;
+      }
+      svg.append('text').attr('class', 'ak-t ak-halo').attr('x', n.x + nodeW + 5).attr('y', n.y + Math.min(n.h / 2, 14) + 4).text(text);
+    }
+  });
+</script>
+
+<script>
+  // Inactive ballots by round, as stacked bars.
+  dash.draw('exhaust', (el) => {
+    if (!AK.ready(el, ['inactive_by_round'])) return;
+    const W = el.clientWidth;
+    el.replaceChildren();
+    if (!W) return;
+    const { fmt, p1 } = AK, c = AK.contest();
+    const d = AK.rows('inactive_by_round').filter((r) => r.contest_id === c).sort((a, b) => a.round - b.round);
+    if (!d.length) return;
+    const nR = d.length, H = 230, m = { t: 30, r: 8, b: 26 };
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Inactive ballots by round');
+    const y = d3.scaleLinear([0, (d3.max(d, (r) => r.inactive_share) || 0.01) * 1.2], [H - m.b, m.t]).nice();
+    const ticks = y.ticks(4), tf = d3.format('.1%');
+    m.l = d3.max(ticks, (t) => AK.measure(svg, tf(t), 'ak-tm')) + 8;
+    for (const t of ticks) {
+      svg.append('line').attr('class', 'ak-grid-line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(t)).attr('y2', y(t));
+      svg.append('text').attr('class', 'ak-tm').attr('x', m.l - 6).attr('y', y(t) + 4).attr('text-anchor', 'end').text(tf(t));
+    }
+    const x = d3.scaleBand(d.map((r) => r.round), [m.l, W - m.r]).paddingInner(0.4).paddingOuter(0.25);
+    const bw = Math.min(56, x.bandwidth()), off = (x.bandwidth() - bw) / 2;
+    const tip = AK.tip(el);
+    const name = (k) => (k === nR ? 'Final round' : `Round ${k}`);
+    for (const r of d) {
+      const x0 = x(r.round) + off;
+      const g = svg.append('g')
+        .on('pointermove', (ev) => tip.show(ev, name(r.round), [
+          { color: AK.inactiveColor('Exhausted'), text: `Exhausted ${fmt(r.exhausted)} (${p1(r.exhausted_share)})` },
+          { color: AK.inactiveColor('Overvote'), text: `Overvote ${fmt(r.overvotes)} (${p1(r.overvote_share)})` },
+          { text: `of ${fmt(r.ranked_ballots)} ballots that ranked someone` },
+        ]))
+        .on('pointerleave', () => tip.hide());
+      g.append('rect').attr('x', x0).attr('width', bw).attr('y', y(r.overvote_share)).attr('height', Math.max(0, y(0) - y(r.overvote_share)))
+        .style('fill', AK.inactiveColor('Overvote'));
+      g.append('rect').attr('x', x0).attr('width', bw).attr('y', y(r.inactive_share)).attr('height', Math.max(0, y(r.overvote_share) - y(r.inactive_share) - (r.exhausted > 0 ? 1 : 0)))
+        .attr('rx', 2).style('fill', AK.inactiveColor('Exhausted'));
+      g.append('rect').attr('x', x(r.round)).attr('width', x.bandwidth()).attr('y', m.t).attr('height', H - m.t - m.b).style('fill', 'transparent');
+      svg.append('text').attr('class', 'ak-tb').attr('x', x0 + bw / 2).attr('y', y(r.inactive_share) - 6).attr('text-anchor', 'middle').text(p1(r.inactive_share));
+      svg.append('text').attr('class', 'ak-tm').attr('x', x0 + bw / 2).attr('y', H - 8).attr('text-anchor', 'middle').text(name(r.round));
+    }
+    svg.append('line').attr('class', 'ak-axis-line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0));
+  });
+</script>
+
+<script>
+  // Where each eliminated candidate's ballots went: one 100% bar per elimination, its shares in the legend under it.
+  dash.draw('xfer', (el) => {
+    if (!AK.ready(el, ['transfers', 'rounds', 'candidates'])) return;
+    const W = el.clientWidth;
+    el.replaceChildren();
+    if (!W) return;
+    const { fmt, p1 } = AK, c = AK.contest(), cm = AK.cands();
+    const T = AK.rows('transfers').filter((r) => r.contest_id === c), R = AK.rows('rounds').filter((r) => r.contest_id === c);
+    const order = [...AK.order(cm), 'Exhausted', 'Overvote'], rank = new Map(order.map((n, i) => [n, i]));
+    const groups = d3.groups(T, (t) => Number(t.round), (t) => t.from).flatMap(([k, fs]) => fs.map(([from, rows]) => ({ k, from, rows: rows.sort((a, b) => rank.get(a.to) - rank.get(b.to)) }))).sort((a, b) => a.k - b.k);
+    const tip = AK.tip(el);
+    for (const g of groups) {
+      const n = R.find((r) => Number(r.round) === g.k && r.item === g.from);
+      const box = document.createElement('div'); box.className = 'ak-xrow';
+      const head = document.createElement('p'); head.className = 'ak-xhead';
+      head.textContent = `Round ${g.k}: ${AK.display(g.from, cm)}, ${n ? fmt(Number(n.votes)) : '—'} ballots`;
+      box.append(head);
+      el.append(box);
+      const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} 18`).attr('role', 'img').attr('aria-label', `Where ${AK.display(g.from, cm)}'s ballots went`);
+      let x0 = 0;
+      for (const t of g.rows) {
+        const w = Number(t.share_of_from) * W, col = AK.color(t.to, cm);
+        svg.append('rect').attr('x', x0).attr('y', 0).attr('width', Math.max(0, w - 2)).attr('height', 18).attr('rx', 2).style('fill', col)
+          .on('pointermove', (ev) => tip.show(ev, `${AK.display(g.from, cm)}'s ballots`, [{ color: col, text: `${t.to_type === 'candidate' ? AK.display(t.to, cm) : t.to}: ${fmt(Number(t.votes))} (${p1(Number(t.share_of_from))})` }]))
+          .on('pointerleave', () => tip.hide());
+        x0 += w;
+      }
+      const ul = document.createElement('ul'); ul.className = 'ak-legend';
+      for (const t of g.rows) {
+        const li = document.createElement('li'), sw = document.createElement('span');
+        sw.className = 'ak-sw'; sw.style.background = AK.color(t.to, cm);
+        li.append(sw, document.createTextNode(`${t.to_type === 'candidate' ? AK.short(t.to, cm) : t.to} ${p1(Number(t.share_of_from))}`));
+        ul.append(li);
+      }
+      box.append(ul);
+    }
+    el.append(el.querySelector('.ak-tip'));
+  });
+</script>
+
+<script>
+  // How many candidates voters ranked, by first choice: 100% bars, one shade of one hue per count.
+  dash.draw('depth', (el) => {
+    if (!AK.ready(el, ['depth_share', 'candidates'])) return;
+    const W = el.clientWidth;
+    el.replaceChildren();
+    if (!W) return;
+    const { fmt, p0, p1 } = AK, c = AK.contest(), cm = AK.cands();
+    const D = AK.rows('depth_share').filter((r) => r.contest_id === c);
+    const firsts = AK.order(cm).filter((n) => D.some((d) => d.first_choice === n));
+    const levels = [...new Set(D.map((d) => d.ranked))].sort((a, b) => a - b);
+    const shade = (lv) => 0.16 + (0.78 * (levels.indexOf(lv))) / Math.max(1, levels.length - 1);
+    const hue = dash.colors[6], rowH = 30, H = firsts.length * rowH + 4;
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Candidates ranked by first choice');
+    const lw = Math.min(W * 0.36, d3.max(firsts, (f) => AK.measure(svg, AK.short(f, cm), 'ak-t')) + 10);
+    const x = d3.scaleLinear([0, 1], [lw, W]);
+    const tip = AK.tip(el);
+    firsts.forEach((f, i) => {
+      const y = i * rowH + 4, rows = D.filter((d) => d.first_choice === f).sort((a, b) => a.ranked - b.ranked);
+      svg.append('text').attr('class', 'ak-t').attr('x', 0).attr('y', y + 15).text(AK.short(f, cm));
+      let s = 0;
+      for (const d of rows) {
+        const x0 = x(s), w = x(s + d.share) - x0, op = shade(d.ranked);
+        svg.append('rect').attr('x', x0).attr('y', y).attr('width', Math.max(0, w - 2)).attr('height', 20).attr('rx', 2).style('fill', hue).style('fill-opacity', op)
+          .on('pointermove', (ev) => tip.show(ev, `${AK.display(f, cm)} first`, [{ text: `${d.ranked} ranked: ${fmt(d.ballots)} (${p1(d.share)} of ${fmt(d.first_choice_ballots)})` }]))
+          .on('pointerleave', () => tip.hide());
+        const lab = p0(d.share);
+        if (w - 2 >= AK.measure(svg, lab, 'ak-tm') + 8) {
+          svg.append('text').attr('class', 'ak-tm').attr('x', x0 + (w - 2) / 2).attr('y', y + 14).attr('text-anchor', 'middle')
+            .style('fill', op > 0.55 ? 'var(--color-bg)' : 'var(--color-fg)').style('pointer-events', 'none').text(lab);
+        }
+        s += d.share;
+      }
+    });
+    const ul = document.createElement('ul'); ul.className = 'ak-legend';
+    for (const lv of levels) {
+      const li = document.createElement('li'), sw = document.createElement('span');
+      sw.className = 'ak-sw'; sw.style.background = hue; sw.style.opacity = String(shade(lv));
+      li.append(sw, document.createTextNode(lv === levels[levels.length - 1] ? `${lv} ranked` : String(lv)));
+      ul.append(li);
+    }
+    el.append(ul);
+    el.append(el.querySelector('.ak-tip'));
+  });
+</script>
+
+<script>
+  // Next choice after the first: a grid of row shares.
+  dash.draw('next', (el) => {
+    if (!AK.ready(el, ['next_share', 'candidates'])) return;
+    const W = el.clientWidth;
+    el.replaceChildren();
+    if (!W) return;
+    const { fmt, p1 } = AK, c = AK.contest(), cm = AK.cands();
+    const N = AK.rows('next_share').filter((r) => r.contest_id === c);
+    const firsts = AK.order(cm).filter((n) => N.some((d) => d.first_choice === n));
+    const colsN = [...AK.order(cm), 'No further choice', 'Overvote'].filter((n) => N.some((d) => d.next_choice === n));
+    const head = (n) => (cm.get(n) ? [AK.short(n, cm)] : n === 'No further choice' ? ['No further', 'choice'] : [n]);
+    const rowH = 28, svg = d3.select(el).append('svg').attr('width', '100%').attr('role', 'img').attr('aria-label', 'Next choice by first choice');
+    const lw = Math.min(W * 0.3, d3.max(firsts, (f) => AK.measure(svg, AK.short(f, cm), 'ak-t')) + 10);
+    const x = d3.scaleBand(colsN, [lw, W]).paddingInner(0.06);
+    const headLines = d3.max(colsN, (n) => head(n).length), hh = headLines * 13 + 8;
+    const tip = AK.tip(el), hue = dash.colors[6];
+    for (const n of colsN) {
+      head(n).forEach((line, j) => {
+        let t = line;
+        while (t.length > 3 && AK.measure(svg, t, 'ak-tm') > x.bandwidth()) t = `${t.slice(0, -2)}…`;
+        svg.append('text').attr('class', 'ak-tm').attr('x', x(n) + x.bandwidth() / 2).attr('y', 11 + j * 13).attr('text-anchor', 'middle').text(t);
+      });
+    }
+    firsts.forEach((f, i) => {
+      const y = hh + i * rowH;
+      svg.append('text').attr('class', 'ak-t').attr('x', 0).attr('y', y + 16).text(AK.short(f, cm));
+      for (const n of colsN) {
+        const d = N.find((r) => r.first_choice === f && r.next_choice === n);
+        if (n === f) {
+          svg.append('text').attr('class', 'ak-tm').attr('x', x(n) + x.bandwidth() / 2).attr('y', y + 16).attr('text-anchor', 'middle').text('·');
+          continue;
+        }
+        const s = d ? d.share : 0, op = 0.06 + 0.6 * s;
+        svg.append('rect').attr('x', x(n)).attr('y', y).attr('width', x.bandwidth()).attr('height', rowH - 4).attr('rx', 2).style('fill', hue).style('fill-opacity', op)
+          .on('pointermove', (ev) => tip.show(ev, `${AK.display(f, cm)} first`, [{ text: `next: ${cm.get(n) ? AK.display(n, cm) : n.toLowerCase()}, ${fmt(d ? d.ballots : 0)} (${p1(s)})` }]))
+          .on('pointerleave', () => tip.hide());
+        const lab = p1(s);
+        if (AK.measure(svg, lab, 'ak-tm') + 4 <= x.bandwidth()) {
+          svg.append('text').attr('class', 'ak-tm').attr('x', x(n) + x.bandwidth() / 2).attr('y', y + 16).attr('text-anchor', 'middle')
+            .style('fill', 'var(--color-fg)').style('pointer-events', 'none').text(lab);
+        }
+      }
+    });
+    svg.attr('viewBox', `0 0 ${W} ${hh + firsts.length * rowH}`);
+  });
+</script>
+
+<script>
+  // Tables: house districts, legislative races, the 2024 check.
+  (() => {
+    const { fmt, p1 } = AK;
+    const cmp = (s, num) => (a, b) => {
+      const x = a[s.key], y = b[s.key];
+      if (num.includes(s.key)) { const nx = x === '' ? -Infinity : Number(x), ny = y === '' ? -Infinity : Number(y); return (nx - ny) * s.dir; }
+      return String(x).localeCompare(String(y), 'en', { numeric: true }) * s.dir;
+    };
+    const td = (text, cls) => { const e = document.createElement('td'); if (cls) e.className = cls; e.textContent = text; return e; };
+    const empty = (el, ids) => { if (AK.ok(ids)) return false; el.replaceChildren(); return true; };
+
+    dash.draw('hd-rows', (el) => {
+      if (empty(el, ['house_districts', 'candidates', 'contests'])) return;
+      const c = AK.contest(), cm = AK.cands(), row = AK.row();
+      const rows = AK.rows('house_districts').filter((r) => r.contest_id === c)
+        .sort(cmp(AK.sort.hd, ['hd', 'ballots_cvr', 'not_in_cvr', 'round1_leader_share', 'share_a', 'inactive_share']));
+      el.replaceChildren(...rows.map((r) => {
+        const tr = document.createElement('tr'); tr.dataset.key = `${r.contest_id},${r.hd}`;
+        const has = r.share_a !== '';
+        const share = document.createElement('td');
+        share.textContent = has ? p1(Number(r.share_a)) : '—';
+        if (has && row) {
+          const s = Number(r.share_a), bar = document.createElement('span'), mid = document.createElement('span'), fill = document.createElement('span');
+          bar.className = 'ak-cellbar'; mid.className = 'ak-cellbar-mid'; fill.className = 'ak-cellbar-fill';
+          fill.style.left = `${Math.min(s, 0.5) * 100}%`; fill.style.width = `${Math.abs(s - 0.5) * 100}%`;
+          fill.style.background = AK.color(s >= 0.5 ? row.finalist_a : row.finalist_b, cm);
+          bar.append(fill, mid); share.append(bar);
+        }
+        tr.append(td(r.hd), td(fmt(Number(r.ballots_cvr)), 'ak-num'), td(fmt(Number(r.not_in_cvr)), 'ak-num'),
+          td(r.round1_leader ? AK.short(r.round1_leader, cm) : '—', 'ak-wide'), td(r.round1_leader_share !== '' ? p1(Number(r.round1_leader_share)) : '—', 'ak-num ak-wide'),
+          share, td(r.inactive_share !== '' ? p1(Number(r.inactive_share)) : '—', 'ak-num'));
+        return tr;
+      }));
+    });
+
+    dash.draw('leg-rows', (el) => {
+      if (empty(el, ['legislative'])) return;
+      const rows = AK.rows('legislative').filter((r) => Number(r.candidates) >= 3)
+        .sort(cmp(AK.sort.leg, ['candidates', 'rounds', 'round1_leader_share', 'final_leader_share', 'final_margin', 'inactive_share', 'not_in_cvr']));
+      el.replaceChildren(...rows.map((r) => {
+        const tr = document.createElement('tr'); tr.dataset.key = r.contest;
+        const fin = td(AK.person(r.final_leader));
+        if (r.leader_changed === '1') { const f = document.createElement('span'); f.className = 'ak-flag'; f.textContent = 'new leader'; fin.append(' ', f); }
+        tr.append(td(r.contest), td(fmt(Number(r.candidates)), 'ak-num ak-wide'), td(fmt(Number(r.rounds)), 'ak-num'),
+          td(AK.person(r.round1_leader), 'ak-wide'), td(r.round1_leader_share !== '' ? p1(Number(r.round1_leader_share)) : '—', 'ak-num ak-wide'),
+          fin, td(r.final_leader_share !== '' ? p1(Number(r.final_leader_share)) : '—', 'ak-num'), td(fmt(Number(r.final_margin)), 'ak-num ak-wide'),
+          td(r.inactive_share !== '' ? p1(Number(r.inactive_share)) : '—', 'ak-num ak-wide'), td(fmt(Number(r.not_in_cvr)), 'ak-num ak-wide'));
+        return tr;
+      }));
+    });
+
+    dash.draw('val-rows', (el) => {
+      if (empty(el, ['validation_2024'])) return;
+      el.replaceChildren(...AK.rows('validation_2024').map((r) => {
+        const tr = document.createElement('tr'); tr.dataset.key = r.contest;
+        tr.append(td(r.contest), td(fmt(Number(r.candidates)), 'ak-num'), td(fmt(Number(r.rounds)), 'ak-num'), td(fmt(Number(r.rounds_matching)), 'ak-num'));
+        return tr;
+      }));
+    });
+  })();
+</script>

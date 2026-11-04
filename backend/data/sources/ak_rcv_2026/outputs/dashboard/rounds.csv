@@ -1,0 +1,46 @@
+contest_id,round,item,item_type,votes,share_of_continuing,eliminated
+senate,1,"Sullivan, Dan S.",candidate,99617,0.49020495534286346,0
+senate,1,"Peltola, Mary",candidate,95792,0.4713825258962183,0
+senate,1,"Heikes, Gerald L.",candidate,4380,0.021553527052628987,0
+senate,1,"Sullivan, Daniel J. Jr.",candidate,3426,0.01685899170828925,1
+senate,1,Exhausted,exhausted,0,,0
+senate,1,Overvote,overvotes,236,,0
+senate,2,"Sullivan, Dan S.",candidate,100176,0.4960042779477734,0
+senate,2,"Peltola, Mary",candidate,96783,0.4792044205460325,0
+senate,2,"Heikes, Gerald L.",candidate,5007,0.024791301506194113,1
+senate,2,Exhausted,exhausted,1243,,0
+senate,2,Overvote,overvotes,242,,0
+senate,3,"Sullivan, Dan S.",candidate,102342,0.5117151171511715,0
+senate,3,"Peltola, Mary",candidate,97656,0.4882848828488285,0
+senate,3,Exhausted,exhausted,3204,,0
+senate,3,Overvote,overvotes,249,,0
+house,1,"Begich, Nick",candidate,101953,0.5031138350999783,0
+house,1,"Hill, Bill",candidate,80673,0.3981020903653698,0
+house,1,"Hafner, Eric",candidate,14547,0.07178598922247884,0
+house,1,"McDermott, James C. ""Jim""",candidate,5471,0.026998085312173074,1
+house,1,Exhausted,exhausted,0,,0
+house,1,Overvote,overvotes,87,,0
+house,2,"Begich, Nick",candidate,103493,0.5151776114053602,0
+house,2,"Hill, Bill",candidate,82190,0.4091334474931305,0
+house,2,"Hafner, Eric",candidate,15205,0.0756889411015093,1
+house,2,Exhausted,exhausted,1749,,0
+house,2,Overvote,overvotes,94,,0
+house,3,"Begich, Nick",candidate,104540,0.5398538562834052,0
+house,3,"Hill, Bill",candidate,89105,0.4601461437165948,0
+house,3,Exhausted,exhausted,8978,,0
+house,3,Overvote,overvotes,108,,0
+governor,1,Kreiss-Tomkins/Johnson,candidate,97999,0.4869878500260889,0
+governor,1,Wilson/Shower,candidate,59740,0.2968668472184262,0
+governor,1,Bronson/Church,candidate,28592,0.1420826396998534,0
+governor,1,Taylor/English,candidate,14904,0.07406266305563147,1
+governor,1,Exhausted,exhausted,0,,0
+governor,1,Overvote,overvotes,181,,0
+governor,2,Kreiss-Tomkins/Johnson,candidate,98787,0.5030579560326521,0
+governor,2,Wilson/Shower,candidate,64642,0.3291796733766862,0
+governor,2,Bronson/Church,candidate,32944,0.16776237059066165,1
+governor,2,Exhausted,exhausted,4853,,0
+governor,2,Overvote,overvotes,190,,0
+governor,3,Kreiss-Tomkins/Johnson,candidate,100969,0.5472159294145702,0
+governor,3,Wilson/Shower,candidate,83545,0.45278407058542985,0
+governor,3,Exhausted,exhausted,16681,,0
+governor,3,Overvote,overvotes,221,,0

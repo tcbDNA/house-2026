@@ -1,0 +1,28 @@
+contest_id,round,from,to,to_type,votes,share_of_from
+senate,1,"Sullivan, Daniel J. Jr.",Exhausted,exhausted,1243,0.36281377699941625
+senate,1,"Sullivan, Daniel J. Jr.","Peltola, Mary",candidate,991,0.28925861062463515
+senate,1,"Sullivan, Daniel J. Jr.","Heikes, Gerald L.",candidate,627,0.1830122591943958
+senate,1,"Sullivan, Daniel J. Jr.","Sullivan, Dan S.",candidate,559,0.163164039696439
+senate,1,"Sullivan, Daniel J. Jr.",Overvote,overvote,6,0.0017513134851138354
+senate,2,"Heikes, Gerald L.","Sullivan, Dan S.",candidate,2166,0.43259436788496103
+senate,2,"Heikes, Gerald L.",Exhausted,exhausted,1961,0.3916516876373078
+senate,2,"Heikes, Gerald L.","Peltola, Mary",candidate,873,0.1743559017375674
+senate,2,"Heikes, Gerald L.",Overvote,overvote,7,0.0013980427401637707
+house,1,"McDermott, James C. ""Jim""",Exhausted,exhausted,1749,0.31968561506123194
+house,1,"McDermott, James C. ""Jim""","Begich, Nick",candidate,1540,0.281484189362091
+house,1,"McDermott, James C. ""Jim""","Hill, Bill",candidate,1517,0.2772802047157741
+house,1,"McDermott, James C. ""Jim""","Hafner, Eric",candidate,658,0.12027051727289344
+house,1,"McDermott, James C. ""Jim""",Overvote,overvote,7,0.0012794735880095047
+house,2,"Hafner, Eric",Exhausted,exhausted,7229,0.47543571193686285
+house,2,"Hafner, Eric","Hill, Bill",candidate,6915,0.4547846103255508
+house,2,"Hafner, Eric","Begich, Nick",candidate,1047,0.06885892798421572
+house,2,"Hafner, Eric",Overvote,overvote,14,0.0009207497533706018
+governor,1,Taylor/English,Wilson/Shower,candidate,4902,0.3289049919484702
+governor,1,Taylor/English,Exhausted,exhausted,4853,0.3256172839506173
+governor,1,Taylor/English,Bronson/Church,candidate,4352,0.29200214707461086
+governor,1,Taylor/English,Kreiss-Tomkins/Johnson,candidate,788,0.052871712292002146
+governor,1,Taylor/English,Overvote,overvote,9,0.0006038647342995169
+governor,2,Bronson/Church,Wilson/Shower,candidate,18903,0.5737918892666343
+governor,2,Bronson/Church,Exhausted,exhausted,11828,0.3590335114133074
+governor,2,Bronson/Church,Kreiss-Tomkins/Johnson,candidate,2182,0.06623360854783876
+governor,2,Bronson/Church,Overvote,overvote,31,0.0009409907722195241

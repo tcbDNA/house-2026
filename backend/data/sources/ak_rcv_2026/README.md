@@ -34,6 +34,14 @@ Run Python with `-I`, and pass the extracted CVR folder as an argument.
   Those last three rules come from matching the official 2024 reports, not from published text.
 - **`validate.py`** compares the tabulator's output with the official RCV Detailed Report PDFs. On the 2024 CVR, all 7 contests match the official reports exactly in every round: each candidate's votes and the continuing, blank, exhausted and overvote counts (`outputs/validate_2024.txt`).
 - **`cvr_vs_precinct.py`** compares the CVR with the precinct results file, by precinct and counting group.
+- **`ak_dash_data.py <cvr dir> <precinct csv> <combined.json> <summary stamp> <cvr last-modified> <out dir>`** writes the dashboard's tables (`outputs/dashboard/*.csv`, all counts over ballots):
+  - rounds and transfers;
+  - how many candidates each first choice's voters ranked, and their next choice;
+  - each state house district under the statewide eliminations;
+  - every legislative race;
+  - ballots by counting group.
+
+  `validate.py --csv` writes `validation_2024.csv`. The page is `outputs/dashboard/index.html`, published as the "Alaska Ranked-Choice Count" dashboard (https://claude.ai/artifact/BPe75Hq3p5BcatHU1RvEYc, private).
 - **`ak_combine.py`** adds the ballots that are in the precinct results but not in the CVR (first choices only) to the CVR's rounds. It has two parts:
   - **Scenario:** each eliminated candidate's added votes move in the same shares as that candidate's CVR ballots did in that round.
   - **Bounds:** every added vote for a non-finalist or write-in goes entirely to one finalist or entirely to the other.

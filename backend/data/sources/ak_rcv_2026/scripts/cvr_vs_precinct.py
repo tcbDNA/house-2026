@@ -1,12 +1,12 @@
 """Which ballots in the election-night precinct results (GA_ENR_Precinct_State_of_Alaska.csv) are not in the CVR:
 per precinct and counting group, ballots and rank-1 votes in the CSV vs the CVR, for the statewide contests.
 usage: python3 -I cvr_vs_precinct.py <cvr dir> <precinct csv> <out.json>"""
-import collections, csv, json, sys
+import collections, csv, glob, json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ak_rcv import current, load, sessions
 D, CSV, OUT_JSON = sys.argv[1:4]
-sys.argv = [sys.argv[0], D, "/dev/null"]
-src = open(__file__.replace("cvr_vs_precinct.py", "ak_rcv.py")).read()
-exec(src[:src.index("# ballot patterns per contest")])  # manifests and the streaming reader
-pp = {p["Id"]: p["ExternalId"] for p in man("PrecinctPortion")}
+_, cands, groups = load(D)
+pp = {p["Id"]: p["ExternalId"] for p in json.load(open(f"{D}/PrecinctPortionManifest.json"))["List"]}
 STATE = {6: "U.S. Senator", 7: "U.S. Representative", 5: "Governor / Lieutenant Governor"}
 GRP = {"Election Day": "Election Day", "Absentee": "Absentee", "Early Voting": "Early Voting", "Question": "Question", "Remote": "Remote"}
 cvr_b = collections.Counter()      # (precinct, group) -> ballots with the Senate contest

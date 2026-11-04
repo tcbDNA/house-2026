@@ -1,0 +1,61 @@
+contest_id,first_choice,next_choice,next_type,ballots
+senate,"Heikes, Gerald L.",No further choice,exhausted,1602
+senate,"Heikes, Gerald L.",Overvote,overvote,5
+senate,"Heikes, Gerald L.","Peltola, Mary",candidate,529
+senate,"Heikes, Gerald L.","Sullivan, Dan S.",candidate,1613
+senate,"Heikes, Gerald L.","Sullivan, Daniel J. Jr.",candidate,631
+senate,"Peltola, Mary","Heikes, Gerald L.",candidate,6258
+senate,"Peltola, Mary",No further choice,exhausted,54271
+senate,"Peltola, Mary",Overvote,overvote,38
+senate,"Peltola, Mary","Sullivan, Dan S.",candidate,4953
+senate,"Peltola, Mary","Sullivan, Daniel J. Jr.",candidate,30272
+senate,"Sullivan, Dan S.","Heikes, Gerald L.",candidate,39432
+senate,"Sullivan, Dan S.",No further choice,exhausted,54550
+senate,"Sullivan, Dan S.",Overvote,overvote,28
+senate,"Sullivan, Dan S.","Peltola, Mary",candidate,2459
+senate,"Sullivan, Dan S.","Sullivan, Daniel J. Jr.",candidate,3148
+senate,"Sullivan, Daniel J. Jr.","Heikes, Gerald L.",candidate,627
+senate,"Sullivan, Daniel J. Jr.",No further choice,exhausted,1243
+senate,"Sullivan, Daniel J. Jr.",Overvote,overvote,6
+senate,"Sullivan, Daniel J. Jr.","Peltola, Mary",candidate,991
+senate,"Sullivan, Daniel J. Jr.","Sullivan, Dan S.",candidate,559
+house,"Begich, Nick","Hafner, Eric",candidate,2385
+house,"Begich, Nick","Hill, Bill",candidate,7253
+house,"Begich, Nick","McDermott, James C. ""Jim""",candidate,12967
+house,"Begich, Nick",No further choice,exhausted,79328
+house,"Begich, Nick",Overvote,overvote,20
+house,"Hafner, Eric","Begich, Nick",candidate,724
+house,"Hafner, Eric","Hill, Bill",candidate,5443
+house,"Hafner, Eric","McDermott, James C. ""Jim""",candidate,1737
+house,"Hafner, Eric",No further choice,exhausted,6632
+house,"Hafner, Eric",Overvote,overvote,11
+house,"Hill, Bill","Begich, Nick",candidate,4671
+house,"Hill, Bill","Hafner, Eric",candidate,14898
+house,"Hill, Bill","McDermott, James C. ""Jim""",candidate,12845
+house,"Hill, Bill",No further choice,exhausted,48240
+house,"Hill, Bill",Overvote,overvote,19
+house,"McDermott, James C. ""Jim""","Begich, Nick",candidate,1540
+house,"McDermott, James C. ""Jim""","Hafner, Eric",candidate,658
+house,"McDermott, James C. ""Jim""","Hill, Bill",candidate,1517
+house,"McDermott, James C. ""Jim""",No further choice,exhausted,1749
+house,"McDermott, James C. ""Jim""",Overvote,overvote,7
+governor,Bronson/Church,Kreiss-Tomkins/Johnson,candidate,1375
+governor,Bronson/Church,No further choice,exhausted,9718
+governor,Bronson/Church,Overvote,overvote,24
+governor,Bronson/Church,Taylor/English,candidate,7799
+governor,Bronson/Church,Wilson/Shower,candidate,9676
+governor,Kreiss-Tomkins/Johnson,Bronson/Church,candidate,9659
+governor,Kreiss-Tomkins/Johnson,No further choice,exhausted,74398
+governor,Kreiss-Tomkins/Johnson,Overvote,overvote,23
+governor,Kreiss-Tomkins/Johnson,Taylor/English,candidate,8746
+governor,Kreiss-Tomkins/Johnson,Wilson/Shower,candidate,5173
+governor,Taylor/English,Bronson/Church,candidate,4352
+governor,Taylor/English,Kreiss-Tomkins/Johnson,candidate,788
+governor,Taylor/English,No further choice,exhausted,4853
+governor,Taylor/English,Overvote,overvote,9
+governor,Taylor/English,Wilson/Shower,candidate,4902
+governor,Wilson/Shower,Bronson/Church,candidate,25446
+governor,Wilson/Shower,Kreiss-Tomkins/Johnson,candidate,1067
+governor,Wilson/Shower,No further choice,exhausted,17976
+governor,Wilson/Shower,Overvote,overvote,44
+governor,Wilson/Shower,Taylor/English,candidate,15207

@@ -1,0 +1,13 @@
+contest_id,candidate,display,short,party,round1_order,color_slot
+senate,"Sullivan, Dan S.",Dan S. Sullivan,Sullivan (R),R,1,7
+senate,"Peltola, Mary",Mary Peltola,Peltola,D,2,0
+senate,"Heikes, Gerald L.",Gerald L. Heikes,Heikes,R,3,1
+senate,"Sullivan, Daniel J. Jr.",Daniel J. Sullivan Jr.,Sullivan Jr.,,4,2
+house,"Begich, Nick",Nick Begich,Begich,R,1,7
+house,"Hill, Bill",Bill Hill,Hill,N,2,1
+house,"Hafner, Eric",Eric Hafner,Hafner,D,3,0
+house,"McDermott, James C. ""Jim""","James C. ""Jim"" McDermott",McDermott,L,4,2
+governor,Kreiss-Tomkins/Johnson,Kreiss-Tomkins/Johnson,Kreiss-Tomkins,D/N,1,0
+governor,Wilson/Shower,Wilson/Shower,Wilson,R,2,7
+governor,Bronson/Church,Bronson/Church,Bronson,R,3,1
+governor,Taylor/English,Taylor/English,Taylor,R,4,2

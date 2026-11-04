@@ -14,16 +14,18 @@ Uses each ballot's current version (adjudicated if modified) and only marks the 
 contest with no votes and an undervote count of 0 is not counted in that contest. These rules reproduce the Division's
 official 2024 RCV reports from its 2024 CVR (see validate_2024.txt).
 usage: python3 -I ak_rcv.py <cvr dir> <out.json> [--all-rounds] [contest name ...]   (default: every candidacy contest)
---all-rounds keeps eliminating after a round-1 majority, for information (the law stops there)"""
+--all-rounds keeps eliminating after a round-1 majority, for information (the law stops there)
+Other scripts import it (load, read_cvr, tabulate)."""
 import collections, glob, json, os, sys
 
-D, OUT = sys.argv[1], sys.argv[2]
-ALL = "--all-rounds" in sys.argv
-WANT = [a for a in sys.argv[3:] if a != "--all-rounds"]
-man = lambda n: json.load(open(f"{D}/{n}Manifest.json"))["List"]
-contests = {c["Id"]: c for c in man("Contest") if c["Type"] == "Candidacy" and (not WANT or c["Description"] in WANT)}
-cands = {c["Id"]: c for c in man("Candidate")}
-groups = {g["Id"]: g["Description"] for g in man("CountingGroup")}
+STATEWIDE = ("U.S. Senator", "U.S. Representative", "Governor / Lieutenant Governor")
+
+
+def load(D, want=()):
+    """the CVR's manifests: candidacy contests (all, or those named), candidates, counting groups"""
+    man = lambda n: json.load(open(f"{D}/{n}Manifest.json"))["List"]
+    contests = {c["Id"]: c for c in man("Contest") if c["Type"] == "Candidacy" and (not want or c["Description"] in want)}
+    return contests, {c["Id"]: c for c in man("Candidate")}, {g["Id"]: g["Description"] for g in man("CountingGroup")}
 
 
 def sessions(path):
@@ -44,31 +46,43 @@ def current(s):
     return m if m and m.get("IsCurrent") else s["Original"]
 
 
-# ballot patterns per contest: tuple over ranks 1..N of the sorted candidate ids voted at that rank
-pat = {cid: collections.Counter() for cid in contests}
-by_group = {cid: collections.Counter() for cid in contests}
-not_counted = collections.Counter()
-n_sessions = 0
-files = sorted(glob.glob(f"{D}/CvrExport*.json"))
-for f in files:
-    for s in sessions(f):
-        n_sessions += 1
-        for card in current(s)["Cards"]:
-            for c in card["Contests"]:
-                if c["Id"] not in pat: continue
-                ranks = [[] for _ in range(contests[c["Id"]]["NumOfRanks"])]
-                for m in c["Marks"]:
-                    if m["IsVote"]: ranks[m["Rank"] - 1].append(m["CandidateId"])
-                if not any(ranks) and c["Undervotes"] == 0:
-                    not_counted[c["Id"]] += 1
-                    continue
-                seen, key = set(), []
-                for r in ranks:
-                    key.append(() if len(r) == 1 and r[0] in seen else tuple(sorted(r)))
-                    seen |= set(r)
-                key = tuple(key)
-                pat[c["Id"]][key] += 1
-                by_group[c["Id"]][groups.get(s.get("CountingGroupId"), "?")] += 1
+def ballot_key(c, nranks):
+    """a contest on one ballot as a tuple over ranks 1..N of the sorted candidate ids voted at that rank, with repeat
+    rankings of a candidate blanked; None when the contest is not counted (no votes and an undervote count of 0)"""
+    ranks = [[] for _ in range(nranks)]
+    for m in c["Marks"]:
+        if m["IsVote"]: ranks[m["Rank"] - 1].append(m["CandidateId"])
+    if not any(ranks) and c["Undervotes"] == 0: return None
+    seen, key = set(), []
+    for r in ranks:
+        key.append(() if len(r) == 1 and r[0] in seen else tuple(sorted(r)))
+        seen |= set(r)
+    return tuple(key)
+
+
+def read_cvr(D, contests, groups, each=None):
+    """ballot patterns per contest, counting groups, contests not counted; each(session, version, contest id, key) is
+    called for every counted contest on every ballot"""
+    pat = {cid: collections.Counter() for cid in contests}
+    by_group = {cid: collections.Counter() for cid in contests}
+    not_counted = collections.Counter()
+    n_sessions = 0
+    files = sorted(glob.glob(f"{D}/CvrExport*.json"))
+    for f in files:
+        for s in sessions(f):
+            n_sessions += 1
+            v = current(s)
+            for card in v["Cards"]:
+                for c in card["Contests"]:
+                    if c["Id"] not in pat: continue
+                    key = ballot_key(c, contests[c["Id"]]["NumOfRanks"])
+                    if key is None:
+                        not_counted[c["Id"]] += 1
+                        continue
+                    pat[c["Id"]][key] += 1
+                    by_group[c["Id"]][groups.get(s.get("CountingGroupId"), "?")] += 1
+                    if each: each(s, v, c["Id"], key)
+    return pat, by_group, not_counted, n_sessions, len(files)
 
 
 def state(key, active):
@@ -85,11 +99,13 @@ def state(key, active):
     return "exhausted"
 
 
-def tabulate(cid):
-    P = pat[cid]
+def tabulate(cid, P, contests, cands, by_group=None, not_counted=None, all_rounds=False, order=None):
+    """the rounds for ballot patterns P; order (candidate names) forces the eliminations, as for one district's ballots
+    under the statewide count"""
     regular = [k for k, c in cands.items() if c["ContestId"] == cid and c["Type"] != "WriteIn"]
     writein = {k for k, c in cands.items() if c["ContestId"] == cid and c["Type"] == "WriteIn"}
     name = lambda k: cands[k]["Description"] if isinstance(k, int) else k
+    by_name = {cands[k]["Description"]: k for k in regular}
     total = sum(P.values())
     # first choices with write-ins included, overvotes apart
     first = collections.Counter()
@@ -112,13 +128,17 @@ def tabulate(cid):
              "continuing": cont, "blanks": nb, "exhausted": inactive["exhausted"], "overvotes": inactive["overvote"]}
         rounds.append(r)
         top = max(tally.values()) if tally else 0
-        if len(active) <= 2 or (not ALL and len(rounds) == 1 and 2 * top > cont): break
-        low = min(tally.values())
-        last = [c for c in active if tally[c] == low]
-        if len(last) > 1:
-            out_note = f"tie for last in round {r['round']}: {', '.join(name(c) for c in last)} (Alaska breaks ties by lot); stopped"
-            break
-        e = last[0]
+        if order is not None:
+            if len(rounds) > len(order): break
+            e = by_name[order[len(rounds) - 1]]
+        else:
+            if len(active) <= 2 or (not all_rounds and len(rounds) == 1 and 2 * top > cont): break
+            low = min(tally.values())
+            last = [c for c in active if tally[c] == low]
+            if len(last) > 1:
+                out_note = f"tie for last in round {r['round']}: {', '.join(name(c) for c in last)} (Alaska breaks ties by lot); stopped"
+                break
+            e = last[0]
         active.discard(e)
         moved = collections.Counter()
         for k, s in where.items():
@@ -129,21 +149,33 @@ def tabulate(cid):
         r["eliminated"] = name(e)
         r["transfers"] = dict(moved.most_common())
     win = max(rounds[-1]["votes"], key=rounds[-1]["votes"].get)
-    return {"contest": contests[cid]["Description"], "ballots": total, "not_counted_no_votes_no_undervote": not_counted[cid], "by_counting_group": dict(by_group[cid]),
+    return {"contest": contests[cid]["Description"], "ballots": total,
+            "not_counted_no_votes_no_undervote": (not_counted or {}).get(cid, 0), "by_counting_group": dict((by_group or {}).get(cid, {})),
             "first_choices_incl_writeins": dict(first.most_common()), "rounds": rounds, "leader_final_round": win, "note": out_note}
 
 
-res = {"cvr_dir": os.path.abspath(D), "all_rounds": ALL, "files": len(files), "sessions": n_sessions,
-       "contests": [tabulate(cid) for cid in sorted(contests, key=lambda c: (contests[c]["DistrictId"] != 67 and c != 5, c))]}
-json.dump(res, open(OUT, "w"), indent=1)
-print(f"{n_sessions:,} ballot sessions in {len(files)} file(s)")
-for c in res["contests"]:
-    if WANT or c["contest"] in ("U.S. Senator", "U.S. Representative", "Governor / Lieutenant Governor"):
-        print(f"\n== {c['contest']}: {c['ballots']:,} ballots with the contest")
-        for r in c["rounds"]:
-            tot = r["continuing"]
-            print(f" Round {r['round']}: " + "; ".join(f"{k} {v:,} ({100 * v / tot:.2f}%)" for k, v in r["votes"].items())
-                  + f" | continuing {tot:,}, blanks {r['blanks']:,}, exhausted {r['exhausted']:,}, overvotes {r['overvotes']:,}")
-            if "eliminated" in r:
-                print(f"   {r['eliminated']} eliminated -> " + ", ".join(f"{k} {v:,}" for k, v in r["transfers"].items()))
-        if c["note"]: print(" NOTE:", c["note"])
+def main():
+    D, OUT = sys.argv[1], sys.argv[2]
+    ALL = "--all-rounds" in sys.argv
+    WANT = [a for a in sys.argv[3:] if a != "--all-rounds"]
+    contests, cands, groups = load(D, WANT)
+    pat, by_group, not_counted, n_sessions, n_files = read_cvr(D, contests, groups)
+    res = {"cvr_dir": os.path.abspath(D), "all_rounds": ALL, "files": n_files, "sessions": n_sessions,
+           "contests": [tabulate(cid, pat[cid], contests, cands, by_group, not_counted, ALL)
+                        for cid in sorted(contests, key=lambda c: (contests[c]["DistrictId"] != 67 and c != 5, c))]}
+    json.dump(res, open(OUT, "w"), indent=1)
+    print(f"{n_sessions:,} ballot sessions in {n_files} file(s)")
+    for c in res["contests"]:
+        if WANT or c["contest"] in STATEWIDE:
+            print(f"\n== {c['contest']}: {c['ballots']:,} ballots with the contest")
+            for r in c["rounds"]:
+                tot = r["continuing"]
+                print(f" Round {r['round']}: " + "; ".join(f"{k} {v:,} ({100 * v / tot:.2f}%)" for k, v in r["votes"].items())
+                      + f" | continuing {tot:,}, blanks {r['blanks']:,}, exhausted {r['exhausted']:,}, overvotes {r['overvotes']:,}")
+                if "eliminated" in r:
+                    print(f"   {r['eliminated']} eliminated -> " + ", ".join(f"{k} {v:,}" for k, v in r["transfers"].items()))
+            if c["note"]: print(" NOTE:", c["note"])
+
+
+if __name__ == "__main__":
+    main()
