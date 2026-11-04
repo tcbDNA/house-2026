@@ -1,6 +1,7 @@
 import type {
   AxisWeights, GovernorResponse, ModelDefaults, ProjectResponse, SenateResponse, SliderValues,
 } from "./types";
+import { MODEL_DEFAULTS } from "./types";
 
 // Scenario-wide fields every projection request carries: the active slider
 // frame (it picks the trend regression's demographic basis) and settings
@@ -106,8 +107,10 @@ export async function fetchCounties(
 }
 
 export async function fetchCountyGeoJSON(state: string): Promise<any> {
-  // Alaska: house districts or boroughs, per the ak_house_district_map setting
-  const ak = requestContext.settings.ak_house_district_map;
+  // Alaska: house districts or boroughs, per the ak_house_district_map setting.
+  // Always explicit: the parameterless URL served boroughs until Nov 4, and
+  // browsers keep that response for a day (Cache-Control max-age=86400).
+  const ak = requestContext.settings.ak_house_district_map ?? MODEL_DEFAULTS.settings.ak_house_district_map;
   const q = state === "AK" && ak !== undefined ? `?ak_house_district_map=${ak}` : "";
   const res = await fetch(`/api/state/${state}/county_geojson${q}`);
   if (!res.ok) throw new Error(`county geojson failed: ${res.status}`);
