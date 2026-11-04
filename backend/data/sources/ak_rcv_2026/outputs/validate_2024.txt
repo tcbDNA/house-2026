@@ -1,0 +1,24 @@
+== U.S. Representative (RCV-USRep.pdf)
+ round 1: MATCH  official {'Begich, Nick': 159777, 'Hafner, Eric': 3558, 'Howe, John Wayne': 13210, 'Peltola, Mary S.': 152948} cont/blank/exh/over [329493, 5788, 0, 572]
+ round 2: MATCH  official {'Begich, Nick': 160044, 'Howe, John Wayne': 13871, 'Peltola, Mary S.': 154261} cont/blank/exh/over [328176, 5788, 1300, 589]
+ round 3: MATCH  official {'Begich, Nick': 164861, 'Peltola, Mary S.': 156985} cont/blank/exh/over [321846, 5788, 7595, 624]
+== House District 6 (RCV-HD6.pdf)
+ round 1: MATCH  official {'Vance, Sarah L.': 5363, 'Johnson, Brent': 4965, 'Slaughter, Dawson R.': 1078} cont/blank/exh/over [11406, 376, 0, 16]
+ round 2: MATCH  official {'Vance, Sarah L.': 5638, 'Johnson, Brent': 5150} cont/blank/exh/over [10788, 376, 618, 16]
+== House District 36 (RCV-HD36.pdf)
+ round 1: MATCH  official {'Goode, Pamela': 2291, 'Kowalski, Brandon P. "Putuuqti"': 2953, 'Fields, James': 498, 'Schwanke, Rebecca A.': 3189} cont/blank/exh/over [8931, 431, 0, 20]
+ round 2: MATCH  official {'Goode, Pamela': 2362, 'Kowalski, Brandon P. "Putuuqti"': 3022, 'Schwanke, Rebecca A.': 3282} cont/blank/exh/over [8666, 431, 264, 21]
+ round 3: MATCH  official {'Kowalski, Brandon P. "Putuuqti"': 3155, 'Schwanke, Rebecca A.': 4070} cont/blank/exh/over [7225, 431, 1698, 28]
+== House District 40 (RCV-HD40.pdf)
+ round 1: MATCH  official {'Chase, Saima "Ikrik"': 874, 'Baker, Thomas C. "Ikaaq"': 743, 'Burke, Robyn "Niayuq"': 1425} cont/blank/exh/over [3042, 117, 0, 11]
+ round 2: MATCH  official {'Chase, Saima "Ikrik"': 1008, 'Burke, Robyn "Niayuq"': 1541} cont/blank/exh/over [2549, 117, 489, 15]
+== Senate District D (RCV-SenD.pdf)
+ round 1: MATCH  official {'Carpenter, Ben': 7865, 'Wegener, Tina': 2196, 'Bjorkman, Jesse J.': 9257} cont/blank/exh/over [19318, 803, 0, 17]
+ round 2: MATCH  official {'Carpenter, Ben': 8114, 'Bjorkman, Jesse J.': 9802} cont/blank/exh/over [17916, 803, 1399, 20]
+== Senate District F (RCV-SenF.pdf)
+ round 1: MATCH  official {'Kaufman, James D.': 8180, 'Park, Janice L.': 7657, 'Borbridge, Harold': 1184} cont/blank/exh/over [17021, 935, 0, 11]
+ round 2: MATCH  official {'Kaufman, James D.': 8678, 'Park, Janice L.': 7744} cont/blank/exh/over [16422, 935, 599, 11]
+== Senate District L (RCV-SenL.pdf)
+ round 1: MATCH  official {'Goecker, Jared D.': 7698, 'Merrick, Kelly R.': 9092, 'Hammermeister, Lee E.': 2770} cont/blank/exh/over [19560, 761, 0, 19]
+ round 2: MATCH  official {'Goecker, Jared D.': 7939, 'Merrick, Kelly R.': 9892} cont/blank/exh/over [17831, 761, 1728, 20]
+ALL MATCH

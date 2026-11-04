@@ -1,0 +1,170 @@
+{
+ "U.S. Senator": {
+  "hand_counted_first_choices": {
+   "Heikes, Gerald L.": 620,
+   "Peltola, Mary": 7070,
+   "Sullivan, Dan S.": 2605,
+   "Sullivan, Daniel J. Jr.": 253
+  },
+  "hand_counted_writeins": 47,
+  "combined_rounds_scenario": [
+   {
+    "round": 1,
+    "votes": {
+     "Peltola, Mary": 102862,
+     "Sullivan, Dan S.": 102222,
+     "Heikes, Gerald L.": 5000,
+     "Sullivan, Daniel J. Jr.": 3679
+    }
+   },
+   {
+    "round": 2,
+    "votes": {
+     "Peltola, Mary": 103926,
+     "Sullivan, Dan S.": 102822,
+     "Heikes, Gerald L.": 5673
+    }
+   },
+   {
+    "round": 3,
+    "votes": {
+     "Sullivan, Dan S.": 105277,
+     "Peltola, Mary": 104915
+    }
+   }
+  ],
+  "elimination_order_unchanged": true,
+  "scenario_final": {
+   "Sullivan, Dan S.": 105277,
+   "Peltola, Mary": 104915
+  },
+  "scenario_margin": {
+   "leader": "Sullivan, Dan S.",
+   "votes": 362,
+   "pts": 0.17222349090355485
+  },
+  "bounds": {
+   "finalists_before_hand_transfers": {
+    "Sullivan, Dan S.": 104947,
+    "Peltola, Mary": 104726
+   },
+   "hand_votes_that_could_move": 920,
+   "Sullivan, Dan S._minus_Peltola, Mary_range": [
+    -699,
+    1141
+   ]
+  }
+ },
+ "U.S. Representative": {
+  "hand_counted_first_choices": {
+   "Begich, Nick": 3574,
+   "Hafner, Eric": 1040,
+   "Hill, Bill": 5363,
+   "McDermott, James C. \"Jim\"": 362
+  },
+  "hand_counted_writeins": 40,
+  "combined_rounds_scenario": [
+   {
+    "round": 1,
+    "votes": {
+     "Begich, Nick": 105527,
+     "Hill, Bill": 86036,
+     "Hafner, Eric": 15587,
+     "McDermott, James C. \"Jim\"": 5833
+    }
+   },
+   {
+    "round": 2,
+    "votes": {
+     "Begich, Nick": 107169,
+     "Hill, Bill": 87653,
+     "Hafner, Eric": 16289
+    }
+   },
+   {
+    "round": 3,
+    "votes": {
+     "Begich, Nick": 108291,
+     "Hill, Bill": 95061
+    }
+   }
+  ],
+  "elimination_order_unchanged": true,
+  "scenario_final": {
+   "Begich, Nick": 108291,
+   "Hill, Bill": 95061
+  },
+  "scenario_margin": {
+   "leader": "Begich, Nick",
+   "votes": 13230,
+   "pts": 6.505960108580196
+  },
+  "bounds": {
+   "finalists_before_hand_transfers": {
+    "Begich, Nick": 108114,
+    "Hill, Bill": 94468
+   },
+   "hand_votes_that_could_move": 1442,
+   "Begich, Nick_minus_Hill, Bill_range": [
+    12204,
+    15088
+   ]
+  }
+ },
+ "Governor / Lieutenant Governor": {
+  "hand_counted_first_choices": {
+   "Bronson/Church": 1461,
+   "Kreiss-Tomkins/Johnson": 5891,
+   "Taylor/English": 910,
+   "Wilson/Shower": 1939
+  },
+  "hand_counted_writeins": 47,
+  "combined_rounds_scenario": [
+   {
+    "round": 1,
+    "votes": {
+     "Kreiss-Tomkins/Johnson": 103890,
+     "Wilson/Shower": 61679,
+     "Bronson/Church": 30053,
+     "Taylor/English": 15814
+    }
+   },
+   {
+    "round": 2,
+    "votes": {
+     "Kreiss-Tomkins/Johnson": 104726,
+     "Wilson/Shower": 66880,
+     "Bronson/Church": 34671
+    }
+   },
+   {
+    "round": 3,
+    "votes": {
+     "Kreiss-Tomkins/Johnson": 107022,
+     "Wilson/Shower": 86774
+    }
+   }
+  ],
+  "elimination_order_unchanged": true,
+  "scenario_final": {
+   "Kreiss-Tomkins/Johnson": 107022,
+   "Wilson/Shower": 86774
+  },
+  "scenario_margin": {
+   "leader": "Kreiss-Tomkins/Johnson",
+   "votes": 20248,
+   "pts": 10.448100063984809
+  },
+  "bounds": {
+   "finalists_before_hand_transfers": {
+    "Kreiss-Tomkins/Johnson": 106860,
+    "Wilson/Shower": 85484
+   },
+   "hand_votes_that_could_move": 2418,
+   "Kreiss-Tomkins/Johnson_minus_Wilson/Shower_range": [
+    18958,
+    23794
+   ]
+  }
+ }
+}

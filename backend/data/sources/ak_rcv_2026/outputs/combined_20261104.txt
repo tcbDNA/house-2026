@@ -1,0 +1,21 @@
+
+== U.S. Senator: hand-counted first choices {'Heikes, Gerald L.': 620, 'Peltola, Mary': 7070, 'Sullivan, Dan S.': 2605, 'Sullivan, Daniel J. Jr.': 253}, write-ins 47
+  round 1: Peltola, Mary 102,862; Sullivan, Dan S. 102,222; Heikes, Gerald L. 5,000; Sullivan, Daniel J. Jr. 3,679
+  round 2: Peltola, Mary 103,926; Sullivan, Dan S. 102,822; Heikes, Gerald L. 5,673
+  round 3: Sullivan, Dan S. 105,277; Peltola, Mary 104,915
+  scenario: Sullivan, Dan S. by 362 (0.17 pts); elimination order unchanged: True
+  bounds: Sullivan, Dan S. minus Peltola, Mary from -699 to +1,141 (920 hand-counted votes for others or write-ins)
+
+== U.S. Representative: hand-counted first choices {'Begich, Nick': 3574, 'Hafner, Eric': 1040, 'Hill, Bill': 5363, 'McDermott, James C. "Jim"': 362}, write-ins 40
+  round 1: Begich, Nick 105,527; Hill, Bill 86,036; Hafner, Eric 15,587; McDermott, James C. "Jim" 5,833
+  round 2: Begich, Nick 107,169; Hill, Bill 87,653; Hafner, Eric 16,289
+  round 3: Begich, Nick 108,291; Hill, Bill 95,061
+  scenario: Begich, Nick by 13,230 (6.51 pts); elimination order unchanged: True
+  bounds: Begich, Nick minus Hill, Bill from +12,204 to +15,088 (1,442 hand-counted votes for others or write-ins)
+
+== Governor / Lieutenant Governor: hand-counted first choices {'Bronson/Church': 1461, 'Kreiss-Tomkins/Johnson': 5891, 'Taylor/English': 910, 'Wilson/Shower': 1939}, write-ins 47
+  round 1: Kreiss-Tomkins/Johnson 103,890; Wilson/Shower 61,679; Bronson/Church 30,053; Taylor/English 15,814
+  round 2: Kreiss-Tomkins/Johnson 104,726; Wilson/Shower 66,880; Bronson/Church 34,671
+  round 3: Kreiss-Tomkins/Johnson 107,022; Wilson/Shower 86,774
+  scenario: Kreiss-Tomkins/Johnson by 20,248 (10.45 pts); elimination order unchanged: True
+  bounds: Kreiss-Tomkins/Johnson minus Wilson/Shower from +18,958 to +23,794 (2,418 hand-counted votes for others or write-ins)

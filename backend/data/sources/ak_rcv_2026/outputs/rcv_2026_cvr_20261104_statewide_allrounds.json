@@ -1,0 +1,230 @@
+{
+ "cvr_dir": "/private/tmp/claude-501/-Users-tcb-dna-projects-house-2026/a6e63785-1914-44f5-80d6-2a880cd055a8/scratchpad/ak_1104/cvr",
+ "all_rounds": true,
+ "files": 1,
+ "sessions": 204530,
+ "contests": [
+  {
+   "contest": "Governor / Lieutenant Governor",
+   "ballots": 204400,
+   "not_counted_no_votes_no_undervote": 0,
+   "by_counting_group": {
+    "Early Voting": 50112,
+    "Election Day": 145938,
+    "Absentee": 8350
+   },
+   "first_choices_incl_writeins": {
+    "Kreiss-Tomkins/Johnson": 97808,
+    "Wilson/Shower": 59702,
+    "Bronson/Church": 28548,
+    "Taylor/English": 14869,
+    "exhausted": 2728,
+    "Write-in": 564,
+    "overvote": 181
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Kreiss-Tomkins/Johnson": 97999,
+      "Wilson/Shower": 59740,
+      "Bronson/Church": 28592,
+      "Taylor/English": 14904
+     },
+     "continuing": 201235,
+     "blanks": 2984,
+     "exhausted": 0,
+     "overvotes": 181,
+     "eliminated": "Taylor/English",
+     "transfers": {
+      "Wilson/Shower": 4902,
+      "exhausted": 4853,
+      "Bronson/Church": 4352,
+      "Kreiss-Tomkins/Johnson": 788,
+      "overvote": 9
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Kreiss-Tomkins/Johnson": 98787,
+      "Wilson/Shower": 64642,
+      "Bronson/Church": 32944
+     },
+     "continuing": 196373,
+     "blanks": 2984,
+     "exhausted": 4853,
+     "overvotes": 190,
+     "eliminated": "Bronson/Church",
+     "transfers": {
+      "Wilson/Shower": 18903,
+      "exhausted": 11828,
+      "Kreiss-Tomkins/Johnson": 2182,
+      "overvote": 31
+     }
+    },
+    {
+     "round": 3,
+     "votes": {
+      "Kreiss-Tomkins/Johnson": 100969,
+      "Wilson/Shower": 83545
+     },
+     "continuing": 184514,
+     "blanks": 2984,
+     "exhausted": 16681,
+     "overvotes": 221
+    }
+   ],
+   "leader_final_round": "Kreiss-Tomkins/Johnson",
+   "note": null
+  },
+  {
+   "contest": "U.S. Senator",
+   "ballots": 204530,
+   "not_counted_no_votes_no_undervote": 0,
+   "by_counting_group": {
+    "Early Voting": 50112,
+    "Election Day": 145938,
+    "Absentee": 8480
+   },
+   "first_choices_incl_writeins": {
+    "Sullivan, Dan S.": 99523,
+    "Peltola, Mary": 95675,
+    "Heikes, Gerald L.": 4282,
+    "Sullivan, Daniel J. Jr.": 3372,
+    "exhausted": 796,
+    "Write-in": 646,
+    "overvote": 236
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Sullivan, Dan S.": 99617,
+      "Peltola, Mary": 95792,
+      "Heikes, Gerald L.": 4380,
+      "Sullivan, Daniel J. Jr.": 3426
+     },
+     "continuing": 203215,
+     "blanks": 1079,
+     "exhausted": 0,
+     "overvotes": 236,
+     "eliminated": "Sullivan, Daniel J. Jr.",
+     "transfers": {
+      "exhausted": 1243,
+      "Peltola, Mary": 991,
+      "Heikes, Gerald L.": 627,
+      "Sullivan, Dan S.": 559,
+      "overvote": 6
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Sullivan, Dan S.": 100176,
+      "Peltola, Mary": 96783,
+      "Heikes, Gerald L.": 5007
+     },
+     "continuing": 201966,
+     "blanks": 1079,
+     "exhausted": 1243,
+     "overvotes": 242,
+     "eliminated": "Heikes, Gerald L.",
+     "transfers": {
+      "Sullivan, Dan S.": 2166,
+      "exhausted": 1961,
+      "Peltola, Mary": 873,
+      "overvote": 7
+     }
+    },
+    {
+     "round": 3,
+     "votes": {
+      "Sullivan, Dan S.": 102342,
+      "Peltola, Mary": 97656
+     },
+     "continuing": 199998,
+     "blanks": 1079,
+     "exhausted": 3204,
+     "overvotes": 249
+    }
+   ],
+   "leader_final_round": "Sullivan, Dan S.",
+   "note": null
+  },
+  {
+   "contest": "U.S. Representative",
+   "ballots": 204530,
+   "not_counted_no_votes_no_undervote": 0,
+   "by_counting_group": {
+    "Early Voting": 50112,
+    "Election Day": 145938,
+    "Absentee": 8480
+   },
+   "first_choices_incl_writeins": {
+    "Begich, Nick": 101925,
+    "Hill, Bill": 80606,
+    "Hafner, Eric": 14530,
+    "McDermott, James C. \"Jim\"": 5447,
+    "exhausted": 1631,
+    "Write-in": 305,
+    "overvote": 86
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Begich, Nick": 101953,
+      "Hill, Bill": 80673,
+      "Hafner, Eric": 14547,
+      "McDermott, James C. \"Jim\"": 5471
+     },
+     "continuing": 202644,
+     "blanks": 1799,
+     "exhausted": 0,
+     "overvotes": 87,
+     "eliminated": "McDermott, James C. \"Jim\"",
+     "transfers": {
+      "exhausted": 1749,
+      "Begich, Nick": 1540,
+      "Hill, Bill": 1517,
+      "Hafner, Eric": 658,
+      "overvote": 7
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Begich, Nick": 103493,
+      "Hill, Bill": 82190,
+      "Hafner, Eric": 15205
+     },
+     "continuing": 200888,
+     "blanks": 1799,
+     "exhausted": 1749,
+     "overvotes": 94,
+     "eliminated": "Hafner, Eric",
+     "transfers": {
+      "exhausted": 7229,
+      "Hill, Bill": 6915,
+      "Begich, Nick": 1047,
+      "overvote": 14
+     }
+    },
+    {
+     "round": 3,
+     "votes": {
+      "Begich, Nick": 104540,
+      "Hill, Bill": 89105
+     },
+     "continuing": 193645,
+     "blanks": 1799,
+     "exhausted": 8978,
+     "overvotes": 108
+    }
+   ],
+   "leader_final_round": "Begich, Nick",
+   "note": null
+  }
+ ]
+}

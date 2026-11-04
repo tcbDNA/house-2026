@@ -1,0 +1,22 @@
+precincts 444; CSV ballots 215,335, CVR ballots 204,530
+precincts with CSV ballots and none in the CVR: 138 (10,805 ballots)
+precincts in both with different counts: 0 (CSV-CVR +0)
+CSV-CVR ballots by counting group: {'Election Day': 10805, 'Absentee': 0, 'Early Voting': 0, 'Question': 0, 'Remote': 0}
+
+U.S. Senator: rank-1 votes  CSV | CVR | CSV-CVR | in precincts with no CVR ballots
+  Heikes, Gerald L.                   4,821    4,201     +620      620
+  Peltola, Mary                     102,701   95,631   +7,070    7,070
+  Sullivan, Dan S.                  102,075   99,470   +2,605    2,605
+  Sullivan, Daniel J. Jr.             3,583    3,330     +253      253
+
+U.S. Representative: rank-1 votes  CSV | CVR | CSV-CVR | in precincts with no CVR ballots
+  Begich, Nick                      105,353  101,779   +3,574    3,574
+  Hafner, Eric                       15,501   14,461   +1,040    1,040
+  Hill, Bill                         85,838   80,475   +5,363    5,363
+  McDermott, James C. "Jim"           5,763    5,401     +362      362
+
+Governor / Lieutenant Governor: rank-1 votes  CSV | CVR | CSV-CVR | in precincts with no CVR ballots
+  Bronson/Church                     29,900   28,439   +1,461    1,461
+  Kreiss-Tomkins/Johnson            103,610   97,719   +5,891    5,891
+  Taylor/English                     15,713   14,803     +910      910
+  Wilson/Shower                      61,566   59,627   +1,939    1,939

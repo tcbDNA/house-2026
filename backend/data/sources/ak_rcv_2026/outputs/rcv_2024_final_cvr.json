@@ -1,0 +1,1960 @@
+{
+ "cvr_dir": "/private/tmp/claude-501/-Users-tcb-dna-projects-house-2026/a6e63785-1914-44f5-80d6-2a880cd055a8/scratchpad/ak_1104/cvr24",
+ "all_rounds": false,
+ "files": 2028,
+ "sessions": 340778,
+ "contests": [
+  {
+   "contest": "U.S. President / Vice President",
+   "ballots": 340778,
+   "not_counted_no_votes_no_undervote": 0,
+   "by_counting_group": {
+    "Election Day": 177295,
+    "Early Voting": 71187,
+    "Absentee": 77510,
+    "Question": 14786
+   },
+   "first_choices_incl_writeins": {
+    "Trump/Vance": 184423,
+    "Harris/Walz": 139952,
+    "Kennedy/Shanahan": 5654,
+    "Oliver/Maat": 3046,
+    "Stein/Ware": 2344,
+    "exhausted": 1888,
+    "West/Abdullah": 1127,
+    "overvote": 825,
+    "Terry/Broden": 814,
+    "Sonski/Onak": 705
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Trump/Vance": 184423,
+      "Harris/Walz": 139952,
+      "Kennedy/Shanahan": 5654,
+      "Oliver/Maat": 3046,
+      "Stein/Ware": 2344,
+      "West/Abdullah": 1127,
+      "Terry/Broden": 814,
+      "Sonski/Onak": 705
+     },
+     "continuing": 338065,
+     "blanks": 1888,
+     "exhausted": 0,
+     "overvotes": 825
+    }
+   ],
+   "leader_final_round": "Trump/Vance",
+   "note": null
+  },
+  {
+   "contest": "U.S. Representative",
+   "ballots": 335853,
+   "not_counted_no_votes_no_undervote": 4925,
+   "by_counting_group": {
+    "Election Day": 177295,
+    "Early Voting": 71187,
+    "Absentee": 76340,
+    "Question": 11031
+   },
+   "first_choices_incl_writeins": {
+    "Begich, Nick": 159659,
+    "Peltola, Mary S.": 152837,
+    "Howe, John Wayne": 13133,
+    "exhausted": 5387,
+    "Hafner, Eric": 3523,
+    "Write-in": 745,
+    "overvote": 569
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Begich, Nick": 159777,
+      "Peltola, Mary S.": 152948,
+      "Howe, John Wayne": 13210,
+      "Hafner, Eric": 3558
+     },
+     "continuing": 329493,
+     "blanks": 5788,
+     "exhausted": 0,
+     "overvotes": 572,
+     "eliminated": "Hafner, Eric",
+     "transfers": {
+      "Peltola, Mary S.": 1313,
+      "exhausted": 1300,
+      "Howe, John Wayne": 661,
+      "Begich, Nick": 267,
+      "overvote": 17
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Begich, Nick": 160044,
+      "Peltola, Mary S.": 154261,
+      "Howe, John Wayne": 13871
+     },
+     "continuing": 328176,
+     "blanks": 5788,
+     "exhausted": 1300,
+     "overvotes": 589,
+     "eliminated": "Howe, John Wayne",
+     "transfers": {
+      "exhausted": 6295,
+      "Begich, Nick": 4817,
+      "Peltola, Mary S.": 2724,
+      "overvote": 35
+     }
+    },
+    {
+     "round": 3,
+     "votes": {
+      "Begich, Nick": 164861,
+      "Peltola, Mary S.": 156985
+     },
+     "continuing": 321846,
+     "blanks": 5788,
+     "exhausted": 7595,
+     "overvotes": 624
+    }
+   ],
+   "leader_final_round": "Begich, Nick",
+   "note": null
+  },
+  {
+   "contest": "Senate District B",
+   "ballots": 20177,
+   "not_counted_no_votes_no_undervote": 328,
+   "by_counting_group": {
+    "Election Day": 8001,
+    "Early Voting": 7416,
+    "Absentee": 4238,
+    "Question": 522
+   },
+   "first_choices_incl_writeins": {
+    "Kiehl, Jesse": 15741,
+    "exhausted": 3868,
+    "Write-in": 565,
+    "overvote": 3
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Kiehl, Jesse": 15829
+     },
+     "continuing": 15829,
+     "blanks": 4345,
+     "exhausted": 0,
+     "overvotes": 3
+    }
+   ],
+   "leader_final_round": "Kiehl, Jesse",
+   "note": null
+  },
+  {
+   "contest": "Senate District D",
+   "ballots": 20138,
+   "not_counted_no_votes_no_undervote": 417,
+   "by_counting_group": {
+    "Election Day": 11099,
+    "Absentee": 3815,
+    "Early Voting": 4985,
+    "Question": 239
+   },
+   "first_choices_incl_writeins": {
+    "Bjorkman, Jesse J.": 9246,
+    "Carpenter, Ben": 7860,
+    "Wegener, Tina": 2191,
+    "exhausted": 777,
+    "Write-in": 47,
+    "overvote": 17
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Bjorkman, Jesse J.": 9257,
+      "Carpenter, Ben": 7865,
+      "Wegener, Tina": 2196
+     },
+     "continuing": 19318,
+     "blanks": 803,
+     "exhausted": 0,
+     "overvotes": 17,
+     "eliminated": "Wegener, Tina",
+     "transfers": {
+      "exhausted": 1399,
+      "Bjorkman, Jesse J.": 545,
+      "Carpenter, Ben": 249,
+      "overvote": 3
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Bjorkman, Jesse J.": 9802,
+      "Carpenter, Ben": 8114
+     },
+     "continuing": 17916,
+     "blanks": 803,
+     "exhausted": 1399,
+     "overvotes": 20
+    }
+   ],
+   "leader_final_round": "Bjorkman, Jesse J.",
+   "note": null
+  },
+  {
+   "contest": "Senate District F",
+   "ballots": 17967,
+   "not_counted_no_votes_no_undervote": 530,
+   "by_counting_group": {
+    "Absentee": 4338,
+    "Election Day": 10093,
+    "Question": 152,
+    "Early Voting": 3384
+   },
+   "first_choices_incl_writeins": {
+    "Kaufman, James D.": 8171,
+    "Park, Janice L.": 7655,
+    "Borbridge, Harold": 1183,
+    "exhausted": 911,
+    "Write-in": 36,
+    "overvote": 11
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Kaufman, James D.": 8180,
+      "Park, Janice L.": 7657,
+      "Borbridge, Harold": 1184
+     },
+     "continuing": 17021,
+     "blanks": 935,
+     "exhausted": 0,
+     "overvotes": 11,
+     "eliminated": "Borbridge, Harold",
+     "transfers": {
+      "exhausted": 599,
+      "Kaufman, James D.": 498,
+      "Park, Janice L.": 87
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Kaufman, James D.": 8678,
+      "Park, Janice L.": 7744
+     },
+     "continuing": 16422,
+     "blanks": 935,
+     "exhausted": 599,
+     "overvotes": 11
+    }
+   ],
+   "leader_final_round": "Kaufman, James D.",
+   "note": null
+  },
+  {
+   "contest": "Senate District H",
+   "ballots": 18556,
+   "not_counted_no_votes_no_undervote": 571,
+   "by_counting_group": {
+    "Absentee": 4247,
+    "Election Day": 10559,
+    "Question": 170,
+    "Early Voting": 3580
+   },
+   "first_choices_incl_writeins": {
+    "Claman, Matt": 9937,
+    "Vazquez, Liz": 8003,
+    "exhausted": 554,
+    "Write-in": 53,
+    "overvote": 9
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Claman, Matt": 9943,
+      "Vazquez, Liz": 8016
+     },
+     "continuing": 17959,
+     "blanks": 588,
+     "exhausted": 0,
+     "overvotes": 9
+    }
+   ],
+   "leader_final_round": "Claman, Matt",
+   "note": null
+  },
+  {
+   "contest": "Senate District J",
+   "ballots": 11672,
+   "not_counted_no_votes_no_undervote": 721,
+   "by_counting_group": {
+    "Early Voting": 2130,
+    "Election Day": 6539,
+    "Absentee": 2777,
+    "Question": 226
+   },
+   "first_choices_incl_writeins": {
+    "Dunbar, Forrest": 7302,
+    "Smith, Cheronda L.": 3049,
+    "exhausted": 1180,
+    "Write-in": 131,
+    "overvote": 10
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Dunbar, Forrest": 7308,
+      "Smith, Cheronda L.": 3072
+     },
+     "continuing": 10380,
+     "blanks": 1281,
+     "exhausted": 0,
+     "overvotes": 11
+    }
+   ],
+   "leader_final_round": "Dunbar, Forrest",
+   "note": null
+  },
+  {
+   "contest": "Senate District L",
+   "ballots": 20340,
+   "not_counted_no_votes_no_undervote": 584,
+   "by_counting_group": {
+    "Absentee": 4542,
+    "Early Voting": 6777,
+    "Question": 321,
+    "Election Day": 8700
+   },
+   "first_choices_incl_writeins": {
+    "Merrick, Kelly R.": 9084,
+    "Goecker, Jared D.": 7692,
+    "Hammermeister, Lee E.": 2764,
+    "exhausted": 731,
+    "Write-in": 51,
+    "overvote": 18
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Merrick, Kelly R.": 9092,
+      "Goecker, Jared D.": 7698,
+      "Hammermeister, Lee E.": 2770
+     },
+     "continuing": 19560,
+     "blanks": 761,
+     "exhausted": 0,
+     "overvotes": 19,
+     "eliminated": "Hammermeister, Lee E.",
+     "transfers": {
+      "exhausted": 1728,
+      "Merrick, Kelly R.": 800,
+      "Goecker, Jared D.": 241,
+      "overvote": 1
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Merrick, Kelly R.": 9892,
+      "Goecker, Jared D.": 7939
+     },
+     "continuing": 17831,
+     "blanks": 761,
+     "exhausted": 1728,
+     "overvotes": 20
+    }
+   ],
+   "leader_final_round": "Merrick, Kelly R.",
+   "note": null
+  },
+  {
+   "contest": "Senate District N",
+   "ballots": 17500,
+   "not_counted_no_votes_no_undervote": 743,
+   "by_counting_group": {
+    "Question": 364,
+    "Absentee": 2531,
+    "Early Voting": 5785,
+    "Election Day": 8820
+   },
+   "first_choices_incl_writeins": {
+    "Yundt, Robert": 8182,
+    "Wilson, David S.": 4540,
+    "Wright, Stephen": 2632,
+    "exhausted": 1948,
+    "Write-in": 186,
+    "overvote": 12
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Yundt, Robert": 8195,
+      "Wilson, David S.": 4554,
+      "Wright, Stephen": 2642
+     },
+     "continuing": 15391,
+     "blanks": 2097,
+     "exhausted": 0,
+     "overvotes": 12
+    }
+   ],
+   "leader_final_round": "Yundt, Robert",
+   "note": null
+  },
+  {
+   "contest": "Senate District P",
+   "ballots": 11775,
+   "not_counted_no_votes_no_undervote": 1210,
+   "by_counting_group": {
+    "Early Voting": 3061,
+    "Absentee": 1947,
+    "Election Day": 6571,
+    "Question": 196
+   },
+   "first_choices_incl_writeins": {
+    "Kawasaki, Scott": 5918,
+    "Hajdukovich, Leslie W.": 5570,
+    "exhausted": 250,
+    "Write-in": 32,
+    "overvote": 5
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Kawasaki, Scott": 5921,
+      "Hajdukovich, Leslie W.": 5580
+     },
+     "continuing": 11501,
+     "blanks": 268,
+     "exhausted": 0,
+     "overvotes": 6
+    }
+   ],
+   "leader_final_round": "Kawasaki, Scott",
+   "note": null
+  },
+  {
+   "contest": "Senate District R",
+   "ballots": 18903,
+   "not_counted_no_votes_no_undervote": 614,
+   "by_counting_group": {
+    "Election Day": 11614,
+    "Absentee": 3613,
+    "Early Voting": 3400,
+    "Question": 276
+   },
+   "first_choices_incl_writeins": {
+    "Cronk, Mike": 9403,
+    "Fletcher, Savannah": 7519,
+    "Williams, Robert \"Bert\"": 1170,
+    "exhausted": 743,
+    "Write-in": 56,
+    "overvote": 12
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Cronk, Mike": 9408,
+      "Fletcher, Savannah": 7525,
+      "Williams, Robert \"Bert\"": 1177
+     },
+     "continuing": 18110,
+     "blanks": 781,
+     "exhausted": 0,
+     "overvotes": 12
+    }
+   ],
+   "leader_final_round": "Cronk, Mike",
+   "note": null
+  },
+  {
+   "contest": "Senate District T",
+   "ballots": 7354,
+   "not_counted_no_votes_no_undervote": 316,
+   "by_counting_group": {
+    "Election Day": 6015,
+    "Absentee": 907,
+    "Question": 164,
+    "Early Voting": 268
+   },
+   "first_choices_incl_writeins": {
+    "Olson, Donald C. \"Donny\"": 6469,
+    "exhausted": 732,
+    "Write-in": 153
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Olson, Donald C. \"Donny\"": 6522
+     },
+     "continuing": 6522,
+     "blanks": 832,
+     "exhausted": 0,
+     "overvotes": 0
+    }
+   ],
+   "leader_final_round": "Olson, Donald C. \"Donny\"",
+   "note": null
+  },
+  {
+   "contest": "House District 1",
+   "ballots": 8447,
+   "not_counted_no_votes_no_undervote": 222,
+   "by_counting_group": {
+    "Election Day": 5108,
+    "Question": 349,
+    "Absentee": 2970,
+    "Early Voting": 20
+   },
+   "first_choices_incl_writeins": {
+    "Bynum, Jeremy T.": 4243,
+    "Moran, Agnes C.": 1996,
+    "Echohawk, Grant": 1914,
+    "exhausted": 272,
+    "Write-in": 17,
+    "overvote": 5
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Bynum, Jeremy T.": 4243,
+      "Moran, Agnes C.": 1996,
+      "Echohawk, Grant": 1920
+     },
+     "continuing": 8159,
+     "blanks": 283,
+     "exhausted": 0,
+     "overvotes": 5
+    }
+   ],
+   "leader_final_round": "Bynum, Jeremy T.",
+   "note": null
+  },
+  {
+   "contest": "House District 2",
+   "ballots": 9351,
+   "not_counted_no_votes_no_undervote": 315,
+   "by_counting_group": {
+    "Election Day": 4645,
+    "Absentee": 4574,
+    "Question": 56,
+    "Early Voting": 76
+   },
+   "first_choices_incl_writeins": {
+    "Himschoot, Rebecca": 7175,
+    "exhausted": 1996,
+    "Write-in": 180
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Himschoot, Rebecca": 7210
+     },
+     "continuing": 7210,
+     "blanks": 2141,
+     "exhausted": 0,
+     "overvotes": 0
+    }
+   ],
+   "leader_final_round": "Himschoot, Rebecca",
+   "note": null
+  },
+  {
+   "contest": "House District 3",
+   "ballots": 10836,
+   "not_counted_no_votes_no_undervote": 334,
+   "by_counting_group": {
+    "Election Day": 4617,
+    "Absentee": 2571,
+    "Early Voting": 3560,
+    "Question": 88
+   },
+   "first_choices_incl_writeins": {
+    "Story, Andrea \"Andi\"": 8068,
+    "exhausted": 2435,
+    "Write-in": 333
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Story, Andrea \"Andi\"": 8111
+     },
+     "continuing": 8111,
+     "blanks": 2725,
+     "exhausted": 0,
+     "overvotes": 0
+    }
+   ],
+   "leader_final_round": "Story, Andrea \"Andi\"",
+   "note": null
+  },
+  {
+   "contest": "House District 4",
+   "ballots": 9034,
+   "not_counted_no_votes_no_undervote": 301,
+   "by_counting_group": {
+    "Early Voting": 3856,
+    "Absentee": 1583,
+    "Election Day": 3384,
+    "Question": 211
+   },
+   "first_choices_incl_writeins": {
+    "Hannan, Sara": 7108,
+    "exhausted": 1679,
+    "Write-in": 246,
+    "overvote": 1
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Hannan, Sara": 7153
+     },
+     "continuing": 7153,
+     "blanks": 1880,
+     "exhausted": 0,
+     "overvotes": 1
+    }
+   ],
+   "leader_final_round": "Hannan, Sara",
+   "note": null
+  },
+  {
+   "contest": "House District 5",
+   "ballots": 7673,
+   "not_counted_no_votes_no_undervote": 424,
+   "by_counting_group": {
+    "Absentee": 2949,
+    "Question": 135,
+    "Election Day": 4527,
+    "Early Voting": 62
+   },
+   "first_choices_incl_writeins": {
+    "Stutes, Louise B.": 5453,
+    "Radner, Leighton": 1555,
+    "exhausted": 615,
+    "Write-in": 44,
+    "overvote": 6
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Stutes, Louise B.": 5460,
+      "Radner, Leighton": 1561
+     },
+     "continuing": 7021,
+     "blanks": 646,
+     "exhausted": 0,
+     "overvotes": 6
+    }
+   ],
+   "leader_final_round": "Stutes, Louise B.",
+   "note": null
+  },
+  {
+   "contest": "House District 6",
+   "ballots": 11798,
+   "not_counted_no_votes_no_undervote": 265,
+   "by_counting_group": {
+    "Absentee": 2289,
+    "Early Voting": 3943,
+    "Question": 175,
+    "Election Day": 5391
+   },
+   "first_choices_incl_writeins": {
+    "Vance, Sarah L.": 5363,
+    "Johnson, Brent": 4957,
+    "Slaughter, Dawson R.": 1074,
+    "exhausted": 361,
+    "Write-in": 27,
+    "overvote": 16
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Vance, Sarah L.": 5363,
+      "Johnson, Brent": 4965,
+      "Slaughter, Dawson R.": 1078
+     },
+     "continuing": 11406,
+     "blanks": 376,
+     "exhausted": 0,
+     "overvotes": 16,
+     "eliminated": "Slaughter, Dawson R.",
+     "transfers": {
+      "exhausted": 618,
+      "Vance, Sarah L.": 275,
+      "Johnson, Brent": 185
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Vance, Sarah L.": 5638,
+      "Johnson, Brent": 5150
+     },
+     "continuing": 10788,
+     "blanks": 376,
+     "exhausted": 618,
+     "overvotes": 16
+    }
+   ],
+   "leader_final_round": "Vance, Sarah L.",
+   "note": null
+  },
+  {
+   "contest": "House District 7",
+   "ballots": 9360,
+   "not_counted_no_votes_no_undervote": 327,
+   "by_counting_group": {
+    "Early Voting": 2504,
+    "Absentee": 1585,
+    "Election Day": 5179,
+    "Question": 92
+   },
+   "first_choices_incl_writeins": {
+    "Ruffridge, Justin M.": 5000,
+    "Gillham, Ronald D. \"Ron\"": 3410,
+    "exhausted": 871,
+    "Write-in": 77,
+    "overvote": 2
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Ruffridge, Justin M.": 5014,
+      "Gillham, Ronald D. \"Ron\"": 3417
+     },
+     "continuing": 8431,
+     "blanks": 927,
+     "exhausted": 0,
+     "overvotes": 2
+    }
+   ],
+   "leader_final_round": "Ruffridge, Justin M.",
+   "note": null
+  },
+  {
+   "contest": "House District 8",
+   "ballots": 10609,
+   "not_counted_no_votes_no_undervote": 259,
+   "by_counting_group": {
+    "Election Day": 5920,
+    "Absentee": 2165,
+    "Early Voting": 2481,
+    "Question": 43
+   },
+   "first_choices_incl_writeins": {
+    "Elam, Bill": 4660,
+    "Hillyer, John": 4260,
+    "exhausted": 1554,
+    "Write-in": 130,
+    "overvote": 5
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Elam, Bill": 4671,
+      "Hillyer, John": 4268
+     },
+     "continuing": 8939,
+     "blanks": 1664,
+     "exhausted": 0,
+     "overvotes": 6
+    }
+   ],
+   "leader_final_round": "Elam, Bill",
+   "note": null
+  },
+  {
+   "contest": "House District 9",
+   "ballots": 11666,
+   "not_counted_no_votes_no_undervote": 272,
+   "by_counting_group": {
+    "Absentee": 3239,
+    "Election Day": 6223,
+    "Early Voting": 2162,
+    "Question": 42
+   },
+   "first_choices_incl_writeins": {
+    "Holland, Ky": 6089,
+    "Bauer, Lucy": 5095,
+    "exhausted": 448,
+    "Write-in": 29,
+    "overvote": 5
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Holland, Ky": 6099,
+      "Bauer, Lucy": 5098
+     },
+     "continuing": 11197,
+     "blanks": 464,
+     "exhausted": 0,
+     "overvotes": 5
+    }
+   ],
+   "leader_final_round": "Holland, Ky",
+   "note": null
+  },
+  {
+   "contest": "House District 10",
+   "ballots": 8582,
+   "not_counted_no_votes_no_undervote": 262,
+   "by_counting_group": {
+    "Absentee": 1905,
+    "Early Voting": 1557,
+    "Question": 63,
+    "Election Day": 5057
+   },
+   "first_choices_incl_writeins": {
+    "Kopp, Charles M. \"Chuck\"": 4675,
+    "Johnson, Craig W.": 2822,
+    "exhausted": 971,
+    "Write-in": 101,
+    "overvote": 13
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Kopp, Charles M. \"Chuck\"": 4691,
+      "Johnson, Craig W.": 2832
+     },
+     "continuing": 7523,
+     "blanks": 1045,
+     "exhausted": 0,
+     "overvotes": 14
+    }
+   ],
+   "leader_final_round": "Kopp, Charles M. \"Chuck\"",
+   "note": null
+  },
+  {
+   "contest": "House District 11",
+   "ballots": 9642,
+   "not_counted_no_votes_no_undervote": 286,
+   "by_counting_group": {
+    "Election Day": 5347,
+    "Question": 57,
+    "Early Voting": 1784,
+    "Absentee": 2454
+   },
+   "first_choices_incl_writeins": {
+    "Coulombe, Julie": 4838,
+    "Featherly, Walter T.": 4351,
+    "exhausted": 436,
+    "Write-in": 17
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Coulombe, Julie": 4842,
+      "Featherly, Walter T.": 4356
+     },
+     "continuing": 9198,
+     "blanks": 444,
+     "exhausted": 0,
+     "overvotes": 0
+    }
+   ],
+   "leader_final_round": "Coulombe, Julie",
+   "note": null
+  },
+  {
+   "contest": "House District 12",
+   "ballots": 8279,
+   "not_counted_no_votes_no_undervote": 290,
+   "by_counting_group": {
+    "Absentee": 1871,
+    "Early Voting": 1600,
+    "Question": 62,
+    "Election Day": 4746
+   },
+   "first_choices_incl_writeins": {
+    "Schrage, Calvin R.": 4770,
+    "Lurtsema, Joseph M. \"Joe\"": 3044,
+    "exhausted": 433,
+    "Write-in": 28,
+    "overvote": 4
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Schrage, Calvin R.": 4775,
+      "Lurtsema, Joseph M. \"Joe\"": 3048
+     },
+     "continuing": 7823,
+     "blanks": 452,
+     "exhausted": 0,
+     "overvotes": 4
+    }
+   ],
+   "leader_final_round": "Schrage, Calvin R.",
+   "note": null
+  },
+  {
+   "contest": "House District 13",
+   "ballots": 7260,
+   "not_counted_no_votes_no_undervote": 372,
+   "by_counting_group": {
+    "Early Voting": 1392,
+    "Question": 100,
+    "Absentee": 1534,
+    "Election Day": 4234
+   },
+   "first_choices_incl_writeins": {
+    "Josephson, Andrew L. \"Andy\"": 3745,
+    "Gottshall, Heather": 3270,
+    "exhausted": 226,
+    "Write-in": 15,
+    "overvote": 4
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Josephson, Andrew L. \"Andy\"": 3752,
+      "Gottshall, Heather": 3272
+     },
+     "continuing": 7024,
+     "blanks": 232,
+     "exhausted": 0,
+     "overvotes": 4
+    }
+   ],
+   "leader_final_round": "Josephson, Andrew L. \"Andy\"",
+   "note": null
+  },
+  {
+   "contest": "House District 14",
+   "ballots": 7010,
+   "not_counted_no_votes_no_undervote": 485,
+   "by_counting_group": {
+    "Absentee": 1741,
+    "Election Day": 3565,
+    "Question": 69,
+    "Early Voting": 1635
+   },
+   "first_choices_incl_writeins": {
+    "Galvin, Alyse S.": 4856,
+    "Kamdem, Harry Winner": 1291,
+    "exhausted": 727,
+    "Write-in": 128,
+    "overvote": 8
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Galvin, Alyse S.": 4863,
+      "Kamdem, Harry Winner": 1303
+     },
+     "continuing": 6166,
+     "blanks": 836,
+     "exhausted": 0,
+     "overvotes": 8
+    }
+   ],
+   "leader_final_round": "Galvin, Alyse S.",
+   "note": null
+  },
+  {
+   "contest": "House District 15",
+   "ballots": 9086,
+   "not_counted_no_votes_no_undervote": 295,
+   "by_counting_group": {
+    "Absentee": 2074,
+    "Election Day": 5210,
+    "Early Voting": 1743,
+    "Question": 59
+   },
+   "first_choices_incl_writeins": {
+    "Costello, Mia": 4545,
+    "Wells, Denny": 4019,
+    "exhausted": 258,
+    "Darden, Dustin T.": 245,
+    "Write-in": 17,
+    "overvote": 2
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Costello, Mia": 4549,
+      "Wells, Denny": 4021,
+      "Darden, Dustin T.": 246
+     },
+     "continuing": 8816,
+     "blanks": 268,
+     "exhausted": 0,
+     "overvotes": 2
+    }
+   ],
+   "leader_final_round": "Costello, Mia",
+   "note": null
+  },
+  {
+   "contest": "House District 16",
+   "ballots": 9418,
+   "not_counted_no_votes_no_undervote": 328,
+   "by_counting_group": {
+    "Absentee": 2168,
+    "Question": 64,
+    "Early Voting": 1837,
+    "Election Day": 5349
+   },
+   "first_choices_incl_writeins": {
+    "Hall, Carolyn": 4867,
+    "Moe, Nick": 3656,
+    "exhausted": 807,
+    "Write-in": 83,
+    "overvote": 5
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Hall, Carolyn": 4875,
+      "Moe, Nick": 3666
+     },
+     "continuing": 8541,
+     "blanks": 872,
+     "exhausted": 0,
+     "overvotes": 5
+    }
+   ],
+   "leader_final_round": "Hall, Carolyn",
+   "note": null
+  },
+  {
+   "contest": "House District 17",
+   "ballots": 7354,
+   "not_counted_no_votes_no_undervote": 439,
+   "by_counting_group": {
+    "Absentee": 2121,
+    "Early Voting": 2105,
+    "Election Day": 3020,
+    "Question": 108
+   },
+   "first_choices_incl_writeins": {
+    "Fields, William Z. \"Zack\"": 5364,
+    "exhausted": 1627,
+    "Write-in": 363
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Fields, William Z. \"Zack\"": 5442
+     },
+     "continuing": 5442,
+     "blanks": 1912,
+     "exhausted": 0,
+     "overvotes": 0
+    }
+   ],
+   "leader_final_round": "Fields, William Z. \"Zack\"",
+   "note": null
+  },
+  {
+   "contest": "House District 18",
+   "ballots": 3927,
+   "not_counted_no_votes_no_undervote": 913,
+   "by_counting_group": {
+    "Question": 84,
+    "Absentee": 1409,
+    "Election Day": 1926,
+    "Early Voting": 508
+   },
+   "first_choices_incl_writeins": {
+    "Nelson, David": 1880,
+    "Groh, Cliff": 1858,
+    "exhausted": 184,
+    "Write-in": 3,
+    "overvote": 2
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Nelson, David": 1880,
+      "Groh, Cliff": 1859
+     },
+     "continuing": 3739,
+     "blanks": 186,
+     "exhausted": 0,
+     "overvotes": 2
+    }
+   ],
+   "leader_final_round": "Nelson, David",
+   "note": null
+  },
+  {
+   "contest": "House District 19",
+   "ballots": 4739,
+   "not_counted_no_votes_no_undervote": 327,
+   "by_counting_group": {
+    "Election Day": 2691,
+    "Early Voting": 830,
+    "Question": 138,
+    "Absentee": 1080
+   },
+   "first_choices_incl_writeins": {
+    "Mina, Genevieve G.": 2662,
+    "Anderson, Kaylee M.": 1355,
+    "exhausted": 354,
+    "Wyatt, Russell O.": 345,
+    "Write-in": 18,
+    "overvote": 5
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Mina, Genevieve G.": 2663,
+      "Anderson, Kaylee M.": 1356,
+      "Wyatt, Russell O.": 346
+     },
+     "continuing": 4365,
+     "blanks": 369,
+     "exhausted": 0,
+     "overvotes": 5
+    }
+   ],
+   "leader_final_round": "Mina, Genevieve G.",
+   "note": null
+  },
+  {
+   "contest": "House District 20",
+   "ballots": 6884,
+   "not_counted_no_votes_no_undervote": 443,
+   "by_counting_group": {
+    "Early Voting": 1300,
+    "Election Day": 3848,
+    "Absentee": 1690,
+    "Question": 46
+   },
+   "first_choices_incl_writeins": {
+    "Gray, Andrew T.": 3933,
+    "Kohlhaas, Scott A.": 2175,
+    "exhausted": 705,
+    "Write-in": 67,
+    "overvote": 4
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Gray, Andrew T.": 3938,
+      "Kohlhaas, Scott A.": 2181
+     },
+     "continuing": 6119,
+     "blanks": 761,
+     "exhausted": 0,
+     "overvotes": 4
+    }
+   ],
+   "leader_final_round": "Gray, Andrew T.",
+   "note": null
+  },
+  {
+   "contest": "House District 21",
+   "ballots": 8724,
+   "not_counted_no_votes_no_undervote": 384,
+   "by_counting_group": {
+    "Absentee": 2392,
+    "Early Voting": 1541,
+    "Question": 101,
+    "Election Day": 4690
+   },
+   "first_choices_incl_writeins": {
+    "Mears, Donna C.": 4671,
+    "Sims, Aim\u00e9e": 3751,
+    "exhausted": 276,
+    "Write-in": 20,
+    "overvote": 6
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Mears, Donna C.": 4672,
+      "Sims, Aim\u00e9e": 3757
+     },
+     "continuing": 8429,
+     "blanks": 288,
+     "exhausted": 0,
+     "overvotes": 7
+    }
+   ],
+   "leader_final_round": "Mears, Donna C.",
+   "note": null
+  },
+  {
+   "contest": "House District 22",
+   "ballots": 5200,
+   "not_counted_no_votes_no_undervote": 321,
+   "by_counting_group": {
+    "Early Voting": 923,
+    "Question": 82,
+    "Absentee": 1136,
+    "Election Day": 3059
+   },
+   "first_choices_incl_writeins": {
+    "Eischeid, Ted J.": 2640,
+    "Wright, Stanley A.": 2393,
+    "exhausted": 144,
+    "Write-in": 12,
+    "overvote": 11
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Eischeid, Ted J.": 2644,
+      "Wright, Stanley A.": 2394
+     },
+     "continuing": 5038,
+     "blanks": 151,
+     "exhausted": 0,
+     "overvotes": 11
+    }
+   ],
+   "leader_final_round": "Eischeid, Ted J.",
+   "note": null
+  },
+  {
+   "contest": "House District 23",
+   "ballots": 10396,
+   "not_counted_no_votes_no_undervote": 346,
+   "by_counting_group": {
+    "Absentee": 2604,
+    "Early Voting": 3517,
+    "Question": 112,
+    "Election Day": 4163
+   },
+   "first_choices_incl_writeins": {
+    "Allard, Jamie": 6135,
+    "Arlington, Jim": 3752,
+    "exhausted": 468,
+    "Write-in": 37,
+    "overvote": 4
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Allard, Jamie": 6142,
+      "Arlington, Jim": 3757
+     },
+     "continuing": 9899,
+     "blanks": 493,
+     "exhausted": 0,
+     "overvotes": 4
+    }
+   ],
+   "leader_final_round": "Allard, Jamie",
+   "note": null
+  },
+  {
+   "contest": "House District 24",
+   "ballots": 9844,
+   "not_counted_no_votes_no_undervote": 338,
+   "by_counting_group": {
+    "Absentee": 1909,
+    "Early Voting": 3260,
+    "Question": 138,
+    "Election Day": 4537
+   },
+   "first_choices_incl_writeins": {
+    "Saddler, Dan": 8051,
+    "exhausted": 1527,
+    "Write-in": 264,
+    "overvote": 2
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Saddler, Dan": 8105
+     },
+     "continuing": 8105,
+     "blanks": 1737,
+     "exhausted": 0,
+     "overvotes": 2
+    }
+   ],
+   "leader_final_round": "Saddler, Dan",
+   "note": null
+  },
+  {
+   "contest": "House District 25",
+   "ballots": 10085,
+   "not_counted_no_votes_no_undervote": 447,
+   "by_counting_group": {
+    "Early Voting": 3426,
+    "Absentee": 1479,
+    "Election Day": 5072,
+    "Question": 108
+   },
+   "first_choices_incl_writeins": {
+    "Johnson, DeLena M.": 7920,
+    "exhausted": 1824,
+    "Write-in": 340,
+    "overvote": 1
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Johnson, DeLena M.": 8005
+     },
+     "continuing": 8005,
+     "blanks": 2079,
+     "exhausted": 0,
+     "overvotes": 1
+    }
+   ],
+   "leader_final_round": "Johnson, DeLena M.",
+   "note": null
+  },
+  {
+   "contest": "House District 26",
+   "ballots": 9062,
+   "not_counted_no_votes_no_undervote": 430,
+   "by_counting_group": {
+    "Question": 118,
+    "Early Voting": 2698,
+    "Absentee": 1265,
+    "Election Day": 4981
+   },
+   "first_choices_incl_writeins": {
+    "Tilton, Cathy": 7425,
+    "exhausted": 1380,
+    "Write-in": 256,
+    "overvote": 1
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Tilton, Cathy": 7485
+     },
+     "continuing": 7485,
+     "blanks": 1575,
+     "exhausted": 0,
+     "overvotes": 2
+    }
+   ],
+   "leader_final_round": "Tilton, Cathy",
+   "note": null
+  },
+  {
+   "contest": "House District 27",
+   "ballots": 8426,
+   "not_counted_no_votes_no_undervote": 486,
+   "by_counting_group": {
+    "Question": 128,
+    "Early Voting": 2740,
+    "Absentee": 1194,
+    "Election Day": 4364
+   },
+   "first_choices_incl_writeins": {
+    "Underwood, Jubilee L.": 3861,
+    "Eastman, David": 3668,
+    "exhausted": 797,
+    "Write-in": 99,
+    "overvote": 1
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Underwood, Jubilee L.": 3869,
+      "Eastman, David": 3677
+     },
+     "continuing": 7546,
+     "blanks": 879,
+     "exhausted": 0,
+     "overvotes": 1
+    }
+   ],
+   "leader_final_round": "Underwood, Jubilee L.",
+   "note": null
+  },
+  {
+   "contest": "House District 28",
+   "ballots": 8915,
+   "not_counted_no_votes_no_undervote": 416,
+   "by_counting_group": {
+    "Question": 120,
+    "Absentee": 1294,
+    "Early Voting": 3045,
+    "Election Day": 4456
+   },
+   "first_choices_incl_writeins": {
+    "Moore, Elexie": 2918,
+    "Menard, Steve": 2779,
+    "Wright, Jessica": 2004,
+    "exhausted": 1091,
+    "Write-in": 115,
+    "overvote": 8
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Moore, Elexie": 2929,
+      "Menard, Steve": 2787,
+      "Wright, Jessica": 2014
+     },
+     "continuing": 7730,
+     "blanks": 1177,
+     "exhausted": 0,
+     "overvotes": 8,
+     "eliminated": "Wright, Jessica",
+     "transfers": {
+      "exhausted": 1255,
+      "Menard, Steve": 444,
+      "Moore, Elexie": 314,
+      "overvote": 1
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Moore, Elexie": 3243,
+      "Menard, Steve": 3231
+     },
+     "continuing": 6474,
+     "blanks": 1177,
+     "exhausted": 1255,
+     "overvotes": 9
+    }
+   ],
+   "leader_final_round": "Moore, Elexie",
+   "note": null
+  },
+  {
+   "contest": "House District 29",
+   "ballots": 10175,
+   "not_counted_no_votes_no_undervote": 395,
+   "by_counting_group": {
+    "Question": 122,
+    "Absentee": 1896,
+    "Early Voting": 2812,
+    "Election Day": 5345
+   },
+   "first_choices_incl_writeins": {
+    "Rauscher, George": 7883,
+    "exhausted": 1928,
+    "Write-in": 364
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Rauscher, George": 7969
+     },
+     "continuing": 7969,
+     "blanks": 2206,
+     "exhausted": 0,
+     "overvotes": 0
+    }
+   ],
+   "leader_final_round": "Rauscher, George",
+   "note": null
+  },
+  {
+   "contest": "House District 30",
+   "ballots": 9904,
+   "not_counted_no_votes_no_undervote": 485,
+   "by_counting_group": {
+    "Question": 106,
+    "Absentee": 3162,
+    "Early Voting": 1171,
+    "Election Day": 5465
+   },
+   "first_choices_incl_writeins": {
+    "McCabe, Kevin J.": 4737,
+    "Holmes, Doyle E.": 3852,
+    "exhausted": 1146,
+    "Write-in": 163,
+    "overvote": 6
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "McCabe, Kevin J.": 4744,
+      "Holmes, Doyle E.": 3876
+     },
+     "continuing": 8620,
+     "blanks": 1278,
+     "exhausted": 0,
+     "overvotes": 6
+    }
+   ],
+   "leader_final_round": "McCabe, Kevin J.",
+   "note": null
+  },
+  {
+   "contest": "House District 31",
+   "ballots": 6653,
+   "not_counted_no_votes_no_undervote": 431,
+   "by_counting_group": {
+    "Early Voting": 1967,
+    "Absentee": 1001,
+    "Election Day": 3621,
+    "Question": 64
+   },
+   "first_choices_incl_writeins": {
+    "Dibert, Maxine L.": 3527,
+    "LeBon, Bart": 2950,
+    "exhausted": 148,
+    "Write-in": 20,
+    "overvote": 8
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Dibert, Maxine L.": 3530,
+      "LeBon, Bart": 2951
+     },
+     "continuing": 6481,
+     "blanks": 162,
+     "exhausted": 0,
+     "overvotes": 10
+    }
+   ],
+   "leader_final_round": "Dibert, Maxine L.",
+   "note": null
+  },
+  {
+   "contest": "House District 32",
+   "ballots": 5023,
+   "not_counted_no_votes_no_undervote": 878,
+   "by_counting_group": {
+    "Early Voting": 1094,
+    "Absentee": 918,
+    "Election Day": 2950,
+    "Question": 61
+   },
+   "first_choices_incl_writeins": {
+    "Stapp, Will": 3232,
+    "Damron, Gary K.": 1551,
+    "exhausted": 217,
+    "Write-in": 21,
+    "overvote": 2
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Stapp, Will": 3234,
+      "Damron, Gary K.": 1555
+     },
+     "continuing": 4789,
+     "blanks": 232,
+     "exhausted": 0,
+     "overvotes": 2
+    }
+   ],
+   "leader_final_round": "Stapp, Will",
+   "note": null
+  },
+  {
+   "contest": "House District 33",
+   "ballots": 8633,
+   "not_counted_no_votes_no_undervote": 267,
+   "by_counting_group": {
+    "Early Voting": 1693,
+    "Absentee": 1203,
+    "Election Day": 5635,
+    "Question": 102
+   },
+   "first_choices_incl_writeins": {
+    "Prax, Glenn \"Mike\"": 7051,
+    "exhausted": 1346,
+    "Write-in": 236
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Prax, Glenn \"Mike\"": 7122
+     },
+     "continuing": 7122,
+     "blanks": 1511,
+     "exhausted": 0,
+     "overvotes": 0
+    }
+   ],
+   "leader_final_round": "Prax, Glenn \"Mike\"",
+   "note": null
+  },
+  {
+   "contest": "House District 34",
+   "ballots": 9416,
+   "not_counted_no_votes_no_undervote": 676,
+   "by_counting_group": {
+    "Election Day": 5296,
+    "Early Voting": 2545,
+    "Absentee": 1495,
+    "Question": 80
+   },
+   "first_choices_incl_writeins": {
+    "Tomaszewski, Frank": 4891,
+    "Cottle, Joy \"Joy Beth\"": 3770,
+    "exhausted": 665,
+    "Write-in": 83,
+    "overvote": 7
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Tomaszewski, Frank": 4903,
+      "Cottle, Joy \"Joy Beth\"": 3782
+     },
+     "continuing": 8685,
+     "blanks": 723,
+     "exhausted": 0,
+     "overvotes": 8
+    }
+   ],
+   "leader_final_round": "Tomaszewski, Frank",
+   "note": null
+  },
+  {
+   "contest": "House District 35",
+   "ballots": 9469,
+   "not_counted_no_votes_no_undervote": 328,
+   "by_counting_group": {
+    "Election Day": 5380,
+    "Early Voting": 2670,
+    "Absentee": 1320,
+    "Question": 99
+   },
+   "first_choices_incl_writeins": {
+    "Carrick, Ashley E.": 5047,
+    "McNeill, Ruben A. Jr.": 4070,
+    "exhausted": 327,
+    "Write-in": 23,
+    "overvote": 2
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Carrick, Ashley E.": 5051,
+      "McNeill, Ruben A. Jr.": 4076
+     },
+     "continuing": 9127,
+     "blanks": 340,
+     "exhausted": 0,
+     "overvotes": 2
+    }
+   ],
+   "leader_final_round": "Carrick, Ashley E.",
+   "note": null
+  },
+  {
+   "contest": "House District 36",
+   "ballots": 9382,
+   "not_counted_no_votes_no_undervote": 338,
+   "by_counting_group": {
+    "Early Voting": 730,
+    "Question": 134,
+    "Absentee": 2284,
+    "Election Day": 6234
+   },
+   "first_choices_incl_writeins": {
+    "Schwanke, Rebecca A.": 3186,
+    "Kowalski, Brandon P. \"Putuuqti\"": 2952,
+    "Goode, Pamela": 2288,
+    "Fields, James": 498,
+    "exhausted": 415,
+    "Write-in": 23,
+    "overvote": 20
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Schwanke, Rebecca A.": 3189,
+      "Kowalski, Brandon P. \"Putuuqti\"": 2953,
+      "Goode, Pamela": 2291,
+      "Fields, James": 498
+     },
+     "continuing": 8931,
+     "blanks": 431,
+     "exhausted": 0,
+     "overvotes": 20,
+     "eliminated": "Fields, James",
+     "transfers": {
+      "exhausted": 264,
+      "Schwanke, Rebecca A.": 93,
+      "Goode, Pamela": 71,
+      "Kowalski, Brandon P. \"Putuuqti\"": 69,
+      "overvote": 1
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Schwanke, Rebecca A.": 3282,
+      "Kowalski, Brandon P. \"Putuuqti\"": 3022,
+      "Goode, Pamela": 2362
+     },
+     "continuing": 8666,
+     "blanks": 431,
+     "exhausted": 264,
+     "overvotes": 21,
+     "eliminated": "Goode, Pamela",
+     "transfers": {
+      "exhausted": 1434,
+      "Schwanke, Rebecca A.": 788,
+      "Kowalski, Brandon P. \"Putuuqti\"": 133,
+      "overvote": 7
+     }
+    },
+    {
+     "round": 3,
+     "votes": {
+      "Schwanke, Rebecca A.": 4070,
+      "Kowalski, Brandon P. \"Putuuqti\"": 3155
+     },
+     "continuing": 7225,
+     "blanks": 431,
+     "exhausted": 1698,
+     "overvotes": 28
+    }
+   ],
+   "leader_final_round": "Schwanke, Rebecca A.",
+   "note": null
+  },
+  {
+   "contest": "House District 37",
+   "ballots": 4244,
+   "not_counted_no_votes_no_undervote": 200,
+   "by_counting_group": {
+    "Absentee": 1089,
+    "Election Day": 3005,
+    "Early Voting": 102,
+    "Question": 48
+   },
+   "first_choices_incl_writeins": {
+    "Edgmon, Bryce": 2760,
+    "Deacon, Darren M.": 1012,
+    "exhausted": 421,
+    "Write-in": 41,
+    "overvote": 10
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Edgmon, Bryce": 2766,
+      "Deacon, Darren M.": 1017
+     },
+     "continuing": 3783,
+     "blanks": 450,
+     "exhausted": 0,
+     "overvotes": 11
+    }
+   ],
+   "leader_final_round": "Edgmon, Bryce",
+   "note": null
+  },
+  {
+   "contest": "House District 38",
+   "ballots": 3707,
+   "not_counted_no_votes_no_undervote": 169,
+   "by_counting_group": {
+    "Absentee": 515,
+    "Election Day": 3040,
+    "Question": 122,
+    "Early Voting": 30
+   },
+   "first_choices_incl_writeins": {
+    "Jimmie, Nellie D. \"Unangik\"": 1294,
+    "McCormick, C.J.": 1165,
+    "Keppel, Willy": 931,
+    "Sosa, Victoria B.": 182,
+    "exhausted": 91,
+    "overvote": 35,
+    "Write-in": 9
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Jimmie, Nellie D. \"Unangik\"": 1295,
+      "McCormick, C.J.": 1166,
+      "Keppel, Willy": 932,
+      "Sosa, Victoria B.": 184
+     },
+     "continuing": 3577,
+     "blanks": 95,
+     "exhausted": 0,
+     "overvotes": 35,
+     "eliminated": "Sosa, Victoria B.",
+     "transfers": {
+      "exhausted": 65,
+      "Jimmie, Nellie D. \"Unangik\"": 56,
+      "McCormick, C.J.": 34,
+      "Keppel, Willy": 27,
+      "overvote": 2
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Jimmie, Nellie D. \"Unangik\"": 1351,
+      "McCormick, C.J.": 1200,
+      "Keppel, Willy": 959
+     },
+     "continuing": 3510,
+     "blanks": 95,
+     "exhausted": 65,
+     "overvotes": 37,
+     "eliminated": "Keppel, Willy",
+     "transfers": {
+      "exhausted": 543,
+      "McCormick, C.J.": 211,
+      "Jimmie, Nellie D. \"Unangik\"": 197,
+      "overvote": 8
+     }
+    },
+    {
+     "round": 3,
+     "votes": {
+      "Jimmie, Nellie D. \"Unangik\"": 1548,
+      "McCormick, C.J.": 1411
+     },
+     "continuing": 2959,
+     "blanks": 95,
+     "exhausted": 608,
+     "overvotes": 45
+    }
+   ],
+   "leader_final_round": "Jimmie, Nellie D. \"Unangik\"",
+   "note": null
+  },
+  {
+   "contest": "House District 39",
+   "ballots": 4175,
+   "not_counted_no_votes_no_undervote": 133,
+   "by_counting_group": {
+    "Election Day": 3400,
+    "Absentee": 486,
+    "Early Voting": 222,
+    "Question": 67
+   },
+   "first_choices_incl_writeins": {
+    "Foster, Neal W.": 2352,
+    "Ivanoff, Tyler": 1679,
+    "exhausted": 117,
+    "overvote": 15,
+    "Write-in": 12
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Foster, Neal W.": 2352,
+      "Ivanoff, Tyler": 1680
+     },
+     "continuing": 4032,
+     "blanks": 128,
+     "exhausted": 0,
+     "overvotes": 15
+    }
+   ],
+   "leader_final_round": "Foster, Neal W.",
+   "note": null
+  },
+  {
+   "contest": "House District 40",
+   "ballots": 3170,
+   "not_counted_no_votes_no_undervote": 192,
+   "by_counting_group": {
+    "Election Day": 2615,
+    "Absentee": 421,
+    "Early Voting": 46,
+    "Question": 88
+   },
+   "first_choices_incl_writeins": {
+    "Burke, Robyn \"Niayuq\"": 1423,
+    "Chase, Saima \"Ikrik\"": 872,
+    "Baker, Thomas C. \"Ikaaq\"": 739,
+    "exhausted": 104,
+    "Write-in": 21,
+    "overvote": 11
+   },
+   "rounds": [
+    {
+     "round": 1,
+     "votes": {
+      "Burke, Robyn \"Niayuq\"": 1425,
+      "Chase, Saima \"Ikrik\"": 874,
+      "Baker, Thomas C. \"Ikaaq\"": 743
+     },
+     "continuing": 3042,
+     "blanks": 117,
+     "exhausted": 0,
+     "overvotes": 11,
+     "eliminated": "Baker, Thomas C. \"Ikaaq\"",
+     "transfers": {
+      "exhausted": 489,
+      "Chase, Saima \"Ikrik\"": 134,
+      "Burke, Robyn \"Niayuq\"": 116,
+      "overvote": 4
+     }
+    },
+    {
+     "round": 2,
+     "votes": {
+      "Burke, Robyn \"Niayuq\"": 1541,
+      "Chase, Saima \"Ikrik\"": 1008
+     },
+     "continuing": 2549,
+     "blanks": 117,
+     "exhausted": 489,
+     "overvotes": 15
+    }
+   ],
+   "leader_final_round": "Burke, Robyn \"Niayuq\"",
+   "note": null
+  }
+ ]
+}

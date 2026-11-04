@@ -202,3 +202,7 @@ The public JSON behind VoteHub's 2026 Early Vote Tracker (16 states; Wisconsin i
 ## Florida turnout by party, 2012–2024, MCI Maps (turnout_2026/fl_party_turnout_history_mcimaps_2026-11-03/) — not used by the model
 
 Matthew Isbell's (MCI Maps) table of turnout by party registration for the 2012–2022 general elections and his 2024 figures, retrieved 2026-11-03 for comparison with the Election Day tracker. Figures, caveats and URLs in the folder's README.md.
+
+## Alaska 2026 general, ranked-choice tabulation of the Cast Vote Record (ak_rcv_2026/) — not used by the model
+
+The Division of Elections' election-night CVR, summary report and precinct results (retrieved 2026-11-04), the RCV statute and duplicate-ranking regulation, and the official 2024 RCV reports used to test the tabulator, which reproduces all 7 of them exactly. The ballot-level CVR zips stay local; their URLs and checksums are in the folder's README.md, along with the method and results.

@@ -1,0 +1,22 @@
+204,530 ballot sessions in 1 file(s)
+
+== Governor / Lieutenant Governor: 204,400 ballots with the contest
+ Round 1: Kreiss-Tomkins/Johnson 97,999 (48.70%); Wilson/Shower 59,740 (29.69%); Bronson/Church 28,592 (14.21%); Taylor/English 14,904 (7.41%) | continuing 201,235, blanks 2,984, exhausted 0, overvotes 181
+   Taylor/English eliminated -> Wilson/Shower 4,902, exhausted 4,853, Bronson/Church 4,352, Kreiss-Tomkins/Johnson 788, overvote 9
+ Round 2: Kreiss-Tomkins/Johnson 98,787 (50.31%); Wilson/Shower 64,642 (32.92%); Bronson/Church 32,944 (16.78%) | continuing 196,373, blanks 2,984, exhausted 4,853, overvotes 190
+   Bronson/Church eliminated -> Wilson/Shower 18,903, exhausted 11,828, Kreiss-Tomkins/Johnson 2,182, overvote 31
+ Round 3: Kreiss-Tomkins/Johnson 100,969 (54.72%); Wilson/Shower 83,545 (45.28%) | continuing 184,514, blanks 2,984, exhausted 16,681, overvotes 221
+
+== U.S. Senator: 204,530 ballots with the contest
+ Round 1: Sullivan, Dan S. 99,617 (49.02%); Peltola, Mary 95,792 (47.14%); Heikes, Gerald L. 4,380 (2.16%); Sullivan, Daniel J. Jr. 3,426 (1.69%) | continuing 203,215, blanks 1,079, exhausted 0, overvotes 236
+   Sullivan, Daniel J. Jr. eliminated -> exhausted 1,243, Peltola, Mary 991, Heikes, Gerald L. 627, Sullivan, Dan S. 559, overvote 6
+ Round 2: Sullivan, Dan S. 100,176 (49.60%); Peltola, Mary 96,783 (47.92%); Heikes, Gerald L. 5,007 (2.48%) | continuing 201,966, blanks 1,079, exhausted 1,243, overvotes 242
+   Heikes, Gerald L. eliminated -> Sullivan, Dan S. 2,166, exhausted 1,961, Peltola, Mary 873, overvote 7
+ Round 3: Sullivan, Dan S. 102,342 (51.17%); Peltola, Mary 97,656 (48.83%) | continuing 199,998, blanks 1,079, exhausted 3,204, overvotes 249
+
+== U.S. Representative: 204,530 ballots with the contest
+ Round 1: Begich, Nick 101,953 (50.31%); Hill, Bill 80,673 (39.81%); Hafner, Eric 14,547 (7.18%); McDermott, James C. "Jim" 5,471 (2.70%) | continuing 202,644, blanks 1,799, exhausted 0, overvotes 87
+   McDermott, James C. "Jim" eliminated -> exhausted 1,749, Begich, Nick 1,540, Hill, Bill 1,517, Hafner, Eric 658, overvote 7
+ Round 2: Begich, Nick 103,493 (51.52%); Hill, Bill 82,190 (40.91%); Hafner, Eric 15,205 (7.57%) | continuing 200,888, blanks 1,799, exhausted 1,749, overvotes 94
+   Hafner, Eric eliminated -> exhausted 7,229, Hill, Bill 6,915, Begich, Nick 1,047, overvote 14
+ Round 3: Begich, Nick 104,540 (53.99%); Hill, Bill 89,105 (46.01%) | continuing 193,645, blanks 1,799, exhausted 8,978, overvotes 108
