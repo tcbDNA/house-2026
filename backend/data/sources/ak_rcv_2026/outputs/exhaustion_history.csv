@@ -1,0 +1,8 @@
+election,contest,source,rounds,round1_continuing,blanks,round1_overvotes,exhausted_final,overvotes_final,exhaustion_rate,inactive_rate,eliminated_first_choices,exhausted_share_of_eliminated
+2022 special general (Aug 16),U.S. Representative (Special General),22SSPG_RcvDetailedReport.pdf,2,188582,3412,295,11243,342,0.059618627440582876,0.06133621351461533,53810,0.2089388589481509
+2022 general,U.S. Senator,22GENR_US_SEN.pdf,3,263027,3271,499,9107,555,0.034623821889007596,0.03666431395763606,36808,0.24741903933927406
+2022 general,U.S. Representative,22GENR_US_REP.pdf,3,264589,1775,433,14796,492,0.05592069209226385,0.057685777029831485,67504,0.2191870111400806
+2024 general,U.S. Representative,RCV-USRep.pdf,3,329493,5788,572,7595,624,0.023050565565884557,0.024901155832941998,16768,0.45294608778625955
+"2026 general (Nov 4 CVR, scanned ballots only)",U.S. Senator,"contests.csv, rounds.csv",3,203215,1079,236,3204,249,0.015766552665895727,0.016972145627202617,7806,0.4104534973097617
+"2026 general (Nov 4 CVR, scanned ballots only)",U.S. Representative,"contests.csv, rounds.csv",3,202644,1799,87,8978,108,0.04430429719113322,0.04481801007246055,20018,0.4484963532820462
+"2026 general (Nov 4 CVR, scanned ballots only)",Governor / Lieutenant Governor,"contests.csv, rounds.csv",3,201235,2984,181,16681,221,0.08289313489204164,0.08391587560074672,43496,0.3835065293360309

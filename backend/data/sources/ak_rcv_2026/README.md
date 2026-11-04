@@ -19,6 +19,9 @@ The Division's server sends an incomplete certificate chain: it sends GlobalSign
 | `law/akleg_statute_15.15.350.html` | https://www.akleg.gov/basis/statutes.asp?media=print&secStart=15.15.350&secEnd=15.15.350 | AS 15.15.350: the rules for rounds, overvotes, skipped rankings, inactive ballots and ties. |
 | `law/akleg_aac_6.25.072.html` | https://www.akleg.gov/basis/aac.asp?media=print&secStart=6.25.072&secEnd=6.25.072 | 6 AAC 25.072, duplicate rankings: a candidate ranked more than once counts at the highest ranking, and the other rankings are disregarded. |
 
+| `doe_2022/22SSPG_RcvDetailedReport.pdf`, `election-results_22sspg_page.html` | https://www.elections.alaska.gov/results/22SSPG/RcvDetailedReport.pdf; page https://www.elections.alaska.gov/election-results/e/?id=22sspg | The official RCV report for the Aug 16, 2022 special general election for U.S. House (retrieved 2026-11-04). |
+| `doe_2022/22GENR_US_SEN.pdf`, `22GENR_US_REP.pdf`, `22GENR_ElectionSummaryReportRPT.pdf`, `election-results_22genr_page.html` | https://elections.alaska.gov/results/22GENR/US%20SEN.pdf, https://elections.alaska.gov/results/22GENR/US%20REP.pdf, https://elections.alaska.gov/results/22GENR/ElectionSummaryReportRPT.pdf; page https://www.elections.alaska.gov/election-results/e/?id=22genr | The official 2022 general election RCV reports for U.S. Senate and U.S. House, and the summary report. The summary shows Dunleavy/Dahlstrom at 50.29% of first choices for governor, so there was no ranked-choice count for governor in 2022 (retrieved 2026-11-04). |
+
 ## Method (`scripts/`)
 
 Run Python with `-I`, and pass the extracted CVR folder as an argument.
@@ -42,6 +45,7 @@ Run Python with `-I`, and pass the extracted CVR folder as an argument.
   - ballots by counting group.
 
   `validate.py --csv` writes `validation_2024.csv`. The page is `outputs/dashboard/index.html`, published as the "Alaska Ranked-Choice Count" dashboard (https://claude.ai/artifact/BPe75Hq3p5BcatHU1RvEYc, private).
+- **`ak_exhaustion_history.py`** reads the exhausted, overvoted and continuing ballots from each official statewide RCV report (2022 special, 2022 and 2024 general) and from the 2026 CVR count, and writes `outputs/exhaustion_history.csv`. The exhaustion rate is final-round exhausted ballots over round-1 continuing ballots.
 - **`ak_combine.py`** adds the ballots that are in the precinct results but not in the CVR (first choices only) to the CVR's rounds. It has two parts:
   - **Scenario:** each eliminated candidate's added votes move in the same shares as that candidate's CVR ballots did in that round.
   - **Bounds:** every added vote for a non-finalist or write-in goes entirely to one finalist or entirely to the other.
