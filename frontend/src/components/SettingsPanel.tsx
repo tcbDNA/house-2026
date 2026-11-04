@@ -93,9 +93,11 @@ const GROUPS: { title: string; toggles: Toggle[] }[] = [
       { key: "overlay_slice_projections", label: "Slice-level projections",
         hint: "Project each county slice from its own margin, demographic shift and shrunk residual trend, then one reconciling shift. Off: every slice shifted by the same amount. Map shading only — no projection changes." },
       { key: "overlay_raked_slices", label: "Raked 2024 slices (12 states)",
-        hint: "In AK AR CT ID ME MI ND NJ OK OR PA SD (no 2024 precinct results), estimate each split county's slices by raking their 2020 D and R votes to the actual 2024 county and district totals. Off: 2020 margin + the district's 2020→2024 shift. Map shading only." },
+        hint: "In AK AR CT ID ME MI ND NJ OK OR PA SD (no 2024 precinct results; Alaska only on boroughs), estimate each split county's slices by raking their 2020 D and R votes to the actual 2024 county and district totals. Off: 2020 margin + the district's 2020→2024 shift. Map shading only." },
       { key: "overlay_estimated_slice_trends", label: "County trends in those 12 states",
-        hint: "Give their slices their county's own residual trend, shrunk toward the district's as elsewhere (the county results are real). Alaska keeps the district's: its borough results are estimated. Off: every slice takes the district's residual. Map shading only." },
+        hint: "Give their slices their county's own residual trend, shrunk toward the district's as elsewhere (the county results are real). Alaska on boroughs keeps the district's: its borough results are estimated. Off: every slice takes the district's residual. Map shading only." },
+      { key: "ak_house_district_map", label: "Alaska on house districts",
+        hint: "Draw Alaska's maps (Senate, governor, AK-AL) on its 40 state house districts: the Division of Elections' official 2024 results by district, 2020 results from DRA's precincts split by 2020 Census population, and each district's own shrunk residual trend. Off: the 30 boroughs, whose results are estimated. Map shading only." },
     ],
   },
 ];

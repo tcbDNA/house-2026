@@ -417,14 +417,17 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
     };
   }, [data]);
 
+  const units = data?.map_units === "house_districts"
+    ? { one: "House-district", many: "house districts" } : { one: "County", many: "counties" };
+
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div className={`bg-white rounded-lg shadow-xl w-full ${district ? "max-w-6xl" : "max-w-5xl"} max-h-[90vh] flex flex-col`} onClick={(e) => e.stopPropagation()}>
         <div className="p-4 border-b flex justify-between items-start">
           <div>
-            <h2 className="text-xl font-bold">{district ? `${district} · County overlay` : `${state} · County projections${race === "governor" ? " (governor)" : ""}`}</h2>
+            <h2 className="text-xl font-bold">{district ? `${district} · ${units.one} overlay` : `${state} · ${units.one} projections${race === "governor" ? " (governor)" : ""}`}</h2>
             {!district && race === "governor" && data?.county_map_base && (
-              <div className="text-xs text-slate-500 mt-0.5">County positions from {data.county_map_base}</div>
+              <div className="text-xs text-slate-500 mt-0.5">{units.one} positions from {data.county_map_base}</div>
             )}
             {district && districtDetail && (
               <div className="text-xs mt-0.5">
@@ -445,7 +448,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
             {!district && summary && (
               <>
                 <div className="text-xs text-slate-500 mt-0.5">
-                  {summary.total} counties · <span className="text-blue-700">{summary.d_counties} D</span> · <span className="text-red-700">{summary.r_counties} R</span>
+                  {summary.total} {units.many} · <span className="text-blue-700">{summary.d_counties} D</span> · <span className="text-red-700">{summary.r_counties} R</span>
                   {summary.flips_to_d_names.length > 0 && (
                     <> · <span className="text-blue-700">{summary.flips_to_d_names.length} flip→D ({summary.flips_to_d_names.join(", ")})</span></>
                   )}
@@ -539,7 +542,7 @@ export function CountyMap({ state, environment, sliders, trendDiscount, indWinne
                     .map((c, i) => (
                       <span key={i} style={{ background: c }} className="inline-block w-5 h-3" />
                     ))}
-                  <span className="ml-1 text-[9px]">Independent-winning counties</span>
+                  <span className="ml-1 text-[9px]">Independent-winning {units.many}</span>
                 </div>
               )}
             </div>

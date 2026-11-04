@@ -162,6 +162,14 @@ class Settings:
     # whose borough results are estimated and keep the district's. Off:
     # every slice there takes the district's residual. Overlay only.
     overlay_estimated_slice_trends: bool = True
+    # Alaska's county maps (Senate, governor and AK-AL) on its 40 state house
+    # districts (user request, Nov 4): Alaska reports results by house
+    # district, so their 2024 results are the official ones
+    # (data/ak_house_districts.json, built by data/build_ak_house_districts.py),
+    # and each takes its own residual trend, shrunk toward the state's or
+    # district's as elsewhere. Off: the 30 boroughs, whose results are
+    # estimated. Overlay only.
+    ak_house_district_map: bool = True
     # Governor county maps (main._state_counties_overlay, race="governor"):
     # the reconciling step adds one constant to every county's log-odds of the
     # two-party D share (each county's third-party share held at its 2024

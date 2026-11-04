@@ -45,7 +45,9 @@ def districts():
     rows = {r["district"]: r for r in house["districts"]}
     by_state = {}
     for c in main.COUNTY_BUNDLE.counties:
-        by_state.setdefault(c["state"], []).append(c)
+        by_state.setdefault(c["state"], [])
+    for st in by_state:   # each state's map units (Alaska: house districts with ak_house_district_map)
+        by_state[st] = [c for c in main._county_bundle(st, S).counties if c["state"] == st]
     terms = {st: overlay.CountyTerms(cs, population_shares(cs), d["sliders"], S, FRAME)
              for st, cs in by_state.items()}
     out = []
@@ -76,7 +78,7 @@ def states():
     out = []
     for j, s in enumerate(sb.states):
         st = s["state"]
-        counties = [c for c in main.COUNTY_BUNDLE.counties if c["state"] == st]
+        counties = [c for c in main._county_bundle(st, S).counties if c["state"] == st]
         if not counties:
             continue
         pop_j = {g: v[j:j + 1] for g, v in sb.all_pop.items()}

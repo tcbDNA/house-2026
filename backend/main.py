@@ -40,6 +40,8 @@ SENATE_BUNDLE = senate.load_bundle()
 GOVERNOR_BUNDLE = (governors.load_bundle(senate_bundle=SENATE_BUNDLE)
                    if governors.DATA_PATH.exists() else None)
 COUNTY_BUNDLE = county.load_bundle()
+# Alaska's 40 state house districts as county-map units (ak_house_district_map)
+AK_HOUSE_BUNDLE = county.load_bundle(Path(__file__).resolve().parent / "data" / "ak_house_districts.json")
 
 # Default scenario for the default settings, computed from recent polls' race
 # crosstabs (environment.default_scenario; data in
@@ -258,10 +260,31 @@ _DISTRICT_COUNTY_SLICES = (
 )
 
 
+def _county_bundle(state: str, settings: Settings) -> county.CountyBundle:
+    """The county maps' units: Alaska's house districts with
+    ak_house_district_map, else the counties (Alaska's boroughs)."""
+    return AK_HOUSE_BUNDLE if state.upper() == "AK" and settings.ak_house_district_map else COUNTY_BUNDLE
+
+
+def _map_units(state: str, settings: Settings) -> str:
+    return "house_districts" if _county_bundle(state, settings) is AK_HOUSE_BUNDLE else "counties"
+
+
+def _ak_house_slices() -> list[dict]:
+    """AK-AL's slices with ak_house_district_map: its 40 house districts,
+    each whole, with their official 2024 results."""
+    return [{"fips": c["fips"], "name": c["name"], "d_2024": c["dem_2024"], "r_2024": c["rep_2024"],
+             "total_2024": c["total_2024"], "margin_2024": c["margin_2024"], "margin_2020": c["margin_2020"],
+             "total_2020": c["total_2020"], "share_of_county_2024": 1.0, "fully_contained": True,
+             "pres_year_source": 2024} for c in AK_HOUSE_BUNDLE.counties]
+
+
 def _district_slices(did: str, settings: Settings) -> list[dict] | None:
     """A district's slices; with overlay_raked_slices off, slices in the
     states without 2024 precinct results take their earlier
     district-shift estimate instead of the raked one."""
+    if did == "AK-AL" and settings.ak_house_district_map:
+        return _ak_house_slices()
     slices = _DISTRICT_COUNTY_SLICES.get(did)
     if slices is None or settings.overlay_raked_slices:
         return slices
@@ -277,10 +300,12 @@ def _turnout_basis(did: str, slices: list[dict]) -> float:
 
 
 @app.get("/api/state/{state}/county_geojson")
-def state_county_geojson(state: str):
+def state_county_geojson(state: str, ak_house_district_map: Optional[bool] = None):
     """Static GeoJSON boundaries for all counties in a state. Browser-cacheable
-    since boundaries don't change with scenario."""
-    path = COUNTY_GEOJSON_DIR / f"{state.upper()}.geojson"
+    since boundaries don't change with scenario. Alaska: its house districts
+    unless ak_house_district_map (default: the setting's default) is false."""
+    house = DEFAULT_SETTINGS.ak_house_district_map if ak_house_district_map is None else ak_house_district_map
+    path = COUNTY_GEOJSON_DIR / ("AK_house.geojson" if state.upper() == "AK" and house else f"{state.upper()}.geojson")
     if not path.exists():
         raise HTTPException(status_code=404, detail=f"no GeoJSON for state {state}")
     return FileResponse(path, media_type="application/json",
@@ -311,7 +336,7 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     st = state.upper()
     sb = SENATE_BUNDLE
     resid, center = senate.all_state_residuals(sb, settings, req.frame)
-    counties = [c for c in COUNTY_BUNDLE.counties if c["state"] == st]
+    counties = [c for c in _county_bundle(st, settings).counties if c["state"] == st]
     if race == "governor":
         gov = governors.project(GOVERNOR_BUNDLE, environment=req.environment, sliders=sliders,
                                 trend_discount=req.trend_discount, settings=settings, frame=req.frame)
@@ -325,7 +350,8 @@ def _state_counties_overlay(state: str, req: ProjectRequest, sliders: dict, sett
     turnout, turnout_source = county.turnout_ratio(state=st)
     result = {"environment": req.environment, "sliders": sliders, "trend_discount": req.trend_discount,
               "turnout_ratio_2026": turnout, "turnout_source": turnout_source,
-              "senate_seat": seat, "counties": [], "overlay": "slice_projections"}
+              "senate_seat": seat, "counties": [], "overlay": "slice_projections",
+              "map_units": _map_units(st, settings)}
     if race == "governor":
         result.update({"senate_seat": None, "race": "governor", "governor_race": g})
         if g is not None and g.get("model_projection") is None:
@@ -454,7 +480,7 @@ def state_counties(state: str, req: ProjectRequest, race: str = "senate"):
         # Pre-compute the turnout-weighted county pres margin / county trend
         # for this state and shift to reconcile.
         state_upper = state.upper()
-        state_counties = [c for c in COUNTY_BUNDLE.counties if c["state"] == state_upper]
+        state_counties = [c for c in _county_bundle(state_upper, settings).counties if c["state"] == state_upper]
         total_24 = sum(c.get("total_2024") or 0 for c in state_counties)
         if total_24 > 0:
             wtd_county_pres = sum((c.get("margin_2024") or 0) * (c.get("total_2024") or 0) for c in state_counties) / total_24
@@ -467,7 +493,7 @@ def state_counties(state: str, req: ProjectRequest, race: str = "senate"):
             senate_adjustment += reconcile
 
     result = county.project(
-        COUNTY_BUNDLE,
+        _county_bundle(state, settings),
         environment=req.environment,
         sliders=sliders,
         trend_discount=req.trend_discount,
@@ -487,6 +513,7 @@ def state_counties(state: str, req: ProjectRequest, race: str = "senate"):
         )
     # Attach the Senate context for the UI to display.
     result["senate_seat"] = seat
+    result["map_units"] = _map_units(state, settings)
     return result
 
 
@@ -520,7 +547,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
 
     settings = _settings(req.settings)
     if settings.overlay_slice_projections:
-        counties = [c for c in COUNTY_BUNDLE.counties if c["state"] == state]
+        counties = [c for c in _county_bundle(state, settings).counties if c["state"] == state]
         terms = overlay.CountyTerms(counties, population_shares(counties, settings), sliders, settings, req.frame)
         r = overlay.district_slices(did, drow, slices, district_proj["uniform_swing"], terms,
                                     req.trend_discount, settings, req.frame)
@@ -538,6 +565,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
                 "lockout": drow.get("lockout"),
                 "turnout_ratio_2026": turnout, "turnout_source": turnout_source,
                 "data_source": "precinct_aggregated", "overlay": "slice_projections",
+                "map_units": _map_units(state, settings),
                 # The district's own terms in this scenario (for the side panel).
                 "district_row": {k: drow.get(k) for k in ("margin_2024", "rel_trend_applied", "war_adj_discounted",
                                                           "incumbency_adj", "challenger_adj", "demo_shift")}
@@ -613,6 +641,7 @@ def _district_counties_from_slices(did: str, req: ProjectRequest, slices: list[d
         "candidate_adj": round(candidate_adj, 2),
         "reconcile": round(reconcile, 2),
         "data_source": "precinct_aggregated",
+        "map_units": _map_units(state, _settings(req.settings)),
         "counties": enriched,
     }
 

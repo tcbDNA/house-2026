@@ -338,12 +338,14 @@ export function Methodology() {
       </p>
       <p className="mb-2">
         <b>County-level overlays</b> use 2020 + 2024 presidential results aggregated to
-        county / borough boundaries; Alaska supplements with{" "}
+        county boundaries. Alaska, which reports results by state house district
+        rather than borough, is drawn on its 40 house districts: the Division of
+        Elections' official 2024 results by district, and 2020 results from{" "}
         <a className="underline" href="https://davesredistricting.org" target="_blank" rel="noreferrer">
           Dave's Redistricting
         </a>{" "}
-        per-borough 2020 numbers (state doesn't publish official borough-level results),
-        and Connecticut uses its nine planning regions (the Census Bureau's county
+        precincts, split among the current districts by 2020 Census population
+        (setting off: its boroughs, with estimated results). Connecticut uses its nine planning regions (the Census Bureau's county
         equivalents since 2022), built from the state's official town results.
         Each county slice of a district (and each county of a Senate state) is
         projected from its own pieces: its 2024 margin, the demographic shift and
@@ -357,8 +359,8 @@ export function Methodology() {
         PA, SD), a split county's slices are estimated by raking their 2020
         D and R votes to the actual 2024 county and district totals. Their
         slices still take their county's residual, since the county results
-        are real, except Alaska's: its borough results are estimated, so its
-        slices take the district's residual and its boroughs the state's. This changes only the map shading, never a projection. Estimated 2026 vote counts use each race's own Kalshi turnout market: the
+        are real, except Alaska's boroughs (house districts off): their results are estimated, so
+        they take the district's or the state's residual. This changes only the map shading, never a projection. Estimated 2026 vote counts use each race's own Kalshi turnout market: the
         market-implied median total vote divided by the 2024 presidential vote —
         the state's Senate market (else its governor market) for a state's
         counties, and the district's House market for its slices (e.g. Georgia

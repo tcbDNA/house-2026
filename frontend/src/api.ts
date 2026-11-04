@@ -58,6 +58,8 @@ export type CountyResponse = {
   unavailable_reason?: string;
   /** Governor maps: where county positions come from (an incumbent's last race or the 2024 presidential map). */
   county_map_base?: string;
+  /** The map's units: counties, or Alaska's state house districts (setting ak_house_district_map). */
+  map_units?: "counties" | "house_districts";
   counties: Array<{
     fips: string;
     state: string;
@@ -104,7 +106,10 @@ export async function fetchCounties(
 }
 
 export async function fetchCountyGeoJSON(state: string): Promise<any> {
-  const res = await fetch(`/api/state/${state}/county_geojson`);
+  // Alaska: house districts or boroughs, per the ak_house_district_map setting
+  const ak = requestContext.settings.ak_house_district_map;
+  const q = state === "AK" && ak !== undefined ? `?ak_house_district_map=${ak}` : "";
+  const res = await fetch(`/api/state/${state}/county_geojson${q}`);
   if (!res.ok) throw new Error(`county geojson failed: ${res.status}`);
   return res.json();
 }

@@ -24,8 +24,9 @@ are estimated (slices tagged pres_year_source 2020: AK AR CT ID ME MI ND NJ
 OK OR PA SD), since only the split within a county is estimated, not the
 county's results (settings.overlay_estimated_slice_trends; off: those
 slices take the district's residual). Alaska's borough-level 2024 results
-are estimated, so its slices take the district's residual and, in the
-Senate view, its boroughs the state's.
+are estimated, so on boroughs its slices take the district's residual and,
+in the Senate view, its boroughs the state's; its house districts
+(settings.ak_house_district_map) have official results and take their own.
 
 This changes only the overlay; no district, state or seat projection.
 The reconciling shift should be small: a large one means the slice inputs
@@ -43,6 +44,12 @@ import trend as trend_mod
 from config import Settings
 
 ESTIMATED_COUNTY_STATES = frozenset({"AK"})   # county-level 2024 results estimated
+
+
+def estimated_units(state: str, settings: Settings) -> bool:
+    """Whether the state's map units have estimated 2024 results: Alaska's
+    boroughs, not its house districts."""
+    return state in ESTIMATED_COUNTY_STATES and not settings.ak_house_district_map
 
 
 def shrink_weight(votes: np.ndarray, k: float) -> np.ndarray:
@@ -204,7 +211,7 @@ def district_slices(did: str, drow: dict, slices: list[dict], uniform_swing: flo
                      + (drow.get("challenger_adj") or 0.0))
     # Locked seats (CA same-party top-two) show ±100; reconcile the overlay to
     # the projection before the lock.
-    county_trends = settings.overlay_estimated_slice_trends and did[:2] not in ESTIMATED_COUNTY_STATES
+    county_trends = settings.overlay_estimated_slice_trends and not estimated_units(did[:2], settings)
     target = drow["projection"]
     if drow.get("lockout"):
         target = (drow["margin_2024"] + uniform_swing + (drow.get("rel_trend_applied") or 0.0)
@@ -271,7 +278,7 @@ def state_counties(state: str, counties: list[dict], terms: CountyTerms, state_r
     first = []
     for k, c in enumerate(counties):
         i = terms.index[c["fips"]]
-        if state in ESTIMATED_COUNTY_STATES:
+        if estimated_units(state, settings):
             w, resid = 0.0, state_resid
         else:
             w = float(shrink_weight(terms.votes[i], settings.overlay_shrink_k))
