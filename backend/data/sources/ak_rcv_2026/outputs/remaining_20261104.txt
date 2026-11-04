@@ -1,0 +1,14 @@
+Division table last updated November 3, 2026 at 12:26 pm
+  By Fax                         issued      21 received       3
+  By Mail                        issued  42,455 received  26,826
+  Early Vote                     issued  67,935 received  67,935
+  Federal Write-In (Absentee)    issued       0 received       0
+  In-Person (Absentee)           issued   7,805 received   7,805
+  Online Delivery                issued   8,041 received   2,586
+  Questioned Special Needs       issued     264 received     264
+early vote: received 67,935, counted 50,112, not yet counted 17,823
+absentee (mail, fax, online, in-person absentee, special needs): received 37,484, counted 8,480, not yet counted 29,004
+together 46,827; questioned ballots counted so far 0
+By Mail: issued but not yet received 15,629
+Online Delivery: issued but not yet received 5,455
+2024 final CVR, U.S. House ballots by counting group: {'Election Day': '177,295', 'Early Voting': '71,187', 'Absentee': '76,340', 'Question': '11,031'}
