@@ -203,6 +203,17 @@ The public JSON behind VoteHub's 2026 Early Vote Tracker (16 states; Wisconsin i
 
 Matthew Isbell's (MCI Maps) table of turnout by party registration for the 2012–2022 general elections and his 2024 figures, retrieved 2026-11-03 for comparison with the Election Day tracker. Figures, caveats and URLs in the folder's README.md.
 
+## Alaska state house districts for the county maps (ak_house_districts/) — data in `ak_house_districts.json`, `county_geojson/AK_house.geojson`
+
+| File | URL | Retrieved | Used for |
+|---|---|---|---|
+| `ak_house_districts/ENRbyPrecinct_24GENR.csv` | https://www.elections.alaska.gov/results/24GENR/ENRbyPrecinct.csv | 2026-11-04 | 2024 presidential votes by state house district (official; totals equal the Division's Election Summary Report) |
+| `ak_house_districts/cb_2024_02_sldl_500k.zip`, `tl_2024_02_sldl.zip`, `BlockAssign_ST02_AK.zip`; 2020 blocks `tl_2020_02_tabblock20.zip` (130 MB, cached in `data/cache/`, gitignored) | https://www2.census.gov/geo/ (paths in `ak_house_districts/README.md`) | 2026-11-04 | District shapes; 2020 blocks to VTDs and districts, block populations |
+| `ak_house_districts/acs5_{2024,2023}_sldl_AK_{A,B}.json` | https://api.census.gov/data/2024/acs/acs5, https://api.census.gov/data/2023/acs/acs5 (state legislative district, lower chamber) | 2026-11-04 | District demographics |
+| `ak_house_districts/dra_vtd_2020_pres_by_hd.csv` | derived from https://github.com/dra2020/vtd_data (2020_VTD/AK, v07; cached in `data/dra_vtd/`) | extracted 2026-11-04 | 2020 presidential votes per VTD split among the districts by 2020 Census population |
+
+Setting `ak_house_district_map` (user request, Nov 4). Method and checks in `ak_house_districts/README.md`.
+
 ## Alaska 2026 general, ranked-choice tabulation of the Cast Vote Record (ak_rcv_2026/) — not used by the model
 
 The Division of Elections' election-night CVR, summary report and precinct results (retrieved 2026-11-04), the RCV statute and duplicate-ranking regulation, and the official 2024 RCV reports used to test the tabulator, which reproduces all 7 of them exactly. The ballot-level CVR zips stay local; their URLs and checksums are in the folder's README.md, along with the method and results.
