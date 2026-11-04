@@ -114,7 +114,17 @@ export async function fetchCountyGeoJSON(state: string): Promise<any> {
   const q = state === "AK" && ak !== undefined ? `?ak_house_district_map=${ak}` : "";
   const res = await fetch(`/api/state/${state}/county_geojson${q}`);
   if (!res.ok) throw new Error(`county geojson failed: ${res.status}`);
-  return res.json();
+  const gj = await res.json();
+  return state === "AK" ? pastDateline(gj) : gj;
+}
+
+// Alaska's western Aleutians lie past 180° (longitudes up to +179.8). Moved to
+// below −180 they sit next to the rest of the state, and the map fits Alaska
+// instead of the whole world (bounds of −179° to +179°).
+function pastDateline(gj: any): any {
+  const shift = (c: any): any => (typeof c[0] === "number" ? (c[0] > 0 ? [c[0] - 360, c[1]] : c) : c.map(shift));
+  for (const f of gj.features) f.geometry.coordinates = shift(f.geometry.coordinates);
+  return gj;
 }
 
 export type DistrictCountyResponse = {
